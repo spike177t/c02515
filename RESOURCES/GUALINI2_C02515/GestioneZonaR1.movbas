@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="683" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+Imports System
+Imports System.IO
+Imports System.Collections
+
+'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
+
+Dim codaGiostraA As System.Collections.Queue= New System.Collections.Queue()
+
+Sub Main()
+	codaGiostraA.Enqueue(10)
+	codaGiostraA.Enqueue(20)
+	codaGiostraA.Enqueue(30)
+
+	Debug.Print "elem: " + Convert.ToString(codaGiostraA.count())
+
+	For Each element As Integer In codaGiostraA
+		Debug.Print "elem: " + Convert.ToString(element)
+	Next
+
+	Dim myint As Integer
+	While codaGiostraA.Count &gt; 0
+		myint = codaGiostraA.Dequeue()
+		Debug.Print "myint: " + Convert.ToString(myint)
+	End While
+
+	Do
+		'guardo se le quadre hanno dei pezzi pronti
+
+		If AutoRun Then
+
+		End If
+'		Debug.Print ("fineIf Autorun")
+
+	DoEvents
+	Loop Until IsInStoppingMode
+'	Debug.Print("STOP")
+
+End Sub
+</ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAnAA==</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

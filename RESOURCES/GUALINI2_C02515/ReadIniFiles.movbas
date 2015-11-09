@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Read INI File
+Public Function ReadIniValue(INIpath As String, KEY As String, Variable As String) As String
+Dim NF As Integer
+Dim Temp As String
+Dim LcaseTemp As String
+Dim ReadyToRead As Boolean
+
+AssignVariables:
+        NF = FreeFile
+        ReadIniValue = ""
+        KEY = "[" &amp; LCase$(KEY) &amp; "]"
+        Variable = LCase$(Variable)
+
+EnsureFileExists:
+    Open INIpath For Binary As NF
+    Close NF
+    SetAttr INIpath, vbArchive
+
+LoadFile:
+    Open INIpath For Input As NF
+    While Not EOF(NF)
+    Line Input #NF, Temp
+    LcaseTemp = LCase$(Temp)
+    If InStr(LcaseTemp, "[") &lt;&gt; 0 Then ReadyToRead = False
+    If LcaseTemp = KEY Then ReadyToRead = True
+    If InStr(LcaseTemp, "[") = 0 And ReadyToRead = True Then
+        If InStr(LcaseTemp, Variable &amp; "=") = 1 Then
+            ReadIniValue = Mid$(Temp, 1 + Len(Variable &amp; "="))
+            Close NF: Exit Function
+            End If
+        End If
+    Wend
+    Close NF
+End Function
+
+'Write INI File
+Public Function WriteIniValue(INIpath As String, PutKey As String, PutVariable As String, PutValue As String)
+Dim Temp As String
+Dim LcaseTemp As String
+Dim ReadKey As String
+Dim ReadVariable As String
+Dim LOKEY As Integer
+Dim HIKEY As Integer
+Dim KEYLEN As Integer
+Dim VAR As Integer
+Dim VARENDOFLINE As Integer
+Dim NF As Integer
+Dim X As Integer
+
+AssignVariables:
+    NF = FreeFile
+    ReadKey = vbCrLf &amp; "[" &amp; LCase$(PutKey) &amp; "]" &amp; Chr$(13)
+    KEYLEN = Len(ReadKey)
+    ReadVariable = Chr$(10) &amp; LCase$(PutVariable) &amp; "="
+
+EnsureFileExists:
+    Open INIpath For Binary As NF
+    Close NF
+    SetAttr INIpath, vbArchive
+
+LoadFile:
+    Open INIpath For Input As NF
+    Temp = Input$(LOF(NF), NF)
+    Temp = vbCrLf &amp; Temp &amp; "[]"
+    Close NF
+    LcaseTemp = LCase$(Temp)
+
+LogicMenu:
+    LOKEY = InStr(LcaseTemp, ReadKey)
+    If LOKEY = 0 Then GoTo AddKey:
+    HIKEY = InStr(LOKEY + KEYLEN, LcaseTemp, "[")
+    VAR = InStr(LOKEY, LcaseTemp, ReadVariable)
+    If VAR &gt; HIKEY Or VAR &lt; LOKEY Then GoTo AddVariable:
+    GoTo RenewVariable:
+
+AddKey:
+        Temp = Left$(Temp, Len(Temp) - 2)
+        Temp = Temp &amp; vbCrLf &amp; vbCrLf &amp; "[" &amp; PutKey &amp; "]" &amp; vbCrLf &amp; PutVariable &amp; "=" &amp; PutValue
+        GoTo TrimFinalString:
+
+AddVariable:
+        Temp = Left$(Temp, Len(Temp) - 2)
+        Temp = Left$(Temp, LOKEY + KEYLEN) &amp; PutVariable &amp; "=" &amp; PutValue &amp; vbCrLf &amp; Mid$(Temp, LOKEY + KEYLEN + 1)
+        GoTo TrimFinalString:
+
+RenewVariable:
+        Temp = Left$(Temp, Len(Temp) - 2)
+        VARENDOFLINE = InStr(VAR, Temp, Chr$(13))
+        Temp = Left$(Temp, VAR) &amp; PutVariable &amp; "=" &amp; PutValue &amp; Mid$(Temp, VARENDOFLINE)
+        GoTo TrimFinalString:
+
+TrimFinalString:
+        Temp = Mid$(Temp, 2)
+        Do Until InStr(Temp, vbCrLf &amp; vbCrLf &amp; vbCrLf) = 0
+        Temp = Replace(Temp, vbCrLf &amp; vbCrLf &amp; vbCrLf, vbCrLf &amp; vbCrLf)
+        Loop
+
+        Do Until Right$(Temp, 1) &gt; Chr$(13)
+        Temp = Left$(Temp, Len(Temp) - 1)
+        Loop
+
+        Do Until Left$(Temp, 1) &gt; Chr$(13)
+        Temp = Mid$(Temp, 2)
+        Loop
+
+OutputAmendedINIFile:
+        Open INIpath For Output As NF
+        Print #NF, Temp
+        Close NF
+
+End Function
+
+'Public Sub Main()
+	
+'End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="40" SyncroScriptTimeout="5000"/>
+</MovResource>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="53" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+'#Uses "*PublicBasicScript"
+
+Option Explicit
+
+Sub Main
+
+	Dim Path As String
+	Dim Chiave As String
+	Dim Variabile As String
+	Dim Valore As String
+	Dim InserValue As String
+
+	Path = MyProjectSetting("FILEPATH") + "\Supervisione.ini"
+	Path=Dir(MyProjectSetting("FILEPATH") + "\Supervisione.ini")
+
+	'carico i parametri generali
+	Chiave="Generali"
+	Variabile="IP_Etichettatrice"
+	loc_IP_Etichettatrice = ReadIniValue(Path, Chiave, Variabile)
+
+	Chiave="Generali"
+	Variabile="PathEtichette"
+	loc_PathEtichette = ReadIniValue(Path, Chiave, Variabile)
+
+	'carico le cartelle predefinite
+	Chiave="Cartelle"
+	Variabile="CartellaScambioDatiSygest"
+	loc_SygestFolder = ReadIniValue(Path, Chiave, Variabile)
+
+	'carico il none del file di rispostapallet.txt
+	Chiave="Cartelle"
+	Variabile="FileRichiestaPalletSygest"
+	loc_SygestFileRichiestaPallet = ReadIniValue(Path, Chiave, Variabile)
+
+	'carico il none del file di rispostapallet.txt
+	Chiave="Cartelle"
+	Variabile="FileRispostaPalletSygest"
+	loc_SygestFileRispostaPallet = ReadIniValue(Path, Chiave, Variabile)
+
+	'controllo se sono in esecuzione altre istanze di Premium
+	RunScript ("FindProcess",100,False)
+
+	'eseguo import da gestionale
+	RunScript("Sygest_ImportArticoliClienti",100,False)
+End Sub
+
+
+
+
+
+
+
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="40" SyncroScriptTimeout="5000"/>
+</MovResource>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+Imports System
+Imports System.IO
+Sub Main()
+	Dim filepath As String
+	filepath = "TestFile.txt"
+	filepath = "Z:\CondivisaProgetti\#WORK\#Gualini2\R_ note su scambio dati\080024010006"
+	Try
+        ' Open the file using a stream reader.
+        Using sr As New StreamReader(filepath)
+            Dim line As String
+            Dim i As Integer
+            '' Read the stream to a string and write the string to the console.
+            'line = sr.ReadToEnd()
+            'Debug.Print(line)
+
+            Debug.Print "### lettura a righe"
+            Debug.Print
+
+			i=0
+            Do While sr.Peek() &gt;= 0
+            	line = sr.ReadLine()
+                Debug.Print(line)
+                Select Case i
+	                Case 0:
+						[Quadra1_par:NUOVO] = CInt(line)
+					Case 1:
+						[Quadra1_par:ID_QUARTINA] = line
+					Case 2:
+						[Quadra1_par:POSIZIONE] = line
+					Case 3:
+						[Quadra1_par:NOME_PEZZO_UNICO] = line
+					Case 4:
+						[Quadra1_par:NOME_PEZZO_ESTERNO] = line
+					Case 5:
+						[Quadra1_par:ULTIMO_PEZZO] = CBool(line)
+					Case 6:
+						[Quadra1_par:CODICE_PROFILO] = line
+					Case 7:
+						[Quadra1_par:SERIE_PROFILO] = line
+					Case 8:
+						[Quadra1_par:MAX_LUNGHEZZA] = CInt(line)
+					Case 9:
+						[Quadra1_par:TOTALE_PEZZI_QUARTINA] = CInt(line)
+					Case 10:
+						[Quadra1_par:NUM_SQUADRETTE1] = CInt(line)
+					Case 11:
+						[Quadra1_par:COD_SQUADRETTA1] = line
+					Case 12:
+						[Quadra1_par:NUM_SQUADRETTE2] = CInt(line)
+					Case 13:
+						[Quadra1_par:COD_SQUADRETTA2] = line
+					Case 14:
+						[Quadra1_par:ALTEZZA_PROFILO] = CInt(line)
+					Case 15:
+						[Quadra1_par:LARGHEZZA_PROFILO] = CInt(line)
+					Case 16:
+						[Quadra1_par:MISURA_CAMERA_ESTERNA] = CInt(line)
+					Case 17:
+						[Quadra1_par:ID_QUARTINA_SUCCESSIVA] = line
+					Case 18:
+						[Quadra1_par:NOME_COMMESSA] = line
+					Case 19:
+						[Quadra1_par:APPOGGIO_PEZZO] = CInt(line)
+					Case 20:
+						[Quadra1_par:POSIZIONE_PEZZO_ESTERNO] = CInt(line)
+					Case 21:
+						[Quadra1_par:ID_PEZZO_ESTERNO] = line
+					Case 22:
+						[Quadra1_par:LUNGHEZZA_PEZZO_ESTERNO] = CInt(line)
+					Case 23:
+						[Quadra1_par:FILE_XML] = line
+					Case 24:
+						[Quadra1_par:DATA] = line
+					Case 25:
+						[Quadra1_par:ORA] = line
+
+	            End Select
+	            i = i + 1
+            Loop
+
+        End Using
+    Catch e As Exception
+        Debug.Print("The file could not be read:")
+        Debug.Print(e.Message)
+    End Try
+End Sub
+</ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAMAFcA
+</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

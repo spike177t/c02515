@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DriverSettings>
+<GeneralSettings WaitTime="0" TimeOut="2000" SynchroStart="false" MinimumJobThreshold="5" DefRefreshTimeNotInUse="10000" EnableCOMInterface="true" PollingTime="0" PollingTimeNotInUse="10000" PriorityProtocolThread="0" BaseClassBuild="259" DriverVersion="167772421" AggregationLimit="0" DirectWriteIO="false" SetInUseStructureFields="false" SuspendTasksInError="true" ExpandGroup1="1"/>
+<Debug DebugWindow="false" MaxLogEntries="10000" LogFileName="" EnableLogFile="true" ExpandGroup2="1"/>
+<TwinCATDriverSettings GetAllTagAddressesAtStartup="true" ExpandTwinCatGroup1="1"/>
+<JobList/>
+<StationList>
+<Station>
+<Name MaxRetries="1" StateVariable="Plc_Stato" ExpandGroup1="1">Plc</Name>
+<TwinCatStation AmsNetId="10.255.255.157.1.1" AmsPort="801" MaxNumOfAggregatedReqs="1" ExpandTwinCatGroup1="1"/>
+</Station>
+</StationList>
+</DriverSettings>
