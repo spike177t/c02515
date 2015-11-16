@@ -2,7 +2,7 @@
 <Alarms>
 <AlarmList>
 <Alarm>
-<Name Device="" Variable="" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0">Allarme Digitale</Name>
+<Name Device="" Variable="" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">Allarme Digitale</Name>
 <ThresholdList>
 <Threshold>
 <Name Area="" Title="" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">Digitale</Name>
@@ -24,7 +24,7 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0">Messaggio Digitale</Name>
+<Name Device="" Variable="" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">Messaggio Digitale</Name>
 <ThresholdList>
 <Threshold>
 <Name Area="" Title="" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">Messaggio</Name>
@@ -46,7 +46,7 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0">Allarme Analogico</Name>
+<Name Device="" Variable="" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">Allarme Analogico</Name>
 <ThresholdList>
 <Threshold>
 <Name Area="" Title="" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">LowLow</Name>

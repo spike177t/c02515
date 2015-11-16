@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="5612" SelLength="28" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+Imports System
+Imports System.IO
+Imports System.Collections.Generic
+Imports System.Data.Odbc
+
+Option Explicit
+
+Public Structure DSnMembers
+    Dim DSn As String
+    Dim Uid As String
+    Dim Pwd As String
+End Structure
+
+Const CLOCK_TIME As Single	= 10	'value in seconds
+
+Dim dOldDate As Date
+
+Sub Main()
+        Dim tmpStr As String
+        Dim connectionString As String
+        Dim vResult As Object
+        Dim sMachineList As String
+        Dim cnnMembers As DSnMembers
+        Dim MachinesList As List(Of String)
+        Dim Machines() As String
+		Dim stringSeparators() As String = {"|"}
+
+		'init vars
+		MachinesList = New List(Of String)
+		connectionString = ""
+		sMachineList = ""
+
+	 	vResult = IsValidVariable("OEE_MachineList_OEE")
+        If vResult Then
+            sMachineList = GetVariableValue("OEE_MachineList_OEE")
+        End If
+        vResult = IsValidVariable("OEE_CnnString_OEE")
+        If vResult Then
+            connectionString = GetVariableValue("OEE_CnnString_OEE")
+        End If
+
+        If sMachineList = "" Or connectionString = "" Then
+			MsgBox("Connection String od Machine List invalid: nothing to update.")
+            Exit Sub
+        End If
+		'creo la lista macchine
+        Machines = sMachineList.Split(stringSeparators, StringSplitOptions.None)
+        For i As Integer = LBound(Machines) To UBound(Machines) -1
+			MachinesList.Add(Machines(i))
+        Next
+
+		cnnMembers = ParseOdbcString(connectionString)
+		'verifico che la Connection String sia Valida
+		If cnnMembers.DSN = "" Then
+            MsgBox("Connection String memorizzata in OEE_CnnString_OEE non valida. Impossibile aggiornare valori OEE realTime.")
+            Exit Sub
+        End If
+
+        If MachinesList.Count &gt; 0 Then
+        	'LOOP
+			dOldDate = Now
+			Do
+				'Call the subroutine every CLOCK_TIME
+				If DateDiff("s", dOldDate, Now) &gt;= CLOCK_TIME Then
+					Call UpdateVariables(MachinesList, connectionString)
+					dOldDate = Now
+				End If
+
+				DoEvents
+			Loop Until IsInStoppingMode
+        End If
+
+    End Sub
+
+Private Sub UpdateVariables(ByVal MachinesList As List(Of String), connectionString As String)
+		Dim vResult As Object
+		Dim Machine_Name As String
+        Dim Machine_ID As Integer
+        Dim commandText As String
+
+
+		Try
+            Using connection As New System.Data.Odbc.OdbcConnection(connectionString)
+                connection.Open()
+
+                	For Each macchina As String In MachinesList
+
+                	vResult = IsValidVariable(macchina &amp; ":ID")
+			        If vResult Then
+			            Machine_ID = GetVariableValue(macchina &amp; ":ID")
+			        End If
+			        vResult = IsValidVariable(macchina &amp; ":MachineName")
+			        If vResult Then
+			           Machine_Name = GetVariableValue(macchina &amp; ":MachineName")
+			        End If
+
+			        commandText = "SELECT TOP 1 " &amp; _
+                            "[OEE] " &amp; _
+                            ",[Performance] " &amp; _
+                            ",[Qualita] " &amp; _
+                            ",[Disponibilita] " &amp; _
+                            ",[Data]" &amp; _
+                            ",[Turno] " &amp; _
+                            ",[Risorsa] " &amp; _
+			        		",[DataAggiornamento] " &amp; _
+                            ",[CodiceRicetta] " &amp; _
+                            ",[Pezzi_min] " &amp; _
+                            ",[Pezzi_lordi] " &amp; _
+			        		",[Pezzi_buoni] " &amp; _
+                            ",[Pezzi_scarto]" &amp; _
+                            ",[Tempo_tot] " &amp; _
+                            ",[Tempo_disp] " &amp; _
+			        		",[Tempo_run] " &amp; _
+			        		",[Tempo_fermo_prod] " &amp; _
+			        		",[Tempo_fermo_non_prod] " &amp; _
+			        		",[Pezzi_teorici] " &amp; _
+			        		",[DescrizioneRicetta] " &amp; _
+							",[IdealRunRate] " &amp; _
+							",[pezzi_lordi_moltIN] " &amp; _
+							",[pezzi_buoni_moltOUT] " &amp; _
+							",[Pezzi_scarto_moltout] " &amp; _
+                      "FROM [trk2].[vwTrkOeeSummaryHMI] " &amp; _
+                      "where IDRisorsa = '" &amp; Machine_ID &amp; "' " &amp; _
+                      "order by [Data] desc"
+
+                    Using cmd As New System.Data.Odbc.OdbcCommand(commandText, connection)
+
+                        Using reader As System.Data.Odbc.OdbcDataReader = cmd.ExecuteReader()
+
+                            If reader.HasRows Then
+                                While reader.Read()
+                                    'Debug.Print(String.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}", _
+                                    ' 				reader(0), reader(1), reader(2), reader(3), reader(4), reader(5), reader(6), reader(7), reader(8), reader(9) _
+                                    '				,reader(10), reader(11), reader(12), reader(13), reader(14), reader(15), reader(16), reader(17), reader(18), reader(19), reader(20)))
+                                    
+                                    SetVariableValue(macchina &amp; ":OEE_Value", reader(0))
+                                    SetVariableValue(macchina &amp; ":OEE_Performance", reader(1))
+                                    SetVariableValue(macchina &amp; ":OEE_Quality", reader(2))
+                                    SetVariableValue(macchina &amp; ":OEE_Availability", reader(3))
+	                 				SetVariableValue(macchina &amp; ":OEE_Data", reader(4))
+                                    SetVariableValue(macchina &amp; ":OEE_Turno", reader(5))
+
+                                    SetVariableValue(macchina &amp; ":OEE_Risorsa", reader(6)) 						'6
+                                    SetVariableValue(macchina &amp; ":OEE_DataAggiornamento", reader(7))			'7
+                                    SetVariableValue(macchina &amp; ":OEE_CodiceRicetta", reader(8))				'8
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_min", reader(9))					'9
+	                 				SetVariableValue(macchina &amp; ":OEE_Pezzi_lordi", reader(10))					'10
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_buoni", reader(11))					'11
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_scarto", reader(12))				'12
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_tot", reader(13))					'13
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_disp", reader(14))					'14
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_run", reader(15))					'15
+	                 				SetVariableValue(macchina &amp; ":OEE_Tempo_fermo_prod", reader(16))			'16
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_fermo_non_prod", reader(17))		'17
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_teorici", reader(18))				'18
+                                    SetVariableValue(macchina &amp; ":OEE_DescrizioneRicetta", reader(19))			'19
+									SetVariableValue(macchina &amp; ":OEE_IdealRunRate", reader(20))				'20
+									SetVariableValue(macchina &amp; ":OEE_Pezzi_lordi_moltIN", reader(21))			'21
+									SetVariableValue(macchina &amp; ":OEE_Pezzi_buoni_moltOUT", reader(22))			'22
+									SetVariableValue(macchina &amp; ":OEE_Pezzi_scarto_moltout", reader(23))		'23
+                                End While
+                            End If
+                        End Using
+                    End Using
+                Next
+            End Using
+        Catch e As Exception
+            MsgBox("Impossibile accedere al Database. Verificare che la connessione ODBC sia configurata correttamente. " &amp; _
+                           vbCrLf &amp; "Eccezione: " &amp; e.Message &amp; ".")
+            Exit Sub
+        End Try
+
+End Sub
+
+Private Function ParseOdbcString(ByVal cnnStr As String) As DSnMembers
+        Dim members As DSnMembers
+        members.DSN = ""
+        members.Pwd = ""
+        members.Uid = ""
+        Dim stringSeparators() 	As String = {";"}
+        Dim eqlSeparators() 	As String = {"="}
+
+        Dim stlist() As String
+        Dim tmplist() As String
+
+        stlist = cnnStr.Split(stringSeparators, StringSplitOptions.None)
+        For Each st As String In stlist
+            If st.ToUpper.Contains("DSN") Then
+                tmplist = st.Split(eqlSeparators, StringSplitOptions.None)
+                If UBound(tmplist) &gt;= 1 Then
+                    members.DSN = tmplist(1)
+                End If
+            End If
+            If st.ToUpper.Contains("UID") Then
+                tmplist = st.Split(eqlSeparators, StringSplitOptions.None)
+                If UBound(tmplist) &gt;= 1 Then
+                    members.Uid = tmplist(1)
+                End If
+            End If
+            If st.ToUpper.Contains("PWD") Then
+                tmplist = st.Split(eqlSeparators, StringSplitOptions.None)
+                If UBound(tmplist) &gt;= 1 Then
+                    members.Pwd = tmplist(1)
+                End If
+            End If
+        Next
+        Return members
+    End Function
+
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
+</MovResource>

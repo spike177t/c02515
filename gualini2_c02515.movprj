@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <ProjectSettings>
-<Build>1101</Build>
+<Build>1154</Build>
 <ProjectBuild>1</ProjectBuild>
 <SaveBackup>1</SaveBackup>
 <SaveBackupIncreaseBuild>0</SaveBackupIncreaseBuild>
+<ProjectLift>0</ProjectLift>
 <CryptProject>0</CryptProject>
 <CryptProjectResources>0</CryptProjectResources>
 <UnicodeProject>0</UnicodeProject>
 <ZippedProject>0</ZippedProject>
+<LogStringID>0</LogStringID>
 <CryptStrings>0</CryptStrings>
 <Platforms TargetWin32="1" TargetWinCE="0" TargetWin32Client="0" TargetWinCEClient="0" TargetJ2SEClient="0" TargetJMSEClient="0" TargetLicenseType="0" DefScreenSizeX="1920" DefScreenSizeY="965" DefScreenColor="10551232" DefScreenNumColor="0"/>
 <ProjectPaths Alarms="" Data="" Images="" Resources="" Logs="" DataLoggers="" NetworkUserPath="" HelpFilePath=""/>
 <UserAndGroupsSettings EnableAutoLoggoff="1" EnableRuntimeUsers="0" RuntimeUserFileName="" AllowRuntimeLevel="5" AllowResizingLevel="0" EnableNTUserLogin="0" DefaultPrivAdminLevel="1023" DefaultPrivAdminAccessLevel="4294901760" DefaultPrivUserLevel="5" DefaultPrivUserAccessLevel="1048576" DefaultPrivGuestLevel="0" DefaultPrivGuestAccessLevel="0" IncludeChildProjectUsers="0" MaximumChildProjectLevels="5" EnablePasswordProtectedProject="0" EnablePasswordMng="1" SecsAutoLoggoffTimeout="60" MinimumUserLength="0" MinimumPasswordLength="0" SecsWebClientAutoLoggoff="0" EnableCRF21Settings="0" ExecCmdOnLogin="1"/>
 <ChildProjectsList/>
-<ProjectExecution TrackProjectStatistic="1" StartupSynoptic="" StartupScript="" ShutdownScript="" StartFullScreen="0" ShowStatusBar="1" ShowTraceBar="1" HideDesktop="0" HideStartButton="0" HideTaskBar="0" HideSystemClock="0" DisableTaskSwitching="0" DisableTaskManager="0" DisableCtrlAltDel="0" ROT="0" ROTAnyClient="0" ServiceSysTray="1" ServiceShowLogon="0" DefaultODBCPlugin="MySQL" StatObjBack="0" AlphaNumericScreen="" NumericScreen="" GetPasswordScreen="" PasswordExpiredScreen="" TraceCommentScreen="" AckCommentScreen="" ExtCaption="1" ExtBorder="1" ExtResizeable="0" ExtSysMenu="1" ScanAndLoadNotDestroyableScreens="0" EnableRenamingMng="1"/>
+<ProjectExecution TrackProjectStatistic="1" StartupSynoptic="" StartupScript="" ShutdownScript="" StartFullScreen="0" ShowStatusBar="1" ShowTraceBar="1" HideDesktop="0" HideStartButton="0" HideTaskBar="0" HideSystemClock="0" DisableTaskSwitching="0" DisableTaskManager="0" DisableCtrlAltDel="0" ROT="0" ROTAnyClient="0" ServiceSysTray="1" ServiceShowLogon="0" DefaultODBCPlugin="MySQL" StatObjBack="0" AlphaNumericScreen="" NumericScreen="" GetPasswordScreen="" PasswordExpiredScreen="" TraceCommentScreen="" AckCommentScreen="" ExtCaption="1" ExtBorder="1" ExtResizeable="0" ExtSysMenu="1" EnMouseBuzzer="0" MouseBuzzerDuration="0" ScanAndLoadNotDestroyableScreens="0" EnableRenamingMng="1"/>
 <StartupCommands/>
 <ShuttingCommands/>
 <EnableAdminAlert ServerNameAdminAlert="">0</EnableAdminAlert>

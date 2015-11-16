@@ -2,169 +2,244 @@
 <Refactoring>
 <ListRefactor>
 <ChildRefactor>
-<type ImageId="106" Category="Variabile Evento" Var="aaa_var001" ResourceName="test" Index="0" Missing="0" ShortResourceName="Evento" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
 <type ImageId="33" Category="State Variable - Plc" Var="Plc_Stato" ResourceName="TwinCAT" Index="0" Missing="0" ShortResourceName="TwinCAT" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:NUOVO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings:MySql_server" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:ID_QUARTINA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings:MySql_uid" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:POSIZIONE" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings:MySql_pwd" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:NOME_PEZZO_UNICO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings:MySql_database" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Settings" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:NOME_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_In:PezzoPronto" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_In" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:ULTIMO_PEZZO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:CODICE_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:CODICE_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q2_In:PezzoPronto" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q2_In" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:SERIE_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q2_PEZZO_DISP:CODICE_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:MAX_LUNGHEZZA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="AutoRun" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Q1_path" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:TOTALE_PEZZI_QUARTINA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="loc_Q2_path" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="alm_Q1_numFilesIncoerente" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:NUM_SQUADRETTE1" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="alm_Q2_numFilesIncoerente" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="alm_Q1_MancaFile" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:COD_SQUADRETTA1" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="alm_Q2_MancaFile" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\GestioneZonaR1.movbas" Name="GestioneZonaR1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:NUOVO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:NUM_SQUADRETTE2" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:COD_SQUADRETTA2" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:POSIZIONE" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:ALTEZZA_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:NOME_PEZZO_UNICO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:LARGHEZZA_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:NOME_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:MISURA_CAMERA_ESTERNA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ULTIMO_PEZZO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:ID_QUARTINA_SUCCESSIVA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:CODICE_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:NOME_COMMESSA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:SERIE_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:APPOGGIO_PEZZO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:MAX_LUNGHEZZA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:POSIZIONE_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:TOTALE_PEZZI_QUARTINA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:ID_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:NUM_SQUADRETTE1" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:LUNGHEZZA_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:COD_SQUADRETTA1" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:FILE_XML" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:NUM_SQUADRETTE2" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:DATA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:COD_SQUADRETTA2" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par:ORA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="Quadra1_par" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\QuadraLeggiFile_dotnet.movbas" Name="QuadraLeggiFile_dotnet" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ALTEZZA_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="37" Var="statoScript1" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Script1.movbas" Name="Script1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:LARGHEZZA_PROFILO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:MISURA_CAMERA_ESTERNA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:NOME_COMMESSA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:APPOGGIO_PEZZO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:POSIZIONE_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ID_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:LUNGHEZZA_PEZZO_ESTERNO" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:FILE_XML" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:DATA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ORA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_PROX:ID_QUARTINA" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_PROX" ScriptName="C:\#WORK\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\Q1_LeggiFile.movbas" Name="Q1_LeggiFile" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="Q1_PEZZO_PROX:Cassetto" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="Gualini2_C02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="Q1_PEZZO_PROX" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="Gualini2_C02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 </ListRefactor>
 </Refactoring>

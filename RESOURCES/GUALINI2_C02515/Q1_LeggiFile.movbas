@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="163" SelLength="61" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 Imports System
 Imports System.IO
+Imports System.Data.Odbc
+
 Sub Main()
 	Dim filepath As String
 	filepath = "TestFile.txt"
@@ -25,70 +27,75 @@ Sub Main()
                 Debug.Print(line)
                 Select Case i
 	                Case 0:
-						[Quadra1_par:NUOVO] = CInt(line)
+						[Q1_PEZZO_DISP:NUOVO] = CInt(line)
 					Case 1:
-						[Quadra1_par:ID_QUARTINA] = line
+						[Q1_PEZZO_DISP:ID_QUARTINA] = line
 					Case 2:
-						[Quadra1_par:POSIZIONE] = line
+						[Q1_PEZZO_DISP:POSIZIONE] = line
 					Case 3:
-						[Quadra1_par:NOME_PEZZO_UNICO] = line
+						[Q1_PEZZO_DISP:NOME_PEZZO_UNICO] = line
 					Case 4:
-						[Quadra1_par:NOME_PEZZO_ESTERNO] = line
+						[Q1_PEZZO_DISP:NOME_PEZZO_ESTERNO] = line
 					Case 5:
-						[Quadra1_par:ULTIMO_PEZZO] = CBool(line)
+						[Q1_PEZZO_DISP:ULTIMO_PEZZO] = CBool(line)
 					Case 6:
-						[Quadra1_par:CODICE_PROFILO] = line
+						[Q1_PEZZO_DISP:CODICE_PROFILO] = line
 					Case 7:
-						[Quadra1_par:SERIE_PROFILO] = line
+						[Q1_PEZZO_DISP:SERIE_PROFILO] = line
 					Case 8:
-						[Quadra1_par:MAX_LUNGHEZZA] = CInt(line)
+						[Q1_PEZZO_DISP:MAX_LUNGHEZZA] = CInt(line)
 					Case 9:
-						[Quadra1_par:TOTALE_PEZZI_QUARTINA] = CInt(line)
+						[Q1_PEZZO_DISP:TOTALE_PEZZI_QUARTINA] = CInt(line)
 					Case 10:
-						[Quadra1_par:NUM_SQUADRETTE1] = CInt(line)
+						[Q1_PEZZO_DISP:NUM_SQUADRETTE1] = CInt(line)
 					Case 11:
-						[Quadra1_par:COD_SQUADRETTA1] = line
+						[Q1_PEZZO_DISP:COD_SQUADRETTA1] = line
 					Case 12:
-						[Quadra1_par:NUM_SQUADRETTE2] = CInt(line)
+						[Q1_PEZZO_DISP:NUM_SQUADRETTE2] = CInt(line)
 					Case 13:
-						[Quadra1_par:COD_SQUADRETTA2] = line
+						[Q1_PEZZO_DISP:COD_SQUADRETTA2] = line
 					Case 14:
-						[Quadra1_par:ALTEZZA_PROFILO] = CInt(line)
+						[Q1_PEZZO_DISP:ALTEZZA_PROFILO] = CInt(line)
 					Case 15:
-						[Quadra1_par:LARGHEZZA_PROFILO] = CInt(line)
+						[Q1_PEZZO_DISP:LARGHEZZA_PROFILO] = CInt(line)
 					Case 16:
-						[Quadra1_par:MISURA_CAMERA_ESTERNA] = CInt(line)
+						[Q1_PEZZO_DISP:MISURA_CAMERA_ESTERNA] = CInt(line)
 					Case 17:
-						[Quadra1_par:ID_QUARTINA_SUCCESSIVA] = line
+						[Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA] = line
 					Case 18:
-						[Quadra1_par:NOME_COMMESSA] = line
+						[Q1_PEZZO_DISP:NOME_COMMESSA] = line
 					Case 19:
-						[Quadra1_par:APPOGGIO_PEZZO] = CInt(line)
+						[Q1_PEZZO_DISP:APPOGGIO_PEZZO] = CInt(line)
 					Case 20:
-						[Quadra1_par:POSIZIONE_PEZZO_ESTERNO] = CInt(line)
+						[Q1_PEZZO_DISP:POSIZIONE_PEZZO_ESTERNO] = CInt(line)
 					Case 21:
-						[Quadra1_par:ID_PEZZO_ESTERNO] = line
+						[Q1_PEZZO_DISP:ID_PEZZO_ESTERNO] = line
 					Case 22:
-						[Quadra1_par:LUNGHEZZA_PEZZO_ESTERNO] = CInt(line)
+						[Q1_PEZZO_DISP:LUNGHEZZA_PEZZO_ESTERNO] = CInt(line)
 					Case 23:
-						[Quadra1_par:FILE_XML] = line
+						[Q1_PEZZO_DISP:FILE_XML] = line
 					Case 24:
-						[Quadra1_par:DATA] = line
+						[Q1_PEZZO_DISP:DATA] = line
 					Case 25:
-						[Quadra1_par:ORA] = line
+						[Q1_PEZZO_DISP:ORA] = line
 
 	            End Select
 	            i = i + 1
             Loop
-
         End Using
     Catch e As Exception
         Debug.Print("The file could not be read:")
         Debug.Print(e.Message)
     End Try
+
+    'dopo aver letto i parametri imposto i valori per prossimo pezzo
+    [Q2_PEZZO_PROX:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]
+
+    'guardo se esiste nel DB
+    
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAMAFcA
+<BreakPoints xsi:type="xsd:base64Binary">AiAOAF4A
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>

@@ -1,33 +1,81 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="683" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="6950" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
 Imports System
 Imports System.IO
 Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Data.Odbc
+
+Public Structure DSnMembers
+    Dim DSn As String
+    Dim Uid As String
+    Dim Pwd As String
+End Structure
 
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
 
-Dim codaGiostraA As System.Collections.Queue= New System.Collections.Queue()
+Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
+Dim MysSqlConnectionString As String
 
 Sub Main()
-	codaGiostraA.Enqueue(10)
-	codaGiostraA.Enqueue(20)
-	codaGiostraA.Enqueue(30)
+	codaGiostra1.Enqueue(10)
+	codaGiostra1.Enqueue(20)
+	codaGiostra1.Enqueue(30)
 
-	Debug.Print "elem: " + Convert.ToString(codaGiostraA.count())
+	Debug.Print "elem: " + Convert.ToString(codaGiostra1.count())
 
-	For Each element As Integer In codaGiostraA
+	MysSqlConnectionString = "server=" 	&amp; [loc_Settings:MySql_server] &amp; ";" _
+						&amp; "uid=" 		&amp; [loc_Settings:MySql_uid] &amp; ";" _
+			            &amp; "pwd=" 		&amp; [loc_Settings:MySql_pwd] &amp; ";" _
+			            &amp; "database=" 	&amp; [loc_Settings:MySql_database] &amp; ";"
+
+	For Each element As Integer In codaGiostra1
 		Debug.Print "elem: " + Convert.ToString(element)
 	Next
 
 	Dim myint As Integer
-	While codaGiostraA.Count &gt; 0
-		myint = codaGiostraA.Dequeue()
+	While codaGiostra1.Count &gt; 0
+		myint = codaGiostra1.Dequeue()
 		Debug.Print "myint: " + Convert.ToString(myint)
 	End While
 
+	'### se ho un nuovo pezzo leggo i dati dal file
+	LeggiFileDaQuadra(1)
+
 	Do
 		'guardo se le quadre hanno dei pezzi pronti
+
+		'### se ho un nuovo perzzo leggo i dati dal file
+		'If (Q1_PEZZO_PRONTO And [Q1_PEZZO_DISP:CODICE_PROFILO] ="") Then
+		'	RunScript("Q1_LeggiFile", 2000,False)
+		'End If
+		'If (Q2_PEZZO_PRONTO And [Q1_PEZZO_DISP:CODICE_PROFILO] ="") Then
+		'	RunScript("Q2_LeggiFile", 2000,False)
+		'End If
+		If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:CODICE_PROFILO] ="") Then
+			LeggiFileDaQuadra(1)
+
+			' gestisco il PEZZO CORRENTE
+			'###################################FARE
+			GestisciPezzo(1, MysSqlConnectionString)
+
+		    'gestisco LA QUARTINA SUCCESSIVA
+		    'se è uguale alla quartina del pezzo attuale non faccio nulla
+			If (quartinaCorrente = quartinaSuccessiva) Then
+
+				Exit Sub
+			End If
+			'se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
+
+
+			'aggiungo il pezzo alla coda missioni Giostre
+
+		End If
+		If ([Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:CODICE_PROFILO] ="") Then
+			LeggiFileDaQuadra(2)
+		End If
 
 		If AutoRun Then
 
@@ -39,8 +87,287 @@ Sub Main()
 '	Debug.Print("STOP")
 
 End Sub
+
+Sub LeggiFileDaQuadra(quadra As Integer)
+	Dim path As String
+	Dim varname As String
+	'Dim quartinaCorrente As String
+    'Dim quartinaSuccessiva As String
+
+	Select Case quadra
+		Case 1:
+			path = loc_Q1_path
+			varname = "Q1_PEZZO_DISP"
+		Case 2:
+			path = loc_Q2_path
+			varname = "Q2_PEZZO_DISP"
+	End Select
+
+	'guardo se sono presenti file
+	path ="Z:\CondivisaProgetti\#WORK\#Gualini2\R_ note su scambio dati\"
+
+	Dim di As New IO.DirectoryInfo(path)
+	Dim files = di.GetFiles()
+	Dim nFiles As Integer
+
+	nFiles = files.GetUpperBound(0)
+
+	If nFiles &gt; 1 Then
+		If quadra = 1 Then
+			alm_Q1_numFilesIncoerente = True
+		Else
+			alm_Q2_numFilesIncoerente = True
+		End If
+		Exit Sub
+	End If
+	If nFiles = 0 Then
+		If quadra = 1 Then
+			alm_Q1_MancaFile = True
+		Else
+			alm_Q2_MancaFile = True
+		End If
+		Exit Sub
+	End If
+
+	'Dim lastF As FileInfo
+	'lastF = files(files.GetUpperBound(0))
+	'Debug.Print lastF.Name
+
+	'##cerco file più recente
+	'Dim recentDt, olderDt As Date
+	'recentDt = Date.MinValue
+	'olderDt = Date.MaxValue
+	'Dim recentFl, olderFl As FileInfo
+
+	'For Each fl As FileInfo In fis
+
+	'	Debug.Print(fl.FullName.ToString())
+	'   Debug.Print(fl.LastWriteTime)
+	'   If (fl.LastWriteTime &gt;recentDt) Then
+	'  	recentDt = fl.LastWriteTime
+	'	recentFl  = fl
+	'    End If
+	'    If (fl.LastWriteTime &lt; olderDt) Then
+	'    	olderDt = fl.LastWriteTime
+	'    	olderFl = fl
+	 '   End If
+	'Next
+	'Debug.Print "recent: " &amp; (recentFl.FullName.ToString()) &amp; "; date: " &amp; recentDt.toString()
+	'Debug.Print "older: " &amp; (olderFl.FullName.ToString()) &amp; "; date: " &amp; olderDt.toString()
+    'Debug.Print(fl.LastWriteTime)
+
+
+	Try
+        ' Open the file using a stream reader.
+        Using sr As New StreamReader(path)
+            Dim line As String
+            Dim i As Integer
+
+            Debug.Print "### lettura a righe"
+            Debug.Print
+
+			i=0
+            Do While sr.Peek() &gt;= 0
+            	line = sr.ReadLine()
+                'Debug.Print(line)
+                Select Case i
+	                Case 0:
+						SetVariableValue(varname &amp; ":NUOVO", CInt(line))
+					Case 1:
+						SetVariableValue(varname &amp; ":ID_QUARTINA", line)
+						'quartinaCorrente = line
+					Case 2:
+						SetVariableValue(varname &amp; ":POSIZIONE", line)
+					Case 3:
+						SetVariableValue(varname &amp; ":NOME_PEZZO_UNICO", line)
+					Case 4:
+						SetVariableValue(varname &amp; ":NOME_PEZZO_ESTERNO", line)
+					Case 5:
+						SetVariableValue(varname &amp; ":ULTIMO_PEZZO", CBool(line))
+					Case 6:
+						SetVariableValue(varname &amp; ":CODICE_PROFILO", line)
+					Case 7:
+						SetVariableValue(varname &amp; ":SERIE_PROFILO", line)
+					Case 8:
+						SetVariableValue(varname &amp; ":MAX_LUNGHEZZA", CInt(line))
+					Case 9:
+						SetVariableValue(varname &amp; ":TOTALE_PEZZI_QUARTINA", CInt(line))
+					Case 10:
+						SetVariableValue(varname &amp; ":NUM_SQUADRETTE1", CInt(line))
+					Case 11:
+						SetVariableValue(varname &amp; ":COD_SQUADRETTA1", line)
+					Case 12:
+						SetVariableValue(varname &amp; ":NUM_SQUADRETTE2", CInt(line))
+					Case 13:
+						SetVariableValue(varname &amp; ":COD_SQUADRETTA2", line)
+					Case 14:
+						SetVariableValue(varname &amp; ":ALTEZZA_PROFILO", CInt(line))
+					Case 15:
+						SetVariableValue(varname &amp; ":LARGHEZZA_PROFILO", CInt(line))
+					Case 16:
+						SetVariableValue(varname &amp; ":MISURA_CAMERA_ESTERNA", CInt(line))
+					Case 17:
+						SetVariableValue(varname &amp; ":ID_QUARTINA_SUCCESSIVA", line)
+						'quartinaSuccessiva = line
+					Case 18:
+						SetVariableValue(varname &amp; ":NOME_COMMESSA", line)
+					Case 19:
+						SetVariableValue(varname &amp; ":APPOGGIO_PEZZO", CInt(line))
+					Case 20:
+						SetVariableValue(varname &amp; ":POSIZIONE_PEZZO_ESTERNO", CInt(line))
+					Case 21:
+						SetVariableValue(varname &amp; ":ID_PEZZO_ESTERNO", line)
+					Case 22:
+						SetVariableValue(varname &amp; ":LUNGHEZZA_PEZZO_ESTERNO", CInt(line))
+					Case 23:
+						SetVariableValue(varname &amp; ":FILE_XML", line)
+					Case 24:
+						SetVariableValue(varname &amp; ":DATA", line)
+					Case 25:
+						SetVariableValue(varname &amp; ":ORA", line)
+
+	            End Select
+	            i = i + 1
+            Loop
+        End Using
+    Catch e As Exception
+        Debug.Print("The file could not be read:")
+        Debug.Print(e.Message)
+    End Try
+
+
+    ''gestisco LA QUARTINA SUCCESSIVA
+    ''se è uguale alla quartina del pezzo attuale non faccio nulla
+	'If (quartinaCorrente = quartinaSuccessiva) Then
+
+	'	Exit Sub
+	'End If
+
+
+	''se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
+
+
+End Sub
+
+Function GestisciPezzo(quadra As Integer, connectionString As String)
+	Dim varname As String
+	Select Case quadra
+		Case 1:
+			varname = "Q1_PEZZO_DISP"
+		Case 2:
+			varname = "Q2_PEZZO_DISP"
+	End Select
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+End Function
+
+
+Function UpdateVariables(ByVal MachinesList As List(Of String), connectionString As String)
+		Dim vResult As Object
+		Dim Machine_Name As String
+        Dim Machine_ID As Integer
+        Dim commandText As String
+
+
+		Try
+            Using connection As New System.Data.Odbc.OdbcConnection(connectionString)
+                connection.Open()
+
+                	For Each macchina As String In MachinesList
+
+                	vResult = IsValidVariable(macchina &amp; ":ID")
+			        If vResult Then
+			            Machine_ID = GetVariableValue(macchina &amp; ":ID")
+			        End If
+			        vResult = IsValidVariable(macchina &amp; ":MachineName")
+			        If vResult Then
+			           Machine_Name = GetVariableValue(macchina &amp; ":MachineName")
+			        End If
+
+			        commandText = "SELECT TOP 1 " &amp; _
+                            "[OEE] " &amp; _
+                            ",[Performance] " &amp; _
+                            ",[Qualita] " &amp; _
+                            ",[Disponibilita] " &amp; _
+                            ",[Data]" &amp; _
+                            ",[Turno] " &amp; _
+                            ",[Risorsa] " &amp; _
+			        		",[DataAggiornamento] " &amp; _
+                            ",[CodiceRicetta] " &amp; _
+                            ",[Pezzi_min] " &amp; _
+                            ",[Pezzi_lordi] " &amp; _
+			        		",[Pezzi_buoni] " &amp; _
+                            ",[Pezzi_scarto]" &amp; _
+                            ",[Tempo_tot] " &amp; _
+                            ",[Tempo_disp] " &amp; _
+			        		",[Tempo_run] " &amp; _
+			        		",[Tempo_fermo_prod] " &amp; _
+			        		",[Tempo_fermo_non_prod] " &amp; _
+			        		",[Pezzi_teorici] " &amp; _
+			        		",[DescrizioneRicetta] " &amp; _
+							",[IdealRunRate] " &amp; _
+							",[pezzi_lordi_moltIN] " &amp; _
+							",[pezzi_buoni_moltOUT] " &amp; _
+							",[Pezzi_scarto_moltout] " &amp; _
+                      "FROM [trk2].[vwTrkOeeSummaryHMI] " &amp; _
+                      "where IDRisorsa = '" &amp; Machine_ID &amp; "' " &amp; _
+                      "order by [Data] desc"
+
+                    Using cmd As New System.Data.Odbc.OdbcCommand(commandText, connection)
+
+                        Using reader As System.Data.Odbc.OdbcDataReader = cmd.ExecuteReader()
+
+                            If reader.HasRows Then
+                                While reader.Read()
+                                    'Debug.Print(String.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}", _
+                                    ' 				reader(0), reader(1), reader(2), reader(3), reader(4), reader(5), reader(6), reader(7), reader(8), reader(9) _
+                                    '				,reader(10), reader(11), reader(12), reader(13), reader(14), reader(15), reader(16), reader(17), reader(18), reader(19), reader(20)))
+
+                                    SetVariableValue(macchina &amp; ":OEE_Value", reader(0))
+                                    SetVariableValue(macchina &amp; ":OEE_Performance", reader(1))
+                                    SetVariableValue(macchina &amp; ":OEE_Quality", reader(2))
+                                    SetVariableValue(macchina &amp; ":OEE_Availability", reader(3))
+	                 				SetVariableValue(macchina &amp; ":OEE_Data", reader(4))
+                                    SetVariableValue(macchina &amp; ":OEE_Turno", reader(5))
+
+                                    SetVariableValue(macchina &amp; ":OEE_Risorsa", reader(6)) 						'6
+                                    SetVariableValue(macchina &amp; ":OEE_DataAggiornamento", reader(7))			'7
+                                    SetVariableValue(macchina &amp; ":OEE_CodiceRicetta", reader(8))				'8
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_min", reader(9))					'9
+	                 				SetVariableValue(macchina &amp; ":OEE_Pezzi_lordi", reader(10))					'10
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_buoni", reader(11))					'11
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_scarto", reader(12))				'12
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_tot", reader(13))					'13
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_disp", reader(14))					'14
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_run", reader(15))					'15
+	                 				SetVariableValue(macchina &amp; ":OEE_Tempo_fermo_prod", reader(16))			'16
+                                    SetVariableValue(macchina &amp; ":OEE_Tempo_fermo_non_prod", reader(17))		'17
+                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_teorici", reader(18))				'18
+                                    SetVariableValue(macchina &amp; ":OEE_DescrizioneRicetta", reader(19))			'19
+									SetVariableValue(macchina &amp; ":OEE_IdealRunRate", reader(20))				'20
+									SetVariableValue(macchina &amp; ":OEE_Pezzi_lordi_moltIN", reader(21))			'21
+									SetVariableValue(macchina &amp; ":OEE_Pezzi_buoni_moltOUT", reader(22))			'22
+									SetVariableValue(macchina &amp; ":OEE_Pezzi_scarto_moltout", reader(23))		'23
+                                End While
+                            End If
+                        End Using
+                    End Using
+                Next
+            End Using
+        Catch e As Exception
+            MsgBox("Impossibile accedere al Database. Verificare che la connessione ODBC sia configurata correttamente. " &amp; _
+                           vbCrLf &amp; "Eccezione: " &amp; e.Message &amp; ".")
+            Exit Function
+        End Try
+
+End Function
+
+
+
+
+
+
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAnAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<LogicAndScripts/>
+<LogicAndScripts>
+<ILCode StartSel="-1" SelLength="-1">L Q1_PEZZO_PROX:Cassetto</ILCode>
+<Variables>
+<Item key="1" value="Q1_PEZZO_PROX:Cassetto"/>
+</Variables>
+<Labels/>
+<compiled numins="1">DwAMAAAAAAABAAAAAAAAAP////8AAAAAAAAAAAAAAAA=</compiled>
+</LogicAndScripts>
