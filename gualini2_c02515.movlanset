@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<LanguageSettings/>
+<LanguageSettings>
+<Settings StyleSource="" TTSEngine="" TTSVolume="100" TTSRate="0" TTSAudioFormat="-1" SREngine="">ita</Settings>
+</LanguageSettings>

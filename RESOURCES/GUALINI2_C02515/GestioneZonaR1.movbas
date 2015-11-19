@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="6950" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2064" SelLength="36" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+'#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+'#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
+
+'Option Explicit
+
 Imports System
 Imports System.IO
 Imports System.Collections
 Imports System.Collections.Generic
+Imports System.Collections.ObjectModel
 Imports System.Data.Odbc
 
 Public Structure DSnMembers
@@ -19,6 +26,15 @@ End Structure
 Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
 Dim MysSqlConnectionString As String
 
+Sub Main2
+	Dim F As Object
+    F = Dir("C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\*.*")
+    While F &lt;&gt; ""
+        Debug.Print F
+        F = Dir()
+    End While
+End Sub
+
 Sub Main()
 	codaGiostra1.Enqueue(10)
 	codaGiostra1.Enqueue(20)
@@ -26,10 +42,18 @@ Sub Main()
 
 	Debug.Print "elem: " + Convert.ToString(codaGiostra1.count())
 
-	MysSqlConnectionString = "server=" 	&amp; [loc_Settings:MySql_server] &amp; ";" _
-						&amp; "uid=" 		&amp; [loc_Settings:MySql_uid] &amp; ";" _
-			            &amp; "pwd=" 		&amp; [loc_Settings:MySql_pwd] &amp; ";" _
-			            &amp; "database=" 	&amp; [loc_Settings:MySql_database] &amp; ";"
+	MysSqlConnectionString = "server=""" 	&amp; [loc_Settings:MySql_server] &amp; """;" _
+						&amp; "uid=""" 		&amp; [loc_Settings:MySql_uid] &amp; """;" _
+			            &amp; "pwd=""" 		&amp; [loc_Settings:MySql_pwd] &amp; """;" _
+			            &amp; "database=""" 	&amp; [loc_Settings:MySql_database] &amp; """;"
+	MysSqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
+	'Connector/ODBC 3.51 connection string
+    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+      "SERVER=localhost;" &amp; _
+      "DATABASE=gualini;" &amp; _
+      "UID=root;" &amp; _
+      "PASSWORD=co.mar;" &amp; _
+      "OPTION=3;"
 
 	For Each element As Integer In codaGiostra1
 		Debug.Print "elem: " + Convert.ToString(element)
@@ -41,20 +65,15 @@ Sub Main()
 		Debug.Print "myint: " + Convert.ToString(myint)
 	End While
 
-	'### se ho un nuovo pezzo leggo i dati dal file
+	'### DEBUG ########se ho un nuovo pezzo leggo i dati dal file
 	LeggiFileDaQuadra(1)
+	Debug.Print "GestisciPezzo( ?, ?) = " &amp; CStr(GestisciPezzo(1, MysSqlConnectionString))
 
 	Do
 		'guardo se le quadre hanno dei pezzi pronti
 
-		'### se ho un nuovo perzzo leggo i dati dal file
-		'If (Q1_PEZZO_PRONTO And [Q1_PEZZO_DISP:CODICE_PROFILO] ="") Then
-		'	RunScript("Q1_LeggiFile", 2000,False)
-		'End If
-		'If (Q2_PEZZO_PRONTO And [Q1_PEZZO_DISP:CODICE_PROFILO] ="") Then
-		'	RunScript("Q2_LeggiFile", 2000,False)
-		'End If
-		If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:CODICE_PROFILO] ="") Then
+		If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="") Then 'la condizione [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="" dice che non ho ancora letto il file
+			'leggo le info del pezzo da file fornito dalla quadra
 			LeggiFileDaQuadra(1)
 
 			' gestisco il PEZZO CORRENTE
@@ -63,7 +82,8 @@ Sub Main()
 
 		    'gestisco LA QUARTINA SUCCESSIVA
 		    'se è uguale alla quartina del pezzo attuale non faccio nulla
-			If (quartinaCorrente = quartinaSuccessiva) Then
+			'If (quartinaCorrente = quartinaSuccessiva) Then
+			If ([Q1_PEZZO_DISP:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]) Then
 
 				Exit Sub
 			End If
@@ -90,6 +110,7 @@ End Sub
 
 Sub LeggiFileDaQuadra(quadra As Integer)
 	Dim path As String
+	Dim filepath As String
 	Dim varname As String
 	'Dim quartinaCorrente As String
     'Dim quartinaSuccessiva As String
@@ -104,15 +125,33 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 	End Select
 
 	'guardo se sono presenti file
-	path ="Z:\CondivisaProgetti\#WORK\#Gualini2\R_ note su scambio dati\"
+	'path ="Z:\CondivisaProgetti\#WORK\#Gualini2\R_ note su scambio dati\"
+	path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\"
 
 	Dim di As New IO.DirectoryInfo(path)
-	Dim files = di.GetFiles()
+	Dim files As Object
 	Dim nFiles As Integer
 
-	nFiles = files.GetUpperBound(0)
+	files = di.GetFiles()
 
-	If nFiles &gt; 1 Then
+	If files.GetType.IsArray Then
+		Dim ii As Integer
+		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
+			Dim fi As System.IO.FileSystemInfo
+			fi = files(ii)
+			Debug.Print fi.FullName
+		Next
+	End If
+
+	nFiles = files.GetLowerBound(0)
+	Debug.Print nFiles
+	nFiles = files.GetUpperBound(0)
+	Debug.Print nFiles
+
+
+	'FORZATURA DEBUG
+	nFiles = 0
+	If nFiles &gt; files.GetLowerBound(0) Then
 		If quadra = 1 Then
 			alm_Q1_numFilesIncoerente = True
 		Else
@@ -120,7 +159,7 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 		End If
 		Exit Sub
 	End If
-	If nFiles = 0 Then
+	If nFiles &lt; files.GetLowerBound(0) Then
 		If quadra = 1 Then
 			alm_Q1_MancaFile = True
 		Else
@@ -128,6 +167,8 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 		End If
 		Exit Sub
 	End If
+
+	filepath = files(0).FullName
 
 	'Dim lastF As FileInfo
 	'lastF = files(files.GetUpperBound(0))
@@ -159,7 +200,7 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 
 	Try
         ' Open the file using a stream reader.
-        Using sr As New StreamReader(path)
+        Using sr As New StreamReader(filepath)
             Dim line As String
             Dim i As Integer
 
@@ -249,16 +290,114 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 
 End Sub
 
-Function GestisciPezzo(quadra As Integer, connectionString As String)
+Function GestisciPezzo(quadra As Integer, connectionString As String) As Integer
 	Dim varname As String
+	Dim vResult As Object
+    Dim commandText As String
+    Dim quartina As String
+    Dim magazzino As Integer
+    Dim cassetto As Integer
+
+    'Dim MyCommand As New OdbcCommand()
+    'Dim MyDataReader As OdbcDataReader
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_PAR_QUADRA As Integer = -100 				'ERRORE parametro quadra valore non consistente
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    GestisciPezzo = ERR_GENERICO
+
 	Select Case quadra
 		Case 1:
 			varname = "Q1_PEZZO_DISP"
 		Case 2:
 			varname = "Q2_PEZZO_DISP"
+		Case Else
+			'forzo l'utilizzo di Q1
+			Debug.Print "GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE quadra = valore non consistente."
+			varname = "Q1_PEZZO_DISP"
+			GestisciPezzo = ERR_PAR_QUADRA 'ERRORE parametro quadra valore non consistente
+			Exit Function
 	End Select
 
+	Debug.Print GetVariableValue(varname &amp; ":ID_QUARTINA")
+
 	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT " &amp; _
+                            "  `quartina`.`ID_QUARTINA` " &amp; _
+                            ", `quartina`.`TOTALE_PEZZI_QUARTINA` " &amp; _
+                            ", `quartina`.`NOME_COMMESSA` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE1` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA1` " &amp; _
+                            ", `quartina`.`NUM_SQADRETTE2` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA2` " &amp; _
+			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
+                            ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
+                      	"aFROM  `gualini`.`quartina` " &amp; _
+            			"WHERE `quartina`.`ID_QUARTINA` = '" &amp; GetVariableValue(varname &amp; ":ID_QUARTINA") &amp;"';"
+            Debug.Print "GestioneZonaR1.movbas -&gt; commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					Debug.Print CStr(MyDataReader.HasRows)
+					Debug.Print CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						[CAR_CASS_RIK:Magazzino] 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
+						[CAR_CASS_RIK:Cassetto]		= MyDataReader("cassetto_ID_CASSETTO")
+						[CAR_CASS_RIK:Quartina]		= MyDataReader("ID_QUARTINA")
+					Else
+						'devo assegnare un cassetto alla quartina
+						'############### TODO
+					End If
+					'While MyDataReader.Read
+					'	If MyDataReader("cassetto_ID_CASSETTO") Is DBNull.Value Then
+					'		Debug.Print("cassetto_ID_CASSETTO = " &amp;  "NULL")
+					'	Else
+					'		Debug.Print("cassetto_ID_CASSETTO = " &amp; _
+					'			CStr(MyDataReader("cassetto_ID_CASSETTO")) _
+					'				&amp; "  cassetto_magazzino_ID_MAGAZZINO = " &amp; _
+					'			CStr(MyDataReader("cassetto_magazzino_ID_MAGAZZINO")))
+					'	End If
+					'End While
+
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+
+	  'Catch program exception
+	Catch MyException As Exception
+		Debug.Print(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		GestisciPezzo = ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		GestisciPezzo = ERR_ODBC_EXCEPTION	'ERRORE ecezzione ODBC
+		Exit Function
+
+    End Try
+
+    GestisciPezzo = 0 'OK
+
 End Function
 
 
@@ -368,6 +507,8 @@ End Function
 
 
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiBCAEEB
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

@@ -74,7 +74,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">Q2_Out</Name>
+<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q2_Out</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -117,6 +117,13 @@
 </Variable>
 <Variable>
 <Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="44" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="PlcRikEstrattore" AreaType="1" Address="0" Bit="7" Description="cassetto rikiesto dal pezzo in carico" Shared="0" Retentive="0">CAR_CASS_RIK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -229,6 +236,23 @@
 </Member>
 <Member>
 <Name Type="4">ProvaComunicaz</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="dati per richiedere un estrattore al PLC">PlcRikEstrattore</Name>
+<MemberList>
+<Member>
+<Name Type="4">Magazzino</Name>
+</Member>
+<Member>
+<Name Type="4">Cassetto</Name>
+</Member>
+<Member>
+<Name Type="9">Quartina</Name>
+</Member>
+<Member>
+<Name Type="0" Description="vero se pz 1 è presente">pz_1</Name>
 </Member>
 </MemberList>
 </Structure>
