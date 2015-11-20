@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="2064" SelLength="36" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="4917" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -22,8 +22,8 @@ Public Structure DSnMembers
 End Structure
 
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
-
 Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
+
 Dim MysSqlConnectionString As String
 
 Sub Main2
@@ -36,18 +36,15 @@ Sub Main2
 End Sub
 
 Sub Main()
+	GoTo AA
 	codaGiostra1.Enqueue(10)
 	codaGiostra1.Enqueue(20)
 	codaGiostra1.Enqueue(30)
 
 	Debug.Print "elem: " + Convert.ToString(codaGiostra1.count())
 
-	MysSqlConnectionString = "server=""" 	&amp; [loc_Settings:MySql_server] &amp; """;" _
-						&amp; "uid=""" 		&amp; [loc_Settings:MySql_uid] &amp; """;" _
-			            &amp; "pwd=""" 		&amp; [loc_Settings:MySql_pwd] &amp; """;" _
-			            &amp; "database=""" 	&amp; [loc_Settings:MySql_database] &amp; """;"
 	MysSqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
-	'Connector/ODBC 3.51 connection string
+	'Connector/MySQL ODBC 5.3 ANSI Driver connection string
     MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
       "SERVER=localhost;" &amp; _
       "DATABASE=gualini;" &amp; _
@@ -104,7 +101,147 @@ Sub Main()
 
 	DoEvents
 	Loop Until IsInStoppingMode
+
+	
 '	Debug.Print("STOP")
+
+'############STATE MACHINE############
+
+	'inizializzo variabile di stato del ciclo
+	StatoCicloCarico = 100
+AA:
+[Q1_In:PezzoPronto] = True
+Wait 1
+[Q2_In:PezzoPronto] = True
+StatoCicloCarico = 1000
+	Do
+
+		Select Case StatoCicloCarico
+
+			Case 100	'StatoIniziale
+				StatoCicloCarico = 1000		'AttesaPezzi
+			Case 1000	'AttesaPezzi
+				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
+				Dim leggiQ1 As Boolean
+				Dim leggiQ2 As Boolean
+				Dim leggiDaQuadra As Integer
+
+				leggiDaQuadra = 0	'metto a zero, significa che non ho pezzi pronti
+
+				leggiQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+				leggiQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+				If leggiQ1 And leggiQ2 Then
+					'ho due pezzi pronti allora prendo quello che ha il timestamp più vecchio
+					Dim objRet1 As DBVarObjCmdTarget
+					Dim dTimeStamp1 As Date
+					Dim nMS1 As Integer
+					Dim dt1 As Double
+
+					Dim objRet2 As DBVarObjCmdTarget
+					Dim dTimeStamp2 As Date
+					Dim nMS2 As Integer
+					Dim dt2 As Double
+
+					Dim differenza As Double
+
+					objRet1 = GetVariableObject("Q1_In:PezzoPronto")
+					dTimeStamp1 = objRet1.GetTimeStamp()
+					nMS1 = objRet1.GetTimeStampMs()
+					dt1 = CLng(dTimeStamp1) * 1000
+					dt1 = dt1 + nMS1
+
+					objRet2 = GetVariableObject("Q2_In:PezzoPronto")
+					dTimeStamp2 = objRet2.GetTimeStamp()
+					nMS2 = objRet2.GetTimeStampMs()
+					dt2 = CLng(dTimeStamp2) * 1000
+					dt2 = dt2 + nMS2
+
+					differenza = dt1 - dt2
+					Debug.Print CStr(dt1 -dt2)
+
+					If differenza &gt; 0 Then
+						'pezzo da Q1 più recente
+						leggiDaQuadra = 2	'prendo da Q2 perchè più vecchio
+					Else
+						leggiDaQuadra = 1	'prendo da Q1 perchè più vecchio
+					End If
+
+					objRet1 = Nothing
+					objRet2 = Nothing
+				Else
+					'ho solo un pezzo pronto o nessuno
+					If leggiQ1 Then
+						leggiDaQuadra = 1
+					End If
+					If leggiQ2 Then
+						leggiDaQuadra = 2
+					End If
+					'se nessun pezzo pronto leggiDaQuadra = 0
+				End If
+
+
+
+
+				
+
+				If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="") Then 'la condizione [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="" dice che non ho ancora letto il file
+					'leggo le info del pezzo da file fornito dalla quadra
+					LeggiFileDaQuadra(1)
+
+					' gestisco il PEZZO CORRENTE
+					'###################################FARE
+					GestisciPezzo(1, MysSqlConnectionString)
+
+				    'gestisco LA QUARTINA SUCCESSIVA
+				    'se è uguale alla quartina del pezzo attuale non faccio nulla
+					'If (quartinaCorrente = quartinaSuccessiva) Then
+					If ([Q1_PEZZO_DISP:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]) Then
+
+						Exit Sub
+					End If
+					'se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
+
+
+					'aggiungo il pezzo alla coda missioni Giostre
+
+				End If
+
+
+		End Select
+		'guardo se le quadre hanno dei pezzi pronti
+
+		If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="") Then 'la condizione [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="" dice che non ho ancora letto il file
+			'leggo le info del pezzo da file fornito dalla quadra
+			LeggiFileDaQuadra(1)
+
+			' gestisco il PEZZO CORRENTE
+			'###################################FARE
+			GestisciPezzo(1, MysSqlConnectionString)
+
+		    'gestisco LA QUARTINA SUCCESSIVA
+		    'se è uguale alla quartina del pezzo attuale non faccio nulla
+			'If (quartinaCorrente = quartinaSuccessiva) Then
+			If ([Q1_PEZZO_DISP:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]) Then
+
+				Exit Sub
+			End If
+			'se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
+
+
+			'aggiungo il pezzo alla coda missioni Giostre
+
+		End If
+		If ([Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:CODICE_PROFILO] ="") Then
+			LeggiFileDaQuadra(2)
+		End If
+
+		If AutoRun Then
+
+		End If
+'		Debug.Print ("fineIf Autorun")
+
+	DoEvents
+	Loop Until IsInStoppingMode
 
 End Sub
 
@@ -270,6 +407,9 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 	            End Select
 	            i = i + 1
             Loop
+            'faccio Reset dei valori di cassetto e magazzino assegnati, sarà la procedura di GestionePezzo a rilevare i valori corretto
+            SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO", 0)
+			SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO", 0)
         End Using
     Catch e As Exception
         Debug.Print("The file could not be read:")
@@ -507,7 +647,7 @@ End Function
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBCAEEB
+<BreakPoints xsi:type="xsd:base64Binary">AiBrAF8B
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
