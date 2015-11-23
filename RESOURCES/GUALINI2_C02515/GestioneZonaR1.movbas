@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4917" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="25709" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -21,6 +21,11 @@ Public Structure DSnMembers
     Dim Pwd As String
 End Structure
 
+Public Structure PosQuartina
+    Dim mag As Integer
+    Dim cass As Integer
+End Structure
+
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
 Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
 
@@ -36,6 +41,12 @@ Sub Main2
 End Sub
 
 Sub Main()
+	Dim leggiDaQuadra As Integer
+	Dim quartina As String
+	Dim quartina_successiva As String
+
+	Dim varname_pezzo As String
+
 	GoTo AA
 	codaGiostra1.Enqueue(10)
 	codaGiostra1.Enqueue(20)
@@ -122,71 +133,15 @@ StatoCicloCarico = 1000
 				StatoCicloCarico = 1000		'AttesaPezzi
 			Case 1000	'AttesaPezzi
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
-				Dim leggiQ1 As Boolean
-				Dim leggiQ2 As Boolean
-				Dim leggiDaQuadra As Integer
-
-				leggiDaQuadra = 0	'metto a zero, significa che non ho pezzi pronti
-
-				leggiQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] =""
-				leggiQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] =""
-				If leggiQ1 And leggiQ2 Then
-					'ho due pezzi pronti allora prendo quello che ha il timestamp più vecchio
-					Dim objRet1 As DBVarObjCmdTarget
-					Dim dTimeStamp1 As Date
-					Dim nMS1 As Integer
-					Dim dt1 As Double
-
-					Dim objRet2 As DBVarObjCmdTarget
-					Dim dTimeStamp2 As Date
-					Dim nMS2 As Integer
-					Dim dt2 As Double
-
-					Dim differenza As Double
-
-					objRet1 = GetVariableObject("Q1_In:PezzoPronto")
-					dTimeStamp1 = objRet1.GetTimeStamp()
-					nMS1 = objRet1.GetTimeStampMs()
-					dt1 = CLng(dTimeStamp1) * 1000
-					dt1 = dt1 + nMS1
-
-					objRet2 = GetVariableObject("Q2_In:PezzoPronto")
-					dTimeStamp2 = objRet2.GetTimeStamp()
-					nMS2 = objRet2.GetTimeStampMs()
-					dt2 = CLng(dTimeStamp2) * 1000
-					dt2 = dt2 + nMS2
-
-					differenza = dt1 - dt2
-					Debug.Print CStr(dt1 -dt2)
-
-					If differenza &gt; 0 Then
-						'pezzo da Q1 più recente
-						leggiDaQuadra = 2	'prendo da Q2 perchè più vecchio
-					Else
-						leggiDaQuadra = 1	'prendo da Q1 perchè più vecchio
-					End If
-
-					objRet1 = Nothing
-					objRet2 = Nothing
-				Else
-					'ho solo un pezzo pronto o nessuno
-					If leggiQ1 Then
-						leggiDaQuadra = 1
-					End If
-					If leggiQ2 Then
-						leggiDaQuadra = 2
-					End If
-					'se nessun pezzo pronto leggiDaQuadra = 0
-				End If
+				leggiDaQuadra = FileDaLeggere()
 
 
-
-
-				
-
-				If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="") Then 'la condizione [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="" dice che non ho ancora letto il file
+				If (leggiDaQuadra &gt; 0) Then
 					'leggo le info del pezzo da file fornito dalla quadra
-					LeggiFileDaQuadra(1)
+					varname_pezzo = LeggiFileDaQuadra(leggiDaQuadra)
+
+					quartina = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
+					quartina_successiva = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA_SUCCESSIVA")
 
 					' gestisco il PEZZO CORRENTE
 					'###################################FARE
@@ -245,7 +200,7 @@ StatoCicloCarico = 1000
 
 End Sub
 
-Sub LeggiFileDaQuadra(quadra As Integer)
+Function LeggiFileDaQuadra(quadra As Integer) As String
 	Dim path As String
 	Dim filepath As String
 	Dim varname As String
@@ -256,9 +211,13 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 		Case 1:
 			path = loc_Q1_path
 			varname = "Q1_PEZZO_DISP"
+			LeggiFileDaQuadra = "Q1_PEZZO_DISP"
 		Case 2:
 			path = loc_Q2_path
 			varname = "Q2_PEZZO_DISP"
+			LeggiFileDaQuadra = "Q2_PEZZO_DISP"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
 	End Select
 
 	'guardo se sono presenti file
@@ -294,7 +253,7 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 		Else
 			alm_Q2_numFilesIncoerente = True
 		End If
-		Exit Sub
+		Exit Function
 	End If
 	If nFiles &lt; files.GetLowerBound(0) Then
 		If quadra = 1 Then
@@ -302,7 +261,7 @@ Sub LeggiFileDaQuadra(quadra As Integer)
 		Else
 			alm_Q2_MancaFile = True
 		End If
-		Exit Sub
+		Exit Function
 	End If
 
 	filepath = files(0).FullName
@@ -415,20 +374,7 @@ Sub LeggiFileDaQuadra(quadra As Integer)
         Debug.Print("The file could not be read:")
         Debug.Print(e.Message)
     End Try
-
-
-    ''gestisco LA QUARTINA SUCCESSIVA
-    ''se è uguale alla quartina del pezzo attuale non faccio nulla
-	'If (quartinaCorrente = quartinaSuccessiva) Then
-
-	'	Exit Sub
-	'End If
-
-
-	''se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
-
-
-End Sub
+End Function
 
 Function GestisciPezzo(quadra As Integer, connectionString As String) As Integer
 	Dim varname As String
@@ -642,12 +588,177 @@ Function UpdateVariables(ByVal MachinesList As List(Of String), connectionString
 End Function
 
 
+Function FileDaLeggere() As Integer
+	FileDaLeggere = 0	'metto a zero, significa che non ho pezzi pronti
+
+	Dim leggiQ1 As Boolean
+	Dim leggiQ2 As Boolean
+
+	leggiQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+	leggiQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+	If leggiQ1 And leggiQ2 Then
+		'ho due pezzi pronti allora prendo quello che ha il timestamp più vecchio
+		Dim objRet1 As DBVarObjCmdTarget
+		Dim dTimeStamp1 As Date
+		Dim nMS1 As Integer
+		Dim dt1 As Double
+
+		Dim objRet2 As DBVarObjCmdTarget
+		Dim dTimeStamp2 As Date
+		Dim nMS2 As Integer
+		Dim dt2 As Double
+
+		Dim differenza As Double
+
+		objRet1 = GetVariableObject("Q1_In:PezzoPronto")
+		dTimeStamp1 = objRet1.GetTimeStamp()
+		nMS1 = objRet1.GetTimeStampMs()
+		dt1 = CLng(dTimeStamp1) * 1000
+		dt1 = dt1 + nMS1
+
+		objRet2 = GetVariableObject("Q2_In:PezzoPronto")
+		dTimeStamp2 = objRet2.GetTimeStamp()
+		nMS2 = objRet2.GetTimeStampMs()
+		dt2 = CLng(dTimeStamp2) * 1000
+		dt2 = dt2 + nMS2
+
+		differenza = dt1 - dt2
+		Debug.Print CStr(dt1 -dt2)
+
+		If differenza &gt; 0 Then
+			'pezzo da Q1 più recente
+			FileDaLeggere = 2	'prendo da Q2 perchè più vecchio
+		Else
+			FileDaLeggere = 1	'prendo da Q1 perchè più vecchio
+		End If
+
+		objRet1 = Nothing
+		objRet2 = Nothing
+	Else
+		'ho solo un pezzo pronto o nessuno
+		If leggiQ1 Then
+			FileDaLeggere = 1
+		End If
+		If leggiQ2 Then
+			FileDaLeggere = 2
+		End If
+		'se nessun pezzo pronto leggiDaQuadra = 0
+	End If
+
+End Function
+
+Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As String) As PosQuartina
+	Dim posizione As PosQuartina
+	posizione.mag  = 0		'0 = NON ESISTE, 1 = MAG_1, 2 = MAG_2
+	posizione.cass = 0
+
+	VerificaSeQuartinaEsisteInMagazzino = posizione 	'inizializzzo a NON ESISTE
+
+
+	'Dim varname As String
+	Dim vResult As Object
+    Dim commandText As String
+    'Dim quartina As String
+    'Dim magazzino As Integer
+    'Dim cassetto As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_PAR_QUADRA As Integer = -100 				'ERRORE parametro quadra valore non consistente
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT " &amp; _
+                            "  `quartina`.`ID_QUARTINA` " &amp; _
+                            ", `quartina`.`TOTALE_PEZZI_QUARTINA` " &amp; _
+                            ", `quartina`.`NOME_COMMESSA` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE1` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA1` " &amp; _
+                            ", `quartina`.`NUM_SQADRETTE2` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA2` " &amp; _
+			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
+                            ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
+                      	"aFROM  `gualini`.`quartina` " &amp; _
+            			"WHERE `quartina`.`ID_QUARTINA` = '" &amp; qrt &amp;"';"
+            Debug.Print "GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					Debug.Print CStr(MyDataReader.HasRows)
+					Debug.Print CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						'[CAR_CASS_RIK:Magazzino] 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
+						'[CAR_CASS_RIK:Cassetto]		= MyDataReader("cassetto_ID_CASSETTO")
+						'[CAR_CASS_RIK:Quartina]		= MyDataReader("ID_QUARTINA")
+
+						posizione.mag 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
+						posizione.cass	= MyDataReader("cassetto_ID_CASSETTO")
+					Else
+						'devo assegnare un cassetto alla quartina
+						'############### TODO
+					End If
+					'While MyDataReader.Read
+					'	If MyDataReader("cassetto_ID_CASSETTO") Is DBNull.Value Then
+					'		Debug.Print("cassetto_ID_CASSETTO = " &amp;  "NULL")
+					'	Else
+					'		Debug.Print("cassetto_ID_CASSETTO = " &amp; _
+					'			CStr(MyDataReader("cassetto_ID_CASSETTO")) _
+					'				&amp; "  cassetto_magazzino_ID_MAGAZZINO = " &amp; _
+					'			CStr(MyDataReader("cassetto_magazzino_ID_MAGAZZINO")))
+					'	End If
+					'End While
+
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+        VerificaSeQuartinaEsisteInMagazzino = posizione 'torno valore trovato
+
+	  'Catch program exception
+	Catch MyException As Exception
+		Debug.Print(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		'TODO
+		'alzare alarme
+		GestisciPezzo = ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		GestisciPezzo = ERR_ODBC_EXCEPTION	'ERRORE ecezzione ODBC
+		Exit Function
+
+    End Try
+
+    GestisciPezzo = 0 'OK
+
+
+End Function
 
 
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBrAF8B
+<BreakPoints xsi:type="xsd:base64Binary">AiB0ADsB
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>

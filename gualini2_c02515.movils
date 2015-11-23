@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <LogicAndScripts>
-<ILCode StartSel="-1" SelLength="-1">L Q1_PEZZO_PROX:Cassetto</ILCode>
+<ILCode StartSel="-1" SelLength="-1">L Q1_PEZZO_PROX:Cassetto
+
+//carico input da Quadre
+L Q1_In:InCiclo
+L Q1_In:NonInEmergenza
+L Q1_In:NonInHold
+L Q1_In:OK
+L Q1_In:PezzoPronto
+L Q1_In:PezzoSbloccato
+L Q1_In:ProvaComunicaz
+L Q1_In:RipariQuadraOk
+L Q1_In:TestComunicazione
+
+L Q2_In:InCiclo
+L Q2_In:NonInEmergenza
+L Q2_In:NonInHold
+L Q2_In:OK
+L Q2_In:PezzoPronto
+L Q2_In:PezzoSbloccato
+L Q2_In:ProvaComunicaz
+L Q2_In:RipariQuadraOk
+L Q2_In:TestComunicazione
+
+//</ILCode>
 <Variables>
+<Item key="17" value="Q2_In:ProvaComunicaz"/>
+<Item key="18" value="Q2_In:RipariQuadraOk"/>
 <Item key="1" value="Q1_PEZZO_PROX:Cassetto"/>
+<Item key="19" value="Q2_In:TestComunicazione"/>
+<Item key="2" value="Q1_In:InCiclo"/>
+<Item key="3" value="Q1_In:NonInEmergenza"/>
+<Item key="4" value="Q1_In:NonInHold"/>
+<Item key="5" value="Q1_In:OK"/>
+<Item key="6" value="Q1_In:PezzoPronto"/>
+<Item key="7" value="Q1_In:PezzoSbloccato"/>
+<Item key="8" value="Q1_In:ProvaComunicaz"/>
+<Item key="9" value="Q1_In:RipariQuadraOk"/>
+<Item key="10" value="Q1_In:TestComunicazione"/>
+<Item key="11" value="Q2_In:InCiclo"/>
+<Item key="12" value="Q2_In:NonInEmergenza"/>
+<Item key="13" value="Q2_In:NonInHold"/>
+<Item key="14" value="Q2_In:OK"/>
+<Item key="15" value="Q2_In:PezzoPronto"/>
+<Item key="16" value="Q2_In:PezzoSbloccato"/>
 </Variables>
 <Labels/>
-<compiled numins="1">DwAMAAAAAAABAAAAAAAAAP////8AAAAAAAAAAAAAAAA=</compiled>
+<compiled numins="22">DwAMAAAAAAABAAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAACAAAAAAAAAP//
+//8AAAAAAAAAAAAAAAAPAAwAAAAAAAMAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAABAAA
+AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAFAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
+AAAAAAYAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAABwAAAAAAAAD/////AAAAAAAAAAAA
+AAAADwAMAAAAAAAIAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAAkAAAAAAAAA/////wAA
+AAAAAAAAAAAAAA8ADAAAAAAACgAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAAsAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA
+DAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAANAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
+AAwAAAAAAA4AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAADwAAAAAAAAD/////AAAAAAAA
+AAAAAAAADwAMAAAAAAAQAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAABEAAAAAAAAA////
+/wAAAAAAAAAAAAAAAA8ADAAAAAAAEgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAATAAAA
+AAAAAP////8AAAAAAAAAAAAAAAA=</compiled>
 </LogicAndScripts>
