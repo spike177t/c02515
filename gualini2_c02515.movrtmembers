@@ -31,13 +31,6 @@
 <Name>Q1_PEZZO_DISP</Name>
 <MemberList>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.TOTALE_PEZZI_QUARTINA|Typ=2">TOTALE_PEZZI_QUARTINA</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
 <Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.COD_SQUADRETTA1|DL=46|Typ=9">COD_SQUADRETTA1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -45,7 +38,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.CODICE_PROFILO|DL=46|Typ=9">CODICE_PROFILO</Name>
+<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.TOTALE_PEZZI_QUARTINA|Typ=2">TOTALE_PEZZI_QUARTINA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -59,7 +52,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.FILE_XML|DL=46|Typ=9">FILE_XML</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.CODICE_PROFILO|DL=46|Typ=9">CODICE_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -73,14 +66,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.POSIZIONE|Typ=2">POSIZIONE</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.FILE_XML|DL=46|Typ=9">FILE_XML</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.NOME_COMMESSA|DL=46|Typ=9">NOME_COMMESSA</Name>
+<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.POSIZIONE|Typ=2">POSIZIONE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -94,14 +87,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.NOME_PEZZO_ESTERNO|DL=46|Typ=9">NOME_PEZZO_ESTERNO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.MAX_LUNGHEZZA|Typ=4">MAX_LUNGHEZZA</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.NOME_COMMESSA|DL=46|Typ=9">NOME_COMMESSA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -115,7 +101,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.SERIE_PROFILO|DL=46|Typ=9">SERIE_PROFILO</Name>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.MAX_LUNGHEZZA|Typ=4">MAX_LUNGHEZZA</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.NOME_PEZZO_ESTERNO|DL=46|Typ=9">NOME_PEZZO_ESTERNO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.ID_QUARTINA_SUCCESSIVA|DL=46|Typ=9">ID_QUARTINA_SUCCESSIVA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -129,7 +129,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.ID_QUARTINA_SUCCESSIVA|DL=46|Typ=9">ID_QUARTINA_SUCCESSIVA</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.SERIE_PROFILO|DL=46|Typ=9">SERIE_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -150,13 +150,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.ORA|DL=46|Typ=9">ORA</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
 <Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.NOME_PEZZO_UNICO|DL=46|Typ=9">NOME_PEZZO_UNICO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -164,7 +157,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.ORA|DL=46|Typ=9">ORA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -178,7 +171,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -192,7 +185,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.POSIZIONE_PEZZO_ESTERNO|Typ=2">POSIZIONE_PEZZO_ESTERNO</Name>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -200,6 +193,13 @@
 </Member>
 <Member>
 <Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.NUOVO|Typ=2">NUOVO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.POSIZIONE_PEZZO_ESTERNO|Typ=2">POSIZIONE_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -215,15 +215,20 @@
 </MemberList>
 </Variable>
 <Variable>
-<Name>Q2_PEZZO_DISP</Name>
+<Name>loc_ImpostazioniImpianto</Name>
 <MemberList>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.TOTALE_PEZZI_QUARTINA|Typ=2">TOTALE_PEZZI_QUARTINA</Name>
+<Name Type="4" InitialValue="0">TipoCarico</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
+</MemberList>
+</Variable>
+<Variable>
+<Name>Q2_PEZZO_DISP</Name>
+<MemberList>
 <Member>
 <Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.COD_SQUADRETTA1|DL=46|Typ=9">COD_SQUADRETTA1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
@@ -232,7 +237,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.CODICE_PROFILO|DL=46|Typ=9">CODICE_PROFILO</Name>
+<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.TOTALE_PEZZI_QUARTINA|Typ=2">TOTALE_PEZZI_QUARTINA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -246,7 +251,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.FILE_XML|DL=46|Typ=9">FILE_XML</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.CODICE_PROFILO|DL=46|Typ=9">CODICE_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -260,14 +265,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.POSIZIONE|Typ=2">POSIZIONE</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.FILE_XML|DL=46|Typ=9">FILE_XML</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.NOME_COMMESSA|DL=46|Typ=9">NOME_COMMESSA</Name>
+<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.POSIZIONE|Typ=2">POSIZIONE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -281,14 +286,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.NOME_PEZZO_ESTERNO|DL=46|Typ=9">NOME_PEZZO_ESTERNO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.MAX_LUNGHEZZA|Typ=4">MAX_LUNGHEZZA</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.NOME_COMMESSA|DL=46|Typ=9">NOME_COMMESSA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -302,7 +300,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.SERIE_PROFILO|DL=46|Typ=9">SERIE_PROFILO</Name>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.MAX_LUNGHEZZA|Typ=4">MAX_LUNGHEZZA</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.NOME_PEZZO_ESTERNO|DL=46|Typ=9">NOME_PEZZO_ESTERNO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.ID_QUARTINA_SUCCESSIVA|DL=46|Typ=9">ID_QUARTINA_SUCCESSIVA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -316,7 +328,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.ID_QUARTINA_SUCCESSIVA|DL=46|Typ=9">ID_QUARTINA_SUCCESSIVA</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.SERIE_PROFILO|DL=46|Typ=9">SERIE_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -337,13 +349,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.ORA|DL=46|Typ=9">ORA</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
 <Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.NOME_PEZZO_UNICO|DL=46|Typ=9">NOME_PEZZO_UNICO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -351,7 +356,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.ORA|DL=46|Typ=9">ORA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -365,7 +370,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -379,7 +384,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.POSIZIONE_PEZZO_ESTERNO|Typ=2">POSIZIONE_PEZZO_ESTERNO</Name>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -387,6 +392,13 @@
 </Member>
 <Member>
 <Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.NUOVO|Typ=2">NUOVO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q2_PEZZO_DISP.POSIZIONE_PEZZO_ESTERNO|Typ=2">POSIZIONE_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>

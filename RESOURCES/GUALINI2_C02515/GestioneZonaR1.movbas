@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="25709" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="6989" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -26,28 +26,35 @@ Public Structure PosQuartina
     Dim cass As Integer
 End Structure
 
+Const TOUT_DISPONIBILE As Integer = 1000
+
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
 Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
 
 Dim MysSqlConnectionString As String
+Dim disponibileLastCheck As Double
 
-Sub Main2
-	Dim F As Object
-    F = Dir("C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\*.*")
-    While F &lt;&gt; ""
-        Debug.Print F
-        F = Dir()
-    End While
-End Sub
+'Sub Main2
+'	Dim F As Object
+'    F = Dir("C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\*.*")
+'    While F &lt;&gt; ""
+'        Debug.Print F
+'        F = Dir()
+'    End While
+'End Sub
 
 Sub Main()
 	Dim leggiDaQuadra As Integer
 	Dim quartina As String
 	Dim quartina_successiva As String
+	Dim posizione As PosQuartina
 
 	Dim varname_pezzo As String
+	Dim missioneNum As Integer
+	Dim numCassetti As Integer
+	Dim valVerificaAttendiCassettoDisponibile As Integer
 
-	GoTo AA
+
 	codaGiostra1.Enqueue(10)
 	codaGiostra1.Enqueue(20)
 	codaGiostra1.Enqueue(30)
@@ -63,6 +70,11 @@ Sub Main()
       "PASSWORD=co.mar;" &amp; _
       "OPTION=3;"
 
+'#####TODO DEBUG
+'###########################
+	GoTo AA
+'############################
+
 	For Each element As Integer In codaGiostra1
 		Debug.Print "elem: " + Convert.ToString(element)
 	Next
@@ -75,7 +87,7 @@ Sub Main()
 
 	'### DEBUG ########se ho un nuovo pezzo leggo i dati dal file
 	LeggiFileDaQuadra(1)
-	Debug.Print "GestisciPezzo( ?, ?) = " &amp; CStr(GestisciPezzo(1, MysSqlConnectionString))
+	DebugMsg "GestisciPezzo( ?, ?) = " &amp; CStr(GestisciPezzo(1, MysSqlConnectionString))
 
 	Do
 		'guardo se le quadre hanno dei pezzi pronti
@@ -108,13 +120,13 @@ Sub Main()
 		If AutoRun Then
 
 		End If
-'		Debug.Print ("fineIf Autorun")
+'		DebugMsg ("fineIf Autorun")
 
 	DoEvents
 	Loop Until IsInStoppingMode
 
 	
-'	Debug.Print("STOP")
+'	DebugMsg("STOP")
 
 '############STATE MACHINE############
 
@@ -130,12 +142,43 @@ StatoCicloCarico = 1000
 		Select Case StatoCicloCarico
 
 			Case 100	'StatoIniziale
+				DebugMsg "StatoCicloCarico = 100	'StatoIniziale"
 				StatoCicloCarico = 1000		'AttesaPezzi
+
 			Case 1000	'AttesaPezzi
+				DebugMsg "StatoCicloCarico = 1000	'AttesaPezzi"
+				'inizio a scorrere le condizioni di uscita dallo stato
+				StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot
+
+			Case 1010	'AttesaPezzi_AssegnaMissioneRobot
+				DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
+				'guardo se ho una missione assegnabile
+				missioneNum = MissioneAssegnabile()
+				If missioneNum &gt; 0 Then
+					StatoCicloCarico = 4100	'AssegnaMissioneRobot
+				Else
+					StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile
+				End If
+
+			Case 1020	'AttesaPezzi_AttendiCassettoDisponibile
+				DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
+				'guardo se ho un cassetto disponibile da assegnare a pezzo pronto
+				valVerificaAttendiCassettoDisponibile = transizioneAttendiCassettoDisponibile()
+				If valVerificaAttendiCassettoDisponibile &gt; 0 Then
+					StatoCicloCarico = 3100	'AttendiCassettoDisponibile
+				Else
+					StatoCicloCarico = 1000		'AttesaPezzi
+				End If
+
+			Case 1030	'AttesaPezzi_LeggiFileDaQuadra
+				DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
 				leggiDaQuadra = FileDaLeggere()
+				StatoCicloCarico = 2100	'LeggiFileDaQuadra
 
-
+			Case 2100	'LeggiFileDaQuadra
+				DebugMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra"
+				'Guardo se ho almeno un file da leggere
 				If (leggiDaQuadra &gt; 0) Then
 					'leggo le info del pezzo da file fornito dalla quadra
 					varname_pezzo = LeggiFileDaQuadra(leggiDaQuadra)
@@ -143,57 +186,66 @@ StatoCicloCarico = 1000
 					quartina = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
 					quartina_successiva = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA_SUCCESSIVA")
 
-					' gestisco il PEZZO CORRENTE
-					'###################################FARE
-					GestisciPezzo(1, MysSqlConnectionString)
+					'verifico se la quartina esiste in magazzino
+					posizione = VerificaSeQuartinaEsisteInMagazzino(quartina, MysSqlConnectionString)
 
-				    'gestisco LA QUARTINA SUCCESSIVA
-				    'se è uguale alla quartina del pezzo attuale non faccio nulla
-					'If (quartinaCorrente = quartinaSuccessiva) Then
-					If ([Q1_PEZZO_DISP:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]) Then
+					If posizione.mag &gt; 0 Then
+						'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
+						StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
+					Else
+						'quartina non esiste allora guardo se ci sono cassetti disponibili nel magazzino di riferimento in base a TipoCarico
 
-						Exit Sub
+						If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
+							'QuadraSuMagazzinoCorrispondente
+							numCassetti = CassettiDisponibili(leggiDaQuadra, MysSqlConnectionString)
+							If numCassetti &gt; 0 Then
+								StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
+							Else
+								StatoCicloCarico = 1000	'AttesaPezzi
+							End If
+						Else
+							'QuadraSuTutto
+							numCassetti = CassettiDisponibili(0, MysSqlConnectionString)
+							If numCassetti &gt; 0 Then
+								StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
+							Else
+								StatoCicloCarico = 1000	'AttesaPezzi
+							End If
+						End If
 					End If
-					'se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
-
-
-					'aggiungo il pezzo alla coda missioni Giostre
-
 				End If
 
+			Case 2200	'AggiungiMissioneCodaPlc
+				DebugMsg "StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc"
+
+			Case 2300	'AssegnaCassettoAllaQuartina
+				DebugMsg "StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina"
+				'assegno il cassetto alla quartina che proviene dalla quadra identificata da leggiDaQuadra
+				posizione = AssegnaCassettoAllaQuartina(leggiDaQuadra, MysSqlConnectionString)
+				If posizione.mag &gt; 0 And posizione.cass &gt; 0 Then
+					StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
+				Else
+					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2300 'AssegnaCassettoAllaQuartina: posizione.mag = " _
+							&amp; CStr(posizione.mag) &amp; ": posizione.cass = " &amp; CStr(posizione.cass) &amp; ".")
+				End If
+
+			Case 3100	'AttendiCassettoDisponibile
+				DebugMsg "StatoCicloCarico = 3100	'AttendiCassettoDisponibile" &amp; "; valVerificaAttendiCassettoDisponibile = " &amp; CStr(valVerificaAttendiCassettoDisponibile)
+				'memorizzo da quale quadra proviene il pezzo
+				leggiDaQuadra = AttendiCassettoDisponibile()
+				If leggiDaQuadra &gt; 0 Then
+					StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
+				Else
+					StatoCicloCarico = 1000	'AttesaPezzi
+				End If
+
+			Case 4100	'AssegnaMissioneRobot
+				DebugMsg "StatoCicloCarico = 4100	'AssegnaMissioneRobot"
+
+			Case Else
+				Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: StatoCicloCarico valore non ammesso: " &amp; CStr(StatoCicloCarico) &amp; ".")
 
 		End Select
-		'guardo se le quadre hanno dei pezzi pronti
-
-		If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="") Then 'la condizione [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="" dice che non ho ancora letto il file
-			'leggo le info del pezzo da file fornito dalla quadra
-			LeggiFileDaQuadra(1)
-
-			' gestisco il PEZZO CORRENTE
-			'###################################FARE
-			GestisciPezzo(1, MysSqlConnectionString)
-
-		    'gestisco LA QUARTINA SUCCESSIVA
-		    'se è uguale alla quartina del pezzo attuale non faccio nulla
-			'If (quartinaCorrente = quartinaSuccessiva) Then
-			If ([Q1_PEZZO_DISP:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]) Then
-
-				Exit Sub
-			End If
-			'se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
-
-
-			'aggiungo il pezzo alla coda missioni Giostre
-
-		End If
-		If ([Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:CODICE_PROFILO] ="") Then
-			LeggiFileDaQuadra(2)
-		End If
-
-		If AutoRun Then
-
-		End If
-'		Debug.Print ("fineIf Autorun")
 
 	DoEvents
 	Loop Until IsInStoppingMode
@@ -212,18 +264,19 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 			path = loc_Q1_path
 			varname = "Q1_PEZZO_DISP"
 			LeggiFileDaQuadra = "Q1_PEZZO_DISP"
+			path = loc_Q1_path
+			path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
 		Case 2:
 			path = loc_Q2_path
 			varname = "Q2_PEZZO_DISP"
 			LeggiFileDaQuadra = "Q2_PEZZO_DISP"
+			path = loc_Q2_path
+			path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
 		Case Else
-			Throw New System.Exception("GestioneZonaR1.movbas -&gt; ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra() ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
 	End Select
 
 	'guardo se sono presenti file
-	'path ="Z:\CondivisaProgetti\#WORK\#Gualini2\R_ note su scambio dati\"
-	path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\"
-
 	Dim di As New IO.DirectoryInfo(path)
 	Dim files As Object
 	Dim nFiles As Integer
@@ -235,14 +288,14 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
 			Dim fi As System.IO.FileSystemInfo
 			fi = files(ii)
-			Debug.Print fi.FullName
+			DebugMsg fi.FullName
 		Next
 	End If
 
 	nFiles = files.GetLowerBound(0)
-	Debug.Print nFiles
+	DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetLowerBound(0) = " &amp; CStr(nFiles)
 	nFiles = files.GetUpperBound(0)
-	Debug.Print nFiles
+	DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetUpperBound(0) = " &amp;  CStr(nFiles)
 
 
 	'FORZATURA DEBUG
@@ -300,8 +353,8 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
             Dim line As String
             Dim i As Integer
 
-            Debug.Print "### lettura a righe"
-            Debug.Print
+            'Debug.Print "### lettura a righe"
+            'Debug.Print
 
 			i=0
             Do While sr.Peek() &gt;= 0
@@ -371,8 +424,8 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 			SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO", 0)
         End Using
     Catch e As Exception
-        Debug.Print("The file could not be read:")
-        Debug.Print(e.Message)
+        LogMsg("The file could Not be Read:")
+        LogMsg("LeggiFileDaQuadra() -&gt; " &amp;e.Message)
     End Try
 End Function
 
@@ -486,108 +539,6 @@ Function GestisciPezzo(quadra As Integer, connectionString As String) As Integer
 
 End Function
 
-
-Function UpdateVariables(ByVal MachinesList As List(Of String), connectionString As String)
-		Dim vResult As Object
-		Dim Machine_Name As String
-        Dim Machine_ID As Integer
-        Dim commandText As String
-
-
-		Try
-            Using connection As New System.Data.Odbc.OdbcConnection(connectionString)
-                connection.Open()
-
-                	For Each macchina As String In MachinesList
-
-                	vResult = IsValidVariable(macchina &amp; ":ID")
-			        If vResult Then
-			            Machine_ID = GetVariableValue(macchina &amp; ":ID")
-			        End If
-			        vResult = IsValidVariable(macchina &amp; ":MachineName")
-			        If vResult Then
-			           Machine_Name = GetVariableValue(macchina &amp; ":MachineName")
-			        End If
-
-			        commandText = "SELECT TOP 1 " &amp; _
-                            "[OEE] " &amp; _
-                            ",[Performance] " &amp; _
-                            ",[Qualita] " &amp; _
-                            ",[Disponibilita] " &amp; _
-                            ",[Data]" &amp; _
-                            ",[Turno] " &amp; _
-                            ",[Risorsa] " &amp; _
-			        		",[DataAggiornamento] " &amp; _
-                            ",[CodiceRicetta] " &amp; _
-                            ",[Pezzi_min] " &amp; _
-                            ",[Pezzi_lordi] " &amp; _
-			        		",[Pezzi_buoni] " &amp; _
-                            ",[Pezzi_scarto]" &amp; _
-                            ",[Tempo_tot] " &amp; _
-                            ",[Tempo_disp] " &amp; _
-			        		",[Tempo_run] " &amp; _
-			        		",[Tempo_fermo_prod] " &amp; _
-			        		",[Tempo_fermo_non_prod] " &amp; _
-			        		",[Pezzi_teorici] " &amp; _
-			        		",[DescrizioneRicetta] " &amp; _
-							",[IdealRunRate] " &amp; _
-							",[pezzi_lordi_moltIN] " &amp; _
-							",[pezzi_buoni_moltOUT] " &amp; _
-							",[Pezzi_scarto_moltout] " &amp; _
-                      "FROM [trk2].[vwTrkOeeSummaryHMI] " &amp; _
-                      "where IDRisorsa = '" &amp; Machine_ID &amp; "' " &amp; _
-                      "order by [Data] desc"
-
-                    Using cmd As New System.Data.Odbc.OdbcCommand(commandText, connection)
-
-                        Using reader As System.Data.Odbc.OdbcDataReader = cmd.ExecuteReader()
-
-                            If reader.HasRows Then
-                                While reader.Read()
-                                    'Debug.Print(String.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17}, {18}, {19}", _
-                                    ' 				reader(0), reader(1), reader(2), reader(3), reader(4), reader(5), reader(6), reader(7), reader(8), reader(9) _
-                                    '				,reader(10), reader(11), reader(12), reader(13), reader(14), reader(15), reader(16), reader(17), reader(18), reader(19), reader(20)))
-
-                                    SetVariableValue(macchina &amp; ":OEE_Value", reader(0))
-                                    SetVariableValue(macchina &amp; ":OEE_Performance", reader(1))
-                                    SetVariableValue(macchina &amp; ":OEE_Quality", reader(2))
-                                    SetVariableValue(macchina &amp; ":OEE_Availability", reader(3))
-	                 				SetVariableValue(macchina &amp; ":OEE_Data", reader(4))
-                                    SetVariableValue(macchina &amp; ":OEE_Turno", reader(5))
-
-                                    SetVariableValue(macchina &amp; ":OEE_Risorsa", reader(6)) 						'6
-                                    SetVariableValue(macchina &amp; ":OEE_DataAggiornamento", reader(7))			'7
-                                    SetVariableValue(macchina &amp; ":OEE_CodiceRicetta", reader(8))				'8
-                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_min", reader(9))					'9
-	                 				SetVariableValue(macchina &amp; ":OEE_Pezzi_lordi", reader(10))					'10
-                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_buoni", reader(11))					'11
-                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_scarto", reader(12))				'12
-                                    SetVariableValue(macchina &amp; ":OEE_Tempo_tot", reader(13))					'13
-                                    SetVariableValue(macchina &amp; ":OEE_Tempo_disp", reader(14))					'14
-                                    SetVariableValue(macchina &amp; ":OEE_Tempo_run", reader(15))					'15
-	                 				SetVariableValue(macchina &amp; ":OEE_Tempo_fermo_prod", reader(16))			'16
-                                    SetVariableValue(macchina &amp; ":OEE_Tempo_fermo_non_prod", reader(17))		'17
-                                    SetVariableValue(macchina &amp; ":OEE_Pezzi_teorici", reader(18))				'18
-                                    SetVariableValue(macchina &amp; ":OEE_DescrizioneRicetta", reader(19))			'19
-									SetVariableValue(macchina &amp; ":OEE_IdealRunRate", reader(20))				'20
-									SetVariableValue(macchina &amp; ":OEE_Pezzi_lordi_moltIN", reader(21))			'21
-									SetVariableValue(macchina &amp; ":OEE_Pezzi_buoni_moltOUT", reader(22))			'22
-									SetVariableValue(macchina &amp; ":OEE_Pezzi_scarto_moltout", reader(23))		'23
-                                End While
-                            End If
-                        End Using
-                    End Using
-                Next
-            End Using
-        Catch e As Exception
-            MsgBox("Impossibile accedere al Database. Verificare che la connessione ODBC sia configurata correttamente. " &amp; _
-                           vbCrLf &amp; "Eccezione: " &amp; e.Message &amp; ".")
-            Exit Function
-        End Try
-
-End Function
-
-
 Function FileDaLeggere() As Integer
 	FileDaLeggere = 0	'metto a zero, significa che non ho pezzi pronti
 
@@ -663,7 +614,6 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
     'Dim cassetto As Integer
 
     Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
-    Const ERR_PAR_QUADRA As Integer = -100 				'ERRORE parametro quadra valore non consistente
     Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
     Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
 
@@ -682,9 +632,9 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
                             ", `quartina`.`COD_SQUADRETTA2` " &amp; _
 			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
                             ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
-                      	"aFROM  `gualini`.`quartina` " &amp; _
+                      	"FROM  `gualini`.`quartina` " &amp; _
             			"WHERE `quartina`.`ID_QUARTINA` = '" &amp; qrt &amp;"';"
-            Debug.Print "GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; commandText = " &amp; commandText
+            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; commandText = " &amp; commandText
 
             Using MyCommand As New OdbcCommand()
 
@@ -707,20 +657,11 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
 						posizione.mag 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
 						posizione.cass	= MyDataReader("cassetto_ID_CASSETTO")
 					Else
-						'devo assegnare un cassetto alla quartina
-						'############### TODO
-					End If
-					'While MyDataReader.Read
-					'	If MyDataReader("cassetto_ID_CASSETTO") Is DBNull.Value Then
-					'		Debug.Print("cassetto_ID_CASSETTO = " &amp;  "NULL")
-					'	Else
-					'		Debug.Print("cassetto_ID_CASSETTO = " &amp; _
-					'			CStr(MyDataReader("cassetto_ID_CASSETTO")) _
-					'				&amp; "  cassetto_magazzino_ID_MAGAZZINO = " &amp; _
-					'			CStr(MyDataReader("cassetto_magazzino_ID_MAGAZZINO")))
-					'	End If
-					'End While
+						'la quartina non esiste allora forzo i valori di posizione
+						posizione.mag = 0
+						posizione.cass = 0
 
+					End If
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
@@ -729,36 +670,328 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
 
 	  'Catch program exception
 	Catch MyException As Exception
-		Debug.Print(MyException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		'TODO
+		LogMsg(" VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
 		'alzare alarme
-		GestisciPezzo = ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
 		Exit Function
 
 	  'Catch ODBC Exception
 	Catch MyOdbcException As OdbcException
-		Debug.Print(MyOdbcException.ToString)
+		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("VerificaSeQuartinaEsisteInMagazzino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		GestisciPezzo = ERR_ODBC_EXCEPTION	'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
 		Exit Function
 
     End Try
 
-    GestisciPezzo = 0 'OK
+End Function
 
+Function CassettiDisponibili(mag As Integer, connectionString As String) As Integer
+	CassettiDisponibili = 0 	'inizializzzo a NON DIDPONIBILE
+
+	'Dim varname As String
+	Dim vResult As Object
+    Dim commandText As String
+    Dim whereString As String
+    Dim cassetti As Integer
+
+    Select Case mag
+    Case 0
+    	whereString = "ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2"
+	Case 1
+		whereString = "ID_MAGAZZINO = 1"
+	Case 2
+		whereString = "ID_MAGAZZINO = 2"
+	Case Else
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; CassettiDisponibili() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    End Select
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT COUNT(*) AS DISPONIBILI " &amp; _
+                      	" FROM  `gualini`.`cassetti_disponibili` " &amp; _
+            			" WHERE " &amp; whereString &amp;";"
+
+            'Select COUNT(*) FROM gualini.cassetti_disponibili WHERE ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2;
+            DebugMsg "GestioneZonaR1.movbas -&gt; CassettiDisponibili(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					DebugMsg "CassettiDisponibili(); MyDataReader.HasRows = " 			&amp;  CStr(MyDataReader.HasRows)
+					DebugMsg "CassettiDisponibili(); MyDataReader.RecordsAffected = " 	&amp;  CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+
+						cassetti = MyDataReader("DISPONIBILI")
+					Else
+						cassetti = 0
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+        DebugMsg("CassettiDisponibili() - cassetti = " &amp; vbCrLf &amp; CStr(cassetti)  &amp; ".")
+        CassettiDisponibili = cassetti 'torno valore trovato
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("CassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+    End Try
+
+End Function
+
+Function MissioneAssegnabile() As Integer
+	MissioneAssegnabile = 0
+
+	Dim assegnabileQ1 As Boolean
+	Dim assegnabileQ2 As Boolean
+
+	assegnabileQ1 =	[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [R1_STATUS:DISPONIBILE] And [MAG1_ES1:ID_CASSETTO]=[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG1_ES1:ID_MAGAZZINO]=[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]
+	assegnabileQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [R1_STATUS:DISPONIBILE] And [MAG2_ES2:ID_CASSETTO]=[Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG2_ES2:ID_MAGAZZINO]=[Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO]
+
+	If assegnabileQ1 And assegnabileQ2 Then
+		MissioneAssegnabile = PezzoPiuVecchio()
+	Else
+		'ho solo un pezzo pronto o nessuno
+		If assegnabileQ1 Then
+			MissioneAssegnabile = 1
+		End If
+		If assegnabileQ2 Then
+			MissioneAssegnabile = 2
+		End If
+		'se nessun pezzo pronto MissioneAssegnabile = 0
+	End If
+End Function
+
+
+Function transizioneAttendiCassettoDisponibile() As Boolean
+	transizioneAttendiCassettoDisponibile = 0
+	Dim dispQ1 As Boolean
+	Dim dispQ2 As Boolean
+	Dim tout As Boolean
+
+	tout = SuperatoTimeout(disponibileLastCheck, TOUT_DISPONIBILE)
+	If tout Then
+		disponibileLastCheck = Timer
+	Else
+		transizioneAttendiCassettoDisponibile = 0
+		Exit Function
+	End If
+
+	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Now()-lastcheck &gt; TIMEOUT)
+	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
+	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
+
+	If dispQ1 And dispQ2 Then
+		transizioneAttendiCassettoDisponibile = PezzoPiuVecchio()
+	Else
+		'ho solo un pezzo pronto o nessuno
+		If dispQ1 Then
+			transizioneAttendiCassettoDisponibile = 1
+		End If
+		If dispQ2 Then
+			transizioneAttendiCassettoDisponibile = 2
+		End If
+		'se nessun cassetto disponibile transizioneAttendiCassettoDisponibile = 0
+	End If
+
+End Function
+
+Function AttendiCassettoDisponibile() As Integer
+	'questa funzione torna 0 se non posso assegnare nessu ncassetto alla quartina perche magazziono di riferimento è pieno
+	'torna 1 o 2 se posso assegnare un cassetto (il magazzionio di riferimento dipende da TipoCarico) al pezzo che proviente dalla quadra 1 o 2
+	AttendiCassettoDisponibile = 0
+	Dim dispQ1 As Boolean
+	Dim dispQ2 As Boolean
+	Dim quadraPezzoDaAssegnare As Integer	'num quadra del pezzo da assegnare
+	Dim numCassettiDisp As Integer
+
+
+	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Now()-lastcheck &gt; TIMEOUT)
+	'tout è già stato contato in transizioneAttendiCassettoDisponibile()
+
+	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0
+	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO]=0
+
+	If dispQ1 And dispQ2 Then
+		quadraPezzoDaAssegnare = PezzoPiuVecchio()
+	Else
+		'ho solo un pezzo pronto o nessuno
+		If dispQ1 Then
+			quadraPezzoDaAssegnare = 1
+		End If
+		If dispQ2 Then
+			quadraPezzoDaAssegnare = 2
+		End If
+		'se nessun cassetto disponibile quadraPezzoDaAssegnare = 0
+	End If
+
+	'in base al valore di TipoCarico guardo se ho un cassetto libero
+	If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
+		'QuadraSuMagazzinoCorrispondente
+		numCassettiDisp = CassettiDisponibili(quadraPezzoDaAssegnare, MysSqlConnectionString)
+		If numCassettiDisp &gt; 0 Then
+			'posso assegnare una quartina al pezzo che proviene dalla quadra memorizzata in quadraPezzoDaAssegnare
+			AttendiCassettoDisponibile = quadraPezzoDaAssegnare
+		Else
+			AttendiCassettoDisponibile = 0	'non posso assegnare il cassetto
+		End If
+	Else
+		'QuadraSuTutto
+		numCassettiDisp = CassettiDisponibili(0, MysSqlConnectionString)
+		If numCassettiDisp &gt; 0 Then
+			'anche in questo caso posso assegnare una quartina al pezzo che proviene dalla quadra memorizzata in quadraPezzoDaAssegnare
+			AttendiCassettoDisponibile = quadraPezzoDaAssegnare
+		Else
+			AttendiCassettoDisponibile = 0	'non posso assegnare il cassetto
+		End If
+	End If
+
+End Function
+
+'TODO
+Function TODOAssegnaCassettoAllaQuartina(leggiDaQuadra, MysSqlConnectionString) As PosQuartina
 
 End Function
 
 
+Function PezzoPiuVecchio() As Integer
+	PezzoPiuVecchio = 0
+
+	If [Q1_In:PezzoPronto] And [Q2_In:PezzoPronto] Then
+		'ho due pezzi pronti allora prendo quello che ha il timestamp più vecchio
+		Dim objRet1 As DBVarObjCmdTarget
+		Dim dTimeStamp1 As Date
+		Dim nMS1 As Integer
+		Dim dt1 As Double
+
+		Dim objRet2 As DBVarObjCmdTarget
+		Dim dTimeStamp2 As Date
+		Dim nMS2 As Integer
+		Dim dt2 As Double
+
+		Dim differenza As Double
+
+		objRet1 = GetVariableObject("Q1_In:PezzoPronto")
+		dTimeStamp1 = objRet1.GetTimeStamp()
+		nMS1 = objRet1.GetTimeStampMs()
+		dt1 = CLng(dTimeStamp1) * 1000
+		dt1 = dt1 + nMS1
+
+		objRet2 = GetVariableObject("Q2_In:PezzoPronto")
+		dTimeStamp2 = objRet2.GetTimeStamp()
+		nMS2 = objRet2.GetTimeStampMs()
+		dt2 = CLng(dTimeStamp2) * 1000
+		dt2 = dt2 + nMS2
+
+		differenza = dt1 - dt2
+		DebugMsg "PezzoPiuVecchio() -&gt; differenza = dt1-dt2 = " &amp; CStr(dt1 -dt2)
+
+		If differenza &gt; 0 Then
+			'pezzo da Q1 più recente
+			PezzoPiuVecchio = 2	'prendo da Q2 perchè più vecchio
+		Else
+			PezzoPiuVecchio = 1	'prendo da Q1 perchè più vecchio
+		End If
+
+		objRet1 = Nothing
+		objRet2 = Nothing
+	Else
+		'ho solo un pezzo pronto o nessuno
+		If [Q1_In:PezzoPronto] Then
+			PezzoPiuVecchio = 1
+		End If
+		If [Q2_In:PezzoPronto] Then
+			PezzoPiuVecchio = 2
+		End If
+		'se nessun pezzo pronto PezzoPiuVecchio = 0
+	End If
+
+End Function
+
+
+Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
+	Dim tempo As Double
+	tempo = Abs(lastcheck - Now())
+	If tempo &gt; tout Then
+		SuperatoTimeout = True
+	Else
+		SuperatoTimeout = False
+	End If
+
+End Function
+
+
+Sub DebugMsg(msg As String)
+	Dim prefix As String
+	prefix = "GestioneZonaR1.movbas -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
+
+Sub LogMsg(msg As String)
+	Dim prefix As String
+	prefix = "GestioneZonaR1.movbas -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
+
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiB0ADsB
+<BreakPoints xsi:type="xsd:base64Binary">AiA3AH0A/wC/AiUD
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
