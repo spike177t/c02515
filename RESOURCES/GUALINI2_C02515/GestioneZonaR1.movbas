@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="6989" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="6725" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -89,44 +89,6 @@ Sub Main()
 	LeggiFileDaQuadra(1)
 	DebugMsg "GestisciPezzo( ?, ?) = " &amp; CStr(GestisciPezzo(1, MysSqlConnectionString))
 
-	Do
-		'guardo se le quadre hanno dei pezzi pronti
-
-		If ([Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="") Then 'la condizione [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] ="" dice che non ho ancora letto il file
-			'leggo le info del pezzo da file fornito dalla quadra
-			LeggiFileDaQuadra(1)
-
-			' gestisco il PEZZO CORRENTE
-			'###################################FARE
-			GestisciPezzo(1, MysSqlConnectionString)
-
-		    'gestisco LA QUARTINA SUCCESSIVA
-		    'se è uguale alla quartina del pezzo attuale non faccio nulla
-			'If (quartinaCorrente = quartinaSuccessiva) Then
-			If ([Q1_PEZZO_DISP:ID_QUARTINA] = [Q1_PEZZO_DISP:ID_QUARTINA_SUCCESSIVA]) Then
-
-				Exit Sub
-			End If
-			'se la quartina successiva non esiste nel DB la creo e la assegno ad un cassetto vuoto (se disponibile)
-
-
-			'aggiungo il pezzo alla coda missioni Giostre
-
-		End If
-		If ([Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:CODICE_PROFILO] ="") Then
-			LeggiFileDaQuadra(2)
-		End If
-
-		If AutoRun Then
-
-		End If
-'		DebugMsg ("fineIf Autorun")
-
-	DoEvents
-	Loop Until IsInStoppingMode
-
-	
-'	DebugMsg("STOP")
 
 '############STATE MACHINE############
 
@@ -167,17 +129,24 @@ StatoCicloCarico = 1000
 				If valVerificaAttendiCassettoDisponibile &gt; 0 Then
 					StatoCicloCarico = 3100	'AttendiCassettoDisponibile
 				Else
-					StatoCicloCarico = 1000		'AttesaPezzi
+					StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra
 				End If
 
 			Case 1030	'AttesaPezzi_LeggiFileDaQuadra
 				DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
+				'obiettivo: verificare se ci sono file_pezzo da leggere sulle quadra
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
 				leggiDaQuadra = FileDaLeggere()
-				StatoCicloCarico = 2100	'LeggiFileDaQuadra
+				If leggiDaQuadra &gt; 0 Then
+					StatoCicloCarico = 2100	'LeggiFileDaQuadra
+				Else
+					StatoCicloCarico = 1000	'AttesaPezzi
+				End If
+
 
 			Case 2100	'LeggiFileDaQuadra
 				DebugMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra"
+				'obiettivo: reperire le informazini contenute nei file_pezzo forniti dalla quadra. la quadra di riferimento dipende dal valore di leggiDaQuadra
 				'Guardo se ho almeno un file da leggere
 				If (leggiDaQuadra &gt; 0) Then
 					'leggo le info del pezzo da file fornito dalla quadra
@@ -217,11 +186,26 @@ StatoCicloCarico = 1000
 
 			Case 2200	'AggiungiMissioneCodaPlc
 				DebugMsg "StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc"
+				'AggiungiMissioneCodaPlc(posizione.mag, posizione.cass) 'non è necessario passare la quartina perchè è già stata assegnata al cassetto corrispondente
+
 
 			Case 2300	'AssegnaCassettoAllaQuartina
 				DebugMsg "StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina"
+				'obiettivo: assegnare un casetto alla quartina. se sono qui sicuramento ho un cassetto disponibile in base al valore di [loc_ImpostazioniImpianto:TipoCarico]
 				'assegno il cassetto alla quartina che proviene dalla quadra identificata da leggiDaQuadra
-				posizione = AssegnaCassettoAllaQuartina(leggiDaQuadra, MysSqlConnectionString)
+				'dallo step 2100 ho in varname_pezzo il valore della variabile di riferimento per i dati del pezzo
+
+				posizione = AssegnaCassettoAllaQuartina([loc_ImpostazioniImpianto:TipoCarico] _
+									, leggiDaQuadra _
+									, MysSqlConnectionString _
+									, GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") _
+									, GetVariableValue(varname_pezzo &amp; ":TOTALE_PEZZI_QUARTINA") _
+									, GetVariableValue(varname_pezzo &amp; ":NOME_COMMESSA") _
+									, GetVariableValue(varname_pezzo &amp; ":NUM_SQUADRETTE1") _
+									, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA1") _
+									, GetVariableValue(varname_pezzo &amp; ":NUM_SQADRETTE2") _
+									, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA2") _
+									)
 				If posizione.mag &gt; 0 And posizione.cass &gt; 0 Then
 					StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
 				Else
@@ -685,7 +669,7 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
 	  'Catch ODBC Exception
 	Catch MyOdbcException As OdbcException
 		DebugMsg(MyOdbcException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		MsgBox("GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		LogMsg("VerificaSeQuartinaEsisteInMagazzino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
@@ -703,8 +687,6 @@ End Function
 Function CassettiDisponibili(mag As Integer, connectionString As String) As Integer
 	CassettiDisponibili = 0 	'inizializzzo a NON DIDPONIBILE
 
-	'Dim varname As String
-	Dim vResult As Object
     Dim commandText As String
     Dim whereString As String
     Dim cassetti As Integer
@@ -903,8 +885,123 @@ Function AttendiCassettoDisponibile() As Integer
 
 End Function
 
-'TODO
-Function TODOAssegnaCassettoAllaQuartina(leggiDaQuadra, MysSqlConnectionString) As PosQuartina
+Function TODOAssegnaCassettoAllaQuartina(TipoCarico As Integer _
+									, LeggiDaQuadra As Integer _
+									, connectionString As String _
+									, ID_QUARTINA As String _
+									, TOTALE_PEZZI_QUARTINA As Integer _
+									, NOME_COMMESSA As String _
+									, NUM_SQUADRETTE1 As Integer _
+									, COD_SQUADRETTA1 As String _
+									, NUM_SQADRETTE2 As Integer _
+									, COD_SQUADRETTA2 As String _
+									) As PosQuartina
+	Dim pos As PosQuartina
+
+	Dim commandText As String
+	'Dim whereString As String
+	Dim cassetti As Integer
+
+	Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	pos.mag = 0
+	pos.cass = 0
+	AssegnaCassettoAllaQuartina = pos 'inizializzo variabile di ritorno
+
+	If LeggiDaQuadra = 1 Then
+
+	End If
+
+
+	''''''''''''''''''
+
+    'Select Case pos.mag
+    'Case 0
+    '	whereString = "ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2"
+	'Case 1
+	'	whereString = "ID_MAGAZZINO = 1"
+	'Case 2
+	'	whereString = "ID_MAGAZZINO = 2"
+	'Case Else
+	'	Throw New System.Exception("GestioneZonaR1.movbas -&gt; CassettiDisponibili() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    'End Select
+
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert`(0, 1, _
+            							_
+            							_
+            							_
+            							_
+            							);"
+
+            'Select COUNT(*) FROM gualini.cassetti_disponibili WHERE ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2;
+            DebugMsg "GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					DebugMsg "CassettiDisponibili(); MyDataReader.HasRows = " 			&amp;  CStr(MyDataReader.HasRows)
+					DebugMsg "CassettiDisponibili(); MyDataReader.RecordsAffected = " 	&amp;  CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+
+						pos.mag = MyDataReader("MAGAZZINO")
+						pos.cass = MyDataReader("CASSETTO")
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+        DebugMsg("AssegnaCassettoAllaQuartina() - cassettoPiuViciono pos.mag = " &amp; CStr(pos.mag) &amp; " pos.cass = " &amp; CStr(pos.cass)  &amp; ".")
+        AssegnaCassettoAllaQuartina = pos 'torno valore trovato
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("AssegnaCassettoAllaQuartina() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+    End Try
+
+
+	''''''''''''''''''
 
 End Function
 
@@ -991,8 +1088,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiA3AH0A/wC/AiUD
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBcALsA6gCbAQkCRAKqAgYDHgPsAw==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

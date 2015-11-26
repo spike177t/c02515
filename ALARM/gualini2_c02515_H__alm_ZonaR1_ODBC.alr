@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <Alarm>
-<Status TimeOn="2015-11-24T10:53:36Z" MsOn="156" TimeOff="2015-11-24T11:33:11Z" MsOff="354" TotTimeOn="0,00:39:35" LastTimeOn="1899-12-30T00:00:00Z" TotNumOn="1" TotNumAck="0" TotNumReset="0" UniqueID="4223" TransactionID="1" LastComment="">OFF</Status>
+<Status TimeOn="2015-11-26T09:59:34Z" MsOn="691" TotTimeOn="0,00:39:35" LastTimeOn="2015-11-26T10:59:34Z" TotNumOn="2" TotNumAck="0" TotNumReset="0" UniqueID="4223" TransactionID="2" LastComment="">ON</Status>
 </Alarm>
