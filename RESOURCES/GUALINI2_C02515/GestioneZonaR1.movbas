@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10638" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="17284" SelLength="30" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
-'Sostituita la Variabile 'MAG2_ES2' con il nuovo nome 'MAG2_ES2_RIK'
-'Sostituita la Variabile 'MAG1_ES1' con il nuovo nome 'MAG1_ES1_RIK'
 '#Language "WWB.NET"
 
 'Option Explicit
@@ -28,7 +26,8 @@ Public Structure PosQuartina
     Dim cass As Integer
 End Structure
 
-Const TOUT_DISPONIBILE As Integer = 1000
+Const TOUT_DISPONIBILE 	As Integer 	= 1000
+Const TOUT_STEP			As Integer	= 2000
 
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
 Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
@@ -56,6 +55,8 @@ Sub Main()
 	Dim missioneNum As Integer
 	Dim numCassetti As Integer
 	Dim valVerificaAttendiCassettoDisponibile As Integer
+
+	Dim stepTout As Double
 
 
 	codaGiostra1.Enqueue(10)
@@ -149,7 +150,7 @@ StatoCicloCarico = 1000
 			Case 1040	'FineMissioneRobot
 				DebugMsg "StatoCicloCarico = 1040	'FineMissioneRobot"
 				If [R1_STATUS:FINE_MISSIONE] Then
-					StatoCicloCarico = 5100	'RilevaCassettoQuartinaSuccssiva
+					StatoCicloCarico = 6100	'FineRobot
 				Else
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
@@ -204,14 +205,13 @@ StatoCicloCarico = 1000
 					[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 		= posizione.mag 'memorizzo il magazzino assegnato al pezzo
 					[MAG1_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
 				ElseIf posizione.mag = 2 Then
-					[MAG1_ES1_RIK:ID_CASSETTO] 				= posizione.cass
+					[MAG2_ES1_RIK:ID_CASSETTO] 				= posizione.cass
 					[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= posizione.cass 'memorizzo il cassetto assegnato al pezzo
 					[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 		= posizione.mag 'memorizzo il magazzino assegnato al pezzo
-					[MAG1_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
+					[MAG2_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
 				Else
 					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
 				End If
-				'varname_estrattore = IIf(posizione.mag = 1, "MAG1_ES1_RIK","MAG2_ES1_RIK")
 				StatoCicloCarico = 1000	'AttesaPezzi
 
 			Case 2300	'AssegnaCassettoAllaQuartina
@@ -253,8 +253,6 @@ StatoCicloCarico = 1000
 				'se sono qui ho tutte le condizioni per assegnare una nuova missione al robot
 				'devo capire però quale missione assegnare nel caso in cui ci siano le condizioni per tutte e due le quadre
 
-				AssegnaMissioneRobot()
-
 				If [R1_STATUS:DISPONIBILE] Then
 					[R1_STATUS:PZ_DA_QUADRA] = PezzoPiuVecchio()
 					varname_missioneDaQuadra = IIf([R1_STATUS:PZ_DA_QUADRA] = 1, "Q1_PEZZO_DISP", "Q2_PEZZO_DISP")
@@ -265,21 +263,63 @@ StatoCicloCarico = 1000
 					[R1_STATUS:ID_QUARTINA]				= GetVariableValue(varname_missioneDaQuadra &amp; ":ID_QUARTINA")
 					[R1_STATUS:ID_QUARTINA_SUCCESSIVA]	= GetVariableValue(varname_missioneDaQuadra &amp; ":ID_QUARTINA_SUCCESSIVA")
 
-
 					'aggiungere tutte le altre variabili dimensionali
+					'per comodità uso la variabile R1_DATI_PEZZO che ha stesso tipo di Q1_PEZZO_DISP e Q2_PEZZO_DISP
+					'e copio tutti valori dei membri con un ciclo
+
+					Dim objR1 As DBVarObjCmdTarget
+					Dim objPezzo As DBVarObjCmdTarget
+					Dim MemberR1 As DBVarObjCmdTarget
+					Dim MemberPezzo As DBVarObjCmdTarget
+					objPezzo = GetVariableObject(varname_missioneDaQuadra)
+					objR1 = GetVariableObject("R1_DATI_PEZZO")
+					Dim mCount As Integer	'contatore dei membri
+					mCount = 0	'inizializzo a 0
+
+					MemberPezzo 	= objPezzo.GetMemberObjectFromIndex(mCount)
+					MemberR1 		= objR1.GetMemberObjectFromIndex(mCount)
+					While Not MemberPezzo Is Nothing
+						DebugMsg "StatoCicloCarico = 4100 'AssegnaMissioneRobot -&gt; MemberPezzo name is -&gt; " &amp; MemberPezzo.GetName &amp; "; MemberPezzo value is -&gt; " &amp; CStr(MemberPezzo.Value) '
+						DebugMsg "StatoCicloCarico = 4100 'AssegnaMissioneRobot -&gt; MemberR1 name is -&gt; " &amp; MemberR1.GetName &amp; "; MemberR1 value is -&gt; " &amp; CStr(MemberR1.Value) '
+
+						MemberR1.Value = MemberPezzo.Value
+						mCount = mCount + 1
+					End While
+					MemberPezzo 	= Nothing
+					MemberR1 		= Nothing
+					objPezzo 		= Nothing
+					objR1 			= Nothing
 					
-					[R1_STATUS:FINE_MISSIONE] = False
+					[R1_STATUS:FINE_MISSIONE] = False	'forzo per sicurezza
 
 				End If
 				'alzo il bit al Robot di Strobe missione
 				[R1_STATUS:NUOVA_MISSIONE] = True
 				StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato
+				stepTout = Now()
 
 			Case 4200	'AttesaSegnaleRobotOccupato
+				If SuperatoTimeout(stepTout, TOUT_STEP) Then
+					alm_Step_Tout = True
+					StatoCicloCarico = 1000	'AttesaPezzi
+				End If
+				If	Not [R1_STATUS:DISPONIBILE] Then
+					alm_Step_Tout = False
+					StatoCicloCarico = 1000	'AttesaPezzi
+				End If
 
+			Case 6100	'FineRobot
+				DebugMsg "StatoCicloCarico = 6100	'FineRobot"
+				FineRobot()
+				If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
 
-			Case 5100	'RilevaCassettoQuartinaSuccssiva
-				DebugMsg "StatoCicloCarico = 5100	'RilevaCassettoQuartinaSuccssiva"
+				Else
+					'non posso fare l'anticipo delle richieste di cassetto
+					StatoCicloCarico = 1000	'AttesaPezzi
+				End If
+
+			Case 7100	'RilevaCassettoQuartinaSuccessiva
+				DebugMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
 
 			Case Else
 				Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: StatoCicloCarico valore non ammesso: " &amp; CStr(StatoCicloCarico) &amp; ".")
@@ -837,8 +877,57 @@ Function MissioneAssegnabile() As Integer
 	Dim assegnabileQ1 As Boolean
 	Dim assegnabileQ2 As Boolean
 
-	assegnabileQ1 =	[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [R1_STATUS:DISPONIBILE] And [MAG1_ES1_RIK:ID_CASSETTO]=[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG1_ES1_RIK:ID_MAGAZZINO]=[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]
-	assegnabileQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [R1_STATUS:DISPONIBILE] And [MAG2_ES2_RIK:ID_CASSETTO]=[Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG2_ES2_RIK:ID_MAGAZZINO]=[Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO]
+	Dim cassettoInEstrattoreAssegnatoPronto As Boolean	'vero se il cassetto assegnato al pezzo ' pronto nell'estrattore corrispondente
+
+	'verifico prima le condizioni per il pezzo su Q1
+	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
+		'ho assegnato il magazzino 1
+		If [MAG1_ES1_ACT:ID_CASSETTO]=[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG1_ES1_ACT:PRONTO] Then
+			cassettoInEstrattoreAssegnatoPronto = True
+		Else
+			cassettoInEstrattoreAssegnatoPronto = False
+		End If
+	ElseIf [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
+		'ho assegnato il magazzino 2
+		If [MAG2_ES1_ACT:ID_CASSETTO]=[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG2_ES1_ACT:PRONTO] Then
+			cassettoInEstrattoreAssegnatoPronto = True
+		Else
+			cassettoInEstrattoreAssegnatoPronto = False
+		End If
+	Else
+		'eccezione perchè :MAGAZZINO_ASSEGNATO deve essere 1 o 2
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; MissioneAssegnabile() ECCEZZIONE: valore [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] non  ammesso: " &amp; CStr([Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]) &amp; ".")
+	End If
+
+	assegnabileQ1 =	[Q1_In:PezzoPronto] _
+					And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" _
+					And [R1_STATUS:DISPONIBILE] _
+					And cassettoInEstrattoreAssegnatoPronto
+
+	'verifico le condizioni per il pezzo su Q2
+	If [Q21_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
+		'ho assegnato il magazzino 1
+		If [MAG1_ES1_ACT:ID_CASSETTO]=[Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG1_ES1_ACT:PRONTO] Then
+			cassettoInEstrattoreAssegnatoPronto = True
+		Else
+			cassettoInEstrattoreAssegnatoPronto = False
+		End If
+	ElseIf [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
+		'ho assegnato il magazzino 2
+		If [MAG2_ES1_ACT:ID_CASSETTO]=[Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] And [MAG2_ES1_ACT:PRONTO] Then
+			cassettoInEstrattoreAssegnatoPronto = True
+		Else
+			cassettoInEstrattoreAssegnatoPronto = False
+		End If
+	Else
+		'eccezione perchè :MAGAZZINO_ASSEGNATO deve essere 1 o 2
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; MissioneAssegnabile() ECCEZZIONE: valore [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] non  ammesso: " &amp; CStr([Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]) &amp; ".")
+	End If
+
+	assegnabileQ2 = [Q2_In:PezzoPronto] _
+					And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" _
+					And [R1_STATUS:DISPONIBILE] _
+					And cassettoInEstrattoreAssegnatoPronto
 
 	If assegnabileQ1 And assegnabileQ2 Then
 		MissioneAssegnabile = PezzoPiuVecchio()
