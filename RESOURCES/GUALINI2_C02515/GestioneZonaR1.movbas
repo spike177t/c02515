@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="17284" SelLength="30" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="2195" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -88,10 +88,6 @@ Sub Main()
 		myint = codaGiostra1.Dequeue()
 		Debug.Print "myint: " + Convert.ToString(myint)
 	End While
-
-	'### DEBUG ########se ho un nuovo pezzo leggo i dati dal file
-	LeggiFileDaQuadra(1)
-	DebugMsg "GestisciPezzo( ?, ?) = " &amp; CStr(GestisciPezzo(1, MysSqlConnectionString))
 
 
 '############STATE MACHINE############
@@ -508,115 +504,6 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
     End Try
 End Function
 
-Function GestisciPezzo(quadra As Integer, connectionString As String) As Integer
-	Dim varname As String
-	Dim vResult As Object
-    Dim commandText As String
-    Dim quartina As String
-    Dim magazzino As Integer
-    Dim cassetto As Integer
-
-    'Dim MyCommand As New OdbcCommand()
-    'Dim MyDataReader As OdbcDataReader
-
-    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
-    Const ERR_PAR_QUADRA As Integer = -100 				'ERRORE parametro quadra valore non consistente
-    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
-    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
-
-    GestisciPezzo = ERR_GENERICO
-
-	Select Case quadra
-		Case 1:
-			varname = "Q1_PEZZO_DISP"
-		Case 2:
-			varname = "Q2_PEZZO_DISP"
-		Case Else
-			'forzo l'utilizzo di Q1
-			Debug.Print "GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE quadra = valore non consistente."
-			varname = "Q1_PEZZO_DISP"
-			GestisciPezzo = ERR_PAR_QUADRA 'ERRORE parametro quadra valore non consistente
-			Exit Function
-	End Select
-
-	Debug.Print GetVariableValue(varname &amp; ":ID_QUARTINA")
-
-	'cerco nel db a quale cassetto è assegnata la quartina
-	Try
-        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
-            MyConnection.Open()
-            commandText = "SELECT " &amp; _
-                            "  `quartina`.`ID_QUARTINA` " &amp; _
-                            ", `quartina`.`TOTALE_PEZZI_QUARTINA` " &amp; _
-                            ", `quartina`.`NOME_COMMESSA` " &amp; _
-                            ", `quartina`.`NUM_SQUADRETTE1` " &amp; _
-                            ", `quartina`.`COD_SQUADRETTA1` " &amp; _
-                            ", `quartina`.`NUM_SQADRETTE2` " &amp; _
-                            ", `quartina`.`COD_SQUADRETTA2` " &amp; _
-			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
-                            ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
-                      	"aFROM  `gualini`.`quartina` " &amp; _
-            			"WHERE `quartina`.`ID_QUARTINA` = '" &amp; GetVariableValue(varname &amp; ":ID_QUARTINA") &amp;"';"
-            Debug.Print "GestioneZonaR1.movbas -&gt; commandText = " &amp; commandText
-
-            Using MyCommand As New OdbcCommand()
-
-				MyCommand.Connection = MyConnection
-	            MyCommand.CommandText = commandText
-
-				Using MyDataReader As OdbcDataReader
-					MyDataReader = MyCommand.ExecuteReader
-
-					Debug.Print CStr(MyDataReader.HasRows)
-					Debug.Print CStr(MyDataReader.RecordsAffected)
-
-					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
-					If MyDataReader.HasRows Then
-						MyDataReader.Read
-						[CAR_CASS_RIK:Magazzino] 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
-						[CAR_CASS_RIK:Cassetto]		= MyDataReader("cassetto_ID_CASSETTO")
-						[CAR_CASS_RIK:Quartina]		= MyDataReader("ID_QUARTINA")
-					Else
-						'devo assegnare un cassetto alla quartina
-						'############### TODO
-					End If
-					'While MyDataReader.Read
-					'	If MyDataReader("cassetto_ID_CASSETTO") Is DBNull.Value Then
-					'		Debug.Print("cassetto_ID_CASSETTO = " &amp;  "NULL")
-					'	Else
-					'		Debug.Print("cassetto_ID_CASSETTO = " &amp; _
-					'			CStr(MyDataReader("cassetto_ID_CASSETTO")) _
-					'				&amp; "  cassetto_magazzino_ID_MAGAZZINO = " &amp; _
-					'			CStr(MyDataReader("cassetto_magazzino_ID_MAGAZZINO")))
-					'	End If
-					'End While
-
-				End Using	'MyDataReader.Close
-			End Using	'MyCommand.Dispose
-        End Using	'MyConnection.Close
-
-
-	  'Catch program exception
-	Catch MyException As Exception
-		Debug.Print(MyException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
-					 MyException.ToString &amp; ".")
-		GestisciPezzo = ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
-		Exit Function
-
-	  'Catch ODBC Exception
-	Catch MyOdbcException As OdbcException
-		Debug.Print(MyOdbcException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; GestisciPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
-					MyOdbcException.ToString  &amp; ".")
-		GestisciPezzo = ERR_ODBC_EXCEPTION	'ERRORE ecezzione ODBC
-		Exit Function
-
-    End Try
-
-    GestisciPezzo = 0 'OK
-
-End Function
 
 Function FileDaLeggere() As Integer
 	FileDaLeggere = 0	'metto a zero, significa che non ho pezzi pronti
