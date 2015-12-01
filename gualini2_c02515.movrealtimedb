@@ -525,6 +525,12 @@
 <Member>
 <Name Type="4">CASSETTO_ASSEGNATO</Name>
 </Member>
+<Member>
+<Name Type="4" Description="memo cassetto assegnato alla quartina successiva nel caso in cui questa sia gestita">CASSETTO_ASSEGNATO_QRT_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4" Description="memo magazzino assegnato alla quartina successiva nel caso in cui questa sia gestita">MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA</Name>
+</Member>
 </MemberList>
 </Structure>
 <Structure>
