@@ -11,13 +11,6 @@
 <RealTimeODBCSettings RecycleDBConnection="1" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" Dsn="" User="" DefVarCharPrecision="255" TableName="" NameCol="" ValueCol="" MinValueCol="" MaxValueCol="" AveValueCol="" TotalTimeCol="" LastTimeOnCol=""/>
 <VariableList>
 <Variable>
-<Name Type="11" StructType="QuadraProssimoPezzo" AreaType="1" Address="0" Bit="6" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_PROX</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="SettingsStruct" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">loc_Settings</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -110,13 +103,6 @@
 </Variable>
 <Variable>
 <Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoPronto</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraProssimoPezzo" AreaType="1" Address="0" Bit="6" Description="pezzo presente su Quadra 2" Shared="0" Retentive="0">Q2_PEZZO_PROX</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -449,20 +435,6 @@
 </Member>
 <Member>
 <Name Type="9">MySql_database</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="info relative al prossimo pezzo">QuadraProssimoPezzo</Name>
-<MemberList>
-<Member>
-<Name Type="4">Giostra</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="4">Cassetto</Name>
 </Member>
 </MemberList>
 </Structure>
