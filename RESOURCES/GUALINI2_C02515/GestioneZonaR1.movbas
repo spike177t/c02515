@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="43077" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -197,6 +197,12 @@ StatoCicloCarico = 1000
 
 			Case 2200	'RikCassettoInEstrattorePlc
 				DebugMsg "StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc"
+
+				'nel caso in cui la quartina sia stata assegnata trameite procedura di anticipo tramite quartina successiva
+				'non ho tutti i dati aggiornati della quartina per cui chiamo la funzione UpdateDatiQuartina()
+
+
+
 				'RikCassettoInEstrattorePlc(posizione.mag, posizione.cass) 'non è necessario passare la quartina perchè è già stata assegnata al cassetto corrispondente
 				If posizione.mag = 1 And Not [MAG1_ES1_RIK:STROBE] Then
 					[MAG1_ES1_RIK:ID_CASSETTO] 				= posizione.cass
@@ -349,7 +355,8 @@ StatoCicloCarico = 1000
 
 			Case 7100	'RilevaCassettoQuartinaSuccessiva
 				DebugMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
-
+				RilevaCassettoQuartinaSuccessiva()
+				StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
 
 			Case 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
 				DebugMsg "StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc"
@@ -988,15 +995,18 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert`(0, 1" &amp; _
+            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert`" &amp; _
+            							"(" &amp; _
+            							CStr(TipoCarico) &amp; _
+            							", " &amp; CStr(leggiDaQuadra) &amp; _
             							", `INS` " &amp; _
-            							", ID_QUARTINA"  &amp; _
-            							", TOTALE_PEZZI_QUARTINA" &amp;  _
-            							", NOME_COMMESSA" &amp;  _
-            							", NUM_SQUADRETTE1" &amp;  _
-            							", COD_SQUADRETTA1" &amp;  _
-            							", NUM_SQADRETTE2" &amp;  _
-            							", COD_SQUADRETTA2" &amp;  _
+            							", " &amp; CStr(ID_QUARTINA)  &amp; _
+            							", " &amp; CStr(TOTALE_PEZZI_QUARTINA) &amp;  _
+            							", " &amp; CStr(NOME_COMMESSA) &amp;  _
+            							", " &amp; CStr(NUM_SQUADRETTE1) &amp;  _
+            							", " &amp; CStr(COD_SQUADRETTA1) &amp;  _
+            							", " &amp; CStr(NUM_SQADRETTE2) &amp;  _
+            							", " &amp; CStr(COD_SQUADRETTA2) &amp;  _
             							");"
 
             'Select COUNT(*) FROM gualini.cassetti_disponibili WHERE ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2;
@@ -1124,7 +1134,14 @@ Function FineRobot(connectionString As String) As Integer
 			CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:CASSETTO_ASSEGNATO")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO")) &amp; ", " &amp; _
-            ") ON DUPLICATE KEY UPDATE ; "
+            ") ON DUPLICATE KEY UPDATE " _ ; "
+            &amp; "`TOTALE_PEZZI_QUARTINA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA"))  &amp; ", " &amp; _
+			&amp; "`NUM_SQUADRETTE1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE1")) &amp; ", " &amp; _
+			&amp; "`COD_SQUADRETTA1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; ", " &amp; _
+			&amp; "`NUM_SQADRETTE2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQADRETTE2")) &amp; ", " &amp; _
+			&amp; "`COD_SQUADRETTA2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; ", " &amp; _
+			&amp; "`NOME_COMMESSA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA"))  &amp; ", " &amp; _
+            ";"
 
             DebugMsg "GestioneZonaR1.movbas -&gt; FineRobot(); commandText = " &amp; commandText
 
@@ -1226,6 +1243,26 @@ Function FineRobot(connectionString As String) As Integer
     FineRobot = 0
 End Function
 
+Sub RilevaCassettoQuartinaSuccessiva()
+	'devo chiamare la procedura MySql `CassettoPiuVicinoAndInsert`
+		'(
+		'TipoCarico Int,
+        'LeggiDaQuadra Int,
+		'OP VARCHAR(10), /* "" = solo ricerca del cassetto più vicino, "INS" = inserisce anche nuova quartina, "UPD" aggiorna i dati indentificativi della quartina */
+		'pID_QUARTINA VARCHAR(45),
+		'pTOTALE_PEZZI_QUARTINA TINYINT(4),
+		'pNOME_COMMESSA VARCHAR(45),
+		'pNUM_SQUADRETTE1 TINYINT(4),
+		'pCOD_SQUADRETTA1  VARCHAR(45),
+		'pNUM_SQADRETTE2 TINYINT(4),
+		'pCOD_SQUADRETTA2  VARCHAR(45)
+        ')
+    'con i soli dati di TipoCarico, LeggiDaQuadra, OP = "INS" e ID_QUARTINA e 0 o "" gli altri parametri
+    'questa procedura torna cassetto e magazzino assegnati sia che la quartina esista sia che non esista e sia in grado di crearla
+    'torna magazzino = 0 e cassetto = 0 se il magazzino è pieno
+End Sub
+
+
 Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	'aggiungere tutte le altre variabili dimensionali
 	'per comodità uso la variabile R1_DATI_PEZZO che ha stesso tipo di Q1_PEZZO_DISP e Q2_PEZZO_DISP
@@ -1290,8 +1327,6 @@ Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	objPezzo 		= Nothing
 	objR1 			= Nothing
 End Sub
-
-
 
 
 Function PezzoPiuVecchio() As Integer
@@ -1377,6 +1412,6 @@ End Sub
 
 </ScriptCode>
 <BreakPoints xsi:type="xsd:base64Binary">AiDLBA==</BreakPoints>
-<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
