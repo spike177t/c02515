@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="43077" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="64665" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -45,7 +45,12 @@ Dim disponibileLastCheck As Double
 'End Sub
 
 Sub Main()
-	ResetDatiPezzoMissione(1)
+	'#################################
+	'CHIAMATE PER DEBUG
+	'ResetDatiPezzoMissione(1)
+	'#####################################
+
+
 	Dim leggiDaQuadra As Integer
 	Dim quartina As String
 	Dim quartina_successiva As String
@@ -55,12 +60,13 @@ Sub Main()
 
 	Dim varname_pezzo As String
 	Dim varname_missioneDaQuadra As String
+	Dim varname_estrattore As String
+
 	Dim missioneNum As Integer
 	Dim numCassetti As Integer
 	Dim valVerificaAttendiCassettoDisponibile As Integer
 
 	Dim stepTout As Double
-
 
 	codaGiostra1.Enqueue(10)
 	codaGiostra1.Enqueue(20)
@@ -76,6 +82,10 @@ Sub Main()
       "UID=root;" &amp; _
       "PASSWORD=co.mar;" &amp; _
       "OPTION=3;"
+
+    'inizializzo alcune variabili
+    [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
+    [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
 
 '#####TODO DEBUG
 '###########################
@@ -102,7 +112,13 @@ AA:
 Wait 1
 [Q2_In:PezzoPronto] = True
 StatoCicloCarico = 1000
+loc_Q1_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
+loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
 	Do
+		'azioni da fare tutti i cicli
+
+		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
+		AggiornaPosizioniEstrattoriES1(MysSqlConnectionString)
 
 		Select Case StatoCicloCarico
 
@@ -334,12 +350,14 @@ StatoCicloCarico = 1000
 					If Not [R1_DATI_PEZZO:ULTIMO_PEZZO] Then
 						StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
 					Else
-						If Not [MAG1_ES1_ACT:STROBE] Then
-							[MAG1_ES1_RIK:ID_CASSETTO] = 0
-							[MAG1_ES1_RIK:ID_QUARTINA] = ""
+						'è ultimo pezzo allora rilevo a quale estrattore è relativo
+						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_RIK", "MAG2_ES1_RIK")
+						If Not GetVariableValue(varname_estrattore &amp; ":STROBE") Then
+							SetVariableValue(varname_estrattore &amp; ":ID_CASSETTO", 0 )
+							SetVariableValue(varname_estrattore &amp; ":ID_QUARTINA", "")
 
-							[MAG1_ES1_RIK:STROBE] = True	'do Strobe
-						StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
+							SetVariableValue(varname_estrattore &amp; ":STROBE",  True)	'do Strobe
+							StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
 						End If
 					End If
 
@@ -355,16 +373,31 @@ StatoCicloCarico = 1000
 
 			Case 7100	'RilevaCassettoQuartinaSuccessiva
 				DebugMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
-				RilevaCassettoQuartinaSuccessiva()
-				StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
+				posizione = RilevaCassettoQuartinaSuccessiva(MysSqlConnectionString)
+				If (posizione.mag &gt; 0 And posizione.cass &gt; 0) Then
+					StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
+				Else
+					'non ho cassetti disponibili perchè magazzino pieno
+					StatoCicloCarico = 8100	'ResetDatiPezzoMissione
+				End If
+
 
 			Case 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
 				DebugMsg "StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc"
+				varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_RIK", "MAG2_ES1_RIK")
+				If Not GetVariableValue(varname_estrattore &amp; ":STROBE") Then
+					SetVariableValue(varname_estrattore &amp; ":ID_CASSETTO", [R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA])
+					SetVariableValue(varname_estrattore &amp; ":ID_QUARTINA", [R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA])
 
+					SetVariableValue(varname_estrattore &amp; ":STROBE",  True)	'do Strobe
+					StatoCicloCarico = 8100	'ResetDatiPezzoMissione
+				End If
 
 			Case 8100	'ResetDatiPezzoMissione
 				DebugMsg "StatoCicloCarico = 8100	'ResetDatiPezzoMissione"
-				'reset i valori dei membri che identificano il pezzo
+				'occorre eliminare il file dalla quadra
+				EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
+				'reset dei valori dei membri che identificano il pezzo
 				ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA])
 				StatoCicloCarico = 1000	'AttesaPezzi
 
@@ -391,13 +424,13 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 			varname = "Q1_PEZZO_DISP"
 			LeggiFileDaQuadra = "Q1_PEZZO_DISP"
 			path = loc_Q1_path
-			path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
+			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
 		Case 2:
 			path = loc_Q2_path
 			varname = "Q2_PEZZO_DISP"
 			LeggiFileDaQuadra = "Q2_PEZZO_DISP"
 			path = loc_Q2_path
-			path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
+			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
 		Case Else
 			Throw New System.Exception("GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra() ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
 	End Select
@@ -1019,8 +1052,8 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 				Using MyDataReader As OdbcDataReader
 					MyDataReader = MyCommand.ExecuteReader
 
-					DebugMsg "CassettiDisponibili(); MyDataReader.HasRows = " 			&amp;  CStr(MyDataReader.HasRows)
-					DebugMsg "CassettiDisponibili(); MyDataReader.RecordsAffected = " 	&amp;  CStr(MyDataReader.RecordsAffected)
+					DebugMsg "AssegnaCassettoAllaQuartina(); MyDataReader.HasRows = " 			&amp;  CStr(MyDataReader.HasRows)
+					DebugMsg "AssegnaCassettoAllaQuartina(); MyDataReader.RecordsAffected = " 	&amp;  CStr(MyDataReader.RecordsAffected)
 
 					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
 					If MyDataReader.HasRows Then
@@ -1134,13 +1167,13 @@ Function FineRobot(connectionString As String) As Integer
 			CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:CASSETTO_ASSEGNATO")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO")) &amp; ", " &amp; _
-            ") ON DUPLICATE KEY UPDATE " _ ; "
-            &amp; "`TOTALE_PEZZI_QUARTINA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA"))  &amp; ", " &amp; _
-			&amp; "`NUM_SQUADRETTE1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE1")) &amp; ", " &amp; _
-			&amp; "`COD_SQUADRETTA1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; ", " &amp; _
-			&amp; "`NUM_SQADRETTE2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQADRETTE2")) &amp; ", " &amp; _
-			&amp; "`COD_SQUADRETTA2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; ", " &amp; _
-			&amp; "`NOME_COMMESSA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA"))  &amp; ", " &amp; _
+            ") ON DUPLICATE KEY UPDATE " &amp; _
+            "`TOTALE_PEZZI_QUARTINA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA"))  &amp; ", " &amp; _
+			"`NUM_SQUADRETTE1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE1")) &amp; ", " &amp; _
+			"`COD_SQUADRETTA1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; ", " &amp; _
+			"`NUM_SQADRETTE2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQADRETTE2")) &amp; ", " &amp; _
+			"`COD_SQUADRETTA2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; ", " &amp; _
+			"`NOME_COMMESSA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA"))  &amp; ", " &amp; _
             ";"
 
             DebugMsg "GestioneZonaR1.movbas -&gt; FineRobot(); commandText = " &amp; commandText
@@ -1207,13 +1240,13 @@ Function FineRobot(connectionString As String) As Integer
 	Catch MyException As Exception
 		excp = True
 		DebugMsg(MyException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		MsgBox("GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 		FineRobot = ERR_GENERIC_EXCEPION
@@ -1223,13 +1256,13 @@ Function FineRobot(connectionString As String) As Integer
 	Catch MyOdbcException As OdbcException
 		excp = True
 		DebugMsg(MyOdbcException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		MsgBox("GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("CassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 		FineRobot = ERR_ODBC_EXCEPTION
@@ -1243,7 +1276,18 @@ Function FineRobot(connectionString As String) As Integer
     FineRobot = 0
 End Function
 
-Sub RilevaCassettoQuartinaSuccessiva()
+Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQuartina
+									'TipoCarico As Integer _
+									', leggiDaQuadra As Integer _
+									', connectionString As String _
+									', ID_QUARTINA As String _
+									', TOTALE_PEZZI_QUARTINA As Integer _
+									', NOME_COMMESSA As String _
+									', NUM_SQUADRETTE1 As Integer _
+									', COD_SQUADRETTA1 As String _
+									', NUM_SQADRETTE2 As Integer _
+									', COD_SQUADRETTA2 As String _
+									') As PosQuartina
 	'devo chiamare la procedura MySql `CassettoPiuVicinoAndInsert`
 		'(
 		'TipoCarico Int,
@@ -1260,7 +1304,106 @@ Sub RilevaCassettoQuartinaSuccessiva()
     'con i soli dati di TipoCarico, LeggiDaQuadra, OP = "INS" e ID_QUARTINA e 0 o "" gli altri parametri
     'questa procedura torna cassetto e magazzino assegnati sia che la quartina esista sia che non esista e sia in grado di crearla
     'torna magazzino = 0 e cassetto = 0 se il magazzino è pieno
-End Sub
+
+
+	Dim pos As PosQuartina
+
+	Dim commandText As String
+	Dim cassetti As Integer
+
+	Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+	pos.mag  = 0
+	pos.cass = 0
+	RilevaCassettoQuartinaSuccessiva = pos 'inizializzo variabile di ritorno
+
+	'cerco nel db a quale cassetto è assegnata la quartina successiva
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert`" &amp; _
+            							"(" &amp; _
+            							CStr([loc_ImpostazioniImpianto:TipoCarico]) &amp; _
+            							", " &amp; CStr([R1_STATUS:PZ_DA_QUADRA]) &amp; _
+            							", `INS` " &amp; _
+            							", " &amp; CStr([R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA]) &amp; _
+            							", " &amp; CStr("NULL") &amp; _
+            							", " &amp; CStr("NULL") &amp; _
+            							", " &amp; CStr("NULL") &amp; _
+            							", " &amp; CStr("NULL") &amp; _
+            							", " &amp; CStr("NULL") &amp; _
+            							", " &amp; CStr("NULL") &amp; _
+            							");"
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					DebugMsg "RilevaCassettoQuartinaSuccessiva(); MyDataReader.HasRows = " 			&amp;  CStr(MyDataReader.HasRows)
+					DebugMsg "RilevaCassettoQuartinaSuccessiva(); MyDataReader.RecordsAffected = " 	&amp;  CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+
+						pos.mag = MyDataReader("MAGAZZINO")
+						pos.cass = MyDataReader("CASSETTO")
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+        DebugMsg("RilevaCassettoQuartinaSuccessiva() - cassettoPiuViciono pos.mag = " &amp; CStr(pos.mag) &amp; " pos.cass = " &amp; CStr(pos.cass)  &amp; ".")
+        RilevaCassettoQuartinaSuccessiva = pos 'torno valore trovato
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("RilevaCassettoQuartinaSuccessiva() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+
+
+	Finally
+		'Dim objAlarm As AlarmCmdTarget
+		'Dim objThreshold As AlarmThresholdCmdTarget
+		'objAlarm = GetAlarm("alm_ZonaR1_ODBC")
+		'objThreshold = objAlarm.GetAlarmThreshold("H")
+		'objThreshold.Text = alm_ZonaR1_ODBC_txt
+		'objThreshold = Nothing
+		'objAlarm = Nothing
+
+		Exit Function
+
+    End Try
+
+End Function
 
 
 Sub ResetDatiPezzoMissione(daQuadra As Integer)
@@ -1288,10 +1431,10 @@ Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	MemberR1 		= objR1.GetMemberObjectFromIndex(mCount)
 
 	While Not MemberQuadra Is Nothing
-		'DebugMsg "ResetDatiPezzoMissione() -&gt; MemberQuadra name = " &amp; MemberQuadra.GetName &amp; "; value = " &amp; CStr(MemberQuadra.Value) &amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
-		'DebugMsg "ResetDatiPezzoMissione() -&gt; MemberR1 name = " &amp; MemberR1.GetName &amp; "; value = " &amp; CStr(MemberR1.Value) &amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
-		Debug.Print "ResetDatiPezzoMissione() -&gt; MemberQuadra name = " &amp; MemberQuadra.GetName &amp; "; value = " &amp; CStr(MemberQuadra.Value) &amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
-		Debug.Print "ResetDatiPezzoMissione() -&gt; MemberR1 name = " &amp; MemberR1.GetName &amp; "; value = " &amp; CStr(MemberR1.Value) &amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
+		DebugMsg 		"ResetDatiPezzoMissione() -&gt; MemberQuadra name = " 	&amp; MemberQuadra.GetName 	&amp; "; value = " &amp; CStr(MemberQuadra.Value) 	&amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
+		DebugMsg 		"ResetDatiPezzoMissione() -&gt; MemberR1 name = " 		&amp; MemberR1.GetName 		&amp; "; value = " &amp; CStr(MemberR1.Value) 		&amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
+		'Debug.Print 	"ResetDatiPezzoMissione() -&gt; MemberQuadra name = " 	&amp; MemberQuadra.GetName 	&amp; "; value = " &amp; CStr(MemberQuadra.Value) 	&amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
+		'Debug.Print 	"ResetDatiPezzoMissione() -&gt; MemberR1 name = " 		&amp; MemberR1.GetName 		&amp; "; value = " &amp; CStr(MemberR1.Value) 		&amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
 
 		et = MemberR1.GetType()
 		Select Case et
@@ -1327,6 +1470,234 @@ Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	objPezzo 		= Nothing
 	objR1 			= Nothing
 End Sub
+
+Sub AggiornaPosizioniEstrattoriES1(connectionString As String )
+	AggiornaPosizioneEstrattore(1 , 1,connectionString)
+	AggiornaPosizioneEstrattore(2 , 1,connectionString)
+End Sub
+
+Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionString As String )
+	Dim varEstrattore As String
+	Dim varEstrattoreOld As String
+	Dim cass As Integer
+	Dim cassOld As Integer
+	Dim query As String
+	Dim ret As Integer
+
+	varEstrattore 		= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT"
+	varEstrattoreOld 	= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT_OLD"
+
+	cass 		= GetVariableValue(varEstrattore 		&amp; ":ID_CASSETTO")
+	cassOld 	= GetVariableValue(varEstrattoreOld 	&amp; ":ID_CASSETTO")
+
+	If (cass &lt;&gt; cassOld) Then
+		'devo aggiornare il DB
+
+		'per prima cosa metto dentro eventuali pezzi che sono nell'estrattore
+		query = "UPDATE `gualini`.`cassetto` " &amp; _
+			"Set " &amp; _
+			"`POSIZIONE` =  " 			&amp; CStr(0) 	&amp; _
+			" WHERE "	&amp; _
+			"`POSIZIONE` =  " 						&amp; CStr(estr) &amp; " And " &amp; _
+			"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
+			";"
+
+		ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+		If ret &lt; 0 Then
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		ElseIf ret = 0 Then
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery no Row updated " 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		ElseIf ret &gt; 0 Then
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; ret 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		End If
+
+		'poi metto fuori il pezzo che è realmente nell'estrattore, se ce ne è uno
+		If cass &gt; 0 Then
+			query = "UPDATE `gualini`.`cassetto` " &amp; _
+				"Set " &amp; _
+				"`POSIZIONE` =  " 			&amp; CStr(estr) 	&amp; _
+				" WHERE "	&amp; _
+				"`ID_CASSETTO` =  " 					&amp; CStr(cass) &amp; " And " &amp; _
+				"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
+				";"
+
+			ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+			If ret &lt; 0 Then
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			ElseIf ret = 0 Then
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery no Row updated " 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			ElseIf ret &gt; 0 Then
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; ret 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			End If
+		End If
+
+
+		'alla fine aggiorno la variabile Old
+		AggiorrnaMembri(varEstrattore, varEstrattoreOld)
+	End If
+
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub EliminaFileDaQuadra(daQuadra As Integer, nomePezzo As String)
+	Dim nomeFileFull As String
+	Dim path As String
+	Dim varname As String
+
+	Select Case daQuadra
+		Case 1:
+			path = loc_Q1_path
+			varname = "Q1_PEZZO_DISP"
+		Case 2:
+			path = loc_Q2_path
+			varname = "Q2_PEZZO_DISP"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; EliminaFileDaQuadra() ECCEZZIONE: parametro daQuadra non ammesso: " &amp; CStr(daQuadra) &amp; ".")
+	End Select
+
+	nomeFileFull = path &amp; GetVariableValue(varname &amp; ":NOME_PEZZO_UNICO")
+
+	'guardo il file esiste
+	Try
+		Using fi As New System.IO.FileInfo(nomeFileFull)
+			If fi.Exists Then
+				fi.Delete()
+			Else
+				LogMsg("EliminaFileDaQuadra() File non più esistente. filename:" &amp; nomeFileFull)
+			End If
+		End Using
+
+	Catch  e As Exception
+        LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
+	Finally
+
+	End Try
+
+
+End Sub
+
+
+Sub AggiorrnaMembri(source As String, dest As String)
+	Dim objDest As DBVarObjCmdTarget
+	Dim objSource As DBVarObjCmdTarget
+	Dim MemberDest As DBVarObjCmdTarget
+	Dim MemberSource As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+
+	Dim etSource As movicon.eVariableType
+	Dim etDest As movicon.eVariableType
+
+	objSource 	= GetVariableObject(source)
+objSource 	= GetVariableObject("MAG1_ES1_ACT")
+	objDest 	= GetVariableObject(dest)
+
+
+	mCount = 0	'inizializzo a 0
+
+	MemberSource 	= objSource.GetMemberObjectFromIndex(mCount)
+	MemberDest 		= objDest.GetMemberObjectFromIndex(mCount)
+
+	'guardo se le var hanno tipo identico
+	etSource 	= objSource.GetType()
+	etDest 		= objDest.GetType()
+
+	If (etSource = etDest) Then
+		While (Not MemberSource Is Nothing) And (Not MemberDest Is Nothing )
+			DebugMsg "AggiorrnaMembri() -&gt; MemberSource name = " 	&amp; MemberSource.GetName 	&amp; "; value = " &amp; CStr(MemberSource.Value) 	&amp; "; Tipo = " &amp; CStr(MemberSource.GetType())
+			DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 		&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
+
+			etSource 	= MemberSource.GetType()
+			etDest 		= MemberDest.GetType()
+
+			If (etSource = etDest) Then
+				MemberDest.Value = MemberSource.Value
+			End If
+
+			mCount = mCount + 1
+			MemberSource 	= objSource.GetMemberObjectFromIndex(mCount)
+			MemberDest 		= objDest.GetMemberObjectFromIndex(mCount)
+		End While
+
+	End If
+
+	MemberSource 	= Nothing
+	MemberDest 		= Nothing
+	objSource 		= Nothing
+	objDest 		= Nothing
+
+End Sub
+
 
 
 Function PezzoPiuVecchio() As Integer
@@ -1411,7 +1782,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDLBA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiB3AJkBSwKGAuwCSAORA7QD8ANbBBcFfwW9BcIF+gUDBkcGdQY=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

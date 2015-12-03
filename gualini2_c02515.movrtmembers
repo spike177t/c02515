@@ -2,6 +2,18 @@
 <MembersListDB>
 <VariableList>
 <Variable>
+<Name>loc_ImpostazioniImpianto</Name>
+<MemberList>
+<Member>
+<Name Type="4" InitialValue="0">TipoCarico</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+</MemberList>
+</Variable>
+<Variable>
 <Name>loc_Settings</Name>
 <MemberList>
 <Member>
@@ -221,18 +233,6 @@
 </Member>
 <Member>
 <Name Type="9" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.Q1_PEZZO_DISP.ID_QUARTINA|DL=46|Typ=9">ID_QUARTINA</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-</MemberList>
-</Variable>
-<Variable>
-<Name>loc_ImpostazioniImpianto</Name>
-<MemberList>
-<Member>
-<Name Type="4" InitialValue="0">TipoCarico</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
