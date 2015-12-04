@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<Alarm>
-<Status TimeOn="2015-11-17T14:54:07Z" MsOn="785" TotTimeOn="0,00:00:00" LastTimeOn="2015-11-17T15:54:07Z" TotNumOn="1" TotNumAck="0" TotNumReset="0" UniqueID="8387" TransactionID="1" LastComment="">ON</Status>
-</Alarm>

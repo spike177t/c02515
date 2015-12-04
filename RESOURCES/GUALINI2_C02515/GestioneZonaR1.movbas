@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="64665" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="41839" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -144,9 +144,13 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 			Case 1020	'AttesaPezzi_AttendiCassettoDisponibile
 				DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
 				'guardo se ho un cassetto disponibile da assegnare a pezzo pronto
-				valVerificaAttendiCassettoDisponibile = transizioneAttendiCassettoDisponibile()
+				valVerificaAttendiCassettoDisponibile = transizioneAttendiCassettoDisponibile() 'serve per non fare il controllo sempre
+				'valVerificaAttendiCassettoDisponibile = 0 solo se avevo letto un file della quadra e non avevo cassetti a cui assegnare la quartina
+				'valVerificaAttendiCassettoDisponibile &gt; 0 se è passato un tout e non ho ancora assegnato la quartina
 				If valVerificaAttendiCassettoDisponibile &gt; 0 Then
+					DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile &amp; valVerificaAttendiCassettoDisponibile &gt; 0 "
 					StatoCicloCarico = 3100	'AttendiCassettoDisponibile
+					'AttendiCassettoDisponibile controlla che si sia liberato un cassetto per assegnare il pezzo ad una quartina
 				Else
 					StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra
 				End If
@@ -183,10 +187,11 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 					quartina_successiva = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA_SUCCESSIVA")
 
 					'verifico se la quartina esiste in magazzino
-					posizione = VerificaSeQuartinaEsisteInMagazzino(quartina, MysSqlConnectionString)
+					posizione = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MysSqlConnectionString)
 
 					If posizione.mag &gt; 0 Then
 						'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
+						'ho gia memorizzato in VerificaSeQuartinaEsisteInMagazzino magazzinio e cassetto assegnato
 						StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
 					Else
 						'quartina non esiste allora guardo se ci sono cassetti disponibili nel magazzino di riferimento in base a TipoCarico
@@ -214,23 +219,14 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 			Case 2200	'RikCassettoInEstrattorePlc
 				DebugMsg "StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc"
 
-				'nel caso in cui la quartina sia stata assegnata trameite procedura di anticipo tramite quartina successiva
-				'non ho tutti i dati aggiornati della quartina per cui chiamo la funzione UpdateDatiQuartina()
-
-
-
 				'RikCassettoInEstrattorePlc(posizione.mag, posizione.cass) 'non è necessario passare la quartina perchè è già stata assegnata al cassetto corrispondente
 				If posizione.mag = 1 And Not [MAG1_ES1_RIK:STROBE] Then
 					[MAG1_ES1_RIK:ID_CASSETTO] 				= posizione.cass
-					[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= posizione.cass 'memorizzo il cassetto assegnato al pezzo
-					[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 	= posizione.mag 'memorizzo il magazzino assegnato al pezzo
-					[MAG1_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
+					[MAG1_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
 					[MAG1_ES1_RIK:STROBE] 					= True
 				ElseIf posizione.mag = 2 And Not [MAG2_ES1_RIK:STROBE] Then
 					[MAG2_ES1_RIK:ID_CASSETTO] 				= posizione.cass
-					[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= posizione.cass 'memorizzo il cassetto assegnato al pezzo
-					[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 	= posizione.mag 'memorizzo il magazzino assegnato al pezzo
-					[MAG2_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
+					[MAG2_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
 					[MAG2_ES1_RIK:STROBE] 					= True
 				ElseIf posizione.mag &lt;&gt; 1 And posizione.mag &lt;&gt; 2 Then
 					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
@@ -581,6 +577,8 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
             'faccio Reset dei valori di cassetto e magazzino assegnati, sarà la procedura di GestionePezzo a rilevare i valori corretto
             SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO", 0)
 			SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO", 0)
+			SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA", 0)
+			SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO_QRT_SUCCESSIVA", 0)
         End Using
     Catch e As Exception
         LogMsg("The file could Not be Read:")
@@ -648,12 +646,12 @@ Function FileDaLeggere() As Integer
 
 End Function
 
-Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As String) As PosQuartina
-	Dim posizione As PosQuartina
-	posizione.mag  = 0		'0 = NON ESISTE, 1 = MAG_1, 2 = MAG_2
-	posizione.cass = 0
+Function VerificaSeQuartinaEsisteInMagazzino(quadra As Integer, qrt As String, connectionString As String) As PosQuartina
+	Dim pos As PosQuartina
+	pos.mag  = 0		'0 = NON ESISTE, 1 = MAG_1, 2 = MAG_2
+	pos.cass = 0
 
-	VerificaSeQuartinaEsisteInMagazzino = posizione 	'inizializzzo a NON ESISTE
+	VerificaSeQuartinaEsisteInMagazzino = pos 	'inizializzzo a NON ESISTE
 
 
 	'Dim varname As String
@@ -694,8 +692,8 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
 				Using MyDataReader As OdbcDataReader
 					MyDataReader = MyCommand.ExecuteReader
 
-					Debug.Print CStr(MyDataReader.HasRows)
-					Debug.Print CStr(MyDataReader.RecordsAffected)
+					'Debug.Print CStr(MyDataReader.HasRows)
+					'Debug.Print CStr(MyDataReader.RecordsAffected)
 
 					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
 					If MyDataReader.HasRows Then
@@ -704,19 +702,30 @@ Function VerificaSeQuartinaEsisteInMagazzino(qrt As String, connectionString As 
 						'[__CAR_CASS_RIK:Cassetto]		= MyDataReader("cassetto_ID_CASSETTO")
 						'[__CAR_CASS_RIK:Quartina]		= MyDataReader("ID_QUARTINA")
 
-						posizione.mag 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
-						posizione.cass	= MyDataReader("cassetto_ID_CASSETTO")
+						pos.mag 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
+						pos.cass	= MyDataReader("cassetto_ID_CASSETTO")
 					Else
 						'la quartina non esiste allora forzo i valori di posizione
-						posizione.mag = 0
-						posizione.cass = 0
+						pos.mag = 0
+						pos.cass = 0
 
 					End If
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
 
-        VerificaSeQuartinaEsisteInMagazzino = posizione 'torno valore trovato
+        'memorizzo il cassetto assegnato in base alla quadra di provenienza
+        If quadra = 1 Then
+			[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= pos.cass 'memorizzo il cassetto assegnato al pezzo
+			[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 	= pos.mag 'memorizzo il magazzino assegnato al pezzo
+		ElseIf quadra = 2 Then
+			[Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= pos.cass 'memorizzo il cassetto assegnato al pezzo
+			[Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 	= pos.mag 'memorizzo il magazzino assegnato al pezzo
+		End If
+
+		DebugMsg "GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; posizione.mag = " &amp; CStr(pos.mag)
+		DebugMsg "GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; posizione.cass = " &amp; CStr(pos.cass)
+        VerificaSeQuartinaEsisteInMagazzino = pos 'torno valore trovato
 
 	  'Catch program exception
 	Catch MyException As Exception
@@ -807,7 +816,7 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
 
-        DebugMsg("CassettiDisponibili() - cassetti = " &amp; vbCrLf &amp; CStr(cassetti)  &amp; ".")
+        DebugMsg("CassettiDisponibili() - cassetti = " &amp; CStr(cassetti)  &amp; ".")
         CassettiDisponibili = cassetti 'torno valore trovato
 
 	  'Catch program exception
@@ -866,8 +875,10 @@ Function MissioneAssegnabile() As Integer
 			cassettoInEstrattoreAssegnatoPronto = False
 		End If
 	Else
-		'eccezione perchè :MAGAZZINO_ASSEGNATO deve essere 1 o 2
-		Throw New System.Exception("GestioneZonaR1.movbas -&gt; MissioneAssegnabile() ECCEZZIONE: valore [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] non  ammesso: " &amp; CStr([Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]) &amp; ".")
+		' non pronto
+		cassettoInEstrattoreAssegnatoPronto = False
+		'CANCELLA 'eccezione perchè :MAGAZZINO_ASSEGNATO deve essere 1 o 2
+		'CANCELLA 'Throw New System.Exception("GestioneZonaR1.movbas -&gt; MissioneAssegnabile() ECCEZZIONE: valore [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] non  ammesso: " &amp; CStr([Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]) &amp; ".")
 	End If
 
 	assegnabileQ1 =	[Q1_In:PezzoPronto] _
@@ -891,8 +902,10 @@ Function MissioneAssegnabile() As Integer
 			cassettoInEstrattoreAssegnatoPronto = False
 		End If
 	Else
-		'eccezione perchè :MAGAZZINO_ASSEGNATO deve essere 1 o 2
-		Throw New System.Exception("GestioneZonaR1.movbas -&gt; MissioneAssegnabile() ECCEZZIONE: valore [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] non  ammesso: " &amp; CStr([Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]) &amp; ".")
+		' non pronto
+		cassettoInEstrattoreAssegnatoPronto = False
+		'CANCELLA 'eccezione perchè :MAGAZZINO_ASSEGNATO deve essere 1 o 2
+		'CANCELLA Throw New System.Exception("GestioneZonaR1.movbas -&gt; MissioneAssegnabile() ECCEZZIONE: valore [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] non  ammesso: " &amp; CStr([Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO]) &amp; ".")
 	End If
 
 	assegnabileQ2 = [Q2_In:PezzoPronto] _
@@ -910,7 +923,7 @@ Function MissioneAssegnabile() As Integer
 		If assegnabileQ2 Then
 			MissioneAssegnabile = 2
 		End If
-		'se nessun pezzo pronto MissioneAssegnabile = 0
+		'se nessun pezzo pronto MissioneAssegnabile = 0, già impostato a inizio funzione
 	End If
 End Function
 
@@ -935,6 +948,9 @@ Function transizioneAttendiCassettoDisponibile() As Boolean
 
 	If dispQ1 And dispQ2 Then
 		transizioneAttendiCassettoDisponibile = PezzoPiuVecchio()
+		'devo verificare se il pezzo più vecchio è gestibile, ovvero se ho cassetti liberi nel magazzino o se è tutto pieno
+		'TODO ##################################
+
 	Else
 		'ho solo un pezzo pronto o nessuno
 		If dispQ1 Then
@@ -949,7 +965,7 @@ Function transizioneAttendiCassettoDisponibile() As Boolean
 End Function
 
 Function AttendiCassettoDisponibile() As Integer
-	'questa funzione torna 0 se non posso assegnare nessu ncassetto alla quartina perche magazziono di riferimento è pieno
+	'questa funzione torna 0 se non posso assegnare nessun cassetto alla quartina perche magazziono di riferimento è pieno
 	'torna 1 o 2 se posso assegnare un cassetto (il magazzionio di riferimento dipende da TipoCarico) al pezzo che proviente dalla quadra 1 o 2
 	AttendiCassettoDisponibile = 0
 	Dim dispQ1 As Boolean
@@ -1032,10 +1048,10 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
             							"(" &amp; _
             							CStr(TipoCarico) &amp; _
             							", " &amp; CStr(leggiDaQuadra) &amp; _
-            							", `INS` " &amp; _
-            							", " &amp; CStr(ID_QUARTINA)  &amp; _
+            							", ""INS"" " &amp; _
+            							", " &amp; """" &amp; CStr(ID_QUARTINA) &amp; """"  &amp; _
             							", " &amp; CStr(TOTALE_PEZZI_QUARTINA) &amp;  _
-            							", " &amp; CStr(NOME_COMMESSA) &amp;  _
+            							", " &amp; """" &amp; CStr(NOME_COMMESSA) &amp; """" &amp;  _
             							", " &amp; CStr(NUM_SQUADRETTE1) &amp;  _
             							", " &amp; CStr(COD_SQUADRETTA1) &amp;  _
             							", " &amp; CStr(NUM_SQADRETTE2) &amp;  _
@@ -1065,6 +1081,15 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
+
+        'memorizzo il cassetto assegnato in base alla quadra di provenienza
+        If leggiDaQuadra = 1 Then
+			[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= pos.cass 'memorizzo il cassetto assegnato al pezzo
+			[Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 	= pos.mag 'memorizzo il magazzino assegnato al pezzo
+		ElseIf leggiDaQuadra = 2 Then
+			[Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= pos.cass 'memorizzo il cassetto assegnato al pezzo
+			[Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] 	= pos.mag 'memorizzo il magazzino assegnato al pezzo
+		End If
 
         DebugMsg("AssegnaCassettoAllaQuartina() - cassettoPiuViciono pos.mag = " &amp; CStr(pos.mag) &amp; " pos.cass = " &amp; CStr(pos.cass)  &amp; ".")
         AssegnaCassettoAllaQuartina = pos 'torno valore trovato
@@ -1105,8 +1130,7 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 		'objThreshold = Nothing
 		'objAlarm = Nothing
 
-		Exit Function
-
+		'Exit Function
     End Try
 
 End Function
@@ -1327,7 +1351,7 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
             							"(" &amp; _
             							CStr([loc_ImpostazioniImpianto:TipoCarico]) &amp; _
             							", " &amp; CStr([R1_STATUS:PZ_DA_QUADRA]) &amp; _
-            							", `INS` " &amp; _
+            							", ""INS"" " &amp; _
             							", " &amp; CStr([R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA]) &amp; _
             							", " &amp; CStr("NULL") &amp; _
             							", " &amp; CStr("NULL") &amp; _
@@ -1508,7 +1532,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 		ElseIf ret = 0 Then
 			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery no Row updated " 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 		ElseIf ret &gt; 0 Then
-			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; ret 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 		End If
 
 		'poi metto fuori il pezzo che è realmente nell'estrattore, se ce ne è uno
@@ -1527,7 +1551,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 			ElseIf ret = 0 Then
 				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery no Row updated " 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 			ElseIf ret &gt; 0 Then
-				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; ret 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 			End If
 		End If
 
@@ -1659,7 +1683,6 @@ Sub AggiorrnaMembri(source As String, dest As String)
 	Dim etDest As movicon.eVariableType
 
 	objSource 	= GetVariableObject(source)
-objSource 	= GetVariableObject("MAG1_ES1_ACT")
 	objDest 	= GetVariableObject(dest)
 
 
@@ -1674,8 +1697,8 @@ objSource 	= GetVariableObject("MAG1_ES1_ACT")
 
 	If (etSource = etDest) Then
 		While (Not MemberSource Is Nothing) And (Not MemberDest Is Nothing )
-			DebugMsg "AggiorrnaMembri() -&gt; MemberSource name = " 	&amp; MemberSource.GetName 	&amp; "; value = " &amp; CStr(MemberSource.Value) 	&amp; "; Tipo = " &amp; CStr(MemberSource.GetType())
-			DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 		&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberSource name = " 	&amp; MemberSource.GetName 	&amp; "; value = " &amp; CStr(MemberSource.Value) 	&amp; "; Tipo = " &amp; CStr(MemberSource.GetType())
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 		&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
 
 			etSource 	= MemberSource.GetType()
 			etDest 		= MemberDest.GetType()
@@ -1698,7 +1721,62 @@ objSource 	= GetVariableObject("MAG1_ES1_ACT")
 
 End Sub
 
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
 
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		DebugMsg 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		'Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	End While
+	MemberVar 	= Nothing
+	objVar 		= Nothing
+End Sub
 
 Function PezzoPiuVecchio() As Integer
 	PezzoPiuVecchio = 0
@@ -1782,7 +1860,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiB3AJkBSwKGAuwCSAORA7QD8ANbBBcFfwW9BcIF+gUDBkcGdQY=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiB1AOYAlQFJAoQCCwRzBC8FnwUbBg==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
