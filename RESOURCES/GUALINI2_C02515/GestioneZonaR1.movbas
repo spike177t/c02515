@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="41839" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="18684" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
@@ -34,6 +34,8 @@ Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
 
 Dim MysSqlConnectionString As String
 Dim disponibileLastCheck As Double
+
+Dim enableLogMsg As Boolean
 
 'Sub Main2
 '	Dim F As Object
@@ -112,8 +114,8 @@ AA:
 Wait 1
 [Q2_In:PezzoPronto] = True
 StatoCicloCarico = 1000
-loc_Q1_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
-loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
+loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
+loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
 	Do
 		'azioni da fare tutti i cicli
 
@@ -127,28 +129,31 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				StatoCicloCarico = 1000		'AttesaPezzi
 
 			Case 1000	'AttesaPezzi
-				DebugMsg "StatoCicloCarico = 1000	'AttesaPezzi"
+				'DebugMsg "StatoCicloCarico = 1000	'AttesaPezzi"
 				'inizio a scorrere le condizioni di uscita dallo stato
 				StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot
 
 			Case 1010	'AttesaPezzi_AssegnaMissioneRobot
-				DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
+				'DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
 				'guardo se ho una missione assegnabile
-				missioneNum = MissioneAssegnabile()
+				missioneNum = MissioneAssegnabile() 'torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
 				If missioneNum &gt; 0 Then
+					LogMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot; missioneNum = 0 " &amp; CStr(missioneNum)
 					StatoCicloCarico = 4100	'AssegnaMissioneRobot
 				Else
 					StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile
 				End If
 
 			Case 1020	'AttesaPezzi_AttendiCassettoDisponibile
-				DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
+				'DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
 				'guardo se ho un cassetto disponibile da assegnare a pezzo pronto
 				valVerificaAttendiCassettoDisponibile = transizioneAttendiCassettoDisponibile() 'serve per non fare il controllo sempre
+									'valVerificaAttendiCassettoDisponibile = AttendiCassettoDisponibile() 'serve per non fare il controllo sempre
 				'valVerificaAttendiCassettoDisponibile = 0 solo se avevo letto un file della quadra e non avevo cassetti a cui assegnare la quartina
 				'valVerificaAttendiCassettoDisponibile &gt; 0 se è passato un tout e non ho ancora assegnato la quartina
 				If valVerificaAttendiCassettoDisponibile &gt; 0 Then
-					DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile &amp; valVerificaAttendiCassettoDisponibile &gt; 0 "
+					LogMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile &amp; valVerificaAttendiCassettoDisponibile =  " &amp; CStr(valVerificaAttendiCassettoDisponibile)
+					leggiDaQuadra = valVerificaAttendiCassettoDisponibile
 					StatoCicloCarico = 3100	'AttendiCassettoDisponibile
 					'AttendiCassettoDisponibile controlla che si sia liberato un cassetto per assegnare il pezzo ad una quartina
 				Else
@@ -156,19 +161,26 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				End If
 
 			Case 1030	'AttesaPezzi_LeggiFileDaQuadra
-				DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
+				'DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
 				'obiettivo: verificare se ci sono file_pezzo da leggere sulle quadra
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
 				leggiDaQuadra = FileDaLeggere()
 				If leggiDaQuadra &gt; 0 Then
+					LogMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra; leggiDaQuadra = " &amp; CStr(leggiDaQuadra)
 					StatoCicloCarico = 2100	'LeggiFileDaQuadra
 				Else
 					StatoCicloCarico = 1040	'FineMissioneRobot
 				End If
 
 			Case 1040	'FineMissioneRobot
-				DebugMsg "StatoCicloCarico = 1040	'FineMissioneRobot"
-				If [R1_STATUS:FINE_MISSIONE] Then
+				'DebugMsg "StatoCicloCarico = 1040	'FineMissioneRobot"
+				If [R1_STATUS:FINE_MISSIONE]  _
+					And [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] &gt; 0 _
+					And [R1_DATI_PEZZO:CASSETTO_ASSEGNATO] &gt; 0 _
+					And [R1_DATI_PEZZO:NOME_PEZZO_UNICO] &lt;&gt; "" _
+					And [R1_DATI_PEZZO:ID_QUARTINA] &lt;&gt; "" _
+					Then
+					LogMsg "StatoCicloCarico = 1040	'FineMissioneRobot; [R1_STATUS:FINE_MISSIONE] = True"
 					StatoCicloCarico = 6100	'FineRobot
 				Else
 					StatoCicloCarico = 1000	'AttesaPezzi
@@ -176,7 +188,7 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 
 
 			Case 2100	'LeggiFileDaQuadra
-				DebugMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra"
+				LogMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra"
 				'obiettivo: reperire le informazini contenute nei file_pezzo forniti dalla quadra. la quadra di riferimento dipende dal valore di leggiDaQuadra
 				'Guardo se ho almeno un file da leggere
 				If (leggiDaQuadra &gt; 0) Then
@@ -217,24 +229,47 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				End If
 
 			Case 2200	'RikCassettoInEstrattorePlc
-				DebugMsg "StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc"
+				LogMsg "StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc"
+'				'posso fare richiesta di estrattore se EsXX_RIK:NOME_PEZZO_UNICO = EsXX_ACT:NOME_PEZZO_UNICO e EsXX_ACT:DEPO = 1 , quindi pezzo depositato
+'				'oppure se EsXX_RIK:NOME_PEZZO_UNICO = "" che significa che non ho richieste pendenti
+'
+'				'RikCassettoInEstrattorePlc(posizione.mag, posizione.cass) 'non è necessario passare la quartina perchè è già stata assegnata al cassetto corrispondente
+'				If (posizione.mag = 1 And [MAG1_ES1_RIK:ID_CASSETTO] = posizione.cass) _
+'					Or (posizione.mag = 2 And [MAG2_ES1_RIK:ID_CASSETTO] = posizione.cass) Then
+'					'caso in cui il cassetto richiesto sia uguale a quello precedente
+'					StatoCicloCarico = 1000	'AttesaPezzi
+'				End If
 
-				'RikCassettoInEstrattorePlc(posizione.mag, posizione.cass) 'non è necessario passare la quartina perchè è già stata assegnata al cassetto corrispondente
+				Select Case leggiDaQuadra
+					Case 1:
+						varname_pezzo = "Q1_PEZZO_DISP"
+					Case 2:
+						varname_pezzo = "Q2_PEZZO_DISP"
+					Case Else
+						Throw New System.Exception("GestioneZonaR1.movbas -&gt; Case 2200	'RikCassettoInEstrattorePlc: parametro leggiDaQuadra non ammesso: " &amp; CStr(leggiDaQuadra) &amp; ".")
+				End Select
+
 				If posizione.mag = 1 And Not [MAG1_ES1_RIK:STROBE] Then
 					[MAG1_ES1_RIK:ID_CASSETTO] 				= posizione.cass
 					[MAG1_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
+					[MAG1_ES1_RIK:NOME_PEZZO_UNICO] 		= GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
+					[MAG1_ES1_RIK:POSIZIONE] 				= GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 					[MAG1_ES1_RIK:STROBE] 					= True
+					StatoCicloCarico = 1000	'AttesaPezzi
 				ElseIf posizione.mag = 2 And Not [MAG2_ES1_RIK:STROBE] Then
 					[MAG2_ES1_RIK:ID_CASSETTO] 				= posizione.cass
 					[MAG2_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
+					[MAG2_ES1_RIK:NOME_PEZZO_UNICO] 		= GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
+					[MAG2_ES1_RIK:POSIZIONE] 				= GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 					[MAG2_ES1_RIK:STROBE] 					= True
+					StatoCicloCarico = 1000	'AttesaPezzi
 				ElseIf posizione.mag &lt;&gt; 1 And posizione.mag &lt;&gt; 2 Then
 					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
 				End If
-				StatoCicloCarico = 1000	'AttesaPezzi
+
 
 			Case 2300	'AssegnaCassettoAllaQuartina
-				DebugMsg "StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina"
+				LogMsg "StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina"
 				'obiettivo: assegnare un casetto alla quartina. se sono qui sicuramento ho un cassetto disponibile in base al valore di [loc_ImpostazioniImpianto:TipoCarico]
 				'assegno il cassetto alla quartina che proviene dalla quadra identificata da leggiDaQuadra
 				'dallo step 2100 ho in varname_pezzo il valore della variabile di riferimento per i dati del pezzo
@@ -247,7 +282,7 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 									, GetVariableValue(varname_pezzo &amp; ":NOME_COMMESSA") _
 									, GetVariableValue(varname_pezzo &amp; ":NUM_SQUADRETTE1") _
 									, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA1") _
-									, GetVariableValue(varname_pezzo &amp; ":NUM_SQADRETTE2") _
+									, GetVariableValue(varname_pezzo &amp; ":NUM_SQUADRETTE2") _
 									, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA2") _
 									)
 				If posizione.mag &gt; 0 And posizione.cass &gt; 0 Then
@@ -258,9 +293,9 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				End If
 
 			Case 3100	'AttendiCassettoDisponibile
-				DebugMsg "StatoCicloCarico = 3100	'AttendiCassettoDisponibile" &amp; "; valVerificaAttendiCassettoDisponibile = " &amp; CStr(valVerificaAttendiCassettoDisponibile)
+				LogMsg "StatoCicloCarico = 3100	'AttendiCassettoDisponibile" &amp; "; valVerificaAttendiCassettoDisponibile = " &amp; CStr(valVerificaAttendiCassettoDisponibile)
 				'memorizzo da quale quadra proviene il pezzo
-				leggiDaQuadra = AttendiCassettoDisponibile()
+			'leggiDaQuadra = AttendiCassettoDisponibile()
 				If leggiDaQuadra &gt; 0 Then
 					StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
 				Else
@@ -268,12 +303,12 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				End If
 
 			Case 4100	'AssegnaMissioneRobot
-				DebugMsg "StatoCicloCarico = 4100	'AssegnaMissioneRobot"
+				LogMsg "StatoCicloCarico = 4100	'AssegnaMissioneRobot"
 				'se sono qui ho tutte le condizioni per assegnare una nuova missione al robot
 				'devo capire però quale missione assegnare nel caso in cui ci siano le condizioni per tutte e due le quadre
 
-				If [R1_STATUS:DISPONIBILE] Then
-					[R1_STATUS:PZ_DA_QUADRA] = PezzoPiuVecchio()
+				If [R1_STATUS:DISPONIBILE] And Not [R1_STATUS:IN_MISSIONE]Then
+					[R1_STATUS:PZ_DA_QUADRA] = missioneNum ' da step 1010 -&gt; MissioneAssegnabile() torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
 					varname_missioneDaQuadra = IIf([R1_STATUS:PZ_DA_QUADRA] = 1, "Q1_PEZZO_DISP", "Q2_PEZZO_DISP")
 
 					[R1_STATUS:MAGAZZINO]				= GetVariableValue(varname_missioneDaQuadra &amp; ":MAGAZZINO_ASSEGNATO")
@@ -298,8 +333,8 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 					MemberPezzo 	= objPezzo.GetMemberObjectFromIndex(mCount)
 					MemberR1 		= objR1.GetMemberObjectFromIndex(mCount)
 					While Not MemberPezzo Is Nothing
-						DebugMsg "StatoCicloCarico = 4100 'AssegnaMissioneRobot -&gt; MemberPezzo name is -&gt; " &amp; MemberPezzo.GetName &amp; "; MemberPezzo value is -&gt; " &amp; CStr(MemberPezzo.Value) '
-						DebugMsg "StatoCicloCarico = 4100 'AssegnaMissioneRobot -&gt; MemberR1 name is -&gt; " &amp; MemberR1.GetName &amp; "; MemberR1 value is -&gt; " &amp; CStr(MemberR1.Value) '
+						'DebugMsg "StatoCicloCarico = 4100 'AssegnaMissioneRobot -&gt; MemberPezzo name is -&gt; " &amp; MemberPezzo.GetName &amp; "; MemberPezzo value is -&gt; " &amp; CStr(MemberPezzo.Value) '
+						'DebugMsg "StatoCicloCarico = 4100 'AssegnaMissioneRobot -&gt; MemberR1 name is -&gt; " &amp; MemberR1.GetName &amp; "; MemberR1 value is -&gt; " &amp; CStr(MemberR1.Value) '
 
 						MemberR1.Value = MemberPezzo.Value
 						mCount = mCount + 1
@@ -310,7 +345,7 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 					MemberR1 		= Nothing
 					objPezzo 		= Nothing
 					objR1 			= Nothing
-					
+
 					[R1_STATUS:FINE_MISSIONE] = False	'forzo per sicurezza
 
 				End If
@@ -320,28 +355,35 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				stepTout = Now()
 
 			Case 4200	'AttesaSegnaleRobotOccupato
+				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
 				If SuperatoTimeout(stepTout, TOUT_STEP) Then
 					alm_Step_Tout = True
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
-				If	Not [R1_STATUS:DISPONIBILE] Then
+				'If	Not [R1_STATUS:DISPONIBILE] Then
+				If	[R1_STATUS:DISPONIBILE] And [R1_STATUS:IN_MISSIONE] Then
 					alm_Step_Tout = False
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
 
 			Case 6100	'FineRobot
-				DebugMsg "StatoCicloCarico = 6100	'FineRobot"
+				LogMsg "StatoCicloCarico = 6100	'FineRobot"
 				ret = FineRobot(MysSqlConnectionString)
 				If ret &lt;&gt; 0 Then
 					'Alzo allarme
 					alm_FineRobot = True
 					StatoCicloCarico = 1000	'AttesaPezzi
 				Else
+					[R1_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
+
+					'segnalo all'estrattore che ho depositato il pezzo
+					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 					StatoCicloCarico = 6200	'VerificaUltimoPezzo
 				End If
 
 			Case 6200	'VerificaUltimoPezzo
-				DebugMsg "StatoCicloCarico = 6200	'VerificaUltimoPezzo"
+				LogMsg "StatoCicloCarico = 6200	'VerificaUltimoPezzo"
 					'se ultimo pezzo della quartina faccio rientrare l'estrattore
 					If Not [R1_DATI_PEZZO:ULTIMO_PEZZO] Then
 						StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
@@ -358,7 +400,7 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 					End If
 
 			Case 6300	'GestisciQuartinaSuccessiva
-				DebugMsg "StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva"
+				LogMsg "StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva"
 				'reset dei dati di missione
 				If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
 					StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva
@@ -368,9 +410,11 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				End If
 
 			Case 7100	'RilevaCassettoQuartinaSuccessiva
-				DebugMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
+				LogMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
 				posizione = RilevaCassettoQuartinaSuccessiva(MysSqlConnectionString)
 				If (posizione.mag &gt; 0 And posizione.cass &gt; 0) Then
+					[R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = posizione.mag
+					[R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA]  = posizione.cass
 					StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
 				Else
 					'non ho cassetti disponibili perchè magazzino pieno
@@ -379,8 +423,15 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 
 
 			Case 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
-				DebugMsg "StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc"
+				LogMsg "StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc"
 				varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_RIK", "MAG2_ES1_RIK")
+
+				If  GetVariableValue(varname_estrattore &amp; ":STROBE") Then
+					'se qui trovo lo STROBE significa che l'altra quadra per ragioni strane ha chiesto un pezzo da questo magazzino
+					'allora non posso fare anticipo richiesta cassetto ed esco
+					StatoCicloCarico = 8100	'ResetDatiPezzoMissione
+				End If
+				'--- non vale più, vedi sopra [rimango in questo stato fino a quando non posso assegnare il cassetto all'estrattore ovvero Not xx:STROBE]
 				If Not GetVariableValue(varname_estrattore &amp; ":STROBE") Then
 					SetVariableValue(varname_estrattore &amp; ":ID_CASSETTO", [R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA])
 					SetVariableValue(varname_estrattore &amp; ":ID_QUARTINA", [R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA])
@@ -390,7 +441,8 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 				End If
 
 			Case 8100	'ResetDatiPezzoMissione
-				DebugMsg "StatoCicloCarico = 8100	'ResetDatiPezzoMissione"
+				LogMsg "StatoCicloCarico = 8100	'ResetDatiPezzoMissione"
+
 				'occorre eliminare il file dalla quadra
 				EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
 				'reset dei valori dei membri che identificano il pezzo
@@ -403,6 +455,12 @@ loc_Q2_path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su s
 		End Select
 
 	DoEvents
+	If StatoCicloCarico_Old &lt;&gt; StatoCicloCarico Then
+		enableLogMsg = True
+		StatoCicloCarico_Old = StatoCicloCarico
+	Else
+		enableLogMsg = False
+	End If
 	Loop Until IsInStoppingMode
 
 End Sub
@@ -646,6 +704,92 @@ Function FileDaLeggere() As Integer
 
 End Function
 
+Function QuartinaEsiste(qrt As String, connectionString As String) As Boolean
+
+	Dim vResult As Object
+    Dim commandText As String
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+	QuartinaEsiste = False
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT " &amp; _
+                            "  `quartina`.`ID_QUARTINA` " &amp; _
+                            ", `quartina`.`TOTALE_PEZZI_QUARTINA` " &amp; _
+                            ", `quartina`.`NOME_COMMESSA` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE1` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA1` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE2` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA2` " &amp; _
+			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
+                            ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
+                      	"FROM  `gualini`.`quartina` " &amp; _
+            			"WHERE `quartina`.`ID_QUARTINA` = '" &amp; qrt &amp;"';"
+            DebugMsg "GestioneZonaR1.movbas -&gt; QuartinaEsiste; commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					'Debug.Print CStr(MyDataReader.HasRows)
+					'Debug.Print CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						QuartinaEsiste = True
+					Else
+						'la quartina non esiste
+						QuartinaEsiste = False
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+		DebugMsg "GestioneZonaR1.movbas -&gt; QuartinaEsiste; qrt = " &amp; CStr(qrt) &amp; ", Esiste = " &amp; CStr(QuartinaEsiste)
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+    End Try
+End Function
+
+
 Function VerificaSeQuartinaEsisteInMagazzino(quadra As Integer, qrt As String, connectionString As String) As PosQuartina
 	Dim pos As PosQuartina
 	pos.mag  = 0		'0 = NON ESISTE, 1 = MAG_1, 2 = MAG_2
@@ -676,7 +820,7 @@ Function VerificaSeQuartinaEsisteInMagazzino(quadra As Integer, qrt As String, c
                             ", `quartina`.`NOME_COMMESSA` " &amp; _
                             ", `quartina`.`NUM_SQUADRETTE1` " &amp; _
                             ", `quartina`.`COD_SQUADRETTA1` " &amp; _
-                            ", `quartina`.`NUM_SQADRETTE2` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE2` " &amp; _
                             ", `quartina`.`COD_SQUADRETTA2` " &amp; _
 			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
                             ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
@@ -851,7 +995,7 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
 
 End Function
 
-Function MissioneAssegnabile() As Integer
+Function MissioneAssegnabile() As Integer 'torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
 	MissioneAssegnabile = 0
 
 	Dim assegnabileQ1 As Boolean
@@ -884,6 +1028,7 @@ Function MissioneAssegnabile() As Integer
 	assegnabileQ1 =	[Q1_In:PezzoPronto] _
 					And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" _
 					And [R1_STATUS:DISPONIBILE] _
+					And Not [R1_STATUS:IN_MISSIONE] _
 					And cassettoInEstrattoreAssegnatoPronto
 
 	'verifico le condizioni per il pezzo su Q2
@@ -911,6 +1056,7 @@ Function MissioneAssegnabile() As Integer
 	assegnabileQ2 = [Q2_In:PezzoPronto] _
 					And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" _
 					And [R1_STATUS:DISPONIBILE] _
+					And Not [R1_STATUS:IN_MISSIONE] _
 					And cassettoInEstrattoreAssegnatoPronto
 
 	If assegnabileQ1 And assegnabileQ2 Then
@@ -927,8 +1073,7 @@ Function MissioneAssegnabile() As Integer
 	End If
 End Function
 
-
-Function transizioneAttendiCassettoDisponibile() As Boolean
+Function transizioneAttendiCassettoDisponibile() As Integer
 	transizioneAttendiCassettoDisponibile = 0
 	Dim dispQ1 As Boolean
 	Dim dispQ2 As Boolean
@@ -937,8 +1082,26 @@ Function transizioneAttendiCassettoDisponibile() As Boolean
 	tout = SuperatoTimeout(disponibileLastCheck, TOUT_DISPONIBILE)
 	If tout Then
 		disponibileLastCheck = Timer
+		transizioneAttendiCassettoDisponibile = AttendiCassettoDisponibile()
 	Else
-		transizioneAttendiCassettoDisponibile = 0
+		transizioneAttendiCassettoDisponibile = 0 'esco
+		Exit Function
+	End If
+
+End Function
+
+
+Function transizioneAttendiCassettoDisponibile_OLD() As Integer
+	transizioneAttendiCassettoDisponibile_OLD = 0
+	Dim dispQ1 As Boolean
+	Dim dispQ2 As Boolean
+	Dim tout As Boolean
+
+	tout = SuperatoTimeout(disponibileLastCheck, TOUT_DISPONIBILE)
+	If tout Then
+		disponibileLastCheck = Timer
+	Else
+		transizioneAttendiCassettoDisponibile_OLD = 0
 		Exit Function
 	End If
 
@@ -947,17 +1110,17 @@ Function transizioneAttendiCassettoDisponibile() As Boolean
 	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
 
 	If dispQ1 And dispQ2 Then
-		transizioneAttendiCassettoDisponibile = PezzoPiuVecchio()
+		transizioneAttendiCassettoDisponibile_OLD = PezzoPiuVecchio()
 		'devo verificare se il pezzo più vecchio è gestibile, ovvero se ho cassetti liberi nel magazzino o se è tutto pieno
 		'TODO ##################################
 
 	Else
 		'ho solo un pezzo pronto o nessuno
 		If dispQ1 Then
-			transizioneAttendiCassettoDisponibile = 1
+			transizioneAttendiCassettoDisponibile_OLD = 1
 		End If
 		If dispQ2 Then
-			transizioneAttendiCassettoDisponibile = 2
+			transizioneAttendiCassettoDisponibile_OLD = 2
 		End If
 		'se nessun cassetto disponibile transizioneAttendiCassettoDisponibile = 0
 	End If
@@ -968,6 +1131,78 @@ Function AttendiCassettoDisponibile() As Integer
 	'questa funzione torna 0 se non posso assegnare nessun cassetto alla quartina perche magazziono di riferimento è pieno
 	'torna 1 o 2 se posso assegnare un cassetto (il magazzionio di riferimento dipende da TipoCarico) al pezzo che proviente dalla quadra 1 o 2
 	AttendiCassettoDisponibile = 0
+	Dim dispQ1 As Boolean = False
+	Dim dispQ2 As Boolean = False
+	Dim assegnabileQ1 As Boolean = False	'dice se il pezzo su Q1 è assegnabile a un cassetto
+	Dim assegnabileQ2 As Boolean = False	'dice se il pezzo su Q2 è assegnabile a un cassetto
+	Dim qrtEsisteQ1 As Boolean = False	'dice se il pezzo su Q1 appartine ad una quartina già assegnata ad un magazzino
+	Dim qrtEsisteQ2 As Boolean = False	'dice se il pezzo su Q2 appartine ad una quartina già assegnata ad un magazzino
+	'Dim quadraPezzoDaAssegnare As Integer	'num quadra del pezzo da assegnare
+	Dim numCassettiDispPzSuQ1 As Integer
+	Dim numCassettiDispPzSuQ2 As Integer
+	Dim numCassettiDisp As Integer
+
+	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Now()-lastcheck &gt; TIMEOUT)
+	'tout è già stato contato in transizioneAttendiCassettoDisponibile()
+
+	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt; "" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] = 0
+	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt; "" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO] = 0
+
+	If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then 'pezzo su magazzino corrispondente
+		If dispQ1 Then
+			'caso in cui il pezzo da Q1 va su Mag1
+			numCassettiDispPzSuQ1 = CassettiDisponibili(1, MysSqlConnectionString)
+			qrtEsisteQ1 = QuartinaEsiste([Q1_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			If numCassettiDispPzSuQ1 &gt; 0 Or qrtEsisteQ1 Then
+				assegnabileQ1 = True
+			End If
+		End If
+		If dispQ2 Then
+			'caso in cui il pezzo da Q2 va su Mag2
+			numCassettiDispPzSuQ2 = CassettiDisponibili(2, MysSqlConnectionString)
+			qrtEsisteQ2 = QuartinaEsiste([Q2_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			If numCassettiDispPzSuQ2 &gt; 0 Or qrtEsisteQ2 Then
+				assegnabileQ2 = True
+			End If
+		End If
+
+	ElseIf [loc_ImpostazioniImpianto:TipoCarico] = 1 Then 'pezzo su qualsiasi magazzino
+		'QuadraSuTutto
+		numCassettiDisp = CassettiDisponibili(0, MysSqlConnectionString)
+		If dispQ1 Then
+			qrtEsisteQ1 = QuartinaEsiste([Q1_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			If numCassettiDisp &gt; 0 Or qrtEsisteQ1 Then
+				assegnabileQ1 = True
+			End If
+		End If
+		If dispQ2  Then
+			qrtEsisteQ2 = QuartinaEsiste([Q2_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			If numCassettiDisp &gt; 0 Or qrtEsisteQ2 Then
+				assegnabileQ2= True
+			End If
+		End If
+	End If
+
+	AttendiCassettoDisponibile = 0	'non posso assegnare il cassetto
+
+	If assegnabileQ1 And assegnabileQ2 Then
+		AttendiCassettoDisponibile = PezzoPiuVecchio()
+	Else
+		'ho solo un pezzo assegnabile o nessuno
+		If assegnabileQ1 Then
+			AttendiCassettoDisponibile = 1
+		End If
+		If assegnabileQ2 Then
+			AttendiCassettoDisponibile = 2
+		End If
+	End If
+
+End Function
+
+Function AttendiCassettoDisponibile_OLD() As Integer
+	'questa funzione torna 0 se non posso assegnare nessun cassetto alla quartina perche magazziono di riferimento è pieno
+	'torna 1 o 2 se posso assegnare un cassetto (il magazzionio di riferimento dipende da TipoCarico) al pezzo che proviente dalla quadra 1 o 2
+	AttendiCassettoDisponibile_OLD = 0
 	Dim dispQ1 As Boolean
 	Dim dispQ2 As Boolean
 	Dim quadraPezzoDaAssegnare As Integer	'num quadra del pezzo da assegnare
@@ -999,18 +1234,18 @@ Function AttendiCassettoDisponibile() As Integer
 		numCassettiDisp = CassettiDisponibili(quadraPezzoDaAssegnare, MysSqlConnectionString)
 		If numCassettiDisp &gt; 0 Then
 			'posso assegnare una quartina al pezzo che proviene dalla quadra memorizzata in quadraPezzoDaAssegnare
-			AttendiCassettoDisponibile = quadraPezzoDaAssegnare
+			AttendiCassettoDisponibile_OLD = quadraPezzoDaAssegnare
 		Else
-			AttendiCassettoDisponibile = 0	'non posso assegnare il cassetto
+			AttendiCassettoDisponibile_OLD = 0	'non posso assegnare il cassetto
 		End If
 	Else
 		'QuadraSuTutto
 		numCassettiDisp = CassettiDisponibili(0, MysSqlConnectionString)
 		If numCassettiDisp &gt; 0 Then
 			'anche in questo caso posso assegnare una quartina al pezzo che proviene dalla quadra memorizzata in quadraPezzoDaAssegnare
-			AttendiCassettoDisponibile = quadraPezzoDaAssegnare
+			AttendiCassettoDisponibile_OLD = quadraPezzoDaAssegnare
 		Else
-			AttendiCassettoDisponibile = 0	'non posso assegnare il cassetto
+			AttendiCassettoDisponibile_OLD = 0	'non posso assegnare il cassetto
 		End If
 	End If
 
@@ -1024,7 +1259,7 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 									, NOME_COMMESSA As String _
 									, NUM_SQUADRETTE1 As Integer _
 									, COD_SQUADRETTA1 As String _
-									, NUM_SQADRETTE2 As Integer _
+									, NUM_SQUADRETTE2 As Integer _
 									, COD_SQUADRETTA2 As String _
 									) As PosQuartina
 	Dim pos As PosQuartina
@@ -1054,7 +1289,7 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
             							", " &amp; """" &amp; CStr(NOME_COMMESSA) &amp; """" &amp;  _
             							", " &amp; CStr(NUM_SQUADRETTE1) &amp;  _
             							", " &amp; CStr(COD_SQUADRETTA1) &amp;  _
-            							", " &amp; CStr(NUM_SQADRETTE2) &amp;  _
+            							", " &amp; CStr(NUM_SQUADRETTE2) &amp;  _
             							", " &amp; CStr(COD_SQUADRETTA2) &amp;  _
             							");"
 
@@ -1163,7 +1398,7 @@ Function FineRobot(connectionString As String) As Integer
 			'"`TOTALE_PEZZI_QUARTINA` =  " 			&amp; CStr(GetVariableValue("R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA") &amp; "," &amp; _
 			'"`NUM_SQUADRETTE1` =  " 				&amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE1") &amp; "," &amp; _
 			'"`COD_SQUADRETTA1` =  " 				&amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1") &amp; "," &amp; _
-			'"`NUM_SQADRETTE2` =  " 				&amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQADRETTE2") &amp; "," &amp; _
+			'"`NUM_SQUADRETTE2` =  " 				&amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE2") &amp; "," &amp; _
 			'"`COD_SQUADRETTA2` =  " 				&amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2") &amp; "," &amp; _
 			'"`NOME_COMMESSA` =  " 					&amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA") &amp; "," &amp; _
 			'"`cassetto_ID_CASSETTO` =  " 			&amp; CStr(GetVariableValue("R1_DATI_PEZZO:CASSETTO_ASSEGNATO") &amp; "," &amp; _
@@ -1175,29 +1410,30 @@ Function FineRobot(connectionString As String) As Integer
             "`TOTALE_PEZZI_QUARTINA`, " &amp; _
             "`NUM_SQUADRETTE1`, " &amp; _
             "`COD_SQUADRETTA1`, " &amp; _
-            "`NUM_SQADRETTE2`, " &amp; _
+            "`NUM_SQUADRETTE2`, " &amp; _
             "`COD_SQUADRETTA2`, " &amp; _
             "`NOME_COMMESSA`, " &amp; _
             "`cassetto_ID_CASSETTO`, " &amp; _
-            "`cassetto_magazzino_ID_MAGAZZINO`, " &amp; _
-            "VALUES " &amp; _
+            "`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
+            ") " &amp; _
+            " VALUES " &amp; _
 			"(" &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:ID_QUARTINA")) &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:ID_QUARTINA")) &amp; """" &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE1")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQADRETTE2")) &amp; ", " &amp; _
-			CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; ", " &amp; _
-			CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA")) &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; """" &amp; ", " &amp; _
+            CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE2")) &amp; ", " &amp; _
+			"""" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; """" &amp; ", " &amp; _
+			"""" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA")) &amp; """" &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:CASSETTO_ASSEGNATO")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO")) &amp; ", " &amp; _
+            CStr(GetVariableValue("R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO")) &amp; _
             ") ON DUPLICATE KEY UPDATE " &amp; _
             "`TOTALE_PEZZI_QUARTINA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA"))  &amp; ", " &amp; _
 			"`NUM_SQUADRETTE1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE1")) &amp; ", " &amp; _
-			"`COD_SQUADRETTA1` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; ", " &amp; _
-			"`NUM_SQADRETTE2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQADRETTE2")) &amp; ", " &amp; _
-			"`COD_SQUADRETTA2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; ", " &amp; _
-			"`NOME_COMMESSA` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA"))  &amp; ", " &amp; _
+			"`COD_SQUADRETTA1` = " &amp; """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA1")) &amp; """" &amp; ", " &amp; _
+			"`NUM_SQUADRETTE2` = " &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NUM_SQUADRETTE2")) &amp; ", " &amp; _
+			"`COD_SQUADRETTA2` = " &amp; """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:COD_SQUADRETTA2")) &amp; """" &amp; ", " &amp; _
+			"`NOME_COMMESSA` = " &amp; """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_COMMESSA"))  &amp; """" &amp;  _
             ";"
 
             DebugMsg "GestioneZonaR1.movbas -&gt; FineRobot(); commandText = " &amp; commandText
@@ -1222,22 +1458,23 @@ Function FineRobot(connectionString As String) As Integer
             "`quartina_ID_QUARTINA`) " &amp; _
             "VALUES " &amp; _
 			"(" &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:NOME_PEZZO_UNICO")) &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_PEZZO_UNICO")) &amp; """" &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:POSIZIONE")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:NOME_PEZZO_ESTERNO")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:CODICE_PROFILO")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:SERIE_PROFILO")) &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:NOME_PEZZO_ESTERNO")) &amp; """" &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:CODICE_PROFILO")) &amp; """" &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:SERIE_PROFILO")) &amp; """" &amp; ", " &amp; _
 			CStr(GetVariableValue("R1_DATI_PEZZO:MAX_LUNGHEZZA")) &amp; ", " &amp; _
 			CStr(GetVariableValue("R1_DATI_PEZZO:ALTEZZA_PROFILO")) &amp; ", " &amp; _
+            CStr(GetVariableValue("R1_DATI_PEZZO:LARGHEZZA_PROFILO")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:MISURA_CAMERA_ESTERNA")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:APPOGGIO_PEZZO")) &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:POSIZIONE_PEZZO_ESTERNO")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:ID_PEZZO_ESTERNO")) &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:ID_PEZZO_ESTERNO")) &amp; """" &amp; ", " &amp; _
             CStr(GetVariableValue("R1_DATI_PEZZO:LUNGHEZZA_PEZZO_ESTERNO")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:FILE_XML")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:DATA")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:ORA")) &amp; ", " &amp; _
-            CStr(GetVariableValue("R1_DATI_PEZZO:ID_QUARTINA")) &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:FILE_XML")) &amp; """" &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:DATA")) &amp; """" &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:ORA")) &amp; """" &amp; ", " &amp; _
+            """" &amp; CStr(GetVariableValue("R1_DATI_PEZZO:ID_QUARTINA")) &amp; """"  &amp; _
             "); "
 
             DebugMsg "GestioneZonaR1.movbas -&gt; FineRobot(); commandText2 = " &amp; commandText2
@@ -1309,7 +1546,7 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 									', NOME_COMMESSA As String _
 									', NUM_SQUADRETTE1 As Integer _
 									', COD_SQUADRETTA1 As String _
-									', NUM_SQADRETTE2 As Integer _
+									', NUM_SQUADRETTE2 As Integer _
 									', COD_SQUADRETTA2 As String _
 									') As PosQuartina
 	'devo chiamare la procedura MySql `CassettoPiuVicinoAndInsert`
@@ -1322,7 +1559,7 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 		'pNOME_COMMESSA VARCHAR(45),
 		'pNUM_SQUADRETTE1 TINYINT(4),
 		'pCOD_SQUADRETTA1  VARCHAR(45),
-		'pNUM_SQADRETTE2 TINYINT(4),
+		'pNUM_SQUADRETTE2 TINYINT(4),
 		'pCOD_SQUADRETTA2  VARCHAR(45)
         ')
     'con i soli dati di TipoCarico, LeggiDaQuadra, OP = "INS" e ID_QUARTINA e 0 o "" gli altri parametri
@@ -1352,7 +1589,7 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
             							CStr([loc_ImpostazioniImpianto:TipoCarico]) &amp; _
             							", " &amp; CStr([R1_STATUS:PZ_DA_QUADRA]) &amp; _
             							", ""INS"" " &amp; _
-            							", " &amp; CStr([R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA]) &amp; _
+            							", " &amp; """" &amp; CStr([R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA]) &amp; """" &amp; _
             							", " &amp; CStr("NULL") &amp; _
             							", " &amp; CStr("NULL") &amp; _
             							", " &amp; CStr("NULL") &amp; _
@@ -1442,21 +1679,21 @@ Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	Dim MemberR1 As DBVarObjCmdTarget
 	Dim MemberQuadra As DBVarObjCmdTarget
 
-	Dim mCount As Integer	'contatore dei membri
+	Dim membCount As Integer	'contatore dei membri
 	Dim et As movicon.eVariableType
 	varnameQuadra = IIf(daQuadra = 1, "Q1_PEZZO_DISP", "Q2_PEZZO_DISP")
 
 	objPezzo = GetVariableObject(varnameQuadra)
 	objR1 = GetVariableObject("R1_DATI_PEZZO")
 
-	mCount = 0	'inizializzo a 0
+	membCount = 0	'inizializzo a 0
 
-	MemberQuadra 	= objPezzo.GetMemberObjectFromIndex(mCount)
-	MemberR1 		= objR1.GetMemberObjectFromIndex(mCount)
+	MemberQuadra 	= objPezzo.GetMemberObjectFromIndex(membCount)
+	MemberR1 		= objR1.GetMemberObjectFromIndex(membCount)
 
 	While Not MemberQuadra Is Nothing
-		DebugMsg 		"ResetDatiPezzoMissione() -&gt; MemberQuadra name = " 	&amp; MemberQuadra.GetName 	&amp; "; value = " &amp; CStr(MemberQuadra.Value) 	&amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
-		DebugMsg 		"ResetDatiPezzoMissione() -&gt; MemberR1 name = " 		&amp; MemberR1.GetName 		&amp; "; value = " &amp; CStr(MemberR1.Value) 		&amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
+		'DebugMsg 		"ResetDatiPezzoMissione() -&gt; MemberQuadra name = " 	&amp; MemberQuadra.GetName 	&amp; "; value = " &amp; CStr(MemberQuadra.Value) 	&amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
+		'DebugMsg 		"ResetDatiPezzoMissione() -&gt; MemberR1 name = " 		&amp; MemberR1.GetName 		&amp; "; value = " &amp; CStr(MemberR1.Value) 		&amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
 		'Debug.Print 	"ResetDatiPezzoMissione() -&gt; MemberQuadra name = " 	&amp; MemberQuadra.GetName 	&amp; "; value = " &amp; CStr(MemberQuadra.Value) 	&amp; "; Tipo = " &amp; CStr(MemberQuadra.GetType())
 		'Debug.Print 	"ResetDatiPezzoMissione() -&gt; MemberR1 name = " 		&amp; MemberR1.GetName 		&amp; "; value = " &amp; CStr(MemberR1.Value) 		&amp; "; Tipo = " &amp; CStr(MemberR1.GetType())
 
@@ -1485,9 +1722,9 @@ Sub ResetDatiPezzoMissione(daQuadra As Integer)
 				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
 		End Select
 
-		mCount = mCount + 1
-		MemberQuadra 	= objPezzo.GetMemberObjectFromIndex(mCount)
-		MemberR1 		= objR1.GetMemberObjectFromIndex(mCount)
+		membCount = membCount + 1
+		MemberQuadra 	= objPezzo.GetMemberObjectFromIndex(membCount)
+		MemberR1 		= objR1.GetMemberObjectFromIndex(membCount)
 	End While
 	MemberQuadra 	= Nothing
 	MemberR1 		= Nothing
@@ -1557,7 +1794,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 
 
 		'alla fine aggiorno la variabile Old
-		AggiorrnaMembri(varEstrattore, varEstrattoreOld)
+		AggiornaMembri(varEstrattore, varEstrattoreOld)
 	End If
 
 End Sub
@@ -1653,13 +1890,14 @@ Sub EliminaFileDaQuadra(daQuadra As Integer, nomePezzo As String)
 
 	'guardo il file esiste
 	Try
-		Using fi As New System.IO.FileInfo(nomeFileFull)
+		'Using fi As New System.IO.FileInfo(nomeFileFull)
+		Dim fi As New System.IO.FileInfo(nomeFileFull)
 			If fi.Exists Then
 				fi.Delete()
 			Else
 				LogMsg("EliminaFileDaQuadra() File non più esistente. filename:" &amp; nomeFileFull)
 			End If
-		End Using
+		'End Using
 
 	Catch  e As Exception
         LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
@@ -1671,29 +1909,41 @@ Sub EliminaFileDaQuadra(daQuadra As Integer, nomePezzo As String)
 End Sub
 
 
-Sub AggiorrnaMembri(source As String, dest As String)
+Sub AggiornaMembri(source As String, dest As String)
 	Dim objDest As DBVarObjCmdTarget
 	Dim objSource As DBVarObjCmdTarget
 	Dim MemberDest As DBVarObjCmdTarget
 	Dim MemberSource As DBVarObjCmdTarget
 
-	Dim mCount As Integer	'contatore dei membri
+	Dim memberCount As Integer	'contatore dei membri
 
 	Dim etSource As movicon.eVariableType
 	Dim etDest As movicon.eVariableType
 
+	DebugMsg("AggiornaMembri(source As String, dest As String) : " &amp; source &amp; "," &amp; dest)
 	objSource 	= GetVariableObject(source)
 	objDest 	= GetVariableObject(dest)
 
+	If  objSource Is Nothing Or  objDest Is Nothing Then
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
+	End If
 
-	mCount = 0	'inizializzo a 0
-
-	MemberSource 	= objSource.GetMemberObjectFromIndex(mCount)
-	MemberDest 		= objDest.GetMemberObjectFromIndex(mCount)
-
-	'guardo se le var hanno tipo identico
+	'guardo se le var hanno tipo identico e sono struct Var
 	etSource 	= objSource.GetType()
 	etDest 		= objDest.GetType()
+
+	If Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Exit Sub
+	End If
+	If Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Exit Sub
+	End If
+
+	memberCount = 0	'inizializzo a 0
+	MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
+	MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
 
 	If (etSource = etDest) Then
 		While (Not MemberSource Is Nothing) And (Not MemberDest Is Nothing )
@@ -1707,9 +1957,9 @@ Sub AggiorrnaMembri(source As String, dest As String)
 				MemberDest.Value = MemberSource.Value
 			End If
 
-			mCount = mCount + 1
-			MemberSource 	= objSource.GetMemberObjectFromIndex(mCount)
-			MemberDest 		= objDest.GetMemberObjectFromIndex(mCount)
+			memberCount = memberCount + 1
+			MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
+			MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
 		End While
 
 	End If
@@ -1852,15 +2102,17 @@ Sub DebugMsg(msg As String)
 End Sub
 
 Sub LogMsg(msg As String)
-	Dim prefix As String
-	prefix = "GestioneZonaR1.movbas -&gt; "
-	Debug.Print prefix &amp; msg
+	If enableLogMsg Then
+		Dim prefix As String
+		prefix = "GestioneZonaR1.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
 End Sub
 
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiB1AOYAlQFJAoQCCwRzBC8FnwUbBg==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiC5AOIACgEiASwBYAFsAXwBjQGXAaQBtgGBBg==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
