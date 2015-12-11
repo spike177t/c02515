@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="18684" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="3559" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+'#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
+'#Uses "C:\SupervisioneGualini2_C02515\HMI\RESOURCES\GUALINI2_C02515\ClassEstrattore.cls"
 
-'Option Explicit
+Option Explicit
 
 Imports System
 Imports System.IO
@@ -26,11 +28,28 @@ Public Structure PosQuartina
     Dim cass As Integer
 End Structure
 
+&lt;Serializable()&gt; _
+Public Structure stEstrattore
+    Public DEPO As Boolean
+    Public ID_CASSETTO As Integer
+    Public ID_QUARTINA As String
+    Public NOME_PEZZO_UNICO As String
+    Public POSIZIONE As Integer
+    Public PRONTO As Boolean
+    Public STROBE As Boolean
+End Structure
+
+
 Const TOUT_DISPONIBILE 	As Integer 	= 1000
 Const TOUT_STEP			As Integer	= 2000
 
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
-Dim codaGiostra1 As System.Collections.Queue= New System.Collections.Queue()
+Dim codaGiostra1 As System.Collections.Queue = New System.Collections.Queue()
+
+'Dim codaMAG2_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
+
+Dim codaMAG1_ES1 As New Queue()
+Dim codaMAG2_ES1 As New Queue()
 
 Dim MysSqlConnectionString As String
 Dim disponibileLastCheck As Double
@@ -46,17 +65,91 @@ Dim enableLogMsg As Boolean
 '    End While
 'End Sub
 
+Sub testCodaEstrattore
+	Dim tmpEs,tmpEs2 As stEstrattore
+	Dim tmpStr As String
+
+	For i As Integer = 1  To 3 Step 1
+	    tmpEs.DEPO = False
+	    tmpEs.ID_CASSETTO = Rnd(1) * 29 + 1
+	    tmpEs.ID_QUARTINA = "Q001"
+	    tmpEs.NOME_PEZZO_UNICO = tmpEs.ID_QUARTINA &amp;"_" &amp; CStr(i)
+	    tmpEs.POSIZIONE = i
+	    tmpEs.PRONTO = False
+	    tmpEs.STROBE = False
+
+	    'tmpStr = CStr(tmpEs.DEPO)+";" + CStr(tmpEs.ID_CASSETTO)+";" + CStr(tmpEs.ID_QUARTINA)+";" + CStr(tmpEs.NOME_PEZZO_UNICO)+";" _
+	    '		+ CStr(tmpEs.POSIZIONE)+";" + CStr(tmpEs.PRONTO)+";" + CStr(tmpEs.STROBE)+";"
+
+		'tmpStr = Serializza_stEstrattore(tmpEs)
+		codaMAG1_ES1.Enqueue(Serializza_stEstrattore(tmpEs))
+
+	Next
+
+	Debug.Clear
+	For Each element As String In codaMAG1_ES1
+		Debug.Print "elem: " + Convert.ToString(element)' + "; ID_CASSETTO:" + CStr(element.ID_CASSETTO)  + "; ID_QUARTINA:" + element.ID_QUARTINA
+		'Dim x() As String
+		'x = Split(element,";")
+		'For Each st As String In x
+		'	Debug.Print st
+		'Next
+		'For count As Integer = 0 To UBound(x) -1
+        '    Debug.Print "countLoop " + CStr(count) + "   " + x(count)
+        'Next
+		Derializza_stEstrattore(tmpEs2, element)
+	Next
+End Sub
+
+Function Serializza_stEstrattore (st As stEstrattore) As String
+	Dim sep As String = ";"
+	Serializza_stEstrattore = CStr(st.DEPO)+";" + CStr(st.ID_CASSETTO)+";" + CStr(st.ID_QUARTINA)+";" + CStr(st.NOME_PEZZO_UNICO)+";" _
+	    		+ CStr(st.POSIZIONE)+";" + CStr(st.PRONTO)+";" + CStr(st.STROBE)+";"
+	Debug.Print Serializza_stEstrattore
+End Function
+Function Derializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
+	Derializza_stEstrattore = 0
+
+	Dim x() As String
+	x = Split(element,";")
+
+	For count As Integer = 0 To UBound(x) -1
+        Debug.Print "countLoop " + CStr(count) + "   " + x(count)
+        Select Case count
+        Case 0
+        	st.DEPO 			= CBool(x(count))
+        Case 1
+        	st.ID_CASSETTO 		= CInt(x(count))
+        Case 2
+        	st.ID_QUARTINA 		= CStr(x(count))
+        Case 3
+        	st.NOME_PEZZO_UNICO = CStr(x(count))
+        Case 4
+        	st.POSIZIONE 		= CInt(x(count))
+        Case 5
+        	st.PRONTO 			= CBool(x(count))
+        Case 6
+        	st.STROBE 			= CBool(x(count))
+        Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; Derializza_stEstrattore() ECCEZZIONE valore Case ")
+        End Select
+    Next
+
+End Function
+
 Sub Main()
+
 	'#################################
 	'CHIAMATE PER DEBUG
 	'ResetDatiPezzoMissione(1)
+	testCodaEstrattore()
 	'#####################################
 
 
 	Dim leggiDaQuadra As Integer
 	Dim quartina As String
 	Dim quartina_successiva As String
-	Dim posizione As PosQuartina
+	Dim POSIZIONE As PosQuartina
 
 	Dim ret As Integer
 
@@ -199,9 +292,9 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					quartina_successiva = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA_SUCCESSIVA")
 
 					'verifico se la quartina esiste in magazzino
-					posizione = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MysSqlConnectionString)
+					POSIZIONE = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MysSqlConnectionString)
 
-					If posizione.mag &gt; 0 Then
+					If POSIZIONE.mag &gt; 0 Then
 						'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
 						'ho gia memorizzato in VerificaSeQuartinaEsisteInMagazzino magazzinio e cassetto assegnato
 						StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
@@ -249,21 +342,21 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						Throw New System.Exception("GestioneZonaR1.movbas -&gt; Case 2200	'RikCassettoInEstrattorePlc: parametro leggiDaQuadra non ammesso: " &amp; CStr(leggiDaQuadra) &amp; ".")
 				End Select
 
-				If posizione.mag = 1 And Not [MAG1_ES1_RIK:STROBE] Then
-					[MAG1_ES1_RIK:ID_CASSETTO] 				= posizione.cass
+				If POSIZIONE.mag = 1 And Not [MAG1_ES1_RIK:STROBE] Then
+					[MAG1_ES1_RIK:ID_CASSETTO] 				= POSIZIONE.cass
 					[MAG1_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
 					[MAG1_ES1_RIK:NOME_PEZZO_UNICO] 		= GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
 					[MAG1_ES1_RIK:POSIZIONE] 				= GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 					[MAG1_ES1_RIK:STROBE] 					= True
 					StatoCicloCarico = 1000	'AttesaPezzi
-				ElseIf posizione.mag = 2 And Not [MAG2_ES1_RIK:STROBE] Then
-					[MAG2_ES1_RIK:ID_CASSETTO] 				= posizione.cass
+				ElseIf POSIZIONE.mag = 2 And Not [MAG2_ES1_RIK:STROBE] Then
+					[MAG2_ES1_RIK:ID_CASSETTO] 				= POSIZIONE.cass
 					[MAG2_ES1_RIK:ID_QUARTINA] 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
 					[MAG2_ES1_RIK:NOME_PEZZO_UNICO] 		= GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
 					[MAG2_ES1_RIK:POSIZIONE] 				= GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 					[MAG2_ES1_RIK:STROBE] 					= True
 					StatoCicloCarico = 1000	'AttesaPezzi
-				ElseIf posizione.mag &lt;&gt; 1 And posizione.mag &lt;&gt; 2 Then
+				ElseIf POSIZIONE.mag &lt;&gt; 1 And POSIZIONE.mag &lt;&gt; 2 Then
 					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
 				End If
 
@@ -274,7 +367,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				'assegno il cassetto alla quartina che proviene dalla quadra identificata da leggiDaQuadra
 				'dallo step 2100 ho in varname_pezzo il valore della variabile di riferimento per i dati del pezzo
 
-				posizione = AssegnaCassettoAllaQuartina([loc_ImpostazioniImpianto:TipoCarico] _
+				POSIZIONE = AssegnaCassettoAllaQuartina([loc_ImpostazioniImpianto:TipoCarico] _
 									, leggiDaQuadra _
 									, MysSqlConnectionString _
 									, GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") _
@@ -285,11 +378,11 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 									, GetVariableValue(varname_pezzo &amp; ":NUM_SQUADRETTE2") _
 									, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA2") _
 									)
-				If posizione.mag &gt; 0 And posizione.cass &gt; 0 Then
+				If POSIZIONE.mag &gt; 0 And POSIZIONE.cass &gt; 0 Then
 					StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc
 				Else
 					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2300 'AssegnaCassettoAllaQuartina: posizione.mag = " _
-							&amp; CStr(posizione.mag) &amp; ": posizione.cass = " &amp; CStr(posizione.cass) &amp; ".")
+							&amp; CStr(POSIZIONE.mag) &amp; ": posizione.cass = " &amp; CStr(POSIZIONE.cass) &amp; ".")
 				End If
 
 			Case 3100	'AttendiCassettoDisponibile
@@ -411,10 +504,10 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 			Case 7100	'RilevaCassettoQuartinaSuccessiva
 				LogMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
-				posizione = RilevaCassettoQuartinaSuccessiva(MysSqlConnectionString)
-				If (posizione.mag &gt; 0 And posizione.cass &gt; 0) Then
-					[R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = posizione.mag
-					[R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA]  = posizione.cass
+				POSIZIONE = RilevaCassettoQuartinaSuccessiva(MysSqlConnectionString)
+				If (POSIZIONE.mag &gt; 0 And POSIZIONE.cass &gt; 0) Then
+					[R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = POSIZIONE.mag
+					[R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA]  = POSIZIONE.cass
 					StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
 				Else
 					'non ho cassetti disponibili perchè magazzino pieno
@@ -2112,7 +2205,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiC5AOIACgEiASwBYAFsAXwBjQGXAaQBtgGBBg==</BreakPoints>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
+<BreakPoints xsi:type="xsd:base64Binary">AiBYAOMADAE0AUwBVgGKAZYBpgG3AcEBzgHgAQ==</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
