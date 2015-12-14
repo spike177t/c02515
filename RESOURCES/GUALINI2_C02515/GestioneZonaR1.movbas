@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="27795" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -43,7 +43,7 @@ Const TOUT_DISPONIBILE 	As Integer 	= 1000
 Const TOUT_STEP			As Integer	= 2000
 
 'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
-Dim codaGiostra1 As System.Collections.Queue = New System.Collections.Queue()
+'Dim codaGiostra1 As System.Collections.Queue = New System.Collections.Queue()
 
 'Dim codaMAG2_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
 
@@ -179,32 +179,13 @@ Sub Main()
     [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
 
 
-'#####TODO DEBUG
-'###########################
-	GoTo AA
-'############################
-
-	codaGiostra1.Enqueue(10)
-	codaGiostra1.Enqueue(20)
-	codaGiostra1.Enqueue(30)
-
-	Debug.Print "elem: " + Convert.ToString(codaGiostra1.count())
-
-	For Each element As Integer In codaGiostra1
-		Debug.Print "elem: " + Convert.ToString(element)
-	Next
-
-	Dim myint As Integer
-	While codaGiostra1.Count &gt; 0
-		myint = codaGiostra1.Dequeue()
-		Debug.Print "myint: " + Convert.ToString(myint)
-	End While
-
-
 '############STATE MACHINE############
 
 	'inizializzo variabile di stato del ciclo
 	StatoCicloCarico = 100
+
+'#####TODO DEBUG
+'rimuovere questa parte
 AA:
 [Q1_In:PezzoPronto] = True
 Wait 1
@@ -212,6 +193,9 @@ Wait 1
 StatoCicloCarico = 1000
 loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
 loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
+
+'############################
+
 	Do
 		'azioni da fare tutti i cicli
 
@@ -295,31 +279,37 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					quartina = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
 					quartina_successiva = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA_SUCCESSIVA")
 
-					'verifico se la quartina esiste in magazzino
-					POSIZIONE = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MysSqlConnectionString)
-
-					If POSIZIONE.mag &gt; 0 Then
-						'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
-						'ho gia memorizzato in VerificaSeQuartinaEsisteInMagazzino magazzinio e cassetto assegnato
-						StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
+					If quartina = "" Then
+						'file non presente
+						LogMsg "GestioneZonaR1.movbas -&gt; Main() - Case 2100; File non presente su PezzoPronto da Quadra: " &amp; CStr(leggiDaQuadra)
+						StatoCicloCarico = 1000	'AttesaPezzi
 					Else
-						'quartina non esiste allora guardo se ci sono cassetti disponibili nel magazzino di riferimento in base a TipoCarico
+						'verifico se la quartina esiste in magazzino
+						POSIZIONE = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MysSqlConnectionString)
 
-						If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
-							'QuadraSuMagazzinoCorrispondente
-							numCassetti = CassettiDisponibili(leggiDaQuadra, MysSqlConnectionString)
-							If numCassetti &gt; 0 Then
-								StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
-							Else
-								StatoCicloCarico = 1000	'AttesaPezzi
-							End If
+						If POSIZIONE.mag &gt; 0 Then
+							'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
+							'ho gia memorizzato in VerificaSeQuartinaEsisteInMagazzino magazzinio e cassetto assegnato
+							StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
 						Else
-							'QuadraSuTutto
-							numCassetti = CassettiDisponibili(0, MysSqlConnectionString)
-							If numCassetti &gt; 0 Then
-								StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
+							'quartina non esiste allora guardo se ci sono cassetti disponibili nel magazzino di riferimento in base a TipoCarico
+
+							If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
+								'QuadraSuMagazzinoCorrispondente
+								numCassetti = CassettiDisponibili(leggiDaQuadra, MysSqlConnectionString)
+								If numCassetti &gt; 0 Then
+									StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
+								Else
+									StatoCicloCarico = 1000	'AttesaPezzi
+								End If
 							Else
-								StatoCicloCarico = 1000	'AttesaPezzi
+								'QuadraSuTutto
+								numCassetti = CassettiDisponibili(0, MysSqlConnectionString)
+								If numCassetti &gt; 0 Then
+									StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
+								Else
+									StatoCicloCarico = 1000	'AttesaPezzi
+								End If
 							End If
 						End If
 					End If
@@ -555,24 +545,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 			Case 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc
 				LogMsg "StatoCicloCarico = 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc"
-				'varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_RIK", "MAG2_ES1_RIK")
 
-				'If  GetVariableValue(varname_estrattore &amp; ":STROBE") Then
-				'	'se qui trovo lo STROBE significa che l'altra quadra per ragioni strane ha chiesto un pezzo da questo magazzino
-				'	'allora non posso fare anticipo richiesta cassetto ed esco
-				'	StatoCicloCarico = 8100	'ResetDatiPezzoMissione
-				'End If
-				''--- non vale più, vedi sopra [rimango in questo stato fino a quando non posso assegnare il cassetto all'estrattore ovvero Not xx:STROBE]
-				'If Not GetVariableValue(varname_estrattore &amp; ":STROBE") Then
-				'	SetVariableValue(varname_estrattore &amp; ":ID_CASSETTO", [R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA])
-				'	SetVariableValue(varname_estrattore &amp; ":ID_QUARTINA", [R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA])
-
-				'	SetVariableValue(varname_estrattore &amp; ":STROBE",  True)	'do Strobe
-				'	StatoCicloCarico = 8100	'ResetDatiPezzoMissione
-				'End If
-
-
-				''''########
 				rikEstrattore.ID_CASSETTO				= [R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA]
 				rikEstrattore.ID_QUARTINA 				= [R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA]
 				rikEstrattore.NOME_PEZZO_UNICO 			= "qrt_succ"
@@ -589,7 +562,6 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				End If
 
 				StatoCicloCarico = 8100	'ResetDatiPezzoMissione
-				'''########
 
 			Case 8100	'ResetDatiPezzoMissione
 				LogMsg "StatoCicloCarico = 8100	'ResetDatiPezzoMissione"
@@ -661,7 +633,7 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
 			Dim fi As System.IO.FileSystemInfo
 			fi = files(ii)
-			DebugMsg fi.FullName
+			DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
 		Next
 	End If
 
@@ -672,7 +644,9 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 
 
 	'FORZATURA DEBUG
-	nFiles = 0
+	'nFiles = 0
+
+	
 	If nFiles &gt; files.GetLowerBound(0) Then
 		If quadra = 1 Then
 			alm_Q1_numFilesIncoerente = True
@@ -690,8 +664,6 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		Exit Function
 	End If
 
-	''''######### TODO
-	'controllare perchè può causare errore
 	filepath = files(0).FullName
 
 	'Dim lastF As FileInfo
@@ -1004,6 +976,7 @@ Function VerificaSeQuartinaEsisteInMagazzino(quadra As Integer, qrt As String, c
 					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
 					If MyDataReader.HasRows Then
 						MyDataReader.Read
+						'TODO rimuovere righe sotto e variabile CAR_CASS_RIK
 						'[__CAR_CASS_RIK:Magazzino] 	= MyDataReader("cassetto_magazzino_ID_MAGAZZINO")
 						'[__CAR_CASS_RIK:Cassetto]		= MyDataReader("cassetto_ID_CASSETTO")
 						'[__CAR_CASS_RIK:Quartina]		= MyDataReader("ID_QUARTINA")
@@ -2337,7 +2310,7 @@ End Function
 Sub DebugMsg(msg As String)
 	Dim prefix As String
 	prefix = "GestioneZonaR1.movbas -&gt; "
-	Debug.Print prefix &amp; msg
+	'Debug.Print prefix &amp; msg
 End Sub
 
 Sub LogMsg(msg As String)
@@ -2351,7 +2324,8 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBeAOcAGQFCAYEBmQGjAdoB5gH2AQ8CGQImAkwC1gTaBN0ExgfaBw==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBeANcACQE4AXcBjwGZAdAB3AHsAQUCDwIcAjACUgK7BL8EwgSrB78H
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

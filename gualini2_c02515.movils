@@ -23,18 +23,36 @@ L Q2_In:ProvaComunicaz
 L Q2_In:RipariQuadraOk
 L Q2_In:TestComunicazione
 
-//</ILCode>
+//Reset Allarmi
+A alm_ResetAll
+R alm_FineRobot
+R alm_Q1_MancaFile
+R alm_Q1_numFilesIncoerente
+R alm_Q2_MancaFile
+R alm_Q2_numFilesIncoerente
+R alm_Step_Tout
+R alm_ZonaR1_ODBC
+
+</ILCode>
 <Variables>
 <Item key="17" value="Q2_In:RipariQuadraOk"/>
 <Item key="18" value="Q2_In:TestComunicazione"/>
 <Item key="1" value="Q1_In:InCiclo"/>
+<Item key="19" value="alm_ResetAll"/>
 <Item key="2" value="Q1_In:NonInEmergenza"/>
+<Item key="20" value="alm_FineRobot"/>
 <Item key="3" value="Q1_In:NonInHold"/>
+<Item key="21" value="alm_Q1_MancaFile"/>
 <Item key="4" value="Q1_In:OK"/>
+<Item key="22" value="alm_Q1_numFilesIncoerente"/>
 <Item key="5" value="Q1_In:PezzoPronto"/>
+<Item key="23" value="alm_Q2_MancaFile"/>
 <Item key="6" value="Q1_In:PezzoSbloccato"/>
+<Item key="24" value="alm_Q2_numFilesIncoerente"/>
 <Item key="7" value="Q1_In:ProvaComunicaz"/>
+<Item key="25" value="alm_Step_Tout"/>
 <Item key="8" value="Q1_In:RipariQuadraOk"/>
+<Item key="26" value="alm_ZonaR1_ODBC"/>
 <Item key="9" value="Q1_In:TestComunicazione"/>
 <Item key="10" value="Q2_In:InCiclo"/>
 <Item key="11" value="Q2_In:NonInEmergenza"/>
@@ -45,7 +63,7 @@ L Q2_In:TestComunicazione
 <Item key="16" value="Q2_In:ProvaComunicaz"/>
 </Variables>
 <Labels/>
-<compiled numins="22">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+<compiled numins="32">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAABAAAAAAAAAP//
 //8AAAAAAAAAAAAAAAAPAAwAAAAAAAIAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAAwAA
 AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAEAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
@@ -57,5 +75,10 @@ CwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAMAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
 AAwAAAAAAA0AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAADgAAAAAAAAD/////AAAAAAAA
 AAAAAAAADwAMAAAAAAAPAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAABAAAAAAAAAA////
 /wAAAAAAAAAAAAAAAA8ADAAAAAAAEQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAASAAAA
-AAAAAP////8AAAAAAAAAAAAAAAA=</compiled>
+AAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAMAAAAAAATAAAAAAAAAP////8AAAAAAAAAAAAA
+AAAOAAwAAAAAABQAAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAAFQAAAAAAAAD/////AAAA
+AAAAAAAAAAAADgAMAAAAAAAWAAAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAABcAAAAAAAAA
+/////wAAAAAAAAAAAAAAAA4ADAAAAAAAGAAAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAAAZ
+AAAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAABoAAAAAAAAA/////wAAAAAAAAAAAAAAAA==</compiled>
 </LogicAndScripts>

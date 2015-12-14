@@ -10,11 +10,11 @@
 <type x="10" y="10" width="1150" height="300" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>4</Border>
-<style Text="" On="" Ack="" Off="" Reset="" Duration="" TotalTimeOn="" TotalNumOn="" TotalNumAck="" TotalNumReset="" Severity="" Status="" Condition="" Image="" TextPos="0" OnPos="-1" AckPos="-1" OffPos="-1" ResetPos="-1" DurationPos="1" TotalTimeOnPos="-1" TotalNumOnPos="-1" TotalNumAckPos="-1" TotalNumResetPos="-1" SeverityPos="2" StatusPos="-1" ConditionPos="3" ImagePos="-1" FormatDateTime="" FormatDuration="" IncludeMilliseconds="0" BackHisCol="2147483653" TextHisCol="2147483656" TextWidth="62" OnWidth="200" AckWidth="200" OffWidth="200" ResetWidth="200" DurationWidth="266" TotalTimeOnWidth="200" TotalNumOnWidth="200" TotalNumAckWidth="200" TotalNumResetWidth="200" SeverityWidth="265" StatusWidth="200" ConditionWidth="265" ImageWidth="200" AutoLayout="1" ShowControl="1" OpenPreview="0" Clickable="1" IconBtn="1" AckSel="1" AckAll="1" ResetSel="1" ResetAll="1" SoundOn="1" Help="1" GetHistory="1" Comment="1" Size="0" Pos="3" AckSelTxt="" AckAllTxt="" ResetSelTxt="" ResetAllTxt="" SoundOnTxt="" HelpTxt="" GetHistoryTxt="" CommentTxt=""/>
+<style Text="" On="" Ack="" Off="" Reset="" Duration="" TotalTimeOn="" TotalNumOn="" TotalNumAck="" TotalNumReset="" Severity="" Status="" Condition="" Image="" TextPos="0" OnPos="-1" AckPos="-1" OffPos="-1" ResetPos="-1" DurationPos="1" TotalTimeOnPos="-1" TotalNumOnPos="-1" TotalNumAckPos="-1" TotalNumResetPos="-1" SeverityPos="2" StatusPos="-1" ConditionPos="3" ImagePos="-1" FormatDateTime="" FormatDuration="" IncludeMilliseconds="0" BackHisCol="2147483653" TextHisCol="2147483656" TextWidth="645" OnWidth="200" AckWidth="200" OffWidth="200" ResetWidth="200" DurationWidth="262" TotalTimeOnWidth="200" TotalNumOnWidth="200" TotalNumAckWidth="200" TotalNumResetWidth="200" SeverityWidth="260" StatusWidth="200" ConditionWidth="260" ImageWidth="200" AutoLayout="1" ShowControl="1" OpenPreview="0" Clickable="1" IconBtn="1" AckSel="1" AckAll="1" ResetSel="1" ResetAll="1" SoundOn="1" Help="1" GetHistory="1" Comment="1" Size="0" Pos="3" AckSelTxt="" AckAllTxt="" ResetSelTxt="" ResetAllTxt="" SoundOnTxt="" HelpTxt="" GetHistoryTxt="" CommentTxt=""/>
 <execution BlinkTime="1000" NetworkServer="" BackupServer="" MaxCount="1000" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
 <Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
 <ListFont font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
-<Name AntialiasingFont="1" acr="4294901760"/>
+<Name AutoSaveExtFile="1" AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2884,6 +2884,22 @@ End Sub
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri R1_DATI_PEZZO</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="1680" y="410" width="150" height="100" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="alm_ResetAll" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType variable=&quot;alm_ResetAll&quot; SecondVariable=&quot;&quot; action=&quot;3&quot; strobe=&quot;500&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
