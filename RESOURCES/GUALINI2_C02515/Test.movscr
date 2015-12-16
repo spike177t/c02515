@@ -2508,7 +2508,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="1380" y="260" width="-200" height="-50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="1380" y="270" width="-200" height="-50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2890,7 +2890,7 @@ End Sub
 <child>
 <object>Button</object>
 <type x="1680" y="410" width="150" height="100" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="alm_ResetAll" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands n0="&lt;CommandType variable=&quot;alm_ResetAll&quot; SecondVariable=&quot;&quot; action=&quot;3&quot; strobe=&quot;500&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
@@ -2902,6 +2902,196 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="1620" y="340" width="-150" height="-100" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style fmtscale="x" HasList="1" ShowControlList="1" ListData="" SortItems="0" InvertSelection="0"/>
+<border>4</border>
+<execution/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">combo1</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="2430" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.IO
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Collections.ObjectModel
+Imports System.Data.Odbc
+
+Dim MysSqlConnectionString As String
+Dim ListaCommesse As String
+
+Public Sub Click()
+	Dim sListItems As String
+	Dim objCombo As DrawCmdTarget
+	Dim objDisplay As DisplayEditCmdTarget
+	Dim objList As ListBoxCmdTarget
+
+	objCombo = GetSynopticObject().GetSubObject("combo1")
+	objDisplay = objCombo.GetObjectInterface()
+	objList = objDisplay.GetComboListInterface
+
+	If objList Is Nothing Then Exit Sub
+	Debug.Print objList.AddString("stringa1")
+	sListItems = objList.ListData
+
+	objDisplay = Nothing
+	objList = Nothing
+	objCombo = Nothing
+End Sub
+
+Public Sub SymbolLoading() Handles .SymbolLoading
+
+	Dim sListItems As String
+	Dim objCombo As DrawCmdTarget
+	Dim objDisplay As DisplayEditCmdTarget
+	Dim objList As ListBoxCmdTarget
+
+	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+      "SERVER=localhost;" &amp; _
+      "DATABASE=gualini;" &amp; _
+      "UID=root;" &amp; _
+      "PASSWORD=co.mar;" &amp; _
+      "OPTION=3;"
+
+	objCombo = GetSynopticObject().GetSubObject("combo1")
+	objDisplay = objCombo.GetObjectInterface()
+	objList = objDisplay.GetComboListInterface
+
+	If objList Is Nothing Then Exit Sub
+
+	Debug.Print objList.AddString("aaa")
+	Debug.Print objList.AddString("bbb")
+	sListItems = objList.ListData
+
+	objDisplay = Nothing
+	objList = Nothing
+	objCombo = Nothing
+End Sub
+
+Public Sub AggiornaListaCombo(combo As String)
+
+	Dim objCombo As DrawCmdTarget
+	Dim objDisplay As DisplayEditCmdTarget
+	Dim objList As ListBoxCmdTarget
+
+	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+      "SERVER=localhost;" &amp; _
+      "DATABASE=gualini;" &amp; _
+      "UID=root;" &amp; _
+      "PASSWORD=co.mar;" &amp; _
+      "OPTION=3;"
+
+	objCombo = GetSynopticObject().GetSubObject(combo)
+	objDisplay = objCombo.GetObjectInterface()
+	objList = objDisplay.GetComboListInterface
+
+	If objList Is Nothing Then Exit Sub
+
+	'''###################
+
+	Dim vResult As Object
+    Dim commandText As String
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db l'elenco commesse
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT " &amp; _
+                            "  `quartina`.`ID_QUARTINA` " &amp; _
+                            ", `quartina`.`TOTALE_PEZZI_QUARTINA` " &amp; _
+                            ", `quartina`.`NOME_COMMESSA` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE1` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA1` " &amp; _
+                            ", `quartina`.`NUM_SQUADRETTE2` " &amp; _
+                            ", `quartina`.`COD_SQUADRETTA2` " &amp; _
+			        		", `quartina`.`cassetto_ID_CASSETTO` " &amp; _
+                            ", `quartina`.`cassetto_magazzino_ID_MAGAZZINO` " &amp; _
+                      	"FROM  `gualini`.`quartina` " &amp; _
+            			"WHERE `quartina`.`ID_QUARTINA` = '" &amp; qrt &amp;"';"
+            DebugMsg "GestioneZonaR1.movbas -&gt; QuartinaEsiste; commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					'Debug.Print CStr(MyDataReader.HasRows)
+					'Debug.Print CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						QuartinaEsiste = True
+					Else
+						'la quartina non esiste
+						QuartinaEsiste = False
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+		DebugMsg "GestioneZonaR1.movbas -&gt; QuartinaEsiste; qrt = " &amp; CStr(qrt) &amp; ", Esiste = " &amp; CStr(QuartinaEsiste)
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+    End Try
+
+
+
+	''''################
+
+	objDisplay = Nothing
+	objList = Nothing
+	objCombo = Nothing
+End Sub
+
+Function QuartinaEsiste(qrt As String, connectionString As String) As Boolean
+
+
+End Function
+</ScriptCode>
 </child>
 </ListSynopticDraw>
 <VariableList/>
