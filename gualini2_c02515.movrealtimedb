@@ -25,6 +25,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES1_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -116,7 +123,35 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M1_PZ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M1_PZ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="11" StructType="SettingsStruct" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">loc_Settings</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M1_PZ3</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M1_PZ4</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -193,6 +228,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M2_PZ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">aaa_var001</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -200,7 +242,28 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M2_PZ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_Tout</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M2_PZ3</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">SCAR_M2_PZ4</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -242,6 +305,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico_Old</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q1_path</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -270,7 +340,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="14" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="22" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -383,6 +453,41 @@
 <RenamedVariables/>
 <StructureList>
 <Structure>
+<Name Description="">AssemblatriceInput</Name>
+<MemberList>
+<Member>
+<Name Type="7">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="7">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="7">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="7">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="7">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="7">AUTO</Name>
+</Member>
+<Member>
+<Name Type="7">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="7">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="7">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="7">ALLARME</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">DatiEstrattore</Name>
 <MemberList>
 <Member>
@@ -437,6 +542,26 @@
 </Member>
 <Member>
 <Name Type="4">ProvaComunicaz</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">AssemblatriceOutput</Name>
+<MemberList>
+<Member>
+<Name Type="7">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="7">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="7">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="7">STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="7">START_ROTAZIONE</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -637,6 +762,14 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">ImpostazZonaR2Struct</Name>
+<MemberList>
+<Member>
+<Name Type="9">CommessaPref</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">ImpostazioniImpiantoStruct</Name>
 <MemberList>
 <Member>
@@ -659,6 +792,21 @@
 </Member>
 <Member>
 <Name Type="4">M2_CASS_VUOTI</Name>
+</Member>
+<Member>
+<Name Type="9">MysSqlConnectionString</Name>
+</Member>
+<Member>
+<Name Type="0">CaricoAbilitaZona</Name>
+</Member>
+<Member>
+<Name Type="0">ScaricoAbilitaZona</Name>
+</Member>
+<Member>
+<Name Type="4">M1_CASS_PIENI</Name>
+</Member>
+<Member>
+<Name Type="4">M2_CASS_PIENI</Name>
 </Member>
 </MemberList>
 </Structure>

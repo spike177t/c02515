@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="1675" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.IO
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.Collections.ObjectModel
+Imports System.Data.Odbc
+
+Public Structure DSnMembers
+    Dim DSn As String
+    Dim Uid As String
+    Dim Pwd As String
+End Structure
+
+Const TOUT_RICHIEDIBILE 	As Integer 	= 1 'in secondi
+Const TOUT_STEP				As Integer	= 2 'in secondi
+
+Dim MysSqlConnectionString As String
+Dim richiedibileLastCheck As Double
+Dim enableLogMsg As Boolean = True
+
+Dim codaMAG1_ES2 As New System.Collections.Queue()
+Dim codaMAG2_ES2 As New System.Collections.Queue()
+
+Sub Main()
+	Dim ValutaProx As Boolean 'serve per valutare le condiziioni delllo stato Attesa
+
+	Dim rikCassettoDaMag As Integer
+
+	MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+
+	StatoCicloScarico = 100
+
+	'#######TODO DEBUG
+	Debug.Clear
+	richiedibileLastCheck = Timer()
+	Debug.Print CStr(richiedibileLastCheck)
+	richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE
+	Debug.Print CStr(richiedibileLastCheck)
+	If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
+		Debug.Print "SUPERSTO"
+		Debug.Print Now()
+	End If
+
+
+
+	'################
+	Do
+		'azioni da fare tutti i cicli
+
+		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
+		AggiornaPosizioniEstrattoriES2(MysSqlConnectionString)
+
+
+		Select Case StatoCicloScarico
+
+			Case 100	'StatoIniziale
+				DebugMsg "StatoCicloSarico = 100	'StatoIniziale"
+				StatoCicloScarico = 1000			'Attesa
+
+			Case 1000	'Attesa
+				'DebugMsg "StatoCicloScarico = 1000	'Attesa"
+				ValutaProx = True
+				'inizio a scorrere le condizioni di uscita dallo stato
+
+				'condizione di richiesta nuovo casseto da magazzino
+				rikCassettoDaMag = CondizioneRikCassettoMagazzino()
+				If ValutaProx And rikCassettoDaMag &gt; 0 Then
+					ValutaProx = False
+					richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE
+					StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
+				End If
+
+				'condizione di richiesta nuovo casseto da magazzino
+
+
+			Case 1010	'AttesaPezzi_AssegnaMissioneRobot
+				DebugMsg "StatoCicloScarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
+				'guardo se ho una missione assegnabile
+				If True Then
+					LogMsg "StatoCicloScarico = 1010	'AttesaPezzi_AssegnaMissioneRobot; missioneNum = 0 "
+					StatoCicloScarico = 4100	'AssegnaMissioneRobot
+				Else
+					StatoCicloScarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile
+				End If
+
+			Case 2100	'RichiediCassettoDaMagazzino
+				DebugMsg "StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
+				'cerco il cassetto richiedibile
+				If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
+					'controllo solo ogni tanto
+				End If
+				'aggiungo alla coda dell'estrattore il cassetto
+
+
+
+			Case Else
+				LogMsg("Main() -&gt; Case StatoCicloScarico Else; StatoCicloScarico = " &amp; CStr(StatoCicloScarico))
+				Throw New System.Exception("GestioneZonaR2.movbas -&gt; Main() ECCEZZIONE: StatoCicloScarico valore non ammesso: " &amp; CStr(StatoCicloScarico) &amp; ".")
+
+		End Select
+
+	DoEvents
+	If StatoCicloScarico_Old &lt;&gt; StatoCicloScarico Then
+		enableLogMsg = True
+		StatoCicloScarico_Old = StatoCicloScarico
+	Else
+		enableLogMsg = False
+	End If
+	Loop Until IsInStoppingMode
+
+End Sub
+
+Function CondizioneRikCassettoMagazzino() As Integer
+	CondizioneRikCassettoMagazzino = 0
+
+	Dim richiedibileM1 As Boolean = False
+	Dim richiedibileM2 As Boolean = False
+
+	'controllo se un cassetto è richiedibile da M1
+	If      [loc_ImpostazioniImpianto:M1_CASS_PIENI] &gt; 0 _
+		And [loc_ImpostazioniImpianto:M1_ABIL] _
+		And [loc_ImpostazioniImpianto:ScaricoAbilitaZona] _
+		And [MAG1_ES2_ACT:PRONTO] _
+		And ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) _
+		Then
+
+		richiedibileM1 = True
+	End If
+
+	'controllo se un cassetto è richiedibile da M2
+	If      [loc_ImpostazioniImpianto:M2_CASS_PIENI] &gt; 0 _
+		And [loc_ImpostazioniImpianto:M2_ABIL] _
+		And [loc_ImpostazioniImpianto:ScaricoAbilitaZona] _
+		And [MAG2_ES2_ACT:PRONTO] _
+		And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) _
+		Then
+
+		richiedibileM2 = True
+	End If
+
+	If richiedibileM1 And richiedibileM2 Then
+		CondizioneRikCassettoMagazzino = MovimentatoPiuVecchio()
+	Else
+		'ho solo un estrattore richiedibile
+		If richiedibileM1 Then
+			CondizioneRikCassettoMagazzino = 1
+		End If
+		If richiedibileM2 Then
+			CondizioneRikCassettoMagazzino = 2
+		End If
+		'se nessun estrattore disponibile CondizioneRikCassettoMagazzino = 0
+	End If
+End Function
+
+
+Sub AggiornaPosizioniEstrattoriES2(connectionString As String )
+	AggiornaPosizioneEstrattore(1 , 2,connectionString)
+	AggiornaPosizioneEstrattore(2 , 2,connectionString)
+End Sub
+
+Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionString As String )
+	Dim varEstrattore As String
+	Dim varEstrattoreOld As String
+	Dim cass As Integer
+	Dim cassOld As Integer
+	Dim query As String
+	Dim ret As Integer
+
+	varEstrattore 		= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT"
+	varEstrattoreOld 	= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT_OLD"
+
+	cass 		= GetVariableValue(varEstrattore 		&amp; ":ID_CASSETTO")
+	cassOld 	= GetVariableValue(varEstrattoreOld 	&amp; ":ID_CASSETTO")
+
+	If (cass &lt;&gt; cassOld) Then
+		'devo aggiornare il DB
+
+		'per prima cosa metto dentro eventuali pezzi che sono nell'estrattore
+		query = "UPDATE `gualini`.`cassetto` " &amp; _
+			"Set " &amp; _
+			"`POSIZIONE` =  " 			&amp; CStr(0) 	&amp; _
+			" WHERE "	&amp; _
+			"`POSIZIONE` =  " 						&amp; CStr(estr) &amp; " And " &amp; _
+			"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
+			";"
+
+		ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+		If ret &lt; 0 Then
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		ElseIf ret = 0 Then
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery no Row updated " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		ElseIf ret &gt; 0 Then
+			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		End If
+
+		'poi metto fuori il pezzo che è realmente nell'estrattore, se ce ne è uno
+		If cass &gt; 0 Then
+			query = "UPDATE `gualini`.`cassetto` " &amp; _
+				"Set " &amp; _
+				"`POSIZIONE` =  " 			&amp; CStr(estr) 	&amp; _
+				" WHERE "	&amp; _
+				"`ID_CASSETTO` =  " 					&amp; CStr(cass) &amp; " And " &amp; _
+				"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
+				";"
+
+			ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+			If ret &lt; 0 Then
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			ElseIf ret = 0 Then
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery no Row updated " 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			ElseIf ret &gt; 0 Then
+				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery NumRow  = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			End If
+		End If
+
+
+		'alla fine aggiorno la variabile Old
+		AggiornaMembri(varEstrattore, varEstrattoreOld)
+	End If
+
+End Sub
+
+
+Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
+	Dim tempo As Double
+	tempo = Abs(lastcheck - Timer)
+	If tempo &gt;= tout Then
+		SuperatoTimeout = True
+	Else
+		SuperatoTimeout = False
+	End If
+
+End Function
+
+
+Sub DebugMsg(msg As String)
+	Dim prefix As String
+	prefix = "GestioneZonaR2.movbas -&gt; "
+	'Debug.Print prefix &amp; msg
+End Sub
+
+Sub LogMsg(msg As String)
+	If enableLogMsg Then
+		Dim prefix As String
+		prefix = "GestioneZonaR2.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            DebugMsg "GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub AggiornaMembri(source As String, dest As String)
+	Dim objDest As DBVarObjCmdTarget
+	Dim objSource As DBVarObjCmdTarget
+	Dim MemberDest As DBVarObjCmdTarget
+	Dim MemberSource As DBVarObjCmdTarget
+
+	Dim memberCount As Integer	'contatore dei membri
+
+	Dim etSource As movicon.eVariableType
+	Dim etDest As movicon.eVariableType
+
+	DebugMsg("AggiornaMembri(source As String, dest As String) : " &amp; source &amp; "," &amp; dest)
+	objSource 	= GetVariableObject(source)
+	objDest 	= GetVariableObject(dest)
+
+	If  objSource Is Nothing Or  objDest Is Nothing Then
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
+	End If
+
+	'guardo se le var hanno tipo identico e sono struct Var
+	etSource 	= objSource.GetType()
+	etDest 		= objDest.GetType()
+
+	If Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Exit Sub
+	End If
+	If Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Exit Sub
+	End If
+
+	memberCount = 0	'inizializzo a 0
+	MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
+	MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
+
+	If (etSource = etDest) Then
+		While (Not MemberSource Is Nothing) And (Not MemberDest Is Nothing )
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberSource name = " 	&amp; MemberSource.GetName 	&amp; "; value = " &amp; CStr(MemberSource.Value) 	&amp; "; Tipo = " &amp; CStr(MemberSource.GetType())
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 		&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
+
+			etSource 	= MemberSource.GetType()
+			etDest 		= MemberDest.GetType()
+
+			If (etSource = etDest) Then
+				MemberDest.Value = MemberSource.Value
+			End If
+
+			memberCount = memberCount + 1
+			MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
+			MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
+		End While
+
+	End If
+
+	MemberSource 	= Nothing
+	MemberDest 		= Nothing
+	objSource 		= Nothing
+	objDest 		= Nothing
+
+End Sub
+
+Function MovimentatoPiuVecchio() As Integer
+	MovimentatoPiuVecchio = 0
+
+	If [MAG1_ES2_ACT:DEPO] And [MAG2_ES2_ACT:DEPO] Then
+		'ho tutti i pezzi dei due estrattori depositati allora prendo quello che ha il timestamp più vecchio
+		Dim objRet1 As DBVarObjCmdTarget
+		Dim dTimeStamp1 As Date
+		Dim nMS1 As Integer
+		Dim dt1 As Double
+
+		Dim objRet2 As DBVarObjCmdTarget
+		Dim dTimeStamp2 As Date
+		Dim nMS2 As Integer
+		Dim dt2 As Double
+
+		Dim differenza As Double
+
+		objRet1 = GetVariableObject("MAG1_ES2_ACT:DEPO")
+		dTimeStamp1 = objRet1.GetTimeStamp()
+		nMS1 = objRet1.GetTimeStampMs()
+		dt1 = CLng(dTimeStamp1) * 1000
+		dt1 = dt1 + nMS1
+
+		objRet2 = GetVariableObject("MAG2_ES2_ACT:DEPO")
+		dTimeStamp2 = objRet2.GetTimeStamp()
+		nMS2 = objRet2.GetTimeStampMs()
+		dt2 = CLng(dTimeStamp2) * 1000
+		dt2 = dt2 + nMS2
+
+		differenza = dt1 - dt2
+		DebugMsg "MovimentatoPiuVecchio() -&gt; differenza = dt1-dt2 = " &amp; CStr(dt1 -dt2)
+
+		If differenza &gt; 0 Then
+			'pezzo da Q1 più recente
+			MovimentatoPiuVecchio = 2	'prendo da Q2 perchè più vecchio
+		Else
+			MovimentatoPiuVecchio = 1	'prendo da Q1 perchè più vecchio
+		End If
+
+		objRet1 = Nothing
+		objRet2 = Nothing
+	Else
+		'ho solo un pezzo pronto o nessuno
+		If [MAG1_ES2_ACT:DEPO] Then
+			MovimentatoPiuVecchio = 1
+		End If
+		If [MAG2_ES2_ACT:DEPO] Then
+			MovimentatoPiuVecchio = 2
+		End If
+		'se no MovimentatoPiuVecchio = 0
+	End If
+
+End Function
+</ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAzAA==</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>
