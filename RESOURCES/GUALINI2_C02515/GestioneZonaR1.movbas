@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="90906" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -27,7 +27,6 @@ Public Structure PosQuartina
     Dim cass As Integer
 End Structure
 
-&lt;Serializable()&gt; _
 Public Structure stEstrattore
     Public DEPO As Boolean
     Public ID_CASSETTO As Integer
@@ -39,16 +38,13 @@ Public Structure stEstrattore
 End Structure
 
 
-Const TOUT_DISPONIBILE 	As Integer 	= 1000
-Const TOUT_STEP			As Integer	= 2000
+Const TOUT_DISPONIBILE 	As Integer 	= 1 'in secondi
+Const TOUT_STEP			As Integer	= 2 'in secondi
 
-'Dim q As System.Collections.Queue(Of Integer)= New System.Collections.Queue(Of Integer)
-'Dim codaGiostra1 As System.Collections.Queue = New System.Collections.Queue()
+'Dim codaMAG1_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
 
-'Dim codaMAG2_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
-
-Dim codaMAG1_ES1 As New Queue()
-Dim codaMAG2_ES1 As New Queue()
+Dim codaMAG1_ES1 As New System.Collections.Queue()
+Dim codaMAG2_ES1 As New System.Collections.Queue()
 
 Dim MysSqlConnectionString As String
 Dim disponibileLastCheck As Double
@@ -2297,8 +2293,8 @@ End Function
 
 Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	Dim tempo As Double
-	tempo = Abs(lastcheck - Now())
-	If tempo &gt; tout Then
+	tempo = Abs(lastcheck - Timer())
+	If tempo &gt;= tout Then
 		SuperatoTimeout = True
 	Else
 		SuperatoTimeout = False
@@ -2324,7 +2320,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBeANcACQE4AXcBjwGZAdAB3AHsAQUCDwIcAjACUgK7BL8EwgSrB78H
+<BreakPoints xsi:type="xsd:base64Binary">AiBaANMABQE0AXMBiwGVAcwB2AHoAQECCwIYAiwCTgK3BLsEvgSnB7sH
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
