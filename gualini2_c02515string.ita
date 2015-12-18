@@ -4,6 +4,7 @@
 <item key="alm_Q2_MancaFile_H" value="Q2, file identificativo pezzo non trovato"/>
 <item key="alm_Q1_numFilesIncoerente_H" value="Numero file pezzi da Q1 incoerente, verificare ed eliminare file vecchi"/>
 <item key="alm_Q1_MancaFile" value="Q1, file identificativo pezzo non trovato"/>
+<item key="msg_AlertCommessaEsclusiva_nessuno" value="Commessa Esclusiva, nessun casseto disponibile a magazzino"/>
 <item key="alm_Q2_numFilesIncoerente_H" value="Numero file pezzi da Q2 incoerente, verificare ed eliminare file vecchi"/>
 </list>
 </strings>
