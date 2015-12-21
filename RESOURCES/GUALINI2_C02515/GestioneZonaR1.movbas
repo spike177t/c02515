@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="90906" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'alm_FineRobot' con il nuovo nome 'alm_FineRobotR1'
 '#Language "WWB.NET"
 
 Option Explicit
@@ -461,7 +462,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				'alzo il bit al Robot di Strobe missione
 				[R1_STATUS:NUOVA_MISSIONE] = True
 				StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato
-				stepTout = Now()
+				stepTout = Timer()
 
 			Case 4200	'AttesaSegnaleRobotOccupato
 				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
@@ -480,7 +481,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				ret = FineRobot(MysSqlConnectionString)
 				If ret &lt;&gt; 0 Then
 					'Alzo allarme
-					alm_FineRobot = True
+					alm_FineRobotR1 = True
 					StatoCicloCarico = 1000	'AttesaPezzi
 				Else
 					[R1_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
@@ -893,11 +894,11 @@ Function QuartinaEsiste(qrt As String, connectionString As String) As Boolean
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" QuartinaEsiste() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 		Exit Function
@@ -907,11 +908,11 @@ Function QuartinaEsiste(qrt As String, connectionString As String) As Boolean
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("QuartinaEsiste() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 		Exit Function
@@ -1007,11 +1008,11 @@ Function VerificaSeQuartinaEsisteInMagazzino(quadra As Integer, qrt As String, c
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 		Exit Function
@@ -1021,11 +1022,11 @@ Function VerificaSeQuartinaEsisteInMagazzino(quadra As Integer, qrt As String, c
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("VerificaSeQuartinaEsisteInMagazzino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("VerificaSeQuartinaEsisteInMagazzino() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 		Exit Function
@@ -1099,11 +1100,11 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" CassettiDisponibili() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 		Exit Function
@@ -1113,11 +1114,11 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("CassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("CassettiDisponibili() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; CassettiDisponibili() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 		Exit Function
@@ -1256,7 +1257,7 @@ Function transizioneAttendiCassettoDisponibile_OLD() As Integer
 		Exit Function
 	End If
 
-	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Now()-lastcheck &gt; TIMEOUT)
+	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Timer()-lastcheck &gt; TIMEOUT)
 	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
 	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
 
@@ -1293,7 +1294,7 @@ Function AttendiCassettoDisponibile() As Integer
 	Dim numCassettiDispPzSuQ2 As Integer
 	Dim numCassettiDisp As Integer
 
-	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Now()-lastcheck &gt; TIMEOUT)
+	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Timer()-lastcheck &gt; TIMEOUT)
 	'tout è già stato contato in transizioneAttendiCassettoDisponibile()
 
 	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt; "" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] = 0
@@ -1360,7 +1361,7 @@ Function AttendiCassettoDisponibile_OLD() As Integer
 	Dim numCassettiDisp As Integer
 
 
-	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Now()-lastcheck &gt; TIMEOUT)
+	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Timer()-lastcheck &gt; TIMEOUT)
 	'tout è già stato contato in transizioneAttendiCassettoDisponibile()
 
 	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0
@@ -1485,11 +1486,11 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" AssegnaCassettoAllaQuartina() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 
@@ -1498,11 +1499,11 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("AssegnaCassettoAllaQuartina() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("AssegnaCassettoAllaQuartina() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 
@@ -1654,11 +1655,11 @@ Function FineRobot(connectionString As String) As Integer
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" FineRobot() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 		FineRobot = ERR_GENERIC_EXCEPION
@@ -1670,11 +1671,11 @@ Function FineRobot(connectionString As String) As Integer
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("FineRobot() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; FineRobot() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 		FineRobot = ERR_ODBC_EXCEPTION
@@ -1780,11 +1781,11 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 
@@ -1793,11 +1794,11 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("RilevaCassettoQuartinaSuccessiva() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("RilevaCassettoQuartinaSuccessiva() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 
@@ -2044,11 +2045,11 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR1_ODBC = True
 		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
@@ -2060,11 +2061,11 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR1_ODBC = True
 		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
@@ -2320,8 +2321,6 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBaANMABQE0AXMBiwGVAcwB2AHoAQECCwIYAiwCTgK3BLsEvgSnB7sH
-</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

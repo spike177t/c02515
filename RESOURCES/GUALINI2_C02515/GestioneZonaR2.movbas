@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4658" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2181" SelLength="17" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -50,7 +50,12 @@ Sub Main()
 	Dim POSIZIONE As PosQuartina
 	Dim rikEstrattore As stEstrattore
 	Dim prefix_varname_pezzo As String
+	Dim assegnaMissioneRobot As PosQuartina
 
+	Dim stepTout As Double
+
+	Dim ret As Integer
+	Dim varname_estrattore As String
 
 
 	MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
@@ -64,8 +69,7 @@ Sub Main()
 	richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE
 	Debug.Print CStr(richiedibileLastCheck)
 	If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
-		Debug.Print "SUPERSTO"
-		Debug.Print Now()
+		Debug.Print "GestioneZonaR2.movbas -&gt; DEBUG Main() -&gt; SuperatoTimeout -&gt; Timer() = " &amp; CStr(Timer()) &amp; "; Now()= " &amp; CStr(Now())
 	End If
 
 
@@ -76,6 +80,7 @@ Sub Main()
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
 		AggiornaPosizioniEstrattoriES2(MysSqlConnectionString)
+		ProcessaCodaEstrattoriMAG2()
 
 
 		Select Case StatoCicloScarico
@@ -93,25 +98,36 @@ Sub Main()
 				rikDaMagazzino = CondizioneRikCassettoMagazzino()
 				If ValutaProssimaCondizione And rikDaMagazzino &gt; 0 Then
 					ValutaProssimaCondizione = False
+					LogMsg "StatoCicloCarico = 1000	'Attesa	;CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloCarico = 2100	'RichiediCassettoDaMagazzino"
 					richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE 'voglio che alla chiamata il test sia fatto subito e quindi SuperatoTimeout() deve tornare true
 					StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
 				End If
 
-				'condizione xxxxx
-
-
-			Case 1010	'AttesaPezzi_AssegnaMissioneRobot
-				DebugMsg "StatoCicloScarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
-				'guardo se ho una missione assegnabile
-				If True Then
-					LogMsg "StatoCicloScarico = 1010	'AttesaPezzi_AssegnaMissioneRobot; missioneNum = 0 "
-					StatoCicloScarico = 4100	'AssegnaMissioneRobot
-				Else
-					StatoCicloScarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile
+				'condizione per assegnare missione a Robot R2
+				assegnaMissioneRobot = CondizioneAssegnaMissioneRobot()
+				If ValutaProssimaCondizione And assegnaMissioneRobot.mag &gt; 0 Then
+					ValutaProssimaCondizione = False
+					LogMsg "StatoCicloCarico = 1000	'Attesa	;CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloCarico = 4100	'AssegnaMissioneAlRobotR2"
+					StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
 				End If
 
+				'condizione per FineRobotR2
+				'uso i campi di R2_STATUS (MAGAZZINO, CASSETTO, ID_QUARTINA) per tener traccia di aver già gestito il fineRobot
+				'devo ricordare di mettere a zero questi campi dopo FineRobot
+				If ValutaProssimaCondizione _
+					And [R2_STATUS:FINE_MISSIONE]  _
+					And [R2_STATUS:MAGAZZINO] &gt; 0 _
+					And [R2_STATUS:CASSETTO] &gt; 0 _
+					And [R2_STATUS:ID_QUARTINA] &lt;&gt; "" _
+					Then
+					ValutaProssimaCondizione = False
+					LogMsg "StatoCicloCarico = 1000	'Attesa	;CondizioneFineRobot = True -&gt; next StatoCicloCarico = 6100	'FineRobot"
+					StatoCicloCarico = 6100	'FineRobot
+				End If
+
+
 			Case 2100	'RichiediCassettoDaMagazzino
-				DebugMsg "StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
+				LogMsg "StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
 				POSIZIONE.cass = 0	'inizializzo
 				POSIZIONE.mag = 0
 				'cerco il cassetto richiedibile
@@ -123,7 +139,7 @@ Sub Main()
 														, [loc_ImpostazioniImpianto:ScaricoCommessaPref] _
 														, [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] _
 														)
-					'se ho commessa esclusiva in caso di nessun valore tornato do messaggio
+					'se ho commessa esclusiva in caso di nessun valore tornato do messaggio di alert
 					If [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] And POSIZIONE.cass = 0 Then
 						msg_AlertCommessaEsclusiva_nessuno = True
 					Else
@@ -133,9 +149,9 @@ Sub Main()
 				'leggo i dati dei pezzi dal DB e aggiungo alla coda dell'estrattore il cassetto
 				If POSIZIONE.cass &gt; 0 And POSIZIONE.mag &gt; 0 Then
 					'leggo i dati dei pezzi
-					If LeggiDatiPezzo(POSIZIONE.mag, POSIZIONE.cass) = 0 Then
+					If LeggiDatiPezzo(MysSqlConnectionString, POSIZIONE.mag, POSIZIONE.cass) = 0 Then
 						'avanzo di step per leggere richiedere il cassetto
-						StatoCicloScarico = 2200	'RikCassettoInEstrattorePl
+						StatoCicloScarico = 2200	'RikCassettoInEstrattorePlc
 					Else
 						LogMsg "Case 2100	'RichiediCassettoDaMagazzino -&gt; ERRORE in If LeggiDatiPezzo(POSIZIONE.mag, POSIZIONE.cass) = 0 Then "
 						StatoCicloScarico = 1000	'Attesa
@@ -175,9 +191,9 @@ Sub Main()
 
 				ElseIf POSIZIONE.mag = 2 Then
 					rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
-					rikEstrattore.ID_QUARTINA 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di prefix_varname_pezzo viene da 	Case 2100	'RichiediCassettoDaMagazzino
-					rikEstrattore.NOME_PEZZO_UNICO 			= GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
-					rikEstrattore.POSIZIONE 				= GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
+					rikEstrattore.ID_QUARTINA 				= GetVariableValue(prefix_varname_pezzo &amp; ":ID_QUARTINA") 'val di prefix_varname_pezzo viene da 	Case 2100	'RichiediCassettoDaMagazzino
+					rikEstrattore.NOME_PEZZO_UNICO 			= "ScaricoQrt"	'GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
+					rikEstrattore.POSIZIONE 				= 0				'GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 					rikEstrattore.DEPO						= False
 					rikEstrattore.PRONTO					= False
 					rikEstrattore.STROBE 					= True
@@ -189,7 +205,83 @@ Sub Main()
 					Throw New System.Exception("GestioneZonaR2.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
 				End If
 
+			Case 4100			'AssegnaMissioneAlRobotR2
+				LogMsg "StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2"
 
+				If [R2_STATUS:DISPONIBILE] And Not [R2_STATUS:IN_MISSIONE] Then
+					[R2_STATUS:MAGAZZINO] = assegnaMissioneRobot.mag
+					[R2_STATUS:CASSETTO] = assegnaMissioneRobot.cass
+					If assegnaMissioneRobot.mag = 1 Then
+						[R2_STATUS:ID_QUARTINA] = [SCAR_M1_PZ1:ID_QUARTINA]
+					End If
+					If assegnaMissioneRobot.mag = 2 Then
+						[R2_STATUS:ID_QUARTINA] = [SCAR_M2_PZ1:ID_QUARTINA]
+					End If
+					'forzo a zero per sicurezza
+					[R2_STATUS:FINE_MISSIONE] = False
+					[R2_STATUS:ID_QUARTINA_SUCCESSIVA] = ""
+					[R2_STATUS:POSIZIONE_PEZZO] = 0
+					[R2_STATUS:PZ_DA_QUADRA] = 0
+
+					'segnalo a R2 nuova missione
+					[R2_STATUS:NUOVA_MISSIONE] = True
+					StatoCicloScarico = 4200			'AttesaSegnaleRobotOccupato
+					stepTout = Timer()
+				End If
+
+			Case 4200	'AttesaSegnaleRobotOccupato
+				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
+				If SuperatoTimeout(stepTout, TOUT_STEP) Then
+					alm_Step_Tout = True
+					StatoCicloCarico = 1000	'Attesa
+				End If
+				If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] Then
+					alm_Step_Tout = False
+					StatoCicloCarico = 1000	'AttesaPezzi
+				End If
+
+			Case 6100	'FineRobot
+				LogMsg "StatoCicloCarico = 6100	'FineRobot"
+				ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
+				If ret &lt;&gt; 0 Then
+					'Alzo allarme
+					alm_FineRobotR2 = True
+					StatoCicloCarico = 1000	'Attesa
+				Else
+					[R2_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
+
+					'segnalo all'estrattore che ho depositato il pezzo
+					varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
+					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+
+					'faccio richiesta di rientro estrattore
+					rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
+					rikEstrattore.ID_QUARTINA 				= ""
+					rikEstrattore.NOME_PEZZO_UNICO 			= ""
+					rikEstrattore.POSIZIONE 				= 0
+					rikEstrattore.DEPO						= False
+					rikEstrattore.PRONTO					= False
+					rikEstrattore.STROBE 					= True
+					If [R2_STATUS:MAGAZZINO] = 1  Then
+						codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+					ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+						codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+					End If
+
+					'passo i dati all'Assemblatrice
+					'TODO
+					'##############
+					'calcolare i dati di larghezza finestra etc
+
+
+
+					'azzero le altre variabili
+					[R2_STATUS:MAGAZZINO] = 0
+					[R2_STATUS:CASSETTO] = 0
+					[R2_STATUS:ID_QUARTINA] = ""
+
+					StatoCicloCarico = 1000	'Attesa
+				End If
 
 			Case Else
 				LogMsg("Main() -&gt; Case StatoCicloScarico Else; StatoCicloScarico = " &amp; CStr(StatoCicloScarico))
@@ -210,7 +302,7 @@ Sub Main()
 
 End Sub
 
-Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
+Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Integer) As Integer
 	LeggiDatiPezzo = 0
 
 	''#################
@@ -234,10 +326,10 @@ Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
 	End Select
 
     'reset variabili struttura pezzi
-    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ1)
-    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ2)
-    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ3)
-    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ4)
+    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ1")
+    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ2")
+    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ3")
+    ResetDatiMembriStruttura(prefix_varname_pezzo &amp; "PZ4")
 
 	'cerco nel db a quale cassetto è assegnata la quartina
 	Try
@@ -247,9 +339,9 @@ Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
 			&amp; " where " _
             &amp; " And magazzino_ID_MAGAZZINO = " &amp; CStr(mag) _
             &amp; " ID_CASSETTO = " &amp; CStr(cass) _
-            ";"
+            &amp; ";"
 
-            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; commandText = " &amp; commandText
+            DebugMsg "GestioneZonaR2.movbas -&gt; VerificaSeQuartinaEsisteInMagazzino; commandText = " &amp; commandText
 
             Using MyCommand As New OdbcCommand()
 
@@ -271,7 +363,12 @@ Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
 						End If
 						varname = prefix_varname_pezzo &amp; "PZ" &amp; CStr(posizionePezzo)
 
-						SetVariableValue(varname &amp; ":NUOVO"						, 0)
+						'memorizzo da quale cassetto e magazzino provengono i pezzi
+						SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO"		, cass)
+						SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO"		, mag)
+
+
+						SetVariableValue(varname &amp; ":NUOVO"						, True)	'questo dato potrebbe servire nell'assegnamento missione al robot: CondizioneAssegnaMissioneRobot()
 						SetVariableValue(varname &amp; ":ID_QUARTINA"				, CStr(	MyDataReader("ID_QUARTINA")))
 						SetVariableValue(varname &amp; ":POSIZIONE"					, CInt( MyDataReader("POSIZIONE")))
 						SetVariableValue(varname &amp; ":NOME_PEZZO_UNICO"			, CStr(	MyDataReader("ID_PEZZO")))
@@ -306,6 +403,10 @@ Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
 						SetVariableValue(varname &amp; ":R2_COLLA"					, CInt(	MyDataReader("FILE_XML")))
 						SetVariableValue(varname &amp; ":R2_APERTURA"				, CInt(	MyDataReader("Apertura")))
 						SetVariableValue(varname &amp; ":R2_ATTREZZATURA"			, CInt(	MyDataReader("Attrezzatura")))
+
+						'TODO
+						'gestire R2_RUOTA_PEZZO
+						'gestire R1_RUOTA_PEZZO
 
 'promemoria campi vista tutti_pezzi
 ' Select `tutti_pezzi`.`ID_CASSETTO`,
@@ -372,13 +473,13 @@ Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" LeggiDatiPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" LeggiDatiPezzo() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
-		alm_ZonaR1_ODBC = True
+		alm_ZonaR2_ODBC = True
 		Exit Function
 
 	  'Catch ODBC Exception
@@ -386,13 +487,13 @@ Function LeggiDatiPezzo(mag As Integer, cass As Integer) As Integer
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("LeggiDatiPezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("LeggiDatiPezzo() - ERRORE ODBC: OdbcException."   &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
-		alm_ZonaR1_ODBC = True
+		alm_ZonaR2_ODBC = True
 		Exit Function
 
     End Try
@@ -442,6 +543,152 @@ Function CondizioneRikCassettoMagazzino() As Integer
 	End If
 End Function
 
+Function CondizioneAssegnaMissioneRobot() As PosQuartina
+	CondizioneAssegnaMissioneRobot.mag = 0
+	CondizioneAssegnaMissioneRobot.cass = 0
+
+	Dim cassettoDaM1 As Integer
+	Dim cassettoDaM2 As Integer
+	Dim magPiuVecchio As Integer
+	Dim assegnabileM1 As Boolean = False
+	Dim assegnabileM2 As Boolean = False
+
+	'posso assegnare una missione
+	'se il robot è disponibilr
+	'e se il robot non è in missione
+	'e se l'estrattore è pronto
+	'e se il cassetto assegnato al pezzo è uguale al cassetto nell'estrattore 2 del magazzino corrispondente
+	'e se il pezzo ha il campo SCAR_Mxx_PZ1:NUOVO a true (questo serve per poter intercettare correttamente la condizione di fine Robot nel Main
+
+	'controllo se una missione è assegnabile per M1
+	If      [R2_STATUS:DISPONIBILE] _
+		And Not [R2_STATUS:IN_MISSIONE] _
+		And [MAG1_ES2_ACT:PRONTO] _
+		And ([MAG1_ES2_ACT:ID_CASSETTO] = [SCAR_M1_PZ1:CASSETTO_ASSEGNATO]) _
+		Then
+
+		cassettoDaM1= [SCAR_M1_PZ1:CASSETTO_ASSEGNATO]
+		assegnabileM1 = True
+	End If
+
+	'controllo se una missione è assegnabile per M2
+	If      [R2_STATUS:DISPONIBILE] _
+		And Not [R2_STATUS:IN_MISSIONE] _
+		And [MAG2_ES2_ACT:PRONTO] _
+		And ([MAG2_ES2_ACT:ID_CASSETTO] = [SCAR_M2_PZ1:CASSETTO_ASSEGNATO]) _
+		Then
+
+		cassettoDaM2 = [SCAR_M2_PZ1:CASSETTO_ASSEGNATO]
+		assegnabileM2 = True
+	End If
+
+	If assegnabileM1 And assegnabileM2 Then
+		magPiuVecchio = MovimentatoPiuVecchio()
+		If magPiuVecchio = 1 Then
+			CondizioneAssegnaMissioneRobot.mag = 1
+			CondizioneAssegnaMissioneRobot.cass = cassettoDaM1
+		End If
+		If magPiuVecchio = 2 Then
+			CondizioneAssegnaMissioneRobot.mag = 2
+			CondizioneAssegnaMissioneRobot.cass = cassettoDaM2
+		End If
+	Else
+		'ho solo una missione assegnabile
+		If assegnabileM1 Then
+			CondizioneAssegnaMissioneRobot.mag = 1
+			CondizioneAssegnaMissioneRobot.cass = cassettoDaM1
+		End If
+		If assegnabileM2 Then
+			CondizioneAssegnaMissioneRobot.mag = 2
+			CondizioneAssegnaMissioneRobot.cass = cassettoDaM2
+		End If
+		'se nessun missione assegnabile CondizioneAssegnaMissioneRobot.mag = 0,  CondizioneAssegnaMissioneRobot.cass = 0
+	End If
+
+End Function
+
+Function FineRobot(connectionString As String, quartina As String) As Integer
+	'operazioni da fare nella function
+	'eliminare i dati del pezzo dal DB
+	'se ultimo pezzo della quartina faccio rientrare l'estrattore
+	'resettare i valori dei membri che identificano il pezzo
+	'reset dei dati di missione
+
+    Dim commandText As String
+    Dim excp As Boolean
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    FineRobot = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	'devo inserire i dati del pezzo nel DB
+	excp = False
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            commandText = "delete from `gualini`.`quartina` " &amp; _
+            "WHERE `ID_QUARTINA` = " &amp; """" &amp; quartina &amp; """" _
+			&amp; ";"
+
+            DebugMsg "GestioneZonaR2.movbas -&gt; FineRobot(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+
+	            Dim rCount As Integer
+
+	            'inserisco o aggiorno i dati di quartina
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+	            If rCount = 0 Then
+	            	LogMsg(" FineRobot() - WARNING : Delete ID_QUARTINA = " &amp; quartina &amp; " non riuscito")
+	            	FineRobot = 1 'torno errore
+	            End If
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" FineRobot() - ERRORE: Exception." &amp; MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." _
+								&amp; MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR2_ODBC = True
+		FineRobot = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("FineRobot() - ERRORE ODBC: OdbcException." &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR2_ODBC = True
+		FineRobot = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    FineRobot = 0
+End Function
+
 Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, commessa As String, esclusivo As Boolean) As PosQuartina
 	Dim pos As PosQuartina
 	pos.cass = 0
@@ -488,20 +735,20 @@ Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, com
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
 
-		DebugMsg( "GestioneZonaR1.movbas -&gt; RilevaCassettoPiuVicino; pos.mag = " &amp; CStr(pos.mag) &amp; " pos.cass = " &amp; CStr(pos.cass)  &amp; ".")
+		DebugMsg( "GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino; pos.mag = " &amp; CStr(pos.mag) &amp; " pos.cass = " &amp; CStr(pos.cass)  &amp; ".")
 
 	  'Catch program exception
 	Catch MyException As Exception
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" RilevaCassettoPiuVicino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" RilevaCassettoPiuVicino() - ERRORE: Exception." &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; RilevaCassettoPiuVicino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
-		alm_ZonaR1_ODBC = True
+		alm_ZonaR2_ODBC = True
 		Exit Function
 
 	  'Catch ODBC Exception
@@ -509,19 +756,107 @@ Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, com
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("RilevaCassettoPiuVicino() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("RilevaCassettoPiuVicino() - ERRORE ODBC: OdbcException."   &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
-		alm_ZonaR1_ODBC = True
+		alm_ZonaR2_ODBC = True
 		Exit Function
 
     End Try
 
 End Function
 
+Sub ProcessaCodaEstrattoriMAG2()
+	'ProcessaCodaEstrattore(1,1)	'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
+	'ProcessaCodaEstrattore(2,1) 'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
+
+
+
+	Dim tmpEs As stEstrattore
+	Dim strEs As String
+
+	If codaMAG1_ES2.Count &gt; 0 Then
+		If Not [MAG1_ES2_RIK:STROBE] _
+				And ( [MAG1_ES1_ACT:DEPO] = True Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) _
+			Then
+
+				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG1_ES2_RIK:STROBE]"
+
+				strEs = codaMAG1_ES2.Dequeue()
+				Derializza_stEstrattore(tmpEs, strEs)
+
+				[MAG1_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
+				[MAG1_ES2_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
+				[MAG1_ES2_RIK:NOME_PEZZO_UNICO] 		= tmpEs.NOME_PEZZO_UNICO
+				[MAG1_ES2_RIK:POSIZIONE] 				= tmpEs.POSIZIONE
+				[MAG1_ES2_RIK:STROBE] 					= tmpEs.STROBE
+				[MAG1_ES2_RIK:PRONTO] 					= tmpEs.PRONTO
+				[MAG1_ES2_RIK:DEPO] 					= tmpEs.DEPO
+
+		End If
+	End If
+
+	If codaMAG2_ES2.Count &gt; 0 Then
+		If Not [MAG2_ES2_RIK:STROBE] _
+				And ( [MAG2_ES2_ACT:DEPO] = True Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) Then
+
+				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG2_ES2_RIK:STROBE]"
+
+				strEs = codaMAG2_ES2.Dequeue()
+				Derializza_stEstrattore(tmpEs, strEs)
+
+				[MAG2_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
+				[MAG2_ES2_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
+				[MAG2_ES2_RIK:NOME_PEZZO_UNICO] 		= tmpEs.NOME_PEZZO_UNICO
+				[MAG2_ES2_RIK:POSIZIONE] 				= tmpEs.POSIZIONE
+				[MAG2_ES2_RIK:STROBE] 					= tmpEs.STROBE
+				[MAG2_ES2_RIK:PRONTO] 					= tmpEs.PRONTO
+				[MAG2_ES2_RIK:DEPO] 					= tmpEs.DEPO
+
+		End If
+	End If
+
+End Sub
+
+Function Serializza_stEstrattore (st As stEstrattore) As String
+	Dim sep As String = ";"
+	Serializza_stEstrattore = CStr(st.DEPO)+";" + CStr(st.ID_CASSETTO)+";" + CStr(st.ID_QUARTINA)+";" + CStr(st.NOME_PEZZO_UNICO)+";" _
+	    		+ CStr(st.POSIZIONE)+";" + CStr(st.PRONTO)+";" + CStr(st.STROBE)+";"
+	Debug.Print Serializza_stEstrattore
+End Function
+
+Function Derializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
+	Derializza_stEstrattore = 0
+
+	Dim x() As String
+	x = Split(element,";")
+
+	For count As Integer = 0 To UBound(x) -1
+        Debug.Print "countLoop " + CStr(count) + "   " + x(count)
+        Select Case count
+        Case 0
+        	st.DEPO 			= CBool(x(count))
+        Case 1
+        	st.ID_CASSETTO 		= CInt(x(count))
+        Case 2
+        	st.ID_QUARTINA 		= CStr(x(count))
+        Case 3
+        	st.NOME_PEZZO_UNICO = CStr(x(count))
+        Case 4
+        	st.POSIZIONE 		= CInt(x(count))
+        Case 5
+        	st.PRONTO 			= CBool(x(count))
+        Case 6
+        	st.STROBE 			= CBool(x(count))
+        Case Else
+			Throw New System.Exception("GestioneZonaR2.movbas -&gt; Derializza_stEstrattore() ECCEZZIONE valore Case ")
+        End Select
+    Next
+
+End Function
 
 Sub AggiornaPosizioniEstrattoriES2(connectionString As String )
 	AggiornaPosizioneEstrattore(1 , 2,connectionString)
@@ -654,13 +989,13 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
 		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
-		alm_ZonaR1_ODBC = True
+		alm_ZonaR2_ODBC = True
 		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
 		'Exit Function
 
@@ -670,13 +1005,13 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
 		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."   &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
-		alm_ZonaR1_ODBC = True
+		alm_ZonaR2_ODBC = True
 		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
 	Finally
 		If excp Then
@@ -704,7 +1039,7 @@ Sub AggiornaMembri(source As String, dest As String)
 	objDest 	= GetVariableObject(dest)
 
 	If  objSource Is Nothing Or  objDest Is Nothing Then
-		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
+		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
 	End If
 
 	'guardo se le var hanno tipo identico e sono struct Var
@@ -712,11 +1047,11 @@ Sub AggiornaMembri(source As String, dest As String)
 	etDest 		= objDest.GetType()
 
 	If Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
 		Exit Sub
 	End If
 	If Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
 		Exit Sub
 	End If
 
@@ -861,7 +1196,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBHAA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBLAH8AoQDOAOYA8QA=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
