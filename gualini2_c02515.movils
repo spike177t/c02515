@@ -25,7 +25,7 @@ L Q2_In:TestComunicazione
 
 //Reset Allarmi
 A alm_ResetAll
-R alm_FineRobot
+R alm_FineRobotR1
 R alm_Q1_MancaFile
 R alm_Q1_numFilesIncoerente
 R alm_Q2_MancaFile
@@ -40,7 +40,7 @@ R alm_ZonaR1_ODBC
 <Item key="1" value="Q1_In:InCiclo"/>
 <Item key="19" value="alm_ResetAll"/>
 <Item key="2" value="Q1_In:NonInEmergenza"/>
-<Item key="20" value="alm_FineRobot"/>
+<Item key="20" value="alm_FineRobotR1"/>
 <Item key="3" value="Q1_In:NonInHold"/>
 <Item key="21" value="alm_Q1_MancaFile"/>
 <Item key="4" value="Q1_In:OK"/>
