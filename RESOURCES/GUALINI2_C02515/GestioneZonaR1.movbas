@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="26687" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -175,6 +175,13 @@ Sub Main()
     [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
     [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
 
+    'aggiorno cassetti pieni e disponibili
+    AggiornaCassettiPieni(MysSqlConnectionString, 1)
+	AggiornaCassettiPieni(MysSqlConnectionString, 2)
+    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
+	AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
+	AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
+	AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
 
 '############STATE MACHINE############
 
@@ -203,7 +210,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 		Select Case StatoCicloCarico
 
 			Case 100	'StatoIniziale
-				DebugMsg "StatoCicloCarico = 100	'StatoIniziale"
+				'DebugMsg "StatoCicloCarico = 100	'StatoIniziale"
 				StatoCicloCarico = 1000		'AttesaPezzi
 
 			Case 1000	'AttesaPezzi
@@ -212,7 +219,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot
 
 			Case 1010	'AttesaPezzi_AssegnaMissioneRobot
-				DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
+				'DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
 				'guardo se ho una missione assegnabile
 				missioneNum = MissioneAssegnabile() 'torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
 				If missioneNum &gt; 0 Then
@@ -223,7 +230,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				End If
 
 			Case 1020	'AttesaPezzi_AttendiCassettoDisponibile
-				DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
+				'DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
 				'guardo se ho un cassetto disponibile da assegnare a pezzo pronto
 				valVerificaAttendiCassettoDisponibile = transizioneAttendiCassettoDisponibile() 'serve per non fare il controllo sempre
 									'valVerificaAttendiCassettoDisponibile = AttendiCassettoDisponibile() 'serve per non fare il controllo sempre
@@ -239,7 +246,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				End If
 
 			Case 1030	'AttesaPezzi_LeggiFileDaQuadra
-				DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
+				'DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
 				'obiettivo: verificare se ci sono file_pezzo da leggere sulle quadra
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
 				leggiDaQuadra = FileDaLeggere()
@@ -251,7 +258,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				End If
 
 			Case 1040	'FineMissioneRobot
-				DebugMsg "StatoCicloCarico = 1040	'FineMissioneRobot"
+				'DebugMsg "StatoCicloCarico = 1040	'FineMissioneRobot"
 				If [R1_STATUS:FINE_MISSIONE]  _
 					And [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] &gt; 0 _
 					And [R1_DATI_PEZZO:CASSETTO_ASSEGNATO] &gt; 0 _
@@ -575,6 +582,15 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
 				'reset dei valori dei membri che identificano il pezzo
 				ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA])
+
+				'aggiorno cassetti pieni e disponibili
+			    AggiornaCassettiPieni(MysSqlConnectionString, 1)
+				AggiornaCassettiPieni(MysSqlConnectionString, 2)
+			    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
+				AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
+				AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
+				AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+
 				StatoCicloCarico = 1000	'AttesaPezzi
 
 			Case Else
@@ -630,14 +646,14 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
 			Dim fi As System.IO.FileSystemInfo
 			fi = files(ii)
-			DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
+			'DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
 		Next
 	End If
 
-	nFiles = files.GetLowerBound(0)
-	DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetLowerBound(0) = " &amp; CStr(nFiles)
-	nFiles = files.GetUpperBound(0)
-	DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetUpperBound(0) = " &amp;  CStr(nFiles)
+	'nFiles = files.GetLowerBound(0)
+	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetLowerBound(0) = " &amp; CStr(nFiles)
+	'nFiles = files.GetUpperBound(0)
+	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetUpperBound(0) = " &amp;  CStr(nFiles)
 
 
 	'FORZATURA DEBUG
@@ -1125,6 +1141,249 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
 
     End Try
 
+End Function
+
+Function AggiornaCassettiPieni( connectionString As String, mag As Integer) As Integer
+	AggiornaCassettiPieni = 0 	'inizializzzo
+
+    Dim commandText As String
+    Dim varname As String
+    'Dim cassetti As Integer
+
+    Select Case mag
+		Case 1
+			varname = "loc_ImpostazioniImpianto:M1_CASS_PIENI"
+		Case 2
+			varname = "loc_ImpostazioniImpianto:M2_CASS_PIENI"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    End Select
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT COUNT(*) AS PIENI " &amp; _
+                      	" FROM  `gualini`.`cassetti_pieni` " &amp; _
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						SetVariableValue(varname, MyDataReader("PIENI"))
+					Else
+						SetVariableValue(varname, 0)
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" AggiornaCassettiPieni() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		AggiornaCassettiPieni = 100 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("AggiornaCassettiPieni() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		AggiornaCassettiPieni = 101 'torno errore
+		Exit Function
+    End Try
+End Function
+
+Function AggiornaCassettiDisponibili( connectionString As String, mag As Integer) As Integer
+	AggiornaCassettiDisponibili = 0 	'inizializzzo
+
+    Dim commandText As String
+    Dim varname As String
+    'Dim cassetti As Integer
+
+    Select Case mag
+		Case 1
+			varname = "loc_ImpostazioniImpianto:M1_CASS_DISPONIBILI"
+		Case 2
+			varname = "loc_ImpostazioniImpianto:M2_CASS_DISPONIBILI"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    End Select
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT COUNT(*) AS DISPONIBILI " &amp; _
+                      	" FROM  `gualini`.`cassetti_disponibili` " &amp; _
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						SetVariableValue(varname, MyDataReader("DISPONIBILI"))
+					Else
+						SetVariableValue(varname, 0)
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" AggiornaCassettiDisponibili() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		AggiornaCassettiDisponibili = 100 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("AggiornaCassettiDisponibili() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		AggiornaCassettiDisponibili = 101 'torno errore
+		Exit Function
+    End Try
+End Function
+
+Function AggiornaCassettiInRiempimento( connectionString As String, mag As Integer) As Integer
+	AggiornaCassettiInRiempimento = 0 	'inizializzzo
+
+    Dim commandText As String
+    Dim varname As String
+    'Dim cassetti As Integer
+
+    Select Case mag
+		Case 1
+			varname = "loc_ImpostazioniImpianto:M1_CASS_IN_RIEMPIMENTO"
+		Case 2
+			varname = "loc_ImpostazioniImpianto:M2_CASS_IN_RIEMPIMENTO"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; AggiornaCassettiInRiempimento() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    End Select
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT COUNT(*) AS INRIEMP " &amp; _
+                      	" FROM  `gualini`.`cassetti_in_riempimento` " &amp; _
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; AggiornaCassettiInRiempimento(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						SetVariableValue(varname, MyDataReader("INRIEMP"))
+					Else
+						SetVariableValue(varname, 0)
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AggiornaCassettiInRiempimento() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" AggiornaCassettiInRiempimento() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; AggiornaCassettiInRiempimento() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		AggiornaCassettiInRiempimento = 100 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; AggiornaCassettiInRiempimento() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("AggiornaCassettiInRiempimento() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; AggiornaCassettiInRiempimento() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		AggiornaCassettiInRiempimento = 101 'torno errore
+		Exit Function
+    End Try
 End Function
 
 Function MissioneAssegnabile() As Integer 'torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
@@ -2307,7 +2566,7 @@ End Function
 Sub DebugMsg(msg As String)
 	Dim prefix As String
 	prefix = "GestioneZonaR1.movbas -&gt; "
-	'Debug.Print prefix &amp; msg
+	Debug.Print prefix &amp; msg
 End Sub
 
 Sub LogMsg(msg As String)
@@ -2321,6 +2580,7 @@ End Sub
 
 
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiCsAHQExQQ=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
