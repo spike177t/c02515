@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="8339" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -251,7 +251,11 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
 				leggiDaQuadra = FileDaLeggere()
 				Dim filepresente As Boolean
-				filepresente = FileEsiste(leggiDaQuadra)
+				filepresente = False
+				If leggiDaQuadra &gt; 0 Then
+					filepresente = FileEsiste(leggiDaQuadra)
+				End If
+
 				If leggiDaQuadra &gt; 0 And filepresente Then
 					LogMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra; leggiDaQuadra = " &amp; CStr(leggiDaQuadra)
 					StatoCicloCarico = 2100	'LeggiFileDaQuadra
@@ -388,7 +392,15 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				LogMsg "StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina"
 				'obiettivo: assegnare un casetto alla quartina. se sono qui sicuramento ho un cassetto disponibile in base al valore di [loc_ImpostazioniImpianto:TipoCarico]
 				'assegno il cassetto alla quartina che proviene dalla quadra identificata da leggiDaQuadra
-				'dallo step 2100 ho in varname_pezzo il valore della variabile di riferimento per i dati del pezzo
+
+				Select Case leggiDaQuadra
+					Case 1:
+						varname_pezzo = "Q1_PEZZO_DISP"
+					Case 2:
+						varname_pezzo = "Q2_PEZZO_DISP"
+					Case Else
+						Throw New System.Exception("GestioneZonaR1.movbas -&gt; Case 2300	'AssegnaCassettoAllaQuartina: parametro leggiDaQuadra non ammesso: " &amp; CStr(leggiDaQuadra) &amp; ".")
+				End Select
 
 				POSIZIONE = AssegnaCassettoAllaQuartina([loc_ImpostazioniImpianto:TipoCarico] _
 									, leggiDaQuadra _
@@ -411,7 +423,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 			Case 3100	'AttendiCassettoDisponibile
 				LogMsg "StatoCicloCarico = 3100	'AttendiCassettoDisponibile" &amp; "; valVerificaAttendiCassettoDisponibile = " &amp; CStr(valVerificaAttendiCassettoDisponibile)
 				'memorizzo da quale quadra proviene il pezzo
-			'leggiDaQuadra = AttendiCassettoDisponibile()
+'			leggiDaQuadra = AttendiCassettoDisponibile()
 				If leggiDaQuadra &gt; 0 Then
 					StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
 				Else
@@ -619,6 +631,10 @@ Function FileEsiste(quadra As Integer) As Boolean
 
 	FileEsiste = False
 
+	If quadra = 0 Then
+		FileEsiste = False
+		Exit Function
+	End If
 	Select Case quadra
 		Case 1:
 			path = loc_Q1_path
@@ -1765,9 +1781,9 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
             							", " &amp; CStr(TOTALE_PEZZI_QUARTINA) &amp;  _
             							", " &amp; """" &amp; CStr(NOME_COMMESSA) &amp; """" &amp;  _
             							", " &amp; CStr(NUM_SQUADRETTE1) &amp;  _
-            							", " &amp; CStr(COD_SQUADRETTA1) &amp;  _
+            							", " &amp;  """" &amp;CStr(COD_SQUADRETTA1) &amp; """" &amp;  _
             							", " &amp; CStr(NUM_SQUADRETTE2) &amp;  _
-            							", " &amp; CStr(COD_SQUADRETTA2) &amp;  _
+            							", " &amp;  """" &amp;CStr(COD_SQUADRETTA2) &amp; """" &amp; _
             							");"
 
             'Select COUNT(*) FROM gualini.cassetti_disponibili WHERE ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2;
@@ -2648,7 +2664,8 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCsAPcAtgQHBQ==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCsADABOAGBAaUBxgQXBeIG
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

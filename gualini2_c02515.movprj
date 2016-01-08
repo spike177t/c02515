@@ -41,7 +41,13 @@
 <UserGroupsList>
 <UserGroup>
 <Name Description="Sviluppatori del Progetto" DefAccLevel="4294901760" DefLevel="1024" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="60" ExpiringDaysPassword="0" Language="">Sviluppatori</Name>
-<UsersList/>
+<UsersList>
+<User>
+<Name Password="co.mar" NumericPassword="" Description="" ExpDaysPassw="0" AccessLevel="4294901760" Level="4294967295" MobileCountryCode="" MobileAreaCode="" MobilePhoneNumber="" VoiceCountryCode="" VoiceAreaCode="" VoicePhoneNumber="" FaxCountryCode="" FaxAreaCode="" FaxPhoneNumber="" MessengerRecipient="" Email="" AccDisabled="0" CannotBeChanged="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="60" Language="" TimePassword="2016-01-08T17:28:38Z" MustChangePassword="0" CannotChangePassword="1">comar</Name>
+<LogonCommands/>
+<LogoffCommands/>
+</User>
+</UsersList>
 <LogonCommands/>
 <LogoffCommands/>
 </UserGroup>

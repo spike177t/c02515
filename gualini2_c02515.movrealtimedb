@@ -95,13 +95,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_RUOTA_PEZZO|Typ=0">R1_DATI_PEZZO_R2_RUOTA_PEZZO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q1_Out</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -123,21 +116,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_FILA_SQ1|Typ=4">R1_DATI_PEZZO_R2_FILA_SQ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="16" Shared="0" Retentive="0">R2_STATUS</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_FILA_SQ2|Typ=4">R1_DATI_PEZZO_R2_FILA_SQ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -193,13 +172,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_ATTREZZATURA|Typ=4">R1_DATI_PEZZO_R2_ATTREZZATURA</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES2_ACT_OLD</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -215,13 +187,6 @@
 </Variable>
 <Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_OFFSET_PEZZO|Typ=4">R1_DATI_PEZZO_R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -263,13 +228,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_BANCO_SQ1|Typ=4">R1_DATI_PEZZO_R2_BANCO_SQ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -298,14 +256,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="29" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_BANCO_SQ2|Typ=4">R1_DATI_PEZZO_R2_BANCO_SQ2</Name>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="30" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -389,13 +340,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_APERTURA|Typ=4">R1_DATI_PEZZO_R2_APERTURA</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_RIK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -425,20 +369,6 @@
 </Variable>
 <Variable>
 <Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_CODICE_PRG|Typ=4">R1_DATI_PEZZO_R2_CODICE_PRG</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R1_RUOTA_PEZZO|Typ=0">R1_DATI_PEZZO_R1_RUOTA_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -537,13 +467,6 @@
 </Variable>
 <Variable>
 <Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.R2_COLLA|Typ=4">R1_DATI_PEZZO_R2_COLLA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1001,6 +924,9 @@
 </Member>
 <Member>
 <Name Type="4">M2_CASS_IN_RIEMPIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">AbilitaDbgMsg</Name>
 </Member>
 </MemberList>
 </Structure>
