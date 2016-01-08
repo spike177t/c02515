@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="26687" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -93,7 +93,7 @@ Sub testCodaEstrattore
 		'For count As Integer = 0 To UBound(x) -1
         '    Debug.Print "countLoop " + CStr(count) + "   " + x(count)
         'Next
-		Derializza_stEstrattore(tmpEs2, element)
+		Deserializza_stEstrattore(tmpEs2, element)
 	Next
 End Sub
 
@@ -103,8 +103,8 @@ Function Serializza_stEstrattore (st As stEstrattore) As String
 	    		+ CStr(st.POSIZIONE)+";" + CStr(st.PRONTO)+";" + CStr(st.STROBE)+";"
 	Debug.Print Serializza_stEstrattore
 End Function
-Function Derializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
-	Derializza_stEstrattore = 0
+Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
+	Deserializza_stEstrattore = 0
 
 	Dim x() As String
 	x = Split(element,";")
@@ -127,7 +127,7 @@ Function Derializza_stEstrattore (ByRef st As stEstrattore, element As String) A
         Case 6
         	st.STROBE 			= CBool(x(count))
         Case Else
-			Throw New System.Exception("GestioneZonaR1.movbas -&gt; Derializza_stEstrattore() ECCEZZIONE valore Case ")
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; Deserializza_stEstrattore() ECCEZZIONE valore Case ")
         End Select
     Next
 
@@ -250,7 +250,9 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				'obiettivo: verificare se ci sono file_pezzo da leggere sulle quadra
 				'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
 				leggiDaQuadra = FileDaLeggere()
-				If leggiDaQuadra &gt; 0 Then
+				Dim filepresente As Boolean
+				filepresente = FileEsiste(leggiDaQuadra)
+				If leggiDaQuadra &gt; 0 And filepresente Then
 					LogMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra; leggiDaQuadra = " &amp; CStr(leggiDaQuadra)
 					StatoCicloCarico = 2100	'LeggiFileDaQuadra
 				Else
@@ -610,6 +612,58 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 End Sub
 
+Function FileEsiste(quadra As Integer) As Boolean
+	Dim path As String
+	Dim filepath As String
+	Dim varname As String
+
+	FileEsiste = False
+
+	Select Case quadra
+		Case 1:
+			path = loc_Q1_path
+			varname = "Q1_PEZZO_DISP"
+			path = loc_Q1_path
+			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
+		Case 2:
+			path = loc_Q2_path
+			varname = "Q2_PEZZO_DISP"
+			path = loc_Q2_path
+			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; FileEsiste() ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
+	End Select
+
+	'guardo se sono presenti file
+	Dim di As New IO.DirectoryInfo(path)
+	Dim files As Object
+	Dim lowBoundFiles As Integer
+	Dim upBoundFiles As Integer
+
+	files = di.GetFiles()
+
+'	If files.GetType.IsArray Then
+'		Dim ii As Integer
+'		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
+'			Dim fi As System.IO.FileSystemInfo
+'			fi = files(ii)
+'			'DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
+'		Next
+'	End If
+
+	lowBoundFiles = files.GetLowerBound(0)
+	'DebugMsg "FileEsiste(quadra As Integer); lowBoundFiles = files.GetLowerBound(0) = " &amp; CStr(lowBoundFiles)
+	upBoundFiles = files.GetUpperBound(0)
+	'DebugMsg "FileEsiste(quadra As Integer); upBoundFiles = files.GetUpperBound(0) = " &amp;  CStr(upBoundFiles)
+
+	If upBoundFiles &lt; 0 Then
+		FileEsiste = False
+	Else
+		FileEsiste = True
+	End If
+End  Function
+
+
 Function LeggiFileDaQuadra(quadra As Integer) As String
 	Dim path As String
 	Dim filepath As String
@@ -638,6 +692,8 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 	Dim di As New IO.DirectoryInfo(path)
 	Dim files As Object
 	Dim nFiles As Integer
+	Dim lowBoundFiles As Integer
+	Dim upBoundFiles As Integer
 
 	files = di.GetFiles()
 
@@ -650,17 +706,23 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		Next
 	End If
 
-	'nFiles = files.GetLowerBound(0)
-	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetLowerBound(0) = " &amp; CStr(nFiles)
-	'nFiles = files.GetUpperBound(0)
-	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); nFiles = files.GetUpperBound(0) = " &amp;  CStr(nFiles)
 
+	lowBoundFiles = files.GetLowerBound(0)
+	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); lowBoundFiles = files.GetLowerBound(0) = " &amp; CStr(lowBoundFiles)
+	upBoundFiles = files.GetUpperBound(0)
+	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); upBoundFiles = files.GetUpperBound(0) = " &amp;  CStr(upBoundFiles)
+
+	If upBoundFiles &lt; 0 Then
+		Exit Function
+	End If
+
+	nFiles = upBoundFiles - lowBoundFiles + 1
 
 	'FORZATURA DEBUG
-	'nFiles = 0
+	'nFiles = 1
 
-	
-	If nFiles &gt; files.GetLowerBound(0) Then
+
+	If nFiles &gt; 1 Then
 		If quadra = 1 Then
 			alm_Q1_numFilesIncoerente = True
 		Else
@@ -668,7 +730,7 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		End If
 		Exit Function
 	End If
-	If nFiles &lt; files.GetLowerBound(0) Then
+	If nFiles &lt; 1 Then
 		If quadra = 1 Then
 			alm_Q1_MancaFile = True
 		Else
@@ -677,6 +739,10 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		Exit Function
 	End If
 
+	If nFiles = 0 Then
+		'non ho nessun file
+		Exit Function
+	End If
 	filepath = files(0).FullName
 
 	'Dim lastF As FileInfo
@@ -2226,7 +2292,7 @@ Sub ProcessaCodaEstrattoriMAG1()
 				Debug.Print "ProcessaCodaEstrattoriMAG1()  [MAG1_ES1_RIK:STROBE]"
 
 				strEs = codaMAG1_ES1.Dequeue()
-				Derializza_stEstrattore(tmpEs, strEs)
+				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG1_ES1_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG1_ES1_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
@@ -2246,7 +2312,7 @@ Sub ProcessaCodaEstrattoriMAG1()
 				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG2_ES1_RIK:STROBE]"
 
 				strEs = codaMAG2_ES1.Dequeue()
-				Derializza_stEstrattore(tmpEs, strEs)
+				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG2_ES1_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG2_ES1_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
@@ -2565,8 +2631,10 @@ End Function
 
 Sub DebugMsg(msg As String)
 	Dim prefix As String
-	prefix = "GestioneZonaR1.movbas -&gt; "
-	Debug.Print prefix &amp; msg
+	If [loc_ImpostazioniImpianto:AbilitaDbgMsg] Then
+		prefix = "GestioneZonaR1.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
 End Sub
 
 Sub LogMsg(msg As String)
@@ -2580,7 +2648,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCsAHQExQQ=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCsAPcAtgQHBQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

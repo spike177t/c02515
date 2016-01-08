@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1658" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="48638" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -835,7 +835,7 @@ Sub ProcessaCodaEstrattoriMAG2()
 				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG1_ES2_RIK:STROBE]"
 
 				strEs = codaMAG1_ES2.Dequeue()
-				Derializza_stEstrattore(tmpEs, strEs)
+				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG1_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG1_ES2_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
@@ -855,7 +855,7 @@ Sub ProcessaCodaEstrattoriMAG2()
 				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG2_ES2_RIK:STROBE]"
 
 				strEs = codaMAG2_ES2.Dequeue()
-				Derializza_stEstrattore(tmpEs, strEs)
+				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG2_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG2_ES2_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
@@ -877,8 +877,8 @@ Function Serializza_stEstrattore (st As stEstrattore) As String
 	Debug.Print Serializza_stEstrattore
 End Function
 
-Function Derializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
-	Derializza_stEstrattore = 0
+Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
+	Deserializza_stEstrattore = 0
 
 	Dim x() As String
 	x = Split(element,";")
@@ -901,7 +901,7 @@ Function Derializza_stEstrattore (ByRef st As stEstrattore, element As String) A
         Case 6
         	st.STROBE 			= CBool(x(count))
         Case Else
-			Throw New System.Exception("GestioneZonaR2.movbas -&gt; Derializza_stEstrattore() ECCEZZIONE valore Case ")
+			Throw New System.Exception("GestioneZonaR2.movbas -&gt; Deserializza_stEstrattore() ECCEZZIONE valore Case ")
         End Select
     Next
 
@@ -1232,8 +1232,10 @@ End Function
 
 Sub DebugMsg(msg As String)
 	Dim prefix As String
-	prefix = "GestioneZonaR2.movbas -&gt; "
-	Debug.Print prefix &amp; msg
+	If [loc_ImpostazioniImpianto:AbilitaDbgMsg] Then
+		prefix = "GestioneZonaR2.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
 End Sub
 
 Sub LogMsg(msg As String)
