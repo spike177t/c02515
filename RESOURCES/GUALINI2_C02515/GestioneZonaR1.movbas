@@ -208,6 +208,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 		AggiornaPosizioniEstrattoriES1(MysSqlConnectionString)
 		ProcessaCodaEstrattoriMAG1()
 
+	  If Not alm_Presenti Then
 		Select Case StatoCicloCarico
 
 			Case 100	'StatoIniziale
@@ -287,10 +288,34 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					'leggo le info del pezzo da file fornito dalla quadra
 					varname_pezzo = LeggiFileDaQuadra(leggiDaQuadra)
 
+					'controllo se il pezzo è presente nel DB
+					Dim pzPresente As Boolean
+					pzPresente = VerificaEsistePezzo(GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO"))
+					If pzPresente Then
+						'alzo allarme
+						Select Case leggiDaQuadra
+						Case 1
+							alm_R1_PezzoDuplicato_Q1 = True
+						Case 2
+							alm_R1_PezzoDuplicato_Q2 = True
+						End Select
+
+						'chiedo se operatore vuole rimuovere automaticamente il file
+						Dim pzDupMsg As String
+						pzDupMsg ="Allarme Pezzo duplicato da quadra " &amp; CStr(leggiDaQuadra) &amp; vbCrLf _
+									&amp; "Vuoi rimuovere automaticamente il file dati dalla quadra?" &amp; vbCrLf  &amp; vbCrLf_
+									&amp; "Se si verificare anche la fotocellula di presenza pezzo sulla quadra."
+						If MsgBox(pzDupMsg, vbCritical, "Allarme Pezzo Duplicato") = vbOK Then
+							RimuoviFileDatiDaQuadra(leggiDaQuadra)
+						End If
+
+						StatoCicloCarico = 1000	'AttesaPezzi
+					End If
+
 					quartina = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
 					quartina_successiva = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA_SUCCESSIVA")
 
-					If quartina = "" Then
+					If quartina = "" Or quartina = "0" Or quartina = " " Then
 						'file non presente
 						LogMsg "GestioneZonaR1.movbas -&gt; Main() - Case 2100; File non presente su PezzoPronto da Quadra: " &amp; CStr(leggiDaQuadra)
 						StatoCicloCarico = 1000	'AttesaPezzi
@@ -325,6 +350,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						End If
 					End If
 				End If
+			FineCase2100:
 
 			Case 2200	'RikCassettoInEstrattorePlc
 				LogMsg "StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc"
@@ -491,16 +517,15 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
 				If SuperatoTimeout(stepTout, TOUT_STEP) Then
 					alm_Step_ToutR1_4200 = True
-					
+					'per poter fare ripartenza devo fare reset delle struct già assegnate
+					ResetDatiMembriStruttura("R1_DATI_PEZZO")
+					ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+					ResetDatiMembriStruttura("Q2_PEZZO_DISP")
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
 				'If	Not [R1_STATUS:DISPONIBILE] Then
 				If	[R1_STATUS:DISPONIBILE] And [R1_STATUS:IN_MISSIONE] Then
 					alm_Step_ToutR1_4200 = False
-					'per poter fare ripartenza devo fare reset delle struct già assegnate
-					ResetDatiMembriStruttura("R1_DATI_PEZZO")
-					ResetDatiMembriStruttura("Q1_PEZZO_DISP")
-					ResetDatiMembriStruttura("Q2_PEZZO_DISP")
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
 
@@ -531,6 +556,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				End If
 				If [R1_STATUS:FINE_MISSIONE] = False Then
 					[R1_STATUS:FINE_MISSIONE_ACK] =False
+					alm_Step_ToutR1_6150 = False
 					'segnalo all'estrattore che ho depositato il pezzo
 					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
 					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
@@ -636,8 +662,11 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: StatoCicloCarico valore non ammesso: " &amp; CStr(StatoCicloCarico) &amp; ".")
 
 		End Select
+	  End If
 
 	DoEvents
+
+	'Esegui LogMessage solo se arrivo su un nuovo step ciclo
 	If StatoCicloCarico_Old &lt;&gt; StatoCicloCarico Then
 		enableLogMsg = True
 		StatoCicloCarico_Old = StatoCicloCarico
@@ -2743,6 +2772,7 @@ End Sub
 
 
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiATAg==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
