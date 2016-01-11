@@ -11,126 +11,7 @@
 <RealTimeODBCSettings RecycleDBConnection="1" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" Dsn="" User="" DefVarCharPrecision="255" TableName="" NameCol="" ValueCol="" MinValueCol="" MaxValueCol="" AveValueCol="" TotalTimeCol="" LastTimeOnCol=""/>
 <VariableList>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_numFilesIncoerente</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC_txt</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_OK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ4</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_MancaFile</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="SettingsStruct" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">loc_Settings</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_PEZZO_PRONTO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES3_ACT_OLD</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q2_PEZZO_PRONTO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q1_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScript1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q2_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="16" Shared="0" Retentive="0">R2_STATUS</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="44" Shared="0" Retentive="0">Assemblatrice_In</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">aaa_var001</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Description="uso per comodità questa var per memorizzare tutti i dati  del pezzo  in carico al Robot" Shared="0" Retentive="0">R1_DATI_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -144,6 +25,62 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="17" Shared="0" Retentive="0">R2_STATUS</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Description="pezzo presente su Quadra 2" Shared="0" Retentive="0">Q2_PEZZO_DISP</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="17" Shared="0" Retentive="0">R1_STATUS</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR1_4200</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC_txt</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -151,42 +88,42 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_MancaFile</Name>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScript1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES1_ACT</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_PEZZO_PRONTO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="se ho commessa esclusiva che non torna nessun valore allorra segnalo un messaggio" Group="MESSAGGI" Shared="0" Retentive="0">msg_AlertCommessaEsclusiva_nessuno</Name>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_OK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES2_ACT_OLD</Name>
+<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="44" Shared="0" Retentive="0">Assemblatrice_In</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="3" Shared="0" Retentive="0">Assemblatrice_Stato</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_ACT</Name>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q1_path</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -207,119 +144,42 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES3_ACT_OLD</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="se ho commessa esclusiva che non torna nessun valore allorra segnalo un messaggio" Group="MESSAGGI" Shared="0" Retentive="0">msg_AlertCommessaEsclusiva_nessuno</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">AutoRun</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_RIK</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ4</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_InCiclo</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="30" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="PlcRikEstrattore" AreaType="1" Address="0" Bit="7" Description="cassetto rikiesto dal pezzo in carico" Shared="0" Retentive="0">CAR_CASS_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="10" Shared="0" Retentive="0">Q2_In</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inpNonInEmergenza</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Description="MAG2 Estrattore Manuale" Shared="0" Retentive="0" InitQuality="8">MAG2_ES3_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_numFilesIncoerente</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES2_ACT_OLD</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="10" Shared="0" Retentive="0">Q1_In</Name>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC_txt</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -333,140 +193,42 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_RIK</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_MancaFile</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_RIK</Name>
+<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q2_Out</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR1</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES2_ACT_OLD</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_Tout</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q2_path</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Description="MAG1 dati estrattore manuale" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Description="pezzo presente su Quadra 2" Shared="0" Retentive="0">Q2_PEZZO_DISP</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q1_path</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoSbloccato</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="16" Shared="0" Retentive="0">R1_STATUS</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES1_ACT_OLD</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico_Old</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ3</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Description="uso per comodità questa var per memorizzare tutti i dati  del pezzo  in carico al Robot" Shared="0" Retentive="0">R1_DATI_PEZZO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
+<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="10" Shared="0" Retentive="0">Q2_In</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -480,14 +242,140 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ4</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES3_ACT_OLD</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="73" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ3</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_numFilesIncoerente</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="SettingsStruct" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">loc_Settings</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ3</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q2_path</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="75" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ4</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_numFilesIncoerente</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="10" Shared="0" Retentive="0">Q1_In</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoSbloccato</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="30" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Description="MAG1 dati estrattore manuale" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q1_Out</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_InCiclo</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_MancaFile</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -495,6 +383,125 @@
 </Variable>
 <Variable>
 <Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico_Old</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="PlcRikEstrattore" AreaType="1" Address="0" Bit="7" Description="cassetto rikiesto dal pezzo in carico" Shared="0" Retentive="0">CAR_CASS_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES3_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES1_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">AutoRun</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q2_PEZZO_PRONTO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES1_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES2_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico_Old</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_Out</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">aaa_var001</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Description="MAG2 Estrattore Manuale" Shared="0" Retentive="0" InitQuality="8">MAG2_ES3_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="3" Shared="0" Retentive="0">Assemblatrice_Stato</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inpNonInEmergenza</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR1_6150</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -508,6 +515,10 @@
 </DriverList>
 <RenamedVariables/>
 <StructureList>
+<Structure>
+<Name Description="">STRUCT00001</Name>
+<MemberList/>
+</Structure>
 <Structure>
 <Name Description="">AssemblatriceInput</Name>
 <MemberList>
@@ -545,10 +556,6 @@
 <Name Type="7">CHK_READ</Name>
 </Member>
 </MemberList>
-</Structure>
-<Structure>
-<Name Description="">STRUCT00001</Name>
-<MemberList/>
 </Structure>
 <Structure>
 <Name Description="">AssemblatriceStato</Name>
@@ -709,6 +716,44 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">DatiRobotStruct</Name>
+<MemberList>
+<Member>
+<Name Type="0">DISPONIBILE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="4">PZ_DA_QUADRA</Name>
+</Member>
+<Member>
+<Name Type="4">MAGAZZINO</Name>
+</Member>
+<Member>
+<Name Type="4">CASSETTO</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4">POSIZIONE_PEZZO</Name>
+</Member>
+<Member>
+<Name Type="0">NUOVA_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">IN_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE_ACK</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="dati provenienti dalle quadre">QuadraStruct</Name>
 <MemberList>
 <Member>
@@ -837,40 +882,8 @@
 <Member>
 <Name Type="4">R2_OFFSET_PEZZO</Name>
 </Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">DatiRobotStruct</Name>
-<MemberList>
 <Member>
-<Name Type="0">DISPONIBILE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="4">PZ_DA_QUADRA</Name>
-</Member>
-<Member>
-<Name Type="4">MAGAZZINO</Name>
-</Member>
-<Member>
-<Name Type="4">CASSETTO</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
-</Member>
-<Member>
-<Name Type="4">POSIZIONE_PEZZO</Name>
-</Member>
-<Member>
-<Name Type="0">NUOVA_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">IN_MISSIONE</Name>
+<Name Type="4">R1_COD_RBT</Name>
 </Member>
 </MemberList>
 </Structure>

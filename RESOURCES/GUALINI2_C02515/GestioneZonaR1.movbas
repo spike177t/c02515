@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="8339" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 'Sostituita la Variabile 'alm_FineRobot' con il nuovo nome 'alm_FineRobotR1'
 '#Language "WWB.NET"
 
@@ -38,9 +39,9 @@ Public Structure stEstrattore
     Public STROBE As Boolean
 End Structure
 
-
+'TODO settare bene TOUT
 Const TOUT_DISPONIBILE 	As Integer 	= 1 'in secondi
-Const TOUT_STEP			As Integer	= 2 'in secondi
+Const TOUT_STEP			As Integer	= 2000 '2 'in secondi
 
 'Dim codaMAG1_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
 
@@ -300,7 +301,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						If POSIZIONE.mag &gt; 0 Then
 							'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
 							'ho gia memorizzato in VerificaSeQuartinaEsisteInMagazzino magazzinio e cassetto assegnato
-							StatoCicloCarico = 2200	'AggiungiMissioneCodaPlc
+							StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc
 						Else
 							'quartina non esiste allora guardo se ci sono cassetti disponibili nel magazzino di riferimento in base a TipoCarico
 
@@ -477,7 +478,8 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					objPezzo 		= Nothing
 					objR1 			= Nothing
 
-					[R1_STATUS:FINE_MISSIONE] = False	'forzo per sicurezza
+					'Decodifica Missione R1 in base a serie e codice profilo
+					DecodificaMissioneR1()
 
 				End If
 				'alzo il bit al Robot di Strobe missione
@@ -488,12 +490,17 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 			Case 4200	'AttesaSegnaleRobotOccupato
 				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
 				If SuperatoTimeout(stepTout, TOUT_STEP) Then
-					alm_Step_Tout = True
+					alm_Step_ToutR1_4200 = True
+					
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
 				'If	Not [R1_STATUS:DISPONIBILE] Then
 				If	[R1_STATUS:DISPONIBILE] And [R1_STATUS:IN_MISSIONE] Then
-					alm_Step_Tout = False
+					alm_Step_ToutR1_4200 = False
+					'per poter fare ripartenza devo fare reset delle struct già assegnate
+					ResetDatiMembriStruttura("R1_DATI_PEZZO")
+					ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+					ResetDatiMembriStruttura("Q2_PEZZO_DISP")
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
 
@@ -505,8 +512,25 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					alm_FineRobotR1 = True
 					StatoCicloCarico = 1000	'AttesaPezzi
 				Else
-					[R1_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
+					[R1_STATUS:FINE_MISSIONE_ACK] = True 'invio ack
 
+					stepTout = Timer()
+					StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset
+				End If
+
+			Case 6150	'AttesaFineMissioneAck_reset
+				LogMsg "StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset"
+				If SuperatoTimeout(stepTout, TOUT_STEP) Then
+					alm_Step_ToutR1_6150 = True
+					'dopo aver alzato allarme vado comunque avanti per finire il ciclo, tanto gli step rimanenti non riguardano il robot
+					[R1_STATUS:FINE_MISSIONE_ACK] =False
+					'segnalo all'estrattore che ho depositato il pezzo
+					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+					StatoCicloCarico = 6200	'VerificaUltimoPezzo
+				End If
+				If [R1_STATUS:FINE_MISSIONE] = False Then
+					[R1_STATUS:FINE_MISSIONE_ACK] =False
 					'segnalo all'estrattore che ho depositato il pezzo
 					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
 					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
@@ -2159,6 +2183,60 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 
 End Function
 
+Sub DecodificaMissioneR1()
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "K-FINEST" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1900" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 1
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "K-FINEST" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1901" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 2
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "K-FINEST" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1911" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 3
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS65" And [R1_DATI_PEZZO:CODICE_PROFILO] = "363890" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 4
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS70" And [R1_DATI_PEZZO:CODICE_PROFILO] = "358140" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 5
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS65" And [R1_DATI_PEZZO:CODICE_PROFILO] = "364110" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 6
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS70" And [R1_DATI_PEZZO:CODICE_PROFILO] = "358340" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 7
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS65" And [R1_DATI_PEZZO:CODICE_PROFILO] = "363980" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 8
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS70" And [R1_DATI_PEZZO:CODICE_PROFILO] = "358240" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 9
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS65" And [R1_DATI_PEZZO:CODICE_PROFILO] = "364650" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 10
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS70" And [R1_DATI_PEZZO:CODICE_PROFILO] = "358610" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 11
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "R72TT" And [R1_DATI_PEZZO:CODICE_PROFILO] = "R72C44" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 12
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "R72TT" And [R1_DATI_PEZZO:CODICE_PROFILO] = "R72C41" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 13
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "R72TT" And [R1_DATI_PEZZO:CODICE_PROFILO] = "R72C45" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 14
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "R72TT" And [R1_DATI_PEZZO:CODICE_PROFILO] = "R72C113" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 15
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS90" And [R1_DATI_PEZZO:CODICE_PROFILO] = "441050" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 16
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS90" And [R1_DATI_PEZZO:CODICE_PROFILO] = "441780" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 17
+	End If
+End Sub
+
 
 Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	'aggiungere tutte le altre variabili dimensionali
@@ -2641,6 +2719,7 @@ Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	Else
 		SuperatoTimeout = False
 	End If
+	DoEvents
 
 End Function
 
@@ -2664,8 +2743,6 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCsADABOAGBAaUBxgQXBeIG
-</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

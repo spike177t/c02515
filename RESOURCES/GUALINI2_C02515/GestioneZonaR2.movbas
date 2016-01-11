@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="48638" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="48638" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
+'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -252,11 +253,11 @@ Sub Main()
 			Case 4200	'AttesaSegnaleRobotOccupato
 				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
 				If SuperatoTimeout(stepTout, TOUT_STEP) Then
-					alm_Step_Tout = True
+					alm_Step_ToutR1_4200 = True
 					StatoCicloCarico = 1000	'Attesa
 				End If
 				If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] Then
-					alm_Step_Tout = False
+					alm_Step_ToutR1_4200 = False
 					StatoCicloCarico = 1000	'AttesaPezzi
 				End If
 
