@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="1807" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+Imports System
+Imports System.IO
+Imports System.Data.Odbc
+
+Option Explicit
+
+Sub Main()
+	Dim vResult As String
+	Dim source As String
+	Dim dest As String
+
+	vResult = This.GetParameter(0)
+
+	If vResult = "1"  Then
+		source = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Temporaneo\Q1"
+		dest = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1"
+		SpostaPer(source, dest)
+		[Q1_In:PezzoPronto] = True
+	End If
+	If vResult = "2"  Then
+		source = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Temporaneo\Q2"
+		dest = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2"
+		SpostaPer(source, dest)
+		[Q2_In:PezzoPronto] = True
+	End If
+End Sub
+
+Sub SpostaPer(src As String, dst As String)
+	Dim filepath As String
+	Dim filename As String
+	Dim dstpath As String
+	Dim varname As String
+
+	'guardo se sono presenti file
+	Dim di As New IO.DirectoryInfo(src)
+	Dim files As Object
+	Dim nFiles As Integer
+	Dim lowBoundFiles As Integer
+	Dim upBoundFiles As Integer
+
+	files = di.GetFiles()
+
+	lowBoundFiles = files.GetLowerBound(0)
+	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); lowBoundFiles = files.GetLowerBound(0) = " &amp; CStr(lowBoundFiles)
+	upBoundFiles = files.GetUpperBound(0)
+	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); upBoundFiles = files.GetUpperBound(0) = " &amp;  CStr(upBoundFiles)
+
+	If upBoundFiles &lt; 0 Then
+		Exit Sub
+	End If
+
+	nFiles = upBoundFiles - lowBoundFiles + 1
+
+	'If nFiles &gt; 1 Then
+	'	Exit Function
+	'End If
+	If nFiles &lt; 1 Then
+		Exit Sub
+	End If
+
+	If nFiles = 0 Then
+		'non ho nessun file
+		Exit Sub
+	End If
+	filepath = files(0).FullName
+	filename = files(0).Name
+
+	Try
+            If File.Exists(filepath) = False Then
+                Exit Sub
+            End If
+
+            ' Ensure that the target does not exist.
+            dstpath =dst + System.IO.Path.DirectorySeparatorChar + filename
+            If File.Exists(dstpath) Then
+                File.Delete(dstpath)
+            End If
+
+            ' Move the file.
+            File.Move(filepath, dstpath)
+            Debug.Print("SpostaPer(" + filepath + ","+dstpath +")")
+
+        Catch e As Exception
+            Debug.Print("SpostaPer failed: "+ e.ToString())
+        End Try
+
+
+
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>
