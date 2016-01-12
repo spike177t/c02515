@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="89740" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="75667" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -193,9 +193,9 @@ Sub Main()
 '#####TODO DEBUG
 'rimuovere questa parte
 AA:
-[Q1_In:PezzoPronto] = True
+'[Q1_In:PezzoPronto] = True
 Wait 1
-[Q2_In:PezzoPronto] = True
+'[Q2_In:PezzoPronto] = True
 StatoCicloCarico = 1000
 loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
 loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
@@ -954,7 +954,7 @@ Function FileDaLeggere() As Integer
 		dt2 = dt2 + nMS2
 
 		differenza = dt1 - dt2
-		Debug.Print CStr(dt1 -dt2)
+		'Debug.Print CStr(dt1 -dt2)
 
 		If differenza &gt; 0 Then
 			'pezzo da Q1 più recente
@@ -1376,7 +1376,7 @@ Function AggiornaCassettiDisponibili( connectionString As String, mag As Integer
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            commandText = "SELECT COUNT(*) AS DISPONIBILI " &amp; _
+            commandText = "SELECT COUNT(*) AS DISP " &amp; _
                       	" FROM  `gualini`.`cassetti_disponibili` " &amp; _
             			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
 
@@ -1392,7 +1392,7 @@ Function AggiornaCassettiDisponibili( connectionString As String, mag As Integer
 
 					If MyDataReader.HasRows Then
 						MyDataReader.Read
-						SetVariableValue(varname, MyDataReader("DISPONIBILI"))
+						SetVariableValue(varname, MyDataReader("DISP"))
 					Else
 						SetVariableValue(varname, 0)
 					End If
@@ -2897,7 +2897,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAZASQBQQFyAaYBIAKUArUIcgo=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCuAEkBcgGmASAClgJZBYMHnwhyCg==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

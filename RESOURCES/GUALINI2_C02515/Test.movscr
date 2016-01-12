@@ -1373,7 +1373,7 @@ End Sub
 <child>
 <object>Edit</object>
 <editbox x="750" y="840" width="110" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:ID_CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -1799,7 +1799,7 @@ End Sub
 <child>
 <object>Edit</object>
 <editbox x="750" y="900" width="110" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:ID_CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2945,165 +2945,6 @@ End Sub
 <CM>0</CM>
 </child>
 <child>
-<object>Edit</object>
-<editbox x="1650" y="720" width="-200" height="-520" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style fmtscale="x" HasList="1" ShowControlList="1" ListData="" SortItems="1" InvertSelection="0"/>
-<border>4</border>
-<execution/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">combo1</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<ScriptCode StartSel="2025" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-'#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
-'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
-'#Language "WWB.NET"
-
-Option Explicit
-
-Imports System
-Imports System.Data.Odbc
-
-Dim MysSqlConnectionString As String
-Dim ListaCommesse As String
-
-Public Sub Click()
-	Dim sListItems As String
-	Dim objCombo As DrawCmdTarget
-	Dim objDisplay As DisplayEditCmdTarget
-	Dim objList As ListBoxCmdTarget
-
-	objCombo = GetSynopticObject().GetSubObject("combo1")
-	objDisplay = objCombo.GetObjectInterface()
-	objList = objDisplay.GetComboListInterface
-
-	If objList Is Nothing Then Exit Sub
-	'cancello il contenuto della lista
-	Dim count As Integer
-	Dim txt As String
-	count = objList.GetCount()
-	For i As Integer = 0 To count-1
-		txt = objList.GetText(i)
-		If txt &lt;&gt; "" Then
-			objList.RemoveString(txt)
-		End If
-	Next
-
-	AggiornaListaCombo(objCombo.ObjectName, objCombo, objList)
-
-	objDisplay = Nothing
-	objList = Nothing
-	objCombo = Nothing
-End Sub
-
-Public Sub SymbolLoading() Handles .SymbolLoading
-
-	Dim sListItems As String
-	Dim objCombo As DrawCmdTarget
-	Dim objDisplay As DisplayEditCmdTarget
-	Dim objList As ListBoxCmdTarget
-
-	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-      "SERVER=localhost;" &amp; _
-      "DATABASE=gualini;" &amp; _
-      "UID=root;" &amp; _
-      "PASSWORD=co.mar;" &amp; _
-      "OPTION=3;"
-
-	objCombo = GetSynopticObject().GetSubObject("combo1")
-	objDisplay = objCombo.GetObjectInterface()
-	objList = objDisplay.GetComboListInterface
-
-	If objList Is Nothing Then Exit Sub
-
-	AggiornaListaCombo(objCombo.ObjectName, objCombo, objList)
-
-	objDisplay = Nothing
-	objList = Nothing
-	objCombo = Nothing
-End Sub
-
-Public Function AggiornaListaCombo(combo As String, pObjCombo As DrawCmdTarget, pObjList As ListBoxCmdTarget)
-
-	Dim objCombo As DrawCmdTarget
-	Dim objDisplay As DisplayEditCmdTarget
-	Dim objList As ListBoxCmdTarget
-
-	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-      "SERVER=localhost;" &amp; _
-      "DATABASE=gualini;" &amp; _
-      "UID=root;" &amp; _
-      "PASSWORD=co.mar;" &amp; _
-      "OPTION=3;"
-	
-	objCombo = pObjCombo
-	objDisplay = objCombo.GetObjectInterface()
-	objList = pObjList
-
-	If objList Is Nothing Then Exit Function
-
-	Dim vResult As Object
-    Dim commandText As String
-
-    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
-    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
-    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
-
-
-	'cerco nel db l'elenco commesse
-	Try
-        Using MyConnection As New System.Data.Odbc.OdbcConnection(MysSqlConnectionString)
-            MyConnection.Open()
-            commandText = "SELECT DISTINCT " &amp; _
-                            " `quartina`.`NOME_COMMESSA` " &amp; _
-                      	"FROM  `gualini`.`quartina` " &amp; _
-						";"
-
-            Using MyCommand As New OdbcCommand()
-
-				MyCommand.Connection = MyConnection
-	            MyCommand.CommandText = commandText
-
-				Using MyDataReader As OdbcDataReader = MyCommand.ExecuteReader()
-					If MyDataReader.HasRows Then
-						While MyDataReader.Read()
-							objList.AddString(MyDataReader("NOME_COMMESSA"))
-						End While
-					End If
-				End Using	'MyDataReader.Close
-			End Using	'MyCommand.Dispose
-        End Using	'MyConnection.Close
-
-	  'Catch program exception
-	Catch MyException As Exception
-		Debug.Print(MyException.ToString)
-		MsgBox("Combo - ERRORE: Exception." &amp; vbCrLf &amp; _
-					 MyException.ToString &amp; ".")
-		Debug.Print("Combo - ERRORE: Exception. Combo.name = " &amp; pObjCombo.ObjectName &amp; MyException.ToString &amp; ".")
-
-		Exit Function
-
-	  'Catch ODBC Exception
-	Catch MyOdbcException As OdbcException
-		Debug.Print(MyOdbcException.ToString)
-		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
-					MyOdbcException.ToString  &amp; ".")
-		Debug.Print("Combo  - ERRORE ODBC: OdbcException." &amp; pObjCombo.ObjectName &amp; MyOdbcException.ToString  &amp; ".")
-		Exit Function
-    End Try
-
-
-
-	''''################
-
-	objDisplay = Nothing
-	objList = Nothing
-	objCombo = Nothing
-End Function
-</ScriptCode>
-</child>
-<child>
 <object>base</object>
 <type x="1610" y="10" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3337,6 +3178,163 @@ End Function
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">IN_MISSIONE</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="1450" y="210" width="210" height="210" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style fmtscale="x" HasList="1" ShowControlList="1" ListData="" SortItems="0" InvertSelection="0"/>
+<border>4</border>
+<execution/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">combo1</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.Data.Odbc
+
+Dim MysSqlConnectionString As String
+Dim ListaCommesse As String
+
+Public Sub Click()
+	Dim sListItems As String
+	Dim objCombo As DrawCmdTarget
+	Dim objDisplay As DisplayEditCmdTarget
+	Dim objList As ListBoxCmdTarget
+
+	objCombo = GetSynopticObject().GetSubObject("combo1")
+	objDisplay = objCombo.GetObjectInterface()
+	objList = objDisplay.GetComboListInterface
+
+	If objList Is Nothing Then Exit Sub
+	'cancello il contenuto della lista
+	Dim count As Integer
+	Dim txt As String
+	count = objList.GetCount()
+	For i As Integer = 0 To count-1
+		txt = objList.GetText(i)
+		If txt &lt;&gt; "" Then
+			objList.RemoveString(txt)
+		End If
+	Next
+
+	AggiornaListaCombo(objCombo.ObjectName, objCombo, objList)
+
+	objDisplay = Nothing
+	objList = Nothing
+	objCombo = Nothing
+End Sub
+
+Public Sub SymbolLoading() Handles .SymbolLoading
+
+	Dim sListItems As String
+	Dim objCombo As DrawCmdTarget
+	Dim objDisplay As DisplayEditCmdTarget
+	Dim objList As ListBoxCmdTarget
+
+	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+      "SERVER=localhost;" &amp; _
+      "DATABASE=gualini;" &amp; _
+      "UID=root;" &amp; _
+      "PASSWORD=co.mar;" &amp; _
+      "OPTION=3;"
+
+	objCombo = GetSynopticObject().GetSubObject("combo1")
+	objDisplay = objCombo.GetObjectInterface()
+	objList = objDisplay.GetComboListInterface
+
+	If objList Is Nothing Then Exit Sub
+
+	AggiornaListaCombo(objCombo.ObjectName, objCombo, objList)
+
+	objDisplay = Nothing
+	objList = Nothing
+	objCombo = Nothing
+End Sub
+
+Public Function AggiornaListaCombo(combo As String, pObjCombo As DrawCmdTarget, pObjList As ListBoxCmdTarget)
+
+	Dim objCombo As DrawCmdTarget
+	Dim objDisplay As DisplayEditCmdTarget
+	Dim objList As ListBoxCmdTarget
+
+	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+      "SERVER=localhost;" &amp; _
+      "DATABASE=gualini;" &amp; _
+      "UID=root;" &amp; _
+      "PASSWORD=co.mar;" &amp; _
+      "OPTION=3;"
+
+	objCombo = pObjCombo
+	objDisplay = objCombo.GetObjectInterface()
+	objList = pObjList
+
+	If objList Is Nothing Then Exit Function
+
+	Dim vResult As Object
+    Dim commandText As String
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db l'elenco commesse
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(MysSqlConnectionString)
+            MyConnection.Open()
+            commandText = "SELECT DISTINCT " &amp; _
+                            " `quartina`.`NOME_COMMESSA` " &amp; _
+                      	"FROM  `gualini`.`quartina` " &amp; _
+						";"
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader = MyCommand.ExecuteReader()
+					If MyDataReader.HasRows Then
+						While MyDataReader.Read()
+							objList.AddString(MyDataReader("NOME_COMMESSA"))
+						End While
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		Debug.Print(MyException.ToString)
+		MsgBox("Combo - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		Debug.Print("Combo - ERRORE: Exception. Combo.name = " &amp; pObjCombo.ObjectName &amp; MyException.ToString &amp; ".")
+
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; QuartinaEsiste() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		Debug.Print("Combo  - ERRORE ODBC: OdbcException." &amp; pObjCombo.ObjectName &amp; MyOdbcException.ToString  &amp; ".")
+		Exit Function
+    End Try
+
+
+
+	''''################
+
+	objDisplay = Nothing
+	objList = Nothing
+	objCombo = Nothing
+End Function
+</ScriptCode>
 </child>
 </ListSynopticDraw>
 <VariableList/>
