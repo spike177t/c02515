@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="59298" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -50,6 +50,7 @@ Dim codaMAG2_ES1 As New System.Collections.Queue()
 
 Dim MysSqlConnectionString As String
 Dim disponibileLastCheck As Double
+Dim filepathMemo As String 'memo fullName ultimo file letto da Quadra, usato in RimuoviFileDatiDaQuadra()
 
 Dim enableLogMsg As Boolean = True
 
@@ -290,7 +291,15 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 					'controllo se il pezzo è presente nel DB
 					Dim pzPresente As Boolean
-					pzPresente = VerificaEsistePezzo(GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO"))
+					ret = VerificaEsistePezzo(MysSqlConnectionString _
+												, GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO") _
+												, pzPresente)
+					If ret &lt;&gt; 0 Then
+						LogMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra -&gt; ERRORE VerificaEsistePezzo,  codice: " &amp; CStr(ret)
+						StatoCicloCarico = 1000	'AttesaPezzi
+						GoTo FineCase2100
+					End If
+
 					If pzPresente Then
 						'alzo allarme
 						Select Case leggiDaQuadra
@@ -303,13 +312,14 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						'chiedo se operatore vuole rimuovere automaticamente il file
 						Dim pzDupMsg As String
 						pzDupMsg ="Allarme Pezzo duplicato da quadra " &amp; CStr(leggiDaQuadra) &amp; vbCrLf _
-									&amp; "Vuoi rimuovere automaticamente il file dati dalla quadra?" &amp; vbCrLf  &amp; vbCrLf_
+									&amp; "Vuoi rimuovere automaticamente il file dati dalla quadra?" &amp; vbCrLf  &amp; vbCrLf _
 									&amp; "Se si verificare anche la fotocellula di presenza pezzo sulla quadra."
 						If MsgBox(pzDupMsg, vbCritical, "Allarme Pezzo Duplicato") = vbOK Then
-							RimuoviFileDatiDaQuadra(leggiDaQuadra)
+							EliminaFileDatiPezzoDuplicato(filepathMemo)
 						End If
 
 						StatoCicloCarico = 1000	'AttesaPezzi
+						GoTo FineCase2100
 					End If
 
 					quartina = GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA")
@@ -766,14 +776,14 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 
 	files = di.GetFiles()
 
-	If files.GetType.IsArray Then
-		Dim ii As Integer
-		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
-			Dim fi As System.IO.FileSystemInfo
-			fi = files(ii)
-			'DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
-		Next
-	End If
+'	If files.GetType.IsArray Then
+'		Dim ii As Integer
+'		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
+'			Dim fi As System.IO.FileSystemInfo
+'			fi = files(ii)
+'			DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
+'		Next
+'	End If
 
 
 	lowBoundFiles = files.GetLowerBound(0)
@@ -813,34 +823,7 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		Exit Function
 	End If
 	filepath = files(0).FullName
-
-	'Dim lastF As FileInfo
-	'lastF = files(files.GetUpperBound(0))
-	'Debug.Print lastF.Name
-
-	'##cerco file più recente
-	'Dim recentDt, olderDt As Date
-	'recentDt = Date.MinValue
-	'olderDt = Date.MaxValue
-	'Dim recentFl, olderFl As FileInfo
-
-	'For Each fl As FileInfo In fis
-
-	'	Debug.Print(fl.FullName.ToString())
-	'   Debug.Print(fl.LastWriteTime)
-	'   If (fl.LastWriteTime &gt;recentDt) Then
-	'  	recentDt = fl.LastWriteTime
-	'	recentFl  = fl
-	'    End If
-	'    If (fl.LastWriteTime &lt; olderDt) Then
-	'    	olderDt = fl.LastWriteTime
-	'    	olderFl = fl
-	 '   End If
-	'Next
-	'Debug.Print "recent: " &amp; (recentFl.FullName.ToString()) &amp; "; date: " &amp; recentDt.toString()
-	'Debug.Print "older: " &amp; (olderFl.FullName.ToString()) &amp; "; date: " &amp; olderDt.toString()
-    'Debug.Print(fl.LastWriteTime)
-
+	filepathMemo = filepath
 
 	Try
         ' Open the file using a stream reader.
@@ -1520,6 +1503,101 @@ Function AggiornaCassettiInRiempimento( connectionString As String, mag As Integ
 		Exit Function
     End Try
 End Function
+
+Function VerificaEsistePezzo(connectionString As String, nomePzUnico As String, ByRef esiste As Boolean) As Boolean
+	VerificaEsistePezzo = 0 	'inizializzzo
+
+    Dim commandText As String
+    Dim countPz As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT COUNT(*) AS COUNT_PZ " &amp; _
+                      	" FROM  `gualini`.`pezzo` " &amp; _
+            			" WHERE ID_PEZZO = """ &amp; nomePzUnico &amp; """;"
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaEsistePezzo(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						countPz =  MyDataReader("COUNT_PZ")
+					Else
+						countPz = 0
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+       	esiste = IIf(countPz &gt; 0, True, False)
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; VerificaEsistePezzo() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" VerificaEsistePezzo() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaEsistePezzo() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		VerificaEsistePezzo = 100 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; VerificaEsistePezzo() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("VerificaEsistePezzo() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaEsistePezzo() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		VerificaEsistePezzo = 101 'torno errore
+		Exit Function
+    End Try
+
+End Function
+
+Sub EliminaFileDatiPezzoDuplicato(nomeFileFull As String)
+	'guardo il file esiste
+	Try
+		'Using fi As New System.IO.FileInfo(nomeFileFull)
+		Dim fi As New System.IO.FileInfo(nomeFileFull)
+			If fi.Exists Then
+				fi.Delete()
+				LogMsg("EliminaFileDatiPezzoDuplicato() Eliminato file:" &amp; nomeFileFull)
+			Else
+				LogMsg("EliminaFileDatiPezzoDuplicato() File non più esistente:" &amp; nomeFileFull)
+			End If
+		'End Using
+
+	Catch  e As Exception
+        LogMsg("EliminaFileDatiPezzoDuplicato() ECCEZZIONE:" &amp; e.Message)
+	Finally
+
+	End Try
+
+End Sub
+
 
 Function MissioneAssegnabile() As Integer 'torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
 	MissioneAssegnabile = 0
