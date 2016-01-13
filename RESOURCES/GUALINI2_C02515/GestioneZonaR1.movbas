@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="161" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="24058" SelLength="18" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -564,7 +564,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					'dopo aver alzato allarme vado comunque avanti per finire il ciclo, tanto gli step rimanenti non riguardano il robot
 					[R1_STATUS:FINE_MISSIONE_ACK] =False
 					'segnalo all'estrattore che ho depositato il pezzo
-					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
 					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 					StatoCicloCarico = 6200	'VerificaUltimoPezzo
 				End If
@@ -572,7 +572,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					[R1_STATUS:FINE_MISSIONE_ACK] =False
 					alm_Step_ToutR1_6150 = False
 					'segnalo all'estrattore che ho depositato il pezzo
-					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+					varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
 					SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 					StatoCicloCarico = 6200	'VerificaUltimoPezzo
 				End If
@@ -2670,26 +2670,33 @@ Sub EliminaFileSimulazione(daQuadra As Integer)
 			Throw New System.Exception("GestioneZonaR1.movbas -&gt; EliminaFileDaQuadra() ECCEZZIONE: parametro daQuadra non ammesso: " &amp; CStr(daQuadra) &amp; ".")
 	End Select
 
-	nomeFileFull = path &amp; GetVariableValue(varname &amp; ":ID_QUARTINA") &amp; "_" &amp; GetVariableValue(varname &amp; ":POSIZIONE") &amp; ".txt"
-
-	'guardo il file esiste
+	'elimino tutti i file nella cartella
+	Dim di As IO.DirectoryInfo = New IO.DirectoryInfo(path)
 	Try
-		'Using fi As New System.IO.FileInfo(nomeFileFull)
-		Dim fi As New System.IO.FileInfo(nomeFileFull)
-			If fi.Exists Then
-				fi.Delete()
-			Else
-				LogMsg("EliminaFileDaQuadra() File non più esistente. filename:" &amp; nomeFileFull)
-			End If
-		'End Using
-
+		For Each File As IO.FileInfo In di.GetFiles()
+            File.Delete()
+        Next
 	Catch  e As Exception
         LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
 	Finally
-
+		di = Nothing
 	End Try
 
+'	nomeFileFull = path &amp; GetVariableValue(varname &amp; ":ID_QUARTINA") &amp; "_" &amp; GetVariableValue(varname &amp; ":POSIZIONE") &amp; ".txt"
 
+'	'guardo il file esiste
+'	Try
+'		Dim fi As New System.IO.FileInfo(nomeFileFull)
+'			If fi.Exists Then
+'				fi.Delete()
+'			Else
+''				LogMsg("EliminaFileDaQuadra() File non più esistente. filename:" &amp; nomeFileFull)
+'			End If
+'	Catch  e As Exception
+'        LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
+'	Finally
+'		fi = Nothing
+'	End Try
 End Sub
 
 Sub AggiornaMembri(source As String, dest As String)
@@ -2898,7 +2905,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCuAEkBcgGmASAClgJZBYMHnwhyCg==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCvAHMBpwEhAoQHoAg=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
