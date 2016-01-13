@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="24058" SelLength="18" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="3521" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -104,7 +104,7 @@ Function Serializza_stEstrattore (st As stEstrattore) As String
 	Dim sep As String = ";"
 	Serializza_stEstrattore = CStr(st.DEPO)+";" + CStr(st.ID_CASSETTO)+";" + CStr(st.ID_QUARTINA)+";" + CStr(st.NOME_PEZZO_UNICO)+";" _
 	    		+ CStr(st.POSIZIONE)+";" + CStr(st.PRONTO)+";" + CStr(st.STROBE)+";"
-	Debug.Print Serializza_stEstrattore
+	LogMsg("Serializza_stEstrattore(st) = " &amp; Serializza_stEstrattore)
 End Function
 Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
 	Deserializza_stEstrattore = 0
