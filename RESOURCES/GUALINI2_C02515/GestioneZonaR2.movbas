@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="13801" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="13501" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -208,7 +208,7 @@ Sub Main()
 
 					codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
 
-					StatoCicloCarico = 1000	'Attesa
+					StatoCicloScarico = 1000	'Attesa
 
 				ElseIf POSIZIONE.mag = 2 Then
 					rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
@@ -221,7 +221,7 @@ Sub Main()
 
 					codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
 
-					StatoCicloCarico = 1000	'Attesa
+					StatoCicloScarico = 1000	'Attesa
 				ElseIf POSIZIONE.mag &lt;&gt; 1 And POSIZIONE.mag &lt;&gt; 2 Then
 					Throw New System.Exception("GestioneZonaR2.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
 				End If
@@ -253,23 +253,23 @@ Sub Main()
 				End If
 
 			Case 4200	'AttesaSegnaleRobotOccupato
-				LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
+				LogMsg "StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato"
 				If SuperatoTimeout(stepTout, TOUT_STEP) Then
 					alm_Step_ToutR1_4200 = True
-					StatoCicloCarico = 1000	'Attesa
+					StatoCicloScarico = 1000	'Attesa
 				End If
 				If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] Then
 					alm_Step_ToutR1_4200 = False
-					StatoCicloCarico = 1000	'AttesaPezzi
+					StatoCicloScarico = 1000	'AttesaPezzi
 				End If
 
 			Case 6100	'FineRobot
-				LogMsg "StatoCicloCarico = 6100	'FineRobot"
+				LogMsg "StatoCicloScarico = 6100	'FineRobot"
 				ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
 				If ret &lt;&gt; 0 Then
 					'Alzo allarme
 					alm_FineRobotR2 = True
-					StatoCicloCarico = 1000	'Attesa
+					StatoCicloScarico = 1000	'Attesa
 				Else
 					[R2_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
 
@@ -331,7 +331,7 @@ Sub Main()
 					AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
 					AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
 
-					StatoCicloCarico = 1000	'Attesa
+					StatoCicloScarico = 1000	'Attesa
 				End If
 
 			Case Else
@@ -564,7 +564,8 @@ Function CondizioneRikCassettoMagazzino() As Integer
 		And [loc_ImpostazioniImpianto:M1_ABIL] _
 		And [loc_ImpostazioniImpianto:ScaricoAbilitaZona] _
 		And [MAG1_ES2_ACT:PRONTO] _
-		And ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) _
+		And ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
+		And Not [MAG1_ES2_RIK:STROBE] _
 		Then
 
 		richiedibileM1 = True
@@ -575,7 +576,8 @@ Function CondizioneRikCassettoMagazzino() As Integer
 		And [loc_ImpostazioniImpianto:M2_ABIL] _
 		And [loc_ImpostazioniImpianto:ScaricoAbilitaZona] _
 		And [MAG2_ES2_ACT:PRONTO] _
-		And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) _
+		And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
+		And Not [MAG2_ES2_RIK:STROBE] _
 		Then
 
 		richiedibileM2 = True
@@ -787,6 +789,8 @@ Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, com
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
 
+        'torno il valore trovato
+        RilevaCassettoPiuVicino = pos
 		DebugMsg( "GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino; pos.mag = " &amp; CStr(pos.mag) &amp; " pos.cass = " &amp; CStr(pos.cass)  &amp; ".")
 
 	  'Catch program exception
@@ -1549,7 +1553,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
 
 	While Not MemberVar Is Nothing
-		DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
 		'Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
 
 		et = MemberVar.GetType()
@@ -1581,7 +1585,8 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiB2AH8AjgA1Aw==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBvAHUAfgCNAJQArAC2ANAA3QDjAP0ACAE6A0ED
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
