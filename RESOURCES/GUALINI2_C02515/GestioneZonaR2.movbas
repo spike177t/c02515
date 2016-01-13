@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="48638" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
-'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="13801" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
 Option Explicit
@@ -233,9 +233,11 @@ Sub Main()
 					[R2_STATUS:MAGAZZINO] = assegnaMissioneRobot.mag
 					[R2_STATUS:CASSETTO] = assegnaMissioneRobot.cass
 					If assegnaMissioneRobot.mag = 1 Then
+						DecodificaMissioniPezziR2_Mag1()
 						[R2_STATUS:ID_QUARTINA] = [SCAR_M1_PZ1:ID_QUARTINA]
 					End If
 					If assegnaMissioneRobot.mag = 2 Then
+						DecodificaMissioniPezziR2_Mag2()
 						[R2_STATUS:ID_QUARTINA] = [SCAR_M2_PZ1:ID_QUARTINA]
 					End If
 					'forzo a zero per sicurezza
@@ -819,6 +821,94 @@ Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, com
 
 End Function
 
+Sub DecodificaMissioniPezziR2_Mag1()
+	DecodificaMissioneRobot("SCAR_M1_PZ1")
+	DecodificaMissioneRobot("SCAR_M1_PZ2")
+	DecodificaMissioneRobot("SCAR_M1_PZ3")
+	DecodificaMissioneRobot("SCAR_M1_PZ4")
+End Sub
+
+Sub DecodificaMissioniPezziR2_Mag2()
+	DecodificaMissioneRobot("SCAR_M2_PZ1")
+	DecodificaMissioneRobot("SCAR_M2_PZ2")
+	DecodificaMissioneRobot("SCAR_M2_PZ3")
+	DecodificaMissioneRobot("SCAR_M2_PZ4")
+End Sub
+
+Sub DecodificaMissioneRobot(StrucDatiPezzo As String)', StructRobot As String)
+	Dim stPzz As String
+	Dim stRbt As String
+
+	Dim objVarPzz As DBVarObjCmdTarget
+	Dim typeVarPzz As movicon.eVariableType
+
+	stPzz = StrucDatiPezzo
+
+	objVarPzz = GetVariableObject(stPzz)
+	typeVarPzz = objVarPzz.GetType()
+
+	If typeVarPzz &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		LogMsg 		"DecodificaMissioniPezziR2() -&gt; Variabile = " 	&amp; stPzz 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	'decodifica del codice robot
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "K-FINEST" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "K1900" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  1)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "K-FINEST" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "K1901" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  2)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "K-FINEST" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "K1911" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  3)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "363890" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  4)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358140" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  5)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "364110" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  6)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358340" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  7)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "363980" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  8)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358240" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  9)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "364650" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  10)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358610" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  11)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C44" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  12)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C41" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  13)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C45" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  14)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C113" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  15)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS90" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "441050" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  16)
+	End If
+	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS90" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "441780" Then
+		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  17)
+	End If
+	
+End Sub
+
+
+
 Sub ProcessaCodaEstrattoriMAG2()
 	'ProcessaCodaEstrattore(1,1)	'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 	'ProcessaCodaEstrattore(2,1) 'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
@@ -875,7 +965,7 @@ Function Serializza_stEstrattore (st As stEstrattore) As String
 	Dim sep As String = ";"
 	Serializza_stEstrattore = CStr(st.DEPO)+";" + CStr(st.ID_CASSETTO)+";" + CStr(st.ID_QUARTINA)+";" + CStr(st.NOME_PEZZO_UNICO)+";" _
 	    		+ CStr(st.POSIZIONE)+";" + CStr(st.PRONTO)+";" + CStr(st.STROBE)+";"
-	Debug.Print Serializza_stEstrattore
+	LogMsg("Serializza_stEstrattore(st) = " &amp; Serializza_stEstrattore)
 End Function
 
 Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
@@ -1491,7 +1581,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBeAHQAfQCMAJMAtQDiAPoABQG7Ac8DIAQ=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiB2AH8AjgA1Aw==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
