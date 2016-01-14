@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="3521" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -106,6 +106,7 @@ Function Serializza_stEstrattore (st As stEstrattore) As String
 	    		+ CStr(st.POSIZIONE)+";" + CStr(st.PRONTO)+";" + CStr(st.STROBE)+";"
 	LogMsg("Serializza_stEstrattore(st) = " &amp; Serializza_stEstrattore)
 End Function
+
 Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
 	Deserializza_stEstrattore = 0
 
@@ -175,6 +176,11 @@ Sub Main()
       "OPTION=3;"
 
     'inizializzo alcune variabili
+
+    If StatoCicloCarico &lt; 100 Then
+		StatoCicloCarico = 100
+    End If
+
     [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
     [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
 
@@ -188,8 +194,6 @@ Sub Main()
 
 '############STATE MACHINE############
 
-	'inizializzo variabile di stato del ciclo
-	StatoCicloCarico = 100
 
 '#####TODO DEBUG
 'rimuovere questa parte
@@ -205,6 +209,9 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 	Do
 		'azioni da fare tutti i cicli
+		If [loc_ImpostazioniImpianto:ResetCicloR1] Then
+			StatoCicloCarico = 100
+		End If
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
 		AggiornaPosizioniEstrattoriES1(MysSqlConnectionString)
@@ -2876,7 +2883,7 @@ End Function
 Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	Dim tempo As Double
 	tempo = Abs(lastcheck - Timer())
-	If tempo &gt;= tout Then
+	If tempo &gt; tout Then
 		SuperatoTimeout = True
 	Else
 		SuperatoTimeout = False
@@ -2905,7 +2912,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCvAHMBpwEhAoQHoAg=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiC1AHoBrgEoAosHpwg=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
