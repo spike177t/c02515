@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1807" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="221" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 Imports System
 Imports System.IO
 Imports System.Data.Odbc
@@ -91,6 +91,6 @@ Sub SpostaPer(src As String, dst As String)
 
 End Sub
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
-<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>

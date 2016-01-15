@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="33831" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2306" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -68,6 +68,7 @@ Sub Main()
       "OPTION=3;"
 
 	'inizializzo alcune variabili
+	enableLogMsg = True
 
     If StatoCicloScarico &lt; 100 Then
 		StatoCicloScarico = 100
@@ -124,20 +125,25 @@ Sub Main()
 					'inizio a scorrere le condizioni di uscita dallo stato
 
 					'condizione di richiesta nuovo casseto da magazzino
-					rikDaMagazzino = CondizioneRikCassettoMagazzino()
-					If ValutaProssimaCondizione And rikDaMagazzino &gt; 0 Then
-						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloCarico = 1000	'Attesa	;CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloCarico = 2100	'RichiediCassettoDaMagazzino"
-						richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE 'voglio che alla chiamata il test sia fatto subito e quindi SuperatoTimeout() deve tornare true
-						StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
+					If ValutaProssimaCondizione Then
+						rikDaMagazzino = CondizioneRikCassettoMagazzino()
+						If rikDaMagazzino &gt; 0 Then
+							ValutaProssimaCondizione = False
+							LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
+							richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE 'voglio che alla chiamata il test sia fatto subito e quindi SuperatoTimeout() deve tornare true
+							StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
+						End If
 					End If
 
 					'condizione per assegnare missione a Robot R2
-					assegnaMissioneRobot = CondizioneAssegnaMissioneRobot()
-					If ValutaProssimaCondizione And assegnaMissioneRobot.mag &gt; 0 Then
-						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloCarico = 1000	'Attesa	;CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloCarico = 4100	'AssegnaMissioneAlRobotR2"
-						StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
+					If ValutaProssimaCondizione Then
+						assegnaMissioneRobot = CondizioneAssegnaMissioneRobot()
+						If assegnaMissioneRobot.mag &gt; 0 Then
+							ValutaProssimaCondizione = False
+							LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2"
+							[R2_STATUS:FINE_MISSIONE_ACK] = False	'forzo per sicurezza nel caso di ripartenze da prove
+							StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
+						End If
 					End If
 
 					'condizione per FineRobotR2
@@ -151,8 +157,8 @@ Sub Main()
 						Then
 
 						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloCarico = 1000	'Attesa	;CondizioneFineRobot = True -&gt; next StatoCicloCarico = 6100	'FineRobot"
-						StatoCicloCarico = 6100	'FineRobot
+						LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneFineRobot = True -&gt; next StatoCicloScarico = 6100	'FineRobot"
+						StatoCicloScarico = 6100	'FineRobot
 					End If
 
 
@@ -191,7 +197,7 @@ Sub Main()
 					End If
 
 				Case 2200	'RikCassettoInEstrattorePlc
-					LogMsg "StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc"
+					LogMsg "StatoCicloScarico = 2200	'RikCassettoInEstrattorePlc"
 	'				'posso fare richiesta di estrattore se EsXX_RIK:NOME_PEZZO_UNICO = EsXX_ACT:NOME_PEZZO_UNICO e EsXX_ACT:DEPO = 1 , quindi pezzo depositato
 	'				'oppure se EsXX_RIK:NOME_PEZZO_UNICO = "" che significa che non ho richieste pendenti
 
@@ -201,8 +207,6 @@ Sub Main()
 							prefix_varname_pezzo = "SCAR_M1_"
 						Case 2:
 							prefix_varname_pezzo = "SCAR_M2_"
-						Case Else
-							Throw New System.Exception("GestioneZonaR2.movbas -&gt; Case 2200	'RikCassettoInEstrattorePlc: parametro leggiDaQuadra non ammesso: " &amp; CStr("") &amp; ".")
 					End Select
 
 
@@ -232,7 +236,9 @@ Sub Main()
 
 						StatoCicloScarico = 1000	'Attesa
 					ElseIf POSIZIONE.mag &lt;&gt; 1 And POSIZIONE.mag &lt;&gt; 2 Then
-						Throw New System.Exception("GestioneZonaR2.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
+						'Throw New System.Exception("GestioneZonaR2.movbas -&gt; Main() ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc")
+						alm_StatoCiclo_R2 = True
+						alm_StatoCiclo_R2_txt = "ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc; POSIZIONE.mag = " &amp; CStr(POSIZIONE.mag) &amp; "; FARE RESET CICLO R2"
 					End If
 
 				Case 4100			'AssegnaMissioneAlRobotR2
@@ -266,28 +272,33 @@ Sub Main()
 
 				Case 4200	'AttesaSegnaleRobotOccupato
 					LogMsg "StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato"
+
+					ValutaProssimaCondizione = True
+
 					If SuperatoTimeout(stepTout, TOUT_STEP) Then
+						ValutaProssimaCondizione = False
 						alm_Step_ToutR2_4200 = True
 						'per poter fare ripartenza devo fare reset delle struct già assegnate
 						'ResetDatiMembriStruttura("")
 						'ResetDatiMembriStruttura("")
 						'ResetDatiMembriStruttura("")
-						StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
+						StatoCicloScarico = 4195	'AttesaSegnaleRobotOccupato_settout
 					End If
-					If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] Then
+					If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] And ValutaProssimaCondizione Then
 						alm_Step_ToutR2_4200 = False
 						StatoCicloScarico = 1000	'AttesaPezzi
 					End If
 
 				Case 6100	'FineRobot
 					LogMsg "StatoCicloScarico = 6100	'FineRobot"
+					'elimino quartina dal DB
 					ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
 						alm_FineRobotR2 = True
-						StatoCicloScarico = 1000	'Attesa
+						'StatoCicloScarico = 1000	'Attesa
 					Else
-						[R2_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
+						'[R2_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
 
 						'segnalo all'estrattore che ho depositato il pezzo
 						varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
@@ -347,6 +358,25 @@ Sub Main()
 						AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
 						AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
 
+						[R2_STATUS:FINE_MISSIONE_ACK] = True 'invio ack al robot
+						StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false
+					End If
+
+				Case 6500	'SetTimetAttesaFineMissione_false
+					LogMsg "StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false"
+					stepTout = Timer()
+					StatoCicloScarico = 6700	'AttesaFineMissione_false
+
+				Case 6700	'AttesaFineMissione_false
+					LogMsg "StatoCicloScarico = 6700	'AttesaFineMissione_false"
+
+					If SuperatoTimeout(stepTout, TOUT_STEP) Then
+						alm_Step_ToutR2_6700 = True
+						StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false
+					End If
+					If [R2_STATUS:FINE_MISSIONE] = False Then
+						[R2_STATUS:FINE_MISSIONE_ACK] =False
+						alm_Step_ToutR2_6700 = False
 						StatoCicloScarico = 1000	'Attesa
 					End If
 
@@ -939,19 +969,25 @@ Sub ProcessaCodaEstrattoriMAG2()
 	'ProcessaCodaEstrattore(1,1)	'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 	'ProcessaCodaEstrattore(2,1) 'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 
-
+	'NOTA
+	'nel caso di R2, salvo errori, non posso avere più di una richiesta in coda per ogni estrattore
+	'per cui tutte le volte che processo vuoto tutta la coda
 
 	Dim tmpEs As stEstrattore
 	Dim strEs As String
 
 	If codaMAG1_ES2.Count &gt; 0 Then
 		If Not [MAG1_ES2_RIK:STROBE] _
-				And ( [MAG1_ES1_ACT:DEPO] = True Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) _
+				And ( [MAG1_ES1_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
 			Then
 
-				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG1_ES2_RIK:STROBE]"
-
-				strEs = codaMAG1_ES2.Dequeue()
+				If codaMAG1_ES2.Count &gt; 0 Then
+					LogMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG1_ES2 -&gt; count = " &amp; CStr(codaMAG1_ES2.Count) &amp; "; peek = " &amp; codaMAG1_ES2.Peek())
+				End If
+				'strEs = codaMAG1_ES2.Dequeue()
+				For Each element1 As String In codaMAG1_ES2
+					strEs = element1
+				Next
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG1_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
@@ -967,11 +1003,17 @@ Sub ProcessaCodaEstrattoriMAG2()
 
 	If codaMAG2_ES2.Count &gt; 0 Then
 		If Not [MAG2_ES2_RIK:STROBE] _
-				And ( [MAG2_ES2_ACT:DEPO] = True Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) Then
+				And ( [MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Or [MAG2_ES2_ACT:NOME_PEZZO_UNICO] = "") _
+			Then
 
-				Debug.Print "ProcessaCodaEstrattoriMAG2()  [MAG2_ES2_RIK:STROBE]"
+				If codaMAG2_ES2.Count &gt; 0 Then
+					LogMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG2_ES2 -&gt; count = " &amp; CStr(codaMAG2_ES2.Count) &amp; "; peek = " &amp; codaMAG2_ES2.Peek())
+				End If
 
-				strEs = codaMAG2_ES2.Dequeue()
+				'strEs = codaMAG2_ES2.Dequeue()
+				For Each element2 As String In codaMAG2_ES2
+					strEs = element2
+				Next
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG2_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
@@ -1043,7 +1085,24 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 	cass 		= GetVariableValue(varEstrattore 		&amp; ":ID_CASSETTO")
 	cassOld 	= GetVariableValue(varEstrattoreOld 	&amp; ":ID_CASSETTO")
 
-	If (cass &lt;&gt; cassOld) Then
+	If cass = 0 And (cassOld &lt;&gt; cass) Then
+		'ho chiamoto guori il cassetto 0
+		'devo resettare le variabili struct dei pezzi in scarico
+		If mag = 1 Then
+			ResetDatiMembriStruttura("SCAR_M1_PZ1")
+			ResetDatiMembriStruttura("SCAR_M1_PZ2")
+			ResetDatiMembriStruttura("SCAR_M1_PZ3")
+			ResetDatiMembriStruttura("SCAR_M1_PZ4")
+		Else
+			ResetDatiMembriStruttura("SCAR_M2_PZ1")
+			ResetDatiMembriStruttura("SCAR_M2_PZ2")
+			ResetDatiMembriStruttura("SCAR_M2_PZ3")
+			ResetDatiMembriStruttura("SCAR_M2_PZ4")
+
+		End If
+	End If
+
+	If (cass &lt;&gt; cassOld) And (cass &lt;&gt; 0) Then
 		'devo aggiornare il DB
 
 		'per prima cosa metto dentro eventuali pezzi che sono nell'estrattore
@@ -1178,6 +1237,9 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 					If MyDataReader.HasRows Then
 						MyDataReader.Read
 
+						'memo del cassetto assegnato per procedura CondizioneAssegnaMissioneRobot()
+						SetVariableValue(structname &amp; ":CASSETTO_ASSEGNATO"				, MyDataReader("ID_CASSETTO"))
+						
 						SetVariableValue(structname &amp; ":ID_QUARTINA"					, MyDataReader("ID_QUARTINA"))
 						SetVariableValue(structname &amp; ":TOTALE_PEZZI_QUARTINA"			, MyDataReader("TOTALE_PEZZI_QUARTINA"))
 						SetVariableValue(structname &amp; ":NUM_SQUADRETTE1"				, MyDataReader("NUM_SQUADRETTE1"))
@@ -1238,7 +1300,7 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 						End If
 
 						'#### altri campi disponibili
-'Select `tutti_pezzi_count_profili`.`ID_CASSETTO`,
+'Select `tutti_pezzi_count_profili`.``,
 '    `tutti_pezzi_count_profili`.`DISPONIBILE`,
 '    `tutti_pezzi_count_profili`.`STATO`,
 '    `tutti_pezzi_count_profili`.`POSIZIONE_CASSETTO`,
@@ -1807,8 +1869,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiB4AH4AhwCWAJ0AtQC/ANkA5gDsAAkBGAE9BHAE
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBVALAA0AM=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

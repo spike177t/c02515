@@ -353,5 +353,247 @@
 </Threshold>
 </ThresholdList>
 </Alarm>
+<Alarm>
+<Name Device="" Variable="alm_Step_ToutR2_6700" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">alm_Step_ToutR2_6700</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="alm_Step_ToutR2_6700" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="4294967295" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="1" Log="1" BlinkOnNewAlarm="1" VarTimeStamp="0" SupportAck="1" SupportReset="1" SupportResetConditionOn="1" BmpFile="" SndFile="" BeepEnabled="1" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="R1_STATUS:IN_MISSIONE" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_R1_InMissione</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="R1 In Missione" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="R2_STATUS:IN_MISSIONE" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_R2_InMissione</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="R2 In Missione" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="MAG1_ES1_ACT:PRONTO" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_MAG1_ES1_non_pronto</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="MAG1_ES1 non pronto" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="MAG1_ES2_ACT:PRONTO" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_MAG1_ES2_non_pronto</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="MAG1_ES2 non pronto" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="MAG1_ES3_ACT:PRONTO" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_MAG1_ES3_non_pronto</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="MAG1_ES3 non pronto" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="MAG2_ES1_ACT:PRONTO" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_MAG2_ES1_non_pronto</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="MAG2_ES1 non pronto" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="MAG2_ES2_ACT:PRONTO" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_MAG2_ES2_non_pronto</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="MAG2_ES2 non pronto" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="MAG2_ES3_ACT:PRONTO" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_MAG2_ES3_non_pronto</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="MAG2_ES3 non pronto" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="alm_StatoCiclo_R2" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">alm_StatoCiclo_R2</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="alm_StatoCiclo_R2 %(alm_StatoCiclo_R2_txt)" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="4294967295" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="1" Log="1" BlinkOnNewAlarm="1" VarTimeStamp="0" SupportAck="1" SupportReset="1" SupportResetConditionOn="1" BmpFile="" SndFile="" BeepEnabled="1" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="alm_StatoCiclo_R1" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">alm_StatoCiclo_R1</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="alm_StatoCiclo_R1 %(alm_StatoCiclo_R1_txt)" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="4294967295" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="1" Log="1" BlinkOnNewAlarm="1" VarTimeStamp="0" SupportAck="1" SupportReset="1" SupportResetConditionOn="1" BmpFile="" SndFile="" BeepEnabled="1" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
 </AlarmList>
 </Alarms>
