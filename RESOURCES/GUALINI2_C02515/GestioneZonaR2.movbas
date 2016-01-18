@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="2306" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="63273" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -56,7 +56,10 @@ Sub Main()
 	Dim stepTout As Double
 
 	Dim ret As Integer
+	Dim retMsgBox As VbMsgBoxResult
+
 	Dim varname_estrattore As String
+	Dim strEstrattore As String
 
 
 	MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
@@ -73,6 +76,16 @@ Sub Main()
     If StatoCicloScarico &lt; 100 Then
 		StatoCicloScarico = 100
     End If
+    If StatoCicloScarico &lt;&gt; 1000 Then
+    	retMsgBox = MsgBox("Attenzione: StatoCicloScarico = " &amp; CStr(StatoCicloScarico) &amp; "!" &amp; vbCrLf &amp; "Resettare?", vbYesNo, "Attenzione")
+    	If retMsgBox = vbYes Then
+			StatoCicloScarico = 1000
+    	End If
+    End If
+
+    'forzo aggiornamento estrattori
+    [MAG1_ES2_ACT_OLD:ID_CASSETTO] = 16500
+    [MAG2_ES2_ACT_OLD:ID_CASSETTO] = 16500
 
 	'aggiorno cassetti pieni e disponibili
     AggiornaCassettiPieni(MysSqlConnectionString, 1)
@@ -212,27 +225,33 @@ Sub Main()
 
 					If POSIZIONE.mag = 1  Then
 						rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
-						rikEstrattore.ID_QUARTINA 				= GetVariableValue(prefix_varname_pezzo &amp; ":ID_QUARTINA") 'val di prefix_varname_pezzo viene da 	Case 2100	'RichiediCassettoDaMagazzino
-						rikEstrattore.NOME_PEZZO_UNICO 			= "ScaricoQrt"	'GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
+						rikEstrattore.ID_QUARTINA 				= "rikScaricoQrt"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA")
+						rikEstrattore.NOME_PEZZO_UNICO 			= "rikScaricoPzz"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":NOME_PEZZO_UNICO")
 						rikEstrattore.POSIZIONE 				= 0				'GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 						rikEstrattore.DEPO						= False
 						rikEstrattore.PRONTO					= False
 						rikEstrattore.STROBE 					= True
 
-						codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						strEstrattore =Serializza_stEstrattore(rikEstrattore)
+						DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+						'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						codaMAG1_ES2.Enqueue(strEstrattore)
 
 						StatoCicloScarico = 1000	'Attesa
 
 					ElseIf POSIZIONE.mag = 2 Then
 						rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
-						rikEstrattore.ID_QUARTINA 				= GetVariableValue(prefix_varname_pezzo &amp; ":ID_QUARTINA") 'val di prefix_varname_pezzo viene da 	Case 2100	'RichiediCassettoDaMagazzino
-						rikEstrattore.NOME_PEZZO_UNICO 			= "ScaricoQrt"	'GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO")
+						rikEstrattore.ID_QUARTINA 				= "rikScaricoQrt"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA")
+						rikEstrattore.NOME_PEZZO_UNICO 			= "rikScaricoPzz"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":NOME_PEZZO_UNICO")
 						rikEstrattore.POSIZIONE 				= 0				'GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 						rikEstrattore.DEPO						= False
 						rikEstrattore.PRONTO					= False
 						rikEstrattore.STROBE 					= True
 
-						codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						strEstrattore =Serializza_stEstrattore(rikEstrattore)
+						DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+						'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						codaMAG2_ES2.Enqueue(strEstrattore)
 
 						StatoCicloScarico = 1000	'Attesa
 					ElseIf POSIZIONE.mag &lt;&gt; 1 And POSIZIONE.mag &lt;&gt; 2 Then
@@ -315,9 +334,17 @@ Sub Main()
 
 						'aggiungo richiesta a coda estrattore
 						If [R2_STATUS:MAGAZZINO] = 1  Then
-							codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+
+							strEstrattore =Serializza_stEstrattore(rikEstrattore)
+							DebugMsg("Case 6100	'FineRobot - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+							'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							codaMAG1_ES2.Enqueue(strEstrattore)
 						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							strEstrattore =Serializza_stEstrattore(rikEstrattore)
+							DebugMsg("Case 6100	'FineRobot - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+							'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							codaMAG2_ES2.Enqueue(strEstrattore)
+
 						End If
 
 						'faccio reset dei membri pezzo
@@ -622,7 +649,7 @@ Function CondizioneRikCassettoMagazzino() As Integer
 		And [loc_ImpostazioniImpianto:M2_ABIL] _
 		And [loc_ImpostazioniImpianto:ScaricoAbilitaZona] _
 		And [MAG2_ES2_ACT:PRONTO] _
-		And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
+		And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Or [MAG2_ES2_ACT:NOME_PEZZO_UNICO] = "") _
 		And Not [MAG2_ES2_RIK:STROBE] _
 		Then
 
@@ -987,16 +1014,25 @@ Sub ProcessaCodaEstrattoriMAG2()
 				'strEs = codaMAG1_ES2.Dequeue()
 				For Each element1 As String In codaMAG1_ES2
 					strEs = element1
+					'codaMAG1_ES2.Dequeue()
 				Next
+				If codaMAG1_ES2.Count &gt; 0 Then
+					DebugMsg("ProcessaCodaEstrattoriMAG2() codaMAG1_ES2.Count = " &amp; CStr(codaMAG1_ES2.Count ) &amp; "; CLEAR")
+					codaMAG1_ES2.Clear()
+				End If
+
+				DebugMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG1_ES2.Count = " &amp; CStr(codaMAG1_ES2.Count) &amp; "Deserializza")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG1_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG1_ES2_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
 				[MAG1_ES2_RIK:NOME_PEZZO_UNICO] 		= tmpEs.NOME_PEZZO_UNICO
 				[MAG1_ES2_RIK:POSIZIONE] 				= tmpEs.POSIZIONE
-				[MAG1_ES2_RIK:STROBE] 					= tmpEs.STROBE
-				[MAG1_ES2_RIK:PRONTO] 					= tmpEs.PRONTO
+
+				'[MAG1_ES2_RIK:PRONTO] 					= tmpEs.PRONTO
 				[MAG1_ES2_RIK:DEPO] 					= tmpEs.DEPO
+
+				[MAG1_ES2_RIK:STROBE] 					= tmpEs.STROBE
 
 		End If
 	End If
@@ -1013,16 +1049,25 @@ Sub ProcessaCodaEstrattoriMAG2()
 				'strEs = codaMAG2_ES2.Dequeue()
 				For Each element2 As String In codaMAG2_ES2
 					strEs = element2
+					'codaMAG2_ES2.Dequeue()
 				Next
+				If codaMAG2_ES2.Count &gt; 0 Then
+					DebugMsg("ProcessaCodaEstrattoriMAG2() codaMAG2_ES2.Count = " &amp; CStr(codaMAG2_ES2.Count ) &amp; "; CLEAR")
+					codaMAG2_ES2.Clear()
+				End If
+
+				DebugMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG2_ES2.Count = " &amp; CStr(codaMAG2_ES2.Count) &amp; "Deserializza")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG2_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG2_ES2_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
 				[MAG2_ES2_RIK:NOME_PEZZO_UNICO] 		= tmpEs.NOME_PEZZO_UNICO
 				[MAG2_ES2_RIK:POSIZIONE] 				= tmpEs.POSIZIONE
-				[MAG2_ES2_RIK:STROBE] 					= tmpEs.STROBE
-				[MAG2_ES2_RIK:PRONTO] 					= tmpEs.PRONTO
+
+				'[MAG2_ES2_RIK:PRONTO] 					= tmpEs.PRONTO
 				[MAG2_ES2_RIK:DEPO] 					= tmpEs.DEPO
+
+				[MAG2_ES2_RIK:STROBE] 					= tmpEs.STROBE
 
 		End If
 	End If
@@ -1039,11 +1084,12 @@ End Function
 Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String) As Integer
 	Deserializza_stEstrattore = 0
 
+	DebugMsg("Deserializza_stEstrattore() -&gt; " &amp; element)
 	Dim x() As String
 	x = Split(element,";")
 
 	For count As Integer = 0 To UBound(x) -1
-        Debug.Print "countLoop " + CStr(count) + "   " + x(count)
+        'Debug.Print "countLoop " + CStr(count) + "   " + x(count)
         Select Case count
         Case 0
         	st.DEPO 			= CBool(x(count))
@@ -1165,14 +1211,17 @@ Function AggiornaDatiPezziInEstrattore2(connectionString, mag, cass) As Integer
 	Dim ret As Integer
 	Dim count As Integer
 	Dim prefixStruct As String
+	Dim varEstrattore As String
 	Dim struct As String
 
 	AggiornaDatiPezziInEstrattore2 = 0	'inizializzo
 
 	If mag = 1 Then
 		prefixStruct = "SCAR_M1_PZ"
+		varEstrattore = "MAG1_ES2_ACT"
 	ElseIf mag = 2 Then
 		prefixStruct = "SCAR_M2_PZ"
+		varEstrattore = "MAG2_ES2_ACT"
 	Else
 		LogMsg("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInEstrattore2() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
 		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInEstrattore2() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
@@ -1191,6 +1240,9 @@ Function AggiornaDatiPezziInEstrattore2(connectionString, mag, cass) As Integer
 			AggiornaDatiPezziInEstrattore2 = -1
 		End If
 	Next
+	'alla fine aggiorno i riferimenti nell'estrattore
+	SetVariableValue(varEstrattore &amp; ":ID_QUARTINA"		, GetVariableValue(prefixStruct &amp; "1" &amp; ":ID_QUARTINA"))
+	SetVariableValue(varEstrattore &amp; ":NOME_PEZZO_UNICO", GetVariableValue(prefixStruct &amp; "1" &amp; ":NOME_PEZZO_UNICO"))
 
 End Function
 
@@ -1380,7 +1432,8 @@ Function AggiornaCassettiPieni( connectionString As String, mag As Integer) As I
             MyConnection.Open()
             commandText = "SELECT COUNT(*) AS PIENI " &amp; _
                       	" FROM  `gualini`.`cassetti_pieni` " &amp; _
-            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp;  _
+            			" AND POSIZIONE = 0;"
 
             DebugMsg "GestioneZonaR2.movbas -&gt; AggiornaCassettiPieni(); commandText = " &amp; commandText
 
@@ -1461,7 +1514,8 @@ Function AggiornaCassettiDisponibili( connectionString As String, mag As Integer
             MyConnection.Open()
             commandText = "SELECT COUNT(*) AS PIENI " &amp; _
                       	" FROM  `gualini`.`cassetti_disponibili` " &amp; _
-            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; _
+            			" AND POSIZIONE = 0 " &amp; ";"
 
             DebugMsg "GestioneZonaR2.movbas -&gt; AggiornaCassettiDisponibili(); commandText = " &amp; commandText
 
@@ -1761,7 +1815,7 @@ End Sub
 Function MovimentatoPiuVecchio() As Integer
 	MovimentatoPiuVecchio = 0
 
-	If [MAG1_ES2_ACT:DEPO] And [MAG2_ES2_ACT:DEPO] Then
+	If ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) Then
 		'ho tutti i pezzi dei due estrattori depositati allora prendo quello che ha il timestamp più vecchio
 		Dim objRet1 As DBVarObjCmdTarget
 		Dim dTimeStamp1 As Date
@@ -1801,10 +1855,10 @@ Function MovimentatoPiuVecchio() As Integer
 		objRet2 = Nothing
 	Else
 		'ho solo un pezzo pronto o nessuno
-		If [MAG1_ES2_ACT:DEPO] Then
+		If [MAG1_ES2_ACT:DEPO]  Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Then
 			MovimentatoPiuVecchio = 1
 		End If
-		If [MAG2_ES2_ACT:DEPO] Then
+		If [MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Then
 			MovimentatoPiuVecchio = 2
 		End If
 		'se no MovimentatoPiuVecchio = 0
@@ -1869,7 +1923,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBVALAA0AM=</BreakPoints>
-<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
-<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+<BreakPoints xsi:type="xsd:base64Binary">AiBJAA==</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
+<Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

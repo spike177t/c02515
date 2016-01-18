@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="102218" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="30125" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -54,6 +54,9 @@ Dim disponibileLastCheck As Double
 Dim filepathMemo As String 'memo fullName ultimo file letto da Quadra, usato in RimuoviFileDatiDaQuadra()
 
 Dim enableLogMsg As Boolean = True
+
+Dim oldDebugMsg As String
+
 
 'Sub Main2
 '	Dim F As Object
@@ -152,6 +155,7 @@ Sub Main()
 	Dim POSIZIONE As PosQuartina
 
 	Dim ret As Integer
+	Dim retMsgBox As VbMsgBoxResult
 
 	Dim varname_pezzo As String
 	Dim varname_missioneDaQuadra As String
@@ -164,6 +168,7 @@ Sub Main()
 	Dim stepTout As Double
 
 	Dim rikEstrattore As stEstrattore
+	Dim strEstrattore As String
 
 
 	MysSqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
@@ -178,9 +183,17 @@ Sub Main()
     'inizializzo alcune variabili
 
     If StatoCicloCarico &lt; 100 Then
-		StatoCicloCarico = 100
+		StatoCicloCarico = 1000
     End If
 
+    If StatoCicloCarico &lt;&gt; 1000 Then
+    	retMsgBox = MsgBox("Attenzione: StatoCicloCarico = " &amp; CStr(StatoCicloCarico) &amp; "!" &amp; vbCrLf &amp; "Resettare?", vbYesNo, "Attenzione")
+    	If retMsgBox = vbYes Then
+			StatoCicloCarico = 1000
+    	End If
+    End If
+
+    'forzo aggiornamento estrattori
     [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
     [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
 
@@ -400,6 +413,8 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					'[MAG1_ES1_RIK:POSIZIONE] 				= GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 					'[MAG1_ES1_RIK:STROBE] 					= True
 
+
+
 				If POSIZIONE.mag = 1  Then
 					rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
 					rikEstrattore.ID_QUARTINA 				= GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") 'val di varname_pezzo viene da 	Case 2100	'LeggiFileDaQuadra
@@ -409,7 +424,9 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					rikEstrattore.PRONTO					= False
 					rikEstrattore.STROBE 					= True
 
-					codaMAG1_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+					strEstrattore = Serializza_stEstrattore(rikEstrattore)
+					DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - codaMAG1_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+					codaMAG1_ES1.Enqueue(strEstrattore)
 
 					StatoCicloCarico = 1000	'AttesaPezzi
 				'ElseIf POSIZIONE.mag = 2 And Not [MAG2_ES1_RIK:STROBE] Then
@@ -427,6 +444,8 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					rikEstrattore.PRONTO					= False
 					rikEstrattore.STROBE 					= True
 
+					strEstrattore = Serializza_stEstrattore(rikEstrattore)
+					DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - codaMAG2_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
 					codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
 
 					StatoCicloCarico = 1000	'AttesaPezzi
@@ -446,7 +465,9 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					Case 2:
 						varname_pezzo = "Q2_PEZZO_DISP"
 					Case Else
-						Throw New System.Exception("GestioneZonaR1.movbas -&gt; Case 2300	'AssegnaCassettoAllaQuartina: parametro leggiDaQuadra non ammesso: " &amp; CStr(leggiDaQuadra) &amp; ".")
+						'Throw New System.Exception("GestioneZonaR1.movbas -&gt; Case 2300	'AssegnaCassettoAllaQuartina: parametro leggiDaQuadra non ammesso: " &amp; CStr(leggiDaQuadra) &amp; ".")
+						alm_StatoCiclo_R1 = True
+						alm_StatoCiclo_R1_txt = "ECCEZZIONE: Case 2300	'AssegnaCassettoAllaQuartina; leggiDaQuadra = " &amp; CStr(leggiDaQuadra) &amp; "; FARE RESET CICLO R1"
 				End Select
 
 				POSIZIONE = AssegnaCassettoAllaQuartina([loc_ImpostazioniImpianto:TipoCarico] _
@@ -463,8 +484,10 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				If POSIZIONE.mag &gt; 0 And POSIZIONE.cass &gt; 0 Then
 					StatoCicloCarico = 2200	'RikCassettoInEstrattorePlc
 				Else
-					Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2300 'AssegnaCassettoAllaQuartina: posizione.mag = " _
-							&amp; CStr(POSIZIONE.mag) &amp; ": posizione.cass = " &amp; CStr(POSIZIONE.cass) &amp; ".")
+					'Throw New System.Exception("GestioneZonaR1.movbas -&gt; Main() ECCEZZIONE: Case 2300 'AssegnaCassettoAllaQuartina: posizione.mag = " _
+					'		&amp; CStr(POSIZIONE.mag) &amp; ": posizione.cass = " &amp; CStr(POSIZIONE.cass) &amp; ".")
+					alm_StatoCiclo_R1 = True
+					alm_StatoCiclo_R1_txt = "ECCEZZIONE: Case 2300	'AssegnaCassettoAllaQuartina; AssegnaCassettoAllaQuartina() POSIZIONE.mag = " &amp; CStr(POSIZIONE.mag) &amp; "POSIZIONE.cass=" &amp; CStr(POSIZIONE.cass) &amp; "; FARE RESET CICLO R1"
 				End If
 
 			Case 3100	'AttendiCassettoDisponibile
@@ -602,10 +625,15 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						rikEstrattore.STROBE 					= True
 						If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1  Then
 
-							codaMAG1_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							strEstrattore =Serializza_stEstrattore(rikEstrattore)
+							DebugMsg("Case 6200	'VerificaUltimoPezzo - codaMAG1_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+							codaMAG1_ES1.Enqueue(strEstrattore)
+							'codaMAG1_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
 						ElseIf [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 2 Then
-
-							codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							strEstrattore =Serializza_stEstrattore(rikEstrattore)
+							DebugMsg("Case 6200	'VerificaUltimoPezzo - codaMAG2_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+							codaMAG2_ES1.Enqueue(strEstrattore)
+							'codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
 						End If
 						StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
 
@@ -646,10 +674,18 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				rikEstrattore.STROBE 					= True
 				If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 1  Then
 
-					codaMAG1_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+					strEstrattore =Serializza_stEstrattore(rikEstrattore)
+					DebugMsg("Case 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc - codaMAG1_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+					codaMAG1_ES1.Enqueue(strEstrattore)
+
+					'codaMAG1_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
 				ElseIf [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = 2 Then
 
-					codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+					strEstrattore =Serializza_stEstrattore(rikEstrattore)
+					DebugMsg("Case 7200	'AggiungiMissioneQuartinaSuccessivaCodaPlc - codaMAG2_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+					codaMAG2_ES1.Enqueue(strEstrattore)
+
+					'codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
 				End If
 
 				StatoCicloCarico = 8100	'ResetDatiPezzoMissione
@@ -669,6 +705,8 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				End If
 
 				'################################################################################
+
+
 
 				'occorre eliminare il file dalla quadra
 				EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
@@ -1040,7 +1078,11 @@ Function QuartinaEsiste(qrt As String, connectionString As String) As Boolean
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
 
-		DebugMsg "GestioneZonaR1.movbas -&gt; QuartinaEsiste; qrt = " &amp; CStr(qrt) &amp; ", Esiste = " &amp; CStr(QuartinaEsiste) &amp; "; commandText = " &amp; commandText
+        'per non riempire il log quando ho magazzini pieni filtro la scrittura
+        If [loc_ImpostazioniImpianto:M1_CASS_DISPONIBILI] &gt; 0 And [loc_ImpostazioniImpianto:M2_CASS_DISPONIBILI] &gt; 0 Then
+			DebugMsg "GestioneZonaR1.movbas -&gt; QuartinaEsiste; qrt = " &amp; CStr(qrt) &amp; ", Esiste = " &amp; CStr(QuartinaEsiste) &amp; "; commandText = " &amp; commandText
+        End If
+
 
 	  'Catch program exception
 	Catch MyException As Exception
@@ -1197,7 +1239,7 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
 
     Select Case mag
     Case 0
-    	whereString = "ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2"
+    	whereString = "(ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2)"
 	Case 1
 		whereString = "ID_MAGAZZINO = 1"
 	Case 2
@@ -1217,7 +1259,8 @@ Function CassettiDisponibili(mag As Integer, connectionString As String) As Inte
             MyConnection.Open()
             commandText = "SELECT COUNT(*) AS DISPONIBILI " &amp; _
                       	" FROM  `gualini`.`cassetti_disponibili` " &amp; _
-            			" WHERE " &amp; whereString &amp;";"
+            			" WHERE " &amp; whereString &amp; _
+            			" AND POSIZIONE = 0 " &amp; ";"
 
             'Select COUNT(*) FROM gualini.cassetti_disponibili WHERE ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2;
 
@@ -1307,7 +1350,8 @@ Function AggiornaCassettiPieni( connectionString As String, mag As Integer) As I
             MyConnection.Open()
             commandText = "SELECT COUNT(*) AS PIENI " &amp; _
                       	" FROM  `gualini`.`cassetti_pieni` " &amp; _
-            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; _
+            			" AND POSIZIONE = 0;"
 
             DebugMsg "GestioneZonaR1.movbas -&gt; AggiornaCassettiPieni(); commandText = " &amp; commandText
 
@@ -1388,7 +1432,8 @@ Function AggiornaCassettiDisponibili( connectionString As String, mag As Integer
             MyConnection.Open()
             commandText = "SELECT COUNT(*) AS DISP " &amp; _
                       	" FROM  `gualini`.`cassetti_disponibili` " &amp; _
-            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; ";"
+            			" WHERE ID_MAGAZZINO = " &amp; CStr(mag) &amp; _
+            			" AND POSIZIONE = 0 " &amp; ";"
 
             DebugMsg "GestioneZonaR1.movbas -&gt; AggiornaCassettiDisponibili(); commandText = " &amp; commandText
 
@@ -1963,6 +2008,10 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
 
+        If pos.mag = 0 Or pos.cass = 0 Then
+        	DebugMsg("GestioneZonaR1.movbas -&gt; AssegnaCassettoAllaQuartina() - pos.mag = " &amp; CStr(pos.mag) &amp; "; pos.cass = " &amp; CStr(pos.cass) &amp; "; commandText = " &amp; commandText)
+        End If
+
         'memorizzo il cassetto assegnato in base alla quadra di provenienza
         If leggiDaQuadra = 1 Then
 			[Q1_PEZZO_DISP:CASSETTO_ASSEGNATO] 		= pos.cass 'memorizzo il cassetto assegnato al pezzo
@@ -2517,6 +2566,7 @@ Sub ProcessaCodaEstrattoriMAG1()
 				End If
 
 				strEs = codaMAG1_ES1.Dequeue()
+				DebugMsg("ProcessaCodaEstrattoriMAG1() -&gt;codaMAG1_ES1.Count = " &amp; CStr(codaMAG1_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG1_ES1_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
@@ -2539,6 +2589,7 @@ Sub ProcessaCodaEstrattoriMAG1()
 				End If
 
 				strEs = codaMAG2_ES1.Dequeue()
+				DebugMsg("ProcessaCodaEstrattoriMAG1() -&gt;codaMAG2_ES1.Count = " &amp; CStr(codaMAG2_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG2_ES1_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
@@ -2904,9 +2955,15 @@ End Function
 
 Sub DebugMsg(msg As String)
 	Dim prefix As String
+	Dim fullmsg As String
 	If [loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1] Then
 		prefix = "GestioneZonaR1.movbas -&gt; "
-		Debug.Print prefix &amp; msg
+		fullmsg = prefix &amp; msg
+		If oldDebugMsg &lt;&gt; fullmsg Then
+			Debug.Print fullmsg
+			oldDebugMsg = fullmsg
+		End If
+
 	End If
 End Sub
 
@@ -2921,7 +2978,8 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiC1AC8BXgFgAWYBaAF8AbABKgKsCA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCyANUH
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

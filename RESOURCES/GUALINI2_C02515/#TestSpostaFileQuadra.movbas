@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="221" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="203" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 Imports System
 Imports System.IO
 Imports System.Data.Odbc
@@ -11,35 +11,58 @@ Sub Main()
 	Dim vResult As String
 	Dim source As String
 	Dim dest As String
+	Dim ret As Integer
 
 	vResult = This.GetParameter(0)
 
 	If vResult = "1"  Then
 		source = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Temporaneo\Q1"
 		dest = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1"
-		SpostaPer(source, dest)
-		[Q1_In:PezzoPronto] = True
+		ret = SpostaPer(source, dest)
+	[Q1_In:PezzoPronto] = IIf(ret &gt;= 0, True, False)
 	End If
 	If vResult = "2"  Then
 		source = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Temporaneo\Q2"
 		dest = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2"
-		SpostaPer(source, dest)
-		[Q2_In:PezzoPronto] = True
+		ret = SpostaPer(source, dest)
+		[Q2_In:PezzoPronto] = IIf(ret &gt;= 0, True, False)
 	End If
 End Sub
 
-Sub SpostaPer(src As String, dst As String)
+Function SpostaPer(src As String, dst As String) As Integer
+	SpostaPer = -1
 	Dim filepath As String
 	Dim filename As String
 	Dim dstpath As String
 	Dim varname As String
 
-	'guardo se sono presenti file
+	'guardo se DEST è vuota:
+	Dim dd As New IO.DirectoryInfo(dst)
+	Dim dstFiles As Object
+	Dim dst_nFiles As Integer
+	Dim dst_lowBoundFiles As Integer
+	Dim dst_upBoundFiles As Integer
+
+	dstFiles = dd.GetFiles()
+	dst_lowBoundFiles = dstFiles.GetLowerBound(0)
+	dst_upBoundFiles = dstFiles.GetUpperBound(0)
+
+	dst_nFiles = dst_upBoundFiles - dst_lowBoundFiles + 1
+
+	If dst_nFiles &gt;= 1 Then
+		MsgBox("File Esistente in: " &amp; src &amp; "!", vbOkOnly, "File esiste!")
+		SpostaPer = 1
+		Exit Function
+	End If
+
+	'guardo se sono presenti file in SRC
 	Dim di As New IO.DirectoryInfo(src)
 	Dim files As Object
 	Dim nFiles As Integer
 	Dim lowBoundFiles As Integer
 	Dim upBoundFiles As Integer
+
+	SpostaPer = 0
 
 	files = di.GetFiles()
 
@@ -48,29 +71,29 @@ Sub SpostaPer(src As String, dst As String)
 	upBoundFiles = files.GetUpperBound(0)
 	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); upBoundFiles = files.GetUpperBound(0) = " &amp;  CStr(upBoundFiles)
 
-	If upBoundFiles &lt; 0 Then
-		Exit Sub
-	End If
+	'If upBoundFiles &lt; 0 Then
+	'	Exit Function
+	'End If
 
 	nFiles = upBoundFiles - lowBoundFiles + 1
 
-	'If nFiles &gt; 1 Then
-	'	Exit Function
-	'End If
+
 	If nFiles &lt; 1 Then
-		Exit Sub
+		SpostaPer = -1
+		Exit Function
 	End If
 
 	If nFiles = 0 Then
 		'non ho nessun file
-		Exit Sub
+		SpostaPer = -1
+		Exit Function
 	End If
 	filepath = files(0).FullName
 	filename = files(0).Name
 
 	Try
             If File.Exists(filepath) = False Then
-                Exit Sub
+                Exit Function
             End If
 
             ' Ensure that the target does not exist.
@@ -82,6 +105,7 @@ Sub SpostaPer(src As String, dst As String)
             ' Move the file.
             File.Move(filepath, dstpath)
             Debug.Print("SpostaPer(" + filepath + ","+dstpath +")")
+            SpostaPer = 0
 
         Catch e As Exception
             Debug.Print("SpostaPer failed: "+ e.ToString())
@@ -89,8 +113,8 @@ Sub SpostaPer(src As String, dst As String)
 
 
 
-End Sub
+End Function
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>
