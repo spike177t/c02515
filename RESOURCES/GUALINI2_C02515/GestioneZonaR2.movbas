@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="18761" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1886" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -139,12 +139,16 @@ Sub Main()
 
 					'condizione di richiesta nuovo casseto da magazzino
 					If ValutaProssimaCondizione Then
-						rikDaMagazzino = CondizioneRikCassettoMagazzino()
-						If rikDaMagazzino &gt; 0 Then
-							ValutaProssimaCondizione = False
-							LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
-							richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE 'voglio che alla chiamata il test sia fatto subito e quindi SuperatoTimeout() deve tornare true
-							StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
+						'controllo solo ogni tanto se c'è un cassetto pronto
+						If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
+							richiedibileLastCheck = Timer()
+							rikDaMagazzino = CondizioneRikCassettoMagazzino()
+							If rikDaMagazzino &gt; 0 Then
+								ValutaProssimaCondizione = False
+								LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
+								'richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE 'voglio che alla chiamata il test sia fatto subito e quindi SuperatoTimeout() deve tornare true
+								StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
+							End If
 						End If
 					End If
 
@@ -180,9 +184,9 @@ Sub Main()
 					POSIZIONE.cass = 0	'inizializzo
 					POSIZIONE.mag = 0
 					'cerco il cassetto richiedibile
-					If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
+					'If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
 						'controllo solo ogni tanto
-						richiedibileLastCheck = Timer()
+						'richiedibileLastCheck = Timer()
 						POSIZIONE = RilevaCassettoPiuVicino(MysSqlConnectionString _
 															, rikDaMagazzino _
 															, [loc_ImpostazioniImpianto:ScaricoCommessaPref] _
@@ -194,7 +198,7 @@ Sub Main()
 						Else
 							msg_AlertCommessaEsclusiva_nessuno = False
 						End If
-					End If
+					'End If
 					'leggo i dati dei pezzi dal DB e aggiungo alla coda dell'estrattore il cassetto
 					If POSIZIONE.cass &gt; 0 And POSIZIONE.mag &gt; 0 Then
 						'leggo i dati dei pezzi
