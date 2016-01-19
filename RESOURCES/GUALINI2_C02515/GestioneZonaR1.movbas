@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="30125" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="26962" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -642,7 +642,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 			Case 6300	'GestisciQuartinaSuccessiva
 				LogMsg "StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva"
 				'reset dei dati di missione
-				If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
+				If [loc_ImpostazioniImpianto:TipoCarico] = 0 And [loc_ImpostazioniImpianto:AbillRicercaQrtSuccessiva] Then
 					StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva
 				Else
 					'non posso fare l'anticipo delle richieste di cassetto
@@ -2558,8 +2558,8 @@ Sub ProcessaCodaEstrattoriMAG1()
 	Dim strEs As String
 
 	If codaMAG1_ES1.Count &gt; 0 Then
-		If Not [MAG1_ES1_RIK:STROBE] _
-				And ( [MAG1_ES1_ACT:DEPO] = True Or [MAG1_ES1_ACT:ID_CASSETTO] = 0 Or [MAG1_ES1_ACT:NOME_PEZZO_UNICO] = "qrt_succ" Or [MAG1_ES1_ACT:NOME_PEZZO_UNICO] = "") Then
+		If Not [MAG1_ES1_RIK:STROBE] And [MAG1_ES1_ACT:PRONTO] _
+				And ( [MAG1_ES1_ACT:DEPO] Or [MAG1_ES1_ACT:ID_CASSETTO] = 0 Or [MAG1_ES1_ACT:NOME_PEZZO_UNICO] = "qrt_succ" Or [MAG1_ES1_ACT:NOME_PEZZO_UNICO] = "") Then
 
 				If codaMAG1_ES1.Count &gt; 0 Then
 					LogMsg("ProcessaCodaEstrattoriMAG1() -&gt; codaMAG1_ES1 -&gt; count = " &amp; CStr(codaMAG1_ES1.Count) &amp; "; peek = " &amp; codaMAG1_ES1.Peek())
@@ -2568,6 +2568,12 @@ Sub ProcessaCodaEstrattoriMAG1()
 				strEs = codaMAG1_ES1.Dequeue()
 				DebugMsg("ProcessaCodaEstrattoriMAG1() -&gt;codaMAG1_ES1.Count = " &amp; CStr(codaMAG1_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
 				Deserializza_stEstrattore(tmpEs, strEs)
+
+				'guardo se ho in coda valori uguali
+				'TODO
+
+				'passo a interfaccia
+				loc_MAG1_ES1_CountCoda = codaMAG1_ES1.Count
 
 				[MAG1_ES1_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG1_ES1_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
@@ -2581,8 +2587,8 @@ Sub ProcessaCodaEstrattoriMAG1()
 	End If
 
 	If codaMAG2_ES1.Count &gt; 0 Then
-		If Not [MAG2_ES1_RIK:STROBE] _
-				And ( [MAG2_ES1_ACT:DEPO] = True Or [MAG2_ES1_ACT:ID_CASSETTO] = 0  Or [MAG2_ES1_ACT:NOME_PEZZO_UNICO] = "qrt_succ"  Or [MAG2_ES1_ACT:NOME_PEZZO_UNICO] = "") Then
+		If Not [MAG2_ES1_RIK:STROBE] And [MAG2_ES1_ACT:PRONTO] _
+				And ( [MAG2_ES1_ACT:DEPO] Or [MAG2_ES1_ACT:ID_CASSETTO] = 0  Or [MAG2_ES1_ACT:NOME_PEZZO_UNICO] = "qrt_succ"  Or [MAG2_ES1_ACT:NOME_PEZZO_UNICO] = "") Then
 
 				If codaMAG2_ES1.Count &gt; 0 Then
 					LogMsg("ProcessaCodaEstrattoriMAG1() -&gt; codaMAG2_ES1 -&gt; count = " &amp; CStr(codaMAG2_ES1.Count) &amp; "; peek = " &amp; codaMAG2_ES1.Peek())
@@ -2591,6 +2597,9 @@ Sub ProcessaCodaEstrattoriMAG1()
 				strEs = codaMAG2_ES1.Dequeue()
 				DebugMsg("ProcessaCodaEstrattoriMAG1() -&gt;codaMAG2_ES1.Count = " &amp; CStr(codaMAG2_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
 				Deserializza_stEstrattore(tmpEs, strEs)
+
+				'passo a interfaccia
+				loc_MAG2_ES1_CountCoda = codaMAG2_ES1.Count
 
 				[MAG2_ES1_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
 				[MAG2_ES1_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
