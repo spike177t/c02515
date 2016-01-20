@@ -38,14 +38,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.R2_APERTURA|Typ=4">R2_APERTURA</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -59,14 +59,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.MISURA_CAMERA_ESTERNA|Typ=4">MISURA_CAMERA_ESTERNA</Name>
+<Name Type="4">MISURA_CAMERA_ESTERNA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.R2_ATTREZZATURA|Typ=4">R2_ATTREZZATURA</Name>
+<Name Type="4">R2_ATTREZZATURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -80,14 +80,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -122,14 +122,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ4.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -920,7 +920,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -934,7 +934,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.MISURA_CAMERA_ESTERNA|Typ=4">MISURA_CAMERA_ESTERNA</Name>
+<Name Type="4">MISURA_CAMERA_ESTERNA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -955,14 +955,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -997,21 +997,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.R2_COLLA|Typ=4">R2_COLLA</Name>
+<Name Type="4">R2_COLLA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1194,7 +1194,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1208,7 +1208,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.MISURA_CAMERA_ESTERNA|Typ=4">MISURA_CAMERA_ESTERNA</Name>
+<Name Type="4">MISURA_CAMERA_ESTERNA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1229,14 +1229,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1271,21 +1271,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.R2_COLLA|Typ=4">R2_COLLA</Name>
+<Name Type="4">R2_COLLA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1318,14 +1318,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.R2_APERTURA|Typ=4">R2_APERTURA</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1346,14 +1346,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.MISURA_CAMERA_ESTERNA|Typ=4">MISURA_CAMERA_ESTERNA</Name>
+<Name Type="4">MISURA_CAMERA_ESTERNA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.R2_ATTREZZATURA|Typ=4">R2_ATTREZZATURA</Name>
+<Name Type="4">R2_ATTREZZATURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1374,14 +1374,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1423,7 +1423,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1463,14 +1463,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.R2_APERTURA|Typ=4">R2_APERTURA</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1491,7 +1491,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.R2_ATTREZZATURA|Typ=4">R2_ATTREZZATURA</Name>
+<Name Type="4">R2_ATTREZZATURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1505,14 +1505,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1547,14 +1547,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1594,7 +1594,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1615,7 +1615,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.MISURA_CAMERA_ESTERNA|Typ=4">MISURA_CAMERA_ESTERNA</Name>
+<Name Type="4">MISURA_CAMERA_ESTERNA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1636,7 +1636,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1657,7 +1657,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R1_DATI_PEZZO.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1683,14 +1683,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ3.R2_APERTURA|Typ=4">R2_APERTURA</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ3.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1711,7 +1711,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ3.R2_ATTREZZATURA|Typ=4">R2_ATTREZZATURA</Name>
+<Name Type="4">R2_ATTREZZATURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1725,14 +1725,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ3.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ3.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1781,7 +1781,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ3.R2_COLLA|Typ=4">R2_COLLA</Name>
+<Name Type="4">R2_COLLA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1814,14 +1814,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.R2_APERTURA|Typ=4">R2_APERTURA</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1835,14 +1835,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.MISURA_CAMERA_ESTERNA|Typ=4">MISURA_CAMERA_ESTERNA</Name>
+<Name Type="4">MISURA_CAMERA_ESTERNA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.R2_ATTREZZATURA|Typ=4">R2_ATTREZZATURA</Name>
+<Name Type="4">R2_ATTREZZATURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1856,14 +1856,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1898,14 +1898,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.LARGHEZZA_PROFILO|Typ=4">LARGHEZZA_PROFILO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ3.LUNGHEZZA_PEZZO_ESTERNO|Typ=4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1945,14 +1945,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ4.R2_APERTURA|Typ=4">R2_APERTURA</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ4.APPOGGIO_PEZZO|Typ=2">APPOGGIO_PEZZO</Name>
+<Name Type="2">APPOGGIO_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1973,7 +1973,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ4.R2_ATTREZZATURA|Typ=4">R2_ATTREZZATURA</Name>
+<Name Type="4">R2_ATTREZZATURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1987,14 +1987,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ4.ALTEZZA_PROFILO|Typ=4">ALTEZZA_PROFILO</Name>
+<Name Type="4">ALTEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ4.R2_OFFSET_PEZZO|Typ=4">R2_OFFSET_PEZZO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2043,7 +2043,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ4.R2_COLLA|Typ=4">R2_COLLA</Name>
+<Name Type="4">R2_COLLA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>

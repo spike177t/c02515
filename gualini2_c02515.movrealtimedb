@@ -628,10 +628,6 @@
 <RenamedVariables/>
 <StructureList>
 <Structure>
-<Name Description="">STRUCT00001</Name>
-<MemberList/>
-</Structure>
-<Structure>
 <Name Description="">AssemblatriceInput</Name>
 <MemberList>
 <Member>
@@ -848,6 +844,12 @@
 </Member>
 <Member>
 <Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE_ACK</Name>
 </Member>
 </MemberList>
 </Structure>
