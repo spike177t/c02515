@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="73288" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="5392" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -308,6 +308,20 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						End If
 					End If
 
+					'ErroreMissioneRobot
+					If ValutaProssimaCondizione Then
+						'DebugMsg "StatoCicloCarico = 1050	'ErroreMissioneRobot"
+						If [R1_STATUS:ERR_MISSIONE]  _
+							And [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] &gt; 0 _
+							And [R1_DATI_PEZZO:CASSETTO_ASSEGNATO] &gt; 0 _
+							And [R1_DATI_PEZZO:NOME_PEZZO_UNICO] &lt;&gt; "" _
+							And [R1_DATI_PEZZO:ID_QUARTINA] &lt;&gt; "" _
+							Then
+								ValutaProssimaCondizione = False
+								LogMsg "StatoCicloCarico = 1050	'FineMissioneRobot; [R1_STATUS:ERR_MISSIONE] = True"
+								StatoCicloCarico = 9100	'ErroreRobot
+						End If
+					End If
 
 				Case 1010	'AttesaPezzi_AssegnaMissioneRobot
 					'DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
@@ -643,6 +657,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 				Case 6100	'FineRobot
 					LogMsg "StatoCicloCarico = 6100	'FineRobot"
+					'inserisco dati quartina e pezzo nel DB
 					ret = FineRobot(MysSqlConnectionString)
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
@@ -678,6 +693,14 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				Case 6200	'VerificaUltimoPezzo
 					LogMsg "StatoCicloCarico = 6200	'VerificaUltimoPezzo"
 						'se ultimo pezzo della quartina faccio rientrare l'estrattore
+						'TODO potrei contare quanti pezzo ho nella quartina
+						Dim countpezzi As Integer
+						'ret = PezziNellaQuartina(MysSqlConnectionString, [R1_DATI_PEZZO:ID_QUARTINA], coutpezzi)
+						'SELECT count(*) FROM gualini.pezzo WHERE quartina_ID_QUARTINA = "010071050005.BATH058";
+						'If ret &lt;&gt; 0 Then
+
+						'End If
+
 						If Not [R1_DATI_PEZZO:ULTIMO_PEZZO] Then
 							StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
 						Else
@@ -760,7 +783,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					LogMsg "StatoCicloCarico = 8100	'ResetDatiPezzoMissione"
 
 					'###TODO	SIMULAZIONE
-					'###CANCELLA x TEST
+					'###CANCELLA DOPO TEST
 					'#################################################################################
 					If [R1_STATUS:PZ_DA_QUADRA] = 1 Then
 						[Q1_In:PezzoPronto] = False
@@ -789,6 +812,34 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
 
 					StatoCicloCarico = 1000	'AttesaPezzi
+
+				Case 9100	'ErroreMissioneRobot
+					LogMsg "StatoCicloCarico = 9100	'ErroreMissioneRobot"
+					[R1_STATUS:ERR_MISSIONE_ACK] = True 'invio ack
+
+					stepTout = Timer()
+					StatoCicloCarico = 9150	'AttesaErroreMissioneRobotAck_reset
+
+
+				Case 9150	'AttesaErroreMissioneRobotAck_reset
+					LogMsg "StatoCicloCarico =9150	'AttesaErroreMissioneRobotAck_reset"
+					If SuperatoTimeout(stepTout, TOUT_STEP) Then
+						alm_Step_ToutR1_9150 = True
+						'dopo aver alzato allarme vado comunque avanti per finire il ciclo, tanto gli step rimanenti non riguardano il robot
+						[R1_STATUS:ERR_MISSIONE_ACK] =False
+						'segnalo all'estrattore che ho depositato il pezzo
+						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+						StatoCicloCarico = 8100	'ResetDatiPezzoMissione
+					End If
+					If [R1_STATUS:ERR_MISSIONE] = False Then
+						[R1_STATUS:ERR_MISSIONE_ACK] =False
+						alm_Step_ToutR1_9150 = False
+						'segnalo all'estrattore che ho depositato il pezzo
+						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+						StatoCicloCarico = 8100	'ResetDatiPezzoMissione
+					End If
 
 				Case Else
 					LogMsg("Main() -&gt; Case StatoCicloCarico Else; StatoCicloCarico = " &amp; CStr(StatoCicloCarico))
@@ -2128,10 +2179,8 @@ End Function
 
 Function FineRobot(connectionString As String) As Integer
 	'operazioni da fare nella function
+	'inserire o aggiornare i dati della quartina nel DB
 	'inserire i dati del pezzo nel DB
-	'se ultimo pezzo della quartina faccio rientrare l'estrattore
-	'resettare i valori dei membri che identificano il pezzo
-	'reset dei dati di missione
 
     Dim commandText As String
     Dim commandText2 As String
@@ -3048,8 +3097,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCyANAH
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiC1ADQDPQNFCA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

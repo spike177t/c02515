@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1886" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="17542" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -45,7 +45,7 @@ Dim codaMAG1_ES2 As New System.Collections.Queue()
 Dim codaMAG2_ES2 As New System.Collections.Queue()
 
 Sub Main()
-	Dim ValutaProssimaCondizione As Boolean 'serve per valutare le condiziioni delllo stato Attesa
+	Dim ValutaProssimaCondizione As Boolean 'serve per valutare le condizioni dello stato Attesa
 
 	Dim rikDaMagazzino As Integer
 	Dim POSIZIONE As PosQuartina
@@ -74,7 +74,7 @@ Sub Main()
 	enableLogMsg = True
 
     If StatoCicloScarico &lt; 100 Then
-		StatoCicloScarico = 100
+		StatoCicloScarico = 1000
     End If
     If StatoCicloScarico &lt;&gt; 1000 Then
     	retMsgBox = MsgBox("Attenzione: StatoCicloScarico = " &amp; CStr(StatoCicloScarico) &amp; "!" &amp; vbCrLf &amp; "Resettare?", vbYesNo, "Attenzione")
@@ -176,6 +176,21 @@ Sub Main()
 						ValutaProssimaCondizione = False
 						LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneFineRobot = True -&gt; next StatoCicloScarico = 6100	'FineRobot"
 						StatoCicloScarico = 6100	'FineRobot
+					End If
+
+					'condizione per ErroreRobotR2
+					'uso i campi di R2_STATUS (MAGAZZINO, CASSETTO, ID_QUARTINA) per tener traccia di aver già gestito il fineRobot
+					'devo ricordare di mettere a zero questi campi dopo FineRobot
+					If ValutaProssimaCondizione _
+						And [R2_STATUS:ERR_MISSIONE] _
+						And [R2_STATUS:MAGAZZINO] &gt; 0 _
+						And [R2_STATUS:CASSETTO] &gt; 0 _
+						And [R2_STATUS:ID_QUARTINA] &lt;&gt; "" _
+						Then
+
+						ValutaProssimaCondizione = False
+						LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneErroreRobotR2 = True -&gt; next StatoCicloScarico = 9100	'ErroreRobotR2"
+						StatoCicloScarico = 9100	'ErroreRobotR2
 					End If
 
 
@@ -408,6 +423,92 @@ Sub Main()
 					If [R2_STATUS:FINE_MISSIONE] = False Then
 						[R2_STATUS:FINE_MISSIONE_ACK] =False
 						alm_Step_ToutR2_6700 = False
+						StatoCicloScarico = 1000	'Attesa
+					End If
+
+				Case 9100	'ErroreMissioneRobot
+					LogMsg "StatoCicloScarico = 9100	'ErroreMissioneRobot"
+
+					'elimino quartina dal DB
+					ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
+					If ret &lt;&gt; 0 Then
+						'Alzo allarme
+						alm_FineRobotR2 = True
+						'StatoCicloScarico = 1000	'Attesa
+					Else
+						'segnalo all'estrattore che ho depositato il pezzo
+						varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
+						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+
+						'faccio richiesta di rientro estrattore
+						rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
+						rikEstrattore.ID_QUARTINA 				= ""
+						rikEstrattore.NOME_PEZZO_UNICO 			= ""
+						rikEstrattore.POSIZIONE 				= 0
+						rikEstrattore.DEPO						= False
+						rikEstrattore.PRONTO					= False
+						rikEstrattore.STROBE 					= True
+
+						'aggiungo richiesta a coda estrattore
+						If [R2_STATUS:MAGAZZINO] = 1  Then
+							strEstrattore =Serializza_stEstrattore(rikEstrattore)
+							DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+							'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							codaMAG1_ES2.Enqueue(strEstrattore)
+						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+							strEstrattore =Serializza_stEstrattore(rikEstrattore)
+							DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+							'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							codaMAG2_ES2.Enqueue(strEstrattore)
+
+						End If
+
+						'faccio reset dei membri pezzo
+						If     [R2_STATUS:MAGAZZINO] = 1  Then
+							ResetDatiMembriStruttura("SCAR_M1_PZ1")
+							ResetDatiMembriStruttura("SCAR_M1_PZ2")
+							ResetDatiMembriStruttura("SCAR_M1_PZ3")
+							ResetDatiMembriStruttura("SCAR_M1_PZ4")
+						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+							ResetDatiMembriStruttura("SCAR_M2_PZ1")
+							ResetDatiMembriStruttura("SCAR_M2_PZ2")
+							ResetDatiMembriStruttura("SCAR_M2_PZ3")
+							ResetDatiMembriStruttura("SCAR_M2_PZ4")
+						End If
+
+						'NON passo nessun dato all'Assemblatrice
+
+						'azzero le altre variabili
+						[R2_STATUS:MAGAZZINO] = 0
+						[R2_STATUS:CASSETTO] = 0
+						[R2_STATUS:ID_QUARTINA] = ""
+
+						'aggiorno cassetti pieni e disponibili
+					    AggiornaCassettiPieni(MysSqlConnectionString, 1)
+						AggiornaCassettiPieni(MysSqlConnectionString, 2)
+					    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
+						AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
+						AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
+						AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+
+						[R2_STATUS:FINE_MISSIONE_ACK] = True 'invio ack al robot
+						stepTout = Timer()
+						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
+					End If
+
+				Case 9150	'SetTimetAttesaFineMissione_false
+					stepTout = Timer()
+					StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
+
+				Case 9150	'AttesaFineMissioneAck_false
+					LogMsg "StatoCicloScarico = 9200	'AttesaFineMissioneAck_false"
+					If SuperatoTimeout(stepTout, TOUT_STEP) Then
+						alm_Step_ToutR2_9150 = True
+						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
+					End If
+					If [R2_STATUS:ERR_MISSIONE] = False Then
+						[R2_STATUS:ERR_MISSIONE_ACK] =False
+						alm_Step_ToutR2_9150 = False
 						StatoCicloScarico = 1000	'Attesa
 					End If
 
@@ -747,9 +848,7 @@ End Function
 Function FineRobot(connectionString As String, quartina As String) As Integer
 	'operazioni da fare nella function
 	'eliminare i dati del pezzo dal DB
-	'se ultimo pezzo della quartina faccio rientrare l'estrattore
-	'resettare i valori dei membri che identificano il pezzo
-	'reset dei dati di missione
+
 
     Dim commandText As String
     Dim excp As Boolean
@@ -760,7 +859,7 @@ Function FineRobot(connectionString As String, quartina As String) As Integer
 
     FineRobot = ERR_GENERICO	'inizializzzo a ERR_GENERICO
 
-	'devo inserire i dati del pezzo nel DB
+	'devo eliminare i dati del pezzo dal DB
 	excp = False
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
