@@ -951,12 +951,21 @@
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
+<Tag variable="R1_STATUS:RESET" type="0" offset="0" size="1">R1_STATUS:RESET</Tag>
+</TagList>
+<TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R1_STATUS.RESET"/>
+</Job>
+<Job>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 107</Name>
+<VariableList/>
+<TotalJobSize>1</TotalJobSize>
+<TagList>
 <Tag variable="R1_STATUS:RIK_MISSIONE" type="0" offset="0" size="1">R1_STATUS:RIK_MISSIONE</Tag>
 </TagList>
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R1_STATUS.RIK_MISSIONE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 107</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 108</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -965,7 +974,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.CASSETTO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 108</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 109</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -974,7 +983,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.DISPONIBILE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 109</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 110</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -983,7 +992,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.ERR_MISSIONE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 110</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 111</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -992,7 +1001,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.ERR_MISSIONE_ACK"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 111</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 112</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1001,7 +1010,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.FINE_MISSIONE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 112</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 113</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1010,7 +1019,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.FINE_MISSIONE_ACK"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 113</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 114</Name>
 <VariableList/>
 <TotalJobSize>46</TotalJobSize>
 <TagList>
@@ -1019,7 +1028,7 @@
 <TwinCatJob DataLength="46" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.ID_QUARTINA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 114</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 115</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1028,7 +1037,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.IN_MISSIONE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 115</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 116</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1037,7 +1046,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.MAGAZZINO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 116</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 117</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1046,7 +1055,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.NUOVA_MISSIONE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 117</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 118</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1055,7 +1064,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.POSIZIONE_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 118</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 119</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1064,7 +1073,16 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.PZ_DA_QUADRA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 119</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 120</Name>
+<VariableList/>
+<TotalJobSize>1</TotalJobSize>
+<TagList>
+<Tag variable="R2_STATUS:RESET" type="0" offset="0" size="1">R2_STATUS:RESET</Tag>
+</TagList>
+<TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.RESET"/>
+</Job>
+<Job>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 121</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1073,7 +1091,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".R2_STATUS.RIK_MISSIONE"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 120</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 122</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1082,7 +1100,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.CASSETTO_ASSEGNATO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 121</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 123</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1091,7 +1109,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.MAX_LUNGHEZZA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 122</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 124</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1100,7 +1118,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.NUM_SQUADRETTE1"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 123</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 125</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1109,7 +1127,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.NUM_SQUADRETTE2"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 124</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 126</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1118,7 +1136,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_APERTURA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 125</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 127</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1127,7 +1145,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_ATTREZZATURA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 126</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 128</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1136,7 +1154,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_BANCO_SQ1"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 127</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 129</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1145,7 +1163,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_BANCO_SQ2"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 128</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 130</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1154,7 +1172,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 129</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 131</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1163,7 +1181,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_FILA_SQ1"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 130</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 132</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1172,7 +1190,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_FILA_SQ2"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 131</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 133</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1181,7 +1199,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 132</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 134</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1190,7 +1208,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ2.MAX_LUNGHEZZA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 133</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 135</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1199,7 +1217,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ2.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 134</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 136</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1208,7 +1226,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ2.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 135</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 137</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1217,7 +1235,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ3.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 136</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 138</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1226,7 +1244,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ3.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 137</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 139</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1235,7 +1253,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ4.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 138</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 140</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1244,7 +1262,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ4.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 139</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 141</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1253,7 +1271,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.MAX_LUNGHEZZA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 140</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 142</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1262,7 +1280,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.NUM_SQUADRETTE1"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 141</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 143</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1271,7 +1289,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.NUM_SQUADRETTE2"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 142</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 144</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1280,7 +1298,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_APERTURA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 143</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 145</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1289,7 +1307,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_ATTREZZATURA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 144</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 146</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1298,7 +1316,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_BANCO_SQ1"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 145</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 147</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1307,7 +1325,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_BANCO_SQ2"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 146</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 148</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1316,7 +1334,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 147</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 149</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1325,7 +1343,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_FILA_SQ1"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 148</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 150</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1334,7 +1352,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_FILA_SQ2"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 149</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 151</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1343,7 +1361,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 150</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 152</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1352,7 +1370,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ2.MAX_LUNGHEZZA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 151</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 153</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1361,7 +1379,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ2.MISURA_CAMERA_ESTERNA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 152</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 154</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1370,7 +1388,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ2.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 153</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 155</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1379,7 +1397,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ2.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 154</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 156</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1388,7 +1406,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ3.MAX_LUNGHEZZA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 155</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 157</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1397,7 +1415,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ3.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 156</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 158</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1406,7 +1424,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ3.R2_RUOTA_PEZZO"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 157</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 159</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1415,7 +1433,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ4.MAX_LUNGHEZZA"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 158</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 160</Name>
 <VariableList/>
 <TotalJobSize>2</TotalJobSize>
 <TagList>
@@ -1424,7 +1442,7 @@
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ4.R2_CODICE_PRG"/>
 </Job>
 <Job>
-<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 159</Name>
+<Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 161</Name>
 <VariableList/>
 <TotalJobSize>1</TotalJobSize>
 <TagList>
@@ -1855,220 +1873,228 @@
 <JobName>DynTask 105</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R1_STATUS.RIK_MISSIONE</KeyName>
+<KeyName>PlcJ1A-1S.R1_STATUS.RESET</KeyName>
 <JobName>DynTask 106</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.CASSETTO</KeyName>
+<KeyName>PlcJ1A-1S.R1_STATUS.RIK_MISSIONE</KeyName>
 <JobName>DynTask 107</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.DISPONIBILE</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.CASSETTO</KeyName>
 <JobName>DynTask 108</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.ERR_MISSIONE</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.DISPONIBILE</KeyName>
 <JobName>DynTask 109</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.ERR_MISSIONE_ACK</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.ERR_MISSIONE</KeyName>
 <JobName>DynTask 110</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.FINE_MISSIONE</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.ERR_MISSIONE_ACK</KeyName>
 <JobName>DynTask 111</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.FINE_MISSIONE_ACK</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.FINE_MISSIONE</KeyName>
 <JobName>DynTask 112</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.ID_QUARTINA</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.FINE_MISSIONE_ACK</KeyName>
 <JobName>DynTask 113</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.IN_MISSIONE</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.ID_QUARTINA</KeyName>
 <JobName>DynTask 114</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.MAGAZZINO</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.IN_MISSIONE</KeyName>
 <JobName>DynTask 115</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.NUOVA_MISSIONE</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.MAGAZZINO</KeyName>
 <JobName>DynTask 116</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.POSIZIONE_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.NUOVA_MISSIONE</KeyName>
 <JobName>DynTask 117</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.PZ_DA_QUADRA</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.POSIZIONE_PEZZO</KeyName>
 <JobName>DynTask 118</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.R2_STATUS.RIK_MISSIONE</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.PZ_DA_QUADRA</KeyName>
 <JobName>DynTask 119</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.CASSETTO_ASSEGNATO</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.RESET</KeyName>
 <JobName>DynTask 120</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.MAX_LUNGHEZZA</KeyName>
+<KeyName>PlcJ1A-1S.R2_STATUS.RIK_MISSIONE</KeyName>
 <JobName>DynTask 121</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.NUM_SQUADRETTE1</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.CASSETTO_ASSEGNATO</KeyName>
 <JobName>DynTask 122</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.NUM_SQUADRETTE2</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.MAX_LUNGHEZZA</KeyName>
 <JobName>DynTask 123</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_APERTURA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.NUM_SQUADRETTE1</KeyName>
 <JobName>DynTask 124</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_ATTREZZATURA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.NUM_SQUADRETTE2</KeyName>
 <JobName>DynTask 125</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_BANCO_SQ1</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_APERTURA</KeyName>
 <JobName>DynTask 126</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_BANCO_SQ2</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_ATTREZZATURA</KeyName>
 <JobName>DynTask 127</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_BANCO_SQ1</KeyName>
 <JobName>DynTask 128</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_FILA_SQ1</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_BANCO_SQ2</KeyName>
 <JobName>DynTask 129</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_FILA_SQ2</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 130</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_FILA_SQ1</KeyName>
 <JobName>DynTask 131</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ2.MAX_LUNGHEZZA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_FILA_SQ2</KeyName>
 <JobName>DynTask 132</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ2.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ1.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 133</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ2.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ2.MAX_LUNGHEZZA</KeyName>
 <JobName>DynTask 134</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ3.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ2.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 135</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ3.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ2.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 136</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ4.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ3.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 137</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M1_PZ4.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ3.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 138</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.MAX_LUNGHEZZA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ4.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 139</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.NUM_SQUADRETTE1</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M1_PZ4.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 140</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.NUM_SQUADRETTE2</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.MAX_LUNGHEZZA</KeyName>
 <JobName>DynTask 141</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_APERTURA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.NUM_SQUADRETTE1</KeyName>
 <JobName>DynTask 142</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_ATTREZZATURA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.NUM_SQUADRETTE2</KeyName>
 <JobName>DynTask 143</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_BANCO_SQ1</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_APERTURA</KeyName>
 <JobName>DynTask 144</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_BANCO_SQ2</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_ATTREZZATURA</KeyName>
 <JobName>DynTask 145</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_BANCO_SQ1</KeyName>
 <JobName>DynTask 146</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_FILA_SQ1</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_BANCO_SQ2</KeyName>
 <JobName>DynTask 147</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_FILA_SQ2</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 148</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_FILA_SQ1</KeyName>
 <JobName>DynTask 149</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.MAX_LUNGHEZZA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_FILA_SQ2</KeyName>
 <JobName>DynTask 150</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.MISURA_CAMERA_ESTERNA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ1.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 151</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.MAX_LUNGHEZZA</KeyName>
 <JobName>DynTask 152</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.MISURA_CAMERA_ESTERNA</KeyName>
 <JobName>DynTask 153</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ3.MAX_LUNGHEZZA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 154</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ3.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ2.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 155</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ3.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ3.MAX_LUNGHEZZA</KeyName>
 <JobName>DynTask 156</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ4.MAX_LUNGHEZZA</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ3.R2_CODICE_PRG</KeyName>
 <JobName>DynTask 157</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ4.R2_CODICE_PRG</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ3.R2_RUOTA_PEZZO</KeyName>
 <JobName>DynTask 158</JobName>
 </DynKey>
 <DynKey>
-<KeyName>PlcJ1A-1S.SCAR_M2_PZ4.R2_RUOTA_PEZZO</KeyName>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ4.MAX_LUNGHEZZA</KeyName>
 <JobName>DynTask 159</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ4.R2_CODICE_PRG</KeyName>
+<JobName>DynTask 160</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PlcJ1A-1S.SCAR_M2_PZ4.R2_RUOTA_PEZZO</KeyName>
+<JobName>DynTask 161</JobName>
 </DynKey>
 </DynamicJobMap>
 </DriverSettings>

@@ -32,7 +32,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">R2_STATUS</Name>
+<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="21" Shared="0" Retentive="0">R2_STATUS</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -144,7 +144,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">R1_STATUS</Name>
+<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="21" Shared="0" Retentive="0">R1_STATUS</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -207,14 +207,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_9150</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="pezzo presente su Quadra 2" Shared="0" Retentive="0">Q2_PEZZO_DISP</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="pezzo presente su Quadra 2" Shared="0" Retentive="0">Q2_PEZZO_DISP</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_9150</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -466,6 +466,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_FlipFlop</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -544,6 +551,20 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_ConfigError_Q1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_ConfigError_Q2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -821,6 +842,56 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">DatiRobotStruct</Name>
+<MemberList>
+<Member>
+<Name Type="0">DISPONIBILE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="4">PZ_DA_QUADRA</Name>
+</Member>
+<Member>
+<Name Type="4">MAGAZZINO</Name>
+</Member>
+<Member>
+<Name Type="4">CASSETTO</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4">POSIZIONE_PEZZO</Name>
+</Member>
+<Member>
+<Name Type="0">NUOVA_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">IN_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0">RESET</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="dati provenienti dalle quadre">QuadraStruct</Name>
 <MemberList>
 <Member>
@@ -960,53 +1031,6 @@
 </Member>
 <Member>
 <Name Type="4" Description="numero di profili Z nella quartina">R2_COUNT_Z</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">DatiRobotStruct</Name>
-<MemberList>
-<Member>
-<Name Type="0">DISPONIBILE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="4">PZ_DA_QUADRA</Name>
-</Member>
-<Member>
-<Name Type="4">MAGAZZINO</Name>
-</Member>
-<Member>
-<Name Type="4">CASSETTO</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
-</Member>
-<Member>
-<Name Type="4">POSIZIONE_PEZZO</Name>
-</Member>
-<Member>
-<Name Type="0">NUOVA_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">IN_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE_ACK</Name>
 </Member>
 </MemberList>
 </Structure>

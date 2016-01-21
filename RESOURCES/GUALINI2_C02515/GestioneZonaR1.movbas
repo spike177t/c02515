@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="5392" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="109957" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -41,7 +41,7 @@ Public Structure stEstrattore
 End Structure
 
 'TODO settare bene TOUT
-Const TOUT_DISPONIBILE 	As Integer 	= 1 'in secondi
+Const TOUT_DISPONIBILE 	As Integer 	= 2 'in secondi - TODO settare a 1
 Const TOUT_STEP			As Integer	= 2000 '2 'in secondi
 
 'Dim codaMAG1_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
@@ -167,6 +167,7 @@ Sub Main()
 	Dim valVerificaAttendiCassettoDisponibile As Integer
 
 	Dim filepresente As Boolean
+	Dim fileConfigIsOk As Boolean
 
 	Dim stepTout As Double
 
@@ -389,7 +390,49 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					If (leggiDaQuadra &gt; 0) Then
 						'leggo le info del pezzo da file fornito dalla quadra
 						varname_pezzo = LeggiFileDaQuadra(leggiDaQuadra)
+						ret = VerificaCogruenzaDati(MysSqlConnectionString _
+													, GetVariableValue(varname_pezzo &amp; ":SERIE_PROFILO") _
+													, GetVariableValue(varname_pezzo &amp; ":CODICE_PROFILO") _
+													, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA1") _
+													, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA2") _
+													, fileConfigIsOk _
+								)
+						If ret &lt;&gt; 0 Then
+							LogMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra -&gt; ERRORE VerificaCogruenzaDati,  codice: " &amp; CStr(ret)
 
+							'TODO qui alzare allarme o StatoCicloCarico = xxxxx per andare in valore diverso
+
+							ResetDatiMembriStruttura(varname_pezzo)
+							StatoCicloCarico = 1000	'AttesaPezzi
+							GoTo FineCase2100
+						End If
+
+						If Not fileConfigIsOk Then
+							'alzo allarme
+							Select Case leggiDaQuadra
+							Case 1
+								alm_R1_ConfigError_Q1 = True
+								'resetto subito i dati letti
+								ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+							Case 2
+								alm_R1_ConfigError_Q2 = True
+								'resetto subito i dati letti
+								ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+							End Select
+
+							'chiedo se operatore vuole rimuovere automaticamente il file
+							Dim configNotOkMsg As String
+							configNotOkMsg ="Allarme Configurazione NON VALIDA in File Da Quadra " &amp; CStr(leggiDaQuadra) &amp; vbCrLf _
+										&amp; "Vuoi rimuovere automaticamente il file dati dalla quadra?" &amp; vbCrLf  &amp; vbCrLf
+
+							If MsgBox(configNotOkMsg, vbYesNo, "Allarme Pezzo Duplicato") = vbYes Then
+								EliminaFileDatiPezzoDuplicato(filepathMemo)
+							End If
+
+							StatoCicloCarico = 1000	'AttesaPezzi
+							GoTo FineCase2100
+
+						End If
 						'controllo se il pezzo è presente nel DB
 						Dim pzPresente As Boolean
 						pzPresente = False
@@ -398,7 +441,10 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 													, pzPresente)
 						If ret &lt;&gt; 0 Then
 							LogMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra -&gt; ERRORE VerificaEsistePezzo,  codice: " &amp; CStr(ret)
+
 							'TODO qui alzare allarme o StatoCicloCarico = xxxxx per andare in valore diverso
+
+							ResetDatiMembriStruttura(varname_pezzo)
 							StatoCicloCarico = 1000	'AttesaPezzi
 							GoTo FineCase2100
 						End If
@@ -408,8 +454,12 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 							Select Case leggiDaQuadra
 							Case 1
 								alm_R1_PezzoDuplicato_Q1 = True
+								'resetto subito i dati letti
+								ResetDatiMembriStruttura("Q1_PEZZO_DISP")
 							Case 2
 								alm_R1_PezzoDuplicato_Q2 = True
+								'resetto subito i dati letti
+								ResetDatiMembriStruttura("Q2_PEZZO_DISP")
 							End Select
 
 							'chiedo se operatore vuole rimuovere automaticamente il file
@@ -417,7 +467,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 							pzDupMsg ="Allarme Pezzo duplicato da quadra " &amp; CStr(leggiDaQuadra) &amp; vbCrLf _
 										&amp; "Vuoi rimuovere automaticamente il file dati dalla quadra?" &amp; vbCrLf  &amp; vbCrLf _
 										&amp; "Se si verificare anche la fotocellula di presenza pezzo sulla quadra."
-							If MsgBox(pzDupMsg, vbCritical, "Allarme Pezzo Duplicato") = vbOK Then
+							If MsgBox(pzDupMsg, vbYesNo, "Allarme Pezzo Duplicato") = vbYes Then
 								EliminaFileDatiPezzoDuplicato(filepathMemo)
 							End If
 
@@ -1753,6 +1803,159 @@ Function VerificaEsistePezzo(connectionString As String, nomePzUnico As String, 
 
 End Function
 
+Function VerificaCogruenzaDati(connectionString As String, serieprofilo As String, codprofilo As String, codsq1 As String, codsq2 As String, ByRef configOk As Boolean) As Integer
+	VerificaCogruenzaDati = 0 	'inizializzo
+
+    Dim commandText As String
+    Dim countCodRbt As Integer
+	Dim countCodSq1 As Integer
+	Dim countCodSq2 As Integer
+
+	Dim okCodRbt As Boolean
+	Dim okCodSq1 As Boolean
+	Dim okCodSq2 As Boolean
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+			'SELECT count(*) FROM gualini.r2_codiciprofili where SerieProfilo ="AWS65" AND CodiceProfilo = "363890"
+            commandText = "SELECT COUNT(*) AS COUNT_PROFILO " &amp; _
+                      	" FROM  `gualini`.`r2_codiciprofili` " &amp; _
+            			" WHERE SerieProfilo = """ &amp; serieprofilo &amp; """" &amp; _
+						" AND CodiceProfilo = """ &amp; codprofilo &amp; """" &amp; _
+						";"
+
+            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodRbt commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						countCodRbt =  MyDataReader("COUNT_PROFILO")
+					Else
+						countCodRbt = 0
+					End If
+
+					MyDataReader.Close
+
+				'End Using	'MyDataReader.Close
+
+					'####SQ1
+								'SELECT count(*) FROM `gualini`.`r2_banchi_squadrette` where CodiceSquadretta = "230A";
+		            commandText = "SELECT COUNT(*) AS COUNT_SQ1 " &amp; _
+		                      	" FROM  `gualini`.`r2_banchi_squadrette` " &amp; _
+		            			" WHERE CodiceSquadretta = """ &amp; codsq1 &amp; """" &amp; _
+								";"
+
+		            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodSq1 commandText = " &amp; commandText
+
+
+					MyCommand.Connection = MyConnection
+		            MyCommand.CommandText = commandText
+
+				'Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+						countCodSq1 =  MyDataReader("COUNT_SQ1")
+					Else
+						countCodSq1 = 0
+					End If
+
+					MyDataReader.Close
+
+				'End Using	'MyDataReader.Close
+			'End Using	'MyCommand.Dispose
+
+					'####SQ2
+					'SELECT count(*) FROM `gualini`.`r2_banchi_squadrette` where CodiceSquadretta = "230A";
+		            commandText = "SELECT COUNT(*) AS COUNT_SQ2 " &amp; _
+		                      	" FROM  `gualini`.`r2_banchi_squadrette` " &amp; _
+		            			" WHERE CodiceSquadretta = """ &amp; codsq2 &amp; """" &amp; _
+								";"
+
+		            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodSq2 commandText = " &amp; commandText
+
+		            'Using MyCommand As New OdbcCommand()
+
+						MyCommand.Connection = MyConnection
+			            MyCommand.CommandText = commandText
+
+						'Using MyDataReader As OdbcDataReader
+							MyDataReader = MyCommand.ExecuteReader
+
+							If MyDataReader.HasRows Then
+								MyDataReader.Read
+								countCodSq2 =  MyDataReader("COUNT_SQ2")
+							Else
+								countCodSq2 = 0
+							End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+       	okCodRbt = IIf(countCodRbt &gt; 0, True, False)
+
+		If codsq1 = "" Or codsq1 = "0" Or codsq1 = " " Then
+			okCodSq1 = True
+		Else
+			okCodSq1 = IIf(countCodSq1 &gt; 0, True, False)
+		End If
+		If codsq2 = "" Or codsq2 = "0" Or codsq2 = " " Then
+			okCodSq2 = True
+		Else
+			okCodSq2 = IIf(countCodSq2 &gt; 0, True, False)
+		End If
+
+
+		configOk = okCodRbt And okCodSq1 And okCodSq2
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" VerificaCogruenzaDati() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		VerificaCogruenzaDati = ERR_GENERIC_EXCEPION 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("VerificaCogruenzaDati() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		VerificaCogruenzaDati = ERR_ODBC_EXCEPTION 'torno errore
+		Exit Function
+    End Try
+
+End Function
+
 Sub EliminaFileDatiPezzoDuplicato(nomeFileFull As String)
 	'guardo il file esiste
 	Try
@@ -1885,47 +2088,11 @@ Function transizioneAttendiCassettoDisponibile() As Integer
 	If tout Then
 		disponibileLastCheck = Timer
 		'LogMsg("AttendiCassettoDisponibile() -&gt; tout at : " &amp; CStr(disponibileLastCheck))
+
 		transizioneAttendiCassettoDisponibile = AttendiCassettoDisponibile()
 	Else
 		transizioneAttendiCassettoDisponibile = 0 'esco
 		Exit Function
-	End If
-
-End Function
-
-
-Function transizioneAttendiCassettoDisponibile_OLD() As Integer
-	transizioneAttendiCassettoDisponibile_OLD = 0
-	Dim dispQ1 As Boolean
-	Dim dispQ2 As Boolean
-	Dim tout As Boolean
-
-	tout = SuperatoTimeout(disponibileLastCheck, TOUT_DISPONIBILE)
-	If tout Then
-		disponibileLastCheck = Timer
-	Else
-		transizioneAttendiCassettoDisponibile_OLD = 0
-		Exit Function
-	End If
-
-	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Timer()-lastcheck &gt; TIMEOUT)
-	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
-	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And tout
-
-	If dispQ1 And dispQ2 Then
-		transizioneAttendiCassettoDisponibile_OLD = PezzoPiuVecchio()
-		'devo verificare se il pezzo più vecchio è gestibile, ovvero se ho cassetti liberi nel magazzino o se è tutto pieno
-		'TODO ##################################
-
-	Else
-		'ho solo un pezzo pronto o nessuno
-		If dispQ1 Then
-			transizioneAttendiCassettoDisponibile_OLD = 1
-		End If
-		If dispQ2 Then
-			transizioneAttendiCassettoDisponibile_OLD = 2
-		End If
-		'se nessun cassetto disponibile transizioneAttendiCassettoDisponibile = 0
 	End If
 
 End Function
@@ -1997,58 +2164,6 @@ Function AttendiCassettoDisponibile() As Integer
 		End If
 		If assegnabileQ2 Then
 			AttendiCassettoDisponibile = 2
-		End If
-	End If
-
-End Function
-
-Function AttendiCassettoDisponibile_OLD() As Integer
-	'questa funzione torna 0 se non posso assegnare nessun cassetto alla quartina perche magazziono di riferimento è pieno
-	'torna 1 o 2 se posso assegnare un cassetto (il magazzionio di riferimento dipende da TipoCarico) al pezzo che proviente dalla quadra 1 o 2
-	AttendiCassettoDisponibile_OLD = 0
-	Dim dispQ1 As Boolean
-	Dim dispQ2 As Boolean
-	Dim quadraPezzoDaAssegnare As Integer	'num quadra del pezzo da assegnare
-	Dim numCassettiDisp As Integer
-
-
-	'[Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0 And (Timer()-lastcheck &gt; TIMEOUT)
-	'tout è già stato contato in transizioneAttendiCassettoDisponibile()
-
-	dispQ1 = [Q1_In:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q1_PEZZO_DISP:CASSETTO_ASSEGNATO]=0
-	dispQ2 = [Q2_In:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] &lt;&gt;"" And [Q2_PEZZO_DISP:CASSETTO_ASSEGNATO]=0
-
-	If dispQ1 And dispQ2 Then
-		quadraPezzoDaAssegnare = PezzoPiuVecchio()
-	Else
-		'ho solo un pezzo pronto o nessuno
-		If dispQ1 Then
-			quadraPezzoDaAssegnare = 1
-		End If
-		If dispQ2 Then
-			quadraPezzoDaAssegnare = 2
-		End If
-		'se nessun cassetto disponibile quadraPezzoDaAssegnare = 0
-	End If
-
-	'in base al valore di TipoCarico guardo se ho un cassetto libero
-	If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
-		'QuadraSuMagazzinoCorrispondente
-		numCassettiDisp = CassettiDisponibili(quadraPezzoDaAssegnare, MysSqlConnectionString)
-		If numCassettiDisp &gt; 0 Then
-			'posso assegnare una quartina al pezzo che proviene dalla quadra memorizzata in quadraPezzoDaAssegnare
-			AttendiCassettoDisponibile_OLD = quadraPezzoDaAssegnare
-		Else
-			AttendiCassettoDisponibile_OLD = 0	'non posso assegnare il cassetto
-		End If
-	Else
-		'QuadraSuTutto
-		numCassettiDisp = CassettiDisponibili(0, MysSqlConnectionString)
-		If numCassettiDisp &gt; 0 Then
-			'anche in questo caso posso assegnare una quartina al pezzo che proviene dalla quadra memorizzata in quadraPezzoDaAssegnare
-			AttendiCassettoDisponibile_OLD = quadraPezzoDaAssegnare
-		Else
-			AttendiCassettoDisponibile_OLD = 0	'non posso assegnare il cassetto
 		End If
 	End If
 
@@ -3097,7 +3212,8 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiC1ADQDPQNFCA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiC2AGYDbwMZB7gI
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
