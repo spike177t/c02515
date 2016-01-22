@@ -11,196 +11,35 @@
 <RealTimeODBCSettings RecycleDBConnection="1" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" Dsn="" User="" DefVarCharPrecision="255" TableName="" NameCol="" ValueCol="" MinValueCol="" MaxValueCol="" AveValueCol="" TotalTimeCol="" LastTimeOnCol=""/>
 <VariableList>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_MancaFile</Name>
+<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q1_In</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico_Old</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[50]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[50]|Typ=11">Plc_ar_allarmi_50</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_RIK</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[51]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[51]|Typ=11">Plc_ar_allarmi_51</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="21" Shared="0" Retentive="0">R2_STATUS</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[52]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[52]|Typ=11">Plc_ar_allarmi_52</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q1_path</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Bit presenza Allarmi" Group="ALLARMI" Shared="0" Retentive="0">alm_Presenti</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScript1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_M1_ES2_ErrDatiDaDB</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">AutoRun</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="SettingsStruct" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">loc_Settings</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="10" Shared="0" Retentive="0">Q1_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">aaa_var001</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="3" Shared="0" Retentive="0">Assemblatrice_Stato</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="44" Shared="0" Retentive="0">Assemblatrice_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R1_txt</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES2_ACT_OLD</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="21" Shared="0" Retentive="0">R1_STATUS</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_MancaFile</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="34" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR1_4200</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG1_ES1_CountCoda</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_InCiclo</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[53]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[53]|Typ=11">Plc_ar_allarmi_53</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -214,230 +53,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_9150</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC_txt</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Description="MAG2 Estrattore Manuale" Shared="0" Retentive="0" InitQuality="8">MAG2_ES3_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG2_ES3_ACT_OLD</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ3</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ResetAll</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q1_In</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ4</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG1_ES2_CountCoda</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="uso per comodità questa var per memorizzare tutti i dati  del pezzo  in carico al Robot" Shared="0" Retentive="1">R1_DATI_PEZZO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG2_ES1_CountCoda</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q2_PEZZO_PRONTO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q2_path</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_In</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_OK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC_txt</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES3_ACT</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_PEZZO_PRONTO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="se ho commessa esclusiva che non torna nessun valore allorra segnalo un messaggio" Group="MESSAGGI" Shared="0" Retentive="0">msg_AlertCommessaEsclusiva_nessuno</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ3</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ4</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoPronto</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES1_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Description="MAG1 dati estrattore manuale" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_RIK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG2_ES2_ACT_OLD</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -445,84 +60,42 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_4200</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[54]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[54]|Typ=11">Plc_ar_allarmi_54</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_M2_ES2_ErrDatiDaDB</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[55]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[55]|Typ=11">Plc_ar_allarmi_55</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_ACT</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[56]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[56]|Typ=11">Plc_ar_allarmi_56</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_FlipFlop</Name>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">Plc_Stato</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_PezzoDuplicato_Q1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoSbloccato</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_PezzoDuplicato_Q2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inpNonInEmergenza</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q2_In</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico_Old</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG2_ES2_CountCoda</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[57]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[57]|Typ=11">Plc_ar_allarmi_57</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -536,14 +109,77 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR1_6150</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[58]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[58]|Typ=11">Plc_ar_allarmi_58</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR1</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[59]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[59]|Typ=11">Plc_ar_allarmi_59</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[100]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[100]|Typ=11">Plc_ar_allarmi_100</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_M2_ES2_ErrDatiDaDB</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_6700</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_PEZZO_PRONTO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES2_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG1_ES1_CountCoda</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC_txt</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -557,7 +193,819 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_ConfigError_Q1</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[10]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[10]|Typ=11">Plc_ar_allarmi_10</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Bit presenza Allarmi" Group="ALLARMI" Shared="0" Retentive="0">alm_Presenti</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[11]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[11]|Typ=11">Plc_ar_allarmi_11</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q2_PEZZO_PRONTO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[60]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[60]|Typ=11">Plc_ar_allarmi_60</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[12]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[12]|Typ=11">Plc_ar_allarmi_12</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraOutput" AreaType="1" Address="0" Bit="10" Shared="0" Retentive="0">Q1_Out</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[61]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[61]|Typ=11">Plc_ar_allarmi_61</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[13]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[13]|Typ=11">Plc_ar_allarmi_13</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[62]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[62]|Typ=11">Plc_ar_allarmi_62</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[14]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[14]|Typ=11">Plc_ar_allarmi_14</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[63]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[63]|Typ=11">Plc_ar_allarmi_63</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[15]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[15]|Typ=11">Plc_ar_allarmi_15</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[64]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[64]|Typ=11">Plc_ar_allarmi_64</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[16]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[16]|Typ=11">Plc_ar_allarmi_16</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ3</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[65]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[65]|Typ=11">Plc_ar_allarmi_65</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[17]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[17]|Typ=11">Plc_ar_allarmi_17</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ4</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[66]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[66]|Typ=11">Plc_ar_allarmi_66</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[18]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[18]|Typ=11">Plc_ar_allarmi_18</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="21" Shared="0" Retentive="0">R1_STATUS</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[67]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[67]|Typ=11">Plc_ar_allarmi_67</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[19]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[19]|Typ=11">Plc_ar_allarmi_19</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[68]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[68]|Typ=11">Plc_ar_allarmi_68</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico_Old</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[69]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[69]|Typ=11">Plc_ar_allarmi_69</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R2_txt</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="INPUT_QUADRA" AreaType="1" Address="0" Bit="7" Description="Global Variable PLC_TRANSF_Q2_IN" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.PLC_TRANSF_Q2_IN|Typ=11">PLC_TRANSF_Q2_IN</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG1_ES2_CountCoda</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="OUTPUT_QUADRA" AreaType="1" Address="0" Bit="7" Description="Global Variable PLC_TRANSF_Q1_OUT" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.PLC_TRANSF_Q1_OUT|Typ=11">PLC_TRANSF_Q1_OUT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico_Old</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_numFilesIncoerente</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR1_4200</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES2_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q2_path</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[20]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[20]|Typ=11">Plc_ar_allarmi_20</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_PezzoDuplicato_Q1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[21]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[21]|Typ=11">Plc_ar_allarmi_21</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_PezzoDuplicato_Q2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[70]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[70]|Typ=11">Plc_ar_allarmi_70</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[22]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[22]|Typ=11">Plc_ar_allarmi_22</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="34" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="OUTPUT_ASSEMBLATRICE" AreaType="1" Address="0" Bit="14" Description="Global Variable PLC_TRANSF_ASSEMBLATRICE_OUT" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.PLC_TRANSF_ASSEMBLATRICE_OUT|Typ=11">PLC_TRANSF_ASSEMBLATRICE_OUT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[71]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[71]|Typ=11">Plc_ar_allarmi_71</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[23]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[23]|Typ=11">Plc_ar_allarmi_23</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG2_ES2_CountCoda</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[72]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[72]|Typ=11">Plc_ar_allarmi_72</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[24]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[24]|Typ=11">Plc_ar_allarmi_24</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[73]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[73]|Typ=11">Plc_ar_allarmi_73</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[25]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[25]|Typ=11">Plc_ar_allarmi_25</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[74]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[74]|Typ=11">Plc_ar_allarmi_74</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[26]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[26]|Typ=11">Plc_ar_allarmi_26</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[75]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[75]|Typ=11">Plc_ar_allarmi_75</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[27]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[27]|Typ=11">Plc_ar_allarmi_27</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES2_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[28]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[28]|Typ=11">Plc_ar_allarmi_28</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[76]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[76]|Typ=11">Plc_ar_allarmi_76</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_FlipFlop</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[29]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[29]|Typ=11">Plc_ar_allarmi_29</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[77]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[77]|Typ=11">Plc_ar_allarmi_77</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[78]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[78]|Typ=11">Plc_ar_allarmi_78</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiRobotStruct" AreaType="1" Address="0" Bit="21" Shared="0" Retentive="0">R2_STATUS</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES3_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[79]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[79]|Typ=11">Plc_ar_allarmi_79</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q2_In</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_M1_ES2_ErrDatiDaDB</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_9150</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES1_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC_txt</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[1]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[1]|Typ=11">Plc_ar_allarmi_1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoSbloccato</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[2]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[2]|Typ=11">Plc_ar_allarmi_2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[3]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[3]|Typ=11">Plc_ar_allarmi_3</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[4]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[4]|Typ=11">Plc_ar_allarmi_4</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[5]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[5]|Typ=11">Plc_ar_allarmi_5</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[6]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[6]|Typ=11">Plc_ar_allarmi_6</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[7]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[7]|Typ=11">Plc_ar_allarmi_7</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[8]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[8]|Typ=11">Plc_ar_allarmi_8</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[9]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[9]|Typ=11">Plc_ar_allarmi_9</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="uso per comodità questa var per memorizzare tutti i dati  del pezzo  in carico al Robot" Shared="0" Retentive="1">R1_DATI_PEZZO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[30]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[30]|Typ=11">Plc_ar_allarmi_30</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[31]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[31]|Typ=11">Plc_ar_allarmi_31</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[80]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[80]|Typ=11">Plc_ar_allarmi_80</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[32]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[32]|Typ=11">Plc_ar_allarmi_32</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[33]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[33]|Typ=11">Plc_ar_allarmi_33</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[81]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[81]|Typ=11">Plc_ar_allarmi_81</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[34]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[34]|Typ=11">Plc_ar_allarmi_34</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[82]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[82]|Typ=11">Plc_ar_allarmi_82</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[83]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[83]|Typ=11">Plc_ar_allarmi_83</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[35]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[35]|Typ=11">Plc_ar_allarmi_35</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR1_6150</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[84]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[84]|Typ=11">Plc_ar_allarmi_84</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[36]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[36]|Typ=11">Plc_ar_allarmi_36</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[85]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[85]|Typ=11">Plc_ar_allarmi_85</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[37]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[37]|Typ=11">Plc_ar_allarmi_37</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ3</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_OK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[86]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[86]|Typ=11">Plc_ar_allarmi_86</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[38]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[38]|Typ=11">Plc_ar_allarmi_38</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ4</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[87]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[87]|Typ=11">Plc_ar_allarmi_87</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[39]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[39]|Typ=11">Plc_ar_allarmi_39</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_MancaFile</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[88]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[88]|Typ=11">Plc_ar_allarmi_88</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[89]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[89]|Typ=11">Plc_ar_allarmi_89</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -571,35 +1019,35 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R1_txt</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Description="MAG2 Estrattore Manuale" Shared="0" Retentive="0" InitQuality="8">MAG2_ES3_RIK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_ConfigError_Q1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG2_ES1_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_ConfigError_Q2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScriptGestioneZonaR1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScriptGestioneZonaR2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_numFilesIncoerente</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES1_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -620,28 +1068,42 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="11" Shared="0" Retentive="0">MAG1_ES3_ACT_OLD</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Description="MAG1 dati estrattore manuale" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_RIK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_ACT</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES1_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_6700</Name>
+<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="44" Shared="0" Retentive="0">Assemblatrice_Out</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG2_ES1_ACT_OLD</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="se ho commessa esclusiva che non torna nessun valore allorra segnalo un messaggio" Group="MESSAGGI" Shared="0" Retentive="0">msg_AlertCommessaEsclusiva_nessuno</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q1_numFilesIncoerente</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Step_ToutR2_4200</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -655,14 +1117,301 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_numFilesIncoerente</Name>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[40]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[40]|Typ=11">Plc_ar_allarmi_40</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_StatoCiclo_R2_txt</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_MancaFile</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[41]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[41]|Typ=11">Plc_ar_allarmi_41</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_InCiclo</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inp_PezzoPronto</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[90]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[90]|Typ=11">Plc_ar_allarmi_90</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[42]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[42]|Typ=11">Plc_ar_allarmi_42</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[91]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[91]|Typ=11">Plc_ar_allarmi_91</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[43]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[43]|Typ=11">Plc_ar_allarmi_43</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[92]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[92]|Typ=11">Plc_ar_allarmi_92</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[44]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[44]|Typ=11">Plc_ar_allarmi_44</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="INPUT_QUADRA" AreaType="1" Address="0" Bit="7" Description="Global Variable PLC_TRANSF_Q1_IN" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.PLC_TRANSF_Q1_IN|Typ=11">PLC_TRANSF_Q1_IN</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[93]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[93]|Typ=11">Plc_ar_allarmi_93</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[45]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[45]|Typ=11">Plc_ar_allarmi_45</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[94]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[94]|Typ=11">Plc_ar_allarmi_94</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[46]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[46]|Typ=11">Plc_ar_allarmi_46</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[95]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[95]|Typ=11">Plc_ar_allarmi_95</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[47]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[47]|Typ=11">Plc_ar_allarmi_47</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[96]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[96]|Typ=11">Plc_ar_allarmi_96</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[48]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[48]|Typ=11">Plc_ar_allarmi_48</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG1_ES1_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[97]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[97]|Typ=11">Plc_ar_allarmi_97</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[49]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[49]|Typ=11">Plc_ar_allarmi_49</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[98]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[98]|Typ=11">Plc_ar_allarmi_98</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="ST_EVENT" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_allarmi[99]" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.ar_allarmi[99]|Typ=11">Plc_ar_allarmi_99</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_MAG2_ES1_CountCoda</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="SettingsStruct" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">loc_Settings</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ResetAll</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="3" Shared="0" Retentive="0">Assemblatrice_Stato</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_In</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="OUTPUT_QUADRA" AreaType="1" Address="0" Bit="7" Description="Global Variable PLC_TRANSF_Q2_OUT" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.PLC_TRANSF_Q2_OUT|Typ=11">PLC_TRANSF_Q2_OUT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">aaa_var001</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="CANCELLARE" Shared="0" Retentive="0">Q1_inpNonInEmergenza</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0">loc_Q1_path</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScriptGestioneZonaR1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScriptGestioneZonaR2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR2_ODBC</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG2_ES3_ACT_OLD</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0" InitQuality="8">MAG2_ES3_ACT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="11" StructType="INPUT_ASSEMBLATRICE" AreaType="1" Address="0" Bit="9" Description="Global Variable PLC_TRANSF_ASSEMBLATRICE_IN" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.PLC_TRANSF_ASSEMBLATRICE_IN|Typ=11">PLC_TRANSF_ASSEMBLATRICE_IN</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScript1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">AutoRun</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -700,6 +1449,38 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="input ricevuti dalle quadra">QuadraOutput1</Name>
+<MemberList>
+<Member>
+<Name Type="0">TestComunicazione</Name>
+</Member>
+<Member>
+<Name Type="0">OK</Name>
+</Member>
+<Member>
+<Name Type="0">InCiclo</Name>
+</Member>
+<Member>
+<Name Type="0">PezzoPronto</Name>
+</Member>
+<Member>
+<Name Type="0">PezzoSbloccato</Name>
+</Member>
+<Member>
+<Name Type="0">NonInEmergenza</Name>
+</Member>
+<Member>
+<Name Type="0">NonInHold</Name>
+</Member>
+<Member>
+<Name Type="0">RipariQuadraOk</Name>
+</Member>
+<Member>
+<Name Type="4">ProvaComunicaz</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">AssemblatriceStato</Name>
 <MemberList>
 <Member>
@@ -710,6 +1491,44 @@
 </Member>
 <Member>
 <Name Type="0">Ass_ON</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">OUTPUT_ASSEMBLATRICE</Name>
+<MemberList>
+<Member>
+<Name Type="0">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">AUTO</Name>
+</Member>
+<Member>
+<Name Type="0">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="0">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_READ</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">STA_AZZERANDO</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -810,6 +1629,29 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">INPUT_ASSEMBLATRICE</Name>
+<MemberList>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_WRITE</Name>
+</Member>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">START_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="0">STROBE_DATI_R2</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="input ricevuti dalle quadra">QuadraOutput</Name>
 <MemberList>
 <Member>
@@ -842,6 +1684,55 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">PLC_AssemblatriceInput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">START_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_WRITE</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">OUTPUT_QUADRA</Name>
+<MemberList>
+<Member>
+<Name Type="0">IN_CICLO</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_EMERGENZA</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_HOLD</Name>
+</Member>
+<Member>
+<Name Type="0">OK</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_PRONTO</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_SBLOCCATO</Name>
+</Member>
+<Member>
+<Name Type="0">RIPARI_QUADRA_OK</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="Settaggi generici">SettingsStruct</Name>
 <MemberList>
 <Member>
@@ -859,52 +1750,28 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">DatiRobotStruct</Name>
+<Name Description="">INPUT_QUADRA</Name>
 <MemberList>
 <Member>
-<Name Type="0">DISPONIBILE</Name>
+<Name Type="0">NON_IN_EMERGENZA</Name>
 </Member>
 <Member>
-<Name Type="0">FINE_MISSIONE</Name>
+<Name Type="0">NON_IN_HOLD</Name>
 </Member>
 <Member>
-<Name Type="4">PZ_DA_QUADRA</Name>
+<Name Type="0">PEZZO_SCARICATO</Name>
 </Member>
 <Member>
-<Name Type="4">MAGAZZINO</Name>
+<Name Type="0">R1_FUORI_INGOMBRO</Name>
 </Member>
 <Member>
-<Name Type="4">CASSETTO</Name>
+<Name Type="0">R1_OK</Name>
 </Member>
 <Member>
-<Name Type="9">ID_QUARTINA</Name>
+<Name Type="0">RIPARI_R1_OK</Name>
 </Member>
 <Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
-</Member>
-<Member>
-<Name Type="4">POSIZIONE_PEZZO</Name>
-</Member>
-<Member>
-<Name Type="0">NUOVA_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">IN_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0">RESET</Name>
+<Name Type="0">SBLOCCA_PEZZO</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -1048,6 +1915,102 @@
 </Member>
 <Member>
 <Name Type="4" Description="numero di profili Z nella quartina">R2_COUNT_Z</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">DatiRobotStruct</Name>
+<MemberList>
+<Member>
+<Name Type="0">DISPONIBILE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="4">PZ_DA_QUADRA</Name>
+</Member>
+<Member>
+<Name Type="4">MAGAZZINO</Name>
+</Member>
+<Member>
+<Name Type="4">CASSETTO</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4">POSIZIONE_PEZZO</Name>
+</Member>
+<Member>
+<Name Type="0">NUOVA_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">IN_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0">RESET</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">PLC_AssemblatriceOutput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">AUTO</Name>
+</Member>
+<Member>
+<Name Type="0">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="0">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="0">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_READ</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">ST_EVENT</Name>
+<MemberList>
+<Member>
+<Name Type="0">evt</Name>
 </Member>
 </MemberList>
 </Structure>
