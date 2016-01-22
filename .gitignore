@@ -21,3 +21,4 @@ LOGS/*
 IMAGES/*
 DLOGGERS/*
 ALARM/*.alr
+DATA/*.var
