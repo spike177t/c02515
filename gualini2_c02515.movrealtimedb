@@ -109,7 +109,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_Out</Name>
+<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="44" Shared="0" Retentive="0">Assemblatrice_Out</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -333,14 +333,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
+<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="24" Shared="0" Retentive="0">Assemblatrice_In</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="44" Shared="0" Retentive="0">Assemblatrice_In</Name>
+<Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="12" Shared="0" Retentive="0">MAG1_ES1_ACT_OLD</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -686,31 +686,16 @@
 <Name Type="7">ALTEZZA_FINESTRA</Name>
 </Member>
 <Member>
-<Name Type="7">BACK_STROBE_DATI_R2</Name>
-</Member>
-<Member>
-<Name Type="7">FINE_ROTAZIONE</Name>
-</Member>
-<Member>
 <Name Type="7">APERTURA</Name>
 </Member>
 <Member>
-<Name Type="7">AUTO</Name>
+<Name Type="7">STROBE_DATI_R2</Name>
 </Member>
 <Member>
-<Name Type="7">AZZERATA</Name>
+<Name Type="7">START_ROTAZIONE</Name>
 </Member>
 <Member>
-<Name Type="7">STA_AZZERANDO</Name>
-</Member>
-<Member>
-<Name Type="7">ASSI_IN_MOVIMENTO</Name>
-</Member>
-<Member>
-<Name Type="7">ALLARME</Name>
-</Member>
-<Member>
-<Name Type="7">CHK_READ</Name>
+<Name Type="7">CHK_WRITE</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -796,16 +781,31 @@
 <Name Type="7">ALTEZZA_FINESTRA</Name>
 </Member>
 <Member>
+<Name Type="7">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="7">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
 <Name Type="7">APERTURA</Name>
 </Member>
 <Member>
-<Name Type="7">STROBE_DATI_R2</Name>
+<Name Type="7">AUTO</Name>
 </Member>
 <Member>
-<Name Type="7">START_ROTAZIONE</Name>
+<Name Type="7">AZZERATA</Name>
 </Member>
 <Member>
-<Name Type="7">CHK_WRITE</Name>
+<Name Type="7">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="7">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="7">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="7">CHK_READ</Name>
 </Member>
 </MemberList>
 </Structure>

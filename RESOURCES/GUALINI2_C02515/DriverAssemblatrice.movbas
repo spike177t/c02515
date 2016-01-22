@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="11952" SelLength="0" OutStatusBar="0" OutLog="0" OutPrinter="0">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="11952" SelLength="0" OutStatusBar="0" OutLog="0" OutPrinter="0">'Sostituita la Variabile 'Assemblatrice_Inaa' con il nuovo nome 'Assemblatrice_Out'
+'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
+'Sostituita la Variabile 'Assemblatrice_In' con il nuovo nome 'Assemblatrice_Inaa'
+'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 '#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 Option Explicit
 Dim IsacCnc As CncCOMItfc.CnItfcItfc
@@ -292,21 +295,21 @@ Ciclo:
 		Err.Clear
 		On Error Resume Next
 		'AssChkRead=IsacCnc.ReadR(99) '-&gt; AssChkRead=IsacCnc.ReadR(99) sostituita con [Assemblatrice_In:CHK_READ]
-		[Assemblatrice_In:CHK_READ]=IsacCnc.ReadR(99)
+		[Assemblatrice_Out:CHK_READ]=IsacCnc.ReadR(99)
 		On Error GoTo Fine
 		'If AssChkRead=AssChkWrite Then '-&gt; AssChkWrite=IsacCnc.ReadR(99) sostituita con [Assemblatrice_Out:CHK_WRITE]
-		If [Assemblatrice_In:CHK_READ]=[Assemblatrice_Out:CHK_WRITE] Then
-			If [Assemblatrice_Out:CHK_WRITE] &gt;= 333 Then
-	    		[Assemblatrice_Out:CHK_WRITE]=0
+		If [Assemblatrice_Out:CHK_READ]=[Assemblatrice_In:CHK_WRITE] Then
+			If [Assemblatrice_In:CHK_WRITE] &gt;= 333 Then
+	    		[Assemblatrice_In:CHK_WRITE]=0
 			End If
 			AssChkConta=0
-    		[Assemblatrice_Out:CHK_WRITE]=[Assemblatrice_Out:CHK_WRITE]+1
+    		[Assemblatrice_In:CHK_WRITE]=[Assemblatrice_In:CHK_WRITE]+1
 		Else
 			If AssChkConta &lt; 9 Then
 				AssChkConta=AssChkConta+1
 			End If
 		End If
-		IsacCnc.writeR(98,[Assemblatrice_Out:CHK_WRITE])
+		IsacCnc.writeR(98,[Assemblatrice_In:CHK_WRITE])
 		On Error GoTo Fine
 		If AssChkConta &lt; 9 Then
 			Ass_NonComunica2 = False
@@ -338,54 +341,54 @@ Ciclo:
 		Lettura10=IsacCnc.ReadR(104)
 		On Error GoTo Fine
 
-		[Assemblatrice_In:LARGHEZZA_FINESTRA]=Lettura1
-		[Assemblatrice_In:ALTEZZA_FINESTRA]=Lettura2
-		[Assemblatrice_In:BACK_STROBE_DATI_R2]=Lettura3
-		[Assemblatrice_In:FINE_ROTAZIONE]=Lettura4
-		[Assemblatrice_In:APERTURA]=Lettura5
+		[Assemblatrice_Out:LARGHEZZA_FINESTRA]=Lettura1
+		[Assemblatrice_Out:ALTEZZA_FINESTRA]=Lettura2
+		[Assemblatrice_Out:BACK_STROBE_DATI_R2]=Lettura3
+		[Assemblatrice_Out:FINE_ROTAZIONE]=Lettura4
+		[Assemblatrice_Out:APERTURA]=Lettura5
 
 		If Lettura6 &lt;&gt; 0 Then
-			[Assemblatrice_In:AUTO] = True
+			[Assemblatrice_Out:AUTO] = True
 		Else
-			[Assemblatrice_In:AUTO] = False
+			[Assemblatrice_Out:AUTO] = False
 		End If
 
 		If Lettura7 &lt;&gt; 0 Then
-			[Assemblatrice_In:AZZERATA] = True
+			[Assemblatrice_Out:AZZERATA] = True
 		Else
-			[Assemblatrice_In:AZZERATA] = False
+			[Assemblatrice_Out:AZZERATA] = False
 		End If
 
 		If Lettura8 &lt;&gt; 0 Then
-			[Assemblatrice_In:STA_AZZERANDO] = True
+			[Assemblatrice_Out:STA_AZZERANDO] = True
 		Else
-			[Assemblatrice_In:STA_AZZERANDO] = False
+			[Assemblatrice_Out:STA_AZZERANDO] = False
 		End If
 
 		If Lettura9 &lt;&gt; 0 Then
-			[Assemblatrice_In:ASSI_IN_MOVIMENTO] = True
+			[Assemblatrice_Out:ASSI_IN_MOVIMENTO] = True
 		Else
-			[Assemblatrice_In:ASSI_IN_MOVIMENTO] = False
+			[Assemblatrice_Out:ASSI_IN_MOVIMENTO] = False
 		End If
 
 		If Lettura10 &lt;&gt; 0 Then
-			[Assemblatrice_In:ALLARME] = True
+			[Assemblatrice_Out:ALLARME] = True
 		Else
-			[Assemblatrice_In:ALLARME] = False
+			[Assemblatrice_Out:ALLARME] = False
 		End If
 
 'SCRITTURA ----------------------------------
-		Scrittura1=CLng([Assemblatrice_Out:LARGHEZZA_FINESTRA])
-		Scrittura2=CLng([Assemblatrice_Out:ALTEZZA_FINESTRA])
-		Scrittura5=[Assemblatrice_Out:APERTURA]
+		Scrittura1=CLng([Assemblatrice_In:LARGHEZZA_FINESTRA])
+		Scrittura2=CLng([Assemblatrice_In:ALTEZZA_FINESTRA])
+		Scrittura5=[Assemblatrice_In:APERTURA]
 
-		If [Assemblatrice_Out:STROBE_DATI_R2] Then
+		If [Assemblatrice_In:STROBE_DATI_R2] Then
 			Scrittura3=1
 		Else
 			Scrittura3=0
 		End If
 
-		If [Assemblatrice_Out:START_ROTAZIONE] Then
+		If [Assemblatrice_In:START_ROTAZIONE] Then
 			Scrittura4=1
 		Else
 			Scrittura4=0

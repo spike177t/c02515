@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="17542" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="17542" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
+'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -381,13 +382,13 @@ Sub Main()
 
 						'passo i dati all'Assemblatrice
 						If [R2_STATUS:MAGAZZINO] = 1  Then
-							[Assemblatrice_Out:ALTEZZA_FINESTRA]	= ([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
-							[Assemblatrice_Out:LARGHEZZA_FINESTRA]	= ([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-							[Assemblatrice_Out:APERTURA]			=  [SCAR_M1_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura
+							[Assemblatrice_In:ALTEZZA_FINESTRA]	= ([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
+							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= ([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
+							[Assemblatrice_In:APERTURA]			=  [SCAR_M1_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura
 						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							[Assemblatrice_Out:ALTEZZA_FINESTRA]	= ([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
-							[Assemblatrice_Out:LARGHEZZA_FINESTRA]	= ([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-							[Assemblatrice_Out:APERTURA]			=  [SCAR_M2_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura)
+							[Assemblatrice_In:ALTEZZA_FINESTRA]	= ([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
+							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= ([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
+							[Assemblatrice_In:APERTURA]			=  [SCAR_M2_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura)
 						End If
 
 						'azzero le altre variabili
