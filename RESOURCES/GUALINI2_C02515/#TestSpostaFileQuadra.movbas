@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="203" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="203" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
+'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
+'#Language "WWB.NET"
 Imports System
 Imports System.IO
 Imports System.Data.Odbc
@@ -19,13 +21,13 @@ Sub Main()
 		source = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Temporaneo\Q1"
 		dest = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1"
 		ret = SpostaPer(source, dest)
-	[Q1_In:PezzoPronto] = IIf(ret &gt;= 0, True, False)
+	[Q1_Out:PezzoPronto] = IIf(ret &gt;= 0, True, False)
 	End If
 	If vResult = "2"  Then
 		source = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Temporaneo\Q2"
 		dest = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2"
 		ret = SpostaPer(source, dest)
-		[Q2_In:PezzoPronto] = IIf(ret &gt;= 0, True, False)
+		[Q2_Out:PezzoPronto] = IIf(ret &gt;= 0, True, False)
 	End If
 End Sub
 

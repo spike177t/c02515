@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
+'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
+Option Explicit
 '#Uses "*GestioneZonaR1"
 
 Sub Main()
@@ -18,7 +20,7 @@ Sub diiferenza()
 	Dim nMS2 As Integer
 	Dim dt2 As Double
 
-	Set objRet1 = GetVariableObject("Q1_In:PezzoPronto")
+	Set objRet1 = GetVariableObject("Q1_Out:PezzoPronto")
 	dTimeStamp1 = objRet1.GetTimeStamp()
 	Debug.Print "dTimeStamp1:" &amp; CStr(dTimeStamp1)
 	nMS1 = objRet1.GetTimeStampMs()
@@ -28,7 +30,7 @@ Sub diiferenza()
 	dt1 = dt1 + nMS1
 	Debug.Print CStr(dt1)
 
-	Set objRet2 = GetVariableObject("Q2_In:PezzoPronto")
+	Set objRet2 = GetVariableObject("Q2_Out:PezzoPronto")
 	dTimeStamp2 = objRet2.GetTimeStamp()
 	Debug.Print  "dTimeStamp2:" &amp; CStr(dTimeStamp2)
 	nMS2 = objRet2.GetTimeStampMs()

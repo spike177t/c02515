@@ -3013,7 +3013,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Q1_In:PezzoPronto">1</BG>
+<BG Var="Q1_Out:PezzoPronto">1</BG>
 <BGList>
 <dci>
 <DynColor Color="33023"/>
@@ -3070,7 +3070,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Q2_In:PezzoPronto">1</BG>
+<BG Var="Q2_Out:PezzoPronto">1</BG>
 <BGList>
 <dci>
 <DynColor Color="33023"/>

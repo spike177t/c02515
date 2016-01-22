@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10166" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="10166" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
+'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
+'Sostituita la Variabile 'Q2_Out' con il nuovo nome 'Q2_Out_err'
+'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -287,25 +290,25 @@ Ciclo:
 			Q2_FotocellScaricatore5=False
 		End If
 
-		[Q2_In:TestComunicazione] 	= Q2_InputDaQuadra.0
-		[Q2_In:OK] 					= Q2_InputDaQuadra.1
-		[Q2_In:InCiclo]				= Q2_InputDaQuadra.2
-		[Q2_In:PezzoPronto]			= Q2_InputDaQuadra.3
-		[Q2_In:PezzoSbloccato]		= Q2_InputDaQuadra.4
-		[Q2_In:NonInEmergenza]		= Q2_InputDaQuadra.5
-		[Q2_In:NonInHold]			= Q2_InputDaQuadra.6
-		[Q2_In:RipariQuadraOk]		= Q2_InputDaQuadra.7
+		[Q2_Out:TestComunicazione] 	= Q2_InputDaQuadra.0
+		[Q2_Out:OK] 					= Q2_InputDaQuadra.1
+		[Q2_Out:InCiclo]				= Q2_InputDaQuadra.2
+		[Q2_Out:PezzoPronto]			= Q2_InputDaQuadra.3
+		[Q2_Out:PezzoSbloccato]		= Q2_InputDaQuadra.4
+		[Q2_Out:NonInEmergenza]		= Q2_InputDaQuadra.5
+		[Q2_Out:NonInHold]			= Q2_InputDaQuadra.6
+		[Q2_Out:RipariQuadraOk]		= Q2_InputDaQuadra.7
 
 '--------------------------------------------------------------------------
 'SCRITTURA
-		Q2_OutputPerQuadra.0 =	[Q2_Out:TestComunicazionePc]
-		Q2_OutputPerQuadra.1 =	[Q2_Out:R1_Ok]
-		Q2_OutputPerQuadra.2 =	[Q2_Out:R1_FuoriIngombro]
-		Q2_OutputPerQuadra.3 =	[Q2_Out:PezzoScaricato]
-		Q2_OutputPerQuadra.4 =	[Q2_Out:SbloccaPezzo]
-		Q2_OutputPerQuadra.5 =	[Q2_Out:LineaNonInEmergenza]
-		Q2_OutputPerQuadra.6 =	[Q2_Out:LineaNonInHold]
-		Q2_OutputPerQuadra.7 =	[Q2_Out:RipariR1_Ok]
+		Q2_OutputPerQuadra.0 =	[Q2_In:TestComunicazionePc]
+		Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
+		Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
+		Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
+		Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
+		Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
+		Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
+		Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
 
 		Scrittura1=Q2_OutputPerQuadra
 		Scrittura2=Q2_ProvaComunicaz
