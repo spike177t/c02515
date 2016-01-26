@@ -333,10 +333,10 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1330" y="620" width="100" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1380" y="620" width="50" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ES1 ACT_OLD</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ES1 ACT OLD</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1456,7 +1456,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1210" y="640" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1240" y="640" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:PRONTO"/>
@@ -1468,7 +1468,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1270" y="640" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1280" y="640" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:STROBE"/>
@@ -1480,19 +1480,19 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1210" y="620" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1240" y="620" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONTO</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONT</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <object>base</object>
-<type x="1270" y="620" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1280" y="620" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROBE</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROB</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1690,10 +1690,10 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1330" y="680" width="100" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1380" y="680" width="50" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ES1 ACT_OLD</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ES1 ACT OLD</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1882,7 +1882,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1210" y="700" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1240" y="700" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:PRONTO"/>
@@ -1894,7 +1894,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1270" y="700" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1280" y="700" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:STROBE"/>
@@ -1906,19 +1906,19 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1210" y="680" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1240" y="680" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONTO</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONT</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <object>base</object>
-<type x="1270" y="680" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1280" y="680" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROBE</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROB</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3394,7 +3394,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1210" y="990" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1240" y="990" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES2_ACT:PRONTO"/>
@@ -3406,7 +3406,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1270" y="990" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1280" y="990" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES2_ACT:STROBE"/>
@@ -3418,19 +3418,19 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1210" y="970" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1240" y="970" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONTO</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONT</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <object>base</object>
-<type x="1270" y="970" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1280" y="970" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROBE</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROB</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3706,7 +3706,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1210" y="1050" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1240" y="1050" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES2_ACT:PRONTO"/>
@@ -3718,7 +3718,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="1270" y="1050" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="1280" y="1050" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES2_ACT:STROBE"/>
@@ -3730,19 +3730,19 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1210" y="1030" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1240" y="1030" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONTO</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">PRONT</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <object>base</object>
-<type x="1270" y="1030" width="50" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1280" y="1030" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROBE</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">STROB</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -4743,10 +4743,10 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1330" y="970" width="100" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1390" y="970" width="40" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ES2 ACT_OLD</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ES2 ACT OLD</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -4857,10 +4857,10 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="1330" y="1030" width="100" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="1390" y="1030" width="40" height="50" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ES2 ACT_OLD</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ES2 ACT OLD</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -5599,6 +5599,172 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
+</child>
+<child>
+<object>base</object>
+<type x="1200" y="970" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">BUSY</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="1200" y="990" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x"/>
+<border>4</border>
+<execution var="MAG1_ES2_ACT:BUSY"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>base</object>
+<type x="1200" y="1030" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">BUSY</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="1200" y="1050" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x"/>
+<border>4</border>
+<execution var="MAG2_ES2_ACT:BUSY"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="1330" y="970" width="50" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 E1 RST</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="60" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	[MAG1_ES2_ACT:BUSY] = False
+	[MAG1_ES2_ACT:DEPO] = False
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="1330" y="1030" width="50" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 E1 RST</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="60" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	[MAG2_ES2_ACT:BUSY] = False
+	[MAG2_ES2_ACT:DEPO] = False
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="1330" y="620" width="50" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 E1 RST</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="81" SelLength="36" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	[MAG1_ES1_ACT:BUSY] = False
+	[MAG1_ES1_ACT:DEPO] = False
+	[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="1330" y="680" width="50" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 E1 RST</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="86" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	[MAG2_ES1_ACT:BUSY] = False
+	[MAG2_ES1_ACT:DEPO] = False
+	[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>base</object>
+<type x="1200" y="620" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">BUSY</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="1200" y="640" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x"/>
+<border>4</border>
+<execution var="MAG1_ES1_ACT:BUSY"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>base</object>
+<type x="1200" y="680" width="40" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">BUSY</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="1200" y="700" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x"/>
+<border>4</border>
+<execution var="MAG2_ES1_ACT:BUSY"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
 </child>
 </ListSynopticDraw>
 <VariableList/>

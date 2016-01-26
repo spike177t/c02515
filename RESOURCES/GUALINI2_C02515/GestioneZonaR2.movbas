@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="17542" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
-'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="53563" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
 
@@ -37,6 +37,7 @@ End Structure
 
 Const TOUT_RICHIEDIBILE 	As Integer 	= 1 'in secondi
 Const TOUT_STEP				As Integer	= 2 'in secondi
+Const UPDATE_ESTRATTORI		As Integer = 16500
 
 Dim MysSqlConnectionString As String
 Dim richiedibileLastCheck As Double
@@ -85,8 +86,8 @@ Sub Main()
     End If
 
     'forzo aggiornamento estrattori
-    [MAG1_ES2_ACT_OLD:ID_CASSETTO] = 16500
-    [MAG2_ES2_ACT_OLD:ID_CASSETTO] = 16500
+    [MAG1_ES2_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
+    [MAG2_ES2_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
 
 	'aggiorno cassetti pieni e disponibili
     AggiornaCassettiPieni(MysSqlConnectionString, 1)
@@ -123,8 +124,8 @@ Sub Main()
 
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
-		AggiornaPosizioniEstrattoriES2(MysSqlConnectionString)
-		ProcessaCodaEstrattoriMAG2()
+		AggiornaPosizioniEstrattori_ZONA_R2_ES2(MysSqlConnectionString)
+		ProcessaCodaEstrattori_ZONA_R2()
 
 		If Not alm_Presenti Then
 			Select Case StatoCicloScarico
@@ -306,8 +307,10 @@ Sub Main()
 					End If
 
 				Case 4195	'AttesaSegnaleRobotOccupato_settout
-					stepTout = Timer()
-					StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato
+					If	[R2_STATUS:DISPONIBILE] Then
+						stepTout = Timer()
+						StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato
+					End If
 
 				Case 4200	'AttesaSegnaleRobotOccupato
 					LogMsg "StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato"
@@ -1091,12 +1094,12 @@ Sub DecodificaMissioneRobot(StrucDatiPezzo As String)', StructRobot As String)
 	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS90" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "441780" Then
 		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  17)
 	End If
-	
+
 End Sub
 
 
 
-Sub ProcessaCodaEstrattoriMAG2()
+Sub ProcessaCodaEstrattori_ZONA_R2()
 	'ProcessaCodaEstrattore(1,1)	'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 	'ProcessaCodaEstrattore(2,1) 'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 
@@ -1107,13 +1110,16 @@ Sub ProcessaCodaEstrattoriMAG2()
 	Dim tmpEs As stEstrattore
 	Dim strEs As String
 
+	'abilito LogMsg
+	enableLogMsg = True
+
 	If codaMAG1_ES2.Count &gt; 0 Then
 		If Not [MAG1_ES2_RIK:STROBE] _
 				And ( [MAG1_ES1_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
 			Then
 
 				If codaMAG1_ES2.Count &gt; 0 Then
-					LogMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG1_ES2 -&gt; count = " &amp; CStr(codaMAG1_ES2.Count) &amp; "; peek = " &amp; codaMAG1_ES2.Peek())
+					LogMsg("ProcessaCodaEstrattori_ZONA_R2() -&gt; codaMAG1_ES2 -&gt; count = " &amp; CStr(codaMAG1_ES2.Count) &amp; "; peek = " &amp; codaMAG1_ES2.Peek())
 				End If
 				'strEs = codaMAG1_ES2.Dequeue()
 				For Each element1 As String In codaMAG1_ES2
@@ -1121,11 +1127,11 @@ Sub ProcessaCodaEstrattoriMAG2()
 					'codaMAG1_ES2.Dequeue()
 				Next
 				If codaMAG1_ES2.Count &gt; 0 Then
-					DebugMsg("ProcessaCodaEstrattoriMAG2() codaMAG1_ES2.Count = " &amp; CStr(codaMAG1_ES2.Count ) &amp; "; CLEAR")
+					DebugMsg("ProcessaCodaEstrattori_ZONA_R2() codaMAG1_ES2.Count = " &amp; CStr(codaMAG1_ES2.Count ) &amp; "; CLEAR")
 					codaMAG1_ES2.Clear()
 				End If
 
-				DebugMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG1_ES2.Count = " &amp; CStr(codaMAG1_ES2.Count) &amp; "Deserializza")
+				DebugMsg("ProcessaCodaEstrattori_ZONA_R2() -&gt; codaMAG1_ES2.Count = " &amp; CStr(codaMAG1_ES2.Count) &amp; "Deserializza")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG1_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
@@ -1147,7 +1153,7 @@ Sub ProcessaCodaEstrattoriMAG2()
 			Then
 
 				If codaMAG2_ES2.Count &gt; 0 Then
-					LogMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG2_ES2 -&gt; count = " &amp; CStr(codaMAG2_ES2.Count) &amp; "; peek = " &amp; codaMAG2_ES2.Peek())
+					LogMsg("ProcessaCodaEstrattori_ZONA_R2() -&gt; codaMAG2_ES2 -&gt; count = " &amp; CStr(codaMAG2_ES2.Count) &amp; "; peek = " &amp; codaMAG2_ES2.Peek())
 				End If
 
 				'strEs = codaMAG2_ES2.Dequeue()
@@ -1156,11 +1162,11 @@ Sub ProcessaCodaEstrattoriMAG2()
 					'codaMAG2_ES2.Dequeue()
 				Next
 				If codaMAG2_ES2.Count &gt; 0 Then
-					DebugMsg("ProcessaCodaEstrattoriMAG2() codaMAG2_ES2.Count = " &amp; CStr(codaMAG2_ES2.Count ) &amp; "; CLEAR")
+					DebugMsg("ProcessaCodaEstrattori_ZONA_R2() codaMAG2_ES2.Count = " &amp; CStr(codaMAG2_ES2.Count ) &amp; "; CLEAR")
 					codaMAG2_ES2.Clear()
 				End If
 
-				DebugMsg("ProcessaCodaEstrattoriMAG2() -&gt; codaMAG2_ES2.Count = " &amp; CStr(codaMAG2_ES2.Count) &amp; "Deserializza")
+				DebugMsg("ProcessaCodaEstrattori_ZONA_R2() -&gt; codaMAG2_ES2.Count = " &amp; CStr(codaMAG2_ES2.Count) &amp; "Deserializza")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				[MAG2_ES2_RIK:ID_CASSETTO] 				= tmpEs.ID_CASSETTO
@@ -1176,6 +1182,8 @@ Sub ProcessaCodaEstrattoriMAG2()
 		End If
 	End If
 
+	'disabilito LogMsg
+	enableLogMsg = False
 End Sub
 
 Function Serializza_stEstrattore (st As stEstrattore) As String
@@ -1216,7 +1224,7 @@ Function Deserializza_stEstrattore (ByRef st As stEstrattore, element As String)
 
 End Function
 
-Sub AggiornaPosizioniEstrattoriES2(connectionString As String )
+Sub AggiornaPosizioniEstrattori_ZONA_R2_ES2(connectionString As String )
 	AggiornaPosizioneEstrattore(1 , 2,connectionString)
 	AggiornaPosizioneEstrattore(2 , 2,connectionString)
 End Sub
@@ -1229,13 +1237,16 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 	Dim query As String
 	Dim ret As Integer
 
+	'abilito LogMsg
+	enableLogMsg = True
+
 	varEstrattore 		= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT"
 	varEstrattoreOld 	= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT_OLD"
 
 	cass 		= GetVariableValue(varEstrattore 		&amp; ":ID_CASSETTO")
 	cassOld 	= GetVariableValue(varEstrattoreOld 	&amp; ":ID_CASSETTO")
 
-	If cass = 0 And (cassOld &lt;&gt; cass) Then
+	If (cass = 0 And (cassOld &lt;&gt; cass)) Or cassOld = UPDATE_ESTRATTORI Then
 		'ho chiamoto guori il cassetto 0
 		'devo resettare le variabili struct dei pezzi in scarico
 		If mag = 1 Then
@@ -1309,6 +1320,8 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 		AggiornaMembri(varEstrattore, varEstrattoreOld)
 	End If
 
+	'disabilito LogMsg
+	enableLogMsg = False
 End Sub
 
 Function AggiornaDatiPezziInEstrattore2(connectionString, mag, cass) As Integer
@@ -1446,8 +1459,8 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 							LogMsg(" AggiornaDatiPezziInScarico() - ERRORE: ERR_VALORI_NULLI_PRESENTI.")
 						End If
 
-						tipoprofilo = GetVariableValue(structname &amp; ":TIPO_PROFILO")
-						countz 		= GetVariableValue(structname &amp; ":COUNT_Z")
+						tipoprofilo = GetVariableValue(structname &amp; ":R2_TIPO_PROFILO")
+						countz 		= GetVariableValue(structname &amp; ":R2_COUNT_Z")
 
 						If tipoprofilo = "L" And countz &lt; 4 Then
 							SetVariableValue(structname &amp; ":R2_RUOTA_PEZZO"	, True)
@@ -2027,8 +2040,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBJAKsB
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiC2BQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

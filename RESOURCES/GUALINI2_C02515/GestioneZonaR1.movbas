@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="42071" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
-'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
-'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="39890" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
+'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 'Sostituita la Variabile 'alm_FineRobot' con il nuovo nome 'alm_FineRobotR1'
 
@@ -234,7 +234,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
 		AggiornaPosizioniEstrattoriES1(MysSqlConnectionString)
-		ProcessaCodaEstrattoriMAG1()
+		ProcessaCodaEstrattori_ZONA_R1()
 		AnomaliaDeposito(MysSqlConnectionString)
 
 		If Not alm_Presenti Then
@@ -687,18 +687,21 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					'alzo il bit al Robot di Strobe missione
 					[R1_STATUS:NUOVA_MISSIONE] = True
 					'rendo BUSY l'estrattore
-					If [R1_STATUS:MAGAZZINO] = 1 Then
-						[MAG1_ES1_ACT:BUSY] = True
-					End If
-					If [R1_STATUS:MAGAZZINO] = 2 Then
-						[MAG1_ES2_ACT:BUSY] = True
-					End If
+					'If [R1_STATUS:MAGAZZINO] = 1 Then
+					'	[MAG1_ES1_ACT:BUSY] = True
+					'End If
+					'If [R1_STATUS:MAGAZZINO] = 2 Then
+					'	[MAG1_ES2_ACT:BUSY] = True
+					'End If
 
 					StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
 
 				Case 4195	'AttesaSegnaleRobotOccupato_settout
+					If	[R1_STATUS:DISPONIBILE] Then
 						stepTout = Timer()
 						StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato
+					End If
+
 
 				Case 4200	'AttesaSegnaleRobotOccupato
 					LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
@@ -713,6 +716,14 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					'ricevo segnale di robot in missione
 					If	[R1_STATUS:DISPONIBILE] And [R1_STATUS:IN_MISSIONE] Then
 						alm_Step_ToutR1_4200 = False
+
+						'rendo BUSY l'estrattore
+						If [R1_STATUS:MAGAZZINO] = 1 Then
+							[MAG1_ES1_ACT:BUSY] = True
+						End If
+						If [R1_STATUS:MAGAZZINO] = 2 Then
+							[MAG1_ES2_ACT:BUSY] = True
+						End If
 						StatoCicloCarico = 1000	'AttesaPezzi
 					End If
 
@@ -733,6 +744,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					End If
 
 				Case 6150	'AttesaFineMissioneAck_reset
+					'ATTENZIONE valore 6150 usato in AnomaliaDeposito()
 					LogMsg "StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset"
 					If SuperatoTimeout(stepTout, TOUT_STEP) Then
 						alm_Step_ToutR1_6150 = True
@@ -894,6 +906,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						'segnalo all'estrattore che ho depositato il pezzo
 						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
 						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+						SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
 						StatoCicloCarico = 8100	'ResetDatiPezzoMissione
 					End If
 					If [R1_STATUS:ERR_MISSIONE] = False Then
@@ -902,6 +915,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						'segnalo all'estrattore che ho depositato il pezzo
 						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
 						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+						SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
 						StatoCicloCarico = 8100	'ResetDatiPezzoMissione
 					End If
 
@@ -933,24 +947,33 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 	Dim retMsg As VbMsgBoxResult
 	Dim strMsg As String
 
+	'abilito LogMsg
+	enableLogMsg = True
 
 	If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1  _
-			And Not [R1_STATUS:IN_MISSIONE] _
-			And (Not [R1_STATUS:FINE_MISSIONE] Or Not [R1_STATUS:ERR_MISSIONE]) _
-			And Not [MAG1_ES1_ACT:DEPO] _
-			And [MAG1_ES1_ACT:BUSY] _
+			And (Not [R1_STATUS:IN_MISSIONE] And Not ([R1_STATUS:FINE_MISSIONE] Or [R1_STATUS:ERR_MISSIONE])) _
+			And ([MAG1_ES1_ACT:BUSY] And Not [MAG1_ES1_ACT:DEPO]) _
+			And StatoCicloCarico &lt;&gt; 6150 _
 		Then
+		'			And (Not [R1_STATUS:FINE_MISSIONE] Or Not [R1_STATUS:ERR_MISSIONE]) _
+
+		DebugMsg("AnomaliaDeposito() -&gt; [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = " &amp; CStr([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO]) &amp; "; [R1_STATUS:IN_MISSIONE] = " &amp; CStr([R1_STATUS:IN_MISSIONE]) _
+							&amp; "; [R1_STATUS:FINE_MISSIONE] = " &amp; CStr([R1_STATUS:FINE_MISSIONE]) &amp; "; [R1_STATUS:ERR_MISSIONE] = " &amp; CStr([R1_STATUS:ERR_MISSIONE]) _
+							&amp; "; [MAG1_ES1_ACT:BUSY] = " &amp;CStr([MAG1_ES1_ACT:BUSY] ) &amp; "; [MAG1_ES1_ACT:DEPO] = " &amp; CStr([MAG1_ES1_ACT:DEPO]) &amp; "; StatoCicloCarico = " &amp; CStr(StatoCicloCarico))
 			anomaliaES1 = True
 			alm_AnomaliaDeposito_R1 = True
 			LogMsg("AnomaliaDeposito() -&gt; Anomalia  MAG1_ES1.")
 	End If
 
 	If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 2  _
-			And Not [R1_STATUS:IN_MISSIONE] _
-			And (Not [R1_STATUS:FINE_MISSIONE] Or Not [R1_STATUS:ERR_MISSIONE]) _
-			And Not [MAG2_ES1_ACT:DEPO] _
-			And [MAG2_ES1_ACT:BUSY] _
+			And (Not [R1_STATUS:IN_MISSIONE] And Not ([R1_STATUS:FINE_MISSIONE] Or [R1_STATUS:ERR_MISSIONE])) _
+			And ([MAG2_ES1_ACT:BUSY] And Not [MAG2_ES1_ACT:DEPO])  _
+			And StatoCicloCarico &lt;&gt; 6150 _
 		Then
+		'			And (Not [R1_STATUS:FINE_MISSIONE] Or Not [R1_STATUS:ERR_MISSIONE]) _
+		DebugMsg("AnomaliaDeposito() -&gt; [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = " &amp; CStr([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO]) &amp; "; [R1_STATUS:IN_MISSIONE] = " &amp; CStr([R1_STATUS:IN_MISSIONE]) _
+							&amp; "; [R1_STATUS:FINE_MISSIONE] = " &amp; CStr([R1_STATUS:FINE_MISSIONE]) &amp; "; [R1_STATUS:ERR_MISSIONE] = " &amp; CStr([R1_STATUS:ERR_MISSIONE]) _
+							&amp; "; [MAG2_ES1_ACT:BUSY] = " &amp;CStr([MAG2_ES1_ACT:BUSY] ) &amp; "; [MAG2_ES1_ACT:DEPO] = " &amp; CStr([MAG2_ES1_ACT:DEPO]) &amp; "; StatoCicloCarico = " &amp; CStr(StatoCicloCarico))
 			anomaliaES2 = True
 			alm_AnomaliaDeposito_R2 = True
 			LogMsg("AnomaliaDeposito() -&gt; Anomalia  MAG2_ES1.")
@@ -972,14 +995,17 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 		'reset dati estrattore
 		If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1 Then
 			[MAG1_ES1_ACT:DEPO] = True
-			[MAG1_ES1_ACT:BUSY] = True
+			[MAG1_ES1_ACT:BUSY] = False
 		End If
 		If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 2 Then
 			[MAG2_ES1_ACT:DEPO] = True
-			[MAG2_ES1_ACT:BUSY] = True
+			[MAG2_ES1_ACT:BUSY] = False
 		End If
 
 	End If
+
+	'disabilito LogMsg
+	enableLogMsg = False
 
 End Function
 
@@ -2846,7 +2872,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 
 End Sub
 
-Sub ProcessaCodaEstrattoriMAG1()
+Sub ProcessaCodaEstrattori_ZONA_R1()
 	'ProcessaCodaEstrattore(1,1)	'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 	'ProcessaCodaEstrattore(2,1) 'ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
 
@@ -2854,6 +2880,10 @@ Sub ProcessaCodaEstrattoriMAG1()
 
 	Dim tmpEs As stEstrattore
 	Dim strEs As String
+	Dim strPeekEs As String
+
+	'abilito LogMsg
+	enableLogMsg = True
 
 	If codaMAG1_ES1.Count &gt; 0 Then
 		If Not [MAG1_ES1_RIK:STROBE] _
@@ -2862,11 +2892,25 @@ Sub ProcessaCodaEstrattoriMAG1()
 				And ( [MAG1_ES1_ACT:DEPO] Or [MAG1_ES1_ACT:ID_CASSETTO] = 0 Or [MAG1_ES1_ACT:NOME_PEZZO_UNICO] = "qrt_succ" Or [MAG1_ES1_ACT:NOME_PEZZO_UNICO] = "") Then
 
 				If codaMAG1_ES1.Count &gt; 0 Then
-					LogMsg("ProcessaCodaEstrattoriMAG1() -&gt; codaMAG1_ES1 -&gt; count = " &amp; CStr(codaMAG1_ES1.Count) &amp; "; peek = " &amp; codaMAG1_ES1.Peek())
+					LogMsg("ProcessaCodaEstrattori_ZONA_R1() -&gt; codaMAG1_ES1 -&gt; count = " &amp; CStr(codaMAG1_ES1.Count) &amp; "; peek = " &amp; codaMAG1_ES1.Peek())
 				End If
 
 				strEs = codaMAG1_ES1.Dequeue()
-				DebugMsg("ProcessaCodaEstrattoriMAG1() -&gt;codaMAG1_ES1.Count = " &amp; CStr(codaMAG1_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
+
+				'dopo ave estratto l'lelemento guardo se ne sono presenti altri uguali a quello appena letto
+				If codaMAG1_ES1.Count &gt; 0 Then
+					strPeekEs = codaMAG1_ES1.Peek()
+					While (strEs = strPeekEs)
+						LogMsg("ProcessaCodaEstrattori_ZONA_R1() -&gt; DOPPIO VALORE!!; strEs = " &amp; strEs &amp; "codaMAG1_ES1 -&gt; count = " &amp; CStr(codaMAG1_ES1.Count) &amp; "; peek = " &amp; strPeekEs)
+						codaMAG1_ES1.Dequeue()
+						If codaMAG1_ES1.Count &gt; 0 Then
+							strPeekEs = codaMAG1_ES1.Peek()
+						Else
+							strPeekEs = ""
+						End If
+					End While
+				End If
+				DebugMsg("ProcessaCodaEstrattori_ZONA_R1() -&gt;codaMAG1_ES1.Count = " &amp; CStr(codaMAG1_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				'guardo se ho in coda valori uguali
@@ -2893,11 +2937,25 @@ Sub ProcessaCodaEstrattoriMAG1()
 				And ( [MAG2_ES1_ACT:DEPO] Or [MAG2_ES1_ACT:ID_CASSETTO] = 0  Or [MAG2_ES1_ACT:NOME_PEZZO_UNICO] = "qrt_succ"  Or [MAG2_ES1_ACT:NOME_PEZZO_UNICO] = "") Then
 
 				If codaMAG2_ES1.Count &gt; 0 Then
-					LogMsg("ProcessaCodaEstrattoriMAG1() -&gt; codaMAG2_ES1 -&gt; count = " &amp; CStr(codaMAG2_ES1.Count) &amp; "; peek = " &amp; codaMAG2_ES1.Peek())
+					LogMsg("ProcessaCodaEstrattori_ZONA_R1() -&gt; codaMAG2_ES1 -&gt; count = " &amp; CStr(codaMAG2_ES1.Count) &amp; "; peek = " &amp; codaMAG2_ES1.Peek())
 				End If
 
 				strEs = codaMAG2_ES1.Dequeue()
-				DebugMsg("ProcessaCodaEstrattoriMAG1() -&gt;codaMAG2_ES1.Count = " &amp; CStr(codaMAG2_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
+
+				'dopo ave estratto l'lelemento guardo se ne sono presenti altri uguali a quello appena letto
+				If codaMAG2_ES1.Count &gt; 0 Then
+					strPeekEs = codaMAG2_ES1.Peek()
+					While (strEs = strPeekEs)
+						LogMsg("ProcessaCodaEstrattori_ZONA_R1() -&gt; DOPPIO VALORE!!; strEs = " &amp; strEs &amp; "codaMAG2_ES1 -&gt; count = " &amp; CStr(codaMAG2_ES1.Count) &amp; "; peek = " &amp; strPeekEs)
+						codaMAG2_ES1.Dequeue()
+						If codaMAG2_ES1.Count &gt; 0 Then
+							strPeekEs = codaMAG2_ES1.Peek()
+						Else
+							strPeekEs = ""
+						End If
+					End While
+				End If
+				DebugMsg("ProcessaCodaEstrattori_ZONA_R1() -&gt;codaMAG2_ES1.Count = " &amp; CStr(codaMAG2_ES1.Count) &amp; " ;  Deserializza(" &amp; strEs &amp;")")
 				Deserializza_stEstrattore(tmpEs, strEs)
 
 				'passo a interfaccia
@@ -2914,6 +2972,8 @@ Sub ProcessaCodaEstrattoriMAG1()
 		End If
 	End If
 
+	'disabilito LogMsg
+	enableLogMsg = False
 End Sub
 
 Sub ProcessaCodaEstrattore(mag As Integer, estrattore As Integer)
@@ -3289,7 +3349,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiC2AHIDewOgA2AH/wg=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiC8A8oDUQt+Cw==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

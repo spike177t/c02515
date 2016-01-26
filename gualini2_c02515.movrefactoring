@@ -125,6 +125,21 @@
 <type ImageId="60" Category="Variabile Allarme" Var="alm_AnomaliaDeposito_R2" ResourceName="alm_AnomaliaDeposito_R2" Index="0" Missing="0" ShortResourceName="Allarme" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
+<type ImageId="60" Category="Variabile Allarme" Var="Plc_ar_allarmi_100" ResourceName="Plc_ar_allarmi_100" Index="0" Missing="0" ShortResourceName="Allarme" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="60" Category="Variabile Allarme" Var="Plc_ar_allarmi_10" ResourceName="Plc_ar_allarmi_10" Index="0" Missing="0" ShortResourceName="Allarme" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="60" Category="Variabile Allarme" Var="Plc_ar_allarmi_1" ResourceName="Plc_ar_allarmi_1" Index="0" Missing="0" ShortResourceName="Allarme" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="60" Category="Variabile Allarme" Var="Plc_ar_allarmi_10" ResourceName="Plc_ar_allarmi_10" Index="0" Missing="0" ShortResourceName="Allarme" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="60" Category="Variabile Allarme" Var="Plc_ar_allarmi_100" ResourceName="Plc_ar_allarmi_100" Index="0" Missing="0" ShortResourceName="Allarme" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
 <type ImageId="33" Category="State Variable - Plc" Var="Plc_Stato" ResourceName="TwinCAT" Index="0" Missing="0" ShortResourceName="TwinCAT" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
@@ -399,6 +414,252 @@
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:M1_CASS_DISPONIBILI" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:M2_CASS_DISPONIBILI" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="alm_ZonaR1_ODBC_txt" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="alm_ZonaR1_ODBC" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:CASSETTO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:CASSETTO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_STATUS:RIK_MISSIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_STATUS" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ROBOT_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:ROBOT_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:SERIE_PROFILO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:CODICE_PROFILO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:R1_COD_RBT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:STROBE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_MAG1_ES1_CountCoda" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:DEPO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:STROBE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_MAG2_ES1_CountCoda" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:DEPO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#prove.movbas" Name="#prove" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="37" Var="Q1_Out:PezzoPronto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\#testspostafilequadra.movbas" Name="#testspostafilequadra" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
@@ -684,6 +945,252 @@
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:M1_CASS_DISPONIBILI" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:M2_CASS_DISPONIBILI" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="alm_ZonaR1_ODBC_txt" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="alm_ZonaR1_ODBC" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:CASSETTO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:CASSETTO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_STATUS:RIK_MISSIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_STATUS" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ROBOT_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:ROBOT_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:SERIE_PROFILO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:CODICE_PROFILO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:R1_COD_RBT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:STROBE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_MAG1_ES1_CountCoda" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:DEPO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:STROBE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_MAG2_ES1_CountCoda" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:DEPO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="37" Var="statoScriptGestioneZonaR1" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\gestionezonar1.movbas" Name="gestionezonar1" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
@@ -1353,6 +1860,252 @@
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:M1_CASS_DISPONIBILI" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:M2_CASS_DISPONIBILI" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="alm_ZonaR1_ODBC_txt" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="alm_ZonaR1_ODBC" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:CASSETTO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:CASSETTO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_ACT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_STATUS:RIK_MISSIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_STATUS" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ROBOT_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:ROBOT_ASSEGNATO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q1_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="Q2_PEZZO_DISP" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:SERIE_PROFILO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:CODICE_PROFILO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO:R1_COD_RBT" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="R1_DATI_PEZZO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:STROBE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_MAG1_ES1_CountCoda" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK:DEPO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG1_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:STROBE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_MAG2_ES1_CountCoda" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:ID_CASSETTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:ID_QUARTINA" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:NOME_PEZZO_UNICO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:POSIZIONE" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:PRONTO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK:DEPO" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="MAG2_ES1_RIK" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="37" Var="loc_ImpostazioniImpianto" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\resetstructvar.movbas" Name="resetstructvar" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="37" Var="loc_ImpostazioniImpianto:MysSqlConnectionString" ScriptName="C:\SUPERVISIONEGUALINI2_C02515\HMI\RESOURCES\GUALINI2_C02515\startup.movbas" Name="startup" Missing="0" Category="" Reason="4294967295">RefactorScriptVar</type>
@@ -3563,19 +4316,13 @@
 <type ImageId="1" Category="Progetto" Var="MAG1_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG1_ES3_RIK:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG1_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3587,7 +4334,7 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES1_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3599,7 +4346,7 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES1_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3609,6 +4356,12 @@
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES1_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:ULTIMO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3683,19 +4436,13 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES1_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_COLLA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES1_RIK:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES1_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_FILA_SQ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_COLLA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3707,7 +4454,7 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_FILA_SQ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_FILA_SQ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3719,7 +4466,7 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_OFFSET_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_FILA_SQ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3731,7 +4478,7 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_RUOTA_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_OFFSET_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3743,10 +4490,10 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="Assemblatrice_In:ALTEZZA_FINESTRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4:R2_RUOTA_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ4" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_ACT:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3755,13 +4502,25 @@
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="Assemblatrice_In:ALTEZZA_FINESTRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:DEPO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN:ALTEZZA_FINESTRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:DEPO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:ID_CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3773,7 +4532,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:ID_CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3785,7 +4544,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3797,7 +4556,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3809,10 +4568,10 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:DEPO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES2_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_In:LARGHEZZA_FINESTRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3821,7 +4580,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:DEPO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:ID_CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3833,7 +4592,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:ID_CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3845,7 +4604,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3857,7 +4616,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3869,10 +4628,10 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:DEPO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_ACT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN:STROBE_DATI_R2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3881,7 +4640,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:DEPO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:ID_CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3893,7 +4652,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:ID_CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3905,7 +4664,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3917,7 +4676,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3929,10 +4688,10 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK:STROBE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:ALTEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="MAG2_ES3_RIK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out:APERTURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3941,7 +4700,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:ALTEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:APPOGGIO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3953,7 +4712,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:APPOGGIO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:CASSETTO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3965,7 +4724,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:CASSETTO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3977,7 +4736,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:LARGHEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -3989,7 +4748,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:LARGHEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:LUNGHEZZA_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4001,7 +4760,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:LUNGHEZZA_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4013,7 +4772,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4025,7 +4784,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MAX_LUNGHEZZA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4037,7 +4796,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MAX_LUNGHEZZA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MISURA_CAMERA_ESTERNA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4049,7 +4808,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:MISURA_CAMERA_ESTERNA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:NUM_SQUADRETTE1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4061,7 +4820,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:NUM_SQUADRETTE1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:NUM_SQUADRETTE2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4073,7 +4832,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:NUM_SQUADRETTE2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:NUOVO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4085,7 +4844,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:NUOVO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4097,7 +4856,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4109,7 +4868,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:R1_RUOTA_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4121,7 +4880,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:R1_RUOTA_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4133,7 +4892,7 @@
 <type ImageId="1" Category="Progetto" Var="Assemblatrice_Out" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4145,7 +4904,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_ASSEMBLATRICE_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:ULTIMO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4157,10 +4916,10 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO:ULTIMO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_DATI_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN:NON_IN_EMERGENZA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4169,7 +4928,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:DISPONIBILE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4181,7 +4940,7 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:DISPONIBILE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:FINE_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4193,7 +4952,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:FINE_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:IN_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4205,7 +4964,7 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:IN_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:MAGAZZINO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4217,7 +4976,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:MAGAZZINO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:NUOVA_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4229,7 +4988,7 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:NUOVA_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:POSIZIONE_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4241,7 +5000,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:POSIZIONE_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R1_STATUS:PZ_DA_QUADRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4253,10 +5012,10 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS:PZ_DA_QUADRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R1_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN:R1_OK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4265,7 +5024,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:CASSETTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:DISPONIBILE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4277,7 +5036,7 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:DISPONIBILE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:FINE_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4289,7 +5048,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:FINE_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:IN_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4301,7 +5060,7 @@
 <type ImageId="1" Category="Progetto" Var="Q1_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:IN_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:MAGAZZINO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4313,7 +5072,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:MAGAZZINO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:NUOVA_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4325,7 +5084,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:NUOVA_MISSIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:POSIZIONE_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4337,7 +5096,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:POSIZIONE_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="R2_STATUS:PZ_DA_QUADRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4349,25 +5108,13 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS:PZ_DA_QUADRA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="R2_STATUS" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:OK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:ALTEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:PEZZO_PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:OK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4379,7 +5126,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:PEZZO_SBLOCCATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:PEZZO_PRONTO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4391,7 +5138,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:RIPARI_QUADRA_OK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:PEZZO_SBLOCCATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4403,13 +5150,25 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT:RIPARI_QUADRA_OK" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q1_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:LARGHEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="Q2_In:LineaNonInEmergenza" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:LARGHEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:LUNGHEZZA_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4421,7 +5180,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:LUNGHEZZA_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MAGAZZINO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4433,7 +5192,7 @@
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MAGAZZINO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4445,7 +5204,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MAX_LUNGHEZZA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4457,7 +5216,7 @@
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MAX_LUNGHEZZA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4469,7 +5228,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:NUM_SQUADRETTE1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4481,7 +5240,7 @@
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:NUM_SQUADRETTE1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:NUM_SQUADRETTE2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4493,7 +5252,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:NUM_SQUADRETTE2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:NUOVO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4505,7 +5264,7 @@
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:NUOVO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4517,7 +5276,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4529,7 +5288,7 @@
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4541,7 +5300,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4553,7 +5312,7 @@
 <type ImageId="1" Category="Progetto" Var="Q2_In" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:ULTIMO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4565,7 +5324,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_IN" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:ULTIMO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_APERTURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4577,7 +5336,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_APERTURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_ATTREZZATURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4589,7 +5348,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_ATTREZZATURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_BANCO_SQ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4601,7 +5360,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_BANCO_SQ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_BANCO_SQ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4613,7 +5372,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_BANCO_SQ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_CODICE_PRG" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4625,7 +5384,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_CODICE_PRG" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_COLLA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4637,7 +5396,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_COLLA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_FILA_SQ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4649,7 +5408,7 @@
 <type ImageId="1" Category="Progetto" Var="PLC_TRANSF_Q2_OUT" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_FILA_SQ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_FILA_SQ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4658,7 +5417,7 @@
 <type ImageId="1" Category="Progetto" Var="alm_FineRobotR1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_FILA_SQ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_OFFSET_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4667,7 +5426,7 @@
 <type ImageId="1" Category="Progetto" Var="alm_FineRobotR2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_OFFSET_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_RUOTA_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4676,22 +5435,13 @@
 <type ImageId="1" Category="Progetto" Var="alm_Q1_MancaFile" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1:R2_RUOTA_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Q1_numFilesIncoerente" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
-</ChildRefactor>
-<ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:ALTEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Q2_MancaFile" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Q1_numFilesIncoerente" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:APPOGGIO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4700,7 +5450,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Q2_numFilesIncoerente" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Q2_MancaFile" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:CASSETTO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4709,7 +5459,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR1_4200" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Q2_numFilesIncoerente" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4718,7 +5468,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR1_6150" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR1_4200" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:LARGHEZZA_PROFILO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4727,7 +5477,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_ZonaR1_ODBC" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR1_6150" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:LUNGHEZZA_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4736,7 +5486,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_ZonaR2_ODBC" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_ZonaR1_ODBC" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:MAGAZZINO_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4745,7 +5495,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_R1_PezzoDuplicato_Q1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_ZonaR2_ODBC" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4754,7 +5504,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_R1_PezzoDuplicato_Q2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_R1_PezzoDuplicato_Q1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:MAX_LUNGHEZZA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4763,7 +5513,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR2_4200" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_R1_PezzoDuplicato_Q2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4772,7 +5522,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR2_6700" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR2_4200" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:NUM_SQUADRETTE1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4781,7 +5531,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_M1_ES2_ErrDatiDaDB" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR2_6700" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:NUM_SQUADRETTE2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4790,7 +5540,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_M2_ES2_ErrDatiDaDB" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_M1_ES2_ErrDatiDaDB" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:NUOVO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4799,7 +5549,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_StatoCiclo_R1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_M2_ES2_ErrDatiDaDB" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:POSIZIONE" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4808,7 +5558,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_StatoCiclo_R2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_StatoCiclo_R1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:POSIZIONE_PEZZO_ESTERNO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4817,7 +5567,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR1_9150" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_StatoCiclo_R2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:ROBOT_ASSEGNATO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4826,7 +5576,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR2_9150" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR1_9150" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:TOTALE_PEZZI_QUARTINA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4835,7 +5585,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_R1_ConfigError_Q1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_Step_ToutR2_9150" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:ULTIMO_PEZZO" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4844,7 +5594,7 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_R1_ConfigError_Q2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_R1_ConfigError_Q1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:R2_APERTURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
@@ -4853,13 +5603,16 @@
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
-<type ImageId="1" Category="Progetto" Var="alm_AnomaliaDeposito_R1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+<type ImageId="1" Category="Progetto" Var="alm_R1_ConfigError_Q2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2:R2_ATTREZZATURA" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 <ChildRefactor>
 <type ImageId="1" Category="Progetto" Var="SCAR_M1_PZ2" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
+</ChildRefactor>
+<ChildRefactor>
+<type ImageId="1" Category="Progetto" Var="alm_AnomaliaDeposito_R1" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 </ListRefactor>
 </Refactoring>
