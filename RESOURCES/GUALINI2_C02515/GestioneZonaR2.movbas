@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="53563" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="186" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -1115,7 +1115,7 @@ Sub ProcessaCodaEstrattori_ZONA_R2()
 
 	If codaMAG1_ES2.Count &gt; 0 Then
 		If Not [MAG1_ES2_RIK:STROBE] _
-				And ( [MAG1_ES1_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
+				And ( [MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Or [MAG1_ES2_ACT:NOME_PEZZO_UNICO] = "") _
 			Then
 
 				If codaMAG1_ES2.Count &gt; 0 Then
@@ -1246,6 +1246,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 	cass 		= GetVariableValue(varEstrattore 		&amp; ":ID_CASSETTO")
 	cassOld 	= GetVariableValue(varEstrattoreOld 	&amp; ":ID_CASSETTO")
 
+	'se ho cassetto 0 faccio reset dei dati dei membri dei pezzi
 	If (cass = 0 And (cassOld &lt;&gt; cass)) Or cassOld = UPDATE_ESTRATTORI Then
 		'ho chiamoto guori il cassetto 0
 		'devo resettare le variabili struct dei pezzi in scarico
@@ -2040,7 +2041,6 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiC2BQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

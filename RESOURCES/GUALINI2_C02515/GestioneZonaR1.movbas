@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="39890" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="33098" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -771,13 +771,17 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 						'se ultimo pezzo della quartina faccio rientrare l'estrattore
 						'TODO potrei contare quanti pezzo ho nella quartina
 						Dim countpezzi As Integer
-						'ret = PezziNellaQuartina(MysSqlConnectionString, [R1_DATI_PEZZO:ID_QUARTINA], coutpezzi)
+						ret = PezziNellaQuartina(MysSqlConnectionString, [R1_DATI_PEZZO:ID_QUARTINA], countpezzi)
 						'SELECT count(*) FROM gualini.pezzo WHERE quartina_ID_QUARTINA = "010071050005.BATH058";
 						'If ret &lt;&gt; 0 Then
 
 						'End If
 
-						If Not [R1_DATI_PEZZO:ULTIMO_PEZZO] Then
+						If countpezzi = 4 Then
+							'forzo il valore di ultimo pezzo
+							[R1_DATI_PEZZO:ULTIMO_PEZZO] = True
+						End If
+						If Not [R1_DATI_PEZZO:ULTIMO_PEZZO]  Then
 							StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
 						Else
 							'è ultimo pezzo allora rilevo a quale estrattore è relativo
@@ -1289,6 +1293,84 @@ Function FileDaLeggere() As Integer
 		End If
 		'se nessun pezzo pronto leggiDaQuadra = 0
 	End If
+
+End Function
+
+Function PezziNellaQuartina(connectionString As String, qrt As String, ByRef count As Integer ) As Integer
+	
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+	Const OK As Integer = 0
+	
+	PezziNellaQuartina = OK 	'inizializzzo
+
+    Dim commandText As String
+
+	'cerco nel db quanti pezzi ci sono nel cassetto della quartina
+	'SELECT count(*) FROM gualini.pezzo WHERE quartina_ID_QUARTINA = "010071050005.BATH058";
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT COUNT(*) AS PEZZI " &amp; _
+                      	" FROM  `gualini`.`pezzo` " &amp; _
+            			" WHERE quartina_ID_QUARTINA = "   &amp; """" &amp; CStr(qrt)  &amp; """" &amp; _
+            			";"
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					'DebugMsg "PezziNellaQuartina(); MyDataReader.HasRows = " 			&amp;  CStr(MyDataReader.HasRows)
+					'DebugMsg "PezziNellaQuartina(); MyDataReader.RecordsAffected = " 	&amp;  CStr(MyDataReader.RecordsAffected)
+
+					'se la quartina esiste nel DB leggo i dati di magazzino e cassetto
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+
+						count = MyDataReader("PEZZI")
+					Else
+						count = 0
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+        DebugMsg "GestioneZonaR1.movbas -&gt; PezziNellaQuartina(); commandText = " &amp; commandText &amp; "; count = " &amp; CStr(count) &amp; "; StatoCicloCarico = " &amp; CStr(StatoCicloCarico)  &amp; "."
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; PezziNellaQuartina() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" PezziNellaQuartina() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR1.movbas -&gt; PezziNellaQuartina() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR1.movbas -&gt; PezziNellaQuartina() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("PezziNellaQuartina() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR1.movbas -&gt; PezziNellaQuartina() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		Exit Function
+
+    End Try
 
 End Function
 
@@ -3349,7 +3431,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiC8A8oDUQt+Cw==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiAHA8ADzgM=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
