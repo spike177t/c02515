@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="186" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1701" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -35,8 +35,8 @@ Public Structure stEstrattore
     Public STROBE As Boolean
 End Structure
 
-Const TOUT_RICHIEDIBILE 	As Integer 	= 1 'in secondi
-Const TOUT_STEP				As Integer	= 2 'in secondi
+Const TOUT_RICHIEDIBILE 	As Integer 	= 2 'in secondi
+Const TOUT_STEP				As Integer	= 120 'in secondi
 Const UPDATE_ESTRATTORI		As Integer = 16500
 
 Dim MysSqlConnectionString As String
@@ -59,6 +59,7 @@ Sub Main()
 
 	Dim ret As Integer
 	Dim retMsgBox As VbMsgBoxResult
+	Dim strMsgBox As String
 
 	Dim varname_estrattore As String
 	Dim strEstrattore As String
@@ -432,85 +433,105 @@ Sub Main()
 
 				Case 9100	'ErroreMissioneRobot
 					LogMsg "StatoCicloScarico = 9100	'ErroreMissioneRobot"
+					'alzo allarme
+					alm_AnomaliaDeposito_R2 = True
 
-					'elimino quartina dal DB
-					ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
-					If ret &lt;&gt; 0 Then
-						'Alzo allarme
-						alm_FineRobotR2 = True
-						'StatoCicloScarico = 1000	'Attesa
-					Else
-						'segnalo all'estrattore che ho depositato il pezzo
-						varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
-						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+					'dico all'operatore di togliere i pezzi
 
-						'faccio richiesta di rientro estrattore
-						rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
-						rikEstrattore.ID_QUARTINA 				= ""
-						rikEstrattore.NOME_PEZZO_UNICO 			= ""
-						rikEstrattore.POSIZIONE 				= 0
-						rikEstrattore.DEPO						= False
-						rikEstrattore.PRONTO					= False
-						rikEstrattore.STROBE 					= True
+					strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf _
+								&amp; "Rimuovere tutti i Pezzi Da ESTRATTORE MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
+								&amp; "Rimuovere tutti i Pezzi Da ASSEMBLATRICE." &amp; vbCrLf  &amp; vbCrLf _
+								&amp; "Si per proseguire."
+					retMsgBox = MsgBox(strMsgBox, vbYesNo, "Attenzione ERRORE Deposito Pezzi su ASSEMBLATRICE")
+			    	If retMsgBox = vbYes Then
+			    		'chiedo ulteriore conferma e ricordo di resettare allarmi
+			    		strMsgBox = "Se tutti i pezzi sono stati rimossi premere Ok per proseguire." &amp; vbCrLf &amp; vbCrLf _
+								&amp; "Fare reset allarmi per riprendere il ciclo."
+						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Conferma rimozione pezzi da ASSEMBLATRICE e ESTRATTORE "&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
 
-						'aggiungo richiesta a coda estrattore
-						If [R2_STATUS:MAGAZZINO] = 1  Then
-							strEstrattore =Serializza_stEstrattore(rikEstrattore)
-							DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
-							'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
-							codaMAG1_ES2.Enqueue(strEstrattore)
-						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							strEstrattore =Serializza_stEstrattore(rikEstrattore)
-							DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
-							'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
-							codaMAG2_ES2.Enqueue(strEstrattore)
+						'elimino quartina dal DB
+						ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
+						If ret &lt;&gt; 0 Then
+							'Alzo allarme
+							alm_FineRobotR2 = True
+							'StatoCicloScarico = 1000	'Attesa
+						Else
+							'segnalo all'estrattore che ho depositato il pezzo
+							varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
+							SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 
+							'faccio richiesta di rientro estrattore
+							rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
+							rikEstrattore.ID_QUARTINA 				= ""
+							rikEstrattore.NOME_PEZZO_UNICO 			= ""
+							rikEstrattore.POSIZIONE 				= 0
+							rikEstrattore.DEPO						= False
+							rikEstrattore.PRONTO					= False
+							rikEstrattore.STROBE 					= True
+
+							'aggiungo richiesta a coda estrattore
+							If [R2_STATUS:MAGAZZINO] = 1  Then
+								strEstrattore =Serializza_stEstrattore(rikEstrattore)
+								DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+								'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+								codaMAG1_ES2.Enqueue(strEstrattore)
+							ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+								strEstrattore =Serializza_stEstrattore(rikEstrattore)
+								DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+								'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+								codaMAG2_ES2.Enqueue(strEstrattore)
+
+							End If
+
+							'faccio reset dei membri pezzo
+							If     [R2_STATUS:MAGAZZINO] = 1  Then
+								ResetDatiMembriStruttura("SCAR_M1_PZ1")
+								ResetDatiMembriStruttura("SCAR_M1_PZ2")
+								ResetDatiMembriStruttura("SCAR_M1_PZ3")
+								ResetDatiMembriStruttura("SCAR_M1_PZ4")
+							ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+								ResetDatiMembriStruttura("SCAR_M2_PZ1")
+								ResetDatiMembriStruttura("SCAR_M2_PZ2")
+								ResetDatiMembriStruttura("SCAR_M2_PZ3")
+								ResetDatiMembriStruttura("SCAR_M2_PZ4")
+							End If
+
+							'NON passo nessun dato all'Assemblatrice
+
+							'azzero le altre variabili
+							[R2_STATUS:MAGAZZINO] = 0
+							[R2_STATUS:CASSETTO] = 0
+							[R2_STATUS:ID_QUARTINA] = ""
+
+							'aggiorno cassetti pieni e disponibili
+						    AggiornaCassettiPieni(MysSqlConnectionString, 1)
+							AggiornaCassettiPieni(MysSqlConnectionString, 2)
+						    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
+							AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
+							AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
+							AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+
+							[R2_STATUS:ERR_MISSIONE_ACK] = True 'invio ack al robot
+							stepTout = Timer()
+							StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
+							'StatoCicloScarico = 1000	'Attesa
 						End If
-
-						'faccio reset dei membri pezzo
-						If     [R2_STATUS:MAGAZZINO] = 1  Then
-							ResetDatiMembriStruttura("SCAR_M1_PZ1")
-							ResetDatiMembriStruttura("SCAR_M1_PZ2")
-							ResetDatiMembriStruttura("SCAR_M1_PZ3")
-							ResetDatiMembriStruttura("SCAR_M1_PZ4")
-						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							ResetDatiMembriStruttura("SCAR_M2_PZ1")
-							ResetDatiMembriStruttura("SCAR_M2_PZ2")
-							ResetDatiMembriStruttura("SCAR_M2_PZ3")
-							ResetDatiMembriStruttura("SCAR_M2_PZ4")
-						End If
-
-						'NON passo nessun dato all'Assemblatrice
-
-						'azzero le altre variabili
-						[R2_STATUS:MAGAZZINO] = 0
-						[R2_STATUS:CASSETTO] = 0
-						[R2_STATUS:ID_QUARTINA] = ""
-
-						'aggiorno cassetti pieni e disponibili
-					    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-						AggiornaCassettiPieni(MysSqlConnectionString, 2)
-					    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-						AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-						AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-						AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
-
-						[R2_STATUS:FINE_MISSIONE_ACK] = True 'invio ack al robot
-						stepTout = Timer()
-						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
 					End If
 
 				Case 9150	'SetTimetAttesaFineMissione_false
-					stepTout = Timer()
-					StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
+					If [R2_STATUS:DISPONIBILE] Then
+						stepTout = Timer()
+						StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
+					End If
 
-				Case 9150	'AttesaFineMissioneAck_false
+
+				Case 9200	'AttesaFineMissioneAck_false
 					LogMsg "StatoCicloScarico = 9200	'AttesaFineMissioneAck_false"
 					If SuperatoTimeout(stepTout, TOUT_STEP) Then
 						alm_Step_ToutR2_9150 = True
 						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
 					End If
-					If [R2_STATUS:ERR_MISSIONE] = False Then
+					If [R2_STATUS:DISPONIBILE] And [R2_STATUS:ERR_MISSIONE] = False Then
 						[R2_STATUS:ERR_MISSIONE_ACK] =False
 						alm_Step_ToutR2_9150 = False
 						StatoCicloScarico = 1000	'Attesa
@@ -1933,8 +1954,9 @@ End Sub
 Function MovimentatoPiuVecchio() As Integer
 	MovimentatoPiuVecchio = 0
 
-	If ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) Then
-		'ho tutti i pezzi dei due estrattori depositati allora prendo quello che ha il timestamp più vecchio
+	'If ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) Then
+	If ([MAG1_ES2_ACT:ID_CASSETTO] &gt; 0) And ([MAG2_ES2_ACT:ID_CASSETTO] &gt; 0) Then
+		'ho tutti e due gli estrattori disponibili allora prendo quello che ha il timestamp più vecchio
 		Dim objRet1 As DBVarObjCmdTarget
 		Dim dTimeStamp1 As Date
 		Dim nMS1 As Integer
@@ -1963,20 +1985,22 @@ Function MovimentatoPiuVecchio() As Integer
 		DebugMsg "MovimentatoPiuVecchio() -&gt; differenza = dt1-dt2 = " &amp; CStr(dt1 -dt2)
 
 		If differenza &gt; 0 Then
-			'pezzo da Q1 più recente
-			MovimentatoPiuVecchio = 2	'prendo da Q2 perchè più vecchio
+			'pezzo da MAG1 più recente
+			MovimentatoPiuVecchio = 2	'prendo da MAG2 perchè più vecchio
 		Else
-			MovimentatoPiuVecchio = 1	'prendo da Q1 perchè più vecchio
+			MovimentatoPiuVecchio = 1	'prendo da MAG1 perchè più vecchio
 		End If
 
 		objRet1 = Nothing
 		objRet2 = Nothing
 	Else
-		'ho solo un pezzo pronto o nessuno
-		If [MAG1_ES2_ACT:DEPO]  Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Then
+		'ho solo un estrattore disponibile o nessuno
+		'If [MAG1_ES2_ACT:DEPO]  Or [MAG1_ES2_ACT:ID_CASSETTO] = 0 Then
+		If [MAG1_ES2_ACT:ID_CASSETTO] &gt; 0 Then
 			MovimentatoPiuVecchio = 1
 		End If
-		If [MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Then
+		'If [MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0 Then
+		If [MAG2_ES2_ACT:ID_CASSETTO] &gt; 0 Then
 			MovimentatoPiuVecchio = 2
 		End If
 		'se no MovimentatoPiuVecchio = 0
@@ -2041,6 +2065,8 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiBBAKAH
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
