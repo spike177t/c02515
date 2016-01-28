@@ -33,9 +33,21 @@
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri Q1_PEZZO_DISP</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="77" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="38" SelLength="425" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
 Public Sub Click()
-	ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+	If [R1_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
+		Exit Sub
+	End If
+	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
+		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+	End If
+	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
+		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+	End If
+
 End Sub
 
 Sub ResetDatiMembriStruttura(varname As String)
@@ -111,9 +123,21 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri Q2_PEZZO_DISP</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="77" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="319" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
 Public Sub Click()
-	ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+	If [R1_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
+		Exit Sub
+	End If
+	If [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
+		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+	End If
+	If [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
+		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+	End If
+
 End Sub
 
 Sub ResetDatiMembriStruttura(varname As String)
@@ -2350,7 +2374,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="1630" y="610" width="-210" height="-30" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="1700" y="610" width="-210" height="-30" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2362,8 +2386,12 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset MAG1_ES1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="2069" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="96" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
 Public Sub Click()
+	If [R1_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
+		Exit Sub
+	End If
 	ResetDatiMembriStruttura("MAG1_ES1_ACT")
 	ResetDatiMembriStruttura("MAG1_ES1_RIK")
 End Sub
@@ -2429,7 +2457,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="1650" y="580" width="210" height="30" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="1710" y="580" width="210" height="30" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2441,8 +2469,12 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset MAG2_ES1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
 Public Sub Click()
+	If [R1_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
+		Exit Sub
+	End If
 	ResetDatiMembriStruttura("MAG2_ES1_ACT")
 	ResetDatiMembriStruttura("MAG2_ES1_RIK")
 End Sub
@@ -5645,7 +5677,7 @@ End Sub
 <child>
 <object>Button</object>
 <type x="1330" y="970" width="50" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
@@ -5763,6 +5795,22 @@ End Sub
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="1370" y="560" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType action=&quot;2&quot; parameters=&quot;C:\tmp\GeneraFileQuadra_cmd.exe&quot; workingpath=&quot;C:\tmp&quot; timeout=&quot;0&quot;&gt;System&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">GENERA PEZZI</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="67" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Sub Main()
+	Const ATTESA As Double = 2
+
+	[Q1_Out:InCiclo] = True
+	[Q1_Out:NonInEmergenza] = True
+	[Q1_Out:NonInHold] = True
+	[Q1_Out:OK] = True
+	[Q1_Out:PezzoSbloccato] = True
+	[Q1_Out:RipariQuadraOk] = True
+
+	[Q2_Out:InCiclo] = True
+	[Q2_Out:NonInEmergenza] = True
+	[Q2_Out:NonInHold] = True
+	[Q2_Out:OK] = True
+	[Q2_Out:PezzoSbloccato] = True
+	[Q2_Out:RipariQuadraOk] = True
+
+	Do
+		If Not [Q1_Out:PezzoPronto] Then
+			Wait(ATTESA)
+			RunScript ("#TestSpostaFileQuadra,1",100,False)
+		End If
+		DoEvents
+
+		If Not [Q2_Out:PezzoPronto] Then
+			Wait(ATTESA)
+			RunScript ("#TestSpostaFileQuadra,2",100,False)
+		End If
+
+
+
+	Loop Until IsInStoppingMode
+
+
+
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>
