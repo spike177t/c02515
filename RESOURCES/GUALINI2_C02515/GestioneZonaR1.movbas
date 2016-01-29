@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="41107" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -199,9 +199,22 @@ Sub Main()
     	End If
     End If
 
+    Debug.Clear
+
     'forzo aggiornamento estrattori
     [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
     [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
+
+    'forzo aggiornamento dati pezzi da quadra
+	'dopo di che rendo possibile processare le code degli estrattori
+	If Not [MAG1_ES1_ACT:BUSY] Then
+		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
+	End If
+	If Not [MAG2_ES1_ACT:BUSY] Then
+		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
+	End If
 
     'aggiorno cassetti pieni e disponibili
     AggiornaCassettiPieni(MysSqlConnectionString, 1)
@@ -559,7 +572,13 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 						strEstrattore = Serializza_stEstrattore(rikEstrattore)
 						DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - codaMAG1_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
-						codaMAG1_ES1.Enqueue(strEstrattore)
+						'guardo di non richiedere cassetto già fuori
+						If [MAG1_ES1_ACT:NOME_PEZZO_UNICO] &lt;&gt; rikEstrattore.NOME_PEZZO_UNICO Then
+							codaMAG1_ES1.Enqueue(strEstrattore)
+						Else
+							DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - RIK DOPPIA :" &amp; strEstrattore &amp; ")")
+						End If
+
 
 						StatoCicloCarico = 1000	'AttesaPezzi
 					'ElseIf POSIZIONE.mag = 2 And Not [MAG2_ES1_RIK:STROBE] Then
@@ -579,7 +598,13 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 						strEstrattore = Serializza_stEstrattore(rikEstrattore)
 						DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - codaMAG2_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
-						codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						'guardo di non richiedere cassetto già fuori
+						If [MAG2_ES1_ACT:NOME_PEZZO_UNICO] &lt;&gt; rikEstrattore.NOME_PEZZO_UNICO Then
+							codaMAG2_ES1.Enqueue(strEstrattore)
+						Else
+							DebugMsg("	Case 2200	'RikCassettoInEstrattorePlc - RIK DOPPIA :" &amp; strEstrattore &amp; ")")
+						End If
+						'codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
 
 						StatoCicloCarico = 1000	'AttesaPezzi
 					ElseIf POSIZIONE.mag &lt;&gt; 1 And POSIZIONE.mag &lt;&gt; 2 Then
@@ -691,7 +716,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 					'	[MAG1_ES1_ACT:BUSY] = True
 					'End If
 					'If [R1_STATUS:MAGAZZINO] = 2 Then
-					'	[MAG1_ES2_ACT:BUSY] = True
+					'	[MAG2_ES1_ACT:BUSY] = True
 					'End If
 
 					StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
@@ -722,7 +747,7 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 							[MAG1_ES1_ACT:BUSY] = True
 						End If
 						If [R1_STATUS:MAGAZZINO] = 2 Then
-							[MAG1_ES2_ACT:BUSY] = True
+							[MAG2_ES1_ACT:BUSY] = True
 						End If
 						StatoCicloCarico = 1000	'AttesaPezzi
 					End If
@@ -811,7 +836,11 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 				Case 6300	'GestisciQuartinaSuccessiva
 					LogMsg "StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva"
 					'reset dei dati di missione
-					If [loc_ImpostazioniImpianto:TipoCarico] = 0 And [loc_ImpostazioniImpianto:AbillRicercaQrtSuccessiva] Then
+					If [loc_ImpostazioniImpianto:TipoCarico] = 0 _
+							And [loc_ImpostazioniImpianto:AbillRicercaQrtSuccessiva] _
+							And [R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA] &lt;&gt; "" _
+							And [R1_DATI_PEZZO:ID_QUARTINA_SUCCESSIVA] &lt;&gt; "0" _
+						Then
 						StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva
 					Else
 						'non posso fare l'anticipo delle richieste di cassetto
@@ -955,6 +984,7 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 	enableLogMsg = True
 
 	If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1  _
+			And [R1_STATUS:DISPONIBILE] _
 			And (Not [R1_STATUS:IN_MISSIONE] And Not ([R1_STATUS:FINE_MISSIONE] Or [R1_STATUS:ERR_MISSIONE])) _
 			And ([MAG1_ES1_ACT:BUSY] And Not [MAG1_ES1_ACT:DEPO]) _
 			And StatoCicloCarico &lt;&gt; 6150 _
@@ -970,6 +1000,7 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 	End If
 
 	If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 2  _
+			And [R1_STATUS:DISPONIBILE] _
 			And (Not [R1_STATUS:IN_MISSIONE] And Not ([R1_STATUS:FINE_MISSIONE] Or [R1_STATUS:ERR_MISSIONE])) _
 			And ([MAG2_ES1_ACT:BUSY] And Not [MAG2_ES1_ACT:DEPO])  _
 			And StatoCicloCarico &lt;&gt; 6150 _
@@ -3005,9 +3036,9 @@ Sub ProcessaCodaEstrattori_ZONA_R1()
 				[MAG1_ES1_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
 				[MAG1_ES1_RIK:NOME_PEZZO_UNICO] 		= tmpEs.NOME_PEZZO_UNICO
 				[MAG1_ES1_RIK:POSIZIONE] 				= tmpEs.POSIZIONE
-				[MAG1_ES1_RIK:STROBE] 					= tmpEs.STROBE
 				[MAG1_ES1_RIK:PRONTO] 					= tmpEs.PRONTO
 				[MAG1_ES1_RIK:DEPO] 					= tmpEs.DEPO
+				[MAG1_ES1_RIK:STROBE] 					= tmpEs.STROBE
 
 		End If
 	End If
@@ -3047,9 +3078,9 @@ Sub ProcessaCodaEstrattori_ZONA_R1()
 				[MAG2_ES1_RIK:ID_QUARTINA] 				= tmpEs.ID_QUARTINA
 				[MAG2_ES1_RIK:NOME_PEZZO_UNICO] 		= tmpEs.NOME_PEZZO_UNICO
 				[MAG2_ES1_RIK:POSIZIONE] 				= tmpEs.POSIZIONE
-				[MAG2_ES1_RIK:STROBE] 					= tmpEs.STROBE
 				[MAG2_ES1_RIK:PRONTO] 					= tmpEs.PRONTO
 				[MAG2_ES1_RIK:DEPO] 					= tmpEs.DEPO
+				[MAG2_ES1_RIK:STROBE] 					= tmpEs.STROBE
 
 		End If
 	End If
@@ -3431,7 +3462,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDAA84D
+<BreakPoints xsi:type="xsd:base64Binary">AiBTAV4BbwF+ATwCVgLeA+0D
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>

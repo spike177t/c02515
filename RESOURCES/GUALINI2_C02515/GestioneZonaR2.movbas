@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1701" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="81426" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -1955,8 +1955,10 @@ Function MovimentatoPiuVecchio() As Integer
 	MovimentatoPiuVecchio = 0
 
 	'If ([MAG1_ES2_ACT:DEPO] Or [MAG1_ES2_ACT:ID_CASSETTO] = 0) And ([MAG2_ES2_ACT:DEPO] Or [MAG2_ES2_ACT:ID_CASSETTO] = 0) Then
-	If ([MAG1_ES2_ACT:ID_CASSETTO] &gt; 0) And ([MAG2_ES2_ACT:ID_CASSETTO] &gt; 0) Then
-		'ho tutti e due gli estrattori disponibili allora prendo quello che ha il timestamp più vecchio
+	If ([MAG1_ES2_ACT:ID_CASSETTO] &gt; 0) And ([MAG2_ES2_ACT:ID_CASSETTO] &gt; 0) _
+		Or ([MAG1_ES2_ACT:ID_CASSETTO] = 0) And ([MAG2_ES2_ACT:ID_CASSETTO] = 0) _
+		Then
+		'ho tutti e due gli estrattori disponibili oppure nessuno disponibilr allora prendo quello che ha il timestamp più vecchio
 		Dim objRet1 As DBVarObjCmdTarget
 		Dim dTimeStamp1 As Date
 		Dim nMS1 As Integer
@@ -2065,8 +2067,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBBAKAH
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBNAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
