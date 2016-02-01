@@ -11,7 +11,7 @@
 <ZippedProject>0</ZippedProject>
 <LogStringID>0</LogStringID>
 <CryptStrings>0</CryptStrings>
-<Platforms TargetWin32="1" TargetWinCE="0" TargetWin32Client="0" TargetWinCEClient="0" TargetJ2SEClient="0" TargetJMSEClient="0" TargetLicenseType="0" DefScreenSizeX="1920" DefScreenSizeY="965" DefScreenColor="10551232" DefScreenNumColor="0"/>
+<Platforms TargetWin32="1" TargetWinCE="0" TargetWin32Client="0" TargetWinCEClient="0" TargetJ2SEClient="0" TargetJMSEClient="0" TargetLicenseType="0" DefScreenSizeX="1024" DefScreenSizeY="668" DefScreenColor="10551232" DefScreenNumColor="0"/>
 <ProjectPaths Alarms="" Data="" Images="" Resources="" Logs="" DataLoggers="" NetworkUserPath="" HelpFilePath=""/>
 <UserAndGroupsSettings EnableAutoLoggoff="1" EnableRuntimeUsers="0" RuntimeUserFileName="" AllowRuntimeLevel="5" AllowResizingLevel="0" EnableNTUserLogin="0" DefaultPrivAdminLevel="1023" DefaultPrivAdminAccessLevel="4294901760" DefaultPrivUserLevel="5" DefaultPrivUserAccessLevel="1048576" DefaultPrivGuestLevel="0" DefaultPrivGuestAccessLevel="0" IncludeChildProjectUsers="0" MaximumChildProjectLevels="5" EnablePasswordProtectedProject="0" EnablePasswordMng="1" SecsAutoLoggoffTimeout="60" MinimumUserLength="0" MinimumPasswordLength="0" SecsWebClientAutoLoggoff="0" EnableCRF21Settings="0" ExecCmdOnLogin="1"/>
 <ChildProjectsList/>
