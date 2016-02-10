@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10166" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
+<ScriptCode StartSel="9679" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
 'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
 'Sostituita la Variabile 'Q2_Out' con il nuovo nome 'Q2_Out_err'
-'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -291,9 +291,9 @@ Ciclo:
 		End If
 
 		[Q2_Out:TestComunicazione] 	= Q2_InputDaQuadra.0
-		[Q2_Out:OK] 					= Q2_InputDaQuadra.1
-		[Q2_Out:InCiclo]				= Q2_InputDaQuadra.2
-		[Q2_Out:PezzoPronto]			= Q2_InputDaQuadra.3
+		[Q2_Out:On] 				= Q2_InputDaQuadra.1
+		[Q2_Out:InCiclo]			= Q2_InputDaQuadra.2
+		[Q2_Out:PezzoPronto]		= Q2_InputDaQuadra.3
 		[Q2_Out:PezzoSbloccato]		= Q2_InputDaQuadra.4
 		[Q2_Out:NonInEmergenza]		= Q2_InputDaQuadra.5
 		[Q2_Out:NonInHold]			= Q2_InputDaQuadra.6
@@ -331,5 +331,5 @@ NoErrore:
 End Sub
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
-<Execution ThreadPriority="1" StatusVariable="" MaxInstances="10" SleepExecution="0" SyncroScriptTimeout="5000"/>
+<Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>

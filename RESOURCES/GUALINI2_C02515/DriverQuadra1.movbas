@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
-'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -217,26 +217,31 @@ Dim Lettura1 As Single
 Dim Lettura2 As Single
 Dim Lettura3 As Single
 Dim File As String
-Dim Q1ChkPingOk As String
+
+Dim Q1ChkPing As String	'var per chk ping
+Dim Q1ChkPingOk As String	'valore di ping Ok, assegnato in loading
+
 Dim success As Long
 Dim ECHO As ICMP_ECHO_REPLY
 
 Public Sub Loading()
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
-	Q1_NonComunica = True
+	'Q1_NonComunica = True
+	[Q1_Out:NonComunica] = True
 	Q1ChkPingOk = "0   [ OK ]"
 End Sub
 
 Sub Main
 
-	NoPing:
+NoPing:
 	Wait 0.3
 	If SocketsInitialize() Then
 		'ping the IP by passing the address,
 		'text to send, and the ECHO structure.
 		success = Ping(("10.200.200.31"), ("TestPing"), ECHO)
 	Else
-		Q1_NonComunica = True
+		'Q1_NonComunica = True
+		[Q1_Out:NonComunica] = True
 		GoTo NoPing
 	End If
 
@@ -291,9 +296,9 @@ Ciclo:
 		End If
 		
 		[Q1_Out:TestComunicazione] 	= Q1_InputDaQuadra.0
-		[Q1_Out:OK] 					= Q1_InputDaQuadra.1
-		[Q1_Out:InCiclo]				= Q1_InputDaQuadra.2
-		[Q1_Out:PezzoPronto]			= Q1_InputDaQuadra.3
+		[Q1_Out:On] 				= Q1_InputDaQuadra.1
+		[Q1_Out:InCiclo]			= Q1_InputDaQuadra.2
+		[Q1_Out:PezzoPronto]		= Q1_InputDaQuadra.3
 		[Q1_Out:PezzoSbloccato]		= Q1_InputDaQuadra.4
 		[Q1_Out:NonInEmergenza]		= Q1_InputDaQuadra.5
 		[Q1_Out:NonInHold]			= Q1_InputDaQuadra.6
@@ -325,11 +330,13 @@ NoErrore:
 		Q1_ProvaComunicaz = Q1_ProvaComunicaz + 1
 		If Q1_ProvaComunicaz &gt;= 10000 Then Q1_ProvaComunicaz = 1
 
+		DoEvents
+
 		Wait 0.3
 	Wend
 
 End Sub
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
-<Execution ThreadPriority="1" StatusVariable="" MaxInstances="10" SleepExecution="0" SyncroScriptTimeout="5000"/>
+<Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>

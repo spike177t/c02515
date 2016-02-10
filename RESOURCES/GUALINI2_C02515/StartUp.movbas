@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="959" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -44,6 +44,17 @@ Sub Main
       "UID=root;" &amp; _
       "PASSWORD=co.mar;" &amp; _
       "OPTION=3;"
+
+
+	'LOG OPERATORE
+	Dim myObject As UserAndGroupCmdTarget
+	Set myObject = GetUserAndGroup
+	If Not myObject Is Nothing Then
+		If myObject.LogonUser("operatore","operatore") Then
+			'MsgBox("operatore has logged in!", vbOkOnly, GetProjectTitle)
+		End If
+	End If
+	Set myObject = Nothing
 
 End Sub
 

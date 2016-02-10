@@ -15,6 +15,7 @@ Thumbs.db
 *.HisLogEx
 
 Copia*.*
+*orig
 
 LOGS/LastInteraction.xml
 LOGS/*
@@ -22,3 +23,4 @@ IMAGES/*
 DLOGGERS/*
 ALARM/*.alr
 DATA/*.var
+RESOURCES/GUALINI2_C02515/Esempi/*

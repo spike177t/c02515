@@ -13,15 +13,15 @@
 <CryptStrings>0</CryptStrings>
 <Platforms TargetWin32="1" TargetWinCE="0" TargetWin32Client="0" TargetWinCEClient="0" TargetJ2SEClient="0" TargetJMSEClient="0" TargetLicenseType="0" DefScreenSizeX="1024" DefScreenSizeY="668" DefScreenColor="10551232" DefScreenNumColor="0"/>
 <ProjectPaths Alarms="" Data="" Images="" Resources="" Logs="" DataLoggers="" NetworkUserPath="" HelpFilePath=""/>
-<UserAndGroupsSettings EnableAutoLoggoff="1" EnableRuntimeUsers="0" RuntimeUserFileName="" AllowRuntimeLevel="5" AllowResizingLevel="0" EnableNTUserLogin="0" DefaultPrivAdminLevel="1023" DefaultPrivAdminAccessLevel="4294901760" DefaultPrivUserLevel="5" DefaultPrivUserAccessLevel="1048576" DefaultPrivGuestLevel="0" DefaultPrivGuestAccessLevel="0" IncludeChildProjectUsers="0" MaximumChildProjectLevels="5" EnablePasswordProtectedProject="0" EnablePasswordMng="1" SecsAutoLoggoffTimeout="60" MinimumUserLength="0" MinimumPasswordLength="0" SecsWebClientAutoLoggoff="0" EnableCRF21Settings="0" ExecCmdOnLogin="1"/>
+<UserAndGroupsSettings EnableAutoLoggoff="1" EnableRuntimeUsers="0" RuntimeUserFileName="" AllowRuntimeLevel="5" AllowResizingLevel="0" EnableNTUserLogin="0" DefaultPrivAdminLevel="1023" DefaultPrivAdminAccessLevel="4294901760" DefaultPrivUserLevel="5" DefaultPrivUserAccessLevel="1048576" DefaultPrivGuestLevel="1" DefaultPrivGuestAccessLevel="0" IncludeChildProjectUsers="0" MaximumChildProjectLevels="5" EnablePasswordProtectedProject="0" EnablePasswordMng="1" SecsAutoLoggoffTimeout="60" MinimumUserLength="0" MinimumPasswordLength="0" SecsWebClientAutoLoggoff="0" EnableCRF21Settings="0" ExecCmdOnLogin="1"/>
 <ChildProjectsList/>
-<ProjectExecution TrackProjectStatistic="1" StartupSynoptic="Test" StartupScript="StartUp" ShutdownScript="" StartFullScreen="0" ShowStatusBar="1" ShowTraceBar="1" HideDesktop="0" HideStartButton="0" HideTaskBar="0" HideSystemClock="0" DisableTaskSwitching="0" DisableTaskManager="0" DisableCtrlAltDel="0" ROT="0" ROTAnyClient="0" ServiceSysTray="1" ServiceShowLogon="0" DefaultODBCPlugin="MySQL" StatObjBack="0" AlphaNumericScreen="" NumericScreen="" GetPasswordScreen="" PasswordExpiredScreen="" TraceCommentScreen="" AckCommentScreen="" ExtCaption="1" ExtBorder="1" ExtResizeable="0" ExtSysMenu="1" EnMouseBuzzer="0" MouseBuzzerDuration="0" ScanAndLoadNotDestroyableScreens="0" EnableRenamingMng="1"/>
+<ProjectExecution TrackProjectStatistic="1" StartupSynoptic="Test" StartupScript="StartUp" ShutdownScript="" StartFullScreen="0" ShowStatusBar="1" ShowTraceBar="1" HideDesktop="0" HideStartButton="0" HideTaskBar="0" HideSystemClock="0" DisableTaskSwitching="0" DisableTaskManager="0" DisableCtrlAltDel="0" ROT="0" ROTAnyClient="0" ServiceSysTray="1" ServiceShowLogon="0" DefaultODBCPlugin="MySQL" StatObjBack="0" AlphaNumericScreen="" NumericScreen="" GetPasswordScreen="" PasswordExpiredScreen="" TraceCommentScreen="" AckCommentScreen="" ExtCaption="1" ExtBorder="1" ExtResizeable="1" ExtSysMenu="1" EnMouseBuzzer="0" MouseBuzzerDuration="0" ScanAndLoadNotDestroyableScreens="0" EnableRenamingMng="1"/>
 <StartupCommands/>
 <ShuttingCommands/>
 <EnableAdminAlert ServerNameAdminAlert="">0</EnableAdminAlert>
 <MouseGestures MouseGestureSpeed="50">0</MouseGestures>
 <HeapManager SetHeapValues="0" DrawRecthHeap="0" DrawAlarmWndhHeap="0" DrawAlarmBannerhHeap="0" DrawHisLogWndhHeap="0" DrawDLWndhHeap="0" DrawTraceDBWndhHeap="0" DrawButtonhHeap="0" DrawCharthHeap="0" DrawPolyhHeap="0" DrawOleObjhHeap="0" DrawOcxObjhHeap="0" DrawGrouphHeap="0" DrawWholeSynObjhHeap="0" DrawTrendObjhHeap="0" DrawGaugeObjhHeap="0" DrawEditBoxObjhHeap="0" DrawTabObjhHeap="0" DrawHourSelectorhHeap="0" DrawListBoxhHeap="0" DrawGridBoxhHeap="0" DrawDynamicHeap="0" VariableHeap="0" AlarmHeap="0" OPCItemObjectsHeap="0" OPCGroupObjectsHeap="0" OPCObjectsHeap="0" DrawScriptHeap="0" AlarmScriptHeap="0"/>
-<HisLogSett RecycleDBConnection="1" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" MaxCacheBeforeFlush="32767" Dsn="ODBC DSN" User="" DefVarCharPrecision="255" TimeCol="" LocTimeCol="" MSecCol="" UserCol="" EventTypeCol="" EventTypeNumCol="" DescriptionCol="" SubEventTypeCol="" CommentCol="" DurationCol="" UniqueIDCol="" TransactionIDCol="" AlarmTable="" DriverTable="" SysTable="" AlarmsDurationDays="90" AlarmsDurationHours="0" AlarmsDurationMinutes="0" DriversDurationDays="3" DriversDurationHours="0" DriversDurationMinutes="0" SystemsDurationDays="3" SystemsDurationHours="0" SystemsDurationMinutes="0" UseInMemoryDB="0" IMDBSharedTable="0" IMDBSaveColumnName="1" IMDBExportXMLTable="0" IMDBExportCSVTable="0" IMDBCryptFile="0" SecWriteBehindDelay="10" MaxRecordsNumber="0" cIMDBDelimiter="" cIMDBEndOfLine="" DefaultSoftLogicOPCServerName="OPC.OUT.PCOS.21" DefaultSoftLogicOPCServerResourceName="TestResource" DefaultSoftLogicVariableGroupName="Soft Logic">1</HisLogSett>
+<HisLogSett RecycleDBConnection="1" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" MaxCacheBeforeFlush="32767" Dsn="Gualini_LogStorico" User="gualini" DefVarCharPrecision="255" TimeCol="" LocTimeCol="" MSecCol="" UserCol="" EventTypeCol="" EventTypeNumCol="" DescriptionCol="" SubEventTypeCol="" CommentCol="" DurationCol="" UniqueIDCol="" TransactionIDCol="" AlarmTable="" DriverTable="" SysTable="" AlarmsDurationDays="90" AlarmsDurationHours="0" AlarmsDurationMinutes="0" DriversDurationDays="3" DriversDurationHours="0" DriversDurationMinutes="0" SystemsDurationDays="3" SystemsDurationHours="0" SystemsDurationMinutes="0" UseInMemoryDB="0" IMDBSharedTable="0" IMDBSaveColumnName="1" IMDBExportXMLTable="0" IMDBExportCSVTable="0" IMDBCryptFile="0" SecWriteBehindDelay="10" MaxRecordsNumber="0" cIMDBDelimiter="" cIMDBEndOfLine="" DefaultSoftLogicOPCServerName="OPC.OUT.PCOS.21" DefaultSoftLogicOPCServerResourceName="TestResource" DefaultSoftLogicVariableGroupName="Soft Logic">1</HisLogSett>
 <SoftLogicListTagRemoved/>
 <SoftLogicListTagChanged/>
 <RenamedScreens/>
@@ -59,13 +59,31 @@
 </UserGroup>
 <UserGroup>
 <Name Description="Normali utenti del Progetto" DefAccLevel="1048576" DefLevel="5" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="60" ExpiringDaysPassword="0" Language="">Utenti</Name>
-<UsersList/>
+<UsersList>
+<User>
+<Name Password="gualini" NumericPassword="" Description="" ExpDaysPassw="0" AccessLevel="4294901760" Level="4294967295" MobileCountryCode="" MobileAreaCode="" MobilePhoneNumber="" VoiceCountryCode="" VoiceAreaCode="" VoicePhoneNumber="" FaxCountryCode="" FaxAreaCode="" FaxPhoneNumber="" MessengerRecipient="" Email="" AccDisabled="0" CannotBeChanged="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="0" AutoLogoffSecsTimeout="60" Language="" TimePassword="2016-02-02T15:35:26Z" MustChangePassword="0" CannotChangePassword="1">gualini</Name>
+<LogonCommands/>
+<LogoffCommands/>
+</User>
+</UsersList>
 <LogonCommands/>
 <LogoffCommands/>
 </UserGroup>
 <UserGroup>
 <Name Description="Guest Users" DefAccLevel="0" DefLevel="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="60" ExpiringDaysPassword="0" Language="">Guests</Name>
 <UsersList/>
+<LogonCommands/>
+<LogoffCommands/>
+</UserGroup>
+<UserGroup>
+<Name Description="" DefAccLevel="0" DefLevel="1" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="0" AutoLogoffSecsTimeout="60" ExpiringDaysPassword="0" Language="">OperatoreLinea</Name>
+<UsersList>
+<User>
+<Name Password="operatore" NumericPassword="" Description="" ExpDaysPassw="0" AccessLevel="4294901760" Level="4294967295" MobileCountryCode="" MobileAreaCode="" MobilePhoneNumber="" VoiceCountryCode="" VoiceAreaCode="" VoicePhoneNumber="" FaxCountryCode="" FaxAreaCode="" FaxPhoneNumber="" MessengerRecipient="" Email="" AccDisabled="0" CannotBeChanged="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="0" AutoLogoffSecsTimeout="60" Language="" TimePassword="2016-02-03T09:26:16Z" MustChangePassword="0" CannotChangePassword="1">operatore</Name>
+<LogonCommands/>
+<LogoffCommands/>
+</User>
+</UsersList>
 <LogonCommands/>
 <LogoffCommands/>
 </UserGroup>

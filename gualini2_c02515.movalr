@@ -3895,5 +3895,93 @@
 </Threshold>
 </ThresholdList>
 </Alarm>
+<Alarm>
+<Name Device="" Variable="Q1_Out:NonComunica" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">almQ1NonComunica</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="Quadra 1 Non Comunica" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="4294967295" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="1" Log="1" BlinkOnNewAlarm="1" VarTimeStamp="0" SupportAck="1" SupportReset="1" SupportResetConditionOn="1" BmpFile="" SndFile="" BeepEnabled="1" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="Q1_Out:NonInEmergenza" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_Q1_Emergenza</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="Q1 Emergenza Premuta" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="Q2_Out:NonComunica" Area="" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">almQ2NonComunica</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="Quadra 2 Non Comunica" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="4294967295" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="1" Log="1" BlinkOnNewAlarm="1" VarTimeStamp="0" SupportAck="1" SupportReset="1" SupportResetConditionOn="1" BmpFile="" SndFile="" BeepEnabled="1" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="Q2_Out:NonInEmergenza" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_Q2_Emergenza</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="Q2 Emergenza Premuta" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
 </AlarmList>
 </Alarms>
