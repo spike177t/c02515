@@ -102,249 +102,6 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="10" y="5" width="1000" height="75" ox="10" oy="5" owidth="1000" oheight="75"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="0" y="0" width="1000" height="75" rx="16" ry="16" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760">Rettangolo Smussato11</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>AlarmBanner</type>
-<type x="15" y="5" width="590" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>4</Border>
-<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
-<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
-<Name AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>AlarmBanner</type>
-<type x="15" y="40" width="590" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>4</Border>
-<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
-<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
-<Name AntialiasingFont="1" acr="4294901760">Banner Allarmi13</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="665" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">AutoOn</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="740" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">btnChiudi</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>group</type>
-<g x="610" y="5" width="35" height="65" ox="530" oy="0" owidth="30" oheight="45"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="645" y="48" width="-35" height="-21" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(0,64,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo8</Name>
-<Shadow OY="4">0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="645" y="70" width="-35" height="-22" fill="rgb(0,0,0)" stroke="rgb(127,127,127)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(64,64,64)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo7</Name>
-<Shadow OY="4">0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="645" y="27" width="-35" height="-22" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(64,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo6</Name>
-<Shadow OY="4">0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="645" y="27" width="-35" height="-22" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(128,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo2</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="PlcAust_TORRETTA_ROSSA">1</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>base</type>
-<type x="645" y="70" width="-35" height="-22" fill="rgb(255,255,255)" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(128,128,128)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo3</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="PlcAust_TORRETTA_BIANCA">1</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>base</type>
-<type x="645" y="48" width="-35" height="-21" fill="rgb(0,255,0)" stroke="rgb(0,128,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(0,128,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo4</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="PlcAust_TORRETTA_VERDE">1</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-</childs>
-<Name acr="4294901760">Simbolo16</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>group</type>
-<g x="925" y="5" width="65" height="65" ox="760" oy="170" owidth="65" oheight="65"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>Button</type>
-<type x="925" y="5" width="65" height="65" fill="rgb(255,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType synoptic=&quot;ConfermaExit&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name acr="4294901760">Pulsante264</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>group</type>
-<g x="935" y="12" width="45" height="48" ox="190" oy="449" owidth="44" oheight="45" LibName="Icons" LibDate="2011-02-07T14:15:42Z" LibVers="1056"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="935" y="15" width="45" height="45" rx="27" ry="35" rxa="30" rya="2" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="6" stroke-linecap="butt" stroke-linejoin="round">arc</type>
-<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name acr="4294901760">Arco73</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="954" y="12" width="7" height="28" rx="4" ry="6" fill="rgb(0,0,0)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
-<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name acr="4294901760">Rettangolo Smussato81</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name acr="4294901760">Simbolo251</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name acr="4294901760">Simbolo23</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name PubName="barraSuperiore" PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
 <g x="40" y="175" width="38" height="37" ox="1408" oy="-1669" owidth="113" oheight="113" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
@@ -840,7 +597,7 @@ End Sub
 <child>
 <object>base</object>
 <type x="215" y="290" width="1" height="1" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round" KAR="1">ellipse</type>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2139,7 +1896,7 @@ End Sub
 <childs>
 <child>
 <type>base</type>
-<type x="421" y="21" width="5" height="22" rx="5" ry="6" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="421" y="21" width="5" height="22" rx="5" ry="6" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato266</Name>
 <Shadow>0</Shadow>
@@ -2147,7 +1904,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="412" y="15" width="6" height="26" rx="5" ry="6" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="412" y="15" width="6" height="26" rx="5" ry="6" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato267</Name>
 <Shadow>0</Shadow>
@@ -2155,7 +1912,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="403" y="12" width="7" height="27" rx="7" ry="8" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="403" y="12" width="7" height="27" rx="7" ry="8" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato268</Name>
 <Shadow>0</Shadow>
@@ -2163,7 +1920,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="395" y="20" width="5" height="22" rx="6" ry="6" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="395" y="20" width="5" height="22" rx="6" ry="6" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato269</Name>
 <Shadow>0</Shadow>
@@ -2171,7 +1928,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="391" y="36" width="6" height="27" rx="6" ry="9" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="391" y="36" width="6" height="27" rx="6" ry="9" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato270</Name>
 <Shadow>0</Shadow>
@@ -2179,7 +1936,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="395" y="36" width="31" height="34" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round" KAR="1">ellipse</type>
+<type x="395" y="36" width="31" height="34" fill="rgb(255,255,255)" stroke="none" KAR="1">ellipse</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Ellisse271</Name>
 <Shadow>0</Shadow>
@@ -2187,7 +1944,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="395" y="38" width="31" height="17" fill="rgb(255,255,255)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="395" y="38" width="31" height="17" fill="rgb(255,255,255)" stroke="none">rect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo265</Name>
 <Shadow>0</Shadow>
@@ -2209,7 +1966,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="511" y="12" width="58" height="63" fill="none" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="511" y="12" width="58" height="63" fill="none" stroke="none">rect</type>
 <ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo91</Name>
 <Shadow>0</Shadow>
@@ -2445,6 +2202,250 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresSize="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="10" y="5" width="1010" height="75" ox="10" oy="5" owidth="1010" oheight="75"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="0" y="0" width="1010" height="75" rx="16" ry="16" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760">Rettangolo Smussato11</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>AlarmBanner</type>
+<type x="15" y="5" width="495" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>4</Border>
+<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
+<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
+<Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
+<ListFont font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
+<Name AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>AlarmBanner</type>
+<type x="15" y="40" width="495" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>4</Border>
+<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
+<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
+<Filter Area="MESSAGGI" Alarm="" type="15" severity="0" condition="0"/>
+<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
+<Name AntialiasingFont="1" acr="4294901760">Banner Allarmi13</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="570" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="645" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">btnChiudi</Name>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>group</type>
+<g x="520" y="5" width="35" height="65" ox="530" oy="0" owidth="30" oheight="45"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="555" y="48" width="-35" height="-21" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(0,64,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo8</Name>
+<Shadow OY="4">0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="555" y="70" width="-35" height="-22" fill="rgb(0,0,0)" stroke="rgb(127,127,127)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(64,64,64)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo7</Name>
+<Shadow OY="4">0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="555" y="27" width="-35" height="-22" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(64,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo6</Name>
+<Shadow OY="4">0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="555" y="27" width="-35" height="-22" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(128,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo2</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="PlcAust_TORRETTA_ROSSA">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>base</type>
+<type x="555" y="70" width="-35" height="-22" fill="rgb(255,255,255)" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(128,128,128)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo3</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="PlcAust_TORRETTA_BIANCA">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>base</type>
+<type x="555" y="48" width="-35" height="-21" fill="rgb(0,255,0)" stroke="rgb(0,128,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(0,128,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo4</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="PlcAust_TORRETTA_VERDE">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+</childs>
+<Name acr="4294901760">Simbolo16</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>group</type>
+<g x="935" y="5" width="65" height="65" ox="760" oy="170" owidth="65" oheight="65"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>Button</type>
+<type x="935" y="5" width="65" height="65" fill="rgb(255,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType synoptic=&quot;ConfermaExit&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name acr="4294901760">Pulsante264</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>group</type>
+<g x="945" y="12" width="45" height="48" ox="190" oy="449" owidth="44" oheight="45" LibName="Icons" LibDate="2011-02-07T14:15:42Z" LibVers="1056"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="945" y="15" width="45" height="45" rx="27" ry="35" rxa="30" rya="2" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="6" stroke-linecap="butt" stroke-linejoin="round">arc</type>
+<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name acr="4294901760">Arco73</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="964" y="12" width="7" height="28" rx="4" ry="6" fill="rgb(0,0,0)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name acr="4294901760">Rettangolo Smussato81</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name acr="4294901760">Simbolo251</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name acr="4294901760">Simbolo23</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name PubName="barraSuperiore" PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
