@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="9679" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="9528" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
 'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
 'Sostituita la Variabile 'Q2_Out' con il nuovo nome 'Q2_Out_err'
 
 Option Explicit
+
+
+Dim Scrittura1 As Single
+Dim Scrittura2 As Single
+
+'Dim Lettura1 As Single
+'Dim Lettura2 As Single
+'Dim Lettura3 As Single
+Dim ReadR_640 As Single
+Dim ReadR_641 As Single
+Dim ReadR_55 As Single
+
+Dim File As String
+
+Dim Q2ChkPing As String	'var per chk ping
+Dim Q2ChkPingOk As String	'valore di ping Ok, assegnato in loading
+
+Dim success As Long
 
 Dim IsacCnc As CncCOMItfc.CnItfcItfc
 
@@ -211,24 +229,22 @@ Private Function GetStatusCode(status As Long) As String
 	GetStatusCode = CStr(status) &amp; "   [ " &amp; msg &amp; " ]"
 End Function
 
-Dim Scrittura1 As Single
-Dim Scrittura2 As Single
-Dim Lettura1 As Single
-Dim Lettura2 As Single
-Dim Lettura3 As Single
-Dim File As String
-Dim Q2ChkPingOk As String
-Dim success As Long
 Dim ECHO As ICMP_ECHO_REPLY
 
 Public Sub Loading()
-	Set IsacCnc = New CncCOMItfc.CnItfcCls
-	Q2_NonComunica = True
-	Q2ChkPingOk = "0   [ OK ]"
+	'Set IsacCnc = New CncCOMItfc.CnItfcCls
+	'[Q2_Out:NonComunica] = True
+	'Q2ChkPingOk = "0   [ OK ]"
 End Sub
 
 Sub Main
 
+	'inizializzo
+	Set IsacCnc = New CncCOMItfc.CnItfcCls
+	'Q2_NonComunica = True
+	[Q2_Out:NonComunica] = True
+	Q2ChkPingOk = "0   [ OK ]"
+	
 	NoPing:
 	Wait 0.3
 	If SocketsInitialize() Then
@@ -236,13 +252,13 @@ Sub Main
 		'text to send, and the ECHO structure.
 		success = Ping(("10.200.200.32"), ("TestPing"), ECHO)
 	Else
-		Q2_NonComunica = True
+		[Q2_Out:NonComunica] = True
 		GoTo NoPing
 	End If
 
 	Q2ChkPing = GetStatusCode(success)
 	If (Q2ChkPing &lt;&gt; Q2ChkPingOk) Then
-		Q2_NonComunica = True
+		[Q2_Out:NonComunica] = True
 		GoTo NoPing
 	End If
 
@@ -250,25 +266,25 @@ Sub Main
 	'IsacCnc.machinename="QuadraCianf2"
 	IsacCnc.machinename="10.200.200.32"
 	IsacCnc.DataAType =CncAType_atShort
-	Q2_NonComunica = False
-	Q2_ProvaComunicaz = 1
+	[Q2_Out:NonComunica] = False
+	[Q2_Out:ProvaComunicaz] = 1
 
 Ciclo:
-	While Not MoviconInChiusura And Not IsInStoppingMode
+	While Not IsInStoppingMode
 		If SocketsInitialize() Then
 			'ping the IP by passing the address,
 			'text to send, and the ECHO structure.
 			success = Ping(("10.200.200.32"), ("TestPing"), ECHO)
 		Else
-			Q2_NonComunica = True
+			[Q2_Out:NonComunica] = True
 			GoTo Fine
 		End If
 
 		Q2ChkPing = GetStatusCode(success)
 		If (Q2ChkPing = Q2ChkPingOk) Then
-			Q2_NonComunica = False
+			[Q2_Out:NonComunica] = False
 		Else
-			Q2_NonComunica = True
+			[Q2_Out:NonComunica] = True
 			GoTo Fine
 		End If
 
@@ -276,60 +292,74 @@ Ciclo:
 		On Error Resume Next
 '--------------------------------------------------------------------------
 'LETTURA
-		Lettura1=IsacCnc.ReadR(641)
+		ReadR_641=IsacCnc.ReadR(641)		'IsacCnc.ReadR(641)
 		On Error GoTo Fine
-		Lettura2=IsacCnc.ReadR(640)
+		ReadR_640=IsacCnc.ReadR(640)	'IsacCnc.ReadR(640)
 		On Error GoTo Fine
-		Lettura3=IsacCnc.ReadR(55)
+		ReadR_55=IsacCnc.ReadR(55)	'IsacCnc.ReadR(55)
 		On Error GoTo Fine
-		Q2_InputDaQuadra=Lettura1
-		Q2_ControlloScrittura=Lettura2
-		If Lettura3 &lt;&gt; 0 Then
-			Q2_FotocellScaricatore5=True
+		'Q2_InputDaQuadra = Lettura1		'IsacCnc.ReadR(641)
+		'[Q2_In:ReadR_641] = Lettura1		'IsacCnc.ReadR(641)
+
+
+		'Q2_ControlloScrittura = Lettura2 	'IsacCnc.ReadR(640)
+		'[Q2_In:ReadR_640] = Lettura2 	'IsacCnc.ReadR(640)
+		If ReadR_55 &lt;&gt; 0 Then
+			'Q2_FotocellScaricatore5 = True
+			[Q2_In:FotocellScaricatore5] = True
 		Else
-			Q2_FotocellScaricatore5=False
+			'Q2_FotocellScaricatore5 = False
+			[Q2_In:FotocellScaricatore5] = False
 		End If
 
-		[Q2_Out:TestComunicazione] 	= Q2_InputDaQuadra.0
-		[Q2_Out:On] 				= Q2_InputDaQuadra.1
-		[Q2_Out:InCiclo]			= Q2_InputDaQuadra.2
-		[Q2_Out:PezzoPronto]		= Q2_InputDaQuadra.3
-		[Q2_Out:PezzoSbloccato]		= Q2_InputDaQuadra.4
-		[Q2_Out:NonInEmergenza]		= Q2_InputDaQuadra.5
-		[Q2_Out:NonInHold]			= Q2_InputDaQuadra.6
-		[Q2_Out:RipariQuadraOk]		= Q2_InputDaQuadra.7
+		[Q2_Out:TestComunicazione] 	= IIf((ReadR_641 And 1) = 1, True, False)
+		[Q2_Out:On] 				= IIf((ReadR_641 And 2) = 2, True, False)
+		[Q2_Out:InCiclo]			= IIf((ReadR_641 And 4) = 4, True, False)
+		[Q2_Out:PezzoPronto]		= IIf((ReadR_641 And 8) = 8, True, False)
+		[Q2_Out:PezzoSbloccato]		= IIf((ReadR_641 And 16) = 16, True, False)
+		[Q2_Out:NonInEmergenza]		= IIf((ReadR_641 And 32) = 32, True, False)
+		[Q2_Out:NonInHold]			= IIf((ReadR_641 And 64) = 64, True, False)
+		[Q2_Out:RipariQuadraOk]		= IIf((ReadR_641 And 128) = 128, True, False)
 
 '--------------------------------------------------------------------------
 'SCRITTURA
-		Q2_OutputPerQuadra.0 =	[Q2_In:TestComunicazionePc]
-		Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
-		Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
-		Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
-		Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
-		Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
-		Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
-		Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
+		'Q2_OutputPerQuadra.0 =	[Q2_In:TestComunicazionePc]
+		'Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
+		'Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
+		'Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
+		'Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
+		'Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
+		'Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
+		'Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
 
-		Scrittura1=Q2_OutputPerQuadra
-		Scrittura2=Q2_ProvaComunicaz
-		IsacCnc.writeR(640,Scrittura1)
-		On Error GoTo Fine
-		IsacCnc.writeR(639,Scrittura2)
-		On Error GoTo Fine
-		GoTo NoErrore
+		'Scrittura1=Q2_OutputPerQuadra
+		'Scrittura2=[Q2_Out:ProvaComunicaz]
+		'IsacCnc.writeR(640,Scrittura1)
+		'On Error GoTo Fine
+		'IsacCnc.writeR(639,Scrittura2)
+		'On Error GoTo Fine
+		'GoTo NoErrore
 
 Fine:
-		Q2_NonComunica = True
+		'[Q2_Out:NonComunica] = True
 
 NoErrore:
-		Q2_ProvaComunicaz = Q2_ProvaComunicaz + 1
-		If Q2_ProvaComunicaz &gt;= 10000 Then Q2_ProvaComunicaz = 1
+		'[Q2_Out:ProvaComunicaz] = [Q2_Out:ProvaComunicaz] + 1
+		'If [Q2_Out:ProvaComunicaz] &gt;= 10000 Then [Q2_Out:ProvaComunicaz] = 1
 
 		Wait 0.3
 	Wend
 
+
+	'rilascio risorse
+	Set IsacCnc = Nothing
+End Sub
+
+Public Sub Unloading()
+	'Set IsacCnc = Nothing
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiD3ACQBYAE=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>

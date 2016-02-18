@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="41107" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="114030" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -2799,13 +2799,13 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 End Function
 
 Sub DecodificaMissioneR1()
-	If [R1_DATI_PEZZO:SERIE_PROFILO]= "K-FINEST" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1900" Then
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "UNA" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1900" Then
 		[R1_DATI_PEZZO:R1_COD_RBT] = 1
 	End If
-	If [R1_DATI_PEZZO:SERIE_PROFILO]= "K-FINEST" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1901" Then
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "UNA" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1901" Then
 		[R1_DATI_PEZZO:R1_COD_RBT] = 2
 	End If
-	If [R1_DATI_PEZZO:SERIE_PROFILO]= "K-FINEST" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1911" Then
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "UNA" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1911" Then
 		[R1_DATI_PEZZO:R1_COD_RBT] = 3
 	End If
 	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS65" And [R1_DATI_PEZZO:CODICE_PROFILO] = "363890" Then

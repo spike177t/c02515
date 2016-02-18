@@ -1,1 +1,114 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
+<DriverSettings>
+<JobList>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 1</Name>
+<VariableList/>
+<TotalJobSize>17</TotalJobSize>
+<TagList>
+<Tag variable="coil_12" type="0" offset="12" size="1">coil_12</Tag>
+<Tag variable="coil_01" type="0" offset="1" size="1">coil_01</Tag>
+<Tag variable="coil_13" type="0" offset="13" size="1">coil_13</Tag>
+<Tag variable="coil_02" type="0" offset="2" size="1">coil_02</Tag>
+<Tag variable="coil_14" type="0" offset="14" size="1">coil_14</Tag>
+<Tag variable="coil_03" type="0" offset="3" size="1">coil_03</Tag>
+<Tag variable="coil_15" type="0" offset="15" size="1">coil_15</Tag>
+<Tag variable="coil_04" type="0" offset="4" size="1">coil_04</Tag>
+<Tag variable="coil_16" type="0" offset="16" size="1">coil_16</Tag>
+<Tag variable="coil_05" type="0" offset="5" size="1">coil_05</Tag>
+<Tag variable="coil_06" type="0" offset="6" size="1">coil_06</Tag>
+<Tag variable="coil_07" type="0" offset="7" size="1">coil_07</Tag>
+<Tag variable="coil_08" type="0" offset="8" size="1">coil_08</Tag>
+<Tag variable="coil_09" type="0" offset="9" size="1">coil_09</Tag>
+<Tag variable="Pilz_Esp0i00_EmgAssCh1" type="0" offset="0" size="1">Pilz_Esp0i00_EmgAssCh1</Tag>
+<Tag variable="coil_10" type="0" offset="10" size="1">coil_10</Tag>
+<Tag variable="coil_11" type="0" offset="11" size="1">coil_11</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="0" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 2</Name>
+<VariableList/>
+<TotalJobSize>17</TotalJobSize>
+<TagList>
+<Tag variable="Pilz_Esp0i08_EmgRbt3Ch1" type="0" offset="8" size="1">Pilz_Esp0i08_EmgRbt3Ch1</Tag>
+<Tag variable="Pilz_Esp0i16_EmgTotaleCh1" type="0" offset="16" size="1">Pilz_Esp0i16_EmgTotaleCh1</Tag>
+<Tag variable="coil_00" type="0" offset="0" size="1">coil_00</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="0" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 3</Name>
+<VariableList/>
+<TotalJobSize>4</TotalJobSize>
+<TagList>
+<Tag variable="Pilz_Virt_OVo03_SpvRipZona3bOk" type="0" offset="3" size="1">Pilz_Virt_OVo03_SpvRipZona3bOk</Tag>
+<Tag variable="Pilz_Virt_OVo01_SpvRipZona2Ok" type="0" offset="1" size="1">Pilz_Virt_OVo01_SpvRipZona2Ok</Tag>
+<Tag variable="Pilz_Virt_OVo00_SpvRipQdrRbt1Ok" type="0" offset="0" size="1">Pilz_Virt_OVo00_SpvRipQdrRbt1Ok</Tag>
+<Tag variable="Pilz_Virt_OVo02_SpvRipZona3aOk" type="0" offset="2" size="1">Pilz_Virt_OVo02_SpvRipZona3aOk</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="8207" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 4</Name>
+<VariableList/>
+<TotalJobSize>4</TotalJobSize>
+<TagList>
+<Tag variable="Pilz_Virt_OVo04_SpvBarFtcBacI_O" type="0" offset="1" size="1">Pilz_Virt_OVo04_SpvBarFtcBacI_O</Tag>
+<Tag variable="Pilz_Virt_OVo03" type="0" offset="0" size="1">Pilz_Virt_OVo03</Tag>
+<Tag variable="Pilz_Virt_OVo05_SpvAss0" type="0" offset="2" size="1">Pilz_Virt_OVo05_SpvAss0</Tag>
+<Tag variable="Pilz_Virt_OVo06_SpvAss180" type="0" offset="3" size="1">Pilz_Virt_OVo06_SpvAss180</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="8210" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 5</Name>
+<VariableList/>
+<TotalJobSize>13</TotalJobSize>
+<TagList>
+<Tag variable="Pilz_Esp2i04_EmgRbt1Ch1" type="0" offset="12" size="1">Pilz_Esp2i04_EmgRbt1Ch1</Tag>
+<Tag variable="Pilz_Esp1i00_EmgRipZona3aCh1" type="0" offset="0" size="1">Pilz_Esp1i00_EmgRipZona3aCh1</Tag>
+<Tag variable="Pilz_Esp1i05_EmgRipZona1Ch1" type="0" offset="5" size="1">Pilz_Esp1i05_EmgRipZona1Ch1</Tag>
+<Tag variable="Pilz_Esp2i00_EmgRbt2Ch1" type="0" offset="8" size="1">Pilz_Esp2i00_EmgRbt2Ch1</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="13592" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 6</Name>
+<VariableList/>
+<TotalJobSize>42</TotalJobSize>
+<TagList>
+<Tag variable="Pilz_Esp4o00_EmgRbt3Ch1" type="0" offset="33" size="1">Pilz_Esp4o00_EmgRbt3Ch1</Tag>
+<Tag variable="Pilz_Esp5o00_EmgRbt2Ch1" type="0" offset="41" size="1">Pilz_Esp5o00_EmgRbt2Ch1</Tag>
+<Tag variable="Pilz_Esp0o03_EmgBncSqd" type="0" offset="0" size="1">Pilz_Esp0o03_EmgBncSqd</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="13919" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+</JobList>
+<DynamicJobMap>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S00000</KeyName>
+<JobName>DynTask 2</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S00000</KeyName>
+<JobName>DynTask 1</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S08207</KeyName>
+<JobName>DynTask 3</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S08210</KeyName>
+<JobName>DynTask 4</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S13592</KeyName>
+<JobName>DynTask 5</JobName>
+</DynKey>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S13919</KeyName>
+<JobName>DynTask 6</JobName>
+</DynKey>
+</DynamicJobMap>
+</DriverSettings>
