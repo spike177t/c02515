@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="9528" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="209" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
 'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
 'Sostituita la Variabile 'Q2_Out' con il nuovo nome 'Q2_Out_err'
 
 Option Explicit
 
+Dim Q2_OutputPerQuadra As Single
+Dim Q2_ProvaComunicaz As Single
 
-Dim Scrittura1 As Single
-Dim Scrittura2 As Single
+Dim WriteR_640 As Single
+Dim WriteR_639 As Single
 
-'Dim Lettura1 As Single
-'Dim Lettura2 As Single
-'Dim Lettura3 As Single
 Dim ReadR_640 As Single
 Dim ReadR_641 As Single
 Dim ReadR_55 As Single
@@ -267,7 +266,7 @@ Sub Main
 	IsacCnc.machinename="10.200.200.32"
 	IsacCnc.DataAType =CncAType_atShort
 	[Q2_Out:NonComunica] = False
-	[Q2_Out:ProvaComunicaz] = 1
+	Q2_ProvaComunicaz = 1
 
 Ciclo:
 	While Not IsInStoppingMode
@@ -298,18 +297,13 @@ Ciclo:
 		On Error GoTo Fine
 		ReadR_55=IsacCnc.ReadR(55)	'IsacCnc.ReadR(55)
 		On Error GoTo Fine
-		'Q2_InputDaQuadra = Lettura1		'IsacCnc.ReadR(641)
-		'[Q2_In:ReadR_641] = Lettura1		'IsacCnc.ReadR(641)
 
-
-		'Q2_ControlloScrittura = Lettura2 	'IsacCnc.ReadR(640)
-		'[Q2_In:ReadR_640] = Lettura2 	'IsacCnc.ReadR(640)
 		If ReadR_55 &lt;&gt; 0 Then
 			'Q2_FotocellScaricatore5 = True
-			[Q2_In:FotocellScaricatore5] = True
+			[Q2_Out:FotocellScaricatore5] = True
 		Else
 			'Q2_FotocellScaricatore5 = False
-			[Q2_In:FotocellScaricatore5] = False
+			[Q2_Out:FotocellScaricatore5] = False
 		End If
 
 		[Q2_Out:TestComunicazione] 	= IIf((ReadR_641 And 1) = 1, True, False)
@@ -323,43 +317,60 @@ Ciclo:
 
 '--------------------------------------------------------------------------
 'SCRITTURA
-		'Q2_OutputPerQuadra.0 =	[Q2_In:TestComunicazionePc]
-		'Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
-		'Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
-		'Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
-		'Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
-		'Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
-		'Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
-		'Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
+		Q2_OutputPerQuadra = 0
 
-		'Scrittura1=Q2_OutputPerQuadra
-		'Scrittura2=[Q2_Out:ProvaComunicaz]
-		'IsacCnc.writeR(640,Scrittura1)
-		'On Error GoTo Fine
-		'IsacCnc.writeR(639,Scrittura2)
-		'On Error GoTo Fine
-		'GoTo NoErrore
+		'Q2_OutputPerQuadra.0 =	[Q2_In:TestComunicazionePc]
+		Q2_OutputPerQuadra = CInt([Q2_In:TestComunicazionePc])
+
+		'Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 2 * CInt([Q2_In:R1_Ok])
+
+		'Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 4 * CInt([Q2_In:R1_FuoriIngombro])
+
+		'Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 8 * CInt([Q2_In:PezzoScaricato])
+
+		'Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 16 * CInt([Q2_In:SbloccaPezzo])
+
+		'Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 32 * CInt([Q2_In:LineaNonInEmergenza])
+
+		'Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 64 * CInt([Q2_In:LineaNonInHold])
+
+		'Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 128 * CInt([Q2_In:RipariR1_Ok])
+
+		WriteR_640=Q2_OutputPerQuadra
+
+		WriteR_639=Q2_ProvaComunicaz
+
+		IsacCnc.writeR(640,WriteR_640)
+		On Error GoTo Fine
+		IsacCnc.writeR(639,WriteR_639)
+		On Error GoTo Fine
+		GoTo NoErrore
 
 Fine:
-		'[Q2_Out:NonComunica] = True
+		'Q2_NonComunica = True
+		[Q2_Out:NonComunica] = True
 
 NoErrore:
-		'[Q2_Out:ProvaComunicaz] = [Q2_Out:ProvaComunicaz] + 1
-		'If [Q2_Out:ProvaComunicaz] &gt;= 10000 Then [Q2_Out:ProvaComunicaz] = 1
+		Q2_ProvaComunicaz = Q2_ProvaComunicaz + 1
+		If Q2_ProvaComunicaz &gt;= 10000 Then Q2_ProvaComunicaz = 1
+
+		DoEvents
 
 		Wait 0.3
 	Wend
 
-
 	'rilascio risorse
 	Set IsacCnc = Nothing
 End Sub
-
-Public Sub Unloading()
-	'Set IsacCnc = Nothing
-End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiD3ACQBYAE=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiD2ACMBbwE=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>

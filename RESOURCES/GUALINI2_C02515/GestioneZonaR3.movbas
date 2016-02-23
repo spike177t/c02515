@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4307" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="4155" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -97,8 +97,8 @@ Sub Main()
 							And [Assemblatrice_Stato:R3_FuoriIngombro_Ass] _
 							And Not Pilz_Esp0i00_EmgAssCh1 _
 							And Not Pilz_Esp2i00_EmgRbt2Ch1 _
-							And Not Pilz_Esp4o00_EmgRbt3Ch1 _
-							And (Pilz_Virt_OVo05_SpvAss0 Or Pilz_Virt_OVo06_SpvAss180) _
+							And Not Pilz_Esp0i08_EmgRbt3Ch1 _
+							And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
 							And Pilz_Virt_OVo01_SpvRipZona2Ok _
 							And Pilz_Virt_OVo02_SpvRipZona3aOk _
 							And Pilz_Virt_OVo03_SpvRipZona3bOk _

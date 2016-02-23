@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10995" SelLength="2399" OutStatusBar="0" OutLog="0" OutPrinter="0">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="0" OutLog="0" OutPrinter="0">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Assemblatrice_Inaa' con il nuovo nome 'Assemblatrice_Out'
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'Assemblatrice_In' con il nuovo nome 'Assemblatrice_Inaa'
@@ -230,6 +230,7 @@ End Function
 	Dim AssChkConta As Integer
 	Dim Ass_NonComunica1 As Boolean
 	Dim Ass_NonComunica2 As Boolean
+
 	Dim success As Long
 	Dim ECHO As ICMP_ECHO_REPLY
 
@@ -435,12 +436,8 @@ Ciclo:
 	Set IsacCnc = Nothing
 
 End Sub
-
-Public Sub Unloading()
-	'Set IsacCnc = Nothing
-End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiD5ALAB
+<BreakPoints xsi:type="xsd:base64Binary">AiD6ALEB
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>

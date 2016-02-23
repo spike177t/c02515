@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="12330" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="332" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -8,13 +8,11 @@
 Option Explicit
 
 Dim Q1_OutputPerQuadra As Single
+Dim Q1_ProvaComunicaz As Single
 
-Dim Scrittura1 As Single
-Dim Scrittura2 As Single
+Dim WriteR_640 As Single
+Dim WriteR_639 As Single
 
-'Dim Lettura1 As Single
-'Dim Lettura2 As Single
-'Dim Lettura3 As Single
 Dim ReadR_640 As Single
 Dim ReadR_641 As Single
 Dim ReadR_55 As Single
@@ -271,9 +269,8 @@ NoPing:
 	IsacCnc.machinename="10.200.200.31"
 	IsacCnc.DataAType =CncAType_atShort
 	'Q1_NonComunica = False
-	'Q1_ProvaComunicaz = 1
+	Q1_ProvaComunicaz = 1
 	[Q1_Out:NonComunica] = False
-	[Q1_Out:ProvaComunicaz] = 1
 
 Ciclo:
 	While Not IsInStoppingMode
@@ -314,18 +311,11 @@ Ciclo:
 			Debug.Print("Q1 FineReadVar: " &amp; CStr(Now()))
 			Debug.Print
 		End If
-		'Q1_InputDaQuadra = Lettura1		'IsacCnc.ReadR(641)
-		'[Q1_In:ReadR_641] = Lettura1		'IsacCnc.ReadR(641)
 
-
-		'Q1_ControlloScrittura = Lettura2 	'IsacCnc.ReadR(640)
-		'[Q1_In:ReadR_640] = Lettura2 	'IsacCnc.ReadR(640)
 		If ReadR_55 &lt;&gt; 0 Then
-			'Q1_FotocellScaricatore5 = True
-			[Q1_In:FotocellScaricatore5] = True
+			[Q1_Out:FotocellScaricatore5] = True
 		Else
-			'Q1_FotocellScaricatore5 = False
-			[Q1_In:FotocellScaricatore5] = False
+			[Q1_Out:FotocellScaricatore5] = False
 		End If
 
 		[Q1_Out:TestComunicazione] 	= IIf((ReadR_641 And 1) = 1, True, False)
@@ -365,24 +355,23 @@ Ciclo:
 		'Q1_OutputPerQuadra.7 =	[Q1_In:RipariR1_Ok]
 		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 128 * CInt([Q1_In:RipariR1_Ok])
 
-		Scrittura1=Q1_OutputPerQuadra
+		WriteR_640 = Q1_OutputPerQuadra
 		
-		'Scrittura2=Q1_ProvaComunicaz
-		Scrittura2 = [Q1_Out:ProvaComunicaz]
-		'IsacCnc.writeR(640,Scrittura1)
-		'On Error GoTo Fine
-		'IsacCnc.writeR(639,Scrittura2)
-		'On Error GoTo Fine
-		'GoTo NoErrore
+		WriteR_639 = Q1_ProvaComunicaz
+
+		IsacCnc.writeR(640,WriteR_640)
+		On Error GoTo Fine
+		IsacCnc.writeR(639,WriteR_639)
+		On Error GoTo Fine
+		GoTo NoErrore
 
 Fine:
 		'Q1_NonComunica = True
+		[Q1_Out:NonComunica] = True
 
 NoErrore:
-		'Q1_ProvaComunicaz = Q1_ProvaComunicaz + 1
-		'If Q1_ProvaComunicaz &gt;= 10000 Then Q1_ProvaComunicaz = 1
-		[Q1_Out:ProvaComunicaz] = [Q1_Out:ProvaComunicaz] + 1
-		If [Q1_Out:ProvaComunicaz] &gt;= 10000 Then [Q1_Out:ProvaComunicaz] = 1
+		Q1_ProvaComunicaz = Q1_ProvaComunicaz + 1
+		If Q1_ProvaComunicaz &gt;= 10000 Then Q1_ProvaComunicaz = 1
 
 		DoEvents
 
@@ -398,7 +387,7 @@ Public Sub Unloading()
 	'Set IsacCnc = Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiD5AA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiD3AA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>
