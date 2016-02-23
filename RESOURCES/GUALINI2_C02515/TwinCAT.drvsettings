@@ -6,7 +6,7 @@
 <JobList/>
 <StationList>
 <Station>
-<Name MaxRetries="1" StateVariable="Plc_Stato" ExpandGroup1="1">Plc</Name>
+<Name MaxRetries="1" StateVariable="Stato_Plc" ExpandGroup1="1">Plc</Name>
 <TwinCatStation AmsNetId="5.32.242.28.1.1" AmsPort="801" MaxNumOfAggregatedReqs="1" ExpandTwinCatGroup1="1" TwinCATVersion="0"/>
 </Station>
 </StationList>

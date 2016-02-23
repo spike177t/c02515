@@ -8,9 +8,9 @@
 <Station>
 <Name MaxRetries="1" StateVariable="" ExpandGroup1="1">Pilz</Name>
 <Server ServerAddress="10.200.200.12" ServerPort="502" BackupServerAddress="" SwitchServerTimeout="10000" LocalBoundAddress="" LocalBoundPort="0" UsePing="false" ExpandTcpGroup1="1"/>
-<Queue MaxReceive="1024" MaxSend="1024" ExpandTcpGroup2="0"/>
-<Timeouts RxTimeout="5000" TxTimeout="5000" ExpandTcpGroup3="0"/>
-<RASSettings PhoneBookEntry="" PhoneNumber="" UserName=" " Password=" " Retries="3" DisconnectAfterSecs="10" EnableRASCallOnThisStation="false" PromptForConnection="false" RetryAfterSecs="30" DialOnlyOnCommand="false" ExpandRasGroup1="0"/>
+<Queue MaxReceive="1024" MaxSend="1024" ExpandTcpGroup2="1"/>
+<Timeouts RxTimeout="5000" TxTimeout="5000" ExpandTcpGroup3="1"/>
+<RASSettings PhoneBookEntry="" PhoneNumber="" UserName=" " Password=" " Retries="3" DisconnectAfterSecs="10" EnableRASCallOnThisStation="false" PromptForConnection="false" RetryAfterSecs="30" DialOnlyOnCommand="false" ExpandRasGroup1="1"/>
 </Station>
 </StationList>
 </DriverSettings>
