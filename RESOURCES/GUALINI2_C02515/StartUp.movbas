@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="713" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="1119" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -16,19 +16,29 @@ Sub Main
 	Path = MyProjectSetting("FILEPATH") + "\Supervisione.ini"
 	Path=Dir(MyProjectSetting("FILEPATH") + "\Supervisione.ini")
 
-	''carico i parametri generali
-	'Chiave="Generali"
-	'Variabile="IP_Etichettatrice"
-	'loc_IP_Etichettatrice = ReadIniValue(Path, Chiave, Variabile)
+	'carico i parametri generali
+	Chiave="Generali"
+	Variabile="Q1_DIR"
+	loc_Q1_path = ReadIniValue(Path, Chiave, Variabile)
 
-	'Chiave="Generali"
-	'Variabile="PathEtichette"
-	'loc_PathEtichette = ReadIniValue(Path, Chiave, Variabile)
+	Chiave="Generali"
+	Variabile="Q2_DIR"
+	loc_Q2_path = ReadIniValue(Path, Chiave, Variabile)
 
-	''carico le cartelle predefinite
-	'Chiave="Cartelle"
-	'Variabile="CartellaScambioDatiSygest"
-	'loc_SygestFolder = ReadIniValue(Path, Chiave, Variabile)
+	Chiave="Generali"
+	Variabile="QuadraDataFile"
+	loc_QuadraDataFile = ReadIniValue(Path, Chiave, Variabile)
+
+	Chiave="Generali"
+	Variabile="MySqlConnectionString"
+	[loc_ImpostazioniImpianto:MysSqlConnectionString] = ReadIniValue(Path, Chiave, Variabile)
+
+	'[loc_ImpostazioniImpianto:MysSqlConnectionString] = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+    '  "SERVER=localhost;" &amp; _
+    '  "DATABASE=gualini;" &amp; _
+    '  "UID=root;" &amp; _
+    '  "PASSWORD=co.mar;" &amp; _
+    '  "OPTION=3;"
 
 	'controllo se sono in esecuzione altre istanze di Premium
 	RunScript ("FindProcess",100,False)
@@ -41,12 +51,6 @@ Sub Main
 	RunScript ("DriverQuadra2",100,False)
 
 
-	[loc_ImpostazioniImpianto:MysSqlConnectionString] = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-      "SERVER=localhost;" &amp; _
-      "DATABASE=gualini;" &amp; _
-      "UID=root;" &amp; _
-      "PASSWORD=co.mar;" &amp; _
-      "OPTION=3;"
 
 
 	'LOG OPERATORE
@@ -68,6 +72,7 @@ End Sub
 
 
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAqAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="40" SyncroScriptTimeout="5000"/>
 </MovResource>
