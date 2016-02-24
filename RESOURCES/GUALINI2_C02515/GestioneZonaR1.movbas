@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="7359" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="84212" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -148,6 +148,9 @@ Sub Main()
 	'CHIAMATE PER DEBUG
 	'ResetDatiPezzoMissione(1)
 	'testCodaEstrattore()
+
+	'EliminaFileDaQuadra(2)
+	'Exit Sub
 	'#####################################
 
 	Dim ValutaProssimaCondizione As Boolean 'serve per valutare le condizioni dello stato Attesa
@@ -231,11 +234,11 @@ Sub Main()
 'rimuovere questa parte
 AA:
 '[Q1_In:PezzoPronto] = True
-Wait 1
 '[Q2_In:PezzoPronto] = True
 StatoCicloCarico = 1000
-loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
-loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
+
+'loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
+'loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
 
 '############################
 
@@ -411,6 +414,8 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 													, GetVariableValue(varname_pezzo &amp; ":CODICE_PROFILO") _
 													, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA1") _
 													, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA2") _
+													, GetVariableValue(varname_pezzo &amp; ":NUM_SQUADRETTE1") _
+													, GetVariableValue(varname_pezzo &amp; ":NUM_SQUADRETTE2") _
 													, fileConfigIsOk _
 								)
 						If ret &lt;&gt; 0 Then
@@ -907,7 +912,9 @@ loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su 
 
 
 					'occorre eliminare il file dalla quadra
-					EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
+					'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
+					EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
+
 					'reset dei valori dei membri che identificano il pezzo
 					ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA])
 					ResetDatiMembriStruttura("R1_STATUS")
@@ -1105,6 +1112,9 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 	Dim path As String
 	Dim filepath As String
 	Dim varname As String
+
+	Dim fullNameDataFile As String
+
 	'Dim quartinaCorrente As String
     'Dim quartinaSuccessiva As String
 
@@ -1113,74 +1123,29 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 			path = loc_Q1_path
 			varname = "Q1_PEZZO_DISP"
 			LeggiFileDaQuadra = "Q1_PEZZO_DISP"
-			path = loc_Q1_path
+			If loc_QuadraDataFile &lt;&gt; "" And loc_Q1_path &lt;&gt; "" Then
+				fullNameDataFile = path + loc_QuadraDataFile
+			Else
+				fullNameDataFile = "\\10.200.200.31\l46\COMAR\DATA.TXT"
+			End If
 			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
 		Case 2:
 			path = loc_Q2_path
 			varname = "Q2_PEZZO_DISP"
 			LeggiFileDaQuadra = "Q2_PEZZO_DISP"
-			path = loc_Q2_path
+			If loc_QuadraDataFile &lt;&gt; "" And loc_Q2_path &lt;&gt; "" Then
+				fullNameDataFile = path + loc_QuadraDataFile
+			Else
+				fullNameDataFile = "\\10.200.200.32\l46\COMAR\DATA.TXT"
+			End If
 			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
 		Case Else
 			Throw New System.Exception("GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra() ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
 	End Select
 
 	'guardo se sono presenti file
-	Dim di As New IO.DirectoryInfo(path)
-	Dim files As Object
-	Dim nFiles As Integer
-	Dim lowBoundFiles As Integer
-	Dim upBoundFiles As Integer
 
-	files = di.GetFiles()
-
-'	If files.GetType.IsArray Then
-'		Dim ii As Integer
-'		For ii = files.GetLowerBound(0) To files.GetUpperBound(0) Step 1
-'			Dim fi As System.IO.FileSystemInfo
-'			fi = files(ii)
-'			DebugMsg "GestioneZonaR1.movbas -&gt; LeggiFileDaQuadra(); trovato file:  " &amp; fi.FullName
-'		Next
-'	End If
-
-
-	lowBoundFiles = files.GetLowerBound(0)
-	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); lowBoundFiles = files.GetLowerBound(0) = " &amp; CStr(lowBoundFiles)
-	upBoundFiles = files.GetUpperBound(0)
-	'DebugMsg "LeggiFileDaQuadra(quadra As Integer); upBoundFiles = files.GetUpperBound(0) = " &amp;  CStr(upBoundFiles)
-
-	If upBoundFiles &lt; 0 Then
-		Exit Function
-	End If
-
-	nFiles = upBoundFiles - lowBoundFiles + 1
-
-	'FORZATURA DEBUG
-	'nFiles = 1
-
-
-	If nFiles &gt; 1 Then
-		If quadra = 1 Then
-			alm_Q1_numFilesIncoerente = True
-		Else
-			alm_Q2_numFilesIncoerente = True
-		End If
-		Exit Function
-	End If
-	If nFiles &lt; 1 Then
-		If quadra = 1 Then
-			alm_Q1_MancaFile = True
-		Else
-			alm_Q2_MancaFile = True
-		End If
-		Exit Function
-	End If
-
-	If nFiles = 0 Then
-		'non ho nessun file
-		Exit Function
-	End If
-	filepath = files(0).FullName
+	filepath = fullNameDataFile
 	filepathMemo = filepath
 
 	Try
@@ -2015,7 +1980,7 @@ Function VerificaEsistePezzo(connectionString As String, nomePzUnico As String, 
 
 End Function
 
-Function VerificaCogruenzaDati(connectionString As String, serieprofilo As String, codprofilo As String, codsq1 As String, codsq2 As String, ByRef configOk As Boolean) As Integer
+Function VerificaCogruenzaDati(connectionString As String, serieprofilo As String, codprofilo As String, codsq1 As String, codsq2 As String, numsq1 As Integer, numsq2 As Integer, ByRef configOk As Boolean) As Integer
 	VerificaCogruenzaDati = 0 	'inizializzo
 
     Dim commandText As String
@@ -2034,7 +1999,8 @@ Function VerificaCogruenzaDati(connectionString As String, serieprofilo As Strin
 
 	'cerco nel db a quale cassetto è assegnata la quartina
 	Try
-        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+
+        Dim MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
 
 			'SELECT count(*) FROM gualini.r2_codiciprofili where SerieProfilo ="AWS65" AND CodiceProfilo = "363890"
@@ -2046,13 +2012,17 @@ Function VerificaCogruenzaDati(connectionString As String, serieprofilo As Strin
 
             DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodRbt commandText = " &amp; commandText
 
-            Using MyCommand As New OdbcCommand()
+            'Using MyCommand As New OdbcCommand()
+			'Dim MyCommand As OdbcCommand() = New MyConnection.CreateCommand()
+			Dim MyCommand As New OdbcCommand(commandText, MyConnection)
 
-				MyCommand.Connection = MyConnection
-	            MyCommand.CommandText = commandText
+			'Dim MyCommand As New OdbcCommand()
+			'	MyCommand.Connection = MyConnection
+	        '   MyCommand.CommandText = commandText
 
-				Using MyDataReader As OdbcDataReader
-					MyDataReader = MyCommand.ExecuteReader
+				'Using MyDataReader As OdbcDataReader
+					'MyDataReader = MyCommand.ExecuteReader
+					Dim MyDataReader As OdbcDataReader = MyCommand.ExecuteReader
 
 					If MyDataReader.HasRows Then
 						MyDataReader.Read
@@ -2063,71 +2033,68 @@ Function VerificaCogruenzaDati(connectionString As String, serieprofilo As Strin
 
 					MyDataReader.Close
 
-				'End Using	'MyDataReader.Close
+					If numsq1 &gt; 0 Then
+						'####SQ1
+						'SELECT count(*) FROM `gualini`.`r2_banchi_squadrette` where CodiceSquadretta = "230A";
+			            commandText = "SELECT COUNT(*) AS COUNT_SQ1 " &amp; _
+			                      	" FROM  `gualini`.`r2_banchi_squadrette` " &amp; _
+			            			" WHERE CodiceSquadretta = """ &amp; codsq1 &amp; """" &amp; _
+									";"
 
-					'####SQ1
-								'SELECT count(*) FROM `gualini`.`r2_banchi_squadrette` where CodiceSquadretta = "230A";
-		            commandText = "SELECT COUNT(*) AS COUNT_SQ1 " &amp; _
-		                      	" FROM  `gualini`.`r2_banchi_squadrette` " &amp; _
-		            			" WHERE CodiceSquadretta = """ &amp; codsq1 &amp; """" &amp; _
-								";"
-
-		            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodSq1 commandText = " &amp; commandText
+			            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodSq1 commandText = " &amp; commandText
 
 
-					MyCommand.Connection = MyConnection
-		            MyCommand.CommandText = commandText
+						MyCommand.Connection = MyConnection
+			            MyCommand.CommandText = commandText
+						MyDataReader = MyCommand.ExecuteReader
 
-				'Using MyDataReader As OdbcDataReader
-					MyDataReader = MyCommand.ExecuteReader
+						If MyDataReader.HasRows Then
+							MyDataReader.Read
+							countCodSq1 =  MyDataReader("COUNT_SQ1")
+						Else
+							countCodSq1 = 0
+						End If
 
-					If MyDataReader.HasRows Then
-						MyDataReader.Read
-						countCodSq1 =  MyDataReader("COUNT_SQ1")
-					Else
-						countCodSq1 = 0
+						MyDataReader.Close
 					End If
 
-					MyDataReader.Close
+					If numsq2 &gt; 0 Then
+						'####SQ2
+						'SELECT count(*) FROM `gualini`.`r2_banchi_squadrette` where CodiceSquadretta = "230A";
+			            commandText = "SELECT COUNT(*) AS COUNT_SQ2 " &amp; _
+			                      	" FROM  `gualini`.`r2_banchi_squadrette` " &amp; _
+			            			" WHERE CodiceSquadretta = """ &amp; codsq2 &amp; """" &amp; _
+									";"
 
-				'End Using	'MyDataReader.Close
-			'End Using	'MyCommand.Dispose
-
-					'####SQ2
-					'SELECT count(*) FROM `gualini`.`r2_banchi_squadrette` where CodiceSquadretta = "230A";
-		            commandText = "SELECT COUNT(*) AS COUNT_SQ2 " &amp; _
-		                      	" FROM  `gualini`.`r2_banchi_squadrette` " &amp; _
-		            			" WHERE CodiceSquadretta = """ &amp; codsq2 &amp; """" &amp; _
-								";"
-
-		            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodSq2 commandText = " &amp; commandText
-
-		            'Using MyCommand As New OdbcCommand()
+			            DebugMsg "GestioneZonaR1.movbas -&gt; VerificaCogruenzaDati(); Verifica CodSq2 commandText = " &amp; commandText
 
 						MyCommand.Connection = MyConnection
 			            MyCommand.CommandText = commandText
 
-						'Using MyDataReader As OdbcDataReader
-							MyDataReader = MyCommand.ExecuteReader
+						MyDataReader = MyCommand.ExecuteReader
 
-							If MyDataReader.HasRows Then
-								MyDataReader.Read
-								countCodSq2 =  MyDataReader("COUNT_SQ2")
-							Else
-								countCodSq2 = 0
-							End If
-				End Using	'MyDataReader.Close
-			End Using	'MyCommand.Dispose
-        End Using	'MyConnection.Close
+						If MyDataReader.HasRows Then
+							MyDataReader.Read
+							countCodSq2 =  MyDataReader("COUNT_SQ2")
+						Else
+							countCodSq2 = 0
+						End If
+						MyDataReader.Close()
+					End If
+
+					
+				'End Using	'MyDataReader.Close
+			'End Using	'MyCommand.Dispose
+        'End Using	'MyConnection.Close
 
        	okCodRbt = IIf(countCodRbt &gt; 0, True, False)
 
-		If codsq1 = "" Or codsq1 = "0" Or codsq1 = " " Then
+		If codsq1 = "" Or codsq1 = "0" Or codsq1 = " " Or numsq1 = 0 Then
 			okCodSq1 = True
 		Else
 			okCodSq1 = IIf(countCodSq1 &gt; 0, True, False)
 		End If
-		If codsq2 = "" Or codsq2 = "0" Or codsq2 = " " Then
+		If codsq2 = "" Or codsq2 = "0" Or codsq2 = " " Or numsq2 = 0 Then
 			okCodSq2 = True
 		Else
 			okCodSq2 = IIf(countCodSq2 &gt; 0, True, False)
@@ -2135,6 +2102,8 @@ Function VerificaCogruenzaDati(connectionString As String, serieprofilo As Strin
 
 
 		configOk = okCodRbt And okCodSq1 And okCodSq2
+
+
 
 	  'Catch program exception
 	Catch MyException As Exception
@@ -2164,6 +2133,12 @@ Function VerificaCogruenzaDati(connectionString As String, serieprofilo As Strin
 		alm_ZonaR1_ODBC = True
 		VerificaCogruenzaDati = ERR_ODBC_EXCEPTION 'torno errore
 		Exit Function
+	Finally
+
+		MyCommand.Dispose()
+		MyConnection.Close()
+		MyConnection.Dispose()
+
     End Try
 
 End Function
@@ -3166,7 +3141,64 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
     SqlExecuteNonQuery = rCount
 End Function
 
-Sub EliminaFileDaQuadra(daQuadra As Integer, nomePezzo As String)
+Sub EliminaFileDaQuadra(daQuadra As Integer)
+	Dim fullNameDataFile As String
+	Dim path As String
+	Dim varname As String
+
+	Select Case daQuadra
+		Case 1:
+			path = loc_Q1_path
+			varname = "Q1_PEZZO_DISP"
+			If loc_QuadraDataFile &lt;&gt; "" And loc_Q1_path &lt;&gt; "" Then
+				fullNameDataFile = path + loc_QuadraDataFile
+			Else
+				fullNameDataFile = "\\10.200.200.31\l46\COMAR\DATA.TXT"
+			End If
+		Case 2:
+			path = loc_Q2_path
+			varname = "Q2_PEZZO_DISP"
+			If loc_QuadraDataFile &lt;&gt; "" And loc_Q2_path &lt;&gt; "" Then
+				fullNameDataFile = path + loc_QuadraDataFile
+			Else
+				fullNameDataFile = "\\10.200.200.32\l46\COMAR\DATA.TXT"
+			End If
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; EliminaFileDaQuadra() ECCEZZIONE: parametro daQuadra non ammesso: " &amp; CStr(daQuadra) &amp; ".")
+	End Select
+
+	'fullNameDataFile = path &amp; GetVariableValue(varname &amp; ":NOME_PEZZO_UNICO")
+
+	'guardo il file esiste
+	Try
+		'Using fi As New System.IO.FileInfo(nomeFileFull)
+		Dim fi As New System.IO.FileInfo(fullNameDataFile)
+			If fi.Exists Then
+				'fi.Delete()
+
+				Dim thefile As String = fullNameDataFile
+			    Dim lines() As String = System.IO.File.ReadAllLines(fullNameDataFile)
+
+			    lines(0) = "0"
+			    System.IO.File.WriteAllLines(fullNameDataFile, lines)
+
+			Else
+				LogMsg("EliminaFileDaQuadra() File non più esistente. filename:" &amp; fullNameDataFile)
+			End If
+		'End Using
+
+	Catch  e As Exception
+        LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
+	Finally
+
+		fi = Nothing
+
+	End Try
+
+
+End Sub
+
+Sub EliminaFileDaQuadraOld(daQuadra As Integer, nomePezzo As String)
 	Dim nomeFileFull As String
 	Dim path As String
 	Dim varname As String
@@ -3204,7 +3236,6 @@ Sub EliminaFileDaQuadra(daQuadra As Integer, nomePezzo As String)
 
 End Sub
 
-
 Sub EliminaFileSimulazione(daQuadra As Integer)
 	Dim nomeFileFull As String
 	Dim path As String
@@ -3218,7 +3249,7 @@ Sub EliminaFileSimulazione(daQuadra As Integer)
 			path = loc_Q2_path
 			varname = "Q2_PEZZO_DISP"
 		Case Else
-			Throw New System.Exception("GestioneZonaR1.movbas -&gt; EliminaFileDaQuadra() ECCEZZIONE: parametro daQuadra non ammesso: " &amp; CStr(daQuadra) &amp; ".")
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; EliminaFileSimulazione() ECCEZZIONE: parametro daQuadra non ammesso: " &amp; CStr(daQuadra) &amp; ".")
 	End Select
 
 	'elimino tutti i file nella cartella
@@ -3228,26 +3259,12 @@ Sub EliminaFileSimulazione(daQuadra As Integer)
             File.Delete()
         Next
 	Catch  e As Exception
-        LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
+        LogMsg("EliminaFileSimulazione() ECCEZZIONE:" &amp; e.Message)
 	Finally
 		di = Nothing
 	End Try
 
-'	nomeFileFull = path &amp; GetVariableValue(varname &amp; ":ID_QUARTINA") &amp; "_" &amp; GetVariableValue(varname &amp; ":POSIZIONE") &amp; ".txt"
 
-'	'guardo il file esiste
-'	Try
-'		Dim fi As New System.IO.FileInfo(nomeFileFull)
-'			If fi.Exists Then
-'				fi.Delete()
-'			Else
-''				LogMsg("EliminaFileDaQuadra() File non più esistente. filename:" &amp; nomeFileFull)
-'			End If
-'	Catch  e As Exception
-'        LogMsg("EliminaFileDaQuadra() ECCEZZIONE:" &amp; e.Message)
-'	Finally
-'		fi = Nothing
-'	End Try
 End Sub
 
 Sub AggiornaMembri(source As String, dest As String)
@@ -3462,8 +3479,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBTAV4BbwF+ATwCVgLeA+0D
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiAoAVYBYQFyAYEBlAFBAlsC5QP0A8wHMQg=</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="209" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="11931" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
 'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
 'Sostituita la Variabile 'Q2_Out' con il nuovo nome 'Q2_Out_err'
@@ -10,8 +10,8 @@ Option Explicit
 Dim Q2_OutputPerQuadra As Single
 Dim Q2_ProvaComunicaz As Single
 
-Dim WriteR_640 As Single
-Dim WriteR_639 As Single
+Dim WriteR_640 As Integer
+Dim WriteR_639 As Integer
 
 Dim ReadR_640 As Single
 Dim ReadR_641 As Single
@@ -237,6 +237,8 @@ Public Sub Loading()
 End Sub
 
 Sub Main
+	Dim lastTimer As Double
+	Dim tempoEsecuzione As Double
 
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
@@ -259,6 +261,8 @@ Sub Main
 	If (Q2ChkPing &lt;&gt; Q2ChkPingOk) Then
 		[Q2_Out:NonComunica] = True
 		GoTo NoPing
+	Else
+		[Q2_Out:NonComunica] = False
 	End If
 
 	Wait 3
@@ -269,23 +273,33 @@ Sub Main
 	Q2_ProvaComunicaz = 1
 
 Ciclo:
-	While Not IsInStoppingMode
-		If SocketsInitialize() Then
-			'ping the IP by passing the address,
-			'text to send, and the ECHO structure.
-			success = Ping(("10.200.200.32"), ("TestPing"), ECHO)
-		Else
-			[Q2_Out:NonComunica] = True
-			GoTo Fine
-		End If
+	lastTimer = Timer()
 
-		Q2ChkPing = GetStatusCode(success)
-		If (Q2ChkPing = Q2ChkPingOk) Then
-			[Q2_Out:NonComunica] = False
-		Else
-			[Q2_Out:NonComunica] = True
-			GoTo Fine
+	While Not IsInStoppingMode
+		tempoEsecuzione = Abs(Timer() - lastTimer)
+		If tempoEsecuzione &gt; 1 Then
+			'Debug.Print "Tempo esecuzione = " &amp; CStr(tempoEsecuzione)
+
 		End If
+		[Q2_VarR:tempoCiclo] = tempoEsecuzione
+		lastTimer = Timer()
+
+		'If SocketsInitialize() Then
+		'	'ping the IP by passing the address,
+		'	'text to send, and the ECHO structure.
+		'	success = Ping(("10.200.200.32"), ("TestPing"), ECHO)
+		'Else
+		'	[Q2_Out:NonComunica] = True
+		'	GoTo Fine
+		'End If
+
+		'Q2ChkPing = GetStatusCode(success)
+		'If (Q2ChkPing = Q2ChkPingOk) Then
+		'	[Q2_Out:NonComunica] = False
+		'Else
+		'	[Q2_Out:NonComunica] = True
+		'	GoTo Fine
+		'End If
 
 		Err.Clear
 		On Error Resume Next
@@ -323,54 +337,70 @@ Ciclo:
 		Q2_OutputPerQuadra = CInt([Q2_In:TestComunicazionePc])
 
 		'Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 2 * CInt([Q2_In:R1_Ok])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 2 * Abs(CInt([Q2_In:R1_Ok]))
 
 		'Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 4 * CInt([Q2_In:R1_FuoriIngombro])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 4 * Abs(CInt([Q2_In:R1_FuoriIngombro]))
 
 		'Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 8 * CInt([Q2_In:PezzoScaricato])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 8 * Abs(CInt([Q2_In:PezzoScaricato]))
 
 		'Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 16 * CInt([Q2_In:SbloccaPezzo])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 16 * Abs(CInt([Q2_In:SbloccaPezzo]))
 
 		'Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 32 * CInt([Q2_In:LineaNonInEmergenza])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 32 * Abs(CInt([Q2_In:LineaNonInEmergenza]))
 
 		'Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 64 * CInt([Q2_In:LineaNonInHold])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 64 * Abs(CInt([Q2_In:LineaNonInHold]))
 
 		'Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
-		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 128 * CInt([Q2_In:RipariR1_Ok])
+		Q2_OutputPerQuadra = Q2_OutputPerQuadra + 128 * Abs(CInt([Q2_In:RipariR1_Ok]))
 
-		WriteR_640=Q2_OutputPerQuadra
+		On Error Resume Next
+		[Q2_VarR:WriteR_640] = CInt(Q2_OutputPerQuadra)
+		Err.Clear
+		WriteR_640 = CInt(Q2_OutputPerQuadra)
+		Err.Clear
+		[Q2_VarR:WriteR_639] = CInt(Q2_ProvaComunicaz)
+		Err.Clear
+		WriteR_639 = CInt(Q2_ProvaComunicaz)
+		Err.Clear
 
-		WriteR_639=Q2_ProvaComunicaz
-
-		IsacCnc.writeR(640,WriteR_640)
 		On Error GoTo Fine
-		IsacCnc.writeR(639,WriteR_639)
+		IsacCnc.writeR(640,CSng(WriteR_640))
 		On Error GoTo Fine
+		IsacCnc.writeR(639,CSng(WriteR_639))
 		GoTo NoErrore
 
 Fine:
 		'Q2_NonComunica = True
 		[Q2_Out:NonComunica] = True
+		Debug.Print "Errore: " &amp; Err.Description &amp; "; source : " &amp; Err.Source
 
 NoErrore:
 		Q2_ProvaComunicaz = Q2_ProvaComunicaz + 1
-		If Q2_ProvaComunicaz &gt;= 10000 Then Q2_ProvaComunicaz = 1
+		If Q2_ProvaComunicaz &gt;= 10000 Then
+			Q2_ProvaComunicaz = 1
+		End If
+
 
 		DoEvents
 
-		Wait 0.3
+		'Wait 0.3
+		tempoEsecuzione = Abs(Timer() - lastTimer)
+		While tempoEsecuzione &lt; 0.5
+			DoEvents
+			tempoEsecuzione = Abs(Timer() - lastTimer)
+		Wend
+
 	Wend
 
 	'rilascio risorse
 	Set IsacCnc = Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiD2ACMBbwE=</BreakPoints>
-<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<BreakPoints xsi:type="xsd:base64Binary">AiD4AA==</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>
