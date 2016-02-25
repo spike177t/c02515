@@ -448,14 +448,14 @@
 <Name>Q1_PEZZO_DISP</Name>
 <MemberList>
 <Member>
-<Name Type="4">R2_APERTURA</Name>
+<Name Type="2">NUM_SQUADRETTE2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2">NUM_SQUADRETTE2</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -490,14 +490,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9">NOME_PEZZO_ESTERNO</Name>
+<Name Type="0">ROBOT_ASSEGNATO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="0">ROBOT_ASSEGNATO</Name>
+<Name Type="9">NOME_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -512,6 +512,13 @@
 </Member>
 <Member>
 <Name Type="9">COD_SQUADRETTA2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R2_LUNGH_X_SQUADRETTE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -553,7 +560,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">CASSETTO_ASSEGNATO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -567,14 +574,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">LARGHEZZA_PROFILO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
-<Name Type="9">ORA</Name>
+<Name Type="4">CASSETTO_ASSEGNATO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -582,6 +582,13 @@
 </Member>
 <Member>
 <Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="9">ORA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -637,7 +644,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2">POSIZIONE</Name>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -651,7 +658,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+<Name Type="2">POSIZIONE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -679,14 +686,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">R2_OFFSET_PEZZO</Name>
+<Name Type="9">ID_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9">ID_PEZZO_ESTERNO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -707,13 +714,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">R2_BANCO_SQ2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
 <Name Type="4">R2_FILA_SQ1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -721,7 +721,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">R2_FILA_SQ2</Name>
+<Name Type="4">R2_BANCO_SQ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -729,6 +729,13 @@
 </Member>
 <Member>
 <Name Type="0">R1_RUOTA_PEZZO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R2_FILA_SQ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1275,14 +1282,14 @@
 <Name>Q2_PEZZO_DISP</Name>
 <MemberList>
 <Member>
-<Name Type="4">R2_APERTURA</Name>
+<Name Type="2">NUM_SQUADRETTE2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2">NUM_SQUADRETTE2</Name>
+<Name Type="4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1317,14 +1324,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9">NOME_PEZZO_ESTERNO</Name>
+<Name Type="0">ROBOT_ASSEGNATO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="0">ROBOT_ASSEGNATO</Name>
+<Name Type="9">NOME_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1339,6 +1346,13 @@
 </Member>
 <Member>
 <Name Type="9">COD_SQUADRETTA2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R2_LUNGH_X_SQUADRETTE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1380,7 +1394,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">CASSETTO_ASSEGNATO</Name>
+<Name Type="4">LARGHEZZA_PROFILO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1394,14 +1408,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">LARGHEZZA_PROFILO</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
-<Name Type="9">ORA</Name>
+<Name Type="4">CASSETTO_ASSEGNATO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1409,6 +1416,13 @@
 </Member>
 <Member>
 <Name Type="4">LUNGHEZZA_PEZZO_ESTERNO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="9">ORA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1464,7 +1478,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="2">POSIZIONE</Name>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1478,7 +1492,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+<Name Type="2">POSIZIONE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1506,14 +1520,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">R2_OFFSET_PEZZO</Name>
+<Name Type="9">ID_PEZZO_ESTERNO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="9">ID_PEZZO_ESTERNO</Name>
+<Name Type="4">R2_OFFSET_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1534,13 +1548,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">R2_BANCO_SQ2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Member>
-<Member>
 <Name Type="4">R2_FILA_SQ1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -1548,7 +1555,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
-<Name Type="4">R2_FILA_SQ2</Name>
+<Name Type="4">R2_BANCO_SQ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1556,6 +1563,13 @@
 </Member>
 <Member>
 <Name Type="0">R1_RUOTA_PEZZO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R2_FILA_SQ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1664,6 +1678,13 @@
 </Member>
 <Member>
 <Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.CASSETTO_ASSEGNATO|Typ=4">CASSETTO_ASSEGNATO</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ1.R2_LUNGH_X_SQUADRETTE|Typ=4">R2_LUNGH_X_SQUADRETTE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1911,6 +1932,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.R2_LUNGH_X_SQUADRETTE|Typ=4">R2_LUNGH_X_SQUADRETTE</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
 <Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ1.R2_APERTURA|Typ=4">R2_APERTURA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -2036,6 +2064,13 @@
 <MemberList>
 <Member>
 <Name Type="4">R2_BANCO_SQ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M1_PZ2.R2_LUNGH_X_SQUADRETTE|Typ=4">R2_LUNGH_X_SQUADRETTE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2270,6 +2305,13 @@
 <MemberList>
 <Member>
 <Name Type="4">R2_BANCO_SQ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SCAR_M2_PZ2.R2_LUNGH_X_SQUADRETTE|Typ=4">R2_LUNGH_X_SQUADRETTE</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>

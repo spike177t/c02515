@@ -1889,7 +1889,7 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="88" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="797" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub SymbolLoading()
 	Dim strQuery As String
@@ -1909,6 +1909,16 @@ Public Sub SymbolLoading()
 				&amp; " where `tutti_cassetti`.`ID_MAGAZZINO` &gt; 0 " _
 				&amp; " AND `tutti_cassetti`.`POSIZIONE`= 0" _
 				&amp; " Order by MAG, CASS;"
+	
+	strQuery = "Select css.ID_MAGAZZINO, css.ID_CASSETTO, css.DISPONIBILE, css.POSIZIONE, gualini.quartina.ID_QUARTINA " _
+				&amp; "	, gualini.posizione_cassetti.DESCRIZION " _
+				&amp; " FROM gualini.tutti_cassetti As css " _
+				&amp; " Left Join  gualini.quartina " _
+				&amp; " On (css.ID_CASSETTO = gualini.quartina.cassetto_ID_CASSETTO And css.ID_MAGAZZINO = gualini.quartina.cassetto_magazzino_ID_MAGAZZINO) " _
+				&amp; " Left Join gualini.posizione_cassett " _
+				&amp; " On css.POSIZIONE = gualini.posizione_cassetti.ID_POSIZIONE_CASSETTI " _
+				&amp; " WHERE ID_QUARTINA  Is Null " _
+				&amp; " ;"
 
 	objGrid.Query = strQuery
 	objGrid.Refresh

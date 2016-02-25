@@ -46,7 +46,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvBarFtcBacI/O" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=4">Pilz_Virt_OVo04_SpvBarFtcBacI_O</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvBarFtcBacI/O" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=4">Pilz_Virt_OVo04_SpvBarFtcBacI_O</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -109,7 +109,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona2Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=75">Pilz_Esp2i02_RipZona2Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona2Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=75">Pilz_Esp2i02_RipZona2Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -186,7 +186,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3aCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=48">Pilz_Esp0i07_RipZona3aCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3aCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=48">Pilz_Esp0i07_RipZona3aCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -221,7 +221,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rbt3PosSicCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=51">Pilz_Esp0i10_Rbt3PosSicCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rbt3PosSicCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=51">Pilz_Esp0i10_Rbt3PosSicCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -242,7 +242,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass0°Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=44">Pilz_Esp0i03_Ass0_Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass0°Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=44">Pilz_Esp0i03_Ass0_Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -298,21 +298,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3bCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=85">Pilz_Esp3i04_EmgRipZona3bCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3bCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=85">Pilz_Esp3i04_EmgRipZona3bCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3aCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=65">Pilz_Esp1i00_EmgRipZona3aCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3aCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=65">Pilz_Esp1i00_EmgRipZona3aCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkAssPotA" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=60">Pilz_Esp0i19_FbkAssPotA</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkAssPotA" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=60">Pilz_Esp0i19_FbkAssPotA</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -333,7 +333,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona2Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=81">Pilz_Esp3i00_EmgRipZona2Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona2Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=81">Pilz_Esp3i00_EmgRipZona2Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -347,7 +347,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona2Ok" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=1">Pilz_Virt_OVo01_SpvRipZona2Ok</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona2Ok" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=1">Pilz_Virt_OVo01_SpvRipZona2Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -368,21 +368,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkBncSqd" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=54">Pilz_Esp0i13_FbkBncSqd</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkBncSqd" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=54">Pilz_Esp0i13_FbkBncSqd</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3bOk" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=3">Pilz_Virt_OVo03_SpvRipZona3bOk</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3bOk" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=3">Pilz_Virt_OVo03_SpvRipZona3bOk</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt1Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=77">Pilz_Esp2i04_EmgRbt1Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt1Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=77">Pilz_Esp2i04_EmgRbt1Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -424,7 +424,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt3Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=49">Pilz_Esp0i08_EmgRbt3Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt3Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=49">Pilz_Esp0i08_EmgRbt3Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -452,7 +452,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkRipZona1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=87">Pilz_Esp3i06_FbkRipZona1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkRipZona1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=87">Pilz_Esp3i06_FbkRipZona1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -515,14 +515,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="AckEmgRipZona2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=83">Pilz_Esp3i02_AckEmgRipZona2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="AckEmgRipZona2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=83">Pilz_Esp3i02_AckEmgRipZona2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3bCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=53">Pilz_Esp0i12_RipZona3bCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3bCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=53">Pilz_Esp0i12_RipZona3bCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -543,7 +543,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt2Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=74">Pilz_Esp2i01_EmgRbt2Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt2Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=74">Pilz_Esp2i01_EmgRbt2Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -564,14 +564,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss180°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=6">Pilz_Virt_OVo06_SpvAss180_</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss180°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=6">Pilz_Virt_OVo06_SpvAss180_</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Disponibile" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=56">Pilz_Esp0i15_FbkAssPotUVW</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Disponibile" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=56">Pilz_Esp0i15_FbkAssPotUVW</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -586,6 +586,20 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[40]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[40].evt">Plc_ar_messaggi_40</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="PILZ" Shared="0" Retentive="0">PilzMultipe1024</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=04|SA=512">Pilz_InRegist1024</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -690,7 +704,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkEmgZona1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=67">Pilz_Esp1i02_FbkEmgZona1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkEmgZona1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=67">Pilz_Esp1i02_FbkEmgZona1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -711,14 +725,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipQdrRbt1Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=69">Pilz_Esp1i04_RipQdrRbt1Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipQdrRbt1Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=69">Pilz_Esp1i04_RipQdrRbt1Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3bCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=84">Pilz_Esp3i03_EmgRipZona3bCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3bCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=84">Pilz_Esp3i03_EmgRipZona3bCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -753,21 +767,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona2Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=82">Pilz_Esp3i01_EmgRipZona2Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona2Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=82">Pilz_Esp3i01_EmgRipZona2Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgTotaleCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=57">Pilz_Esp0i16_EmgTotaleCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgTotaleCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=57">Pilz_Esp0i16_EmgTotaleCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona2Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=76">Pilz_Esp2i03_RipZona2Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona2Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=76">Pilz_Esp2i03_RipZona2Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -781,7 +795,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona1Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=70">Pilz_Esp1i05_EmgRipZona1Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona1Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=70">Pilz_Esp1i05_EmgRipZona1Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -802,7 +816,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="AckRipGen" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=59">Pilz_Esp0i18_AckRipGen</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="AckRipGen" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=59">Pilz_Esp0i18_AckRipGen</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -844,7 +858,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt1Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=78">Pilz_Esp2i05_EmgRbt1Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt1Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=78">Pilz_Esp2i05_EmgRbt1Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -879,21 +893,21 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass180°Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=45">Pilz_Esp0i04_Ass180_Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass180°Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=45">Pilz_Esp0i04_Ass180_Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Disponibile" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=55">Pilz_Esp0i14_FbkAssPotXYZ</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Disponibile" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=55">Pilz_Esp0i14_FbkAssPotXYZ</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt3Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=50">Pilz_Esp0i09_EmgRbt3Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt3Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=50">Pilz_Esp0i09_EmgRbt3Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -963,7 +977,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="AckRipQdrRbt1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=72">Pilz_Esp1i07_AckRipQdrRbt1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="AckRipQdrRbt1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=72">Pilz_Esp1i07_AckRipQdrRbt1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -977,7 +991,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=42">Pilz_Esp0i01_EmgAssCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=42">Pilz_Esp0i01_EmgAssCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -998,7 +1012,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgTotaleCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=58">Pilz_Esp0i17_EmgTotaleCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgTotaleCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=58">Pilz_Esp0i17_EmgTotaleCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1096,7 +1110,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rbt3PosSicCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=52">Pilz_Esp0i11_Rbt3PosSicCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rbt3PosSicCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=52">Pilz_Esp0i11_Rbt3PosSicCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1110,7 +1124,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipQdrRbt1Ok" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=0">Pilz_Virt_OVo00_SpvRipQdrRbt1Ok</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipQdrRbt1Ok" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=0">Pilz_Virt_OVo00_SpvRipQdrRbt1Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1285,7 +1299,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass0°Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=43">Pilz_Esp0i02_Ass0_Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass0°Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=43">Pilz_Esp0i02_Ass0_Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1369,7 +1383,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss0°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=5">Pilz_Virt_OVo05_SpvAss0_</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss0°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=5">Pilz_Virt_OVo05_SpvAss0_</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1397,7 +1411,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona1Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=71">Pilz_Esp1i06_EmgRipZona1Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona1Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=71">Pilz_Esp1i06_EmgRipZona1Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1488,7 +1502,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkEmgModula" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=88">Pilz_Esp3i07_FbkEmgModula</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkEmgModula" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=88">Pilz_Esp3i07_FbkEmgModula</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1579,7 +1593,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=41">Pilz_Esp0i00_EmgAssCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=41">Pilz_Esp0i00_EmgAssCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1698,7 +1712,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass180°Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=46">Pilz_Esp0i05_Ass180_Ch2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Ass180°Ch2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=46">Pilz_Esp0i05_Ass180_Ch2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1747,7 +1761,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3aOk" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|TaskType=0|SA=2">Pilz_Virt_OVo02_SpvRipZona3aOk</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3aOk" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=2">Pilz_Virt_OVo02_SpvRipZona3aOk</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1782,7 +1796,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipQdrRbt1Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=68">Pilz_Esp1i03_RipQdrRbt1Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipQdrRbt1Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=68">Pilz_Esp1i03_RipQdrRbt1Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1831,14 +1845,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3aCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=66">Pilz_Esp1i01_EmgRipZona3aCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[17]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[17].evt">Plc_ar_messaggi_17</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[17]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[17].evt">Plc_ar_messaggi_17</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3aCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=66">Pilz_Esp1i01_EmgRipZona3aCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1964,7 +1978,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt2Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=73">Pilz_Esp2i00_EmgRbt2Ch1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt2Ch1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=73">Pilz_Esp2i00_EmgRbt2Ch1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2027,14 +2041,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkBarFotBncI/O" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=96">Pilz_Esp4i07_FbkBarFotBncI_O</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="FbkBarFotBncI/O" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=96">Pilz_Esp4i07_FbkBarFotBncI_O</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3bCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=86">Pilz_Esp3i05_RipZona3bCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3bCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=86">Pilz_Esp3i05_RipZona3bCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2048,7 +2062,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3aCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Typ=0|SA=47">Pilz_Esp0i06_RipZona3aCh1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipZona3aCh1" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=47">Pilz_Esp0i06_RipZona3aCh1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>

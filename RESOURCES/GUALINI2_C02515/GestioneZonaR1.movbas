@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="42169" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -236,10 +236,10 @@ Sub Main()
 
 '#####TODO DEBUG
 'rimuovere questa parte
-AA:
+'AA:
 '[Q1_In:PezzoPronto] = True
 '[Q2_In:PezzoPronto] = True
-StatoCicloCarico = 1000
+'StatoCicloCarico = 1000
 
 'loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
 'loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
@@ -316,6 +316,19 @@ StatoCicloCarico = 1000
 							StatoCicloCarico = 2100	'LeggiFileDaQuadra
 						End If
 					End If
+
+					'occorre eliminare il file dalla quadra
+					If ValutaProssimaCondizione Then
+						If [PLC_TRANSF_Q1_IN:PEZZO_SCARICATO] Or [PLC_TRANSF_Q2_IN:PEZZO_SCARICATO]   Then
+
+							EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
+
+							ValutaProssimaCondizione = False
+							LogMsg "StatoCicloCarico = 1000	'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA]); Quadra = " &amp; CStr([R1_STATUS:PZ_DA_QUADRA])
+							StatoCicloCarico = 1000	'AttesaPezzi
+						End If
+					End If
+
 
 					'FineMissioneRobot
 					If ValutaProssimaCondizione Then
@@ -903,21 +916,22 @@ StatoCicloCarico = 1000
 					'###TODO	SIMULAZIONE
 					'###CANCELLA DOPO TEST
 					'#################################################################################
-					If [R1_STATUS:PZ_DA_QUADRA] = 1 Then
-						[Q1_Out:PezzoPronto] = False
-						EliminaFileSimulazione(1)
-					ElseIf [R1_STATUS:PZ_DA_QUADRA] = 2 Then
-						[Q2_Out:PezzoPronto] = False
-						EliminaFileSimulazione(2)
-					End If
+					'If [R1_STATUS:PZ_DA_QUADRA] = 1 Then
+					'	[Q1_Out:PezzoPronto] = False
+					'	EliminaFileSimulazione(1)
+					'ElseIf [R1_STATUS:PZ_DA_QUADRA] = 2 Then
+					'	[Q2_Out:PezzoPronto] = False
+					'	EliminaFileSimulazione(2)
+					'End If
 
 					'################################################################################
 
 
 
+					'ATTENZIONE ELIMINA SPOSTATO IN  StatoCicloCarico = 1000 su condizione If [PLC_TRANSF_Q1_IN:PEZZO_SCARICATO] Or [PLC_TRANSF_Q2_IN:PEZZO_SCARICATO]   Then
 					'occorre eliminare il file dalla quadra
 					'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
-					EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
+					'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
 
 					'reset dei valori dei membri che identificano il pezzo
 					ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA])
@@ -3483,7 +3497,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAsAWUBdgGFAZgBRQJfAukD+APQBzUI
+<BreakPoints xsi:type="xsd:base64Binary">AiA9AXIBgwGSAaUBUgJsAvcDBgTeB0MI
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
