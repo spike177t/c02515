@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="42169" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="138976" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -314,18 +314,6 @@ Sub Main()
 							ValutaProssimaCondizione = False
 							LogMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra; leggiDaQuadra = " &amp; CStr(leggiDaQuadra)
 							StatoCicloCarico = 2100	'LeggiFileDaQuadra
-						End If
-					End If
-
-					'occorre eliminare il file dalla quadra
-					If ValutaProssimaCondizione Then
-						If [PLC_TRANSF_Q1_IN:PEZZO_SCARICATO] Or [PLC_TRANSF_Q2_IN:PEZZO_SCARICATO]   Then
-
-							EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
-
-							ValutaProssimaCondizione = False
-							LogMsg "StatoCicloCarico = 1000	'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA]); Quadra = " &amp; CStr([R1_STATUS:PZ_DA_QUADRA])
-							StatoCicloCarico = 1000	'AttesaPezzi
 						End If
 					End If
 
@@ -771,8 +759,30 @@ Sub Main()
 						If [R1_STATUS:MAGAZZINO] = 2 Then
 							[MAG2_ES1_ACT:BUSY] = True
 						End If
-						StatoCicloCarico = 1000	'AttesaPezzi
+						'StatoCicloCarico = 1000	'AttesaPezzi
+						StatoCicloCarico =  4500	'Attendi Sblocco pezz
 					End If
+
+				Case 4500	'Attendi Sblocco pezzo
+					LogMsg "StatoCicloCarico = 4500	'Attendi Sblocco pezzo EliminaFileDaQuadra"
+
+					If [R1_STATUS:PZ_DA_QUADRA] = 1 And [Q1_In:PezzoScaricato]  Then
+							'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
+							EliminaFileDaQuadra(1)
+							ValutaProssimaCondizione = False
+							LogMsg "StatoCicloCarico = 4500	'Attendi Sblocco pezzo EliminaFileDaQuadra ([R1_STATUS:PZ_DA_QUADRA]); Quadra = " &amp; CStr([R1_STATUS:PZ_DA_QUADRA])
+							StatoCicloCarico = 1000	'AttesaPezzi
+						End If
+
+						'If ([PLC_TRANSF_Q2_IN:PEZZO_SCARICATO] And Not [Q1_Out:PezzoPronto])   Then
+						If [R1_STATUS:PZ_DA_QUADRA] = 2 And [Q2_In:PezzoScaricato]  Then
+							'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
+							EliminaFileDaQuadra(2)
+							LogMsg "StatoCicloCarico = 4500	'Attendi Sblocco pezzo EliminaFileDaQuadra ([R1_STATUS:PZ_DA_QUADRA]); Quadra = " &amp; CStr([R1_STATUS:PZ_DA_QUADRA])
+							StatoCicloCarico = 1000	'AttesaPezzi
+						End If
+
+
 
 				Case 6100	'FineRobot
 					LogMsg "StatoCicloCarico = 6100	'FineRobot"
@@ -3497,8 +3507,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiA9AXIBgwGSAaUBUgJsAvcDBgTeB0MI
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBmAXcBhgFGAmACAQQQBA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
-<Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
+<Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>
