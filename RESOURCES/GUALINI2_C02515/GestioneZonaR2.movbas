@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="3623" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2172" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -65,13 +65,16 @@ Sub Main()
 	Dim strEstrattore As String
 
 
-	MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
-	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-      "SERVER=localhost;" &amp; _
-      "DATABASE=gualini;" &amp; _
-      "UID=root;" &amp; _
-      "PASSWORD=co.mar;" &amp; _
-      "OPTION=3;"
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
+	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	Else
+	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	End If
 
 	'inizializzo alcune variabili
 	enableLogMsg = True
@@ -162,7 +165,8 @@ Sub Main()
 							ValutaProssimaCondizione = False
 							LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2"
 							[R2_STATUS:FINE_MISSIONE_ACK] = False	'forzo per sicurezza nel caso di ripartenze da prove
-							StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
+							'StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
+							StatoCicloScarico = 4050			'Invio Dati ad Assemblatrice
 						End If
 					End If
 
@@ -290,13 +294,17 @@ Sub Main()
 
 					'passo i dati all'Assemblatrice
 					If [R2_STATUS:MAGAZZINO] = 1  Then
-						[Assemblatrice_In:ALTEZZA_FINESTRA]	= ([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
+						[Assemblatrice_In:ALTEZZA_FINESTRA]		= ([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
 						[Assemblatrice_In:LARGHEZZA_FINESTRA]	= ([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-						[Assemblatrice_In:APERTURA]			=  [SCAR_M1_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura
+						[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
+						[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
+						[Assemblatrice_In:APERTURA]				= [SCAR_M1_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura
 					ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-						[Assemblatrice_In:ALTEZZA_FINESTRA]	= ([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
+						[Assemblatrice_In:ALTEZZA_FINESTRA]		= ([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
 						[Assemblatrice_In:LARGHEZZA_FINESTRA]	= ([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-						[Assemblatrice_In:APERTURA]			=  [SCAR_M2_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura)
+						[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
+						[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
+						[Assemblatrice_In:APERTURA]				= [SCAR_M2_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura)
 					End If
 
 					'invio dati ad asemblatrice
@@ -2109,7 +2117,8 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBNAA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBQAJkApgC2AMUA
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1670" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="4257" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -40,13 +40,16 @@ Sub Main()
 	Dim strMsgBox As String
 
 
-	MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
-	MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-      "SERVER=localhost;" &amp; _
-      "DATABASE=gualini;" &amp; _
-      "UID=root;" &amp; _
-      "PASSWORD=co.mar;" &amp; _
-      "OPTION=3;"
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
+	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	Else
+	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	End If
 
 	'inizializzo alcune variabili
 	enableLogMsg = True

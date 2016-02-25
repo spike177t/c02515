@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="84212" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -180,14 +180,18 @@ Sub Main()
 	Dim strEstrattore As String
 
 
-	MysSqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
+	'MysSqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
 	'Connector/MySQL ODBC 5.3 ANSI Driver connection string
-    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-      "SERVER=localhost;" &amp; _
-      "DATABASE=gualini;" &amp; _
-      "UID=root;" &amp; _
-      "PASSWORD=co.mar;" &amp; _
-      "OPTION=3;"
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
+	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	Else
+	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	End If
 
     'inizializzo alcune variabili
 
@@ -3345,7 +3349,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	et = objVar.GetType()
 
 	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		DebugMsg 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		DebugMsg 		"ATTENZIONE!!! ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
 		Exit Sub
 	End If
 
@@ -3354,7 +3358,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
 
 	While Not MemberVar Is Nothing
-		DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
 		'Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
 
 		et = MemberVar.GetType()
@@ -3479,7 +3483,8 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAoAVYBYQFyAYEBlAFBAlsC5QP0A8wHMQg=</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiAsAWUBdgGFAZgBRQJfAukD+APQBzUI
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
