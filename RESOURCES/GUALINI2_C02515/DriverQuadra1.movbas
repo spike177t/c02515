@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1512" SelLength="1" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="13238" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -405,6 +405,9 @@ NoErrore:
 		While tempoEsecuzione &lt; 0.5
 			DoEvents
 			tempoEsecuzione = Abs(Timer() - lastTimer)
+
+			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
+			[Q1_VarR:diffTempoComunicazione] = diffTempoComunicazione
 		Wend
 
 	Wend
