@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="8086" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="10290" SelLength="202" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q2_Out_err' con il nuovo nome 'Q2_In'
 'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
 'Sostituita la Variabile 'Q2_Out' con il nuovo nome 'Q2_Out_err'
@@ -236,6 +236,10 @@ Sub Main
 	Dim lastTimer As Double
 	Dim tempoEsecuzione As Double
 
+	Dim oldTestComunicazione As Boolean
+	Dim oldTimerTestComunicazione As Double
+	Dim diffTempoComunicazione As Double
+
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
 	'Q2_NonComunica = True
@@ -301,11 +305,11 @@ Ciclo:
 		On Error Resume Next
 '--------------------------------------------------------------------------
 'LETTURA
-		ReadR_641=IsacCnc.ReadR(641)		'IsacCnc.ReadR(641)
+		ReadR_641 = IsacCnc.ReadR(641)	'IsacCnc.ReadR(641)
 		On Error GoTo Fine
-		ReadR_640=IsacCnc.ReadR(640)	'IsacCnc.ReadR(640)
+		ReadR_640 = IsacCnc.ReadR(640)	'IsacCnc.ReadR(640)
 		On Error GoTo Fine
-		ReadR_55=IsacCnc.ReadR(55)	'IsacCnc.ReadR(55)
+		ReadR_55  = IsacCnc.ReadR(55)		'IsacCnc.ReadR(55)
 		On Error GoTo Fine
 
 		If ReadR_55 &lt;&gt; 0 Then
@@ -324,6 +328,18 @@ Ciclo:
 		[Q2_Out:NonInEmergenza]		= IIf((ReadR_641 And 32) = 32, True, False)
 		[Q2_Out:NonInHold]			= IIf((ReadR_641 And 64) = 64, True, False)
 		[Q2_Out:RipariQuadraOk]		= IIf((ReadR_641 And 128) = 128, True, False)
+
+		If [Q2_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
+			oldTestComunicazione = [Q2_Out:TestComunicazione]
+			oldTimerTestComunicazione = Timer()
+		End If
+
+		diffTempoComunicazione = Timer() - oldTimerTestComunicazione
+		If diffTempoComunicazione &gt; 5 Then
+			[Q2_Out:NonComunica] = True
+		Else
+			[Q2_Out:NonComunica] = False
+		End If
 
 '--------------------------------------------------------------------------
 'SCRITTURA
@@ -380,7 +396,6 @@ NoErrore:
 			Q2_ProvaComunicaz = 1
 		End If
 
-
 		DoEvents
 
 		'Wait 0.3
@@ -389,7 +404,6 @@ NoErrore:
 			DoEvents
 			tempoEsecuzione = Abs(Timer() - lastTimer)
 		Wend
-
 	Wend
 
 	'rilascio risorse
