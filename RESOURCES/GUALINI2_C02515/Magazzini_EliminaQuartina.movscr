@@ -1378,315 +1378,6 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="30" y="110" width="390" height="120" ox="550" oy="155" owidth="390" oheight="120"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>group</type>
-<g x="0" y="0" width="390" height="50" ox="550" oy="155" owidth="390" oheight="50"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="310" y="0" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo71</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS INRIEMP</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="220" y="0" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo72</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS DISP</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="130" y="0" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo73</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS PIENI</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="0" width="120" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="loc_ImpostazioniImpianto:M1_ABIL" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante74</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ABILITA SVUOTAMENTO</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_ImpostazioniImpianto:M1_ABIL">1</BG>
-<BGList>
-<dci>
-<DynColor Color="33023"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG Var="loc_ImpostazioniImpianto:M1_ABIL">1</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215" Text="M2 DISABILITATO"/>
-</dci>
-<dci>
-<DynColor Color="16777215" Value="1" Text="M2 ABILITATO"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="130" y="20" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
-<border>4</border>
-<execution var="loc_ImpostazioniImpianto:M1_CASS_PIENI"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display76</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="220" y="20" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
-<border>4</border>
-<execution var="loc_ImpostazioniImpianto:M1_CASS_DISPONIBILI"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display77</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="310" y="20" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
-<border>4</border>
-<execution var="loc_ImpostazioniImpianto:M1_CASS_IN_RIEMPIMENTO"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display78</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo83</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>group</type>
-<g x="0" y="70" width="390" height="50" ox="550" oy="225" owidth="390" oheight="50"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="130" y="70" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo68</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS PIENI</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="220" y="70" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo69</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS DISP</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="310" y="70" width="80" height="20" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo70</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS INRIEMP</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="70" width="120" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="loc_ImpostazioniImpianto:M2_ABIL" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante75</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ABILITA SVUOTAMENTO</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_ImpostazioniImpianto:M2_ABIL">1</BG>
-<BGList>
-<dci>
-<DynColor Color="33023"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG Var="loc_ImpostazioniImpianto:M2_ABIL">1</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215" Text="M2 DISABILITATO"/>
-</dci>
-<dci>
-<DynColor Color="16777215" Value="1" Text="M2 ABILITATO"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="310" y="90" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
-<border>4</border>
-<execution var="loc_ImpostazioniImpianto:M2_CASS_IN_RIEMPIMENTO"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display79</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="220" y="90" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
-<border>4</border>
-<execution var="loc_ImpostazioniImpianto:M2_CASS_DISPONIBILI"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display80</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="130" y="90" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
-<border>4</border>
-<execution var="loc_ImpostazioniImpianto:M2_CASS_PIENI"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display81</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo91</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
 <g x="860" y="100" width="150" height="445" ox="15" oy="100" owidth="150" oheight="445"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
@@ -2188,12 +1879,1025 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<object>base</object>
-<type x="410" y="135" width="330" height="400" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill ImageID="VistaAlto_Magazzini_R1_R2_low.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760"/>
+<object>GridBox</object>
+<grid x="25" y="135" width="385" height="440" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>4</Border>
+<style ShowControl="0" AutoLayout="0" Clickable="1" ReadOnly="0" PromptPad="0" IconBtn="0" RefreshBtn="0" UpdateBtn="0" SaveBtn="0" SelectAllBtn="0" CopyBtn="0" InsertBtn="0" DeleteBtn="0" Size="0" Pos="3" ColumnsWidths="" RefreshTxt="" UpdateTxt="" SaveTxt="" SelectAllTxt="" CopyTxt="" InsertTxt="" DeleteTxt=""/>
+<execution DSN="gualini" User="gualini" Query="" TextFileName="" Separator="" UpdateVariable="0"/>
+<ColumnList/>
+<GridFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
+<Name AntialiasingFont="1" acr="4294901760">gridWindow</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+<ScriptCode StartSel="335" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+
+Public Sub SymbolLoading()
+	Dim strQuery As String
+
+	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+	objGrid.AutoLayout = False
+	objGrid.AddColumn("MAGAZZINO")
+	objGrid.AddColumn("CASSETTO")
+	objGrid.AddColumn("QUARTINA")
+	objGrid.AddColumn("PEZZI PRESENTI")
+	
+	strQuery = "Select DISTINCT " _
+				&amp; " tbQRT.`cassetto_magazzino_ID_MAGAZZINO` As MAG " _
+				&amp; " , tbQRT.`cassetto_ID_CASSETTO` As CASS " _
+				&amp; " , tbQRT.`ID_QUARTINA` As QRT " _
+				&amp; " , (Select count(*) from `gualini`.`pezzo` where  `gualini`.`pezzo`.`quartina_ID_QUARTINA` = tbQRT.`ID_QUARTINA`) As PEZZI_PRESENTI " _
+				&amp; " FROM `gualini`.`quartina` As tbQRT " _
+				&amp; " Join `gualini`.`pezzo` As tbPZ On tbQRT.`ID_QUARTINA` = tbPZ.`quartina_ID_QUARTINA` " _
+				&amp; " order by MAG, CASS " _
+				&amp; " ;"
+
+	objGrid.Query = strQuery
+	objGrid.Refresh
+	objGrid.RecalcLayout
+
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="440" y="135" width="180" height="35" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAG 1 e MAG 2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="195" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+
+Public Sub Click()
+	Dim strQuery As String
+
+	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	'objGrid.AutoLayout = False
+	
+	'objGrid.AddColumn("MAGAZZINO")
+	'objGrid.AddColumn("CASSETTO")
+	'objGrid.AddColumn("QUARTINA")
+	'objGrid.AddColumn("PEZZI PRESENTI")
+
+	strQuery = "Select DISTINCT " _
+				&amp; " tbQRT.`cassetto_magazzino_ID_MAGAZZINO` As MAG " _
+				&amp; " , tbQRT.`cassetto_ID_CASSETTO` As CASS " _
+				&amp; " , tbQRT.`ID_QUARTINA` As QRT " _
+				&amp; " , (Select count(*) from `gualini`.`pezzo` where  `gualini`.`pezzo`.`quartina_ID_QUARTINA` = tbQRT.`ID_QUARTINA`) As PEZZI_PRESENTI " _
+				&amp; " FROM `gualini`.`quartina` As tbQRT " _
+				&amp; " Join `gualini`.`pezzo` As tbPZ On tbQRT.`ID_QUARTINA` = tbPZ.`quartina_ID_QUARTINA` " _
+				&amp; " order by MAG, CASS " _
+				&amp; " ;"
+
+	objGrid.Query = strQuery
+	objGrid.Refresh
+	'objGrid.RecalcLayout
+
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="625" y="135" width="105" height="35" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">mag1</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAG 1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="196" SelLength="725" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+
+Public Sub Click()
+	Dim strQuery As String
+
+	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	'objGrid.AutoLayout = False
+
+	'objGrid.AddColumn("MAGAZZINO")
+	'objGrid.AddColumn("CASSETTO")
+	'objGrid.AddColumn("QUARTINA")
+	'objGrid.AddColumn("PEZZI PRESENTI")
+
+
+	strQuery = "Select DISTINCT " _
+				&amp; " tbQRT.`cassetto_magazzino_ID_MAGAZZINO` As MAG " _
+				&amp; " , tbQRT.`cassetto_ID_CASSETTO` As CASS " _
+				&amp; " , tbQRT.`ID_QUARTINA` As QRT " _
+				&amp; " , (Select count(*) from `gualini`.`pezzo` where  `gualini`.`pezzo`.`quartina_ID_QUARTINA` = tbQRT.`ID_QUARTINA`) As PEZZI_PRESENTI " _
+				&amp; " FROM `gualini`.`quartina` As tbQRT " _
+				&amp; " Join `gualini`.`pezzo` As tbPZ On tbQRT.`ID_QUARTINA` = tbPZ.`quartina_ID_QUARTINA` " _
+				&amp; " WHERE tbQRT.`cassetto_magazzino_ID_MAGAZZINO` = 1 " _
+				&amp; " order by MAG, CASS " _
+				&amp; " ;"
+
+	objGrid.Query = strQuery
+	objGrid.Refresh
+	'objGrid.RecalcLayout
+
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="735" y="135" width="90" height="35" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">mag2</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAG 2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="873" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+
+Public Sub Click()
+	Dim strQuery As String
+
+	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	'objGrid.AutoLayout = False
+
+	'objGrid.AddColumn("MAGAZZINO")
+	'objGrid.AddColumn("CASSETTO")
+	'objGrid.AddColumn("QUARTINA")
+	'objGrid.AddColumn("PEZZI PRESENTI")
+
+
+	strQuery = "Select DISTINCT " _
+				&amp; " tbQRT.`cassetto_magazzino_ID_MAGAZZINO` As MAG " _
+				&amp; " , tbQRT.`cassetto_ID_CASSETTO` As CASS " _
+				&amp; " , tbQRT.`ID_QUARTINA` As QRT " _
+				&amp; " , (Select count(*) from `gualini`.`pezzo` where  `gualini`.`pezzo`.`quartina_ID_QUARTINA` = tbQRT.`ID_QUARTINA`) As PEZZI_PRESENTI " _
+				&amp; " FROM `gualini`.`quartina` As tbQRT " _
+				&amp; " Join `gualini`.`pezzo` As tbPZ On tbQRT.`ID_QUARTINA` = tbPZ.`quartina_ID_QUARTINA` " _
+				&amp; " WHERE tbQRT.`cassetto_magazzino_ID_MAGAZZINO` = 2 " _
+				&amp; " order by MAG, CASS " _
+				&amp; " ;"
+
+	objGrid.Query = strQuery
+	objGrid.Refresh
+	'objGrid.RecalcLayout
+
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>base</object>
+<type x="25" y="100" width="390" height="20" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Quartine Presenti</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="440" y="210" width="190" height="35" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Elimina Selezionati</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="837" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.IO
+Imports System.Data.Odbc
+
+Dim objGrid As GridWndCmdTarget
+Dim MySqlConnectionString As String
+
+Public Sub Click()
+	Dim strQuery As String
+	Dim nRows As Integer
+	Dim i As Integer
+	Dim mag As Integer
+	Dim cass As Integer
+	Dim selected As Boolean
+	Dim exQuery As String
+
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	Else
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	End If
+
+	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	nRows = objGrid.GetRowCount
+
+	For i = 1 To nRows  Step 1
+		selected = objGrid.IsCellSelected(i,1) Or objGrid.IsCellSelected(i,2) Or objGrid.IsCellSelected(i,3)
+		'Debug.Print "riga = " &amp; CStr(i) &amp; "; Iselected: " &amp;  CStr(selected)
+		If selected Then
+			mag = CInt(objGrid.CellText(i,1))
+			cass = CInt(objGrid.CellText(i,2))
+			exQuery = "DELETE FROM `gualini`.`quartina` WHERE `cassetto_ID_CASSETTO`= " &amp; CStr(cass) &amp; " " _
+						&amp; " AND `cassetto_magazzino_ID_MAGAZZINO` = " &amp; CStr(mag) &amp; ";"
+			Debug.Print exQuery
+			SqlExecuteNonQuery(MySqlConnectionString, exQuery)
+		End If
+
+	Next i
+
+	objGrid.Refresh
+
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            Debug.Print "Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		Debug.Print(MyException.ToString)
+		MsgBox("Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub LogMsg(msg As String)
+	Dim prefix As String
+	prefix = "Magazzini_CassettiDisponibili.synoptic -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>base</object>
+<type x="445" y="185" width="380" height="20" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Modifica Selezionati:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="440" y="255" width="190" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAG 1 Elimina Tutto</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="808" SelLength="89" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.IO
+Imports System.Data.Odbc
+
+Dim objGrid As GridWndCmdTarget
+Dim MySqlConnectionString As String
+
+Public Sub Click()
+	Dim strQuery As String
+	Dim nRows As Integer
+	Dim i As Integer
+	Dim mag As Integer
+	Dim cass As Integer
+	Dim selected As Boolean
+	Dim exQuery As String
+
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	Else
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	End If
+
+	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	exQuery = "DELETE FROM `gualini`.`quartina` WHERE `cassetto_magazzino_ID_MAGAZZINO` = 1;"
+	Debug.Print exQuery
+	SqlExecuteNonQuery(MySqlConnectionString, exQuery)
+
+	objGrid.Refresh
+
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            Debug.Print "Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		Debug.Print(MyException.ToString)
+		MsgBox("Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub LogMsg(msg As String)
+	Dim prefix As String
+	prefix = "Magazzini_CassettiDisponibili.synoptic -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="440" y="310" width="190" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAG 2 Elimina Tutto</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="639" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.IO
+Imports System.Data.Odbc
+
+Dim objGrid As GridWndCmdTarget
+Dim MySqlConnectionString As String
+
+Public Sub Click()
+	Dim strQuery As String
+	Dim nRows As Integer
+	Dim i As Integer
+	Dim mag As Integer
+	Dim cass As Integer
+	Dim selected As Boolean
+	Dim exQuery As String
+
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	Else
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	End If
+
+	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	exQuery = "DELETE FROM `gualini`.`quartina` WHERE `cassetto_magazzino_ID_MAGAZZINO` = 2;"
+	Debug.Print exQuery
+	SqlExecuteNonQuery(MySqlConnectionString, exQuery)
+
+	objGrid.Refresh
+
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            Debug.Print "Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		Debug.Print(MyException.ToString)
+		MsgBox("Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- Magazzini_CassettiDisponibili.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub LogMsg(msg As String)
+	Dim prefix As String
+	prefix = "Magazzini_CassettiDisponibili.synoptic -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
+</ScriptCode>
 </child>
 </ListSynopticDraw>
 <VariableList/>

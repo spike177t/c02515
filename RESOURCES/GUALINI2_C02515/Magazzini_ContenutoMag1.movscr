@@ -34,9 +34,9 @@
 <style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
 <execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
 <Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
+<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
 <Name AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -65,7 +65,7 @@
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -253,6 +253,7 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1373,7 +1374,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1391,6 +1391,7 @@ End Sub
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;2&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE3&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante68</Name>
@@ -1604,10 +1605,11 @@ End Sub
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;5&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiDisponibili&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante88</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Gestisci Cassetti Disponibili MAG 1</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Gestisci Cassetti Disponibili</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1676,7 +1678,7 @@ End Sub
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante89</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Gestisci Cassetti Disponibili MAG 2</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">xxxx</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1742,6 +1744,7 @@ End Sub
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;7&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_EliminaQuartina&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante90</Name>

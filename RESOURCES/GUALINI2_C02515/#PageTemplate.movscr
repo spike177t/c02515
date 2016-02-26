@@ -34,9 +34,9 @@
 <style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
 <execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
 <Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
+<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
 <Name AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -65,7 +65,7 @@
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -253,6 +253,7 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1373,7 +1374,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
