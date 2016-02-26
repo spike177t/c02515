@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="8154" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="13119" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Programmi\Progea\MoviconX2\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -235,6 +235,10 @@ Sub Main
 	Dim lastTimer As Double
 	Dim tempoEsecuzione As Double
 
+	Dim oldTestComunicazione As Boolean
+	Dim oldTimerTestComunicazione As Double
+	Dim diffTempoComunicazione As Double
+
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
 	'Q1_NonComunica = True
@@ -324,6 +328,20 @@ Ciclo:
 		[Q1_Out:NonInHold]			= IIf((ReadR_641 And 64) = 64, True, False)
 		[Q1_Out:RipariQuadraOk]		= IIf((ReadR_641 And 128) = 128, True, False)
 
+		'verifico se sto comunicando
+		If [Q1_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
+			oldTestComunicazione = [Q1_Out:TestComunicazione]
+			oldTimerTestComunicazione = Timer()
+		End If
+
+		diffTempoComunicazione = Timer() - oldTimerTestComunicazione
+		[Q1_VarR:diffTempoComunicazione] = diffTempoComunicazione
+		If diffTempoComunicazione &gt; 5 Then
+			[Q1_Out:NonComunica] = True
+		Else
+			[Q1_Out:NonComunica] = False
+		End If
+
 '--------------------------------------------------------------------------
 'SCRITTURA
 		Q1_OutputPerQuadra = 0
@@ -395,7 +413,7 @@ NoErrore:
 	Set IsacCnc = Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDyAA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiD2AA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>
