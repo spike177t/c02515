@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1119" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="1739" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -40,17 +40,28 @@ Sub Main
     '  "PASSWORD=co.mar;" &amp; _
     '  "OPTION=3;"
 
+	Chiave="IP"
+	Variabile="IP_Q1"
+	[loc_ImpostazioniImpianto:IP_Q1] = ReadIniValue(Path, Chiave, Variabile)
+
+	Chiave="IP"
+	Variabile="IP_Q2"
+	[loc_ImpostazioniImpianto:IP_Q2] = ReadIniValue(Path, Chiave, Variabile)
+
+	Chiave="IP"
+	Variabile="IP_ASSEMBLATRICE"
+	[loc_ImpostazioniImpianto:IP_Assemblatrice] = ReadIniValue(Path, Chiave, Variabile)
+
+
 	'controllo se sono in esecuzione altre istanze di Premium
 	RunScript ("FindProcess",100,False)
 
 	'RunScript ("#SimulaPezziDaQuadre",100,False)
 	RunScript ("GestioneZonaR1",100,False)
-	'RunScript ("GestioneZonaR2",100,False)
+	RunScript ("GestioneZonaR2",100,False)
 
-	'RunScript ("DriverQuadra1",100,False)
+	RunScript ("DriverQuadra1_NewVersion",100,False)
 	RunScript ("DriverQuadra2",100,False)
-
-
 
 
 	'LOG OPERATORE
@@ -72,7 +83,6 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAqAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="40" SyncroScriptTimeout="5000"/>
 </MovResource>
