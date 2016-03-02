@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="13353" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="13238" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -73,8 +73,8 @@ Private Type WSADATA
 End Type
 
 
-Dim Q2_OutputPerQuadra As Single
-Dim Q2_ProvaComunicaz As Single
+Dim Q1_OutputPerQuadra As Single
+Dim Q1_ProvaComunicaz As Single
 
 Dim WriteR_640 As Single
 Dim WriteR_639 As Single
@@ -85,8 +85,8 @@ Dim ReadR_55 As Single
 
 Dim File As String
 
-Dim Q2ChkPing As String	'var per chk ping
-Dim Q2ChkPingOk As String	'valore di ping Ok, assegnato in loading
+Dim Q1ChkPing As String	'var per chk ping
+Dim Q1ChkPingOk As String	'valore di ping Ok, assegnato in loading
 
 Dim success As Long
 
@@ -239,215 +239,182 @@ Sub Main
 	Dim oldTimerTestComunicazione As Double
 	Dim diffTempoComunicazione As Double
 
-	Dim ip As String
-	Dim nErrIsac As Integer
-
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
-	[Q2_Out:NonComunica] = True
+	'Q1_NonComunica = True
+	[Q1_Out:NonComunica] = True
+	Q1ChkPingOk = "0   [ OK ]"
 
-	If [loc_ImpostazioniImpianto:IP_Q2] &lt;&gt; "" Then
-		ip = [loc_ImpostazioniImpianto:IP_Q2]
-	Else
-		ip = "10.200.200.31"
-	End If
-
-	nErrIsac = 0
-
-	'esegui ping fino a quando non ho connessione
-	While [Q2_Out:NonComunica] And Not IsInStoppingMode
-		If OkPing(ip) Then
-			[Q2_Out:NonComunica] = False
-			'Attendi(2.5, [Q2_VarR:diffTempoComunicazione])
-		Else
-			[Q2_Out:NonComunica] = True
-			Attendi(2.5, [Q2_VarR:diffTempoComunicazione])
-		End If
-
-		If Not [Q2_Out:NonComunica] Then
-			IsacCnc.machinename = ip
-			IsacCnc.DataAType = CncAType_atShort
-			Q2_ProvaComunicaz = 1
-		End If
-	Wend
-
-	While Not IsInStoppingMode
-Ciclo:
-		'ripeto ping prima di ogni lettura per evitare errori strani dovuti al driver isac
-		If OkPing(ip)  Then
-			[Q2_Out:NonComunica] = False
-			lastTimer = Timer()
-
-'--------------------------------------------------------------------------
-'LETTURA
-			Err.Clear
-			On Error GoTo ErrLettura
-
-			ReadR_641=IsacCnc.ReadR(641)	'IsacCnc.ReadR(641)
-			ReadR_640=IsacCnc.ReadR(640)	'IsacCnc.ReadR(640)
-			ReadR_55=IsacCnc.ReadR(55)		'IsacCnc.ReadR(55)
-
-			If ReadR_55 &lt;&gt; 0 Then
-				'Q2_FotocellScaricatore5 = True
-				[Q2_Out:FotocellScaricatore5] = True
-			Else
-				'Q2_FotocellScaricatore5 = False
-				[Q2_Out:FotocellScaricatore5] = False
-			End If
-
-			[Q2_Out:TestComunicazione] 	= IIf((ReadR_641 And 1) = 1, True, False)
-			[Q2_Out:On] 				= IIf((ReadR_641 And 2) = 2, True, False)
-			[Q2_Out:InCiclo]			= IIf((ReadR_641 And 4) = 4, True, False)
-			[Q2_Out:PezzoPronto]		= IIf((ReadR_641 And 8) = 8, True, False)
-			[Q2_Out:PezzoSbloccato]		= IIf((ReadR_641 And 16) = 16, True, False)
-			[Q2_Out:NonInEmergenza]		= IIf((ReadR_641 And 32) = 32, True, False)
-			[Q2_Out:NonInHold]			= IIf((ReadR_641 And 64) = 64, True, False)
-			[Q2_Out:RipariQuadraOk]		= IIf((ReadR_641 And 128) = 128, True, False)
-
-			'verifico se sto comunicando
-			If [Q2_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
-				oldTestComunicazione = [Q2_Out:TestComunicazione]
-				oldTimerTestComunicazione = Timer()
-			End If
-
-			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
-			[Q2_VarR:diffTempoComunicazione] = diffTempoComunicazione
-			If diffTempoComunicazione &gt; 5 Then
-				[Q2_Out:NonComunica] = True
-			Else
-				[Q2_Out:NonComunica] = False
-			End If
-'FINE LETTURA
-'--------------------------------------------------------------------------
-
-
-'--------------------------------------------------------------------------
-'SCRITTURA
-			Q2_OutputPerQuadra = 0
-
-			'Q2_OutputPerQuadra.0 =	[Q2_In:TestComunicazionePc]
-			Q2_OutputPerQuadra = CInt([Q2_In:TestComunicazionePc])
-
-			'Q2_OutputPerQuadra.1 =	[Q2_In:R1_Ok]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 2 * Abs(CInt([Q2_In:R1_Ok]))
-
-			'Q2_OutputPerQuadra.2 =	[Q2_In:R1_FuoriIngombro]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 4 * Abs(CInt([Q2_In:R1_FuoriIngombro]))
-
-			'Q2_OutputPerQuadra.3 =	[Q2_In:PezzoScaricato]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 8 * Abs(CInt([Q2_In:PezzoScaricato]))
-
-			'Q2_OutputPerQuadra.4 =	[Q2_In:SbloccaPezzo]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 16 * Abs(CInt([Q2_In:SbloccaPezzo]))
-
-			'Q2_OutputPerQuadra.5 =	[Q2_In:LineaNonInEmergenza]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 32 * Abs(CInt([Q2_In:LineaNonInEmergenza]))
-
-			'Q2_OutputPerQuadra.6 =	[Q2_In:LineaNonInHold]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 64 * Abs(CInt([Q2_In:LineaNonInHold]))
-
-			'Q2_OutputPerQuadra.7 =	[Q2_In:RipariR1_Ok]
-			Q2_OutputPerQuadra = Q2_OutputPerQuadra + 128 * Abs(CInt([Q2_In:RipariR1_Ok]))
-
-			On Error GoTo ErrLettura
-
-			[Q2_VarR:WriteR_640] = CInt(Q2_OutputPerQuadra)
-			WriteR_640 = CInt(Q2_OutputPerQuadra)
-
-			[Q2_VarR:WriteR_639] = CInt(Q2_ProvaComunicaz)
-			WriteR_639 = CInt(Q2_ProvaComunicaz)
-
-			IsacCnc.writeR(640,CSng(WriteR_640))
-			IsacCnc.writeR(639,CSng(WriteR_639))
-			
-'FINE SCRITTURA
-'--------------------------------------------------------------------------
-			'incremento il contatore per controllo comunicazione sulla quadra
-			Q2_ProvaComunicaz = Q2_ProvaComunicaz + 1
-			If Q2_ProvaComunicaz &gt;= 10000 Then
-				Q2_ProvaComunicaz = 1
-			End If
-
-			'controllo tempo ciclo
-			tempoEsecuzione = Abs(Timer() - lastTimer)
-			If tempoEsecuzione &gt; 1 Then
-				Debug.Print "Tempo esecuzione DriverQuadra Q2 = " &amp; CStr(tempoEsecuzione)
-
-			End If
-			[Q2_VarR:tempoCiclo] = tempoEsecuzione
-
-		Else
-			'no ping
-			[Q2_Out:NonComunica] = True
-		End If
-
-		DoEvents
-		
-		Attendi(0.3, [Q2_VarR:diffTempoComunicazione])
-	Wend
-
-	'rilascio risorse il ciclo
-	Set IsacCnc = Nothing
-
-Exit Sub
-ErrLettura:
-'evito ebventuale overflow
-	If nErrIsac &gt; 32000 Then
-		nErrIsac = 1
-	End If
-	nErrIsac = nErrIsac + 1
-	Debug.Print "DriverQuadra Q2 Errore Lettura; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
-	Err.Clear
-	[Q2_Out:NonComunica] = True
-	'riprendo
-	GoTo Ciclo
-End Sub
-
-Sub Attendi(tout As Integer, ByRef movVar As Double)
-	Dim tExec As Double
-	Dim lastT As Double
-	Dim lastExec As Double
-	Dim diffT As Double
-
-	lastT = Timer()
-
-	tExec = Abs(Timer() - lastT)
-		While (tExec &lt; tout) And Not IsInStoppingMode
-			DoEvents
-			tExec = Abs(Timer() - lastT)
-			diffT = Timer() - lastT
-			movVar = diffT
-		Wend
-End Sub
-
-Function OkPing(ipaddr As String) As Boolean
-	Dim ChkPing As String
-	Dim OkChkPing As String
-
-	OkPing =  False
-
-	OkChkPing = "0   [ OK ]"
-
-	On Error GoTo OkPingErr
+	NoPing:
+	Wait 0.3
 	If SocketsInitialize() Then
 		'ping the IP by passing the address,
 		'text to send, and the ECHO structure.
-		success = Ping((ipaddr), ("TestPing"), ECHO)
-
-		ChkPing = GetStatusCode(success)
-		If (ChkPing &lt;&gt; OkChkPing) Then
-			OkPing = False
-		Else
-			OkPing = True
-		End If
+		success = Ping(("10.200.200.31"), ("TestPing"), ECHO)
 	Else
-		OkPing = False
+		[Q1_Out:NonComunica] = True
+		GoTo NoPing
 	End If
-Exit Function
-OkPingErr:
-	Debug.Print "Ping error. IP = " &amp; ipaddr &amp; "; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description
-	Err.Clear
-End Function
+
+	Q1ChkPing = GetStatusCode(success)
+	If (Q1ChkPing &lt;&gt; Q1ChkPingOk) Then
+		[Q1_Out:NonComunica] = True
+		GoTo NoPing
+	Else
+		[Q1_Out:NonComunica] = False
+	End If
+
+	Wait 3
+	'IsacCnc.machinename="QuadraCianf2"
+	IsacCnc.machinename="10.200.200.31"
+	IsacCnc.DataAType =CncAType_atShort
+	[Q1_Out:NonComunica] = False
+	Q1_ProvaComunicaz = 1
+
+Ciclo:
+	lastTimer = Timer()
+
+	While Not IsInStoppingMode
+		tempoEsecuzione = Abs(Timer() - lastTimer)
+		If tempoEsecuzione &gt; 1 Then
+			'Debug.Print "Tempo esecuzione = " &amp; CStr(tempoEsecuzione)
+
+		End If
+		[Q1_VarR:tempoCiclo] = tempoEsecuzione
+		lastTimer = Timer()
+
+		'If SocketsInitialize() Then
+		'	'ping the IP by passing the address,
+		'	'text to send, and the ECHO structure.
+		'	success = Ping(("10.200.200.31"), ("TestPing"), ECHO)
+		'Else
+		'	[Q1_Out:NonComunica] = True
+		'	GoTo Fine
+		'End If
+
+		'Q1ChkPing = GetStatusCode(success)
+		'If (Q1ChkPing = Q1ChkPingOk) Then
+		'	[Q1_Out:NonComunica] = False
+		'Else
+		'	[Q1_Out:NonComunica] = True
+		'	GoTo Fine
+		'End If
+
+		Err.Clear
+		On Error Resume Next
+'--------------------------------------------------------------------------
+'LETTURA
+		ReadR_641=IsacCnc.ReadR(641)		'IsacCnc.ReadR(641)
+		On Error GoTo Fine
+		ReadR_640=IsacCnc.ReadR(640)	'IsacCnc.ReadR(640)
+		On Error GoTo Fine
+		ReadR_55=IsacCnc.ReadR(55)	'IsacCnc.ReadR(55)
+		On Error GoTo Fine
+
+		If ReadR_55 &lt;&gt; 0 Then
+			'Q1_FotocellScaricatore5 = True
+			[Q1_Out:FotocellScaricatore5] = True
+		Else
+			'Q1_FotocellScaricatore5 = False
+			[Q1_Out:FotocellScaricatore5] = False
+		End If
+
+		[Q1_Out:TestComunicazione] 	= IIf((ReadR_641 And 1) = 1, True, False)
+		[Q1_Out:On] 				= IIf((ReadR_641 And 2) = 2, True, False)
+		[Q1_Out:InCiclo]			= IIf((ReadR_641 And 4) = 4, True, False)
+		[Q1_Out:PezzoPronto]		= IIf((ReadR_641 And 8) = 8, True, False)
+		[Q1_Out:PezzoSbloccato]		= IIf((ReadR_641 And 16) = 16, True, False)
+		[Q1_Out:NonInEmergenza]		= IIf((ReadR_641 And 32) = 32, True, False)
+		[Q1_Out:NonInHold]			= IIf((ReadR_641 And 64) = 64, True, False)
+		[Q1_Out:RipariQuadraOk]		= IIf((ReadR_641 And 128) = 128, True, False)
+
+		'verifico se sto comunicando
+		If [Q1_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
+			oldTestComunicazione = [Q1_Out:TestComunicazione]
+			oldTimerTestComunicazione = Timer()
+		End If
+
+		diffTempoComunicazione = Timer() - oldTimerTestComunicazione
+		[Q1_VarR:diffTempoComunicazione] = diffTempoComunicazione
+		If diffTempoComunicazione &gt; 5 Then
+			[Q1_Out:NonComunica] = True
+		Else
+			[Q1_Out:NonComunica] = False
+		End If
+
+'--------------------------------------------------------------------------
+'SCRITTURA
+		Q1_OutputPerQuadra = 0
+
+		'Q1_OutputPerQuadra.0 =	[Q1_In:TestComunicazionePc]
+		Q1_OutputPerQuadra = CInt([Q1_In:TestComunicazionePc])
+
+		'Q1_OutputPerQuadra.1 =	[Q1_In:R1_Ok]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 2 * Abs(CInt([Q1_In:R1_Ok]))
+
+		'Q1_OutputPerQuadra.2 =	[Q1_In:R1_FuoriIngombro]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 4 * Abs(CInt([Q1_In:R1_FuoriIngombro]))
+
+		'Q1_OutputPerQuadra.3 =	[Q1_In:PezzoScaricato]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 8 * Abs(CInt([Q1_In:PezzoScaricato]))
+
+		'Q1_OutputPerQuadra.4 =	[Q1_In:SbloccaPezzo]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 16 * Abs(CInt([Q1_In:SbloccaPezzo]))
+
+		'Q1_OutputPerQuadra.5 =	[Q1_In:LineaNonInEmergenza]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 32 * Abs(CInt([Q1_In:LineaNonInEmergenza]))
+
+		'Q1_OutputPerQuadra.6 =	[Q1_In:LineaNonInHold]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 64 * Abs(CInt([Q1_In:LineaNonInHold]))
+
+		'Q1_OutputPerQuadra.7 =	[Q1_In:RipariR1_Ok]
+		Q1_OutputPerQuadra = Q1_OutputPerQuadra + 128 * Abs(CInt([Q1_In:RipariR1_Ok]))
+
+		On Error Resume Next
+		[Q1_VarR:WriteR_640] = CInt(Q1_OutputPerQuadra)
+		Err.Clear
+		WriteR_640 = CInt(Q1_OutputPerQuadra)
+		Err.Clear
+		[Q1_VarR:WriteR_639] = CInt(Q1_ProvaComunicaz)
+		Err.Clear
+		WriteR_639 = CInt(Q1_ProvaComunicaz)
+		Err.Clear
+
+		On Error GoTo Fine
+		IsacCnc.writeR(640,CSng(WriteR_640))
+		On Error GoTo Fine
+		IsacCnc.writeR(639,CSng(WriteR_639))
+		GoTo NoErrore
+
+Fine:
+		'Q1_NonComunica = True
+		[Q1_Out:NonComunica] = True
+		Debug.Print "Errore: " &amp; Err.Description &amp; "; source : " &amp; Err.Source
+
+NoErrore:
+		Q1_ProvaComunicaz = Q1_ProvaComunicaz + 1
+		If Q1_ProvaComunicaz &gt;= 10000 Then
+			Q1_ProvaComunicaz = 1
+		End If
+
+
+		DoEvents
+
+		'Wait 0.3
+		tempoEsecuzione = Abs(Timer() - lastTimer)
+		While tempoEsecuzione &lt; 0.5
+			DoEvents
+			tempoEsecuzione = Abs(Timer() - lastTimer)
+
+			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
+			[Q1_VarR:diffTempoComunicazione] = diffTempoComunicazione
+		Wend
+
+	Wend
+
+	'rilascio risorse
+	Set IsacCnc = Nothing
+End Sub
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
