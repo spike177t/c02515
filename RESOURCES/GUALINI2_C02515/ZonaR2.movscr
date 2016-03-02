@@ -2138,10 +2138,10 @@ End Sub
 <BG Var="R2_STATUS:IN_MISSIONE">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -4351,7 +4351,6 @@ End Sub
 </child>
 </childs>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

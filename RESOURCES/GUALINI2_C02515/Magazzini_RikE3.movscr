@@ -1929,7 +1929,7 @@ End Sub
 <DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Value="2"/>
@@ -2208,7 +2208,7 @@ End Sub
 <DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Value="2"/>
@@ -3200,8 +3200,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
