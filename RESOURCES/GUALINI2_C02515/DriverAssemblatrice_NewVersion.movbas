@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="12413" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="12618" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -391,9 +391,12 @@ Ciclo:
 
 			IsacCnc.writeR(204,WriteR_204)
 			IsacCnc.writeR(205,WriteR_205)
+			IsacCnc.writeR(209,WriteR_209)
+
 			IsacCnc.writeR(206,WriteR_206)
 			IsacCnc.writeR(220,WriteR_220)
-			IsacCnc.writeR(209,WriteR_209)
+
+
 
 'FINE SCRITTURA
 '--------------------------------------------------------------------------
@@ -484,7 +487,6 @@ OkPingErr:
 	Err.Clear
 End Function
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiB6AQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>

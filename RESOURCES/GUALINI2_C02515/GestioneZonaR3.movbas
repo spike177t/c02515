@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4257" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2153" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -116,14 +116,14 @@ Sub Main()
 					End If
 
 					'condizione xxxxxx
-					If ValutaProssimaCondizione Then
-						'controllo solo ogni tanto se c'è un cassetto pronto
-						If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
-							richiedibileLastCheck = Timer()
-							StatoCicloR3 = 50000			'xxxxxx
-							ValutaProssimaCondizione = False
-						End If
-					End If
+					'If ValutaProssimaCondizione Then
+					'	'controllo solo ogni tanto se c'è un cassetto pronto
+					'	If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
+					'		richiedibileLastCheck = Timer()
+					'		StatoCicloR3 = 50000			'xxxxxx
+					'		ValutaProssimaCondizione = False
+					'	End If
+					'End If
 
 					'condizione per assegnare missione a Robot R2
 					If ValutaProssimaCondizione Then
@@ -398,6 +398,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiBZAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
