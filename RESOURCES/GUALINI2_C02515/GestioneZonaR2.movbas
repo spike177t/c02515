@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="6996" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="25390" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -292,25 +292,32 @@ Sub Main()
 					'preparo dati per asemblatrice
 					[Assemblatrice_Stato:FinestraProntaR2] = False
 
-					'passo i dati all'Assemblatrice
-					If [R2_STATUS:MAGAZZINO] = 1  Then
-						[Assemblatrice_In:ALTEZZA_FINESTRA]		= ([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
-						[Assemblatrice_In:LARGHEZZA_FINESTRA]	= ([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-						[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
-						[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
-						[Assemblatrice_In:APERTURA]				= [SCAR_M1_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura
-					ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-						[Assemblatrice_In:ALTEZZA_FINESTRA]		= ([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10 '(R2_AltezzaFinestra - AppOffset) \ 10
-						[Assemblatrice_In:LARGHEZZA_FINESTRA]	= ([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10 '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-						[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
-						[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
-						[Assemblatrice_In:APERTURA]				= [SCAR_M2_PZ1:R2_APERTURA]	'Ass_AperturaOut = Ass_Apertura)
+					'se robot disponibile preparo e invio dati ad assemblatrice
+					If [R2_STATUS:DISPONIBILE] And Not [R2_STATUS:IN_MISSIONE] Then
+						[R2_STATUS:MAGAZZINO] = assegnaMissioneRobot.mag
+						[R2_STATUS:CASSETTO] = assegnaMissioneRobot.cass
+
+						'passo i dati all'Assemblatrice
+						If [R2_STATUS:MAGAZZINO] = 1  Then
+							[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
+							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
+							[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
+							[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
+							[Assemblatrice_In:APERTURA]				= CSng([SCAR_M1_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura
+						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+							[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
+							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
+							[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
+							[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
+							[Assemblatrice_In:APERTURA]				= CSng([SCAR_M2_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura)
+						End If
+
+						'invio dati ad asemblatrice
+						[Assemblatrice_In:STROBE_DATI_R2] = True
+
+						StatoCicloScarico = 4060			'Attesa back strobe dati
 					End If
 
-					'invio dati ad asemblatrice
-					[Assemblatrice_In:STROBE_DATI_R2] = True
-
-					StatoCicloScarico = 4060			'Attesa back strobe dati
 
 				Case 4060			'Attesa back strobe dati
 					LogMsg "StatoCicloScarico = 4060			'Attesa back strobe dati"
@@ -2117,6 +2124,8 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAxAQAA
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

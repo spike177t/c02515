@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10175" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="12413" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -315,9 +315,13 @@ Ciclo:
 
 			[Assemblatrice_Out:LARGHEZZA_FINESTRA] 	= ReadR_215
 			[Assemblatrice_Out:ALTEZZA_FINESTRA]	= ReadR_216
-			[Assemblatrice_Out:BACK_STROBE_DATI_R2]	= ReadR_207
-			[Assemblatrice_Out:FINE_ROTAZIONE]		= ReadR_221
 			[Assemblatrice_Out:APERTURA]			= ReadR_219
+
+			'[Assemblatrice_Out:BACK_STROBE_DATI_R2]	= ReadR_207
+			[Assemblatrice_Out:BACK_STROBE_DATI_R2]	= IIf(ReadR_207 &gt; 0, True, False)
+
+			'[Assemblatrice_Out:FINE_ROTAZIONE]		= ReadR_221
+			[Assemblatrice_Out:FINE_ROTAZIONE]		= IIf(ReadR_221 &gt; 0, True, False)
 
 			If ReadR_100 &lt;&gt; 0 Then
 				[Assemblatrice_Out:AUTO] = True
@@ -351,17 +355,17 @@ Ciclo:
 
 
 			'verifico se sto comunicando
-			If [Assemblatrice_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
-				oldTestComunicazione = [Assemblatrice_Out:TestComunicazione]
-				oldTimerTestComunicazione = Timer()
-			End If
+			'If [Assemblatrice_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
+			'	oldTestComunicazione = [Assemblatrice_Out:TestComunicazione]
+			'	oldTimerTestComunicazione = Timer()
+			'End If
 
 			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
 			[Assemblatrice_VarR:diffTempoComunicazione] = diffTempoComunicazione
 			If diffTempoComunicazione &gt; 5 Then
-				[Assemblatrice_Out:NonComunica] = True
+				[Assemblatrice_Stato:NonComunica] = True
 			Else
-				[Assemblatrice_Out:NonComunica] = False
+				[Assemblatrice_Stato:NonComunica] = False
 			End If
 'FINE LETTURA
 '--------------------------------------------------------------------------
@@ -369,9 +373,9 @@ Ciclo:
 
 '--------------------------------------------------------------------------
 'SCRITTURA
-			WriteR_204=CLng([Assemblatrice_In:LARGHEZZA_FINESTRA])
-			WriteR_205=CLng([Assemblatrice_In:ALTEZZA_FINESTRA])
-			WriteR_209=[Assemblatrice_In:APERTURA]
+			WriteR_204=CSng([Assemblatrice_In:LARGHEZZA_FINESTRA])
+			WriteR_205=CSng([Assemblatrice_In:ALTEZZA_FINESTRA])
+			WriteR_209=CSng([Assemblatrice_In:APERTURA])
 
 			If [Assemblatrice_In:STROBE_DATI_R2] Then
 				WriteR_206=1
@@ -409,7 +413,7 @@ Ciclo:
 
 		Else
 			'no ping
-			[Assemblatrice_Out:NonComunica] = True
+			[Assemblatrice_Stato:NonComunica] = True
 		End If
 
 		DoEvents
@@ -429,7 +433,7 @@ ErrLettura:
 	nErrIsac = nErrIsac + 1
 	Debug.Print "DriverQuadra Assemblatrice Errore Lettura; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
 	Err.Clear
-	[Assemblatrice_Out:NonComunica] = True
+	[Assemblatrice_Stato:NonComunica] = True
 	'riprendo
 	GoTo Ciclo
 End Sub
@@ -480,6 +484,7 @@ OkPingErr:
 	Err.Clear
 End Function
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiB6AQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>
