@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="13353" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="10572" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -261,7 +261,7 @@ Sub Main
 			'Attendi(2.5, [Q2_VarR:diffTempoComunicazione])
 		Else
 			[Q2_Out:NonComunica] = True
-			Attendi(2.5, [Q2_VarR:diffTempoComunicazione])
+			Attendi(2.5, [Q2_VarR:tempoAttesa])
 		End If
 
 		If Not [Q2_Out:NonComunica] Then
@@ -311,7 +311,7 @@ Ciclo:
 			End If
 
 			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
-			[Q2_VarR:diffTempoComunicazione] = diffTempoComunicazione
+			[Q2_VarR:tempoLettura] = diffTempoComunicazione
 			If diffTempoComunicazione &gt; 5 Then
 				[Q2_Out:NonComunica] = True
 			Else
@@ -383,7 +383,7 @@ Ciclo:
 
 		DoEvents
 		
-		Attendi(0.3, [Q2_VarR:diffTempoComunicazione])
+		Attendi(0.3, [Q2_VarR:tempoAttesa])
 	Wend
 
 	'rilascio risorse il ciclo
@@ -449,6 +449,7 @@ OkPingErr:
 	Err.Clear
 End Function
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAIAQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="1" StatusVariable="" MaxInstances="1" SleepExecution="200" SyncroScriptTimeout="5000"/>
 </MovResource>

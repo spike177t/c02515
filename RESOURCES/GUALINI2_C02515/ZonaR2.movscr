@@ -3014,7 +3014,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="MAG2_ES1_ACT:PRONTO">0</BG>
+<BG Var="MAG2_ES1_ACT:PRONTO">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3609,10 +3609,10 @@ End Sub
 <BG Var="Assemblatrice_Out:ASSI_IN_MOVIMENTO">1</BG>
 <BGList>
 <dci>
-<DynColor Color="33023"/>
+<DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -3718,7 +3718,7 @@ End Sub
 <BG Var="Assemblatrice_Out:FINE_ROTAZIONE">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
 <DynColor Color="33023" Value="1"/>
@@ -4244,7 +4244,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="DaPilz00_5">1</BG>
+<BG Var="Pilz_Virt_OVo05_SpvAss0_">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -4300,7 +4300,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="DaPilz00_6">1</BG>
+<BG Var="Pilz_Virt_OVo06_SpvAss180_">1</BG>
 <BGList>
 <dci>
 <DynColor/>

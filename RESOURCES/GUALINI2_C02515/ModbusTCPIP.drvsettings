@@ -3,7 +3,13 @@
 <GeneralSettings WaitTime="50" TimeOut="2000" SynchroStart="false" MinimumJobThreshold="10" DefRefreshTimeNotInUse="0" EnableCOMInterface="true" PollingTime="0" PollingTimeNotInUse="10000" PriorityProtocolThread="0" BaseClassBuild="266" DriverVersion="184615939" AggregationLimit="0" DirectWriteIO="false" SetInUseStructureFields="false" SuspendTasksInError="true" szWinCEProtocolPriority="-1" ExpandGroup1="1"/>
 <Debug DebugWindow="true" MaxLogEntries="10000" LogFileName="" EnableLogFile="true" ExpandGroup2="1"/>
 <ModbusTCPSettings SingleSocket="0" ExpandSpecificGroup1="1"/>
-<JobList/>
+<JobList>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="false" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="1">LetturaDaPilz</Name>
+<VariableList V0="DaPilzInputWord00" V1="DaPilzInputWord02" V2="DaPilzInputWord04"/>
+<ModbusTCPIP UnitID="1" FunctionCode="2" StartAddress="0" RegisterSize="2" ExpandModbusTcpGroup1="1"/>
+</Job>
+</JobList>
 <StationList>
 <Station>
 <Name MaxRetries="1" StateVariable="Stato_Pilz" ExpandGroup1="1">Pilz</Name>

@@ -123,14 +123,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvBarFtcBacI/O" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=3">Pilz_Virt_OVo04_SpvBarFtcBacI_O</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvBarFtcBacI/O" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo04_SpvBarFtcBacI_O</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss180°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=0">Pilz_Virt_OVo07_xxx</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=0" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo07_xxx</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -173,6 +173,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[25]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[25].evt">Plc_ar_allarmi_25</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="PILZ" Shared="0" Retentive="0">DaPilzInputWord02</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -235,7 +242,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraScambioVarR" AreaType="1" Address="0" Bit="16" Shared="0" Retentive="0">Assemblatrice_VarR</Name>
+<Name Type="11" StructType="AssemblatriceScambioVarR" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">Assemblatrice_VarR</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -305,7 +312,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3bOk" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=4">Pilz_Virt_OVo03_SpvRipZona3bOk</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3bOk" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo03_SpvRipZona3bOk</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -333,7 +340,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona2Ok" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=6">Pilz_Virt_OVo01_SpvRipZona2Ok</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona2Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo01_SpvRipZona2Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -425,6 +432,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[27]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[27].evt">Plc_ar_allarmi_27</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="PILZ" Shared="0" Retentive="0">DaPilzInputWord04</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -606,7 +620,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss180°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=1">Pilz_Virt_OVo06_SpvAss180_</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss180°" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo06_SpvAss180_</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -697,7 +711,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="7" Shared="0" Retentive="0">Assemblatrice_Stato</Name>
+<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="7" Shared="0" Retentive="1">Assemblatrice_Stato</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1040,7 +1054,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipQdrRbt1Ok" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=7">Pilz_Virt_OVo00_SpvRipQdrRbt1Ok</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipQdrRbt1Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo00_SpvRipQdrRbt1Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1355,7 +1369,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss0°" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=2">Pilz_Virt_OVo05_SpvAss0_</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss0°" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo05_SpvAss0_</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1502,7 +1516,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraScambioVarR" AreaType="1" Address="0" Bit="16" Shared="0" Retentive="0">Q2_VarR</Name>
+<Name Type="11" StructType="QuadraScambioVarR" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">Q2_VarR</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1649,7 +1663,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3aOk" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|TaskType=0|Unit=1|FC=2|SA=5">Pilz_Virt_OVo02_SpvRipZona3aOk</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3aOk" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo02_SpvRipZona3aOk</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1782,7 +1796,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraScambioVarR" AreaType="1" Address="0" Bit="16" Shared="0" Retentive="0">Q1_VarR</Name>
+<Name Type="11" StructType="QuadraScambioVarR" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">Q1_VarR</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1901,14 +1915,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[17]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[17].evt">Plc_ar_messaggi_17</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3aCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=66">Pilz_Esp1i01_EmgRipZona3aCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipZona3aCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=66">Pilz_Esp1i01_EmgRipZona3aCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[17]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[17].evt">Plc_ar_messaggi_17</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1979,6 +1993,13 @@
 </Variable>
 <Variable>
 <Name Type="11" StructType="OUTPUT_QUADRA" AreaType="1" Address="0" Bit="8" Description="Global Variable PLC_TRANSF_Q1_OUT" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_Q1_OUT">PLC_TRANSF_Q1_OUT</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Group="PILZ" Shared="0" Retentive="0">DaPilzInputWord00</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2166,6 +2187,32 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">AssemblatriceStato</Name>
+<MemberList>
+<Member>
+<Name Type="0">ChkPingOk</Name>
+</Member>
+<Member>
+<Name Type="0">NonComunica</Name>
+</Member>
+<Member>
+<Name Type="0">Ass_ON</Name>
+</Member>
+<Member>
+<Name Type="0">FinestraProntaR2</Name>
+</Member>
+<Member>
+<Name Type="0">FinestraToltaR3</Name>
+</Member>
+<Member>
+<Name Type="0">R2_FuoriIngombro_Ass</Name>
+</Member>
+<Member>
+<Name Type="0">R3_FuoriIngombro_Ass</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">OUTPUT_ASSEMBLATRICE</Name>
 <MemberList>
 <Member>
@@ -2200,32 +2247,6 @@
 </Member>
 <Member>
 <Name Type="0">STA_AZZERANDO</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">AssemblatriceStato</Name>
-<MemberList>
-<Member>
-<Name Type="0">ChkPingOk</Name>
-</Member>
-<Member>
-<Name Type="0">NonComunica</Name>
-</Member>
-<Member>
-<Name Type="0">Ass_ON</Name>
-</Member>
-<Member>
-<Name Type="0">FinestraProntaR2</Name>
-</Member>
-<Member>
-<Name Type="0">FinestraToltaR3</Name>
-</Member>
-<Member>
-<Name Type="0">R2_FuoriIngombro_Ass</Name>
-</Member>
-<Member>
-<Name Type="0">R3_FuoriIngombro_Ass</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2288,29 +2309,6 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">AssemblatriceMemoTelaio</Name>
-<MemberList>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">NOME_COMMESSA</Name>
-</Member>
-<Member>
-<Name Type="4">R2_COLLA</Name>
-</Member>
-<Member>
-<Name Type="7">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="7">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="9">SERIE_PROFILO</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
 <Name Description="">AssemblatriceOutput</Name>
 <MemberList>
 <Member>
@@ -2349,6 +2347,29 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">AssemblatriceMemoTelaio</Name>
+<MemberList>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">NOME_COMMESSA</Name>
+</Member>
+<Member>
+<Name Type="4">R2_COLLA</Name>
+</Member>
+<Member>
+<Name Type="7">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="7">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="9">SERIE_PROFILO</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">INPUT_ASSEMBLATRICE</Name>
 <MemberList>
 <Member>
@@ -2368,58 +2389,6 @@
 </Member>
 <Member>
 <Name Type="0">STROBE_DATI_R2</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">OUTPUT_QUADRA</Name>
-<MemberList>
-<Member>
-<Name Type="0">IN_CICLO</Name>
-</Member>
-<Member>
-<Name Type="0">NON_IN_EMERGENZA</Name>
-</Member>
-<Member>
-<Name Type="0">NON_IN_HOLD</Name>
-</Member>
-<Member>
-<Name Type="0">PEZZO_PRONTO</Name>
-</Member>
-<Member>
-<Name Type="0">PEZZO_SBLOCCATO</Name>
-</Member>
-<Member>
-<Name Type="0">RIPARI_QUADRA_OK</Name>
-</Member>
-<Member>
-<Name Type="0">OK</Name>
-</Member>
-<Member>
-<Name Type="0">FTC_SCAR_PZ</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">PLC_AssemblatriceInput</Name>
-<MemberList>
-<Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="4">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="4">APERTURA</Name>
-</Member>
-<Member>
-<Name Type="0">STROBE_DATI_R2</Name>
-</Member>
-<Member>
-<Name Type="0">START_ROTAZIONE</Name>
-</Member>
-<Member>
-<Name Type="0">CHK_WRITE</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2459,6 +2428,78 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">PLC_AssemblatriceInput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">START_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_WRITE</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">OUTPUT_QUADRA</Name>
+<MemberList>
+<Member>
+<Name Type="0">IN_CICLO</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_EMERGENZA</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_HOLD</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_PRONTO</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_SBLOCCATO</Name>
+</Member>
+<Member>
+<Name Type="0">RIPARI_QUADRA_OK</Name>
+</Member>
+<Member>
+<Name Type="0">OK</Name>
+</Member>
+<Member>
+<Name Type="0">FTC_SCAR_PZ</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">AssemblatriceScambioVarR</Name>
+<MemberList>
+<Member>
+<Name Type="5">WriteR_98</Name>
+</Member>
+<Member>
+<Name Type="5">ReadR_99</Name>
+</Member>
+<Member>
+<Name Type="7">tempoCiclo</Name>
+</Member>
+<Member>
+<Name Type="7">tempoLettura</Name>
+</Member>
+<Member>
+<Name Type="7">tempoAttesa</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">INPUT_QUADRA</Name>
 <MemberList>
 <Member>
@@ -2481,103 +2522,6 @@
 </Member>
 <Member>
 <Name Type="0">SBLOCCA_PEZZO</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">PLC_AssemblatriceOutput</Name>
-<MemberList>
-<Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="4">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="0">BACK_STROBE_DATI_R2</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_ROTAZIONE</Name>
-</Member>
-<Member>
-<Name Type="4">APERTURA</Name>
-</Member>
-<Member>
-<Name Type="0">AUTO</Name>
-</Member>
-<Member>
-<Name Type="0">AZZERATA</Name>
-</Member>
-<Member>
-<Name Type="0">STA_AZZERANDO</Name>
-</Member>
-<Member>
-<Name Type="0">ASSI_IN_MOVIMENTO</Name>
-</Member>
-<Member>
-<Name Type="0">ALLARME</Name>
-</Member>
-<Member>
-<Name Type="0">CHK_READ</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">DatiRobotStruct</Name>
-<MemberList>
-<Member>
-<Name Type="0">DISPONIBILE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="4">PZ_DA_QUADRA</Name>
-</Member>
-<Member>
-<Name Type="4">MAGAZZINO</Name>
-</Member>
-<Member>
-<Name Type="4">CASSETTO</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
-</Member>
-<Member>
-<Name Type="4">POSIZIONE_PEZZO</Name>
-</Member>
-<Member>
-<Name Type="0">NUOVA_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">IN_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0">RESET</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_CYCLE_ON</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_AUTO_ON</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_EMRGENCY_STOP</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2728,19 +2672,99 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">QuadraScambioVarR</Name>
+<Name Description="">DatiRobotStruct</Name>
 <MemberList>
 <Member>
-<Name Type="5">WriteR_639</Name>
+<Name Type="0">DISPONIBILE</Name>
 </Member>
 <Member>
-<Name Type="5">WriteR_640</Name>
+<Name Type="0">FINE_MISSIONE</Name>
 </Member>
 <Member>
-<Name Type="7">tempoCiclo</Name>
+<Name Type="4">PZ_DA_QUADRA</Name>
 </Member>
 <Member>
-<Name Type="7">diffTempoComunicazione</Name>
+<Name Type="4">MAGAZZINO</Name>
+</Member>
+<Member>
+<Name Type="4">CASSETTO</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4">POSIZIONE_PEZZO</Name>
+</Member>
+<Member>
+<Name Type="0">NUOVA_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">IN_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0">RESET</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_CYCLE_ON</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_AUTO_ON</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_EMRGENCY_STOP</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">PLC_AssemblatriceOutput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">AUTO</Name>
+</Member>
+<Member>
+<Name Type="0">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="0">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="0">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_READ</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2821,6 +2845,26 @@
 </Member>
 <Member>
 <Name Type="0">ResetCicloR3</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">QuadraScambioVarR</Name>
+<MemberList>
+<Member>
+<Name Type="5">WriteR_639</Name>
+</Member>
+<Member>
+<Name Type="5">WriteR_640</Name>
+</Member>
+<Member>
+<Name Type="7">tempoCiclo</Name>
+</Member>
+<Member>
+<Name Type="7">tempoLettura</Name>
+</Member>
+<Member>
+<Name Type="7">tempoAttesa</Name>
 </Member>
 </MemberList>
 </Structure>

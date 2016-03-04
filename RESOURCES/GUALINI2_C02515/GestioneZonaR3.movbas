@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="3907" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -99,11 +99,12 @@ Sub Main()
 							And [Assemblatrice_In:APERTURA] = [Assemblatrice_Out:APERTURA] _
 							And [Assemblatrice_Stato:R2_FuoriIngombro_Ass] _
 							And [Assemblatrice_Stato:R3_FuoriIngombro_Ass] _
+							And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
 							Then
 							'And Not Pilz_Esp0i00_EmgAssCh1 _
 							'And Not Pilz_Esp2i00_EmgRbt2Ch1 _
 							'And Not Pilz_Esp0i08_EmgRbt3Ch1 _
-							'And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
+							'
 							'And Pilz_Virt_OVo01_SpvRipZona2Ok _
 							'And Pilz_Virt_OVo02_SpvRipZona3aOk _
 							'And Pilz_Virt_OVo03_SpvRipZona3bOk _
@@ -324,7 +325,8 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiCbAA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCWAJwA
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

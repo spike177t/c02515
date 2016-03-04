@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="12618" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="13440" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -82,11 +82,15 @@ Dim Assemblatrice_ProvaComunicaz As Single
 	Dim ReadR_103 As Single 'ReadR_103	Lettura9
 	Dim ReadR_104 As Single 'ReadR_104	Lettura10
 
+	Dim ReadR_99 As Single 'ReadR_99	Lettura test comunicazione
+
 	Dim WriteR_204 As Single 'WriteR_204	Scrittura1
 	Dim WriteR_205 As Single 'WriteR_205	Scrittura2
 	Dim WriteR_206 As Single 'WriteR_206	Scrittura3
 	Dim WriteR_220 As Single 'WriteR_220	Scrittura4
 	Dim WriteR_209 As Single 'WriteR_209	Scrittura5
+
+	Dim WriteR_98 As Single 'WriteR_98	Scrittura test comunicazione
 
 	Dim AssChkConta As Integer
 	'Dim Ass_NonComunica1 As Boolean
@@ -241,12 +245,15 @@ Private Function GetStatusCode(status As Long) As String
 End Function
 
 Sub Main
-	Dim lastTimer As Double
 	Dim tempoEsecuzione As Double
 
 	Dim oldTestComunicazione As Boolean
 	Dim oldTimerTestComunicazione As Double
 	Dim diffTempoComunicazione As Double
+
+	Dim oldTimerWriteR_98 As Double
+	Const toutWriteR_98 As Double = 5
+	Dim diffTempoWriteR_98 As Double
 
 	Dim ip As String
 	Dim nErrIsac As Integer
@@ -254,6 +261,9 @@ Sub Main
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
 	[Assemblatrice_Stato:NonComunica] = True
+
+	WriteR_98 = 1
+
 
 	If [loc_ImpostazioniImpianto:IP_Assemblatrice] &lt;&gt; "" Then
 		ip = [loc_ImpostazioniImpianto:IP_Assemblatrice]
@@ -270,7 +280,7 @@ Sub Main
 			'Attendi(2.5, [Assemblatrice_VarR:diffTempoComunicazione])
 		Else
 			[Assemblatrice_Stato:NonComunica] = True
-			Attendi(2.5, [Assemblatrice_VarR:diffTempoComunicazione])
+			Attendi(2.5, [Assemblatrice_VarR:tempoAttesa])
 		End If
 
 		If Not [Assemblatrice_Stato:NonComunica] Then
@@ -285,7 +295,8 @@ Ciclo:
 		'ripeto ping prima di ogni lettura per evitare errori strani dovuti al driver isac
 		If OkPing(ip)  Then
 			[Assemblatrice_Stato:NonComunica] = False
-			lastTimer = Timer()
+			[Assemblatrice_Stato:ChkPingOk]	= True
+			oldTimerTestComunicazione = Timer()
 
 '--------------------------------------------------------------------------
 'LETTURA
@@ -303,14 +314,20 @@ Ciclo:
 			ReadR_219=IsacCnc.ReadR(219)
 			
 			ReadR_100=IsacCnc.ReadR(100)
+			ReadR_101=IsacCnc.ReadR(101)
 			ReadR_102=IsacCnc.ReadR(102)
 			ReadR_103=IsacCnc.ReadR(103)
 			ReadR_104=IsacCnc.ReadR(104)
+			ReadR_99 =IsacCnc.ReadR(99)
 
-			'If showDebugPrint Then
-			'	Debug.Print("Assemblatrice FineReadVar: " &amp; CStr(Now()))
-			'	Debug.Print
-			'End If
+			If ReadR_99 = WriteR_98 Then
+				WriteR_98 = WriteR_98 + 1
+				If WriteR_98 &gt; 100000 Then
+					WriteR_98 = 1
+				End If
+				oldTimerWriteR_98 = Timer()
+			End If
+
 
 
 			[Assemblatrice_Out:LARGHEZZA_FINESTRA] 	= ReadR_215
@@ -361,7 +378,8 @@ Ciclo:
 			'End If
 
 			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
-			[Assemblatrice_VarR:diffTempoComunicazione] = diffTempoComunicazione
+			[Assemblatrice_VarR:tempoLettura] = diffTempoComunicazione
+
 			If diffTempoComunicazione &gt; 5 Then
 				[Assemblatrice_Stato:NonComunica] = True
 			Else
@@ -373,6 +391,7 @@ Ciclo:
 
 '--------------------------------------------------------------------------
 'SCRITTURA
+
 			WriteR_204=CSng([Assemblatrice_In:LARGHEZZA_FINESTRA])
 			WriteR_205=CSng([Assemblatrice_In:ALTEZZA_FINESTRA])
 			WriteR_209=CSng([Assemblatrice_In:APERTURA])
@@ -388,6 +407,8 @@ Ciclo:
 			Else
 				WriteR_220=0
 			End If
+
+			IsacCnc.writeR(98,WriteR_98)
 
 			IsacCnc.writeR(204,WriteR_204)
 			IsacCnc.writeR(205,WriteR_205)
@@ -407,21 +428,24 @@ Ciclo:
 			End If
 
 			'controllo tempo ciclo
-			tempoEsecuzione = Abs(Timer() - lastTimer)
-			If tempoEsecuzione &gt; 1 Then
-				Debug.Print "Tempo esecuzione DriverQuadra Assemblatrice = " &amp; CStr(tempoEsecuzione)
-
-			End If
+			tempoEsecuzione = Abs(Timer() - oldTimerTestComunicazione)
 			[Assemblatrice_VarR:tempoCiclo] = tempoEsecuzione
+
+			[Assemblatrice_VarR:WriteR_98] = CInt(WriteR_98)
+			[Assemblatrice_VarR:ReadR_99]  = CInt(ReadR_99)
 
 		Else
 			'no ping
-			[Assemblatrice_Stato:NonComunica] = True
+			diffTempoWriteR_98 = Abs(Timer() - oldTimerWriteR_98)
+			If diffTempoWriteR_98 &gt; toutWriteR_98 Then
+				[Assemblatrice_Stato:NonComunica] = True
+			End If
+			[Assemblatrice_Stato:ChkPingOk]	= False
 		End If
 
 		DoEvents
 		
-		Attendi(0.3, [Assemblatrice_VarR:diffTempoComunicazione])
+		Attendi(0.5, [Assemblatrice_VarR:tempoAttesa])
 	Wend
 
 	'rilascio risorse il ciclo
