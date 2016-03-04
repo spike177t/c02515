@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DriverSettings>
-<GeneralSettings WaitTime="20" TimeOut="2000" SynchroStart="false" MinimumJobThreshold="5" DefRefreshTimeNotInUse="10000" EnableCOMInterface="true" PollingTime="0" PollingTimeNotInUse="10000" PriorityProtocolThread="0" BaseClassBuild="266" DriverVersion="184615941" AggregationLimit="0" DirectWriteIO="false" SetInUseStructureFields="false" SuspendTasksInError="true" szWinCEProtocolPriority="-1" ExpandGroup1="1"/>
+<GeneralSettings WaitTime="0" TimeOut="2000" SynchroStart="false" MinimumJobThreshold="5" DefRefreshTimeNotInUse="10000" EnableCOMInterface="true" PollingTime="0" PollingTimeNotInUse="10000" PriorityProtocolThread="0" BaseClassBuild="266" DriverVersion="184615941" AggregationLimit="0" DirectWriteIO="false" SetInUseStructureFields="false" SuspendTasksInError="true" szWinCEProtocolPriority="-1" ExpandGroup1="1"/>
 <Debug DebugWindow="false" MaxLogEntries="10000" LogFileName="" EnableLogFile="true" ExpandGroup2="1"/>
 <TwinCATDriverSettings GetAllTagAddressesAtStartup="false" ExpandTwinCatGroup1="1" WinCECPUDelay="10"/>
 <JobList/>

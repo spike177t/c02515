@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="2153" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="3907" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -68,7 +68,7 @@ Sub Main()
 	'################
 	Do
 		'azioni da fare tutti i cicli
-		If [loc_ImpostazioniImpianto:ResetCicloR2] Then
+		If [loc_ImpostazioniImpianto:ResetCicloR3] Then
 			StatoCicloR3 = 100
 		End If
 
@@ -76,6 +76,7 @@ Sub Main()
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
 
 
+		'ciclo
 		If Not alm_Presenti_ZonaR3 Then
 			Select Case StatoCicloR3
 
@@ -98,14 +99,15 @@ Sub Main()
 							And [Assemblatrice_In:APERTURA] = [Assemblatrice_Out:APERTURA] _
 							And [Assemblatrice_Stato:R2_FuoriIngombro_Ass] _
 							And [Assemblatrice_Stato:R3_FuoriIngombro_Ass] _
-							And Not Pilz_Esp0i00_EmgAssCh1 _
-							And Not Pilz_Esp2i00_EmgRbt2Ch1 _
-							And Not Pilz_Esp0i08_EmgRbt3Ch1 _
-							And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
-							And Pilz_Virt_OVo01_SpvRipZona2Ok _
-							And Pilz_Virt_OVo02_SpvRipZona3aOk _
-							And Pilz_Virt_OVo03_SpvRipZona3bOk _
 							Then
+							'And Not Pilz_Esp0i00_EmgAssCh1 _
+							'And Not Pilz_Esp2i00_EmgRbt2Ch1 _
+							'And Not Pilz_Esp0i08_EmgRbt3Ch1 _
+							'And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
+							'And Pilz_Virt_OVo01_SpvRipZona2Ok _
+							'And Pilz_Virt_OVo02_SpvRipZona3aOk _
+							'And Pilz_Virt_OVo03_SpvRipZona3bOk _
+							'Then
 
 							'avvio rotazione assemblatrice
 							[Assemblatrice_In:START_ROTAZIONE] = True
@@ -125,7 +127,7 @@ Sub Main()
 					'	End If
 					'End If
 
-					'condizione per assegnare missione a Robot R2
+					'condizione per assegnare missione a Robot R3
 					If ValutaProssimaCondizione Then
 
 						ValutaProssimaCondizione = False
@@ -137,21 +139,27 @@ Sub Main()
 
 					If [Assemblatrice_Out:FINE_ROTAZIONE] Then
 
+						'copio i dati del telaio per R2
+						AggiornaMembri("Assemblatrice_TelaioLatoR2", "Assemblatrice_TelaioLatoR3")
+
 						[Assemblatrice_In:START_ROTAZIONE] = False
 						[Assemblatrice_Stato:FinestraProntaR2] = False
 						[Assemblatrice_Stato:FinestraToltaR3] = False
 
+						'reset dati telaio in R2
+						ResetDatiMembriStruttura("Assemblatrice_TelaioLatoR2")
+
 						StatoCicloR3 = 3100	'StartR3
 					End If
 
-				Case 3100	'StartR3e
+				Case 3100	'StartR3
 					LogMsg "StatoCicloR3 = 3100	'StartR3"
 
-
+					StatoCicloR3 = 1000	'Attesa
 
 				Case Else
 					LogMsg("Main() -&gt; Case StatoCicloR3 Else; StatoCicloR3 = " &amp; CStr(StatoCicloR3))
-					Throw New System.Exception("GestioneZonaR2.movbas -&gt; Main() ECCEZZIONE: StatoCicloR3 valore non ammesso: " &amp; CStr(StatoCicloR3) &amp; ".")
+					Throw New System.Exception("GestioneZonaR3.movbas -&gt; Main() ECCEZZIONE: StatoCicloR3 valore non ammesso: " &amp; CStr(StatoCicloR3) &amp; ".")
 			End Select
 		End If
 	DoEvents
@@ -166,88 +174,6 @@ Sub Main()
 	Loop Until IsInStoppingMode
 
 End Sub
-
-
-Function FineRobot(connectionString As String, quartina As String) As Integer
-	'operazioni da fare nella function
-	'eliminare i dati del pezzo dal DB
-
-
-    Dim commandText As String
-    Dim excp As Boolean
-
-    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
-    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
-    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
-
-    FineRobot = ERR_GENERICO	'inizializzzo a ERR_GENERICO
-
-	'devo eliminare i dati del pezzo dal DB
-	excp = False
-	Try
-        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
-            MyConnection.Open()
-
-            commandText = "delete from `gualini`.`quartina` " &amp; _
-            "WHERE `ID_QUARTINA` = " &amp; """" &amp; quartina &amp; """" _
-			&amp; ";"
-
-            DebugMsg "GestioneZonaR2.movbas -&gt; FineRobot(); commandText = " &amp; commandText
-
-            Using MyCommand As New OdbcCommand()
-				MyCommand.Connection = MyConnection
-
-	            Dim rCount As Integer
-
-	            'inserisco o aggiorno i dati di quartina
-	            MyCommand.CommandText = commandText
-	            rCount = MyCommand.ExecuteNonQuery()
-	            If rCount = 0 Then
-	            	LogMsg(" FineRobot() - WARNING : Delete ID_QUARTINA = " &amp; quartina &amp; " non riuscito")
-	            	FineRobot = 1 'torno errore
-	            End If
-			End Using	'MyCommand.Dispose
-        End Using	'MyConnection.Close
-
-	  'Catch program exception
-	Catch MyException As Exception
-		excp = True
-		DebugMsg(MyException.ToString)
-		MsgBox("GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
-					 MyException.ToString &amp; ".")
-		LogMsg(" FineRobot() - ERRORE: Exception." &amp; MyException.ToString &amp; ".")
-
-		'alzare alarme
-		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." _
-								&amp; MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
-		alm_ZonaR2_ODBC = True
-		FineRobot = ERR_GENERIC_EXCEPION
-		'Exit Function
-
-	  'Catch ODBC Exception
-	Catch MyOdbcException As OdbcException
-		excp = True
-		DebugMsg(MyOdbcException.ToString)
-		MsgBox("GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
-					MyOdbcException.ToString  &amp; ".")
-		LogMsg("FineRobot() - ERRORE ODBC: OdbcException." &amp; _
-					MyOdbcException.ToString  &amp; ".")
-		'TODO
-		'alzare alarme
-		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; _
-					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
-		alm_ZonaR2_ODBC = True
-		FineRobot = ERR_ODBC_EXCEPTION
-	Finally
-		If excp Then
-			Exit Function
-		End If
-    End Try
-
-    'tutto Ok
-    FineRobot = 0
-End Function
-
 
 Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	Dim tempo As Double
@@ -264,7 +190,7 @@ End Function
 Sub DebugMsg(msg As String)
 	Dim prefix As String
 	If [loc_ImpostazioniImpianto:AbilitaDbgMsg] Then
-		prefix = "GestioneZonaR2.movbas -&gt; "
+		prefix = "GestioneZonaR3.movbas -&gt; "
 		Debug.Print prefix &amp; msg
 	End If
 End Sub
@@ -272,7 +198,7 @@ End Sub
 Sub LogMsg(msg As String)
 	If enableLogMsg Then
 		Dim prefix As String
-		prefix = "GestioneZonaR2.movbas -&gt; "
+		prefix = "GestioneZonaR3.movbas -&gt; "
 		Debug.Print prefix &amp; msg
 	End If
 End Sub
@@ -294,7 +220,7 @@ Sub AggiornaMembri(source As String, dest As String)
 	objDest 	= GetVariableObject(dest)
 
 	If  objSource Is Nothing Or  objDest Is Nothing Then
-		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
+		Throw New System.Exception("GestioneZonaR3.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
 	End If
 
 	'guardo se le var hanno tipo identico e sono struct Var
@@ -302,11 +228,11 @@ Sub AggiornaMembri(source As String, dest As String)
 	etDest 		= objDest.GetType()
 
 	If Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Throw New System.Exception("GestioneZonaR3.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
 		Exit Sub
 	End If
 	If Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Throw New System.Exception("GestioneZonaR3.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
 		Exit Sub
 	End If
 
@@ -398,7 +324,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBZAA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiCbAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
