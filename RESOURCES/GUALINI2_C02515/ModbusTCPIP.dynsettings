@@ -1,1 +1,62 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
+<DriverSettings>
+<JobList>
+<Job>
+<Name Type="1" Station="Pilz" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 1</Name>
+<VariableList/>
+<TotalJobSize>56</TotalJobSize>
+<TagList>
+<Tag variable="Pilz_Esp0i14_FbkAssPotXYZ" type="0" offset="14" size="1">Pilz_Esp0i14_FbkAssPotXYZ</Tag>
+<Tag variable="Pilz_Esp0i04_Ass180_Ch1" type="0" offset="4" size="1">Pilz_Esp0i04_Ass180_Ch1</Tag>
+<Tag variable="Pilz_Esp0i09_EmgRbt3Ch2" type="0" offset="9" size="1">Pilz_Esp0i09_EmgRbt3Ch2</Tag>
+<Tag variable="Pilz_Esp1i00_EmgRipZona3aCh1" type="0" offset="24" size="1">Pilz_Esp1i00_EmgRipZona3aCh1</Tag>
+<Tag variable="Pilz_Esp1i05_EmgRipZona1Ch1" type="0" offset="29" size="1">Pilz_Esp1i05_EmgRipZona1Ch1</Tag>
+<Tag variable="Pilz_Esp1i01_EmgRipZona3aCh2" type="0" offset="25" size="1">Pilz_Esp1i01_EmgRipZona3aCh2</Tag>
+<Tag variable="Pilz_Esp0i05_Ass180_Ch2" type="0" offset="5" size="1">Pilz_Esp0i05_Ass180_Ch2</Tag>
+<Tag variable="Pilz_Esp1i07_AckRipQdrRbt1" type="0" offset="31" size="1">Pilz_Esp1i07_AckRipQdrRbt1</Tag>
+<Tag variable="Pilz_Esp1i06_EmgRipZona1Ch2" type="0" offset="30" size="1">Pilz_Esp1i06_EmgRipZona1Ch2</Tag>
+<Tag variable="Pilz_Esp0i16_EmgTotaleCh1" type="0" offset="16" size="1">Pilz_Esp0i16_EmgTotaleCh1</Tag>
+<Tag variable="Pilz_Esp0i15_FbkAssPotUVW" type="0" offset="15" size="1">Pilz_Esp0i15_FbkAssPotUVW</Tag>
+<Tag variable="Pilz_Esp0i19_FbkAssPotA" type="0" offset="19" size="1">Pilz_Esp0i19_FbkAssPotA</Tag>
+<Tag variable="Pilz_Esp0i01_EmgAssCh2" type="0" offset="1" size="1">Pilz_Esp0i01_EmgAssCh2</Tag>
+<Tag variable="Pilz_Esp3i03_EmgRipZona3bCh1" type="0" offset="43" size="1">Pilz_Esp3i03_EmgRipZona3bCh1</Tag>
+<Tag variable="Pilz_Esp1i02_FbkEmgZona1" type="0" offset="26" size="1">Pilz_Esp1i02_FbkEmgZona1</Tag>
+<Tag variable="Pilz_Esp0i11_Rbt3PosSicCh2" type="0" offset="11" size="1">Pilz_Esp0i11_Rbt3PosSicCh2</Tag>
+<Tag variable="Pilz_Esp2i03_RipZona2Ch2" type="0" offset="35" size="1">Pilz_Esp2i03_RipZona2Ch2</Tag>
+<Tag variable="Pilz_Esp2i04_EmgRbt1Ch1" type="0" offset="36" size="1">Pilz_Esp2i04_EmgRbt1Ch1</Tag>
+<Tag variable="Pilz_Esp3i01_EmgRipZona2Ch2" type="0" offset="41" size="1">Pilz_Esp3i01_EmgRipZona2Ch2</Tag>
+<Tag variable="Pilz_Esp0i13_FbkBncSqd" type="0" offset="13" size="1">Pilz_Esp0i13_FbkBncSqd</Tag>
+<Tag variable="Pilz_Esp0i07_RipZona3aCh2" type="0" offset="7" size="1">Pilz_Esp0i07_RipZona3aCh2</Tag>
+<Tag variable="Pilz_Esp2i00_EmgRbt2Ch1" type="0" offset="32" size="1">Pilz_Esp2i00_EmgRbt2Ch1</Tag>
+<Tag variable="Pilz_Esp3i02_AckEmgRipZona2" type="0" offset="42" size="1">Pilz_Esp3i02_AckEmgRipZona2</Tag>
+<Tag variable="Pilz_Esp0i10_Rbt3PosSicCh1" type="0" offset="10" size="1">Pilz_Esp0i10_Rbt3PosSicCh1</Tag>
+<Tag variable="Pilz_Esp3i00_EmgRipZona2Ch1" type="0" offset="40" size="1">Pilz_Esp3i00_EmgRipZona2Ch1</Tag>
+<Tag variable="Pilz_Esp0i02_Ass0_Ch1" type="0" offset="2" size="1">Pilz_Esp0i02_Ass0_Ch1</Tag>
+<Tag variable="Pilz_Esp0i00_EmgAssCh1" type="0" offset="0" size="1">Pilz_Esp0i00_EmgAssCh1</Tag>
+<Tag variable="Pilz_Esp0i18_AckRipGen" type="0" offset="18" size="1">Pilz_Esp0i18_AckRipGen</Tag>
+<Tag variable="Pilz_Esp1i04_RipQdrRbt1Ch2" type="0" offset="28" size="1">Pilz_Esp1i04_RipQdrRbt1Ch2</Tag>
+<Tag variable="Pilz_Esp2i05_EmgRbt1Ch2" type="0" offset="37" size="1">Pilz_Esp2i05_EmgRbt1Ch2</Tag>
+<Tag variable="Pilz_Esp3i04_EmgRipZona3bCh2" type="0" offset="44" size="1">Pilz_Esp3i04_EmgRipZona3bCh2</Tag>
+<Tag variable="Pilz_Esp2i01_EmgRbt2Ch2" type="0" offset="33" size="1">Pilz_Esp2i01_EmgRbt2Ch2</Tag>
+<Tag variable="Pilz_Esp0i12_RipZona3bCh1" type="0" offset="12" size="1">Pilz_Esp0i12_RipZona3bCh1</Tag>
+<Tag variable="Pilz_Esp3i05_RipZona3bCh2" type="0" offset="45" size="1">Pilz_Esp3i05_RipZona3bCh2</Tag>
+<Tag variable="Pilz_Esp1i03_RipQdrRbt1Ch1" type="0" offset="27" size="1">Pilz_Esp1i03_RipQdrRbt1Ch1</Tag>
+<Tag variable="Pilz_Esp3i06_FbkRipZona1" type="0" offset="46" size="1">Pilz_Esp3i06_FbkRipZona1</Tag>
+<Tag variable="Pilz_Esp3i07_FbkEmgModula" type="0" offset="47" size="1">Pilz_Esp3i07_FbkEmgModula</Tag>
+<Tag variable="Pilz_Esp0i06_RipZona3aCh1" type="0" offset="6" size="1">Pilz_Esp0i06_RipZona3aCh1</Tag>
+<Tag variable="Pilz_Esp0i08_EmgRbt3Ch1" type="0" offset="8" size="1">Pilz_Esp0i08_EmgRbt3Ch1</Tag>
+<Tag variable="Pilz_Esp0i03_Ass0_Ch2" type="0" offset="3" size="1">Pilz_Esp0i03_Ass0_Ch2</Tag>
+<Tag variable="Pilz_Esp2i02_RipZona2Ch1" type="0" offset="34" size="1">Pilz_Esp2i02_RipZona2Ch1</Tag>
+<Tag variable="Pilz_Esp4i07_FbkBarFotBncI_O" type="0" offset="55" size="1">Pilz_Esp4i07_FbkBarFotBncI_O</Tag>
+<Tag variable="Pilz_Esp0i17_EmgTotaleCh2" type="0" offset="17" size="1">Pilz_Esp0i17_EmgTotaleCh2</Tag>
+</TagList>
+<ModbusTCPIP UnitID="1" FunctionCode="0" StartAddress="41" RegisterSize="2" ExpandModbusTcpGroup1="0"/>
+</Job>
+</JobList>
+<DynamicJobMap>
+<DynKey>
+<KeyName>PilzT1J1W0B0A0R2S00041</KeyName>
+<JobName>DynTask 1</JobName>
+</DynKey>
+</DynamicJobMap>
+</DriverSettings>

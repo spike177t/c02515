@@ -2109,19 +2109,19 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">brnIngombro</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R1 Blk</text>
+<Name Tooltip="R1 Fuori Ingombro" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnFuoriIngombro</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R1 f.i.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Not &lt;&lt;FuoriIngombro&gt;&gt;">1</BG>
+<BG Var="&lt;&lt;FuoriIngombro&gt;&gt;">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2369,7 +2369,6 @@ End Sub
 </child>
 </childs>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
@@ -2644,19 +2643,19 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnIngombro</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R1 Blk</text>
+<Name Tooltip="R1 Fuori Ingombro" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnFuoriIngombro</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R1 f.i.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Not &lt;&lt;FuoriIngombro&gt;&gt;">1</BG>
+<BG Var="&lt;&lt;FuoriIngombro&gt;&gt;">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2904,7 +2903,6 @@ End Sub
 </child>
 </childs>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>

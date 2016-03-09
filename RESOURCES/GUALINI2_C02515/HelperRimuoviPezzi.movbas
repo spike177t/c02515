@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="717" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+
+Option Explicit
+
+Imports System
+Imports System.IO
+Imports System.Data.Odbc
+
+Dim MySqlConnectionString As String
+
+Public Sub RimuoviQuartina(idQrt As String)
+	Dim strQuery As String
+	Dim nRows As Integer
+	Dim i As Integer
+	Dim mag As Integer
+	Dim cass As Integer
+	Dim selected As Boolean
+	Dim exQuery As String
+
+	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	Else
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	End If
+
+
+	exQuery = "DELETE FROM `gualini`.`quartina` WHERE `quartina`.`ID_QUARTINA` = """ &amp; idQrt &amp; """ ; "
+	Debug.Print "E3: Rimossa quartina: " &amp; idQrt &amp; "; query: " &amp; exQuery
+	SqlExecuteNonQuery(MySqlConnectionString, exQuery)
+
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            Debug.Print "Magazzini_RikE3.synoptic -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		Debug.Print(MyException.ToString)
+		MsgBox("Magazzini_RikE3.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- Magazzini_RikE3.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		Debug.Print(MyOdbcException.ToString)
+		MsgBox("Magazzini_RikE3.synoptic -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR1_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- Magazzini_RikE3.synoptic -&gt; SqlExecuteNonQuery() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR1_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub LogMsg(msg As String)
+	Dim prefix As String
+	prefix = "Magazzini_RikE3.synoptic -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

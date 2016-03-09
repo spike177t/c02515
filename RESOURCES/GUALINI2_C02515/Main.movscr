@@ -1437,7 +1437,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledOn&gt;&gt;">0</BG>
+<BG Var="&lt;&lt;ledOn&gt;&gt;">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -1552,10 +1552,10 @@ End Sub
 <BG Var="&lt;&lt;ledHold&gt;&gt;">1</BG>
 <BGList>
 <dci>
-<DynColor/>
+<DynColor Color="33023"/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -1767,8 +1767,8 @@ End Sub
 <type>base</type>
 <type x="149" y="69" width="96" height="19" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo11</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">No Blocco R1</text>
+<Name Tooltip="R1 Fuori Ingombro" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo11</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R1 f.i.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1832,7 +1832,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="24" y="424" width="245" height="120" ox="24" oy="424" owidth="245" oheight="120"/>
+<g x="20" y="424" width="245" height="120" ox="24" oy="424" owidth="245" oheight="120"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -1974,10 +1974,10 @@ End Sub
 <BG Var="&lt;&lt;ledHold&gt;&gt;">1</BG>
 <BGList>
 <dci>
-<DynColor/>
+<DynColor Color="33023"/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2189,8 +2189,8 @@ End Sub
 <type>base</type>
 <type x="149" y="69" width="96" height="19" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo11</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">No Blocco R1</text>
+<Name Tooltip="R1 Fuori Ingombro" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo11</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R1 f.i.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2254,7 +2254,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="700" y="95" width="245" height="120" ox="671" oy="100" owidth="245" oheight="120"/>
+<g x="763" y="99" width="245" height="120" ox="671" oy="100" owidth="245" oheight="120"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -2671,7 +2671,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="862" y="481" width="148" height="71" ox="862" oy="481" owidth="148" oheight="71"/>
+<g x="860" y="505" width="148" height="71" ox="862" oy="481" owidth="148" oheight="71"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -2963,7 +2963,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="357" y="481" width="148" height="71" ox="357" oy="481" owidth="148" oheight="71"/>
+<g x="355" y="505" width="148" height="71" ox="357" oy="481" owidth="148" oheight="71"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -3247,7 +3247,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="643" y="481" width="148" height="71" ox="643" oy="481" owidth="148" oheight="71"/>
+<g x="635" y="505" width="148" height="71" ox="643" oy="481" owidth="148" oheight="71"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -4233,7 +4233,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="394" y="107" width="130" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="280" y="95" width="80" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="alm_ResetAll" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -4290,7 +4290,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="198" y="104" width="56" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="205" y="104" width="49" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q1_VarR:WriteR_639"/>
@@ -4302,7 +4302,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="202" y="428" width="56" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="205" y="428" width="49" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_VarR:WriteR_639"/>
@@ -4314,7 +4314,7 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="706" y="104" width="56" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="770" y="105" width="49" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Assemblatrice_VarR:ReadR_99"/>
@@ -4323,6 +4323,158 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="570" y="410" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="loc_ImpostazioniImpianto:M2_ABIL" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante75</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ABILITA SCARICO</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_ImpostazioniImpianto:M2_ABIL">1</BG>
+<BGList>
+<dci>
+<DynColor Color="33023"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="loc_ImpostazioniImpianto:M2_ABIL">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="M2 SCARICO DISABILITATO"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="M2 SCARICO ABILITATO"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>Button</object>
+<type x="470" y="195" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="loc_ImpostazioniImpianto:M1_ABIL" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante74</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ABILITA SCARICO</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_ImpostazioniImpianto:M1_ABIL">1</BG>
+<BGList>
+<dci>
+<DynColor Color="33023"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="loc_ImpostazioniImpianto:M1_ABIL">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="M1 SCARICO DISABILITATO"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="M1 SCARICO ABILITATO"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
 </child>
 </ListSynopticDraw>
 <VariableList/>
