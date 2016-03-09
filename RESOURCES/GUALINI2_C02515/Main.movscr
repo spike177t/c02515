@@ -1661,10 +1661,10 @@ End Sub
 <BG Var="&lt;&lt;FuoriIngombro&gt;&gt;">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -1822,10 +1822,11 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q1_Out:On"/>
 <item key="ledAuto" value="Q1_Out:InCiclo"/>
+<item key="ledOn" value="Q1_Out:On"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
+<item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
 <item key="Alarm" value="Q1_Out:NonComunica"/>
 </AliasesList>
 </child>
@@ -2082,10 +2083,10 @@ End Sub
 <BG Var="&lt;&lt;FuoriIngombro&gt;&gt;">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2243,10 +2244,11 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q2_Out:InCiclo"/>
 <item key="ledOn" value="Q2_Out:On"/>
+<item key="ledAuto" value="Q2_Out:InCiclo"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
+<item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
 <item key="Alarm" value="Q2_Out:NonComunica"/>
 </AliasesList>
 </child>
@@ -4292,7 +4294,7 @@ End Sub
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q1_VarR:WriteR_639"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="27261" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="11081" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -64,6 +64,11 @@ Sub Main()
 	Dim varname_estrattore As String
 	Dim strEstrattore As String
 
+	Dim timerAggiornaCassetti As Double
+	Dim timerAggiornaCassettiOld As Double
+	Dim timerAggiornaCassettiDiff As Double
+	Const timerAggiornaCassettiTOUT As Double = 2 'secondi
+
 
 	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
 	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
@@ -117,6 +122,8 @@ Sub Main()
 	'LeggiDatiPezzo(MysSqlConnectionString, 2, 29)
 
 
+	'inizializzo il timer per la chiamata alle funzioni di aggiornamento cassetti Pieni, Disponibili etc
+	timerAggiornaCassettiOld = Timer()
 
 
 	'################
@@ -124,6 +131,18 @@ Sub Main()
 		'azioni da fare tutti i cicli
 		If [loc_ImpostazioniImpianto:ResetCicloR2] Then
 			StatoCicloScarico = 100
+		End If
+
+		timerAggiornaCassetti = Timer()
+		timerAggiornaCassettiDiff = Abs(timerAggiornaCassetti - timerAggiornaCassettiOld)
+		If timerAggiornaCassettiDiff &gt; timerAggiornaCassettiTOUT Then
+			'aggiorno cassetti pieni e disponibili
+		    AggiornaCassettiPieni(MysSqlConnectionString, 1)
+			AggiornaCassettiPieni(MysSqlConnectionString, 2)
+		    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
+			AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
+			AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
+			AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
 		End If
 
 
@@ -251,7 +270,7 @@ Sub Main()
 
 					If POSIZIONE.mag = 1  Then
 						rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
-						rikEstrattore.ID_QUARTINA 				= "rikScaricoQrt"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA")
+						rikEstrattore.ID_QUARTINA 				= GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA") '"rikScaricoQrt"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA")
 						rikEstrattore.NOME_PEZZO_UNICO 			= "rikScaricoPzz"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":NOME_PEZZO_UNICO")
 						rikEstrattore.POSIZIONE 				= 0				'GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 						rikEstrattore.DEPO						= False
@@ -267,7 +286,7 @@ Sub Main()
 
 					ElseIf POSIZIONE.mag = 2 Then
 						rikEstrattore.ID_CASSETTO				= POSIZIONE.cass
-						rikEstrattore.ID_QUARTINA 				= "rikScaricoQrt"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA")
+						rikEstrattore.ID_QUARTINA 				= GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA") '"rikScaricoQrt"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":ID_QUARTINA")
 						rikEstrattore.NOME_PEZZO_UNICO 			= "rikScaricoPzz"	'GetVariableValue(prefix_varname_pezzo &amp; "PZ1" &amp; ":NOME_PEZZO_UNICO")
 						rikEstrattore.POSIZIONE 				= 0				'GetVariableValue(varname_pezzo &amp; ":POSIZIONE")
 						rikEstrattore.DEPO						= False

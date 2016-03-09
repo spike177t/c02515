@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="13440" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="14573" SelLength="34" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -454,15 +454,24 @@ Ciclo:
 Exit Sub
 ErrLettura:
 'evito ebventuale overflow
-	If nErrIsac &gt; 32000 Then
-		nErrIsac = 1
-	End If
+	'If nErrIsac &gt; 32000 Then
+	'	nErrIsac = 1
+	'End If
 	nErrIsac = nErrIsac + 1
 	Debug.Print "DriverQuadra Assemblatrice Errore Lettura; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
 	Err.Clear
 	[Assemblatrice_Stato:NonComunica] = True
-	'riprendo
-	GoTo Ciclo
+	If nErrIsac &gt; 10 Then
+		nErrIsac = 1
+		alm_Assemblatrice_ErrComunicazione = True
+		MsgBox("Attenzione Errore comunicazione con Assemblatrice." &amp; vbCrLf &amp; _
+				"Richiesto riavvio della Supervisione", vbOkOnly, "Driver Assemblatrice")
+		'termino esecuzione
+		Exit Sub
+	Else
+		'riprendo
+		GoTo Ciclo
+	End If
 End Sub
 
 Sub Attendi(tout As Integer, ByRef movVar As Double)
