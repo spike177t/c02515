@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="4795" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'#Language "WWB.NET"
+Imports System
+Imports System.IO
+Imports System.Data.Odbc
+
+
+Option Explicit
+
+Dim enableLogMsg As Boolean
+Const UPDATE_ESTRATTORI		As Integer = 16500
+
+Dim MysSqlConnectionString As String
+Dim richiedibileLastCheck As Double
+
+
+Sub Main()
+	Dim ret As Integer
+
+	'forzo aggiornamento estrattori
+    [MAG1_ES3_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
+    [MAG2_ES3_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
+
+    If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
+	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	Else
+	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	      "SERVER=localhost;" &amp; _
+	      "DATABASE=gualini;" &amp; _
+	      "UID=root;" &amp; _
+	      "PASSWORD=co.mar;" &amp; _
+	      "OPTION=3;"
+	End If
+
+	'################
+	enableLogMsg = True
+	Do
+		AggiornaPosizioniEstrattori_ES3(MysSqlConnectionString)
+
+		DoEvents
+
+	Loop Until IsInStoppingMode
+
+End Sub
+
+Sub AggiornaPosizioniEstrattori_ES3(connectionString As String )
+	AggiornaPosizioneEstrattoreE3(1 , 3,connectionString)
+	AggiornaPosizioneEstrattoreE3(2 , 3,connectionString)
+End Sub
+
+Sub AggiornaPosizioneEstrattoreE3(mag As Integer, estr As Integer, connectionString As String )
+	Dim varEstrattore As String
+	Dim varEstrattoreOld As String
+	Dim cass As Integer
+	Dim cassOld As Integer
+	Dim query As String
+	Dim ret As Integer
+
+	'abilito LogMsg
+	enableLogMsg = True
+
+	varEstrattore 		= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT"
+	varEstrattoreOld 	= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT_OLD"
+
+	cass 		= GetVariableValue(varEstrattore 		&amp; ":ID_CASSETTO")
+	cassOld 	= GetVariableValue(varEstrattoreOld 	&amp; ":ID_CASSETTO")
+
+	'se ho cassetto 0 faccio reset dei dati dei membri dei pezzi
+	If (cass = 0 And (cassOld &lt;&gt; cass)) Or cassOld = UPDATE_ESTRATTORI Then
+		'ho chiamoto guori il cassetto 0
+		'devo resettare le variabili struct dei pezzi in scarico
+		If mag = 1 Then
+			ResetDatiMembriStruttura("ES3_M1_PZ1")
+			ResetDatiMembriStruttura("ES3_M1_PZ2")
+			ResetDatiMembriStruttura("ES3_M1_PZ3")
+			ResetDatiMembriStruttura("ES3_M1_PZ4")
+
+			ResetDatiMembriStruttura("loc_Etichetta_M1_E3")
+		Else
+			ResetDatiMembriStruttura("ES3_M2_PZ1")
+			ResetDatiMembriStruttura("ES3_M2_PZ2")
+			ResetDatiMembriStruttura("ES3_M2_PZ3")
+			ResetDatiMembriStruttura("ES3_M2_PZ4")
+
+			ResetDatiMembriStruttura("loc_Etichetta_M2_E3")
+
+		End If
+	End If
+
+	If (cass &lt;&gt; cassOld) Then 'If (cass &lt;&gt; cassOld) And (cass &lt;&gt; 0) Then
+		'devo aggiornare il DB
+
+		'per prima cosa metto dentro eventuali pezzi che sono nell'estrattore
+		query = "UPDATE `gualini`.`cassetto` " &amp; _
+			"Set " &amp; _
+			"`POSIZIONE` =  " 			&amp; CStr(0) 	&amp; _
+			" WHERE "	&amp; _
+			"`POSIZIONE` =  " 						&amp; CStr(estr) &amp; " And " &amp; _
+			"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
+			";"
+
+		ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+		If ret &lt; 0 Then
+			LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		ElseIf ret = 0 Then
+			LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery no Row updated " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		ElseIf ret &gt; 0 Then
+			LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery NumRow  = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+		End If
+
+		'poi metto fuori il pezzo che è realmente nell'estrattore, se ce ne è uno
+		If cass &gt; 0 Then
+			query = "UPDATE `gualini`.`cassetto` " &amp; _
+				"Set " &amp; _
+				"`POSIZIONE` =  " 			&amp; CStr(estr) 	&amp; _
+				" WHERE "	&amp; _
+				"`ID_CASSETTO` =  " 					&amp; CStr(cass) &amp; " And " &amp; _
+				"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
+				";"
+
+			ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+			If ret &lt; 0 Then
+				LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			ElseIf ret = 0 Then
+				LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery no Row updated " 	&amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			ElseIf ret &gt; 0 Then
+				LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery NumRow  = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
+			End If
+		End If
+
+		'poi metto i dati dei singoli pezzi nelle variabili ES3_Mx_PZx
+		If cass &gt; 0 Then
+			ret = AggiornaDatiPezziInEstrattore3(connectionString, mag, cass)
+			If ret &lt;&gt; 0 Then
+				'alzo allarme Errore aggiornamento dati Estrattore2
+				If mag = 1 Then
+					alm_M1_ES3_ErrDatiDaDB = True
+				End If
+				If mag = 2 Then
+					alm_M2_ES3_ErrDatiDaDB = True
+				End If
+			Else
+				'copio valori per etichetta
+				If mag = 1 Then
+					[loc_Etichetta_M1_E3:Barcode] 		= [ES3_M1_PZ1:ID_QUARTINA]
+					[loc_Etichetta_M1_E3:Commessa]		= [ES3_M1_PZ1:NOME_COMMESSA]
+					[loc_Etichetta_M1_E3:Dimensioni]	= CStr([ES3_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([ES3_M1_PZ2:MAX_LUNGHEZZA])
+					[loc_Etichetta_M1_E3:IdQuartina]	= [ES3_M1_PZ1:ID_QUARTINA]
+
+					[loc_Etichetta_M1_E3:Azienda]		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+				End If
+				If mag = 2 Then
+					[loc_Etichetta_M2_E3:Barcode] 		= [ES3_M2_PZ1:ID_QUARTINA]
+					[loc_Etichetta_M2_E3:Commessa]		= [ES3_M2_PZ1:NOME_COMMESSA]
+					[loc_Etichetta_M2_E3:Dimensioni]	= CStr([ES3_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([ES3_M2_PZ2:MAX_LUNGHEZZA])
+					[loc_Etichetta_M2_E3:IdQuartina]	= [ES3_M1_PZ2:ID_QUARTINA]
+
+					[loc_Etichetta_M2_E3:Azienda]		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+				End If
+			End If
+		End If
+
+		'alla fine aggiorno la variabile Old
+		AggiornaMembri(varEstrattore, varEstrattoreOld)
+	End If
+
+	'se sono al primo ciclo forzo aggiornamento nel caso in cui ci sia fuori il cassetto 0
+	'If cassOld = UPDATE_ESTRATTORI Then
+	'	AggiornaMembri(varEstrattore, varEstrattoreOld)
+	'End If
+	'disabilito LogMsg
+	enableLogMsg = False
+End Sub
+
+Function AggiornaDatiPezziInEstrattore3(connectionString, mag, cass) As Integer
+	Dim ret As Integer
+	Dim count As Integer
+	Dim prefixStruct As String
+	Dim varEstrattore As String
+	Dim struct As String
+
+	AggiornaDatiPezziInEstrattore3 = 0	'inizializzo
+
+	If mag = 1 Then
+		prefixStruct = "ES3_M1_PZ"
+		varEstrattore = "MAG1_ES2_ACT"
+	ElseIf mag = 2 Then
+		prefixStruct = "ES3_M2_PZ"
+		varEstrattore = "MAG2_ES2_ACT"
+	Else
+		LogMsg("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInEstrattore3() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+		Throw New System.Exception("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInEstrattore3() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+	End If
+
+	'reset dei dati membri
+	For count = 1 To 4 Step 1
+		struct = prefixStruct &amp; CStr(count)
+		ResetDatiMembriStruttura(struct)
+	Next
+	For count = 1 To 4 Step 1
+		struct = prefixStruct &amp; CStr(count)
+		ret = AggiornaDatiPezzi_ES3(connectionString, struct, mag, cass , count)
+		If ret &lt;&gt; 0 Then
+			'torno errore
+			AggiornaDatiPezziInEstrattore3 = -1
+		End If
+	Next
+	'alla fine aggiorno i riferimenti nell'estrattore
+	SetVariableValue(varEstrattore &amp; ":ID_QUARTINA"		, GetVariableValue(prefixStruct &amp; "1" &amp; ":ID_QUARTINA"))
+	SetVariableValue(varEstrattore &amp; ":NOME_PEZZO_UNICO", GetVariableValue(prefixStruct &amp; "1" &amp; ":NOME_PEZZO_UNICO"))
+
+End Function
+
+Function AggiornaDatiPezzi_ES3(connectionString As String, structname As String, mag As Integer, cass As Integer, pz As Integer) As Integer
+	AggiornaDatiPezzi_ES3 = 0 	'inizializzzo
+
+    Dim commandText As String
+
+    Dim tipoprofilo As String
+	Dim countz As Integer
+
+    If mag &lt;&gt; 1 And mag &lt;&gt; 2 Then
+    	LogMsg("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+		Throw New System.Exception("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    End If
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_PEZZI_NON_TROVATI As Integer = -2 		'ERRORE Nessun pezzo nell'estrattore 2
+    Const ERR_VALORI_NULLI_PRESENTI As Integer = -3 	'ERRORE Trovati valori nulli nei dati pezzo
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'cerco nel db a quale cassetto è assegnata la quartina
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "Select * FROM gualini.tutti_pezzi_count_profili WHERE " _
+            				&amp; " magazzino_ID_MAGAZZINO = " &amp; CStr(mag) _
+            				&amp; " AND cassetto_ID_CASSETTO = " &amp; CStr(cass) _
+            				&amp; " AND POSIZIONE = " &amp; CStr(pz) _
+            				&amp; " And POSIZIONE_CASSETTO = 3 ;"
+
+            DebugMsg "Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						MyDataReader.Read
+
+						'memo del cassetto assegnato per procedura CondizioneAssegnaMissioneRobot()
+						SetVariableValue(structname &amp; ":CASSETTO_ASSEGNATO"				, MyDataReader("ID_CASSETTO"))
+
+						SetVariableValue(structname &amp; ":ID_QUARTINA"					, MyDataReader("ID_QUARTINA"))
+						SetVariableValue(structname &amp; ":TOTALE_PEZZI_QUARTINA"			, MyDataReader("TOTALE_PEZZI_QUARTINA"))
+						SetVariableValue(structname &amp; ":NUM_SQUADRETTE1"				, MyDataReader("NUM_SQUADRETTE1"))
+						SetVariableValue(structname &amp; ":COD_SQUADRETTA1"				, MyDataReader("COD_SQUADRETTA1"))
+						SetVariableValue(structname &amp; ":NUM_SQUADRETTE2"				, MyDataReader("NUM_SQUADRETTE2"))
+						SetVariableValue(structname &amp; ":COD_SQUADRETTA2"				, MyDataReader("COD_SQUADRETTA2"))
+						SetVariableValue(structname &amp; ":NOME_COMMESSA"					, MyDataReader("NOME_COMMESSA"))
+						SetVariableValue(structname &amp; ":POSIZIONE"						, MyDataReader("POSIZIONE"))
+						SetVariableValue(structname &amp; ":NOME_PEZZO_UNICO"				, MyDataReader("ID_PEZZO"))
+						SetVariableValue(structname &amp; ":NOME_PEZZO_ESTERNO"				, MyDataReader("NOME_PEZZO_ESTERNO"))
+						SetVariableValue(structname &amp; ":CODICE_PROFILO"					, MyDataReader("CODICE_PROFILO"))
+						SetVariableValue(structname &amp; ":SERIE_PROFILO"					, MyDataReader("SERIE_PROFILO"))
+						SetVariableValue(structname &amp; ":MAX_LUNGHEZZA"					, MyDataReader("MAX_LUNGHEZZA"))
+						SetVariableValue(structname &amp; ":ALTEZZA_PROFILO"				, MyDataReader("ALTEZZA_PROFILO"))
+						SetVariableValue(structname &amp; ":LARGHEZZA_PROFILO"				, MyDataReader("LARGHEZZA_PROFILO"))
+						SetVariableValue(structname &amp; ":MISURA_CAMERA_ESTERNA"			, MyDataReader("MISURA_CAMERA_ESTERNA"))
+						SetVariableValue(structname &amp; ":APPOGGIO_PEZZO"					, MyDataReader("APPOGGIO_PEZZO"))
+						SetVariableValue(structname &amp; ":POSIZIONE_PEZZO_ESTERNO"		, MyDataReader("POSIZIONE_PEZZO_ESTERNO"))
+						SetVariableValue(structname &amp; ":ID_PEZZO_ESTERNO"				, MyDataReader("ID_PEZZO_ESTERNO"))
+						SetVariableValue(structname &amp; ":LUNGHEZZA_PEZZO_ESTERNO"		, MyDataReader("LUNGHEZZA_PEZZO_ESTERNO"))
+						SetVariableValue(structname &amp; ":FILE_XML"						, MyDataReader("FILE_XML"))
+						SetVariableValue(structname &amp; ":DATA"							, MyDataReader("DATA"))
+						SetVariableValue(structname &amp; ":ORA"							, MyDataReader("ORA"))
+
+						'idati seguenti sono il risultato di una join per cui devo verificare che non siano NULL
+
+						SetVariableValue(structname &amp; ":R2_TIPO_PROFILO"				, IIf(IsDBNull(MyDataReader("TIPO_PROFILO")), "NULL", MyDataReader("TIPO_PROFILO")))	'MyDataReader("TIPO_PROFILO")
+						SetVariableValue(structname &amp; ":R2_TELAIO"						, IIf(IsDBNull(MyDataReader("TELAIO")), "NULL", MyDataReader("TELAIO"))) 				'MyDataReader("TELAIO"))
+						SetVariableValue(structname &amp; ":R2_COUNT_Z"						, IIf(IsDBNull(MyDataReader("TELAIO")), 0, MyDataReader("COUNT_Z"))) 					'MyDataReader("COUNT_Z"))
+
+						SetVariableValue(structname &amp; ":R2_BANCO_SQ1"					, IIf(IsDBNull(MyDataReader("BANCO_SQ1")), 0, MyDataReader("BANCO_SQ1"))) 				'MyDataReader("BANCO_SQ1"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ1"					, IIf(IsDBNull(MyDataReader("FILA_SQ1")), 0, MyDataReader("FILA_SQ1"))) 				'MyDataReader("FILA_SQ1"))
+						SetVariableValue(structname &amp; ":R2_BANCO_SQ2"					, IIf(IsDBNull(MyDataReader("BANCO_SQ2")), 0, MyDataReader("BANCO_SQ2"))) 				'MyDataReader("BANCO_SQ2"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ2"					, IIf(IsDBNull(MyDataReader("FILA_SQ2")), 0, MyDataReader("FILA_SQ2"))) 				'MyDataReader("FILA_SQ2"))
+						SetVariableValue(structname &amp; ":R2_COLLA"						, IIf(IsDBNull(MyDataReader("Colla")), 0, MyDataReader("Colla"))) 						'MyDataReader("Colla"))
+						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"				, IIf(IsDBNull(MyDataReader("Attrezzatura")), 0, MyDataReader("Attrezzatura"))) 		'MyDataReader("Attrezzatura"))
+						SetVariableValue(structname &amp; ":R2_APERTURA"					, IIf(IsDBNull(MyDataReader("Apertura")), 0, MyDataReader("Apertura"))) 				'MyDataReader("Apertura"))
+						SetVariableValue(structname &amp; ":R2_OFFSET_PEZZO"				, IIf(IsDBNull(MyDataReader("OffsetPezzo")), 0, MyDataReader("OffsetPezzo"))) 			'MyDataReader("OffsetPezzo"))
+						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ1"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta1")), 0, MyDataReader("OffsetSuadretta1"))) 'MyDataReader("OffsetSuadretta1"))
+						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ2"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta2")), 0, MyDataReader("OffsetSuadretta2"))) 'MyDataReader("OffsetSuadretta2"))
+						SetVariableValue(structname &amp; ":R2_CODICE_PRG"					, IIf(IsDBNull(MyDataReader("CodiceRobot")), 0, MyDataReader("CodiceRobot"))) 			'MyDataReader("CodiceRobot"))
+
+						'SetVariableValue(structname &amp; ":xx"				, MyDataReader("xx"))
+
+						'se trovo valori nulli significa che si sono verificate incongruenze nei file inseriti dalle quadra, allora segnalo
+						If GetVariableValue(structname &amp; ":R2_CODICE_PRG") = 0 Then
+							AggiornaDatiPezzi_ES3 = ERR_VALORI_NULLI_PRESENTI
+							LogMsg(" AggiornaDatiPezzi_ES3() - ERRORE: ERR_VALORI_NULLI_PRESENTI.")
+						End If
+
+						tipoprofilo = GetVariableValue(structname &amp; ":R2_TIPO_PROFILO")
+						countz 		= GetVariableValue(structname &amp; ":R2_COUNT_Z")
+
+						If tipoprofilo = "L" And countz &lt; 4 Then
+							SetVariableValue(structname &amp; ":R2_RUOTA_PEZZO"	, True)
+						Else
+							SetVariableValue(structname &amp; ":R2_RUOTA_PEZZO"	, False)
+						End If
+
+						'#### altri campi disponibili
+'Select `tutti_pezzi_count_profili`.``,
+'    `tutti_pezzi_count_profili`.`DISPONIBILE`,
+'    `tutti_pezzi_count_profili`.`STATO`,
+'    `tutti_pezzi_count_profili`.`POSIZIONE_CASSETTO`,
+'    `tutti_pezzi_count_profili`.`magazzino_ID_MAGAZZINO`,
+'    `tutti_pezzi_count_profili`.`lastupdate`,
+'    `tutti_pezzi_count_profili`.`lastupdate_milli`,
+'    `tutti_pezzi_count_profili`.`cassetto_ID_CASSETTO`,
+'    `tutti_pezzi_count_profili`.`cassetto_magazzino_ID_MAGAZZINO`,
+'    `tutti_pezzi_count_profili`.`quartina_ID_QUARTINA`,
+'    `tutti_pezzi_count_profili`.`PRELEVATO`,
+						'####
+					Else
+						AggiornaDatiPezzi_ES3 = ERR_PEZZI_NON_TROVATI
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("Gestione_ES3.movbas -&gt; AggiornaDatiPezzi_ES3() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" AggiornaDatiPezziInES3ico() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- Gestione_ES3.movbas -&gt; AggiornaDatiPezzi_ES3() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR2_ODBC = True
+		AggiornaDatiPezzi_ES3 = ERR_GENERIC_EXCEPION 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInScarico() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("AggiornaDatiPezzi_ES3() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- Gestione_ES3.movbas -&gt; AggiornaDatiPezzi_ES3() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR2_ODBC = True
+		AggiornaDatiPezzi_ES3 = ERR_ODBC_EXCEPTION 'torno errore
+		Exit Function
+    End Try
+End Function
+
+
+''''
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
+
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		DebugMsg 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		'Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	End While
+	MemberVar 	= Nothing
+	objVar 		= Nothing
+End Sub
+
+Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
+	'ExecuteNonQuery used for executing queries that does not return any data. It is used to execute the sql statements like update, insert, delete etc.
+	'ExecuteNonQuery executes the command and returns the number of rows affected
+
+    Dim commandText As String
+    Dim excp As Boolean
+    Dim rCount As Integer
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+    SqlExecuteNonQuery = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+
+	commandText = query
+	excp = False
+	rCount = 0
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+
+            DebugMsg "Gestione_ES3.movbas -&gt; SqlExecuteNonQuery(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+	            rCount = MyCommand.ExecuteNonQuery()
+				Debug.Print	"rCout = MyCommand.ExecuteNonQuery() = " &amp; rCount
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		excp = True
+		DebugMsg(MyException.ToString)
+		MsgBox("Gestione_ES3.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- Gestione_ES3.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR2_ODBC = True
+		SqlExecuteNonQuery = ERR_GENERIC_EXCEPION
+		'Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		excp = True
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("Gestione_ES3.movbas -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."   &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- Gestione_ES3.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR2_ODBC = True
+		SqlExecuteNonQuery = ERR_ODBC_EXCEPTION
+	Finally
+		If excp Then
+			Exit Function
+		End If
+    End Try
+
+    'tutto Ok
+    SqlExecuteNonQuery = rCount
+End Function
+
+Sub AggiornaMembri(source As String, dest As String)
+	Dim objDest As DBVarObjCmdTarget
+	Dim objSource As DBVarObjCmdTarget
+	Dim MemberDest As DBVarObjCmdTarget
+	Dim MemberSource As DBVarObjCmdTarget
+
+	Dim memberCount As Integer	'contatore dei membri
+
+	Dim etSource As movicon.eVariableType
+	Dim etDest As movicon.eVariableType
+
+	DebugMsg("AggiornaMembri(source As String, dest As String) : " &amp; source &amp; "," &amp; dest)
+	objSource 	= GetVariableObject(source)
+	objDest 	= GetVariableObject(dest)
+
+	If  objSource Is Nothing Or  objDest Is Nothing Then
+		Throw New System.Exception("Gestione_ES3.movbas -&gt; AggiornaMembri() objSource Is Nothing Or  objDest Is Nothing")
+	End If
+
+	'guardo se le var hanno tipo identico e sono struct Var
+	etSource 	= objSource.GetType()
+	etDest 		= objDest.GetType()
+
+	If Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Throw New System.Exception("Gestione_ES3.movbas -&gt; AggiornaMembri() Not etSource = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Exit Sub
+	End If
+	If Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Throw New System.Exception("Gestione_ES3.movbas -&gt; AggiornaMembri() Not etDest = movicon.eVariableType.enum_VAR_TYPE_STRUCT")
+		Exit Sub
+	End If
+
+	memberCount = 0	'inizializzo a 0
+	MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
+	MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
+
+	If (etSource = etDest) Then
+		While (Not MemberSource Is Nothing) And (Not MemberDest Is Nothing )
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberSource name = " 	&amp; MemberSource.GetName 	&amp; "; value = " &amp; CStr(MemberSource.Value) 	&amp; "; Tipo = " &amp; CStr(MemberSource.GetType())
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 		&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
+
+			etSource 	= MemberSource.GetType()
+			etDest 		= MemberDest.GetType()
+
+			If (etSource = etDest) Then
+				MemberDest.Value = MemberSource.Value
+			End If
+
+			memberCount = memberCount + 1
+			MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
+			MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
+		End While
+
+	End If
+
+	MemberSource 	= Nothing
+	MemberDest 		= Nothing
+	objSource 		= Nothing
+	objDest 		= Nothing
+
+End Sub
+
+Sub DebugMsg(msg As String)
+	Dim prefix As String
+	If [loc_ImpostazioniImpianto:AbilitaDbgMsg] Then
+		prefix = "Gestione_ES3.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
+End Sub
+
+Sub LogMsg(msg As String)
+	If enableLogMsg Then
+		Dim prefix As String
+		prefix = "Gestione_ES3.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

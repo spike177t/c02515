@@ -571,7 +571,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="EtichettaR3_Struct" AreaType="1" Address="0" Bit="10" Group="Locali" Shared="0" Retentive="0">loc_Etichetta_M2_E3</Name>
+<Name Type="11" StructType="EtichettaR3_Struct" AreaType="1" Address="0" Bit="10" Description="NON MODIFICARE NOME, usata in script con SetVariableValue" Group="Locali" Shared="0" Retentive="0">loc_Etichetta_M2_E3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -655,7 +655,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="EtichettaR3_Struct" AreaType="1" Address="0" Bit="10" Group="Locali" Shared="0" Retentive="0">loc_Etichetta_M1_E3</Name>
+<Name Type="11" StructType="EtichettaR3_Struct" AreaType="1" Address="0" Bit="10" Description="NON MODIFICARE NOME, usata in script con SetVariableValue" Group="Locali" Shared="0" Retentive="0">loc_Etichetta_M1_E3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1019,7 +1019,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="43" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="45" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -3381,7 +3381,10 @@
 <Name Type="0">ResetCicloR3</Name>
 </Member>
 <Member>
-<Name Type="9">nomeStampanteEt</Name>
+<Name Type="9">nomeStampanteEtichetta</Name>
+</Member>
+<Member>
+<Name Type="9">nomeAziendaPerEtichetta</Name>
 </Member>
 </MemberList>
 </Structure>

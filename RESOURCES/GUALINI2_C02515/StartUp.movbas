@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1749" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="1289" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -16,6 +16,7 @@ Sub Main
 	Path = MyProjectSetting("FILEPATH") + "\Supervisione.ini"
 	Path=Dir(MyProjectSetting("FILEPATH") + "\Supervisione.ini")
 
+'CHIAVE GENERALI
 	'carico i parametri generali
 	Chiave="Generali"
 	Variabile="Q1_DIR"
@@ -40,6 +41,21 @@ Sub Main
     '  "PASSWORD=co.mar;" &amp; _
     '  "OPTION=3;"
 
+	Chiave="Generali"
+	Variabile="nomeAziendaPerEtichetta"
+	[loc_ImpostazioniImpianto:nomeAziendaPerEtichetta] = ReadIniValue(Path, Chiave, Variabile)
+	If [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]="" Then
+		[loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]="Gualini Spa"
+	End If
+
+	Chiave="Generali"
+	Variabile="nomeStampanteEtichetta"
+	[loc_ImpostazioniImpianto:nomeStampanteEtichetta] = ReadIniValue(Path, Chiave, Variabile)
+	If [loc_ImpostazioniImpianto:nomeStampanteEtichetta]="" Then
+		[loc_ImpostazioniImpianto:nomeStampanteEtichetta]="TXT"
+	End If
+
+'CHIAVE IP
 	Chiave="IP"
 	Variabile="IP_Q1"
 	[loc_ImpostazioniImpianto:IP_Q1] = ReadIniValue(Path, Chiave, Variabile)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="69412" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="60724" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -1392,7 +1392,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 		End If
 	End If
 
-	If (cass &lt;&gt; cassOld) And (cass &lt;&gt; 0) Then
+	If (cass &lt;&gt; cassOld) Then 'If (cass &lt;&gt; cassOld) And (cass &lt;&gt; 0) Then
 		'devo aggiornare il DB
 
 		'per prima cosa metto dentro eventuali pezzi che sono nell'estrattore
@@ -1434,20 +1434,28 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 		End If
 
 		'poi metto i dati dei singoli pezzi nelle variabili Mx_SCAR_PZx
-		ret = AggiornaDatiPezziInEstrattore2(connectionString, mag, cass)
-		If ret &lt;&gt; 0 Then
-			'alzo allarme Errore aggiornamento dati Estrattore2
-			If mag = 1 Then
-				alm_M1_ES2_ErrDatiDaDB = True
-			End If
-			If mag = 2 Then
-				alm_M2_ES2_ErrDatiDaDB = True
+		If cass &gt; 0 Then
+			ret = AggiornaDatiPezziInEstrattore2(connectionString, mag, cass)
+			If ret &lt;&gt; 0 Then
+				'alzo allarme Errore aggiornamento dati Estrattore2
+				If mag = 1 Then
+					alm_M1_ES2_ErrDatiDaDB = True
+				End If
+				If mag = 2 Then
+					alm_M2_ES2_ErrDatiDaDB = True
+				End If
 			End If
 		End If
+
 
 		'alla fine aggiorno la variabile Old
 		AggiornaMembri(varEstrattore, varEstrattoreOld)
 	End If
+
+	'se sono al primo ciclo forzo aggiornamento nel caso in cui ci sia fuori il cassetto 0
+	'If cassOld = UPDATE_ESTRATTORI Then
+	'	AggiornaMembri(varEstrattore, varEstrattoreOld)
+	'End If
 
 	'disabilito LogMsg
 	enableLogMsg = False
