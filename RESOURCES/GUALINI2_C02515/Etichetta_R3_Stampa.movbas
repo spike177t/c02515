@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+
+
+Dim enableLogMsg As Boolean
+
+Sub Main()
+	Dim ret As Integer
+	Dim printername As String
+	Dim fullNameDataFile As String
+	Dim comando As String
+
+	enableLogMsg = True
+	GeneraEtichetta()
+
+
+	printername = "TXT"
+	fullNameDataFile = "C:\tmp\Etichetta_R3.txt"
+
+	'comando ="write /PT " &amp; fullNameDataFile &amp; " " &amp; printername
+	'esempio con stampante TXT condivisa
+	'print /d:"\\127.0.0.1\TXT" "C:\tmp\Etichetta_R3.txt"
+
+	comando ="print /d:""\\127.0.0.1\""" &amp; printername &amp; " " &amp; fullNameDataFile
+
+
+	ret = ExecuteCommand("&lt;CommandType action='3' parameters='" &amp; comando &amp; "' timeout='5000'&gt;System&lt;/CommandType&gt;")
+
+End Sub
+
+Function GeneraEtichetta() As Integer
+
+	Dim msg As String
+	Dim fullNameDataFile As String
+	Dim workingDir As String
+	Dim etName As String
+	Dim ret As Boolean
+
+	Dim varname As String
+	Dim printtext As String
+	Dim printername As String
+
+	Dim Azienda As String
+	Dim Barcode As String
+	Dim Commessa As String
+	Dim Dimensioni As String
+	Dim IdQuartina As String
+
+
+	Azienda 		= [loc_EtichettaR3:Azienda]
+	Barcode 		= [loc_EtichettaR3:Barcode]
+	Commessa 		= [loc_EtichettaR3:Commessa]
+	Dimensioni 		= [loc_EtichettaR3:Dimensioni]
+	IdQuartina 		= [loc_EtichettaR3:IdQuartina]
+
+	If [loc_EtichettaR3:IdQuartina]="" And [loc_EtichettaR3:Barcode]="" And [loc_EtichettaR3:Dimensioni]="" Then
+		Azienda 	= "Gualini Spa"
+		Barcode 	= "123456789012"
+		Commessa	= "Commessaaaa"
+		Dimensioni	= "800" &amp; " x " &amp; "600"
+		IdQuartina	= "uuqiuquartina"
+	End If
+
+	msg = "Script Etichetta_R3_Stampa.movbas" + vbCrLf + "Errore.  -&gt; "
+
+
+	etName = "Etichetta_R3.txt"
+
+	If [_SysVar_:WorkingDir] = "" Then
+		workingDir = "C:\tmp
+	Else
+		workingDir = [_SysVar_:WorkingDir]
+	End If
+	If [loc_ImpostazioniImpianto:nomeStampanteEt] = "" Then
+		printername = "TXT"
+	Else
+		printername = [loc_ImpostazioniImpianto:nomeStampanteEt]
+	End If
+
+	fullNameDataFile = workingDir &amp; "\" &amp; etName
+
+
+	On Error GoTo ErroreFileParametri
+
+	Open fullNameDataFile For Output As #1
+
+	Print #1, "^XA"
+	Print #1, "^MMT"
+	Print #1, "^PW320"
+	Print #1, "^LL0639"
+	Print #1, "^LS0"
+	Print #1, "^FT27,27^A0R,23,24^FH\^FD" &amp; Commessa &amp; "^FS"
+	Print #1, "^FT25,493^A0R,23,24^FH\^FD" &amp; Azienda &amp; "^FS"
+	Print #1, "^FT279,266^A0R,28,28^FH\^FD" &amp; IdQuartina &amp; "^FS"
+	Print #1, "^BY4,2,120^FT137,141^BER,,Y,N"
+	Print #1, "^FD" &amp; Barcode &amp; "^FS"
+	Print #1, "^FT77,261^A0R,28,28^FH\^FD" &amp; Dimensioni &amp; "^FS"
+	Print #1, "^PQ1,0,1,Y^XZ"
+	Close #1
+
+	GeneraEtichetta = 1
+
+Exit Function
+ErroreFileParametri:
+	Close #1
+	MsgBox msg, vbCritical, "Errore scrittura su file: " &amp; fullNameDataFile
+	GeneraEtichetta = 0
+End Function
+
+
+
+
+Sub LogMsg(msg As String)
+	If enableLogMsg Then
+		Dim prefix As String
+		prefix = "Etichetta_R3_Stsmpa.movbas -&gt; "
+		Debug.Print prefix &amp; msg
+	End If
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>
