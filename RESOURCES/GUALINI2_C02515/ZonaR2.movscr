@@ -911,7 +911,8 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage">1</BG>
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -960,6 +961,12 @@ End Sub
 </dci>
 <dci>
 <DynColor Value="15"/>
+</dci>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
+</dci>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -2333,12 +2340,12 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante70</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Dettaglio Dati M1 E2</text>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Dettaglio Dati M1 E2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage">1</BG>
+<BG>0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2404,10 +2411,6 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
-End Sub
-</ScriptCode>
 </child>
 <child>
 <type>Button</type>
@@ -2419,19 +2422,19 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante71</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi Zona R1</text>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRstAlmZonaR2</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi Zona R2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage">1</BG>
+<BG Var="alm_Presenti_ZonaR2">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="255" Value="1"/>
 </dci>
 <dci>
 <DynColor Value="2"/>
@@ -2491,8 +2494,8 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
+<ScriptCode StartSel="39" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	alm_ResetAlmZonaR2 = True
 End Sub
 </ScriptCode>
 </child>
@@ -2862,12 +2865,12 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante70</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Dettaglio Dati M1 E2</text>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Dettaglio Dati M1 E2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage">1</BG>
+<BG>0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2933,10 +2936,6 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
-End Sub
-</ScriptCode>
 </child>
 </childs>
 <Name AntialiasingFont="1" acr="4294901760"/>

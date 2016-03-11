@@ -936,7 +936,8 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage">1</BG>
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -985,6 +986,12 @@ End Sub
 </dci>
 <dci>
 <DynColor Value="15"/>
+</dci>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
+</dci>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>

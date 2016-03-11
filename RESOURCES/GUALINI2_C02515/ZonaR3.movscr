@@ -901,7 +901,8 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage">1</BG>
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -950,6 +951,12 @@ End Sub
 </dci>
 <dci>
 <DynColor Value="15"/>
+</dci>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
+</dci>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -1836,13 +1843,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG>0</BG>
+<BG Var="alm_Presenti">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="255" Value="1"/>
 </dci>
 <dci>
 <DynColor Value="2"/>
@@ -1902,8 +1909,8 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
+<ScriptCode StartSel="33" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	alm_ResetAll = True
 End Sub
 </ScriptCode>
 </child>
@@ -2599,18 +2606,18 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante71</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi Assemblatrice</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi Zona R3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG>0</BG>
+<BG Var="alm_Presenti_ZonaR3">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="255" Value="1"/>
 </dci>
 <dci>
 <DynColor Value="2"/>
@@ -2670,8 +2677,8 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
+<ScriptCode StartSel="39" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	alm_ResetAlmZonaR3 = True
 End Sub
 </ScriptCode>
 </child>
