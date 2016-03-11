@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="60724" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1547" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -182,7 +182,10 @@ Sub Main()
 					'condizione per assegnare missione a Robot R2
 					If ValutaProssimaCondizione Then
 						assegnaMissioneRobot = CondizioneAssegnaMissioneRobot()
-						If assegnaMissioneRobot.mag &gt; 0 Then
+						If assegnaMissioneRobot.mag &gt; 0 _
+								And Not [Assemblatrice_Stato:FinestraProntaR2] _
+								And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
+								Then
 							ValutaProssimaCondizione = False
 							LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2"
 							[R2_STATUS:FINE_MISSIONE_ACK] = False	'forzo per sicurezza nel caso di ripartenze da prove
