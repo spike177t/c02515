@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="7051" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="10646" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 
 Option Explicit
 
@@ -69,42 +69,41 @@ Private Type WSADATA
    dwVendorInfo As Long
 End Type
 
-Dim Assemblatrice_ProvaComunicaz As Single
-'''''''''''''''''''
-	Dim ReadR_215 As Single	'ReadR_215	Lettura1
-	Dim ReadR_216 As Single	'ReadR_216	Lettura2
-	Dim ReadR_207 As Single 'ReadR_207	Lettura3
-	Dim ReadR_221 As Single 'ReadR_221	Lettura4
-	Dim ReadR_219 As Single 'ReadR_219	Lettura5
-	Dim ReadR_100 As Single 'ReadR_100	Lettura6
-	Dim ReadR_101 As Single 'ReadR_101	Lettura7
-	Dim ReadR_102 As Single 'ReadR_102	Lettura8
-	Dim ReadR_103 As Single 'ReadR_103	Lettura9
-	Dim ReadR_104 As Single 'ReadR_104	Lettura10
+'Dim Assemblatrice_ProvaComunicaz As Single
 
-	Dim ReadR_99 As Single 'ReadR_99	Lettura test comunicazione
+Dim ReadR_215 As Single	'ReadR_215	Lettura1
+Dim ReadR_216 As Single	'ReadR_216	Lettura2
+Dim ReadR_207 As Single 'ReadR_207	Lettura3
+Dim ReadR_221 As Single 'ReadR_221	Lettura4
+Dim ReadR_219 As Single 'ReadR_219	Lettura5
+Dim ReadR_100 As Single 'ReadR_100	Lettura6
+Dim ReadR_101 As Single 'ReadR_101	Lettura7
+Dim ReadR_102 As Single 'ReadR_102	Lettura8
+Dim ReadR_103 As Single 'ReadR_103	Lettura9
+Dim ReadR_104 As Single 'ReadR_104	Lettura10
 
-	Dim WriteR_204 As Single 'WriteR_204	Scrittura1
-	Dim WriteR_205 As Single 'WriteR_205	Scrittura2
-	Dim WriteR_206 As Single 'WriteR_206	Scrittura3
-	Dim WriteR_220 As Single 'WriteR_220	Scrittura4
-	Dim WriteR_209 As Single 'WriteR_209	Scrittura5
+Dim ReadR_99 As Single 'ReadR_99	Lettura test comunicazione
 
-	Dim WriteR_98 As Single 'WriteR_98	Scrittura test comunicazione
+Dim WriteR_204 As Single 'WriteR_204	Scrittura1
+Dim WriteR_205 As Single 'WriteR_205	Scrittura2
+Dim WriteR_206 As Single 'WriteR_206	Scrittura3
+Dim WriteR_220 As Single 'WriteR_220	Scrittura4
+Dim WriteR_209 As Single 'WriteR_209	Scrittura5
 
-	Dim AssChkConta As Integer
-	'Dim Ass_NonComunica1 As Boolean
-	'Dim Ass_NonComunica2 As Boolean
+Dim WriteR_98 As Single 'WriteR_98	Scrittura test comunicazione
 
-	Dim success As Long
-	Dim ECHO As ICMP_ECHO_REPLY
+Dim AssChkConta As Integer
+'Dim Ass_NonComunica1 As Boolean
+'Dim Ass_NonComunica2 As Boolean
+
+Dim success As Long
+Dim ECHO As ICMP_ECHO_REPLY
 ''''''''''''''''''''''''
 
 Dim File As String
 
 
 Dim IsacCnc As CncCOMItfc.CnItfcItfc
-
 
 
 Private Declare Function IcmpCreateFile Lib "icmp.dll" () As Long
@@ -275,9 +274,11 @@ Sub Main
 
 	'esegui ping fino a quando non ho connessione
 	While [Assemblatrice_Stato:NonComunica] And Not IsInStoppingMode
+ConessioneCnc:
+	On Error GoTo ErrConessioneCnc
 		If OkPing(ip) Then
 			[Assemblatrice_Stato:NonComunica] = False
-			'Attendi(2.5, [Assemblatrice_VarR:diffTempoComunicazione])
+			Attendi(2.5, [Assemblatrice_VarR:tempoAttesa])
 		Else
 			[Assemblatrice_Stato:NonComunica] = True
 			Attendi(2.5, [Assemblatrice_VarR:tempoAttesa])
@@ -286,7 +287,6 @@ Sub Main
 		If Not [Assemblatrice_Stato:NonComunica] Then
 			IsacCnc.machinename = ip
 			IsacCnc.DataAType = CncAType_atShort
-			Assemblatrice_ProvaComunicaz = 1
 		End If
 	Wend
 
@@ -320,9 +320,11 @@ Ciclo:
 			ReadR_104=IsacCnc.ReadR(104)
 			ReadR_99 =IsacCnc.ReadR(99)
 
+			'Verifico se sto comunicando
+			'contatore per verifica connessione
 			If ReadR_99 = WriteR_98 Then
 				WriteR_98 = WriteR_98 + 1
-				If WriteR_98 &gt; 100000 Then
+				If WriteR_98 &gt; 10000 Then
 					WriteR_98 = 1
 				End If
 				oldTimerWriteR_98 = Timer()
@@ -370,13 +372,6 @@ Ciclo:
 				[Assemblatrice_Out:ALLARME] = False
 			End If
 
-
-			'verifico se sto comunicando
-			'If [Assemblatrice_Out:TestComunicazione] &lt;&gt; oldTestComunicazione Then
-			'	oldTestComunicazione = [Assemblatrice_Out:TestComunicazione]
-			'	oldTimerTestComunicazione = Timer()
-			'End If
-
 			diffTempoComunicazione = Timer() - oldTimerTestComunicazione
 			[Assemblatrice_VarR:tempoLettura] = diffTempoComunicazione
 
@@ -422,10 +417,10 @@ Ciclo:
 'FINE SCRITTURA
 '--------------------------------------------------------------------------
 			'incremento il contatore per controllo comunicazione sulla quadra
-			Assemblatrice_ProvaComunicaz = Assemblatrice_ProvaComunicaz + 1
-			If Assemblatrice_ProvaComunicaz &gt;= 10000 Then
-				Assemblatrice_ProvaComunicaz = 1
-			End If
+			'Assemblatrice_ProvaComunicaz = Assemblatrice_ProvaComunicaz + 1
+			'If Assemblatrice_ProvaComunicaz &gt;= 10000 Then
+			'	Assemblatrice_ProvaComunicaz = 1
+			'End If
 
 			'controllo tempo ciclo
 			tempoEsecuzione = Abs(Timer() - oldTimerTestComunicazione)
@@ -452,13 +447,22 @@ Ciclo:
 	Set IsacCnc = Nothing
 
 Exit Sub
+ErrConessioneCnc:
+	Debug.Print "Driver Assemblatrice Errore Connessione Cnc; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
+	Err.Clear
+	alm_Assemblatrice_ErrComunicazione = True
+	MsgBox("Attenzione Errore Connessione con Assemblatrice." &amp; vbCrLf &amp; _
+			"Richiesto riavvio della Supervisione", vbOkOnly, "Driver Assemblatrice")
+	'termino esecuzione
+	Set IsacCnc = Nothing
+Exit Sub
 ErrLettura:
 'evito ebventuale overflow
 	'If nErrIsac &gt; 32000 Then
 	'	nErrIsac = 1
 	'End If
 	nErrIsac = nErrIsac + 1
-	Debug.Print "DriverQuadra Assemblatrice Errore Lettura; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
+	Debug.Print "Driver Assemblatrice Errore Lettura; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
 	Err.Clear
 	[Assemblatrice_Stato:NonComunica] = True
 	If nErrIsac &gt; 10 Then

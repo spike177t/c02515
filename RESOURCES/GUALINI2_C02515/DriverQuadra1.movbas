@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="13039" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="8736" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -245,6 +245,7 @@ Sub Main
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
 	[Q1_Out:NonComunica] = True
+	Q1_ProvaComunicaz = 0
 
 	If [loc_ImpostazioniImpianto:IP_Q1] &lt;&gt; "" Then
 		ip = [loc_ImpostazioniImpianto:IP_Q1]
@@ -256,9 +257,12 @@ Sub Main
 
 	'esegui ping fino a quando non ho connessione
 	While [Q1_Out:NonComunica] And Not IsInStoppingMode
+ConessioneCnc:
+	On Error GoTo ErrConessioneCnc
+
 		If OkPing(ip) Then
 			[Q1_Out:NonComunica] = False
-			'Attendi(2.5, [Q1_VarR:diffTempoComunicazione])
+			Attendi(2.5, [Q1_VarR:tempoAttesa])
 		Else
 			[Q1_Out:NonComunica] = True
 			Attendi(2.5, [Q1_VarR:tempoAttesa])
@@ -271,6 +275,7 @@ Sub Main
 		End If
 	Wend
 
+	nErrIsac = 0
 	While Not IsInStoppingMode
 Ciclo:
 		'ripeto ping prima di ogni lettura per evitare errori strani dovuti al driver isac
@@ -390,6 +395,16 @@ Ciclo:
 	Set IsacCnc = Nothing
 
 Exit Sub
+ErrConessioneCnc:
+	Debug.Print "DriverQuadra Q1 Errore Connessione Cnc; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
+	Err.Clear
+	alm_Q1_ErrComunicazione = True
+	MsgBox("Attenzione Errore Connessione con Quadra Q1." &amp; vbCrLf &amp; _
+			"Richiesto riavvio della Supervisione", vbOkOnly, "Driver Quadra Q1")
+	'termino esecuzione
+	Set IsacCnc = Nothing
+Exit Sub
+
 ErrLettura:
 'evito ebventuale overflow
 	'If nErrIsac &gt; 32000 Then
@@ -405,6 +420,7 @@ ErrLettura:
 		MsgBox("Attenzione Errore comunicazione con Quadra Q1." &amp; vbCrLf &amp; _
 				"Richiesto riavvio della Supervisione", vbOkOnly, "Driver Quadra Q1")
 		'termino esecuzione
+		Set IsacCnc = Nothing
 		Exit Sub
 	Else
 		'riprendo

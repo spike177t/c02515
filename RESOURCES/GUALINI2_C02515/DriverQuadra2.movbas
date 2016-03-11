@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
+<ScriptCode StartSel="8583" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference {90B4B163-0535-3F3A-9F70-3F595C86A26B}#1.0#0#C:\Program Files (x86)\Progea\Movicon11.4\CncCOMItfc.tlb#CncCOMItfc#CncCOMItfc
 'Sostituita la Variabile 'Q1_Out_err' con il nuovo nome 'Q1_In'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'Q1_Out' con il nuovo nome 'Q1_Out_err'
@@ -245,6 +245,7 @@ Sub Main
 	'inizializzo
 	Set IsacCnc = New CncCOMItfc.CnItfcCls
 	[Q2_Out:NonComunica] = True
+	Q2_ProvaComunicaz = 0
 
 	If [loc_ImpostazioniImpianto:IP_Q2] &lt;&gt; "" Then
 		ip = [loc_ImpostazioniImpianto:IP_Q2]
@@ -256,9 +257,11 @@ Sub Main
 
 	'esegui ping fino a quando non ho connessione
 	While [Q2_Out:NonComunica] And Not IsInStoppingMode
+ConessioneCnc:
+	On Error GoTo ErrConessioneCnc
 		If OkPing(ip) Then
 			[Q2_Out:NonComunica] = False
-			'Attendi(2.5, [Q2_VarR:diffTempoComunicazione])
+			Attendi(2.5, [Q2_VarR:tempoAttesa])
 		Else
 			[Q2_Out:NonComunica] = True
 			Attendi(2.5, [Q2_VarR:tempoAttesa])
@@ -389,6 +392,15 @@ Ciclo:
 	'rilascio risorse il ciclo
 	Set IsacCnc = Nothing
 
+Exit Sub
+ErrConessioneCnc:
+	Debug.Print "DriverQuadra Q2 Errore Connessione Cnc; Error code: " &amp; Err.Number &amp; "; Err.desc = " &amp; Err.Description &amp; "; nErrIsac = " &amp; CStr(nErrIsac)
+	Err.Clear
+	alm_Q2_ErrComunicazione = True
+	MsgBox("Attenzione Errore Connessione con Quadra Q2." &amp; vbCrLf &amp; _
+			"Richiesto riavvio della Supervisione", vbOkOnly, "Driver Quadra Q2")
+	'termino esecuzione
+	Set IsacCnc = Nothing
 Exit Sub
 ErrLettura:
 'evito ebventuale overflow
