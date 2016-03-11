@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="921" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">' Find the project path without '\' or Project Name (Trova il percorso del progetto senza '\' o il Nome del Progetto)
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">' Find the project path without '\' or Project Name (Trova il percorso del progetto senza '\' o il Nome del Progetto)
 Public Function MyProjectSetting (sName As String) As String
 	Dim nPos As Integer
 
@@ -32,11 +32,6 @@ Function GetStringFromID(sId As String, sDefault As String) As String
 	GetStringFromID = StringFromID(sId)
 	If GetStringFromID = "" Then GetStringFromID = sDefault
 End Function
-
-Sub ResetTemporaneiRicetta()
-
-
-End Sub
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>

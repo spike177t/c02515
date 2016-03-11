@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="415" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*PublicBasicScript"
+Option Explicit
 
 
 Dim enableLogMsg As Boolean
@@ -11,12 +12,60 @@ Sub Main()
 	Dim fullNameDataFile As String
 	Dim comando As String
 
+
+	Dim Azienda As String
+	Dim Barcode As String
+	Dim Commessa As String
+	Dim Dimensioni As String
+	Dim IdQuartina As String
+
+	Dim vResult As String
+
 	enableLogMsg = True
-	GeneraEtichetta()
+
+	vResult = This.GetParameter(0)
+
+	If vResult = ""  Then
+		'se nessun parametro forzo dati presi da fine linea
+		Azienda 		= [loc_EtichettaR3:Azienda]
+		Barcode 		= [loc_EtichettaR3:Barcode]
+		Commessa 		= [loc_EtichettaR3:Commessa]
+		Dimensioni 		= [loc_EtichettaR3:Dimensioni]
+		IdQuartina 		= [loc_EtichettaR3:IdQuartina]
+
+	ElseIf vResult = "R3" Then
+		'richiesta etichetta da fine linea
+		Azienda 		= [loc_EtichettaR3:Azienda]
+		Barcode 		= [loc_EtichettaR3:Barcode]
+		Commessa 		= [loc_EtichettaR3:Commessa]
+		Dimensioni 		= [loc_EtichettaR3:Dimensioni]
+		IdQuartina 		= [loc_EtichettaR3:IdQuartina]
+
+	ElseIf vResult = "M1_E3" Then
+		'richiesta da magazzino 1 estrattore 3
+		Azienda 		= [loc_Etichetta_M1_E3:Azienda]
+		Barcode 		= [loc_Etichetta_M1_E3:Barcode]
+		Commessa 		= [loc_Etichetta_M1_E3:Commessa]
+		Dimensioni 		= [loc_Etichetta_M1_E3:Dimensioni]
+		IdQuartina 		= [loc_Etichetta_M1_E3:IdQuartina]
+
+	ElseIf vResult = "M2_E3" Then
+		'richiesta da magazzino 2 estrattore 3
+		Azienda 		= [loc_Etichetta_M2_E3:Azienda]
+		Barcode 		= [loc_Etichetta_M2_E3:Barcode]
+		Commessa 		= [loc_Etichetta_M2_E3:Commessa]
+		Dimensioni 		= [loc_Etichetta_M2_E3:Dimensioni]
+		IdQuartina 		= [loc_Etichetta_M2_E3:IdQuartina]
+	Else
+		MsgBox("Etichetta_R3_Stampa.movbas: nome parametro inesistente",vbOkOnly, "Warning")
+	End If
+
+	'stampo
+	GeneraEtichetta(Azienda, Barcode, Commessa, Dimensioni, IdQuartina, fullNameDataFile, printername)
 
 
-	printername = "TXT"
-	fullNameDataFile = "C:\tmp\Etichetta_R3.txt"
+	'printername = "TXT"
+	'fullNameDataFile = "C:\tmp\Etichetta_R3.txt"
 
 	'comando ="write /PT " &amp; fullNameDataFile &amp; " " &amp; printername
 	'esempio con stampante TXT condivisa
@@ -29,7 +78,13 @@ Sub Main()
 
 End Sub
 
-Function GeneraEtichetta() As Integer
+Function GeneraEtichetta(Azienda As String, _
+						Barcode As String, _
+						Commessa As String, _
+						Dimensioni As String, _
+						IdQuartina As String, _
+						ByRef fileEtichetta As String, _
+						ByRef printer As String) As Integer
 
 	Dim msg As String
 	Dim fullNameDataFile As String
@@ -41,25 +96,16 @@ Function GeneraEtichetta() As Integer
 	Dim printtext As String
 	Dim printername As String
 
-	Dim Azienda As String
-	Dim Barcode As String
-	Dim Commessa As String
-	Dim Dimensioni As String
-	Dim IdQuartina As String
+	Dim projectDir As String
 
+	projectDir = MyProjectSetting ("FILEPATH")
 
-	Azienda 		= [loc_EtichettaR3:Azienda]
-	Barcode 		= [loc_EtichettaR3:Barcode]
-	Commessa 		= [loc_EtichettaR3:Commessa]
-	Dimensioni 		= [loc_EtichettaR3:Dimensioni]
-	IdQuartina 		= [loc_EtichettaR3:IdQuartina]
-
-	If [loc_EtichettaR3:IdQuartina]="" And [loc_EtichettaR3:Barcode]="" And [loc_EtichettaR3:Dimensioni]="" Then
+	If Azienda = "" And Barcode = "" And Dimensioni ="" Then
 		Azienda 	= "Gualini Spa"
 		Barcode 	= "123456789012"
-		Commessa	= "Commessaaaa"
+		Commessa	= "TestCommessa"
 		Dimensioni	= "800" &amp; " x " &amp; "600"
-		IdQuartina	= "uuqiuquartina"
+		IdQuartina	= "TestQuartina"
 	End If
 
 	msg = "Script Etichetta_R3_Stampa.movbas" + vbCrLf + "Errore.  -&gt; "
@@ -67,15 +113,15 @@ Function GeneraEtichetta() As Integer
 
 	etName = "Etichetta_R3.txt"
 
-	If [_SysVar_:WorkingDir] = "" Then
+	If projectDir = "" Then
 		workingDir = "C:\tmp
 	Else
-		workingDir = [_SysVar_:WorkingDir]
+		workingDir = projectDir
 	End If
-	If [loc_ImpostazioniImpianto:nomeStampanteEt] = "" Then
+	If [loc_ImpostazioniImpianto:nomeStampanteEtichetta] = "" Then
 		printername = "TXT"
 	Else
-		printername = [loc_ImpostazioniImpianto:nomeStampanteEt]
+		printername = [loc_ImpostazioniImpianto:nomeStampanteEtichetta]
 	End If
 
 	fullNameDataFile = workingDir &amp; "\" &amp; etName
@@ -99,6 +145,10 @@ Function GeneraEtichetta() As Integer
 	Print #1, "^PQ1,0,1,Y^XZ"
 	Close #1
 
+	'torno percorso file generato e nome stampante
+	fileEtichetta = fullNameDataFile
+	printer = printername
+
 	GeneraEtichetta = 1
 
 Exit Function
@@ -119,6 +169,6 @@ Sub LogMsg(msg As String)
 	End If
 End Sub
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>
