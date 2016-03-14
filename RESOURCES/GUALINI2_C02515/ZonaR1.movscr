@@ -78,6 +78,47 @@
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Plc_bHmiAutoOn">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
 </child>
 <child>
 <type>Button</type>
@@ -263,6 +304,7 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1588,7 +1630,7 @@ End Sub
 <child>
 <object>Edit</object>
 <editbox x="220" y="315" width="280" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="StatoCicloCarico" max="77777"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -1867,7 +1909,7 @@ End Sub
 <type x="125" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -1946,7 +1988,7 @@ End Sub
 <type x="185" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2002,7 +2044,7 @@ End Sub
 <type x="245" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2058,7 +2100,7 @@ End Sub
 <type x="305" y="5" width="60" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2111,7 +2153,7 @@ End Sub
 <type x="370" y="5" width="60" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2167,7 +2209,7 @@ End Sub
 <type x="435" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2401,7 +2443,7 @@ End Sub
 <type x="125" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2480,7 +2522,7 @@ End Sub
 <type x="185" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2536,7 +2578,7 @@ End Sub
 <type x="245" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2645,7 +2687,7 @@ End Sub
 <type x="370" y="5" width="60" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2701,7 +2743,7 @@ End Sub
 <type x="435" y="5" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2773,7 +2815,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="80" y="35" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2794,7 +2836,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="80" y="95" width="85" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:POSIZIONE"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2815,7 +2857,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="335" y="35" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2845,7 +2887,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="80" y="65" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:NOME_COMMESSA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2857,7 +2899,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="335" y="65" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:CODICE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2887,7 +2929,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="245" y="95" width="85" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2899,7 +2941,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="405" y="95" width="85" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="Q2_PEZZO_DISP:CASSETTO_ASSEGNATO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -2935,7 +2977,7 @@ End Sub
 <type x="415" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3007,7 +3049,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="210" y="35" width="110" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_RIK:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3028,7 +3070,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="370" y="35" width="115" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_RIK:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3040,7 +3082,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="60" y="35" width="30" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_RIK:ID_CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3070,7 +3112,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="145" y="35" width="20" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_RIK:POSIZIONE"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3102,7 +3144,7 @@ End Sub
 <type x="135" y="10" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3158,7 +3200,7 @@ End Sub
 <type x="195" y="10" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3214,7 +3256,7 @@ End Sub
 <type x="435" y="10" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3270,7 +3312,7 @@ End Sub
 <type x="255" y="10" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3323,7 +3365,7 @@ End Sub
 <type x="315" y="10" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3379,7 +3421,7 @@ End Sub
 <type x="375" y="10" width="55" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3448,7 +3490,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="210" y="35" width="55" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:POSIZIONE_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3469,7 +3511,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="325" y="35" width="55" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:MAGAZZINO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3490,7 +3532,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="435" y="35" width="55" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3502,7 +3544,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="105" y="35" width="55" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:PZ_DA_QUADRA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3558,7 +3600,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="85" y="30" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_DATI_PEZZO:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3579,7 +3621,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="335" y="30" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_DATI_PEZZO:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3591,7 +3633,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="335" y="60" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_DATI_PEZZO:CODICE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3612,7 +3654,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="85" y="60" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_DATI_PEZZO:NOME_COMMESSA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3644,7 +3686,7 @@ End Sub
 <type x="85" y="95" width="155" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3700,7 +3742,7 @@ End Sub
 <type x="335" y="95" width="155" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3785,7 +3827,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="60" y="30" width="30" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:ID_CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3806,7 +3848,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="145" y="30" width="20" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:POSIZIONE"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -3820,7 +3862,7 @@ End Sub
 <type x="190" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3876,7 +3918,7 @@ End Sub
 <type x="265" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3932,7 +3974,7 @@ End Sub
 <type x="415" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3988,7 +4030,7 @@ End Sub
 <type x="340" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4057,7 +4099,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="210" y="30" width="110" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4078,7 +4120,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="370" y="30" width="115" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_ACT:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4114,7 +4156,7 @@ End Sub
 <type x="415" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4186,7 +4228,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="210" y="35" width="110" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_RIK:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4207,7 +4249,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="370" y="35" width="115" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_RIK:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4219,7 +4261,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="60" y="35" width="30" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_RIK:ID_CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4249,7 +4291,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="145" y="35" width="20" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG2_ES1_RIK:POSIZIONE"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4292,7 +4334,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="60" y="30" width="30" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:ID_CASSETTO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4313,7 +4355,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="145" y="30" width="20" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:POSIZIONE"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4327,7 +4369,7 @@ End Sub
 <type x="190" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4383,7 +4425,7 @@ End Sub
 <type x="265" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4439,7 +4481,7 @@ End Sub
 <type x="415" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4495,7 +4537,7 @@ End Sub
 <type x="340" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4564,7 +4606,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="210" y="30" width="110" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4585,7 +4627,7 @@ End Sub
 <child>
 <type>Edit</type>
 <editbox x="370" y="30" width="115" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x"/>
+<style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
 <execution var="MAG1_ES1_ACT:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
