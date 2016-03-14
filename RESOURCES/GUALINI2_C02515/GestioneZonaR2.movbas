@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1547" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="28606" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -1550,46 +1550,46 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 						SetVariableValue(structname &amp; ":CASSETTO_ASSEGNATO"				, MyDataReader("ID_CASSETTO"))
 						
 						SetVariableValue(structname &amp; ":ID_QUARTINA"					, MyDataReader("ID_QUARTINA"))
-						SetVariableValue(structname &amp; ":TOTALE_PEZZI_QUARTINA"			, MyDataReader("TOTALE_PEZZI_QUARTINA"))
-						SetVariableValue(structname &amp; ":NUM_SQUADRETTE1"				, MyDataReader("NUM_SQUADRETTE1"))
+						SetVariableValue(structname &amp; ":TOTALE_PEZZI_QUARTINA"			, CByte(MyDataReader("TOTALE_PEZZI_QUARTINA")))
+						SetVariableValue(structname &amp; ":NUM_SQUADRETTE1"				, CByte(MyDataReader("NUM_SQUADRETTE1")))
 						SetVariableValue(structname &amp; ":COD_SQUADRETTA1"				, MyDataReader("COD_SQUADRETTA1"))
-						SetVariableValue(structname &amp; ":NUM_SQUADRETTE2"				, MyDataReader("NUM_SQUADRETTE2"))
+						SetVariableValue(structname &amp; ":NUM_SQUADRETTE2"				, CByte(MyDataReader("NUM_SQUADRETTE2")))
 						SetVariableValue(structname &amp; ":COD_SQUADRETTA2"				, MyDataReader("COD_SQUADRETTA2"))
 						SetVariableValue(structname &amp; ":NOME_COMMESSA"					, MyDataReader("NOME_COMMESSA"))
-						SetVariableValue(structname &amp; ":POSIZIONE"						, MyDataReader("POSIZIONE"))
+						SetVariableValue(structname &amp; ":POSIZIONE"						, CByte(MyDataReader("POSIZIONE")))
 						SetVariableValue(structname &amp; ":NOME_PEZZO_UNICO"				, MyDataReader("ID_PEZZO"))
 						SetVariableValue(structname &amp; ":NOME_PEZZO_ESTERNO"				, MyDataReader("NOME_PEZZO_ESTERNO"))
 						SetVariableValue(structname &amp; ":CODICE_PROFILO"					, MyDataReader("CODICE_PROFILO"))
 						SetVariableValue(structname &amp; ":SERIE_PROFILO"					, MyDataReader("SERIE_PROFILO"))
-						SetVariableValue(structname &amp; ":MAX_LUNGHEZZA"					, MyDataReader("MAX_LUNGHEZZA"))
-						SetVariableValue(structname &amp; ":ALTEZZA_PROFILO"				, MyDataReader("ALTEZZA_PROFILO"))
-						SetVariableValue(structname &amp; ":LARGHEZZA_PROFILO"				, MyDataReader("LARGHEZZA_PROFILO"))
-						SetVariableValue(structname &amp; ":MISURA_CAMERA_ESTERNA"			, MyDataReader("MISURA_CAMERA_ESTERNA"))
-						SetVariableValue(structname &amp; ":APPOGGIO_PEZZO"					, MyDataReader("APPOGGIO_PEZZO"))
-						SetVariableValue(structname &amp; ":POSIZIONE_PEZZO_ESTERNO"		, MyDataReader("POSIZIONE_PEZZO_ESTERNO"))
+						SetVariableValue(structname &amp; ":MAX_LUNGHEZZA"					, CUShort(MyDataReader("MAX_LUNGHEZZA")))
+						SetVariableValue(structname &amp; ":ALTEZZA_PROFILO"				, CUShort(MyDataReader("ALTEZZA_PROFILO")))
+						SetVariableValue(structname &amp; ":LARGHEZZA_PROFILO"				, CUShort(MyDataReader("LARGHEZZA_PROFILO")))
+						SetVariableValue(structname &amp; ":MISURA_CAMERA_ESTERNA"			, CUShort(MyDataReader("MISURA_CAMERA_ESTERNA")))
+						SetVariableValue(structname &amp; ":APPOGGIO_PEZZO"					, CByte(MyDataReader("APPOGGIO_PEZZO")))
+						SetVariableValue(structname &amp; ":POSIZIONE_PEZZO_ESTERNO"		, CByte(MyDataReader("POSIZIONE_PEZZO_ESTERNO")))
 						SetVariableValue(structname &amp; ":ID_PEZZO_ESTERNO"				, MyDataReader("ID_PEZZO_ESTERNO"))
-						SetVariableValue(structname &amp; ":LUNGHEZZA_PEZZO_ESTERNO"		, MyDataReader("LUNGHEZZA_PEZZO_ESTERNO"))
+						SetVariableValue(structname &amp; ":LUNGHEZZA_PEZZO_ESTERNO"		, CUShort(MyDataReader("LUNGHEZZA_PEZZO_ESTERNO")))
 						SetVariableValue(structname &amp; ":FILE_XML"						, MyDataReader("FILE_XML"))
 						SetVariableValue(structname &amp; ":DATA"							, MyDataReader("DATA"))
 						SetVariableValue(structname &amp; ":ORA"							, MyDataReader("ORA"))
 
 						'idati seguenti sono il risultato di una join per cui devo verificare che non siano NULL
 
-						SetVariableValue(structname &amp; ":R2_TIPO_PROFILO"				, IIf(IsDBNull(MyDataReader("TIPO_PROFILO")), "NULL", MyDataReader("TIPO_PROFILO")))	'MyDataReader("TIPO_PROFILO")
-						SetVariableValue(structname &amp; ":R2_TELAIO"						, IIf(IsDBNull(MyDataReader("TELAIO")), "NULL", MyDataReader("TELAIO"))) 				'MyDataReader("TELAIO"))
-						SetVariableValue(structname &amp; ":R2_COUNT_Z"						, IIf(IsDBNull(MyDataReader("TELAIO")), 0, MyDataReader("COUNT_Z"))) 					'MyDataReader("COUNT_Z"))
+						SetVariableValue(structname &amp; ":R2_TIPO_PROFILO"				, IIf(IsDBNull(MyDataReader("TIPO_PROFILO"))		, "NULL", MyDataReader("TIPO_PROFILO")))	'MyDataReader("TIPO_PROFILO")
+						SetVariableValue(structname &amp; ":R2_TELAIO"						, IIf(IsDBNull(MyDataReader("TELAIO"))				, "NULL", MyDataReader("TELAIO"))) 				'MyDataReader("TELAIO"))
+						SetVariableValue(structname &amp; ":R2_COUNT_Z"						, IIf(IsDBNull(MyDataReader("TELAIO"))				, 0, CUShort(MyDataReader("COUNT_Z")))) 					'MyDataReader("COUNT_Z"))
 
-						SetVariableValue(structname &amp; ":R2_BANCO_SQ1"					, IIf(IsDBNull(MyDataReader("BANCO_SQ1")), 0, MyDataReader("BANCO_SQ1"))) 				'MyDataReader("BANCO_SQ1"))
-						SetVariableValue(structname &amp; ":R2_FILA_SQ1"					, IIf(IsDBNull(MyDataReader("FILA_SQ1")), 0, MyDataReader("FILA_SQ1"))) 				'MyDataReader("FILA_SQ1"))
-						SetVariableValue(structname &amp; ":R2_BANCO_SQ2"					, IIf(IsDBNull(MyDataReader("BANCO_SQ2")), 0, MyDataReader("BANCO_SQ2"))) 				'MyDataReader("BANCO_SQ2"))
-						SetVariableValue(structname &amp; ":R2_FILA_SQ2"					, IIf(IsDBNull(MyDataReader("FILA_SQ2")), 0, MyDataReader("FILA_SQ2"))) 				'MyDataReader("FILA_SQ2"))
-						SetVariableValue(structname &amp; ":R2_COLLA"						, IIf(IsDBNull(MyDataReader("Colla")), 0, MyDataReader("Colla"))) 						'MyDataReader("Colla"))
-						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"				, IIf(IsDBNull(MyDataReader("Attrezzatura")), 0, MyDataReader("Attrezzatura"))) 		'MyDataReader("Attrezzatura"))
-						SetVariableValue(structname &amp; ":R2_APERTURA"					, IIf(IsDBNull(MyDataReader("Apertura")), 0, MyDataReader("Apertura"))) 				'MyDataReader("Apertura"))
-						SetVariableValue(structname &amp; ":R2_OFFSET_PEZZO"				, IIf(IsDBNull(MyDataReader("OffsetPezzo")), 0, MyDataReader("OffsetPezzo"))) 			'MyDataReader("OffsetPezzo"))
-						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ1"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta1")), 0, MyDataReader("OffsetSuadretta1"))) 'MyDataReader("OffsetSuadretta1"))
-						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ2"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta2")), 0, MyDataReader("OffsetSuadretta2"))) 'MyDataReader("OffsetSuadretta2"))
-						SetVariableValue(structname &amp; ":R2_CODICE_PRG"					, IIf(IsDBNull(MyDataReader("CodiceRobot")), 0, MyDataReader("CodiceRobot"))) 			'MyDataReader("CodiceRobot"))
+						SetVariableValue(structname &amp; ":R2_BANCO_SQ1"					, IIf(IsDBNull(MyDataReader("BANCO_SQ1"))			, 0, CUShort(MyDataReader("BANCO_SQ1")))) 				'MyDataReader("BANCO_SQ1"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ1"					, IIf(IsDBNull(MyDataReader("FILA_SQ1"))			, 0, CUShort(MyDataReader("FILA_SQ1")))) 				'MyDataReader("FILA_SQ1"))
+						SetVariableValue(structname &amp; ":R2_BANCO_SQ2"					, IIf(IsDBNull(MyDataReader("BANCO_SQ2"))			, 0, CUShort(MyDataReader("BANCO_SQ2")))) 				'MyDataReader("BANCO_SQ2"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ2"					, IIf(IsDBNull(MyDataReader("FILA_SQ2"))			, 0, CUShort(MyDataReader("FILA_SQ2")))) 				'MyDataReader("FILA_SQ2"))
+						SetVariableValue(structname &amp; ":R2_COLLA"						, IIf(IsDBNull(MyDataReader("Colla"))				, 0, CUShort(MyDataReader("Colla")))) 						'MyDataReader("Colla"))
+						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"				, IIf(IsDBNull(MyDataReader("Attrezzatura"))		, 0, CUShort(MyDataReader("Attrezzatura")))) 		'MyDataReader("Attrezzatura"))
+						SetVariableValue(structname &amp; ":R2_APERTURA"					, IIf(IsDBNull(MyDataReader("Apertura"))			, 0, CUShort(MyDataReader("Apertura")))) 				'MyDataReader("Apertura"))
+						SetVariableValue(structname &amp; ":R2_OFFSET_PEZZO"				, IIf(IsDBNull(MyDataReader("OffsetPezzo"))			, 0, CUShort(MyDataReader("OffsetPezzo")))) 			'MyDataReader("OffsetPezzo"))
+						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ1"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta1"))	, 0, MyDataReader("OffsetSuadretta1"))) 'MyDataReader("OffsetSuadretta1"))
+						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ2"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta2"))	, 0, MyDataReader("OffsetSuadretta2"))) 'MyDataReader("OffsetSuadretta2"))
+						SetVariableValue(structname &amp; ":R2_CODICE_PRG"					, IIf(IsDBNull(MyDataReader("CodiceRobot"))			, 0, CUShort(MyDataReader("CodiceRobot")))) 			'MyDataReader("CodiceRobot"))
 
 						'SetVariableValue(structname &amp; ":xx"				, MyDataReader("xx"))
 
