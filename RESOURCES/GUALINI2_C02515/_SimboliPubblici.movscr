@@ -1475,7 +1475,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_bHmiAutoOn">1</BG>
+<BG Var="Plc_bAutoOn">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -1621,7 +1621,7 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<Visible Var="Plc_bHmiAutoOn">1</Visible>
+<Visible Var="Plc_bAutoOn">1</Visible>
 <Transparency>0</Transparency>
 <BG>0</BG>
 <EG>0</EG>
@@ -1699,6 +1699,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

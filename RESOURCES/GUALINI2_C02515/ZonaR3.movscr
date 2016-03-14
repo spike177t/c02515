@@ -70,7 +70,7 @@
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_bHmiAutoOn">1</BG>
+<BG Var="Plc_bAutoOn">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2730,14 +2730,14 @@ End Sub
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
 <Border>3</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Ass_Reset&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n2="&lt;CommandType variable=&quot;AllarmeAssemblatrice_Word00&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n3="&lt;CommandType variable=&quot;Ass_StrobeDatiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n4="&lt;CommandType variable=&quot;Ass_DatiLettiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n5="&lt;CommandType variable=&quot;Ass_StartRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n6="&lt;CommandType variable=&quot;Ass_InMissione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n7="&lt;CommandType variable=&quot;Ass_BackFineRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+<Commands n0="&lt;CommandType variable=&quot;Ass_Reset&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n2="&lt;CommandType variable=&quot;AllarmeAssemblatrice_Word00&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n3="&lt;CommandType variable=&quot;Ass_StrobeDatiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n4="&lt;CommandType variable=&quot;Ass_DatiLettiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n5="&lt;CommandType variable=&quot;Ass_StartRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n6="&lt;CommandType variable=&quot;Ass_InMissione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n7="&lt;CommandType variable=&quot;Ass_BackFineRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -2753,7 +2753,7 @@ End Sub
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
 <Border>3</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+<Commands n0="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <CommandsWhileDown/>
 <CommandsOnDown/>

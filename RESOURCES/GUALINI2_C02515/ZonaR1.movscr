@@ -80,7 +80,7 @@
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_bHmiAutoOn">1</BG>
+<BG Var="Plc_bAutoOn">1</BG>
 <BGList>
 <dci>
 <DynColor/>
