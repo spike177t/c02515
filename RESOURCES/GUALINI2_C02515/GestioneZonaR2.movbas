@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="67926" SelLength="8" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="61611" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -727,8 +727,8 @@ Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Inte
 						varname = prefix_varname_pezzo &amp; "PZ" &amp; CStr(posizionePezzo)
 
 						'memorizzo da quale cassetto e magazzino provengono i pezzi
-						SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO"		, cass)
-						SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO"		, mag)
+						SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO"		, CUShort(cass))
+						SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO"		, CUShort(mag))
 
 
 						SetVariableValue(varname &amp; ":NUOVO"						, True)	'questo dato potrebbe servire nell'assegnamento missione al robot: CondizioneAssegnaMissioneRobot()
@@ -759,7 +759,7 @@ Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Inte
 						SetVariableValue(varname &amp; ":ORA"						, CStr(	MyDataReader("ORA")))
 
 
-						SetVariableValue(varname &amp; ":R2_BANCO_SQ1"				, IIf( IsDBNull(MyDataReader("BANCO_SQ1"))	, 0,  CUShort(MyDataReader("BANCO_SQ1"))))	)'CInt( MyDataReader("BANCO_SQ1")))
+						SetVariableValue(varname &amp; ":R2_BANCO_SQ1"				, IIf( IsDBNull(MyDataReader("BANCO_SQ1"))	, 0,  CUShort(MyDataReader("BANCO_SQ1")))	)'CInt( MyDataReader("BANCO_SQ1")))
 						SetVariableValue(varname &amp; ":R2_BANCO_SQ2"				, IIf( IsDBNull(MyDataReader("BANCO_SQ2"))	, 0,  CUShort(MyDataReader("BANCO_SQ2")))	)'CInt( MyDataReader("BANCO_SQ2")))
 						SetVariableValue(varname &amp; ":R2_FILA_SQ1"				, IIf( IsDBNull(MyDataReader("FILA_SQ1" ))	, 0,  CByte(MyDataReader("FILA_SQ1")))		)'CInt( MyDataReader("FILA_SQ1")))
 						SetVariableValue(varname &amp; ":R2_FILA_SQ2"				, IIf( IsDBNull(MyDataReader("FILA_SQ2" ))	, 0,  CByte(MyDataReader("FILA_SQ2")))		)'CInt(	MyDataReader("FILA_SQ2")))
