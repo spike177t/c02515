@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="28606" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="67926" SelLength="8" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -759,15 +759,15 @@ Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Inte
 						SetVariableValue(varname &amp; ":ORA"						, CStr(	MyDataReader("ORA")))
 
 
-						SetVariableValue(varname &amp; ":R2_BANCO_SQ1"				, IIf( IsDBNull(MyDataReader("BANCO_SQ1"))	, 0,  MyDataReader("BANCO_SQ1"))	)'CInt( MyDataReader("BANCO_SQ1")))
-						SetVariableValue(varname &amp; ":R2_BANCO_SQ2"				, IIf( IsDBNull(MyDataReader("BANCO_SQ2"))	, 0,  MyDataReader("BANCO_SQ2"))	)'CInt( MyDataReader("BANCO_SQ2")))
-						SetVariableValue(varname &amp; ":R2_FILA_SQ1"				, IIf( IsDBNull(MyDataReader("FILA_SQ1" ))	, 0,  MyDataReader("FILA_SQ1"))		)'CInt( MyDataReader("FILA_SQ1")))
-						SetVariableValue(varname &amp; ":R2_FILA_SQ2"				, IIf( IsDBNull(MyDataReader("FILA_SQ2" ))	, 0,  MyDataReader("FILA_SQ2"))		)'CInt(	MyDataReader("FILA_SQ2")))
-						SetVariableValue(varname &amp; ":R2_CODICE_PRG"				, IIf( IsDBNull(MyDataReader("CodiceRobot")), 0,  MyDataReader("CodiceRobot"))	)'CInt( MyDataReader("CodiceRobot")))
-						SetVariableValue(varname &amp; ":R2_COLLA"					, IIf( IsDBNull(MyDataReader("Colla"))      , 0,  MyDataReader("Colla"))		)'CInt(	MyDataReader("Colla")))
-						SetVariableValue(varname &amp; ":R2_APERTURA"				, IIf( IsDBNull(MyDataReader("Apertura"))	, 0,  MyDataReader("Apertura"))		)'CInt(	MyDataReader("Apertura")))
-						SetVariableValue(varname &amp; ":R2_ATTREZZATURA"			, IIf( IsDBNull(MyDataReader("Attrezzatura")), 0,  MyDataReader("Attrezzatura")))'CInt(	MyDataReader("Attrezzatura")))
-						SetVariableValue(varname &amp; ":R2_OFFSET_PEZZO"			, IIf( IsDBNull(MyDataReader("OffsetPezzo")), 0,  MyDataReader("OffsetPezzo"))	)'CInt(	MyDataReader("OffsetPezzo")))
+						SetVariableValue(varname &amp; ":R2_BANCO_SQ1"				, IIf( IsDBNull(MyDataReader("BANCO_SQ1"))	, 0,  CUShort(MyDataReader("BANCO_SQ1"))))	)'CInt( MyDataReader("BANCO_SQ1")))
+						SetVariableValue(varname &amp; ":R2_BANCO_SQ2"				, IIf( IsDBNull(MyDataReader("BANCO_SQ2"))	, 0,  CUShort(MyDataReader("BANCO_SQ2")))	)'CInt( MyDataReader("BANCO_SQ2")))
+						SetVariableValue(varname &amp; ":R2_FILA_SQ1"				, IIf( IsDBNull(MyDataReader("FILA_SQ1" ))	, 0,  CByte(MyDataReader("FILA_SQ1")))		)'CInt( MyDataReader("FILA_SQ1")))
+						SetVariableValue(varname &amp; ":R2_FILA_SQ2"				, IIf( IsDBNull(MyDataReader("FILA_SQ2" ))	, 0,  CByte(MyDataReader("FILA_SQ2")))		)'CInt(	MyDataReader("FILA_SQ2")))
+						SetVariableValue(varname &amp; ":R2_CODICE_PRG"				, IIf( IsDBNull(MyDataReader("CodiceRobot")), 0,  CUShort(MyDataReader("CodiceRobot")))	)'CInt( MyDataReader("CodiceRobot")))
+						SetVariableValue(varname &amp; ":R2_COLLA"					, IIf( IsDBNull(MyDataReader("Colla"))      , 0,  CUShort(MyDataReader("Colla")))		)'CInt(	MyDataReader("Colla")))
+						SetVariableValue(varname &amp; ":R2_APERTURA"				, IIf( IsDBNull(MyDataReader("Apertura"))	, 0,  CUShort(MyDataReader("Apertura")))		)'CInt(	MyDataReader("Apertura")))
+						SetVariableValue(varname &amp; ":R2_ATTREZZATURA"			, IIf( IsDBNull(MyDataReader("Attrezzatura")),0,  CUShort(MyDataReader("Attrezzatura"))))'CInt(	MyDataReader("Attrezzatura")))
+						SetVariableValue(varname &amp; ":R2_OFFSET_PEZZO"			, IIf( IsDBNull(MyDataReader("OffsetPezzo")), 0,  CUShort(MyDataReader("OffsetPezzo")))	)'CInt(	MyDataReader("OffsetPezzo")))
 
 						'TODO
 						'gestire R2_RUOTA_PEZZO
@@ -1580,9 +1580,9 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 						SetVariableValue(structname &amp; ":R2_COUNT_Z"						, IIf(IsDBNull(MyDataReader("TELAIO"))				, 0, CUShort(MyDataReader("COUNT_Z")))) 					'MyDataReader("COUNT_Z"))
 
 						SetVariableValue(structname &amp; ":R2_BANCO_SQ1"					, IIf(IsDBNull(MyDataReader("BANCO_SQ1"))			, 0, CUShort(MyDataReader("BANCO_SQ1")))) 				'MyDataReader("BANCO_SQ1"))
-						SetVariableValue(structname &amp; ":R2_FILA_SQ1"					, IIf(IsDBNull(MyDataReader("FILA_SQ1"))			, 0, CUShort(MyDataReader("FILA_SQ1")))) 				'MyDataReader("FILA_SQ1"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ1"					, IIf(IsDBNull(MyDataReader("FILA_SQ1"))			, 0, CByte(MyDataReader("FILA_SQ1")))) 				'MyDataReader("FILA_SQ1"))
 						SetVariableValue(structname &amp; ":R2_BANCO_SQ2"					, IIf(IsDBNull(MyDataReader("BANCO_SQ2"))			, 0, CUShort(MyDataReader("BANCO_SQ2")))) 				'MyDataReader("BANCO_SQ2"))
-						SetVariableValue(structname &amp; ":R2_FILA_SQ2"					, IIf(IsDBNull(MyDataReader("FILA_SQ2"))			, 0, CUShort(MyDataReader("FILA_SQ2")))) 				'MyDataReader("FILA_SQ2"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ2"					, IIf(IsDBNull(MyDataReader("FILA_SQ2"))			, 0, CByte(MyDataReader("FILA_SQ2")))) 				'MyDataReader("FILA_SQ2"))
 						SetVariableValue(structname &amp; ":R2_COLLA"						, IIf(IsDBNull(MyDataReader("Colla"))				, 0, CUShort(MyDataReader("Colla")))) 						'MyDataReader("Colla"))
 						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"				, IIf(IsDBNull(MyDataReader("Attrezzatura"))		, 0, CUShort(MyDataReader("Attrezzatura")))) 		'MyDataReader("Attrezzatura"))
 						SetVariableValue(structname &amp; ":R2_APERTURA"					, IIf(IsDBNull(MyDataReader("Apertura"))			, 0, CUShort(MyDataReader("Apertura")))) 				'MyDataReader("Apertura"))

@@ -158,7 +158,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Description="uso per comodità questa var per memorizzare tutti i dati  del pezzo  in carico al Robot" Shared="0" Retentive="1">R1_DATI_PEZZO</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="uso per comodità questa var per memorizzare tutti i dati  del pezzo  in carico al Robot" Shared="0" Retentive="1">R1_DATI_PEZZO</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -312,7 +312,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ1</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -333,7 +333,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -515,7 +515,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Description="pezzo presente su Quadra 1" Shared="0" Retentive="1">Q1_PEZZO_DISP</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="pezzo presente su Quadra 1" Shared="0" Retentive="1">Q1_PEZZO_DISP</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -942,7 +942,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Description="pezzo presente su Quadra 2" Shared="0" Retentive="1">Q2_PEZZO_DISP</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Description="pezzo presente su Quadra 2" Shared="0" Retentive="1">Q2_PEZZO_DISP</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1964,28 +1964,28 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ1</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ2</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ3</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="83" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ4</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="81" Shared="0" Retentive="0" InitQuality="8">SCAR_M1_PZ4</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -3211,10 +3211,10 @@
 <Name Type="4">R2_BANCO_SQ2</Name>
 </Member>
 <Member>
-<Name Type="4">R2_FILA_SQ1</Name>
+<Name Type="2">R2_FILA_SQ1</Name>
 </Member>
 <Member>
-<Name Type="4">R2_FILA_SQ2</Name>
+<Name Type="2">R2_FILA_SQ2</Name>
 </Member>
 <Member>
 <Name Type="4">R2_CODICE_PRG</Name>
