@@ -3521,6 +3521,6 @@ End Sub
 </ScriptCode>
 <BreakPoints xsi:type="xsd:base64Binary">AiBmAXcBhgFGAmAC
 </BreakPoints>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>

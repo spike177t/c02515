@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="37386" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="28744" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -622,6 +622,15 @@ Sub Main()
 							stepTout = Timer()
 							StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
 							'StatoCicloScarico = 1000	'Attesa
+						End If
+					ElseIf retMsgBox = vbNo Then
+						'chiedo ulteriore conferma e ricordo di resettare allarmi
+			    		strMsgBox = "Riposisionare tutti i pezzi sull'estrattore." &amp; vbCrLf &amp; vbCrLf _
+								&amp; "Fare reset allarmi per riprendere il ciclo."
+						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Riposizionamento pezzi su Estrattore2 MAG: "&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
+						If [R2_STATUS:DISPONIBILE] Then
+							stepTout = Timer()
+							StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
 						End If
 					End If
 
@@ -2254,6 +2263,6 @@ Function AvoidNull(FieldVal As Object, retType As movicon.eVariableType) As Obje
 	End If
 End Function
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>
