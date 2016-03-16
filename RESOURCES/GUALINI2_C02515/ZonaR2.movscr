@@ -3150,1456 +3150,6 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="515" y="95" width="495" height="480" ox="515" oy="95" owidth="495" oheight="480"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="495" y="480" width="-495" height="-480" fill="rgb(64,64,64)" stroke="none">rect</type>
-<ExtFill grad="5" gcolor="rgb(128,128,128)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo1</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="165" y="5" width="50" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnOn</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">On</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Stato:Ass_ON">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="16777215" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG Var="Assemblatrice_Stato:Ass_ON">1</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="165" y="30" width="50" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Out:AUTO">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="165" y="55" width="50" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnHold</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Out:ASSI_IN_MOVIMENTO">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="220" y="5" width="105" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnStartRotaz</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Start Rotaz.</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_In:START_ROTAZIONE">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="330" y="5" width="105" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">brnendRot</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">End Rotaz.</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Out:FINE_ROTAZIONE">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="33023" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="440" y="5" width="50" height="70" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante16</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alm</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Stato:NonCumunica">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="255" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="5" width="155" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo16</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Assemblatrice:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="90" width="185" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Spessore Supporti</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="110" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style promptpad="1" fmtscale="decimi mm"/>
-<border>4</border>
-<execution var="Q2_PEZZO_DISP:NOME_PEZZO_UNICO" max="1000"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display151</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="300" y="325" width="-105" height="-165" fill="none" stroke="none">rect</type>
-<ExtFill ImageID="AsemblatriceVistaAlto.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo148</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="145" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ID TELAIO LATO R2:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="160" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:ID_QUARTINA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="145" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ID TELAIO LATO R3:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="160" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:ID_QUARTINA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="200" y="375" width="90" height="25" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zero OK</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Out:AZZERATA">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="200" y="345" width="90" height="25" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnZeroInCOrso</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zero In Corso</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Out:STA_AZZERANDO">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="33023" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="10" y="425" width="160" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">rstAlmZonaR3</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi ZonaR3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="alm_Presenti_ZonaR3">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="255" Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-<dci>
-<DynColor Value="11"/>
-</dci>
-<dci>
-<DynColor Value="12"/>
-</dci>
-<dci>
-<DynColor Value="13"/>
-</dci>
-<dci>
-<DynColor Value="14"/>
-</dci>
-<dci>
-<DynColor Value="15"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="21" SelLength="25" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	alm_ResetAlmZonaR3 = True
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="185" y="420" width="140" height="30" fill="rgb(255,165,0)" stroke="rgb(0,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Border>3</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Ass_Reset&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n2="&lt;CommandType variable=&quot;AllarmeAssemblatrice_Word00&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n3="&lt;CommandType variable=&quot;Ass_StrobeDatiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n4="&lt;CommandType variable=&quot;Ass_DatiLettiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n5="&lt;CommandType variable=&quot;Ass_StartRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n6="&lt;CommandType variable=&quot;Ass_InMissione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n7="&lt;CommandType variable=&quot;Ass_BackFineRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name acr="4294901760">Pulsante180</Name>
-<text font-family="Arial" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">RESET ALL</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="185" y="450" width="140" height="30" fill="rgb(255,165,0)" stroke="rgb(0,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Border>3</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name acr="4294901760" EnableVariable="Ass_AttendiStartDopoStop">Pulsante181</Name>
-<text font-family="Arial" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">RI-START</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="330" y="425" width="160" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="loc_btnResetAssemblatrice_Sfondo" MechanicStyle="2" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0" Impulsive="1" ImpulsiveTime="500">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnResetAssemblatrice</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Assemblatrice</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_btnResetAssemblatrice_Sfondo">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-<dci>
-<DynColor Value="11"/>
-</dci>
-<dci>
-<DynColor Value="12"/>
-</dci>
-<dci>
-<DynColor Value="13"/>
-</dci>
-<dci>
-<DynColor Value="14"/>
-</dci>
-<dci>
-<DynColor Value="15"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="398" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	'riepilogo azioni da vecchia supervisione
-	'Set Ass_Reset = 1
-	'Set Ass_AttendiStartDopoStop = 1
-
-	'Reset AllarmeAssemblatrice_Word00
-	'Reset Ass_BackFineRotazione
-	'Reset Ass_DatiLettiDiR2
-	'Reset Ass_InMissione
-	'Reset Ass_StartRotazione
-	'Reset Ass_StrobeDatiDiR2
-
-	[Assemblatrice_In:START_ROTAZIONE] = False
-	[Assemblatrice_In:STROBE_DATI_R2] = False
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="200" y="85" width="90" height="25" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">0° - A</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo05_SpvAss0_">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="200" y="115" width="90" height="25" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">180° - B</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo06_SpvAss180_">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="205" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="190" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">LARGHEZZA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="205" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:LARGHEZZA_FINESTRA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="190" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">LARGHEZZA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="235" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ALTEZZA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="250" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:ALTEZZA_FINESTRA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="280" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COMMESSA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="295" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:NOME_COMMESSA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="235" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ALTEZZA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="250" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:ALTEZZA_FINESTRA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="280" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COMMESSA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="295" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:NOME_COMMESSA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="325" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">SERIE:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="340" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:R2_COLLA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="325" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">SERIE:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="340" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:R2_COLLA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="370" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COLLA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="305" y="370" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COLLA:</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="305" y="385" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:R2_COLLA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="220" y="30" width="105" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnR2FuoriIng</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R2 fuori ing.</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Stato:R2_FuoriIngombro_Ass">1</BG>
-<BGList>
-<dci>
-<DynColor Color="33023"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="330" y="30" width="105" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnR3FuoriIng</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R3 fuori ing.</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Stato:R3_FuoriIngombro_Ass">1</BG>
-<BGList>
-<dci>
-<DynColor Color="33023"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="220" y="55" width="105" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnFinProntaR2</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">F. pronta R2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Stato:FinestraProntaR2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="33023" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG Var="Assemblatrice_Stato:FinestraProntaR2">0</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="330" y="55" width="105" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnFinToltaR3</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">F. tolta R3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Assemblatrice_Stato:FinestraToltaR3">1</BG>
-<BGList>
-<dci>
-<DynColor Color="33023"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG Var="Assemblatrice_Stato:FinestraProntaR2">0</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="385" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:R2_COLLA"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="95" width="185" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">STATO CICLO R3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="5" y="110" width="185" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="StatoCicloR3"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
 <g x="20" y="510" width="490" height="65" ox="20" oy="510" owidth="490" oheight="65"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
@@ -4765,7 +3315,7 @@ End Sub
 <type x="340" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -4815,17 +3365,26 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="169" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	'Reset cassetto
-	'azzero valori e richiedo cassetto 0
-	[MAG2_ES2_RIK:BUSY] = False
-	[MAG2_ES2_RIK:DEPO] = False
-	[MAG2_ES2_RIK:ID_QUARTINA] = ""
-	[MAG2_ES2_RIK:NOME_PEZZO_UNICO] = ""
-	[MAG2_ES2_RIK:POSIZIONE] = 0
+<ScriptCode StartSel="263" SelLength="296" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+		Dim ret As VbMsgBoxResult
+	Dim msg As String
 
-	[MAG2_ES2_RIK:ID_CASSETTO] = 0
-	[MAG2_ES2_RIK:STROBE] = True
+	msg = "Richiesto inserimento  cassetto presente in Estrattore 2 MAG 2. " &amp; vbCrLf &amp; "Sei sicuro?"
+
+	ret = MsgBox(msg, vbYesNo, "Inserimento cassetto nel magazzino.")
+	If ret = vbYes Then
+		'Reset cassetto
+		'azzero valori e richiedo cassetto 0
+		[MAG2_ES2_RIK:BUSY] = False
+		[MAG2_ES2_RIK:DEPO] = False
+		[MAG2_ES2_RIK:ID_QUARTINA] = ""
+		[MAG2_ES2_RIK:NOME_PEZZO_UNICO] = ""
+		[MAG2_ES2_RIK:POSIZIONE] = 0
+
+		[MAG2_ES2_RIK:ID_CASSETTO] = 0
+		[MAG2_ES2_RIK:STROBE] = True
+	End If
+
 End Sub
 </ScriptCode>
 </child>
@@ -5001,7 +3560,7 @@ End Sub
 <type x="340" y="5" width="70" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -5051,17 +3610,1744 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="208" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	'Reset cassetto
-	'azzero valori e richiedo cassetto 0
-	[MAG1_ES2_RIK:BUSY] = False
-	[MAG1_ES2_RIK:DEPO] = False
-	[MAG1_ES2_RIK:ID_QUARTINA] = ""
-	[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = ""
-	[MAG1_ES2_RIK:POSIZIONE] = 0
+<ScriptCode StartSel="97" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	Dim ret As VbMsgBoxResult
+	Dim msg As String
 
-	[MAG1_ES2_RIK:ID_CASSETTO] = 0
-	[MAG1_ES2_RIK:STROBE] = True
+	msg = "Richiesto inserimento  cassetto presente in Estrattore 2 MAG 1. " &amp; vbCrLf &amp; "Sei sicuro?"
+
+	ret = MsgBox(msg, vbYesNo, "Inserimento cassetto nel magazzino.")
+	If ret = vbYes Then
+		'Reset cassetto
+		'azzero valori e richiedo cassetto 0
+		[MAG1_ES2_RIK:BUSY] = False
+		[MAG1_ES2_RIK:DEPO] = False
+		[MAG1_ES2_RIK:ID_QUARTINA] = ""
+		[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = ""
+		[MAG1_ES2_RIK:POSIZIONE] = 0
+
+		[MAG1_ES2_RIK:ID_CASSETTO] = 0
+		[MAG1_ES2_RIK:STROBE] = True
+	End If
+
+End Sub
+</ScriptCode>
+</child>
+</childs>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="515" y="95" width="495" height="480" ox="567" oy="105" owidth="545" oheight="528"/>
+<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="545" y="528" width="-545" height="-528" fill="rgb(64,64,64)" stroke="none">rect</type>
+<ExtFill grad="5" gcolor="rgb(128,128,128)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo1</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="181" y="5" width="55" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnOn</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">On</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Stato:Ass_ON">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="Assemblatrice_Stato:Ass_ON">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="181" y="33" width="55" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Out:AUTO">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="181" y="60" width="55" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnHold</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Out:ASSI_IN_MOVIMENTO">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="242" y="5" width="116" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnStartRotaz</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Start Rotaz.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_In:START_ROTAZIONE">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="363" y="5" width="116" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">brnendRot</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">End Rotaz.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Out:FINE_ROTAZIONE">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="33023" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="484" y="5" width="55" height="77" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante16</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alm</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Stato:NonCumunica">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="255" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="5" width="171" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo16</Name>
+<text font-family="Tahoma" font-size="13" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Assemblatrice:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="99" width="204" height="22" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Spessore Supporti</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="121" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style promptpad="1" fmtscale="decimi mm"/>
+<border>4</border>
+<execution var="Q2_PEZZO_DISP:NOME_PEZZO_UNICO" max="1000"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display151</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="330" y="358" width="-116" height="-182" fill="none" stroke="none">rect</type>
+<ExtFill ImageID="AsemblatriceVistaAlto.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo148</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="159" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ID TELAIO LATO R2:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="176" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR2:ID_QUARTINA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="159" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ID TELAIO LATO R3:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="176" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR3:ID_QUARTINA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="220" y="412" width="99" height="28" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zero OK</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Out:AZZERATA">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="220" y="379" width="99" height="28" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnZeroInCOrso</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zero In Corso</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Out:STA_AZZERANDO">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="33023" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="11" y="467" width="176" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">rstAlmZonaR3</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Allarmi ZonaR3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="alm_Presenti_ZonaR3">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="255" Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="21" SelLength="25" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	alm_ResetAlmZonaR3 = True
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="203" y="462" width="154" height="33" fill="rgb(255,165,0)" stroke="rgb(0,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Border>3</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType variable=&quot;Ass_Reset&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n2="&lt;CommandType variable=&quot;AllarmeAssemblatrice_Word00&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n3="&lt;CommandType variable=&quot;Ass_StrobeDatiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n4="&lt;CommandType variable=&quot;Ass_DatiLettiDiR2&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n5="&lt;CommandType variable=&quot;Ass_StartRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n6="&lt;CommandType variable=&quot;Ass_InMissione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n7="&lt;CommandType variable=&quot;Ass_BackFineRotazione&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name acr="4294901760">Pulsante180</Name>
+<text font-family="Arial" font-size="15" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">RESET ALL</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="203" y="495" width="154" height="33" fill="rgb(255,165,0)" stroke="rgb(0,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Border>3</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType variable=&quot;Ass_AttendiStartDopoStop&quot; SecondVariable=&quot;&quot; action=&quot;1&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name acr="4294901760" EnableVariable="Ass_AttendiStartDopoStop">Pulsante181</Name>
+<text font-family="Arial" font-size="15" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">RI-START</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="363" y="467" width="176" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="loc_btnResetAssemblatrice_Sfondo" MechanicStyle="2" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0" Impulsive="1" ImpulsiveTime="500">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnResetAssemblatrice</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Assemblatrice</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_btnResetAssemblatrice_Sfondo">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Value="12"/>
+</dci>
+<dci>
+<DynColor Value="13"/>
+</dci>
+<dci>
+<DynColor Value="14"/>
+</dci>
+<dci>
+<DynColor Value="15"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="398" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	'riepilogo azioni da vecchia supervisione
+	'Set Ass_Reset = 1
+	'Set Ass_AttendiStartDopoStop = 1
+
+	'Reset AllarmeAssemblatrice_Word00
+	'Reset Ass_BackFineRotazione
+	'Reset Ass_DatiLettiDiR2
+	'Reset Ass_InMissione
+	'Reset Ass_StartRotazione
+	'Reset Ass_StrobeDatiDiR2
+
+	[Assemblatrice_In:START_ROTAZIONE] = False
+	[Assemblatrice_In:STROBE_DATI_R2] = False
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="220" y="93" width="99" height="28" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">0° - A</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo05_SpvAss0_">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="220" y="126" width="99" height="28" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAuto</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">180° - B</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo06_SpvAss180_">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="225" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="209" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">LARGHEZZA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="225" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR3:LARGHEZZA_FINESTRA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="209" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">LARGHEZZA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="258" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ALTEZZA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="275" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR2:ALTEZZA_FINESTRA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="308" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COMMESSA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="324" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR2:NOME_COMMESSA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="258" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ALTEZZA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="275" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR3:ALTEZZA_FINESTRA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="308" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COMMESSA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="324" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR3:NOME_COMMESSA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="357" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">SERIE:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="374" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR2:R2_COLLA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="357" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">SERIE:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="374" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR3:R2_COLLA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="407" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COLLA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="407" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COLLA:</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="423" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR3:R2_COLLA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="242" y="33" width="116" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnR2FuoriIng</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R2 fuori ing.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Stato:R2_FuoriIngombro_Ass">1</BG>
+<BGList>
+<dci>
+<DynColor Color="33023"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="363" y="33" width="116" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnR3FuoriIng</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">R3 fuori ing.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Stato:R3_FuoriIngombro_Ass">1</BG>
+<BGList>
+<dci>
+<DynColor Color="33023"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="242" y="60" width="116" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnFinProntaR2</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">F. pronta R2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Stato:FinestraProntaR2">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="33023" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="Assemblatrice_Stato:FinestraProntaR2">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Nessuna Fin. Lato R2"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="Fin. Pronta Lato R2"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="363" y="60" width="116" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnFinToltaR3</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">F. tolta R3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Assemblatrice_Stato:FinestraToltaR3">1</BG>
+<BGList>
+<dci>
+<DynColor Color="33023"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="Assemblatrice_Stato:FinestraToltaR3">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Fin. Lato R3"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="No Fin. Lato R3"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="423" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_TelaioLatoR2:R2_COLLA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="104" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">STATO CICLO R3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="5" y="121" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloR3"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="5" y="33" width="171" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRstFinR2</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Elimina Fin. Lato R2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="0" SelLength="2549" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+Public Sub Click()
+	Dim ret As VbMsgBoxResult
+	Dim msg As String
+
+	If [R2_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R2 in missione")
+		Exit Sub
+	End If
+
+	msg = "Richiesto rimozione finestra su Assemblatrice Lato R2. " &amp; vbCrLf &amp; "Sei sicuro?"
+	ret = MsgBox(msg, vbYesNo, "Rimozione Finestra.")
+
+	If ret = vbYes Then
+		[Assemblatrice_Stato:FinestraProntaR2] = False
+		'Reset dati membri telaio
+		ResetDatiMembriStruttura("Assemblatrice_TelaioLatoR2")
+	End If
+End Sub
+
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
+
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	Set objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	Wend
+
+	Set MemberVar 	= Nothing
+	Set objVar 		= Nothing
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="5" y="60" width="171" height="22" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRstFinR2</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Elimina Fin. Lato R3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="85" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+Public Sub Click()
+	Dim ret As VbMsgBoxResult
+	Dim msg As String
+
+	If [R2_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R2 in missione")
+		Exit Sub
+	End If
+
+	msg = "Richiesto rimozione finestra su Assemblatrice Lato R3. " &amp; vbCrLf &amp; "Sei sicuro?"
+	ret = MsgBox(msg, vbYesNo, "Rimozione Finestra.")
+
+	If ret = vbYes Then
+		[Assemblatrice_Stato:FinestraToltaR3] = True
+		'Reset dati membri telaio
+		ResetDatiMembriStruttura("Assemblatrice_TelaioLatoR3")
+	End If
+End Sub
+
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
+
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	Set objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	Wend
+
+	Set MemberVar 	= Nothing
+	Set objVar 		= Nothing
 End Sub
 </ScriptCode>
 </child>

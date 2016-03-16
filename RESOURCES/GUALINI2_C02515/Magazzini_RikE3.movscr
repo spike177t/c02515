@@ -294,7 +294,6 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2699,7 +2698,7 @@ End Function
 <type x="285" y="160" width="105" height="45" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
@@ -3372,8 +3371,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -3381,7 +3380,7 @@ End Function
 <type x="285" y="465" width="105" height="45" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown/>
