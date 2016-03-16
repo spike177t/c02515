@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="61611" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="37386" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -36,10 +36,10 @@ Public Structure stEstrattore
 End Structure
 
 Const TOUT_RICHIEDIBILE 	As Integer 	= 2 'in secondi
-Const TOUT_STEP				As Integer	= 120 'in secondi
+Const TOUT_STEP				As Integer	= 5 'in secondi
 Const UPDATE_ESTRATTORI		As Integer = 16500
 
-Dim MysSqlConnectionString As String
+Dim MySqlConnectionString As String
 Dim richiedibileLastCheck As Double
 Dim enableLogMsg As Boolean = True
 
@@ -70,10 +70,10 @@ Sub Main()
 	Const timerAggiornaCassettiTOUT As Double = 2 'secondi
 
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
-	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
+	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	Else
-	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	    MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
 	      "UID=root;" &amp; _
@@ -99,12 +99,12 @@ Sub Main()
     [MAG2_ES2_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
 
 	'aggiorno cassetti pieni e disponibili
-    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-	AggiornaCassettiPieni(MysSqlConnectionString, 2)
-    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-	AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-	AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-	AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+    AggiornaCassettiPieni(MySqlConnectionString, 1)
+	AggiornaCassettiPieni(MySqlConnectionString, 2)
+    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+	AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+	AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+	AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
 
 
@@ -117,9 +117,6 @@ Sub Main()
 	If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
 		Debug.Print "GestioneZonaR2.movbas -&gt; DEBUG Main() -&gt; SuperatoTimeout -&gt; Timer() = " &amp; CStr(Timer()) &amp; "; Now()= " &amp; CStr(Now())
 	End If
-
-	'LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Integer)
-	'LeggiDatiPezzo(MysSqlConnectionString, 2, 29)
 
 
 	'inizializzo il timer per la chiamata alle funzioni di aggiornamento cassetti Pieni, Disponibili etc
@@ -139,17 +136,17 @@ Sub Main()
 			timerAggiornaCassettiOld = Timer()
 
 			'aggiorno cassetti pieni e disponibili
-		    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-			AggiornaCassettiPieni(MysSqlConnectionString, 2)
-		    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-			AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-			AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-			AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+		    AggiornaCassettiPieni(MySqlConnectionString, 1)
+			AggiornaCassettiPieni(MySqlConnectionString, 2)
+		    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+			AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+			AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+			AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 		End If
 
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
-		AggiornaPosizioniEstrattori_ZONA_R2_ES2(MysSqlConnectionString)
+		AggiornaPosizioniEstrattori_ZONA_R2_ES2(MySqlConnectionString)
 		ProcessaCodaEstrattori_ZONA_R2()
 
 		If Not alm_Presenti_ZonaR2 Then
@@ -233,7 +230,7 @@ Sub Main()
 					'If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
 						'controllo solo ogni tanto
 						'richiedibileLastCheck = Timer()
-						POSIZIONE = RilevaCassettoPiuVicino(MysSqlConnectionString _
+						POSIZIONE = RilevaCassettoPiuVicino(MySqlConnectionString _
 															, rikDaMagazzino _
 															, [loc_ImpostazioniImpianto:ScaricoCommessaPref] _
 															, [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] _
@@ -248,7 +245,7 @@ Sub Main()
 					'leggo i dati dei pezzi dal DB e aggiungo alla coda dell'estrattore il cassetto
 					If POSIZIONE.cass &gt; 0 And POSIZIONE.mag &gt; 0 Then
 						'leggo i dati dei pezzi
-						If LeggiDatiPezzo(MysSqlConnectionString, POSIZIONE.mag, POSIZIONE.cass) = 0 Then
+						If LeggiDatiPezzo_OK(MySqlConnectionString, POSIZIONE.mag, POSIZIONE.cass) = 0 Then
 							'avanzo di step per leggere richiedere il cassetto
 							StatoCicloScarico = 2200	'RikCassettoInEstrattorePlc
 						Else
@@ -419,7 +416,7 @@ Sub Main()
 				Case 6100	'FineRobot
 					LogMsg "StatoCicloScarico = 6100	'FineRobot"
 					'elimino quartina dal DB
-					ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
+					ret = FineRobot(MySqlConnectionString, [R2_STATUS:ID_QUARTINA])
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
 						alm_FineRobotR2 = True
@@ -512,12 +509,12 @@ Sub Main()
 
 
 						'aggiorno cassetti pieni e disponibili
-					    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-						AggiornaCassettiPieni(MysSqlConnectionString, 2)
-					    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-						AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-						AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-						AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+					    AggiornaCassettiPieni(MySqlConnectionString, 1)
+						AggiornaCassettiPieni(MySqlConnectionString, 2)
+					    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+						AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+						AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+						AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
 						[R2_STATUS:FINE_MISSIONE_ACK] = True 'invio ack al robot
 						StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false
@@ -560,7 +557,7 @@ Sub Main()
 						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Conferma rimozione pezzi da ASSEMBLATRICE e ESTRATTORE "&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
 
 						'elimino quartina dal DB
-						ret = FineRobot(MysSqlConnectionString, [R2_STATUS:ID_QUARTINA])
+						ret = FineRobot(MySqlConnectionString, [R2_STATUS:ID_QUARTINA])
 						If ret &lt;&gt; 0 Then
 							'Alzo allarme
 							alm_FineRobotR2 = True
@@ -614,12 +611,12 @@ Sub Main()
 							[R2_STATUS:ID_QUARTINA] = ""
 
 							'aggiorno cassetti pieni e disponibili
-						    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-							AggiornaCassettiPieni(MysSqlConnectionString, 2)
-						    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-							AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-							AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-							AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+						    AggiornaCassettiPieni(MySqlConnectionString, 1)
+							AggiornaCassettiPieni(MySqlConnectionString, 2)
+						    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+							AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+							AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+							AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
 							[R2_STATUS:ERR_MISSIONE_ACK] = True 'invio ack al robot
 							stepTout = Timer()
@@ -665,8 +662,44 @@ Sub Main()
 
 End Sub
 
-Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Integer) As Integer
-	LeggiDatiPezzo = 0
+Function LeggiDatiPezzo_TEST(connectionString As String, mag As Integer, cass As Integer) As Integer
+	Dim ret As Integer
+	Dim count As Integer
+	Dim prefixStruct As String
+
+	Dim struct As String
+
+	LeggiDatiPezzo_TEST = 0	'inizializzo
+
+	If mag = 1 Then
+		prefixStruct = "SCAR_M1_PZ"
+
+	ElseIf mag = 2 Then
+		prefixStruct = "SCAR_M2_PZ"
+
+	Else
+		LogMsg("GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+		Throw New System.Exception("GestioneZonaR2.movbas -&gt; LeggiDatiPezzo() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+	End If
+
+	'reset dei dati membri
+	For count = 1 To 4 Step 1
+		struct = prefixStruct &amp; CStr(count)
+		ResetDatiMembriStruttura(struct)
+	Next
+	For count = 1 To 4 Step 1
+		struct = prefixStruct &amp; CStr(count)
+		ret = AggiornaDatiPezziInScarico(connectionString, struct, mag, cass , count)
+		If ret &lt;&gt; 0 Then
+			'torno errore
+			LeggiDatiPezzo_TEST = -1
+		End If
+	Next
+
+End Function
+
+Function LeggiDatiPezzo_OK(connectionString As String, mag As Integer, cass As Integer) As Integer
+	LeggiDatiPezzo_OK = 0
 
 	''#################
 	Dim prefix_varname_pezzo As String
@@ -698,7 +731,8 @@ Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Inte
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            commandText = "SELECT * FROM gualini.tutti_pezzi_profili_banchisquadrette " _
+            'commandText = "SELECT * FROM gualini.tutti_pezzi_profili_banchisquadrette " _
+            commandText = "SELECT * FROM gualini.tutti_pezzi_count_profili " _
 			&amp; " where " _
             &amp; " ID_CASSETTO = " &amp; CStr(cass) _
             &amp; " And magazzino_ID_MAGAZZINO = " &amp; CStr(mag) _
@@ -758,17 +792,27 @@ Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Inte
 						SetVariableValue(varname &amp; ":DATA"						, CStr(	MyDataReader("DATA")))
 						SetVariableValue(varname &amp; ":ORA"						, CStr(	MyDataReader("ORA")))
 
+						'''
+						'idati seguenti sono il risultato di una join per cui devo verificare che non siano NULL
 
-						SetVariableValue(varname &amp; ":R2_BANCO_SQ1"				, IIf( IsDBNull(MyDataReader("BANCO_SQ1"))	, 0,  CUShort(MyDataReader("BANCO_SQ1")))	)'CInt( MyDataReader("BANCO_SQ1")))
-						SetVariableValue(varname &amp; ":R2_BANCO_SQ2"				, IIf( IsDBNull(MyDataReader("BANCO_SQ2"))	, 0,  CUShort(MyDataReader("BANCO_SQ2")))	)'CInt( MyDataReader("BANCO_SQ2")))
-						SetVariableValue(varname &amp; ":R2_FILA_SQ1"				, IIf( IsDBNull(MyDataReader("FILA_SQ1" ))	, 0,  CByte(MyDataReader("FILA_SQ1")))		)'CInt( MyDataReader("FILA_SQ1")))
-						SetVariableValue(varname &amp; ":R2_FILA_SQ2"				, IIf( IsDBNull(MyDataReader("FILA_SQ2" ))	, 0,  CByte(MyDataReader("FILA_SQ2")))		)'CInt(	MyDataReader("FILA_SQ2")))
-						SetVariableValue(varname &amp; ":R2_CODICE_PRG"				, IIf( IsDBNull(MyDataReader("CodiceRobot")), 0,  CUShort(MyDataReader("CodiceRobot")))	)'CInt( MyDataReader("CodiceRobot")))
-						SetVariableValue(varname &amp; ":R2_COLLA"					, IIf( IsDBNull(MyDataReader("Colla"))      , 0,  CUShort(MyDataReader("Colla")))		)'CInt(	MyDataReader("Colla")))
-						SetVariableValue(varname &amp; ":R2_APERTURA"				, IIf( IsDBNull(MyDataReader("Apertura"))	, 0,  CUShort(MyDataReader("Apertura")))		)'CInt(	MyDataReader("Apertura")))
-						SetVariableValue(varname &amp; ":R2_ATTREZZATURA"			, IIf( IsDBNull(MyDataReader("Attrezzatura")),0,  CUShort(MyDataReader("Attrezzatura"))))'CInt(	MyDataReader("Attrezzatura")))
-						SetVariableValue(varname &amp; ":R2_OFFSET_PEZZO"			, IIf( IsDBNull(MyDataReader("OffsetPezzo")), 0,  CUShort(MyDataReader("OffsetPezzo")))	)'CInt(	MyDataReader("OffsetPezzo")))
+						SetVariableValue(varname &amp; ":R2_TIPO_PROFILO"		, AvoidNull(MyDataReader("TIPO_PROFILO")	,  GetVariableObject(varname &amp; ":R2_TIPO_PROFILO").GetType())	)	'MyDataReader("TIPO_PROFILO")
+						SetVariableValue(varname &amp; ":R2_TELAIO"				, AvoidNull(MyDataReader("TELAIO")			,  GetVariableObject(varname &amp; ":R2_TELAIO").GetType())	)			'MyDataReader("TELAIO"))
+						SetVariableValue(varname &amp; ":R2_COUNT_Z"			, AvoidNull(MyDataReader("COUNT_Z")			,  GetVariableObject(varname &amp; ":R2_COUNT_Z").GetType())	)			'MyDataReader("COUNT_Z"))
 
+						SetVariableValue(varname &amp; ":R2_BANCO_SQ1"			, AvoidNull(MyDataReader("BANCO_SQ1")		,  GetVariableObject(varname &amp; ":R2_BANCO_SQ1").GetType())	) 		'MyDataReader("BANCO_SQ1"))
+						SetVariableValue(varname &amp; ":R2_FILA_SQ1"			, AvoidNull(MyDataReader("FILA_SQ1")		,  GetVariableObject(varname &amp; ":R2_FILA_SQ1").GetType())	)		'MyDataReader("FILA_SQ1"))
+						SetVariableValue(varname &amp; ":R2_BANCO_SQ2"			, AvoidNull(MyDataReader("BANCO_SQ2")		,  GetVariableObject(varname &amp; ":R2_BANCO_SQ2").GetType())	) 		'MyDataReader("BANCO_SQ2"))
+						SetVariableValue(varname &amp; ":R2_FILA_SQ2"			, AvoidNull(MyDataReader("FILA_SQ2")		,  GetVariableObject(varname &amp; ":R2_FILA_SQ2").GetType())	)		'MyDataReader("FILA_SQ2"))
+
+						SetVariableValue(varname &amp; ":R2_COLLA"				, AvoidNull(MyDataReader("Colla")			,  GetVariableObject(varname &amp; ":R2_COLLA").GetType())	)			'MyDataReader("Colla"))
+						SetVariableValue(varname &amp; ":R2_ATTREZZATURA"		, AvoidNull(MyDataReader("Attrezzatura")	,  GetVariableObject(varname &amp; ":R2_ATTREZZATURA").GetType())	)	'MyDataReader("Attrezzatura"))
+						SetVariableValue(varname &amp; ":R2_APERTURA"			, AvoidNull(MyDataReader("Apertura")		,  GetVariableObject(varname &amp; ":R2_APERTURA").GetType())	)		'MyDataReader("Apertura"))
+						SetVariableValue(varname &amp; ":R2_OFFSET_PEZZO"		, AvoidNull(MyDataReader("OffsetPezzo")		,  GetVariableObject(varname &amp; ":R2_OFFSET_PEZZO").GetType())	)	'MyDataReader("OffsetPezzo"))
+						'SetVariableValue(varname &amp; ":R2_OFFSET_SQ1"		, AvoidNull(MyDataReader("OffsetSuadretta1"),  GetVariableObject(varname &amp; ":R2_OFFSET_SQ1").GetType())	)
+						'SetVariableValue(varname &amp; ":R2_OFFSET_SQ2"		, AvoidNull(MyDataReader("OffsetSuadretta2"),  GetVariableObject(varname &amp; ":R2_OFFSET_SQ2").GetType())	)
+						SetVariableValue(varname &amp; ":R2_CODICE_PRG"			, AvoidNull(MyDataReader("CodiceRobot")		,  GetVariableObject(varname &amp; ":R2_CODICE_PRG").GetType())	)		'MyDataReader("CodiceRobot"))
+
+						''
 						'TODO
 						'gestire R2_RUOTA_PEZZO
 
@@ -826,7 +870,7 @@ Function LeggiDatiPezzo(connectionString As String, mag As Integer, cass As Inte
 
 					Else
 						'non trovo nulla allora torno errore
-						LeggiDatiPezzo = -10
+						LeggiDatiPezzo_OK = -10
 					End If
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
@@ -1407,7 +1451,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 			"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
 			";"
 
-		ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+		ret = SqlExecuteNonQuery(MySqlConnectionString, query)
 		If ret &lt; 0 Then
 			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 		ElseIf ret = 0 Then
@@ -1426,7 +1470,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 				"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
 				";"
 
-			ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+			ret = SqlExecuteNonQuery(MySqlConnectionString, query)
 			If ret &lt; 0 Then
 				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 			ElseIf ret = 0 Then
@@ -1548,6 +1592,7 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 
 						'memo del cassetto assegnato per procedura CondizioneAssegnaMissioneRobot()
 						SetVariableValue(structname &amp; ":CASSETTO_ASSEGNATO"				, MyDataReader("ID_CASSETTO"))
+						SetVariableValue(structname &amp; ":MAGAZZINO_ASSEGNATO"			, CUShort(mag))
 						
 						SetVariableValue(structname &amp; ":ID_QUARTINA"					, MyDataReader("ID_QUARTINA"))
 						SetVariableValue(structname &amp; ":TOTALE_PEZZI_QUARTINA"			, CByte(MyDataReader("TOTALE_PEZZI_QUARTINA")))
@@ -1575,21 +1620,24 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 
 						'idati seguenti sono il risultato di una join per cui devo verificare che non siano NULL
 
-						SetVariableValue(structname &amp; ":R2_TIPO_PROFILO"				, IIf(IsDBNull(MyDataReader("TIPO_PROFILO"))		, "NULL", MyDataReader("TIPO_PROFILO")))	'MyDataReader("TIPO_PROFILO")
-						SetVariableValue(structname &amp; ":R2_TELAIO"						, IIf(IsDBNull(MyDataReader("TELAIO"))				, "NULL", MyDataReader("TELAIO"))) 				'MyDataReader("TELAIO"))
-						SetVariableValue(structname &amp; ":R2_COUNT_Z"						, IIf(IsDBNull(MyDataReader("TELAIO"))				, 0, CUShort(MyDataReader("COUNT_Z")))) 					'MyDataReader("COUNT_Z"))
+						SetVariableValue(structname &amp; ":R2_TIPO_PROFILO"		, AvoidNull(MyDataReader("TIPO_PROFILO")	,  GetVariableObject(structname &amp; ":R2_TIPO_PROFILO").GetType())	)	'MyDataReader("TIPO_PROFILO")
+						SetVariableValue(structname &amp; ":R2_TELAIO"				, AvoidNull(MyDataReader("TELAIO")			,  GetVariableObject(structname &amp; ":R2_TELAIO").GetType())	)			'MyDataReader("TELAIO"))
+						SetVariableValue(structname &amp; ":R2_COUNT_Z"				, AvoidNull(MyDataReader("COUNT_Z")			,  GetVariableObject(structname &amp; ":R2_COUNT_Z").GetType())	)			'MyDataReader("COUNT_Z"))
 
-						SetVariableValue(structname &amp; ":R2_BANCO_SQ1"					, IIf(IsDBNull(MyDataReader("BANCO_SQ1"))			, 0, CUShort(MyDataReader("BANCO_SQ1")))) 				'MyDataReader("BANCO_SQ1"))
-						SetVariableValue(structname &amp; ":R2_FILA_SQ1"					, IIf(IsDBNull(MyDataReader("FILA_SQ1"))			, 0, CByte(MyDataReader("FILA_SQ1")))) 				'MyDataReader("FILA_SQ1"))
-						SetVariableValue(structname &amp; ":R2_BANCO_SQ2"					, IIf(IsDBNull(MyDataReader("BANCO_SQ2"))			, 0, CUShort(MyDataReader("BANCO_SQ2")))) 				'MyDataReader("BANCO_SQ2"))
-						SetVariableValue(structname &amp; ":R2_FILA_SQ2"					, IIf(IsDBNull(MyDataReader("FILA_SQ2"))			, 0, CByte(MyDataReader("FILA_SQ2")))) 				'MyDataReader("FILA_SQ2"))
-						SetVariableValue(structname &amp; ":R2_COLLA"						, IIf(IsDBNull(MyDataReader("Colla"))				, 0, CUShort(MyDataReader("Colla")))) 						'MyDataReader("Colla"))
-						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"				, IIf(IsDBNull(MyDataReader("Attrezzatura"))		, 0, CUShort(MyDataReader("Attrezzatura")))) 		'MyDataReader("Attrezzatura"))
-						SetVariableValue(structname &amp; ":R2_APERTURA"					, IIf(IsDBNull(MyDataReader("Apertura"))			, 0, CUShort(MyDataReader("Apertura")))) 				'MyDataReader("Apertura"))
-						SetVariableValue(structname &amp; ":R2_OFFSET_PEZZO"				, IIf(IsDBNull(MyDataReader("OffsetPezzo"))			, 0, CUShort(MyDataReader("OffsetPezzo")))) 			'MyDataReader("OffsetPezzo"))
-						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ1"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta1"))	, 0, MyDataReader("OffsetSuadretta1"))) 'MyDataReader("OffsetSuadretta1"))
-						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ2"					, IIf(IsDBNull(MyDataReader("OffsetSuadretta2"))	, 0, MyDataReader("OffsetSuadretta2"))) 'MyDataReader("OffsetSuadretta2"))
-						SetVariableValue(structname &amp; ":R2_CODICE_PRG"					, IIf(IsDBNull(MyDataReader("CodiceRobot"))			, 0, CUShort(MyDataReader("CodiceRobot")))) 			'MyDataReader("CodiceRobot"))
+						SetVariableValue(structname &amp; ":R2_BANCO_SQ1"			, AvoidNull(MyDataReader("BANCO_SQ1")		,  GetVariableObject(structname &amp; ":R2_BANCO_SQ1").GetType())	) 		'MyDataReader("BANCO_SQ1"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ1"			, AvoidNull(MyDataReader("FILA_SQ1")		,  GetVariableObject(structname &amp; ":R2_FILA_SQ1").GetType())	)		'MyDataReader("FILA_SQ1"))
+						SetVariableValue(structname &amp; ":R2_BANCO_SQ2"			, AvoidNull(MyDataReader("BANCO_SQ2")		,  GetVariableObject(structname &amp; ":R2_BANCO_SQ2").GetType())	) 		'MyDataReader("BANCO_SQ2"))
+						SetVariableValue(structname &amp; ":R2_FILA_SQ2"			, AvoidNull(MyDataReader("FILA_SQ2")		,  GetVariableObject(structname &amp; ":R2_FILA_SQ2").GetType())	)		'MyDataReader("FILA_SQ2"))
+
+
+						SetVariableValue(structname &amp; ":R2_COLLA"				, AvoidNull(MyDataReader("Colla")			,  GetVariableObject(structname &amp; ":R2_COLLA").GetType())	)			'MyDataReader("Colla"))
+						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"		, AvoidNull(MyDataReader("Attrezzatura")	,  GetVariableObject(structname &amp; ":R2_ATTREZZATURA").GetType())	)	'MyDataReader("Attrezzatura"))
+						SetVariableValue(structname &amp; ":R2_APERTURA"			, AvoidNull(MyDataReader("Apertura")		,  GetVariableObject(structname &amp; ":R2_APERTURA").GetType())	)		'MyDataReader("Apertura"))
+						SetVariableValue(structname &amp; ":R2_OFFSET_PEZZO"		, AvoidNull(MyDataReader("OffsetPezzo")		,  GetVariableObject(structname &amp; ":R2_OFFSET_PEZZO").GetType())	)	'MyDataReader("OffsetPezzo"))
+						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ1"			, AvoidNull(MyDataReader("OffsetSuadretta1"),  GetVariableObject(structname &amp; ":R2_OFFSET_SQ1").GetType())	)
+						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ2"			, AvoidNull(MyDataReader("OffsetSuadretta2"),  GetVariableObject(structname &amp; ":R2_OFFSET_SQ2").GetType())	)
+						SetVariableValue(structname &amp; ":R2_CODICE_PRG"			, AvoidNull(MyDataReader("CodiceRobot")		,  GetVariableObject(structname &amp; ":R2_CODICE_PRG").GetType())	)		'MyDataReader("CodiceRobot"))
+
 
 						'SetVariableValue(structname &amp; ":xx"				, MyDataReader("xx"))
 
@@ -2102,7 +2150,7 @@ Function MovimentatoPiuVecchio() As Integer
 		dt2 = dt2 + nMS2
 
 		differenza = dt1 - dt2
-		DebugMsg "MovimentatoPiuVecchio() -&gt; differenza = dt1-dt2 = " &amp; CStr(dt1 -dt2)
+		'DebugMsg "MovimentatoPiuVecchio() -&gt; differenza = dt1-dt2 = " &amp; CStr(dt1 -dt2)
 
 		If differenza &gt; 0 Then
 			'pezzo da MAG1 più recente
@@ -2184,6 +2232,27 @@ Sub ResetDatiMembriStruttura(varname As String)
 	MemberVar 	= Nothing
 	objVar 		= Nothing
 End Sub
+
+Function AvoidNull(FieldVal As Object, retType As movicon.eVariableType) As Object
+	Dim tipo_field As System.Type
+	tipo_field = FieldVal.GetType()
+
+	If  IsDBNull(FieldVal) Then
+		'assegno valori di default in caso di DBNull
+		Select Case retType
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				AvoidNull = False
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE
+				AvoidNull = 0
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				AvoidNull = "NULL"
+			Case Else
+				AvoidNull = 0
+		End Select
+	Else
+		AvoidNull = FieldVal
+	End If
+End Function
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>

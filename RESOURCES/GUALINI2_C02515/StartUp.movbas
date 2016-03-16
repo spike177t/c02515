@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1289" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="867" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -32,9 +32,9 @@ Sub Main
 
 	Chiave="Generali"
 	Variabile="MySqlConnectionString"
-	[loc_ImpostazioniImpianto:MysSqlConnectionString] = ReadIniValue(Path, Chiave, Variabile)
+	[loc_ImpostazioniImpianto:MySqlConnectionString] = ReadIniValue(Path, Chiave, Variabile)
 
-	'[loc_ImpostazioniImpianto:MysSqlConnectionString] = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	'[loc_ImpostazioniImpianto:MySqlConnectionString] = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
     '  "SERVER=localhost;" &amp; _
     '  "DATABASE=gualini;" &amp; _
     '  "UID=root;" &amp; _

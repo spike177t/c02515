@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="121914" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="43196" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -44,14 +44,14 @@ End Structure
 
 'TODO settare bene TOUT
 Const TOUT_DISPONIBILE 	As Integer 	= 2 'in secondi - TODO settare a 1
-Const TOUT_STEP			As Integer	= 2000 '2 'in secondi
+Const TOUT_STEP			As Integer	= 5 'in secondi
 
 'Dim codaMAG1_ES1 As System.Collections.Queue(Of stEstrattore) = New System.Collections.Queue(Of stEstrattore)()
 
 Dim codaMAG1_ES1 As New System.Collections.Queue()
 Dim codaMAG2_ES1 As New System.Collections.Queue()
 
-Dim MysSqlConnectionString As String
+Dim MySqlConnectionString As String
 Dim disponibileLastCheck As Double
 Dim filepathMemo As String 'memo fullName ultimo file letto da Quadra, usato in RimuoviFileDatiDaQuadra()
 
@@ -182,10 +182,10 @@ Sub Main()
 
 	'MysSqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
 	'Connector/MySQL ODBC 5.3 ANSI Driver connection string
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
-	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
+	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	Else
-	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	    MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
 	      "UID=root;" &amp; _
@@ -224,12 +224,12 @@ Sub Main()
 	End If
 
     'aggiorno cassetti pieni e disponibili
-    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-	AggiornaCassettiPieni(MysSqlConnectionString, 2)
-    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-	AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-	AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-	AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+    AggiornaCassettiPieni(MySqlConnectionString, 1)
+	AggiornaCassettiPieni(MySqlConnectionString, 2)
+    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+	AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+	AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+	AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
 '############STATE MACHINE############
 
@@ -253,9 +253,9 @@ Sub Main()
 		End If
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
-		AggiornaPosizioniEstrattoriES1(MysSqlConnectionString)
+		AggiornaPosizioniEstrattoriES1(MySqlConnectionString)
 		ProcessaCodaEstrattori_ZONA_R1()
-		AnomaliaDeposito(MysSqlConnectionString)
+		AnomaliaDeposito(MySqlConnectionString)
 
 		If Not alm_Presenti_ZonaR1 Then
 			Select Case StatoCicloCarico
@@ -414,7 +414,7 @@ Sub Main()
 					If (leggiDaQuadra &gt; 0) Then
 						'leggo le info del pezzo da file fornito dalla quadra
 						varname_pezzo = LeggiFileDaQuadra(leggiDaQuadra)
-						ret = VerificaCogruenzaDati(MysSqlConnectionString _
+						ret = VerificaCogruenzaDati(MySqlConnectionString _
 													, GetVariableValue(varname_pezzo &amp; ":SERIE_PROFILO") _
 													, GetVariableValue(varname_pezzo &amp; ":CODICE_PROFILO") _
 													, GetVariableValue(varname_pezzo &amp; ":COD_SQUADRETTA1") _
@@ -462,7 +462,7 @@ Sub Main()
 						'controllo se il pezzo è presente nel DB
 						Dim pzPresente As Boolean
 						pzPresente = False
-						ret = VerificaEsistePezzo(MysSqlConnectionString _
+						ret = VerificaEsistePezzo(MySqlConnectionString _
 													, GetVariableValue(varname_pezzo &amp; ":NOME_PEZZO_UNICO") _
 													, pzPresente)
 						If ret &lt;&gt; 0 Then
@@ -510,7 +510,7 @@ Sub Main()
 							StatoCicloCarico = 1000	'AttesaPezzi
 						Else
 							'verifico se la quartina esiste in magazzino
-							POSIZIONE = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MysSqlConnectionString)
+							POSIZIONE = VerificaSeQuartinaEsisteInMagazzino(leggiDaQuadra, quartina, MySqlConnectionString)
 
 							If POSIZIONE.mag &gt; 0 Then
 								'la quartina è stata assegnata allora aggiungo la richiesta cassetto alla coda missioni del PLC
@@ -521,7 +521,7 @@ Sub Main()
 
 								If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then
 									'QuadraSuMagazzinoCorrispondente
-									numCassetti = CassettiDisponibili(leggiDaQuadra, MysSqlConnectionString)
+									numCassetti = CassettiDisponibili(leggiDaQuadra, MySqlConnectionString)
 									If numCassetti &gt; 0 Then
 										StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
 									Else
@@ -529,7 +529,7 @@ Sub Main()
 									End If
 								Else
 									'QuadraSuTutto
-									numCassetti = CassettiDisponibili(0, MysSqlConnectionString)
+									numCassetti = CassettiDisponibili(0, MySqlConnectionString)
 									If numCassetti &gt; 0 Then
 										StatoCicloCarico = 2300	'AssegnaCassettoAllaQuartina
 									Else
@@ -640,7 +640,7 @@ Sub Main()
 
 					POSIZIONE = AssegnaCassettoAllaQuartina([loc_ImpostazioniImpianto:TipoCarico] _
 										, leggiDaQuadra _
-										, MysSqlConnectionString _
+										, MySqlConnectionString _
 										, GetVariableValue(varname_pezzo &amp; ":ID_QUARTINA") _
 										, GetVariableValue(varname_pezzo &amp; ":TOTALE_PEZZI_QUARTINA") _
 										, GetVariableValue(varname_pezzo &amp; ":NOME_COMMESSA") _
@@ -787,7 +787,7 @@ Sub Main()
 				Case 6100	'FineRobot
 					LogMsg "StatoCicloCarico = 6100	'FineRobot"
 					'inserisco dati quartina e pezzo nel DB
-					ret = FineRobot(MysSqlConnectionString)
+					ret = FineRobot(MySqlConnectionString)
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
 						alm_FineRobotR1 = True
@@ -828,7 +828,7 @@ Sub Main()
 						'se ultimo pezzo della quartina faccio rientrare l'estrattore
 						'TODO potrei contare quanti pezzo ho nella quartina
 						Dim countpezzi As Integer
-						ret = PezziNellaQuartina(MysSqlConnectionString, [R1_DATI_PEZZO:ID_QUARTINA], countpezzi)
+						ret = PezziNellaQuartina(MySqlConnectionString, [R1_DATI_PEZZO:ID_QUARTINA], countpezzi)
 						'SELECT count(*) FROM gualini.pezzo WHERE quartina_ID_QUARTINA = "010071050005.BATH058";
 						'If ret &lt;&gt; 0 Then
 
@@ -881,7 +881,7 @@ Sub Main()
 
 				Case 7100	'RilevaCassettoQuartinaSuccessiva
 					LogMsg "StatoCicloCarico = 7100	'RilevaCassettoQuartinaSuccessiva"
-					POSIZIONE = RilevaCassettoQuartinaSuccessiva(MysSqlConnectionString)
+					POSIZIONE = RilevaCassettoQuartinaSuccessiva(MySqlConnectionString)
 					If (POSIZIONE.mag &gt; 0 And POSIZIONE.cass &gt; 0) Then
 						[R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA] = POSIZIONE.mag
 						[R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA]  = POSIZIONE.cass
@@ -948,12 +948,12 @@ Sub Main()
 					ResetDatiMembriStruttura("R1_STATUS")
 
 					'aggiorno cassetti pieni e disponibili
-				    AggiornaCassettiPieni(MysSqlConnectionString, 1)
-					AggiornaCassettiPieni(MysSqlConnectionString, 2)
-				    AggiornaCassettiDisponibili(MysSqlConnectionString, 1)
-					AggiornaCassettiDisponibili(MysSqlConnectionString, 2)
-					AggiornaCassettiInRiempimento(MysSqlConnectionString, 1)
-					AggiornaCassettiInRiempimento(MysSqlConnectionString, 2)
+				    AggiornaCassettiPieni(MySqlConnectionString, 1)
+					AggiornaCassettiPieni(MySqlConnectionString, 2)
+				    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+					AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+					AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+					AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
 					StatoCicloCarico = 1000	'AttesaPezzi
 
@@ -1333,12 +1333,12 @@ Function FileDaLeggere() As Integer
 End Function
 
 Function PezziNellaQuartina(connectionString As String, qrt As String, ByRef count As Integer ) As Integer
-	
+
     Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
     Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
     Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
 	Const OK As Integer = 0
-	
+
 	PezziNellaQuartina = OK 	'inizializzzo
 
     Dim commandText As String
@@ -2122,7 +2122,7 @@ Function VerificaCogruenzaDati(connectionString As String, serieprofilo As Strin
 						MyDataReader.Close()
 					End If
 
-					
+
 				'End Using	'MyDataReader.Close
 			'End Using	'MyCommand.Dispose
         'End Using	'MyConnection.Close
@@ -2348,16 +2348,16 @@ Function AttendiCassettoDisponibile() As Integer
 	If [loc_ImpostazioniImpianto:TipoCarico] = 0 Then 'pezzo su magazzino corrispondente
 		If dispQ1 Then
 			'caso in cui il pezzo da Q1 va su Mag1
-			numCassettiDispPzSuQ1 = CassettiDisponibili(1, MysSqlConnectionString)
-			qrtEsisteQ1 = QuartinaEsiste([Q1_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			numCassettiDispPzSuQ1 = CassettiDisponibili(1, MySqlConnectionString)
+			qrtEsisteQ1 = QuartinaEsiste([Q1_PEZZO_DISP:ID_QUARTINA], MySqlConnectionString)
 			If numCassettiDispPzSuQ1 &gt; 0 Or qrtEsisteQ1 Then
 				assegnabileQ1 = True
 			End If
 		End If
 		If dispQ2 Then
 			'caso in cui il pezzo da Q2 va su Mag2
-			numCassettiDispPzSuQ2 = CassettiDisponibili(2, MysSqlConnectionString)
-			qrtEsisteQ2 = QuartinaEsiste([Q2_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			numCassettiDispPzSuQ2 = CassettiDisponibili(2, MySqlConnectionString)
+			qrtEsisteQ2 = QuartinaEsiste([Q2_PEZZO_DISP:ID_QUARTINA], MySqlConnectionString)
 			If numCassettiDispPzSuQ2 &gt; 0 Or qrtEsisteQ2 Then
 				assegnabileQ2 = True
 			End If
@@ -2365,15 +2365,15 @@ Function AttendiCassettoDisponibile() As Integer
 
 	ElseIf [loc_ImpostazioniImpianto:TipoCarico] = 1 Then 'pezzo su qualsiasi magazzino
 		'QuadraSuTutto
-		numCassettiDisp = CassettiDisponibili(0, MysSqlConnectionString)
+		numCassettiDisp = CassettiDisponibili(0, MySqlConnectionString)
 		If dispQ1 Then
-			qrtEsisteQ1 = QuartinaEsiste([Q1_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			qrtEsisteQ1 = QuartinaEsiste([Q1_PEZZO_DISP:ID_QUARTINA], MySqlConnectionString)
 			If numCassettiDisp &gt; 0 Or qrtEsisteQ1 Then
 				assegnabileQ1 = True
 			End If
 		End If
 		If dispQ2  Then
-			qrtEsisteQ2 = QuartinaEsiste([Q2_PEZZO_DISP:ID_QUARTINA], MysSqlConnectionString)
+			qrtEsisteQ2 = QuartinaEsiste([Q2_PEZZO_DISP:ID_QUARTINA], MySqlConnectionString)
 			If numCassettiDisp &gt; 0 Or qrtEsisteQ2 Then
 				assegnabileQ2= True
 			End If
@@ -2964,7 +2964,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 			"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
 			";"
 
-		ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+		ret = SqlExecuteNonQuery(MySqlConnectionString, query)
 		If ret &lt; 0 Then
 			LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 		ElseIf ret = 0 Then
@@ -2983,7 +2983,7 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 				"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
 				";"
 
-			ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+			ret = SqlExecuteNonQuery(MySqlConnectionString, query)
 			If ret &lt; 0 Then
 				LogMsg		"AggiornaPosizioneEstrattore() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 			ElseIf ret = 0 Then

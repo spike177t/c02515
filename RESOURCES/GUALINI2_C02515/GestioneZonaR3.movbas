@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="4550" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -21,7 +21,7 @@ Const TOUT_RICHIEDIBILE 	As Integer 	= 2 'in secondi
 Const TOUT_STEP				As Integer	= 120 'in secondi
 Const UPDATE_ESTRATTORI		As Integer = 16500
 
-Dim MysSqlConnectionString As String
+Dim MySqlConnectionString As String
 Dim richiedibileLastCheck As Double
 
 Dim StatoCicloR3_Old As Integer
@@ -40,10 +40,10 @@ Sub Main()
 	Dim strMsgBox As String
 
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
-	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
+	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	Else
-	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	    MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
 	      "UID=root;" &amp; _

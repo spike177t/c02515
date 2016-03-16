@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4795" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="570" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 Imports System
 Imports System.IO
@@ -23,8 +23,8 @@ Sub Main()
     [MAG1_ES3_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
     [MAG2_ES3_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
 
-    If [loc_ImpostazioniImpianto:MysSqlConnectionString] &lt;&gt; "" Then
-	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+    If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
+	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	Else
 	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
