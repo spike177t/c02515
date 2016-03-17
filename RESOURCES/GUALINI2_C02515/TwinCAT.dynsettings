@@ -1588,18 +1588,18 @@
 <Job>
 <Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 177</Name>
 <VariableList/>
-<TotalJobSize>2</TotalJobSize>
+<TotalJobSize>1</TotalJobSize>
 <TagList>
-<Tag variable="SCAR_M1_PZ1:R2_BANCO_SQ1" type="4" offset="0" size="2">SCAR_M1_PZ1:R2_BANCO_SQ1</Tag>
+<Tag variable="SCAR_M1_PZ1:R2_BANCO_SQ1" type="2" offset="0" size="1">SCAR_M1_PZ1:R2_BANCO_SQ1</Tag>
 </TagList>
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_BANCO_SQ1"/>
 </Job>
 <Job>
 <Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 178</Name>
 <VariableList/>
-<TotalJobSize>2</TotalJobSize>
+<TotalJobSize>1</TotalJobSize>
 <TagList>
-<Tag variable="SCAR_M1_PZ1:R2_BANCO_SQ2" type="4" offset="0" size="2">SCAR_M1_PZ1:R2_BANCO_SQ2</Tag>
+<Tag variable="SCAR_M1_PZ1:R2_BANCO_SQ2" type="2" offset="0" size="1">SCAR_M1_PZ1:R2_BANCO_SQ2</Tag>
 </TagList>
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M1_PZ1.R2_BANCO_SQ2"/>
 </Job>
@@ -1768,18 +1768,18 @@
 <Job>
 <Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 197</Name>
 <VariableList/>
-<TotalJobSize>2</TotalJobSize>
+<TotalJobSize>1</TotalJobSize>
 <TagList>
-<Tag variable="SCAR_M2_PZ1:R2_BANCO_SQ1" type="4" offset="0" size="2">SCAR_M2_PZ1:R2_BANCO_SQ1</Tag>
+<Tag variable="SCAR_M2_PZ1:R2_BANCO_SQ1" type="2" offset="0" size="1">SCAR_M2_PZ1:R2_BANCO_SQ1</Tag>
 </TagList>
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_BANCO_SQ1"/>
 </Job>
 <Job>
 <Name Type="1" Station="Plc" PollingTime="0" PollingTimeNotInUse="10000" ConditionalVariable="" SwapByte="false" SwapWord="false" IsDynamic="true" OutputAtStartup="false" VarAddressOffset="" ExpandGroup1="0">DynTask 198</Name>
 <VariableList/>
-<TotalJobSize>2</TotalJobSize>
+<TotalJobSize>1</TotalJobSize>
 <TagList>
-<Tag variable="SCAR_M2_PZ1:R2_BANCO_SQ2" type="4" offset="0" size="2">SCAR_M2_PZ1:R2_BANCO_SQ2</Tag>
+<Tag variable="SCAR_M2_PZ1:R2_BANCO_SQ2" type="2" offset="0" size="1">SCAR_M2_PZ1:R2_BANCO_SQ2</Tag>
 </TagList>
 <TwinCatJob DataLength="0" ExpandTwinCatGroup1="0" DeviceAddress=".SCAR_M2_PZ1.R2_BANCO_SQ2"/>
 </Job>
