@@ -3155,7 +3155,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;Disponibile&gt;&gt;">1</BG>
+<BG Var="R1_STATUS:DISPONIBILE">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3208,7 +3208,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;InMissione&gt;&gt;">1</BG>
+<BG Var="R1_STATUS:IN_MISSIONE">1</BG>
 <BGList>
 <dci>
 <DynColor Color="65280"/>
@@ -3264,7 +3264,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;Fine&gt;&gt;">1</BG>
+<BG Var="R1_STATUS:FINE_MISSIONE">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3396,15 +3396,13 @@ End Sub
 </child>
 </childs>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
-<item key="Fine" value="R1_STATUS:FINE_MISSIONE"/>
-<item key="Disponibile" value="R1_STATUS:DISPONIBILE"/>
-<item key="InMissione" value="R1_STATUS:IN_MISSIONE"/>
 </AliasesList>
 </child>
 <child>
