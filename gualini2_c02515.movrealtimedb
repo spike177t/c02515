@@ -340,6 +340,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico_txt</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="79" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -383,6 +390,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[100]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[100].evt">Plc_ar_allarmi_100</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloCarico_txt</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2369,22 +2383,28 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">EtichettaR3_Struct</Name>
+<Name Description="">AssemblatriceStato</Name>
 <MemberList>
 <Member>
-<Name Type="9">IdQuartina</Name>
+<Name Type="0">ChkPingOk</Name>
 </Member>
 <Member>
-<Name Type="9">Commessa</Name>
+<Name Type="0">NonComunica</Name>
 </Member>
 <Member>
-<Name Type="9">Dimensioni</Name>
+<Name Type="0">Ass_ON</Name>
 </Member>
 <Member>
-<Name Type="9">Azienda</Name>
+<Name Type="0">FinestraProntaR2</Name>
 </Member>
 <Member>
-<Name Type="9">Barcode</Name>
+<Name Type="0">FinestraToltaR3</Name>
+</Member>
+<Member>
+<Name Type="0">R2_FuoriIngombro_Ass</Name>
+</Member>
+<Member>
+<Name Type="0">R3_FuoriIngombro_Ass</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2427,28 +2447,22 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">AssemblatriceStato</Name>
+<Name Description="">EtichettaR3_Struct</Name>
 <MemberList>
 <Member>
-<Name Type="0">ChkPingOk</Name>
+<Name Type="9">IdQuartina</Name>
 </Member>
 <Member>
-<Name Type="0">NonComunica</Name>
+<Name Type="9">Commessa</Name>
 </Member>
 <Member>
-<Name Type="0">Ass_ON</Name>
+<Name Type="9">Dimensioni</Name>
 </Member>
 <Member>
-<Name Type="0">FinestraProntaR2</Name>
+<Name Type="9">Azienda</Name>
 </Member>
 <Member>
-<Name Type="0">FinestraToltaR3</Name>
-</Member>
-<Member>
-<Name Type="0">R2_FuoriIngombro_Ass</Name>
-</Member>
-<Member>
-<Name Type="0">R3_FuoriIngombro_Ass</Name>
+<Name Type="9">Barcode</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2511,29 +2525,6 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">AssemblatriceMemoTelaio</Name>
-<MemberList>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">NOME_COMMESSA</Name>
-</Member>
-<Member>
-<Name Type="4">R2_COLLA</Name>
-</Member>
-<Member>
-<Name Type="7">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="7">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="9">SERIE_PROFILO</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
 <Name Description="">AssemblatriceOutput</Name>
 <MemberList>
 <Member>
@@ -2572,25 +2563,25 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">INPUT_ASSEMBLATRICE</Name>
+<Name Description="">AssemblatriceMemoTelaio</Name>
 <MemberList>
 <Member>
-<Name Type="4">ALTEZZA_FINESTRA</Name>
+<Name Type="9">ID_QUARTINA</Name>
 </Member>
 <Member>
-<Name Type="4">APERTURA</Name>
+<Name Type="9">NOME_COMMESSA</Name>
 </Member>
 <Member>
-<Name Type="0">CHK_WRITE</Name>
+<Name Type="4">R2_COLLA</Name>
 </Member>
 <Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
+<Name Type="7">ALTEZZA_FINESTRA</Name>
 </Member>
 <Member>
-<Name Type="0">START_ROTAZIONE</Name>
+<Name Type="7">LARGHEZZA_FINESTRA</Name>
 </Member>
 <Member>
-<Name Type="0">STROBE_DATI_R2</Name>
+<Name Type="9">SERIE_PROFILO</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -2990,60 +2981,8 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">AssemblatriceScambioVarR</Name>
+<Name Description="">INPUT_ASSEMBLATRICE</Name>
 <MemberList>
-<Member>
-<Name Type="5">WriteR_98</Name>
-</Member>
-<Member>
-<Name Type="5">ReadR_99</Name>
-</Member>
-<Member>
-<Name Type="7">tempoCiclo</Name>
-</Member>
-<Member>
-<Name Type="7">tempoLettura</Name>
-</Member>
-<Member>
-<Name Type="7">tempoAttesa</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">OUTPUT_QUADRA</Name>
-<MemberList>
-<Member>
-<Name Type="0">IN_CICLO</Name>
-</Member>
-<Member>
-<Name Type="0">NON_IN_EMERGENZA</Name>
-</Member>
-<Member>
-<Name Type="0">NON_IN_HOLD</Name>
-</Member>
-<Member>
-<Name Type="0">PEZZO_PRONTO</Name>
-</Member>
-<Member>
-<Name Type="0">PEZZO_SBLOCCATO</Name>
-</Member>
-<Member>
-<Name Type="0">RIPARI_QUADRA_OK</Name>
-</Member>
-<Member>
-<Name Type="0">OK</Name>
-</Member>
-<Member>
-<Name Type="0">FTC_SCAR_PZ</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">PLC_AssemblatriceInput</Name>
-<MemberList>
-<Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
-</Member>
 <Member>
 <Name Type="4">ALTEZZA_FINESTRA</Name>
 </Member>
@@ -3051,13 +2990,16 @@
 <Name Type="4">APERTURA</Name>
 </Member>
 <Member>
-<Name Type="0">STROBE_DATI_R2</Name>
+<Name Type="0">CHK_WRITE</Name>
+</Member>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
 </Member>
 <Member>
 <Name Type="0">START_ROTAZIONE</Name>
 </Member>
 <Member>
-<Name Type="0">CHK_WRITE</Name>
+<Name Type="0">STROBE_DATI_R2</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3097,6 +3039,78 @@
 </MemberList>
 </Structure>
 <Structure>
+<Name Description="">PLC_AssemblatriceInput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">START_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_WRITE</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">OUTPUT_QUADRA</Name>
+<MemberList>
+<Member>
+<Name Type="0">IN_CICLO</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_EMERGENZA</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_HOLD</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_PRONTO</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_SBLOCCATO</Name>
+</Member>
+<Member>
+<Name Type="0">RIPARI_QUADRA_OK</Name>
+</Member>
+<Member>
+<Name Type="0">OK</Name>
+</Member>
+<Member>
+<Name Type="0">FTC_SCAR_PZ</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">AssemblatriceScambioVarR</Name>
+<MemberList>
+<Member>
+<Name Type="5">WriteR_98</Name>
+</Member>
+<Member>
+<Name Type="5">ReadR_99</Name>
+</Member>
+<Member>
+<Name Type="7">tempoCiclo</Name>
+</Member>
+<Member>
+<Name Type="7">tempoLettura</Name>
+</Member>
+<Member>
+<Name Type="7">tempoAttesa</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
 <Name Description="">INPUT_QUADRA</Name>
 <MemberList>
 <Member>
@@ -3119,103 +3133,6 @@
 </Member>
 <Member>
 <Name Type="0">SBLOCCA_PEZZO</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">PLC_AssemblatriceOutput</Name>
-<MemberList>
-<Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="4">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="0">BACK_STROBE_DATI_R2</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_ROTAZIONE</Name>
-</Member>
-<Member>
-<Name Type="4">APERTURA</Name>
-</Member>
-<Member>
-<Name Type="0">AUTO</Name>
-</Member>
-<Member>
-<Name Type="0">AZZERATA</Name>
-</Member>
-<Member>
-<Name Type="0">STA_AZZERANDO</Name>
-</Member>
-<Member>
-<Name Type="0">ASSI_IN_MOVIMENTO</Name>
-</Member>
-<Member>
-<Name Type="0">ALLARME</Name>
-</Member>
-<Member>
-<Name Type="0">CHK_READ</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">DatiRobotStruct</Name>
-<MemberList>
-<Member>
-<Name Type="0">DISPONIBILE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="4">PZ_DA_QUADRA</Name>
-</Member>
-<Member>
-<Name Type="4">MAGAZZINO</Name>
-</Member>
-<Member>
-<Name Type="4">CASSETTO</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
-</Member>
-<Member>
-<Name Type="4">POSIZIONE_PEZZO</Name>
-</Member>
-<Member>
-<Name Type="0">NUOVA_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">IN_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0">RESET</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_CYCLE_ON</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_AUTO_ON</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_EMRGENCY_STOP</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3366,22 +3283,99 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">QuadraScambioVarR</Name>
+<Name Description="">DatiRobotStruct</Name>
 <MemberList>
 <Member>
-<Name Type="5">WriteR_639</Name>
+<Name Type="0">DISPONIBILE</Name>
 </Member>
 <Member>
-<Name Type="5">WriteR_640</Name>
+<Name Type="0">FINE_MISSIONE</Name>
 </Member>
 <Member>
-<Name Type="7">tempoCiclo</Name>
+<Name Type="4">PZ_DA_QUADRA</Name>
 </Member>
 <Member>
-<Name Type="7">tempoLettura</Name>
+<Name Type="4">MAGAZZINO</Name>
 </Member>
 <Member>
-<Name Type="7">tempoAttesa</Name>
+<Name Type="4">CASSETTO</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4">POSIZIONE_PEZZO</Name>
+</Member>
+<Member>
+<Name Type="0">NUOVA_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">IN_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0">RESET</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_CYCLE_ON</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_AUTO_ON</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_EMRGENCY_STOP</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">PLC_AssemblatriceOutput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">AUTO</Name>
+</Member>
+<Member>
+<Name Type="0">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="0">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="0">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_READ</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3468,6 +3462,26 @@
 </Member>
 <Member>
 <Name Type="9">nomeAziendaPerEtichetta</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">QuadraScambioVarR</Name>
+<MemberList>
+<Member>
+<Name Type="5">WriteR_639</Name>
+</Member>
+<Member>
+<Name Type="5">WriteR_640</Name>
+</Member>
+<Member>
+<Name Type="7">tempoCiclo</Name>
+</Member>
+<Member>
+<Name Type="7">tempoLettura</Name>
+</Member>
+<Member>
+<Name Type="7">tempoAttesa</Name>
 </Member>
 </MemberList>
 </Structure>
