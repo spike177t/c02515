@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="43196" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="28001" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'alm_Step_ToutR1_4200' con il nuovo nome 'msg_Step_R1_4200_AttesaMissione'
 'Sostituita la Variabile 'Q2_In' con il nuovo nome 'Q2_Out'
 'Sostituita la Variabile 'Q1_In' con il nuovo nome 'Q1_Out'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
@@ -193,6 +194,11 @@ Sub Main()
 	      "OPTION=3;"
 	End If
 
+
+	'''
+LeggiFileDaQuadra(1)
+	'''
+
     'inizializzo alcune variabili
 
     If StatoCicloCarico &lt; 100 Then
@@ -347,65 +353,6 @@ Sub Main()
 								StatoCicloCarico = 9100	'ErroreRobot
 						End If
 					End If
-
-				Case 1010	'AttesaPezzi_AssegnaMissioneRobot
-					'DebugMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot"
-					'guardo se ho una missione assegnabile
-					missioneNum = MissioneAssegnabile() 'torna 1 se ho una missione assegnabile da Q1 o 2 se lo è da Q2
-					If missioneNum &gt; 0 Then
-						LogMsg "StatoCicloCarico = 1010	'AttesaPezzi_AssegnaMissioneRobot; missioneNum = 0 " &amp; CStr(missioneNum)
-						StatoCicloCarico = 4100	'AssegnaMissioneRobot
-					Else
-						StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile
-					End If
-
-				Case 1020	'AttesaPezzi_AttendiCassettoDisponibile
-					'DebugMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile"
-					'guardo se ho un cassetto disponibile da assegnare a pezzo pronto
-					valVerificaAttendiCassettoDisponibile = transizioneAttendiCassettoDisponibile() 'serve per non fare il controllo sempre
-										'valVerificaAttendiCassettoDisponibile = AttendiCassettoDisponibile() 'serve per non fare il controllo sempre
-					'valVerificaAttendiCassettoDisponibile = 0 solo se avevo letto un file della quadra e non avevo cassetti a cui assegnare la quartina
-					'valVerificaAttendiCassettoDisponibile &gt; 0 se è passato un tout e non ho ancora assegnato la quartina
-					If valVerificaAttendiCassettoDisponibile &gt; 0 Then
-						LogMsg "StatoCicloCarico = 1020	'AttesaPezzi_AttendiCassettoDisponibile &amp; valVerificaAttendiCassettoDisponibile =  " &amp; CStr(valVerificaAttendiCassettoDisponibile)
-						leggiDaQuadra = valVerificaAttendiCassettoDisponibile
-						StatoCicloCarico = 3100	'AttendiCassettoDisponibile
-						'AttendiCassettoDisponibile controlla che si sia liberato un cassetto per assegnare il pezzo ad una quartina
-					Else
-						StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra
-					End If
-
-				Case 1030	'AttesaPezzi_LeggiFileDaQuadra
-					'DebugMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra"
-					'obiettivo: verificare se ci sono file_pezzo da leggere sulle quadra
-					'guardo se ho un pezzo pronto di cui non ho letto il file da quadra
-					leggiDaQuadra = FileDaLeggere()
-					filepresente = False
-					If leggiDaQuadra &gt; 0 Then
-						filepresente = FileEsiste(leggiDaQuadra)
-					End If
-
-					If leggiDaQuadra &gt; 0 And filepresente Then
-						LogMsg "StatoCicloCarico = 1030	'AttesaPezzi_LeggiFileDaQuadra; leggiDaQuadra = " &amp; CStr(leggiDaQuadra)
-						StatoCicloCarico = 2100	'LeggiFileDaQuadra
-					Else
-						StatoCicloCarico = 1040	'FineMissioneRobot
-					End If
-
-				Case 1040	'FineMissioneRobot
-					'DebugMsg "StatoCicloCarico = 1040	'FineMissioneRobot"
-					If [R1_STATUS:FINE_MISSIONE]  _
-						And [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] &gt; 0 _
-						And [R1_DATI_PEZZO:CASSETTO_ASSEGNATO] &gt; 0 _
-						And [R1_DATI_PEZZO:NOME_PEZZO_UNICO] &lt;&gt; "" _
-						And [R1_DATI_PEZZO:ID_QUARTINA] &lt;&gt; "" _
-						Then
-						LogMsg "StatoCicloCarico = 1040	'FineMissioneRobot; [R1_STATUS:FINE_MISSIONE] = True"
-						StatoCicloCarico = 6100	'FineRobot
-					Else
-						StatoCicloCarico = 1000	'AttesaPezzi
-					End If
-
 
 				Case 2100	'LeggiFileDaQuadra
 					LogMsg "StatoCicloCarico = 2100	'LeggiFileDaQuadra"
@@ -740,17 +687,18 @@ Sub Main()
 
 				Case 4200	'AttesaSegnaleRobotOccupato
 					LogMsg "StatoCicloCarico = 4200	'AttesaSegnaleRobotOccupato"
-					If SuperatoTimeout(stepTout, TOUT_STEP) Then
-						alm_Step_ToutR1_4200 = True
-						'per poter fare ripartenza devo fare reset delle struct già assegnate
-						ResetDatiMembriStruttura("R1_DATI_PEZZO")
-						ResetDatiMembriStruttura("Q1_PEZZO_DISP")
-						ResetDatiMembriStruttura("Q2_PEZZO_DISP")
-						StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
-					End If
+					msg_Step_R1_4200_AttesaMissione = True
+					'If SuperatoTimeout(stepTout, TOUT_STEP) Then
+					'	msg_Step_R1_4200_AttesaMissione = True
+					'	'per poter fare ripartenza devo fare reset delle struct già assegnate
+					'	'ResetDatiMembriStruttura("R1_DATI_PEZZO")
+					'	'ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+					'	'ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+					'	StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
+					'End If
 					'ricevo segnale di robot in missione
 					If	[R1_STATUS:DISPONIBILE] And [R1_STATUS:IN_MISSIONE] Then
-						alm_Step_ToutR1_4200 = False
+						msg_Step_R1_4200_AttesaMissione = False
 
 						'rendo BUSY l'estrattore
 						If [R1_STATUS:MAGAZZINO] = 1 Then
@@ -1091,16 +1039,62 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 
 End Function
 
-
 Function FileEsiste(quadra As Integer) As Boolean
 	Dim path As String
 	Dim filepath As String
 	Dim varname As String
 
-	FileEsiste = False
+	Dim fullNameDataFile As String
+
+	'Dim quartinaCorrente As String
+    'Dim quartinaSuccessiva As String
+
+	Select Case quadra
+		Case 1:
+			path = loc_Q1_path
+			varname = "Q1_PEZZO_DISP"
+			If loc_QuadraDataFile &lt;&gt; "" And loc_Q1_path &lt;&gt; "" Then
+				fullNameDataFile = path + loc_QuadraDataFile
+			Else
+				fullNameDataFile = "\\10.200.200.31\l46\COMAR\DATA.TXT"
+			End If
+			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
+		Case 2:
+			path = loc_Q2_path
+			varname = "Q2_PEZZO_DISP"
+			If loc_QuadraDataFile &lt;&gt; "" And loc_Q2_path &lt;&gt; "" Then
+				fullNameDataFile = path + loc_QuadraDataFile
+			Else
+				fullNameDataFile = "\\10.200.200.32\l46\COMAR\DATA.TXT"
+			End If
+			'path ="C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
+		Case Else
+			Throw New System.Exception("GestioneZonaR1.movbas -&gt; FileEsiste() ECCEZZIONE: parametro quadra non ammesso: " &amp; CStr(quadra) &amp; ".")
+	End Select
+
+	'guardo se sono presenti file
+
+	filepath = fullNameDataFile
+	filepathMemo = filepath
+
+	If File.Exists(filepath) Then
+		FileEsiste = True
+	Else
+		FileEsiste = False
+	End If
+End Function
+
+
+
+Function FileEsiste_OLD(quadra As Integer) As Boolean
+	Dim path As String
+	Dim filepath As String
+	Dim varname As String
+
+	FileEsiste_OLD = False
 
 	If quadra = 0 Then
-		FileEsiste = False
+		FileEsiste_OLD = False
 		Exit Function
 	End If
 	Select Case quadra
@@ -1141,9 +1135,9 @@ Function FileEsiste(quadra As Integer) As Boolean
 	'DebugMsg "FileEsiste(quadra As Integer); upBoundFiles = files.GetUpperBound(0) = " &amp;  CStr(upBoundFiles)
 
 	If upBoundFiles &lt; 0 Then
-		FileEsiste = False
+		FileEsiste_OLD = False
 	Else
-		FileEsiste = True
+		FileEsiste_OLD = True
 	End If
 End  Function
 
@@ -1188,88 +1182,91 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 	filepath = fullNameDataFile
 	filepathMemo = filepath
 
-	Try
-        ' Open the file using a stream reader.
-        Using sr As New StreamReader(filepath)
-            Dim line As String
-            Dim i As Integer
+	If File.Exists(filepath) Then
 
-            'Debug.Print "### lettura a righe"
-            'Debug.Print
+		Try
+	        ' Open the file using a stream reader.
+	        Using sr As New StreamReader(filepath)
+	            Dim line As String
+	            Dim i As Integer
 
-			i=0
-            Do While sr.Peek() &gt;= 0
-            	line = sr.ReadLine()
-                'Debug.Print(line)
-                Select Case i
-	                Case 0:
-						SetVariableValue(varname &amp; ":NUOVO", CInt(line))
-					Case 1:
-						SetVariableValue(varname &amp; ":ID_QUARTINA", line)
-						'quartinaCorrente = line
-					Case 2:
-						SetVariableValue(varname &amp; ":POSIZIONE", line)
-					Case 3:
-						SetVariableValue(varname &amp; ":NOME_PEZZO_UNICO", line)
-					Case 4:
-						SetVariableValue(varname &amp; ":NOME_PEZZO_ESTERNO", line)
-					Case 5:
-						SetVariableValue(varname &amp; ":ULTIMO_PEZZO", CBool(line))
-					Case 6:
-						SetVariableValue(varname &amp; ":CODICE_PROFILO", line)
-					Case 7:
-						SetVariableValue(varname &amp; ":SERIE_PROFILO", line)
-					Case 8:
-						SetVariableValue(varname &amp; ":MAX_LUNGHEZZA", CInt(line))
-					Case 9:
-						SetVariableValue(varname &amp; ":TOTALE_PEZZI_QUARTINA", CInt(line))
-					Case 10:
-						SetVariableValue(varname &amp; ":NUM_SQUADRETTE1", CInt(line))
-					Case 11:
-						SetVariableValue(varname &amp; ":COD_SQUADRETTA1", line)
-					Case 12:
-						SetVariableValue(varname &amp; ":NUM_SQUADRETTE2", CInt(line))
-					Case 13:
-						SetVariableValue(varname &amp; ":COD_SQUADRETTA2", line)
-					Case 14:
-						SetVariableValue(varname &amp; ":ALTEZZA_PROFILO", CInt(line))
-					Case 15:
-						SetVariableValue(varname &amp; ":LARGHEZZA_PROFILO", CInt(line))
-					Case 16:
-						SetVariableValue(varname &amp; ":MISURA_CAMERA_ESTERNA", CInt(line))
-					Case 17:
-						SetVariableValue(varname &amp; ":ID_QUARTINA_SUCCESSIVA", line)
-						'quartinaSuccessiva = line
-					Case 18:
-						SetVariableValue(varname &amp; ":NOME_COMMESSA", line)
-					Case 19:
-						SetVariableValue(varname &amp; ":APPOGGIO_PEZZO", CInt(line))
-					Case 20:
-						SetVariableValue(varname &amp; ":POSIZIONE_PEZZO_ESTERNO", CInt(line))
-					Case 21:
-						SetVariableValue(varname &amp; ":ID_PEZZO_ESTERNO", line)
-					Case 22:
-						SetVariableValue(varname &amp; ":LUNGHEZZA_PEZZO_ESTERNO", CInt(line))
-					Case 23:
-						SetVariableValue(varname &amp; ":FILE_XML", line)
-					Case 24:
-						SetVariableValue(varname &amp; ":DATA", line)
-					Case 25:
-						SetVariableValue(varname &amp; ":ORA", line)
+	            'Debug.Print "### lettura a righe"
+	            'Debug.Print
 
-	            End Select
-	            i = i + 1
-            Loop
-            'faccio Reset dei valori di cassetto e magazzino assegnati, sarà la procedura di GestionePezzo a rilevare i valori corretto
-            SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO", 0)
-			SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO", 0)
-			SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA", 0)
-			SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO_QRT_SUCCESSIVA", 0)
-        End Using
-    Catch e As Exception
-        LogMsg("The file could Not be Read:")
-        LogMsg("LeggiFileDaQuadra() -&gt; " &amp;e.Message)
-    End Try
+				i=0
+	            Do While sr.Peek() &gt;= 0
+	            	line = sr.ReadLine()
+	                'Debug.Print(line)
+	                Select Case i
+		                Case 0:
+							SetVariableValue(varname &amp; ":NUOVO", CInt(line))
+						Case 1:
+							SetVariableValue(varname &amp; ":ID_QUARTINA", line)
+							'quartinaCorrente = line
+						Case 2:
+							SetVariableValue(varname &amp; ":POSIZIONE", line)
+						Case 3:
+							SetVariableValue(varname &amp; ":NOME_PEZZO_UNICO", line)
+						Case 4:
+							SetVariableValue(varname &amp; ":NOME_PEZZO_ESTERNO", line)
+						Case 5:
+							SetVariableValue(varname &amp; ":ULTIMO_PEZZO", CBool(line))
+						Case 6:
+							SetVariableValue(varname &amp; ":CODICE_PROFILO", line)
+						Case 7:
+							SetVariableValue(varname &amp; ":SERIE_PROFILO", line)
+						Case 8:
+							SetVariableValue(varname &amp; ":MAX_LUNGHEZZA", CInt(line))
+						Case 9:
+							SetVariableValue(varname &amp; ":TOTALE_PEZZI_QUARTINA", CInt(line))
+						Case 10:
+							SetVariableValue(varname &amp; ":NUM_SQUADRETTE1", CInt(line))
+						Case 11:
+							SetVariableValue(varname &amp; ":COD_SQUADRETTA1", line)
+						Case 12:
+							SetVariableValue(varname &amp; ":NUM_SQUADRETTE2", CInt(line))
+						Case 13:
+							SetVariableValue(varname &amp; ":COD_SQUADRETTA2", line)
+						Case 14:
+							SetVariableValue(varname &amp; ":ALTEZZA_PROFILO", CInt(line))
+						Case 15:
+							SetVariableValue(varname &amp; ":LARGHEZZA_PROFILO", CInt(line))
+						Case 16:
+							SetVariableValue(varname &amp; ":MISURA_CAMERA_ESTERNA", CInt(line))
+						Case 17:
+							SetVariableValue(varname &amp; ":ID_QUARTINA_SUCCESSIVA", line)
+							'quartinaSuccessiva = line
+						Case 18:
+							SetVariableValue(varname &amp; ":NOME_COMMESSA", line)
+						Case 19:
+							SetVariableValue(varname &amp; ":APPOGGIO_PEZZO", CInt(line))
+						Case 20:
+							SetVariableValue(varname &amp; ":POSIZIONE_PEZZO_ESTERNO", CInt(line))
+						Case 21:
+							SetVariableValue(varname &amp; ":ID_PEZZO_ESTERNO", line)
+						Case 22:
+							SetVariableValue(varname &amp; ":LUNGHEZZA_PEZZO_ESTERNO", CInt(line))
+						Case 23:
+							SetVariableValue(varname &amp; ":FILE_XML", line)
+						Case 24:
+							SetVariableValue(varname &amp; ":DATA", line)
+						Case 25:
+							SetVariableValue(varname &amp; ":ORA", line)
+
+		            End Select
+		            i = i + 1
+	            Loop
+	            'faccio Reset dei valori di cassetto e magazzino assegnati, sarà la procedura di GestionePezzo a rilevare i valori corretto
+	            SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO", 0)
+				SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO", 0)
+				SetVariableValue(varname &amp; ":MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA", 0)
+				SetVariableValue(varname &amp; ":CASSETTO_ASSEGNATO_QRT_SUCCESSIVA", 0)
+	        End Using
+	    Catch e As Exception
+	        LogMsg("The file could Not be Read:")
+	        LogMsg("LeggiFileDaQuadra() -&gt; " &amp;e.Message)
+	    End Try
+	End If
 End Function
 
 
@@ -3519,8 +3516,6 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBmAXcBhgFGAmAC
-</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>
