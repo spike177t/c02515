@@ -3211,7 +3211,7 @@ End Sub
 <BG Var="R1_STATUS:IN_MISSIONE">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor/>
 </dci>
 <dci>
 <DynColor Color="33023" Value="1"/>
@@ -3396,12 +3396,11 @@ End Sub
 </child>
 </childs>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
 </AliasesList>
 </child>
@@ -4314,8 +4313,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>

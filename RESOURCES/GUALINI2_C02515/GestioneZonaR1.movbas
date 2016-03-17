@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="28001" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="31504" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -263,7 +263,7 @@ LeggiFileDaQuadra(1)
 		ProcessaCodaEstrattori_ZONA_R1()
 		AnomaliaDeposito(MySqlConnectionString)
 
-		If Not alm_Presenti_ZonaR1 Then
+		If Not alm_Presenti_ZonaR1 Or StatoCicloCarico = 6100 Or StatoCicloCarico = 6150 Then
 			Select Case StatoCicloCarico
 
 				Case 100	'StatoIniziale
@@ -736,14 +736,13 @@ LeggiFileDaQuadra(1)
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
 						alm_FineRobotR1 = True
-						StatoCicloCarico = 1000	'AttesaPezzi
-					Else
-
-						[R1_STATUS:FINE_MISSIONE_ACK] = True 'invio ack
-
-						stepTout = Timer()
-						StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset
 					End If
+
+					[R1_STATUS:FINE_MISSIONE_ACK] = True 'invio ack
+
+					stepTout = Timer()
+					StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset
+
 
 				Case 6150	'AttesaFineMissioneAck_reset
 					StatoCicloCarico_txt = "6150	'AttesaFineMissioneAck_reset"
@@ -751,13 +750,13 @@ LeggiFileDaQuadra(1)
 					LogMsg "StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset"
 					If SuperatoTimeout(stepTout, TOUT_STEP) Then
 						alm_Step_ToutR1_6150 = True
-						'dopo aver alzato allarme vado comunque avanti per finire il ciclo, tanto gli step rimanenti non riguardano il robot
-						[R1_STATUS:FINE_MISSIONE_ACK] =False
-						'segnalo all'estrattore che ho depositato il pezzo
-						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
-						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
-						SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
-						StatoCicloCarico = 6200	'VerificaUltimoPezzo
+					'	'dopo aver alzato allarme vado comunque avanti per finire il ciclo, tanto gli step rimanenti non riguardano il robot
+					'	[R1_STATUS:FINE_MISSIONE_ACK] =False
+					'	'segnalo all'estrattore che ho depositato il pezzo
+					'	varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+					'	SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+					'	SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
+					'	StatoCicloCarico = 6200	'VerificaUltimoPezzo
 					End If
 					If [R1_STATUS:FINE_MISSIONE] = False Then
 						[R1_STATUS:FINE_MISSIONE_ACK] =False
