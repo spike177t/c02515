@@ -1631,7 +1631,7 @@ End Sub
 <editbox x="220" y="315" width="280" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
-<execution var="StatoCicloCarico" max="77777"/>
+<execution var="StatoCicloCarico_txt" max="77777"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display68</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -3399,10 +3399,10 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
-<item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="Fine" value="R1_STATUS:FINE_MISSIONE"/>
+<item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
 <item key="Disponibile" value="R1_STATUS:DISPONIBILE"/>
 <item key="InMissione" value="R1_STATUS:IN_MISSIONE"/>
 </AliasesList>
@@ -3630,8 +3630,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -4543,8 +4543,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>

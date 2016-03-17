@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="28744" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="29887" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -153,10 +153,12 @@ Sub Main()
 			Select Case StatoCicloScarico
 
 				Case 100	'StatoIniziale
+					StatoCicloScarico_txt = "100	'StatoIniziale"
 					DebugMsg "StatoCicloSarico = 100	'StatoIniziale"
 					StatoCicloScarico = 1000			'Attesa
 
 				Case 1000	'Attesa
+					StatoCicloScarico_txt = "1000	'Attesa"
 					'DebugMsg "StatoCicloScarico = 1000	'Attesa"
 					ValutaProssimaCondizione = True
 					'inizio a scorrere le condizioni di uscita dallo stato
@@ -223,6 +225,7 @@ Sub Main()
 
 
 				Case 2100	'RichiediCassettoDaMagazzino
+					StatoCicloScarico_txt = "2100	'RichiediCassettoDaMagazzino"
 					LogMsg "StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
 					POSIZIONE.cass = 0	'inizializzo
 					POSIZIONE.mag = 0
@@ -257,6 +260,7 @@ Sub Main()
 					End If
 
 				Case 2200	'RikCassettoInEstrattorePlc
+					StatoCicloScarico_txt = "2200	'RikCassettoInEstrattorePlc"
 					LogMsg "StatoCicloScarico = 2200	'RikCassettoInEstrattorePlc"
 	'				'posso fare richiesta di estrattore se EsXX_RIK:NOME_PEZZO_UNICO = EsXX_ACT:NOME_PEZZO_UNICO e EsXX_ACT:DEPO = 1 , quindi pezzo depositato
 	'				'oppure se EsXX_RIK:NOME_PEZZO_UNICO = "" che significa che non ho richieste pendenti
@@ -307,7 +311,8 @@ Sub Main()
 						alm_StatoCiclo_R2_txt = "ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc; POSIZIONE.mag = " &amp; CStr(POSIZIONE.mag) &amp; "; FARE RESET CICLO R2"
 					End If
 
-				Case 4050			'Invio Dati ad Assemblatrice
+				Case 4050	'Invio Dati ad Assemblatrice
+					StatoCicloScarico_txt = "4050	'Invio Dati ad Assemblatrice"
 					LogMsg "StatoCicloScarico = 4050			'Invio Dati ad Assemblatrice"
 
 					'se robot disponibile preparo e invio dati ad assemblatrice
@@ -348,7 +353,8 @@ Sub Main()
 					End If
 
 
-				Case 4060			'Attesa back strobe dati
+				Case 4060	'Attesa back strobe dati
+					StatoCicloScarico_txt = "4060	'Attesa back strobe dati"
 					LogMsg "StatoCicloScarico = 4060			'Attesa back strobe dati"
 
 					If [Assemblatrice_Out:BACK_STROBE_DATI_R2] _
@@ -363,7 +369,8 @@ Sub Main()
 					End If
 
 
-				Case 4100			'AssegnaMissioneAlRobotR2
+				Case 4100	'AssegnaMissioneAlRobotR2
+					StatoCicloScarico_txt = "4100	'AssegnaMissioneAlRobotR2"
 					LogMsg "StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2"
 
 					If [R2_STATUS:DISPONIBILE] And Not [R2_STATUS:IN_MISSIONE] Then
@@ -389,12 +396,14 @@ Sub Main()
 					End If
 
 				Case 4195	'AttesaSegnaleRobotOccupato_settout
+					StatoCicloScarico_txt = "4195	'AttesaSegnaleRobotOccupato_settout"
 					If	[R2_STATUS:DISPONIBILE] Then
 						stepTout = Timer()
 						StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato
 					End If
 
 				Case 4200	'AttesaSegnaleRobotOccupato
+					StatoCicloScarico_txt = "4200	'AttesaSegnaleRobotOccupato"
 					LogMsg "StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato"
 
 					ValutaProssimaCondizione = True
@@ -414,6 +423,7 @@ Sub Main()
 					End If
 
 				Case 6100	'FineRobot
+					StatoCicloScarico_txt = "6100	'FineRobot"
 					LogMsg "StatoCicloScarico = 6100	'FineRobot"
 					'elimino quartina dal DB
 					ret = FineRobot(MySqlConnectionString, [R2_STATUS:ID_QUARTINA])
@@ -521,11 +531,13 @@ Sub Main()
 					End If
 
 				Case 6500	'SetTimetAttesaFineMissione_false
+					StatoCicloScarico_txt = "6500	'SetTimetAttesaFineMissione_false"
 					LogMsg "StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false"
 					stepTout = Timer()
 					StatoCicloScarico = 6700	'AttesaFineMissione_false
 
 				Case 6700	'AttesaFineMissione_false
+					StatoCicloScarico_txt = "6700	'AttesaFineMissione_false"
 					LogMsg "StatoCicloScarico = 6700	'AttesaFineMissione_false"
 
 					If SuperatoTimeout(stepTout, TOUT_STEP) Then
@@ -539,6 +551,7 @@ Sub Main()
 					End If
 
 				Case 9100	'ErroreMissioneRobot
+					StatoCicloScarico_txt = "9100	'ErroreMissioneRobot"
 					LogMsg "StatoCicloScarico = 9100	'ErroreMissioneRobot"
 					'alzo allarme
 					alm_AnomaliaDeposito_R2 = True
@@ -635,6 +648,7 @@ Sub Main()
 					End If
 
 				Case 9150	'SetTimetAttesaFineMissione_false
+					StatoCicloScarico_txt = "9150	'SetTimetAttesaFineMissione_false"
 					If [R2_STATUS:DISPONIBILE] Then
 						stepTout = Timer()
 						StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
@@ -642,6 +656,7 @@ Sub Main()
 
 
 				Case 9200	'AttesaFineMissioneAck_false
+					StatoCicloScarico_txt = "9200	'AttesaFineMissioneAck_false"
 					LogMsg "StatoCicloScarico = 9200	'AttesaFineMissioneAck_false"
 					If SuperatoTimeout(stepTout, TOUT_STEP) Then
 						alm_Step_ToutR2_9150 = True

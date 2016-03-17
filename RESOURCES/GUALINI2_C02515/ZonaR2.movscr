@@ -2387,7 +2387,7 @@ End Sub
 <editbox x="185" y="35" width="260" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
-<execution var="StatoCicloScarico" max="77777"/>
+<execution var="StatoCicloScarico_txt" max="77777"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display68</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -3641,7 +3641,7 @@ End Sub
 <child>
 <object>group</object>
 <g x="515" y="95" width="495" height="480" ox="567" oy="105" owidth="545" oheight="528"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
