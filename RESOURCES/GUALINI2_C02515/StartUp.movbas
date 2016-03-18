@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="867" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -73,6 +73,7 @@ Sub Main
 	'controllo se sono in esecuzione altre istanze di Premium
 	RunScript ("FindProcess",100,False)
 
+	Wait 5
 	'RunScript ("#SimulaPezziDaQuadre",100,False)
 	RunScript ("GestioneZonaR1",100,False)
 	RunScript ("GestioneZonaR2",100,False)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="717" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="3867" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -20,7 +20,7 @@ Public Sub RimuoviQuartina(idQrt As String)
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -28,7 +28,7 @@ Public Sub RimuoviQuartina(idQrt As String)
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 

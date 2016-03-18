@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="31504" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="31017" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -733,13 +733,13 @@ LeggiFileDaQuadra(1)
 					LogMsg "StatoCicloCarico = 6100	'FineRobot"
 					'inserisco dati quartina e pezzo nel DB
 					ret = FineRobot(MySqlConnectionString)
+
+					[R1_STATUS:FINE_MISSIONE_ACK] = True 'invio ack
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
 						alm_FineRobotR1 = True
+						MsgBox("Errore inserimento Pezzo, dati non caricati su DB",vbExclamation, "Errore inserimento dati in DB")
 					End If
-
-					[R1_STATUS:FINE_MISSIONE_ACK] = True 'invio ack
-
 					stepTout = Timer()
 					StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset
 
@@ -748,8 +748,8 @@ LeggiFileDaQuadra(1)
 					StatoCicloCarico_txt = "6150	'AttesaFineMissioneAck_reset"
 					'ATTENZIONE valore 6150 usato in AnomaliaDeposito()
 					LogMsg "StatoCicloCarico = 6150	'AttesaFineMissioneAck_reset"
-					If SuperatoTimeout(stepTout, TOUT_STEP) Then
-						alm_Step_ToutR1_6150 = True
+					'If SuperatoTimeout(stepTout, TOUT_STEP) Then
+					'	alm_Step_ToutR1_6150 = True
 					'	'dopo aver alzato allarme vado comunque avanti per finire il ciclo, tanto gli step rimanenti non riguardano il robot
 					'	[R1_STATUS:FINE_MISSIONE_ACK] =False
 					'	'segnalo all'estrattore che ho depositato il pezzo
@@ -757,7 +757,7 @@ LeggiFileDaQuadra(1)
 					'	SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 					'	SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
 					'	StatoCicloCarico = 6200	'VerificaUltimoPezzo
-					End If
+					'End If
 					If [R1_STATUS:FINE_MISSIONE] = False Then
 						[R1_STATUS:FINE_MISSIONE_ACK] =False
 						alm_Step_ToutR1_6150 = False
@@ -3520,6 +3520,6 @@ End Sub
 
 
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>
