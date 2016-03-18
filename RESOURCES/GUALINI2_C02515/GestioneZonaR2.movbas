@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="29887" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -324,8 +324,14 @@ Sub Main()
 						If [R2_STATUS:MAGAZZINO] = 1  Then
 							[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
 							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
+							'passo i valori di larghezza e altezza a robot R2 così come calcolati per l'assemblatrice
 							[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
+							'copio i valori che serviranno ad R3
+							[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:ALTEZZA_FINESTRA]
+							[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:LARGHEZZA_FINESTRA]
+
+							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
 							If [Assemblatrice_In:ALTEZZA_FINESTRA]	+ CSng([SCAR_M1_PZ1:R2_APERTURA]) &lt; 2599 Then
 								[Assemblatrice_In:APERTURA]				= CSng([SCAR_M1_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura
@@ -336,8 +342,14 @@ Sub Main()
 						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
 							[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
 							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
+							'passo i valori di larghezza e altezza a robot R2 così come calcolati per l'assemblatrice
 							[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
+							'copio i valori che serviranno ad R3
+							[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:ALTEZZA_FINESTRA]
+							[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:LARGHEZZA_FINESTRA]
+
+							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
 							If [Assemblatrice_In:ALTEZZA_FINESTRA]	+ CSng([SCAR_M2_PZ1:R2_APERTURA]) &lt; 2599 Then
 								[Assemblatrice_In:APERTURA]				= CSng([SCAR_M2_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura
@@ -460,15 +472,45 @@ Sub Main()
 							[Assemblatrice_TelaioLatoR2:ID_QUARTINA]			= [SCAR_M1_PZ1:ID_QUARTINA]
 							[Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA]		= [SCAR_M1_PZ2:MAX_LUNGHEZZA]
 							[Assemblatrice_TelaioLatoR2:NOME_COMMESSA]			= [SCAR_M1_PZ1:NOME_COMMESSA]
-							[Assemblatrice_TelaioLatoR2:R2_COLLA]				= [SCAR_M1_PZ1:R2_COLLA]
 							[Assemblatrice_TelaioLatoR2:SERIE_PROFILO]			= [SCAR_M1_PZ1:SERIE_PROFILO]
+							'dati per R3
+							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
+							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
+							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET] = [SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET]
+							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_PROFILO]			= [SCAR_M1_PZ1:ALTEZZA_PROFILO]
+							[Assemblatrice_TelaioLatoR2:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M1_PZ")
+							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET] = [SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET]
+							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_PROFILO]		= [SCAR_M1_PZ1:LARGHEZZA_PROFILO]
+							[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA1]		= [SCAR_M1_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
+							If [Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]	Then
+								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= [SCAR_M1_PZ1:R3_OFFSET_SQ2] + loc_R3_SpessoreSupporti
+							Else
+								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= 0
+							End If
+							[Assemblatrice_TelaioLatoR2:R3_TEMPO_COLLA]				= [SCAR_M1_PZ1:R2_COLLA]
+
 						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
 							[Assemblatrice_TelaioLatoR2:ALTEZZA_FINESTRA]		= [SCAR_M2_PZ1:MAX_LUNGHEZZA]
 							[Assemblatrice_TelaioLatoR2:ID_QUARTINA]			= [SCAR_M2_PZ1:ID_QUARTINA]
 							[Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA]		= [SCAR_M2_PZ2:MAX_LUNGHEZZA]
 							[Assemblatrice_TelaioLatoR2:NOME_COMMESSA]			= [SCAR_M2_PZ1:NOME_COMMESSA]
-							[Assemblatrice_TelaioLatoR2:R2_COLLA]				= [SCAR_M2_PZ1:R2_COLLA]
 							[Assemblatrice_TelaioLatoR2:SERIE_PROFILO]			= [SCAR_M2_PZ1:SERIE_PROFILO]
+							'dati per R3
+							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
+							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
+							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET] = [SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET]
+							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_PROFILO]			= [SCAR_M2_PZ1:ALTEZZA_PROFILO]
+							[Assemblatrice_TelaioLatoR2:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M2_PZ")
+							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET] = [SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET]
+							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_PROFILO]		= [SCAR_M2_PZ1:LARGHEZZA_PROFILO]
+							[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA1]		= [SCAR_M2_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
+							If [Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]	Then
+								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= [SCAR_M2_PZ1:R3_OFFSET_SQ2] + loc_R3_SpessoreSupporti
+							Else
+								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= 0
+							End If
+							[Assemblatrice_TelaioLatoR2:R3_TEMPO_COLLA]				= [SCAR_M2_PZ1:R2_COLLA]
+
 						End If
 
 
@@ -755,7 +797,6 @@ Function LeggiDatiPezzo_OK(connectionString As String, mag As Integer, cass As I
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            'commandText = "SELECT * FROM gualini.tutti_pezzi_profili_banchisquadrette " _
             commandText = "SELECT * FROM gualini.tutti_pezzi_count_profili " _
 			&amp; " where " _
             &amp; " ID_CASSETTO = " &amp; CStr(cass) _
@@ -832,9 +873,13 @@ Function LeggiDatiPezzo_OK(connectionString As String, mag As Integer, cass As I
 						SetVariableValue(varname &amp; ":R2_ATTREZZATURA"		, AvoidNull(MyDataReader("Attrezzatura")	,  GetVariableObject(varname &amp; ":R2_ATTREZZATURA").GetType())	)	'MyDataReader("Attrezzatura"))
 						SetVariableValue(varname &amp; ":R2_APERTURA"			, AvoidNull(MyDataReader("Apertura")		,  GetVariableObject(varname &amp; ":R2_APERTURA").GetType())	)		'MyDataReader("Apertura"))
 						SetVariableValue(varname &amp; ":R2_OFFSET_PEZZO"		, AvoidNull(MyDataReader("OffsetPezzo")		,  GetVariableObject(varname &amp; ":R2_OFFSET_PEZZO").GetType())	)	'MyDataReader("OffsetPezzo"))
-						'SetVariableValue(varname &amp; ":R2_OFFSET_SQ1"		, AvoidNull(MyDataReader("OffsetSuadretta1"),  GetVariableObject(varname &amp; ":R2_OFFSET_SQ1").GetType())	)
-						'SetVariableValue(varname &amp; ":R2_OFFSET_SQ2"		, AvoidNull(MyDataReader("OffsetSuadretta2"),  GetVariableObject(varname &amp; ":R2_OFFSET_SQ2").GetType())	)
+
 						SetVariableValue(varname &amp; ":R2_CODICE_PRG"			, AvoidNull(MyDataReader("CodiceRobot")		,  GetVariableObject(varname &amp; ":R2_CODICE_PRG").GetType())	)		'MyDataReader("CodiceRobot"))
+
+						'prendo valori per R3
+						SetVariableValue(varname &amp; ":R3_COD_RBT"			, AvoidNull(MyDataReader("R3_CodiceRobot")	,  GetVariableObject(varname &amp; ":R3_COD_RBT").GetType())	)
+						SetVariableValue(varname &amp; ":R3_OFFSET_SQ1"			, AvoidNull(MyDataReader("OffsetSuadretta1"),  GetVariableObject(varname &amp; ":R3_OFFSET_SQ1").GetType())	)
+						SetVariableValue(varname &amp; ":R3_OFFSET_SQ2"			, AvoidNull(MyDataReader("OffsetSuadretta2"),  GetVariableObject(varname &amp; ":R3_OFFSET_SQ2").GetType())	)
 
 						''
 						'TODO
@@ -876,19 +921,19 @@ Function LeggiDatiPezzo_OK(connectionString As String, mag As Integer, cass As I
     ' `tutti_pezzi`.``,
     ' `tutti_pezzi`.`quartina_ID_QUARTINA`,
     ' `tutti_pezzi`.`PRELEVATO`
-	' `tutti_pezzi_profili_banchisquadrette`.`SerieProfilo`,
-    ' `tutti_pezzi_profili_banchisquadrette`.`CodiceProfilo`,
-    ' `tutti_pezzi_profili_banchisquadrette`.``,
-    ' `tutti_pezzi_profili_banchisquadrette`.``,
-    ' `tutti_pezzi_profili_banchisquadrette`.`OffsetPezzo`,
-    ' `tutti_pezzi_profili_banchisquadrette`.`OffsetSuadretta1`,
-    ' `tutti_pezzi_profili_banchisquadrette`.`OffsetSuadretta2`,
-    ' `tutti_pezzi_profili_banchisquadrette`.`Colla`,
-    ' `tutti_pezzi_profili_banchisquadrette`.``,
-    ' `tutti_pezzi_profili_banchisquadrette`.``,
-    ' `tutti_pezzi_profili_banchisquadrette`.``,
-    ' `tutti_pezzi_profili_banchisquadrette`.``,
-    ' `tutti_pezzi_profili_banchisquadrette`.``
+	' `tutti_pezzi_count_profili`.`SerieProfilo`,
+    ' `tutti_pezzi_count_profili`.`CodiceProfilo`,
+    ' `tutti_pezzi_count_profili`.``,
+    ' `tutti_pezzi_count_profili`.``,
+    ' `tutti_pezzi_count_profili`.`OffsetPezzo`,
+    ' `tutti_pezzi_count_profili`.`OffsetSuadretta1`,
+    ' `tutti_pezzi_count_profili`.`OffsetSuadretta2`,
+    ' `tutti_pezzi_count_profili`.`Colla`,
+    ' `tutti_pezzi_count_profili`.``,
+    ' `tutti_pezzi_count_profili`.``,
+    ' `tutti_pezzi_count_profili`.``,
+    ' `tutti_pezzi_count_profili`.``,
+    ' `tutti_pezzi_count_profili`.``
 ' FROM `gualini`.`tutti_pezzi`;
 
 
@@ -1658,10 +1703,13 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 						SetVariableValue(structname &amp; ":R2_ATTREZZATURA"		, AvoidNull(MyDataReader("Attrezzatura")	,  GetVariableObject(structname &amp; ":R2_ATTREZZATURA").GetType())	)	'MyDataReader("Attrezzatura"))
 						SetVariableValue(structname &amp; ":R2_APERTURA"			, AvoidNull(MyDataReader("Apertura")		,  GetVariableObject(structname &amp; ":R2_APERTURA").GetType())	)		'MyDataReader("Apertura"))
 						SetVariableValue(structname &amp; ":R2_OFFSET_PEZZO"		, AvoidNull(MyDataReader("OffsetPezzo")		,  GetVariableObject(structname &amp; ":R2_OFFSET_PEZZO").GetType())	)	'MyDataReader("OffsetPezzo"))
-						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ1"			, AvoidNull(MyDataReader("OffsetSuadretta1"),  GetVariableObject(structname &amp; ":R2_OFFSET_SQ1").GetType())	)
-						'SetVariableValue(structname &amp; ":R2_OFFSET_SQ2"			, AvoidNull(MyDataReader("OffsetSuadretta2"),  GetVariableObject(structname &amp; ":R2_OFFSET_SQ2").GetType())	)
+
 						SetVariableValue(structname &amp; ":R2_CODICE_PRG"			, AvoidNull(MyDataReader("CodiceRobot")		,  GetVariableObject(structname &amp; ":R2_CODICE_PRG").GetType())	)		'MyDataReader("CodiceRobot"))
 
+						'prendo valori per R3
+						SetVariableValue(structname &amp; ":R3_COD_RBT"				, AvoidNull(MyDataReader("R3_CodiceRobot")	,  GetVariableObject(structname &amp; ":R3_COD_RBT").GetType())	)
+						SetVariableValue(structname &amp; ":R3_OFFSET_SQ1"			, AvoidNull(MyDataReader("OffsetSuadretta1"),  GetVariableObject(structname &amp; ":R3_OFFSET_SQ1").GetType())	)
+						SetVariableValue(structname &amp; ":R3_OFFSET_SQ2"			, AvoidNull(MyDataReader("OffsetSuadretta2"),  GetVariableObject(structname &amp; ":R3_OFFSET_SQ2").GetType())	)
 
 						'SetVariableValue(structname &amp; ":xx"				, MyDataReader("xx"))
 
@@ -2277,7 +2325,37 @@ Function AvoidNull(FieldVal As Object, retType As movicon.eVariableType) As Obje
 		AvoidNull = FieldVal
 	End If
 End Function
+
+Function Get_R3_CODICE_TIPO_PROFILO(structPrefix As String) As Byte
+	Get_R3_CODICE_TIPO_PROFILO = 0
+	Dim structname As String
+	Dim count As Integer
+	Dim numZ As Integer
+	Dim codrbt As Byte
+	Dim tipoprofilo As String
+
+	For count = 1 To 4 Step 1
+		structname = structPrefix + CStr(count)
+		numZ = GetVariableValue(structname &amp; ":R2_COUNT_Z")
+		If numZ = 0 Then
+			'nella quartina non ho profili di tipo Z allora torno il codice assegnato al profilo del pezzo
+			codrbt = CByte(GetVariableValue(structname &amp; ":R3_COD_RBT"))
+			Get_R3_CODICE_TIPO_PROFILO = codrbt
+			Exit Function
+		Else
+			'se no cerco il profilo Z e quando lo trovo torno il suo valore di codice robot
+			tipoprofilo = GetVariableValue(structname &amp; ":R2_TIPO_PROFILO")
+			If tipoprofilo = "Z" Or tipoprofilo = "z" Then
+				'torno il valore del codice robot
+				codrbt = CByte(GetVariableValue(structname &amp; ":R3_COD_RBT"))
+				Get_R3_CODICE_TIPO_PROFILO = codrbt
+				Exit Function
+			End If
+		End If
+	Next
+End Function
+
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4550" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="5671" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -32,13 +32,14 @@ Dim enableLogMsg As Boolean = True
 Sub Main()
 	Dim ValutaProssimaCondizione As Boolean 'serve per valutare le condizioni dello stato Attesa
 
-
 	Dim stepTout As Double
 
 	Dim ret As Integer
 	Dim retMsgBox As VbMsgBoxResult
 	Dim strMsgBox As String
 
+	Dim timerInvioDati As Double
+	Dim datiR3_KO As Boolean
 
 	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
 	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
@@ -150,11 +151,53 @@ Sub Main()
 						'reset dati telaio in R2
 						ResetDatiMembriStruttura("Assemblatrice_TelaioLatoR2")
 
+						timerInvioDati = Timer()
 						StatoCicloR3 = 3100	'StartR3
 					End If
 
 				Case 3100	'StartR3
-					LogMsg "StatoCicloR3 = 3100	'StartR3"
+					LogMsg "StatoCicloR3 = 3100	'InvioDatiR3"
+
+					datiR3_KO = True
+					While datiR3_KO
+
+
+						Dim R3_ALTEZZA_FINESTRA_OFFSET_CHK As UShort
+						Dim R3_ALTEZZA_PROFILO_CHK_CHK  As UShort
+						Dim R3_CODICE_TIPO_PROFILO_CHK  As Byte
+						Dim R3_LARGHEZZA_FINESTRA_OFFSET_CHK  As UShort
+						Dim R3_LARGHEZZA_PROFILO_CHK  As UShort
+						Dim R3_OFFSET_SQUADRETTA1_CHK  As UShort
+						Dim R3_OFFSET_SQUADRETTA2_CHK  As UShort
+						Dim R3_TEMPO_COLLA_CHK  As UShort
+
+
+						R3_ALTEZZA_FINESTRA_OFFSET_CHK =0
+						R3_ALTEZZA_PROFILO_CHK_CHK  =0
+						R3_CODICE_TIPO_PROFILO_CHK =0
+						R3_LARGHEZZA_FINESTRA_OFFSET_CHK  =0
+						R3_LARGHEZZA_PROFILO_CHK  =0
+						R3_OFFSET_SQUADRETTA1_CHK  =0
+						R3_OFFSET_SQUADRETTA2_CHK  =0
+						R3_TEMPO_COLLA_CHK  =0
+
+						If ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_FINESTRA_OFFSET]  = R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_PROFILO] =R3_ALTEZZA_PROFILO_CHK_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_CODICE_TIPO_PROFILO] =R3_CODICE_TIPO_PROFILO_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_FINESTRA_OFFSET] =R3_LARGHEZZA_FINESTRA_OFFSET_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_PROFILO] =R3_LARGHEZZA_PROFILO_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA1] =R3_OFFSET_SQUADRETTA1_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA2] =R3_OFFSET_SQUADRETTA2_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_TEMPO_COLLA] = R3_TEMPO_COLLA_CHK) _
+							Then
+
+							datiR3_KO = False
+						End If
+						'
+						'TODO TOGLIERE PER DEBUG
+						datiR3_KO= False
+						DoEvents
+					End While
 
 					StatoCicloR3 = 1000	'Attesa
 

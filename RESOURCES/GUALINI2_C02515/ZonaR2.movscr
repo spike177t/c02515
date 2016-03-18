@@ -4030,7 +4030,7 @@ End Sub
 <editbox x="335" y="121" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style promptpad="1" fmtscale="decimi mm"/>
 <border>4</border>
-<execution var="Q2_PEZZO_DISP:NOME_PEZZO_UNICO" max="1000"/>
+<execution max="1000"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display151</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
