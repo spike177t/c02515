@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="570" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="6541" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 Imports System
 Imports System.IO
@@ -12,7 +12,7 @@ Option Explicit
 Dim enableLogMsg As Boolean
 Const UPDATE_ESTRATTORI		As Integer = 16500
 
-Dim MysSqlConnectionString As String
+Dim MySqlConnectionString As String
 Dim richiedibileLastCheck As Double
 
 
@@ -24,9 +24,9 @@ Sub Main()
     [MAG2_ES3_ACT_OLD:ID_CASSETTO] = UPDATE_ESTRATTORI
 
     If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
-	    MysSqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
+	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	Else
-	    MysSqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
+	    MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
 	      "UID=root;" &amp; _
@@ -37,7 +37,7 @@ Sub Main()
 	'################
 	enableLogMsg = True
 	Do
-		AggiornaPosizioniEstrattori_ES3(MysSqlConnectionString)
+		AggiornaPosizioniEstrattori_ES3(MySqlConnectionString)
 
 		DoEvents
 
@@ -101,7 +101,7 @@ Sub AggiornaPosizioneEstrattoreE3(mag As Integer, estr As Integer, connectionStr
 			"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
 			";"
 
-		ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+		ret = SqlExecuteNonQuery(MySqlConnectionString, query)
 		If ret &lt; 0 Then
 			LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 		ElseIf ret = 0 Then
@@ -120,7 +120,7 @@ Sub AggiornaPosizioneEstrattoreE3(mag As Integer, estr As Integer, connectionStr
 				"`magazzino_ID_MAGAZZINO` =  " &amp; CStr(mag) &amp; _
 				";"
 
-			ret = SqlExecuteNonQuery(MysSqlConnectionString, query)
+			ret = SqlExecuteNonQuery(MySqlConnectionString, query)
 			If ret &lt; 0 Then
 				LogMsg		"AggiornaPosizioneEstrattoreE3() -&gt; SqlExecuteNonQuery ERROR: errorcode = " &amp; CStr(ret)	&amp; "; query= " &amp; query &amp; ";"
 			ElseIf ret = 0 Then
@@ -204,6 +204,7 @@ Function AggiornaDatiPezziInEstrattore3(connectionString, mag, cass) As Integer
 		ret = AggiornaDatiPezzi_ES3(connectionString, struct, mag, cass , count)
 		If ret &lt;&gt; 0 Then
 			'torno errore
+			ErrMsg( "AggiornaDatiPezzi_ES3() -&gt; ret  = " &amp; CStr(ret))
 			AggiornaDatiPezziInEstrattore3 = -1
 		End If
 	Next
@@ -222,7 +223,7 @@ Function AggiornaDatiPezzi_ES3(connectionString As String, structname As String,
 	Dim countz As Integer
 
     If mag &lt;&gt; 1 And mag &lt;&gt; 2 Then
-    	LogMsg("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
+    	ErrMsg("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
 		Throw New System.Exception("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico() ECCEZZIONE: valore parametro mag non ammesso: " &amp; CStr(mag) &amp; ".")
     End If
 
@@ -243,7 +244,7 @@ Function AggiornaDatiPezzi_ES3(connectionString As String, structname As String,
             				&amp; " AND POSIZIONE = " &amp; CStr(pz) _
             				&amp; " And POSIZIONE_CASSETTO = 3 ;"
 
-            DebugMsg "Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3ico(); commandText = " &amp; commandText
+            DebugMsg "Gestione_ES3.movbas -&gt; AggiornaDatiPezziInES3(); commandText = " &amp; commandText
 
             Using MyCommand As New OdbcCommand()
 
@@ -332,7 +333,8 @@ Function AggiornaDatiPezzi_ES3(connectionString As String, structname As String,
 '    `tutti_pezzi_count_profili`.`PRELEVATO`,
 						'####
 					Else
-						AggiornaDatiPezzi_ES3 = ERR_PEZZI_NON_TROVATI
+						'non c'è nulla nel cassetto in E3, allora faccio reset dei membri
+						ResetDatiMembriStruttura(structname)
 					End If
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
@@ -340,10 +342,9 @@ Function AggiornaDatiPezzi_ES3(connectionString As String, structname As String,
 
 	  'Catch program exception
 	Catch MyException As Exception
-		DebugMsg(MyException.ToString)
 		MsgBox("Gestione_ES3.movbas -&gt; AggiornaDatiPezzi_ES3() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" AggiornaDatiPezziInES3ico() - ERRORE: Exception."  &amp; _
+		ErrMsg(" AggiornaDatiPezziInES3ico() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
@@ -355,10 +356,9 @@ Function AggiornaDatiPezzi_ES3(connectionString As String, structname As String,
 
 	  'Catch ODBC Exception
 	Catch MyOdbcException As OdbcException
-		DebugMsg(MyOdbcException.ToString)
 		MsgBox("Gestione_ES3.movbas -&gt; AggiornaDatiPezziInScarico() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("AggiornaDatiPezzi_ES3() - ERRORE ODBC: OdbcException."  &amp; _
+		ErrMsg("AggiornaDatiPezzi_ES3() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
@@ -463,10 +463,9 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
 	  'Catch program exception
 	Catch MyException As Exception
 		excp = True
-		DebugMsg(MyException.ToString)
 		MsgBox("Gestione_ES3.movbas -&gt; SqlExecuteNonQuery() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
+		ErrMsg(" SqlExecuteNonQuery() - ERRORE: Exception."   &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
@@ -479,10 +478,9 @@ Function SqlExecuteNonQuery(connectionString As String, query As String) As Inte
 	  'Catch ODBC Exception
 	Catch MyOdbcException As OdbcException
 		excp = True
-		DebugMsg(MyOdbcException.ToString)
 		MsgBox("Gestione_ES3.movbas -&gt; SqlExecuteNonQuery() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."   &amp; _
+		ErrMsg("SqlExecuteNonQuery() - ERRORE ODBC: OdbcException."   &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
@@ -577,7 +575,15 @@ Sub LogMsg(msg As String)
 		Debug.Print prefix &amp; msg
 	End If
 End Sub
+
+
+Sub ErrMsg(msg As String)
+	Dim prefix As String
+	prefix = "Gestione_ES3.movbas -&gt; "
+	Debug.Print prefix &amp; msg
+End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiBOAQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

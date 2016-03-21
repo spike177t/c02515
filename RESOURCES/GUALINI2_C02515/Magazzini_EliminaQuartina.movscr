@@ -294,7 +294,6 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1432,7 +1431,7 @@ End Sub
 <childs>
 <child>
 <type>Button</type>
-<type x="0" y="0" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="195" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1502,7 +1501,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="65" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="0" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1576,7 +1575,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="130" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="65" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1646,7 +1645,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="195" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="130" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1924,6 +1923,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2424,7 +2424,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -2432,7 +2432,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -2647,7 +2647,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -2655,7 +2655,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -2849,7 +2849,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -2857,7 +2857,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface

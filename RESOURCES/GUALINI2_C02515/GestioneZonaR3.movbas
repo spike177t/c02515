@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="5671" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="4901" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -39,7 +39,7 @@ Sub Main()
 	Dim strMsgBox As String
 
 	Dim timerInvioDati As Double
-	Dim datiR3_KO As Boolean
+	Dim datiR3_OK As Boolean
 
 	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
 	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
@@ -74,7 +74,7 @@ Sub Main()
 		End If
 
 
-		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
+		'gestisco eventuali aggiornamenti da fare al DB per le posizioni degli estrattori
 
 
 		'ciclo
@@ -158,8 +158,8 @@ Sub Main()
 				Case 3100	'StartR3
 					LogMsg "StatoCicloR3 = 3100	'InvioDatiR3"
 
-					datiR3_KO = True
-					While datiR3_KO
+					datiR3_OK = False
+					While Not datiR3_OK
 
 
 						Dim R3_ALTEZZA_FINESTRA_OFFSET_CHK As UShort
@@ -172,8 +172,8 @@ Sub Main()
 						Dim R3_TEMPO_COLLA_CHK  As UShort
 
 
-						R3_ALTEZZA_FINESTRA_OFFSET_CHK =0
-						R3_ALTEZZA_PROFILO_CHK_CHK  =0
+						R3_ALTEZZA_FINESTRA_OFFSET_CHK = 0
+						R3_ALTEZZA_PROFILO_CHK_CHK  = 0
 						R3_CODICE_TIPO_PROFILO_CHK =0
 						R3_LARGHEZZA_FINESTRA_OFFSET_CHK  =0
 						R3_LARGHEZZA_PROFILO_CHK  =0
@@ -181,21 +181,21 @@ Sub Main()
 						R3_OFFSET_SQUADRETTA2_CHK  =0
 						R3_TEMPO_COLLA_CHK  =0
 
-						If ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_FINESTRA_OFFSET]  = R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_PROFILO] =R3_ALTEZZA_PROFILO_CHK_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_CODICE_TIPO_PROFILO] =R3_CODICE_TIPO_PROFILO_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_FINESTRA_OFFSET] =R3_LARGHEZZA_FINESTRA_OFFSET_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_PROFILO] =R3_LARGHEZZA_PROFILO_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA1] =R3_OFFSET_SQUADRETTA1_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA2] =R3_OFFSET_SQUADRETTA2_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_TEMPO_COLLA] = R3_TEMPO_COLLA_CHK) _
+						If ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_FINESTRA_OFFSET]	= R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_PROFILO] 	= R3_ALTEZZA_PROFILO_CHK_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_CODICE_TIPO_PROFILO] = R3_CODICE_TIPO_PROFILO_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_FINESTRA_OFFSET] = R3_LARGHEZZA_FINESTRA_OFFSET_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_PROFILO] 	= R3_LARGHEZZA_PROFILO_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA1] = R3_OFFSET_SQUADRETTA1_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA2] = R3_OFFSET_SQUADRETTA2_CHK) _
+							And ([Assemblatrice_TelaioLatoR3:R3_TEMPO_COLLA] 		= R3_TEMPO_COLLA_CHK) _
 							Then
 
-							datiR3_KO = False
+							datiR3_OK = True
 						End If
 						'
 						'TODO TOGLIERE PER DEBUG
-						datiR3_KO= False
+						datiR3_OK = True
 						DoEvents
 					End While
 

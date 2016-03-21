@@ -294,7 +294,6 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1432,7 +1431,7 @@ End Sub
 <childs>
 <child>
 <type>Button</type>
-<type x="0" y="0" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="195" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1502,7 +1501,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="65" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="0" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1576,7 +1575,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="130" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="65" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1646,7 +1645,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="195" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="130" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1940,10 +1939,11 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="797" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="1735" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub SymbolLoading()
 	Dim strQuery As String
+	Dim strQuery2 As String
 
 	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
 	objGrid.AutoLayout = False
@@ -1951,26 +1951,38 @@ Public Sub SymbolLoading()
 	objGrid.AddColumn("CASSETTO")
 	objGrid.AddColumn("DISPONIBILE")
 
+	objGrid.AddColumn("ID_POSIZIONE_CASSETTI")
+	objGrid.AddColumn("DESCRIZIONE")
+	objGrid.AddColumn("ID_QRT")
+
+
 	strQuery = "Select " _
 				&amp; " `tutti_cassetti`.`ID_MAGAZZINO` AS MAG " _
 				&amp; " , `tutti_cassetti`.`ID_CASSETTO` AS CASS " _
-				&amp; " , IF(`tutti_cassetti`.`DISPONIBILE` = 0,  ""NO"", ""SI"")" _
+				&amp; " , IF(`tutti_cassetti`.`DISPONIBILE` = 0,  ""NO"", ""SI"") AS DISP" _
 				&amp; " FROM `gualini`.`tutti_cassetti`" _
 				&amp; " join  `gualini`.`posizione_cassetti` AS pos on  `tutti_cassetti`.`POSIZIONE`=  pos.ID_POSIZIONE_CASSETTI" _
 				&amp; " where `tutti_cassetti`.`ID_MAGAZZINO` &gt; 0 " _
 				&amp; " AND `tutti_cassetti`.`POSIZIONE`= 0" _
 				&amp; " Order by MAG, CASS;"
 	
-	strQuery = "Select css.ID_MAGAZZINO, css.ID_CASSETTO, css.DISPONIBILE, css.POSIZIONE, gualini.quartina.ID_QUARTINA " _
-				&amp; "	, gualini.posizione_cassetti.DESCRIZIONE " _
+	strQuery2 = "Select css.ID_MAGAZZINO" _
+				&amp; ", css.ID_CASSETTO" _
+				&amp; ", IF(css.DISPONIBILE = 0,  ""NO"", ""SI"") AS DISP" _
+				&amp; ", `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; ", gualini.posizione_cassetti.DESCRIZIONE " _
+				&amp; ", gualini.quartina.ID_QUARTINA " _
 				&amp; " FROM `gualini`.`tutti_cassetti` As css " _
 				&amp; " Left Join  `gualini`.`quartina` " _
 				&amp; " On (css.ID_CASSETTO = `gualini`.`quartina`.`cassetto_ID_CASSETTO` And css.ID_MAGAZZINO = `gualini`.`quartina`.`cassetto_magazzino_ID_MAGAZZINO`) " _
 				&amp; " Left Join `gualini`.`posizione_cassetti` " _
 				&amp; " On css.POSIZIONE = `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
 				&amp; " WHERE ID_QUARTINA  Is Null " _
+				&amp; " Order by css.ID_MAGAZZINO, css.ID_CASSETTO " _
 				&amp; " ;"
 
+	strQuery = strQuery2
+	
 	objGrid.Query = strQuery
 	objGrid.Refresh
 	objGrid.RecalcLayout
@@ -2060,7 +2072,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1416" SelLength="43" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="1093" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub Click()
 	Dim strQuery As String
@@ -2083,8 +2095,12 @@ Public Sub Click()
 	'			&amp; " AND `tutti_cassetti`.`POSIZIONE`= 0" _
 	'			&amp; " Order by MAG, CASS;"
 
-	strQuery = "Select css.ID_MAGAZZINO, css.ID_CASSETTO, css.DISPONIBILE, css.POSIZIONE, gualini.quartina.ID_QUARTINA " _
-				&amp; "	, gualini.posizione_cassetti.DESCRIZIONE " _
+	strQuery2 = "Select css.ID_MAGAZZINO" _
+				&amp; ", css.ID_CASSETTO" _
+				&amp; ", IF(css.DISPONIBILE = 0,  ""NO"", ""SI"") AS DISP" _
+				&amp; ", `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; ", gualini.posizione_cassetti.DESCRIZIONE " _
+				&amp; ", gualini.quartina.ID_QUARTINA " _
 				&amp; " FROM `gualini`.`tutti_cassetti` As css " _
 				&amp; " Left Join  `gualini`.`quartina` " _
 				&amp; " On (css.ID_CASSETTO = `gualini`.`quartina`.`cassetto_ID_CASSETTO` And css.ID_MAGAZZINO = `gualini`.`quartina`.`cassetto_magazzino_ID_MAGAZZINO`) " _
@@ -2092,7 +2108,9 @@ Public Sub Click()
 				&amp; " On css.POSIZIONE = `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
 				&amp; " WHERE ID_QUARTINA  Is Null " _
 				&amp; " Order by css.ID_MAGAZZINO, css.ID_CASSETTO " _
-				&amp; " ;"
+				&amp; " ;
+
+	strQuery = strQuery2
 
 	objGrid.Query = strQuery
 	objGrid.Refresh
@@ -2183,7 +2201,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1406" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="1517" SelLength="861" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub Click()
 	Dim strQuery As String
@@ -2217,6 +2235,25 @@ Public Sub Click()
 				&amp; " AND css.ID_MAGAZZINO = 1 " _
 				&amp; " Order by css.ID_MAGAZZINO, css.ID_CASSETTO " _
 				&amp; " ;"
+
+	strQuery2 = "Select css.ID_MAGAZZINO" _
+				&amp; ", css.ID_CASSETTO" _
+				&amp; ", IF(css.DISPONIBILE = 0,  ""NO"", ""SI"") AS DISP" _
+				&amp; ", `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; ", gualini.posizione_cassetti.DESCRIZIONE " _
+				&amp; ", gualini.quartina.ID_QUARTINA " _
+				&amp; " FROM `gualini`.`tutti_cassetti` As css " _
+				&amp; " Left Join  `gualini`.`quartina` " _
+				&amp; " On (css.ID_CASSETTO = `gualini`.`quartina`.`cassetto_ID_CASSETTO` And css.ID_MAGAZZINO = `gualini`.`quartina`.`cassetto_magazzino_ID_MAGAZZINO`) " _
+				&amp; " Left Join `gualini`.`posizione_cassetti` " _
+				&amp; " On css.POSIZIONE = `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; " WHERE ID_QUARTINA  Is Null " _
+				&amp; " AND css.ID_MAGAZZINO = 1 " _
+				&amp; " Order by css.ID_MAGAZZINO, css.ID_CASSETTO " _
+				&amp; " ;
+
+	strQuery = strQuery2
+	
 
 	objGrid.Query = strQuery
 	objGrid.Refresh
@@ -2307,7 +2344,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1270" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="2290" SelLength="50" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub Click()
 	Dim strQuery As String
@@ -2341,6 +2378,23 @@ Public Sub Click()
 				&amp; " AND css.ID_MAGAZZINO = 2 " _
 				&amp; " Order by css.ID_MAGAZZINO, css.ID_CASSETTO " _
 				&amp; " ;"
+	strQuery2 = "Select css.ID_MAGAZZINO" _
+				&amp; ", css.ID_CASSETTO" _
+				&amp; ", IF(css.DISPONIBILE = 0,  ""NO"", ""SI"") AS DISP" _
+				&amp; ", `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; ", gualini.posizione_cassetti.DESCRIZIONE " _
+				&amp; ", gualini.quartina.ID_QUARTINA " _
+				&amp; " FROM `gualini`.`tutti_cassetti` As css " _
+				&amp; " Left Join  `gualini`.`quartina` " _
+				&amp; " On (css.ID_CASSETTO = `gualini`.`quartina`.`cassetto_ID_CASSETTO` And css.ID_MAGAZZINO = `gualini`.`quartina`.`cassetto_magazzino_ID_MAGAZZINO`) " _
+				&amp; " Left Join `gualini`.`posizione_cassetti` " _
+				&amp; " On css.POSIZIONE = `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; " WHERE ID_QUARTINA  Is Null " _
+				&amp; " AND css.ID_MAGAZZINO = 2 " _
+				&amp; " Order by css.ID_MAGAZZINO, css.ID_CASSETTO " _
+				&amp; " ;
+
+	strQuery = strQuery2
 
 	objGrid.Query = strQuery
 	objGrid.Refresh
@@ -2461,7 +2515,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -2469,7 +2523,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -2684,7 +2738,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -2692,7 +2746,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -2898,7 +2952,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -2906,7 +2960,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -3100,7 +3154,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -3108,7 +3162,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -3302,7 +3356,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -3310,7 +3364,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -3504,7 +3558,7 @@ Public Sub Click()
 	Dim selected As Boolean
 	Dim exQuery As String
 
-	If [loc_ImpostazioniImpianto:MysSqlConnectionString] = "" Then
+	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
 	      "DATABASE=gualini;" &amp; _
@@ -3512,7 +3566,7 @@ Public Sub Click()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MysSqlConnectionString]
+		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	End If
 
 	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
@@ -3625,7 +3679,7 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="841" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="410" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub SymbolLoading()
 	Dim strQuery As String
@@ -3635,6 +3689,10 @@ Public Sub SymbolLoading()
 	objGrid.AddColumn("MAGAZZINO")
 	objGrid.AddColumn("CASSETTO")
 	objGrid.AddColumn("DISPONIBILE")
+
+	objGrid.AddColumn("ID_POSIZIONE_CASSETTI")
+	objGrid.AddColumn("DESCRIZIONE")
+	objGrid.AddColumn("ID_QRT")
 
 	strQuery = "Select " _
 				&amp; " `tutti_cassetti`.`ID_MAGAZZINO` AS MAG " _
@@ -3646,15 +3704,21 @@ Public Sub SymbolLoading()
 				&amp; " AND `tutti_cassetti`.`POSIZIONE`= 0" _
 				&amp; " Order by MAG, CASS;"
 
-	strQuery = "Select css.ID_MAGAZZINO, css.ID_CASSETTO, css.DISPONIBILE, css.POSIZIONE, gualini.quartina.ID_QUARTINA " _
-			&amp; "	, gualini.posizione_cassetti.DESCRIZIONE " _
-			&amp; " FROM `gualini`.`tutti_cassetti` As css " _
-			&amp; " Left Join  `gualini`.`quartina` " _
-			&amp; " On (css.ID_CASSETTO = `gualini`.`quartina`.`cassetto_ID_CASSETTO` And css.ID_MAGAZZINO = `gualini`.`quartina`.`cassetto_magazzino_ID_MAGAZZINO`) " _
-			&amp; " Left Join `gualini`.`posizione_cassetti` " _
-			&amp; " On css.POSIZIONE = `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
-			&amp; " WHERE ID_QUARTINA  Is Not Null " _
-			&amp; " ;"
+	strQuery2 = "Select css.ID_MAGAZZINO" _
+				&amp; ", css.ID_CASSETTO" _
+				&amp; ", IF(css.DISPONIBILE = 0,  ""NO"", ""SI"") AS DISP" _
+				&amp; ", `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; ", gualini.posizione_cassetti.DESCRIZIONE " _
+				&amp; ", gualini.quartina.ID_QUARTINA " _
+				&amp; " FROM `gualini`.`tutti_cassetti` As css " _
+				&amp; " Left Join  `gualini`.`quartina` " _
+				&amp; " On (css.ID_CASSETTO = `gualini`.`quartina`.`cassetto_ID_CASSETTO` And css.ID_MAGAZZINO = `gualini`.`quartina`.`cassetto_magazzino_ID_MAGAZZINO`) " _
+				&amp; " Left Join `gualini`.`posizione_cassetti` " _
+				&amp; " On css.POSIZIONE = `gualini`.`posizione_cassetti`.`ID_POSIZIONE_CASSETTI` " _
+				&amp; " WHERE ID_QUARTINA  Is Not Null " _
+				&amp; " ;"
+
+	strQuery = strQuery2
 
 	objGrid.Query = strQuery
 	objGrid.Refresh
