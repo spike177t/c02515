@@ -2252,7 +2252,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="2702" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2700" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2313,8 +2313,8 @@ Public Sub Click()
 	idQrt 	= objGrid.CellText(nMinRow,4)
 	nomePz	= objGrid.CellText(nMinRow,5)
 
-	If 		(idMag = 1 And idCass &gt; 0 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
-		Or 	(idMag = 2 And idCass &gt; 0 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG2_ES2_RIK:STROBE] And [MAG2_ES2_ACT:WAIT]) _
+	If 		(idMag = 1 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
+		Or 	(idMag = 2 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG2_ES2_RIK:STROBE] And [MAG2_ES2_ACT:WAIT]) _
 		Then
 		msg = "Hai richiesto il cassetto: " &amp; CStr(idCass) &amp; " del magazzino: " &amp; CStr(idMag) &amp; " in Estrattore 2." _
 				&amp; vbCrLf &amp; " Sei sicuro?"
@@ -2334,7 +2334,7 @@ Public Sub Click()
 
 		End If
 	Else
-		MsgBox("Impossibile chiamare cassetto perchè il Robot R2 è In Missione o Estrattore non Pronto." ,vbExclamation, "Richiesta cassetto in Estrattore 2.")
+		MsgBox("Impossibile chiamare cassetto perchè il Robot R2 è In Missione o Estrattore non Pronto o StatoCicloScarico &lt;&gt; 1000." ,vbExclamation, "Richiesta cassetto in Estrattore 2.")
 	End If
 
 	objGrid = Nothing
