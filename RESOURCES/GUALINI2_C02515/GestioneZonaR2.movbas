@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="77519" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="102620" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -144,6 +144,8 @@ Sub Main()
 			AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 		End If
 
+		'verifica incongruenze estrattori
+		VerificaIncongruenzeEstrattori()
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
 		AggiornaPosizioniEstrattori_ZONA_R2_ES2(MySqlConnectionString)
@@ -1739,7 +1741,7 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 						tipoprofilo = GetVariableValue(structname &amp; ":R2_TIPO_PROFILO")
 						countz 		= GetVariableValue(structname &amp; ":R2_COUNT_Z")
 
-						If tipoprofilo = "L" And (countz &gt; 0 and countz &lt; 4) Then
+						If tipoprofilo = "L" And (countz &gt; 0 And countz &lt; 4) Then
 							SetVariableValue(structname &amp; ":R2_RUOTA_PEZZO"	, True)
 						Else
 							SetVariableValue(structname &amp; ":R2_RUOTA_PEZZO"	, False)
@@ -2386,6 +2388,51 @@ Function Get_R3_CODICE_TIPO_PROFILO(structPrefix As String) As Byte
 		End If
 	Next
 End Function
+
+Sub VerificaIncongruenzeEstrattori()
+	'Dim errM1_ES1, errM1_ES2, errM1_ES3, errM2_ES1, errM2_ES2, errM2_ES3 As Boolean
+
+	If [MAG1_ES1_ACT:WAIT] And ([MAG1_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES1_RIK:ID_CASSETTO]) Then
+		[loc_IncongrEstrattori:errM1_ES1] = True
+	Else
+		[loc_IncongrEstrattori:errM1_ES1] = False
+	End If
+	If [MAG1_ES2_ACT:WAIT] And ([MAG1_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES2_RIK:ID_CASSETTO]) Then
+		[loc_IncongrEstrattori:errM1_ES2] = True
+	Else
+		[loc_IncongrEstrattori:errM1_ES2] = False
+	End If
+	If [MAG1_ES3_ACT:WAIT] And ([MAG1_ES3_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES3_RIK:ID_CASSETTO]) Then
+		[loc_IncongrEstrattori:errM1_ES3] = True
+	Else
+		[loc_IncongrEstrattori:errM1_ES3] = False
+	End If
+
+	If [MAG2_ES1_ACT:WAIT] And ([MAG2_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES1_RIK:ID_CASSETTO]) Then
+		[loc_IncongrEstrattori:errM2_ES1] = True
+	Else
+		[loc_IncongrEstrattori:errM2_ES1] = False
+	End If
+	If [MAG2_ES2_ACT:WAIT] And ([MAG2_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES2_RIK:ID_CASSETTO]) Then
+		[loc_IncongrEstrattori:errM2_ES2] = True
+	Else
+		[loc_IncongrEstrattori:errM2_ES3] = False
+	End If
+	If [MAG2_ES3_ACT:WAIT] And ([MAG2_ES3_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES3_RIK:ID_CASSETTO]) Then
+		[loc_IncongrEstrattori:errM2_ES3] = True
+	Else
+		[loc_IncongrEstrattori:errM2_ES3] = False
+	End If
+
+	If  	[loc_IncongrEstrattori:errM1_ES1] Or  [loc_IncongrEstrattori:errM1_ES2] Or  [loc_IncongrEstrattori:errM1_ES3] _
+		Or  [loc_IncongrEstrattori:errM2_ES1] Or  [loc_IncongrEstrattori:errM2_ES2] Or  [loc_IncongrEstrattori:errM2_ES3] _
+		Then
+		[loc_IncongrEstrattori:almOn] = True
+	Else
+		[loc_IncongrEstrattori:almOn] = False
+	End If
+End Sub
+
 
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>

@@ -270,14 +270,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[69]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[69].evt">Plc_ar_allarmi_69</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[69]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[69].evt">Plc_ar_allarmi_69</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR1_ODBC</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -319,14 +319,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="1">loc_R3_SpessoreSupporti</Name>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0" InitialValue="DATA.TXT">loc_QuadraDataFile</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="9" AreaType="1" Address="0" Bit="0" Group="Locali" Shared="0" Retentive="0" InitialValue="DATA.TXT">loc_QuadraDataFile</Name>
+<Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="1">loc_R3_SpessoreSupporti</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -774,6 +774,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="11" StructType="IncongrEstrattori_Struct" AreaType="1" Address="0" Bit="7" Shared="0" Retentive="0">loc_IncongrEstrattori</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[31]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[31].evt">Plc_ar_messaggi_31</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -1054,14 +1061,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="45" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[11]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[11].evt">Plc_ar_messaggi_11</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[11]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[11].evt">Plc_ar_messaggi_11</Name>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="45" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1075,14 +1082,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=42">Pilz_Esp0i01_EmgAssCh2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[93]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[93].evt">Plc_ar_allarmi_93</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[93]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[93].evt">Plc_ar_allarmi_93</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssCh2" Group="PILZ" Shared="0" Retentive="0" DynamicSettings="[DRV]Modbus TCPIP.Sta=Pilz|Unit=1|FC=0|SA=42">Pilz_Esp0i01_EmgAssCh2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2146,14 +2153,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[88]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[88].evt">Plc_ar_allarmi_88</Name>
+<Name Type="11" StructType="EtichettaR3_Struct" AreaType="1" Address="0" Bit="10" Description="NON MODIFICARE NOME, usata in script con SetVariableValue" Group="Locali" Shared="0" Retentive="0">loc_Etichetta_M1_E3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="EtichettaR3_Struct" AreaType="1" Address="0" Bit="10" Description="NON MODIFICARE NOME, usata in script con SetVariableValue" Group="Locali" Shared="0" Retentive="0">loc_Etichetta_M1_E3</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[88]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[88].evt">Plc_ar_allarmi_88</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2237,14 +2244,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="OUTPUT_QUADRA" AreaType="1" Address="0" Bit="8" Description="Global Variable PLC_TRANSF_Q1_OUT" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_Q1_OUT">PLC_TRANSF_Q1_OUT</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[34]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[34].evt">Plc_ar_allarmi_34</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[34]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[34].evt">Plc_ar_allarmi_34</Name>
+<Name Type="11" StructType="OUTPUT_QUADRA" AreaType="1" Address="0" Bit="8" Description="Global Variable PLC_TRANSF_Q1_OUT" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_Q1_OUT">PLC_TRANSF_Q1_OUT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -3270,6 +3277,32 @@
 </Member>
 <Member>
 <Name Type="0">FotocellScaricatore5</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="struct per verifica incongruenze valori  cass_Rik con cass_Act degli estrattori">IncongrEstrattori_Struct</Name>
+<MemberList>
+<Member>
+<Name Type="0" Description="segnala incongruenza presente">almOn</Name>
+</Member>
+<Member>
+<Name Type="0">errM1_ES1</Name>
+</Member>
+<Member>
+<Name Type="0">errM1_ES2</Name>
+</Member>
+<Member>
+<Name Type="0">errM1_ES3</Name>
+</Member>
+<Member>
+<Name Type="0">errM2_ES1</Name>
+</Member>
+<Member>
+<Name Type="0">errM2_ES2</Name>
+</Member>
+<Member>
+<Name Type="0">errM2_ES3</Name>
 </Member>
 </MemberList>
 </Structure>

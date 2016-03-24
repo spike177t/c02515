@@ -4291,5 +4291,27 @@
 </Threshold>
 </ThresholdList>
 </Alarm>
+<Alarm>
+<Name Device="" Variable="loc_IncongrEstrattori:almOn" Area="MESSAGGI" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_IncongruenzaEstrattori</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="Incongruenza Estrattori" Help="Risolvere problema da pagina dedicata su supervisione" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
+<Execution Condition="2" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
 </AlarmList>
 </Alarms>
