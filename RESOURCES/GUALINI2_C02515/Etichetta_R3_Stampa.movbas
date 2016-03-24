@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="415" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*PublicBasicScript"
+<ScriptCode StartSel="2519" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*PublicBasicScript"
 Option Explicit
 
 
@@ -41,6 +41,14 @@ Sub Main()
 		Dimensioni 		= [loc_EtichettaR3:Dimensioni]
 		IdQuartina 		= [loc_EtichettaR3:IdQuartina]
 
+	ElseIf vResult = "R2" Then
+		'richiesta etichetta da R2
+		Azienda 		= [loc_EtichettaR2:Azienda]
+		Barcode 		= [loc_EtichettaR2:Barcode]
+		Commessa 		= [loc_EtichettaR2:Commessa]
+		Dimensioni 		= [loc_EtichettaR2:Dimensioni]
+		IdQuartina 		= [loc_EtichettaR2:IdQuartina]
+
 	ElseIf vResult = "M1_E3" Then
 		'richiesta da magazzino 1 estrattore 3
 		Azienda 		= [loc_Etichetta_M1_E3:Azienda]
@@ -49,6 +57,12 @@ Sub Main()
 		Dimensioni 		= [loc_Etichetta_M1_E3:Dimensioni]
 		IdQuartina 		= [loc_Etichetta_M1_E3:IdQuartina]
 
+		'Azienda 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+		'Barcode 		= Left([ES3_M1_PZ1:ID_QUARTINA], 13)
+		'Commessa 		= [ES3_M1_PZ1:NOME_COMMESSA]
+		'Dimensioni 		= CStr([ES3_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([ES3_M1_PZ1:MAX_LUNGHEZZA])
+		'IdQuartina 		= [ES3_M1_PZ1:ID_QUARTINA]
+
 	ElseIf vResult = "M2_E3" Then
 		'richiesta da magazzino 2 estrattore 3
 		Azienda 		= [loc_Etichetta_M2_E3:Azienda]
@@ -56,6 +70,13 @@ Sub Main()
 		Commessa 		= [loc_Etichetta_M2_E3:Commessa]
 		Dimensioni 		= [loc_Etichetta_M2_E3:Dimensioni]
 		IdQuartina 		= [loc_Etichetta_M2_E3:IdQuartina]
+
+		'Azienda 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+		'Barcode 		= Left([ES3_M2_PZ1:ID_QUARTINA], 13)
+		'Commessa 		= [ES3_M2_PZ1:NOME_COMMESSA]
+		'Dimensioni 		= CStr([ES3_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([ES3_M2_PZ1:MAX_LUNGHEZZA])
+		'IdQuartina 		= [ES3_M2_PZ1:ID_QUARTINA]
+
 	Else
 		MsgBox("Etichetta_R3_Stampa.movbas: nome parametro inesistente",vbOkOnly, "Warning")
 	End If

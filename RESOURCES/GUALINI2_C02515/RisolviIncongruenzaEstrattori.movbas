@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="146" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+
+Sub Main()
+	Dim pMag As String
+	Dim pEst As String
+	Dim varRik As String
+	Dim varAct As String
+
+	Dim ret As Boolean
+
+
+	pMag = This.GetParameter(0)
+	pEst = This.GetParameter(1)
+
+	varRik = "MAG" &amp; pMag &amp; "_ES" &amp; pEst &amp; "_RIK:ID_CASSETTO"
+	varAct = "MAG" &amp; pMag &amp; "_ES" &amp; pEst &amp; "_ACT:ID_CASSETTO"
+
+	ret = SetVariableValue(varRik, GetVariableValue(varAct))
+
+	If Not ret  Then
+		MsgBox("RisolviIncongruenzaEstrattori.movbas: Errore risoluzione incongruenza per Estrattore: " &amp; pEst &amp; _
+			", MAGAZZINO: " &amp; pMag &amp; ".",vbOkOnly, "Warning")
+	End If
+	
+End Sub
+</ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAMAA==</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

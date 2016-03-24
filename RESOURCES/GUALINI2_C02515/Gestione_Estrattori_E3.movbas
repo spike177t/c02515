@@ -584,6 +584,6 @@ Sub ErrMsg(msg As String)
 End Sub
 </ScriptCode>
 <BreakPoints xsi:type="xsd:base64Binary">AiBOAQ==</BreakPoints>
-<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
-<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>

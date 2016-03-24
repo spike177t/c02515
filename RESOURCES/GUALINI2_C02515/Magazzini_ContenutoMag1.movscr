@@ -358,7 +358,6 @@
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2167,7 +2166,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="2700" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1687" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2202,6 +2201,9 @@ Public Sub Click()
 	Dim idQrt As String
 	Dim nomePz As String
 
+	Dim rikValida As Boolean
+	rikValida = False
+
 	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
@@ -2223,32 +2225,71 @@ Public Sub Click()
 		Exit Sub
 	End If
 	idMag 	= IIf(objGrid.CellText(nMinRow,1) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
-	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
+	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,2)), 0)
 	idQrt 	= objGrid.CellText(nMinRow,4)
-	nomePz	= objGrid.CellText(nMinRow,5)
+	'nomePz	= objGrid.CellText(nMinRow,5)
+	nomePz = "RikManDaMag1"
 
-	If 		(idMag = 1 And idCass &gt; 0 And Not [R1_STATUS:IN_MISSIONE] And Not [MAG1_ES1_RIK:STROBE] And [MAG1_ES1_ACT:WAIT]) _
+	If 	(	(idMag = 1 And idCass &gt; 0 And Not [R1_STATUS:IN_MISSIONE] And Not [MAG1_ES1_RIK:STROBE] And [MAG1_ES1_ACT:WAIT]) _
 		Or 	(idMag = 2 And idCass &gt; 0 And Not [R1_STATUS:IN_MISSIONE] And Not [MAG2_ES1_RIK:STROBE] And [MAG2_ES1_ACT:WAIT]) _
+		) And StatoCicloCarico = 1000 _
 		Then
 		msg = "Hai richiesto il cassetto: " &amp; CStr(idCass) &amp; " del magazzino: " &amp; CStr(idMag) &amp; " in Estrattore 1." _
 				&amp; vbCrLf &amp; " Sei sicuro?"
 		retMsgbox = MsgBox(msg, vbYesNo, "Richiesta cassetto in Estrattore 1." )
 		If retMsgbox = vbYes Then
 			If idMag = 1 Then
-				[MAG1_ES1_RIK:ID_CASSETTO] = idCass
-				[MAG1_ES1_RIK:ID_QUARTINA] = idQrt
-				[MAG1_ES1_RIK:NOME_PEZZO_UNICO] = nomePz
-				[MAG1_ES1_RIK:STROBE] = True
-			ElseIf idMag = 2 Then
-				[MAG2_ES1_RIK:ID_CASSETTO] = idCass
-				[MAG2_ES1_RIK:ID_QUARTINA] = idQrt
-				[MAG2_ES1_RIK:NOME_PEZZO_UNICO] = nomePz
-				[MAG2_ES1_RIK:STROBE] = True
-			End If
+				If [MAG1_ES1_ACT:BUSY] Then
+					msg = "Attenzione il cassetto risulta bloccato da Missione Robot non terminata." &amp; vbCrLf _
+						&amp; "Rispondi SI per Annullare la richiesta." &amp; vbCrLf _
+						&amp; "Rispondi NO per rimuovere il blocco e forzare la richiesta del cassetto." &amp; vbCrLf _
+						&amp; vbCrLf &amp; "Attenzione rispondendo NO i dati dell'eventuale pezzo in pinza potrebbero essere persi."
 
+					retMsgbox = MsgBox(msg, vbYesNo, "Annullare richiesta cassetto in Estrattore 1." )
+					rikValida = IIf(retMsgbox = vbNo, True, False)
+				Else
+					rikValida = True
+				End If
+				If rikValida Then
+					[MAG1_ES1_RIK:ID_CASSETTO] = idCass
+					[MAG1_ES1_RIK:ID_QUARTINA] = idQrt
+					[MAG1_ES1_RIK:NOME_PEZZO_UNICO] = nomePz
+
+					'forzo valori in ACT
+					[MAG1_ES1_ACT:DEPO] = True
+					[MAG1_ES1_ACT:BUSY] = False
+
+					[MAG1_ES1_RIK:STROBE] = True
+				End If
+
+			ElseIf idMag = 2 Then
+				If [MAG2_ES1_ACT:BUSY] Then
+					msg = "Attenzione il cassetto risulta bloccato da Missione Robot non terminata." &amp; vbCrLf _
+						&amp; "Rispondi SI per Annullare la richiesta." &amp; vbCrLf _
+						&amp; "Rispondi NO per rimuovere il blocco e forzare la richiesta del cassetto." &amp; vbCrLf _
+						&amp; vbCrLf &amp; "Attenzione rispondendo NO i dati dell'eventuale pezzo in pinza potrebbero essere persi."
+					
+					retMsgbox = MsgBox(msg, vbYesNo, "Annullare richiesta cassetto in Estrattore 1." )
+					rikValida = IIf(retMsgbox = vbNo, True, False)
+				Else
+					rikValida = True
+				End If
+				If rikValida Then
+					[MAG2_ES1_RIK:ID_CASSETTO] = idCass
+					[MAG2_ES1_RIK:ID_QUARTINA] = idQrt
+					[MAG2_ES1_RIK:NOME_PEZZO_UNICO] = nomePz
+
+					'forzo valori in ACT
+					[MAG2_ES1_ACT:DEPO] = True
+					[MAG2_ES1_ACT:BUSY] = False
+
+					[MAG2_ES1_RIK:STROBE] = True
+				End If
+			End If
 		End If
 	Else
-		MsgBox("Impossibile chiamare cassetto perchè il Robot R1 è In Missione o Estrattore non Pronto." ,vbExclamation, "Richiesta cassetto in Estrattore 1.")
+		MsgBox("Impossibile chiamare cassetto perchè il Robot R1 è In Missione o Estrattore non Pronto" _
+				&amp; " o StatoCicloCarico &lt;&gt; 1000." ,vbExclamation, "Richiesta cassetto in Estrattore 1.")
 	End If
 
 	objGrid = Nothing
@@ -2261,6 +2302,8 @@ Sub LogMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiBKAGIA
+</BreakPoints>
 </child>
 <child>
 <object>Button</object>
@@ -2344,7 +2387,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1557" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2405" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2379,6 +2422,9 @@ Public Sub Click()
 	Dim idQrt As String
 	Dim nomePz As String
 
+	Dim rikValida As Boolean
+	rikValida = False
+
 	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
 		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
 	      "SERVER=localhost;" &amp; _
@@ -2406,23 +2452,67 @@ Public Sub Click()
 	'nomePz	= objGrid.CellText(nMinRow,5)
 	nomePz = "RikManDaMag1"
 
-	If 		(idMag = 1 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
+	If (	(idMag = 1 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
 		Or 	(idMag = 2 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG2_ES2_RIK:STROBE] And [MAG2_ES2_ACT:WAIT]) _
+		) And StatoCicloScarico = 1000 _
 		Then
 		msg = "Hai richiesto il cassetto: " &amp; CStr(idCass) &amp; " del magazzino: " &amp; CStr(idMag) &amp; " in Estrattore 2." _
 				&amp; vbCrLf &amp; " Sei sicuro?"
 		retMsgbox = MsgBox(msg, vbYesNo, "Richiesta cassetto in Estrattore 2." )
 		If retMsgbox = vbYes Then
 			If idMag = 1 Then
-				[MAG1_ES2_RIK:ID_CASSETTO] = idCass
-				[MAG1_ES2_RIK:ID_QUARTINA] = idQrt
-				[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
-				[MAG1_ES2_RIK:STROBE] = True
+				'faccio controllo ulteriore per verificare di non aver già assegnato la missione al robot
+				If [R2_STATUS:CASSETTO] &gt; 0 And [R2_STATUS:MAGAZZINO] = 1 Then
+					msg = "Attenzione il cassetto risulta asegnato a Missione Robot." &amp; vbCrLf _
+						&amp; "Rispondi ANNULLA per annullare la richiesta." &amp; vbCrLf _
+						&amp; "Rispondi OK per rimuovere il blocco e forzare la richiesta del cassetto." &amp; vbCrLf _
+						&amp; vbCrLf &amp; "Attenzione rispondendo OK i dati dei pezzi non saranno eliminati, ma rimessi all'interno del magazzino." _
+						&amp; vbCrLf &amp; "Se i pezzi sono stati rimossi rispondere ANNULLA per annullare e far rientrare il cassetto con progedura apposita da pagina MAGAZZINI/Richiedi Cassetto in Estrattore 2"
+
+					retMsgbox = MsgBox(msg, vbOkCancel, "Annullare richiesta cassetto in Magazzino 1 Estrattore 2." )
+					rikValida = IIf(retMsgbox = vbOK, True, False)
+				Else
+					rikValida = True
+				End If
+
+				If rikValida Then
+					'reset dati missione
+					[R2_STATUS:MAGAZZINO] = 0
+					[R2_STATUS:CASSETTO] = 0
+					[R2_STATUS:ID_QUARTINA] = ""
+					
+					[MAG1_ES2_RIK:ID_CASSETTO] = idCass
+					[MAG1_ES2_RIK:ID_QUARTINA] = idQrt
+					[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
+					[MAG1_ES2_RIK:STROBE] = True
+				End If
+
 			ElseIf idMag = 2 Then
-				[MAG2_ES2_RIK:ID_CASSETTO] = idCass
-				[MAG2_ES2_RIK:ID_QUARTINA] = idQrt
-				[MAG2_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
-				[MAG2_ES2_RIK:STROBE] = True
+				'faccio controllo ulteriore per verificare di non aver già assegnato la missione al robot
+				If [R2_STATUS:CASSETTO] &gt; 0 And [R2_STATUS:MAGAZZINO] = 2 Then
+					msg = "Attenzione il cassetto risulta asegnato a Missione Robot." &amp; vbCrLf _
+						&amp; "Rispondi ANNULLA per annullare la richiesta." &amp; vbCrLf _
+						&amp; "Rispondi OK per rimuovere il blocco e forzare la richiesta del cassetto." &amp; vbCrLf _
+						&amp; vbCrLf &amp; "Attenzione rispondendo OK i dati dei pezzi non saranno eliminati, ma rimessi all'interno del magazzino." _
+						&amp; vbCrLf &amp; "Se i pezzi sono stati rimossi rispondere ANNULLA per annullare e far rientrare il cassetto con progedura apposita da pagina MAGAZZINI/Richiedi Cassetto in Estrattore 2"
+
+					retMsgbox = MsgBox(msg, vbOkCancel, "Annullare richiesta cassetto in Magazzino 2 Estrattore 2." )
+					rikValida = IIf(retMsgbox = vbOK, True, False)
+				Else
+					rikValida = True
+				End If
+
+				If rikValida Then
+					'reset dati missione
+					[R2_STATUS:MAGAZZINO] = 0
+					[R2_STATUS:CASSETTO] = 0
+					[R2_STATUS:ID_QUARTINA] = ""
+
+					[MAG2_ES2_RIK:ID_CASSETTO] = idCass
+					[MAG2_ES2_RIK:ID_QUARTINA] = idQrt
+					[MAG2_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
+					[MAG2_ES2_RIK:STROBE] = True
+				End If
 			End If
 
 		End If
@@ -2440,7 +2530,8 @@ Sub LogMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiA+AA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiBLAGYA
+</BreakPoints>
 </child>
 <child>
 <object>Button</object>
@@ -2524,7 +2615,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1356" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1358" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2581,7 +2672,7 @@ Public Sub Click()
 	End If
 
 	idMag 	= IIf(objGrid.CellText(nMinRow,1) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
-	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
+	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,2)), 0)
 	idQrt 	= objGrid.CellText(nMinRow,4)
 	'nomePz	= objGrid.CellText(nMinRow,5)
 	nomePz = "RikManDaMag1"
