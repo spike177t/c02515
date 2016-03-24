@@ -879,7 +879,7 @@ End Sub
 <DynColor Value="6"/>
 </dci>
 <dci>
-<DynColor Value="7"/>
+<DynColor Color="49152" Value="7"/>
 </dci>
 <dci>
 <DynColor Value="8"/>
@@ -921,8 +921,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
+<ScriptCode StartSel="21" SelLength="67" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_SelPage = 7
+	OpenSynoptic("Impostazioni", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -1064,7 +1065,7 @@ End Sub
 <DynColor Value="7"/>
 </dci>
 <dci>
-<DynColor Value="8"/>
+<DynColor Color="49152" Value="8"/>
 </dci>
 <dci>
 <DynColor Value="9"/>
@@ -1103,8 +1104,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="36" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_SelPage = 0
+<ScriptCode StartSel="63" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_SelPage = 8
+	OpenSynoptic("LogStorico", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -1421,6 +1423,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2252,7 +2255,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="2557" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1557" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2309,9 +2312,10 @@ Public Sub Click()
 	End If
 
 	idMag 	= IIf(objGrid.CellText(nMinRow,1) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
-	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
+	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,2)), 0)
 	idQrt 	= objGrid.CellText(nMinRow,4)
-	nomePz	= objGrid.CellText(nMinRow,5)
+	'nomePz	= objGrid.CellText(nMinRow,5)
+	nomePz = "RikManDaMag1"
 
 	If 		(idMag = 1 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
 		Or 	(idMag = 2 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG2_ES2_RIK:STROBE] And [MAG2_ES2_ACT:WAIT]) _
@@ -2347,6 +2351,7 @@ Sub LogMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiA+AA==</BreakPoints>
 </child>
 <child>
 <object>Button</object>
@@ -2430,7 +2435,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="2531" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1356" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2489,7 +2494,8 @@ Public Sub Click()
 	idMag 	= IIf(objGrid.CellText(nMinRow,1) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
 	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
 	idQrt 	= objGrid.CellText(nMinRow,4)
-	nomePz	= objGrid.CellText(nMinRow,5)
+	'nomePz	= objGrid.CellText(nMinRow,5)
+	nomePz = "RikManDaMag1"
 
 	If 		(idMag = 1 And idCass &gt; 0 And [MAG1_ES3_ACT:ID_CASSETTO] = 0 And Not [MAG1_ES3_RIK:STROBE] And [MAG1_ES3_ACT:WAIT]) _
 		Or 	(idMag = 2 And idCass &gt; 0 And [MAG2_ES3_ACT:ID_CASSETTO] = 0 And Not [MAG2_ES3_RIK:STROBE] And [MAG2_ES3_ACT:WAIT]) _

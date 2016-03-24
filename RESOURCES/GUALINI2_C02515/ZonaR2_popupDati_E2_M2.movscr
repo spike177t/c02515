@@ -10,7 +10,7 @@
 <type x="20" y="10" width="860" height="35" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Robot R2: Dettaglio Dati Pezzi in scarico Magazzino 1 Estrattore 2</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Robot R2: Dettaglio Dati Pezzi in scarico Magazzino 2 Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -116,7 +116,7 @@ End Sub
 <editbox x="5" y="137" width="109" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:NOME_PEZZO_UNICO"/>
+<execution var="SCAR_M2_PZ1:NOME_PEZZO_UNICO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -137,7 +137,7 @@ End Sub
 <editbox x="126" y="137" width="109" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:ID_QUARTINA"/>
+<execution var="SCAR_M2_PZ1:ID_QUARTINA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -158,7 +158,7 @@ End Sub
 <editbox x="237" y="137" width="109" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:CODICE_PROFILO"/>
+<execution var="SCAR_M2_PZ1:CODICE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -179,7 +179,7 @@ End Sub
 <editbox x="347" y="137" width="109" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:NOME_COMMESSA"/>
+<execution var="SCAR_M2_PZ1:NOME_COMMESSA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -200,7 +200,7 @@ End Sub
 <editbox x="463" y="137" width="109" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:MAX_LUNGHEZZA"/>
+<execution var="SCAR_M2_PZ1:MAX_LUNGHEZZA"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -221,7 +221,7 @@ End Sub
 <editbox x="584" y="137" width="49" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:NUM_SQUADRETTE1"/>
+<execution var="SCAR_M2_PZ1:NUM_SQUADRETTE1"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -242,7 +242,7 @@ End Sub
 <editbox x="642" y="137" width="49" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:NUM_SQUADRETTE2"/>
+<execution var="SCAR_M2_PZ1:NUM_SQUADRETTE2"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -263,7 +263,7 @@ End Sub
 <editbox x="705" y="137" width="69" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:R2_FILA_SQ1"/>
+<execution var="SCAR_M2_PZ1:R2_FILA_SQ1"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -284,7 +284,7 @@ End Sub
 <editbox x="784" y="137" width="69" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:R2_FILA_SQ2"/>
+<execution var="SCAR_M2_PZ1:R2_FILA_SQ2"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -305,7 +305,7 @@ End Sub
 <editbox x="868" y="137" width="60" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:R2_CODICE_PRG"/>
+<execution var="SCAR_M2_PZ1:R2_CODICE_PRG"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -326,7 +326,7 @@ End Sub
 <editbox x="937" y="137" width="60" height="29" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ1:R2_RUOTA_PEZZO"/>
+<execution var="SCAR_M2_PZ1:R2_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -374,7 +374,7 @@ End Sub
 <editbox x="4" y="280" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ2:CODICE_PROFILO"/>
+<execution var="SCAR_M2_PZ2:CODICE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -395,7 +395,7 @@ End Sub
 <editbox x="96" y="280" width="108" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ2:MAX_LUNGHEZZA" max="77777"/>
+<execution var="SCAR_M2_PZ2:MAX_LUNGHEZZA" max="77777"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -416,7 +416,7 @@ End Sub
 <editbox x="216" y="280" width="60" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ2:R2_CODICE_PRG"/>
+<execution var="SCAR_M2_PZ2:R2_CODICE_PRG"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -437,7 +437,7 @@ End Sub
 <editbox x="284" y="280" width="60" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ2:R2_RUOTA_PEZZO"/>
+<execution var="SCAR_M2_PZ2:R2_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -458,7 +458,7 @@ End Sub
 <editbox x="444" y="280" width="60" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ3:R2_CODICE_PRG"/>
+<execution var="SCAR_M2_PZ3:R2_CODICE_PRG"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -479,7 +479,7 @@ End Sub
 <editbox x="516" y="280" width="60" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ3:R2_RUOTA_PEZZO"/>
+<execution var="SCAR_M2_PZ3:R2_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -500,7 +500,7 @@ End Sub
 <editbox x="676" y="280" width="60" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ4:R2_CODICE_PRG"/>
+<execution var="SCAR_M2_PZ4:R2_CODICE_PRG"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -521,7 +521,7 @@ End Sub
 <editbox x="744" y="280" width="60" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ4:R2_RUOTA_PEZZO"/>
+<execution var="SCAR_M2_PZ4:R2_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -542,7 +542,7 @@ End Sub
 <editbox x="584" y="280" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ4:CODICE_PROFILO"/>
+<execution var="SCAR_M2_PZ4:CODICE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -572,7 +572,7 @@ End Sub
 <editbox x="356" y="280" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="SCAR_M1_PZ3:CODICE_PROFILO"/>
+<execution var="SCAR_M2_PZ3:CODICE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
