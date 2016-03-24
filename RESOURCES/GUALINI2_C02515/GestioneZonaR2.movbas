@@ -524,7 +524,7 @@ Sub Main()
 						rikEstrattore.PRONTO					= False
 						rikEstrattore.STROBE 					= True
 
-						'aggiungo richiesta a coda estrattore
+						'aggiungo richiesta cassetto 0 a coda estrattore
 						If [R2_STATUS:MAGAZZINO] = 1  Then
 
 							strEstrattore =Serializza_stEstrattore(rikEstrattore)
@@ -1353,9 +1353,11 @@ Sub ProcessaCodaEstrattori_ZONA_R2()
 
 	Dim tmpEs As stEstrattore
 	Dim strEs As String
+	Dim enableLogMsg_old As Boolean
 
 	'abilito LogMsg
-	enableLogMsg = True
+	 enableLogMsg_old = enableLogMsg
+	 enableLogMsg = True
 
 	If codaMAG1_ES2.Count &gt; 0 Then
 		If Not [MAG1_ES2_RIK:STROBE] _
@@ -1426,8 +1428,8 @@ Sub ProcessaCodaEstrattori_ZONA_R2()
 		End If
 	End If
 
-	'disabilito LogMsg
-	enableLogMsg = False
+	'riassegno valore precedente a enableLogMsg
+	enableLogMsg = enableLogMsg_old
 End Sub
 
 Function Serializza_stEstrattore (st As stEstrattore) As String
@@ -1481,8 +1483,11 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 	Dim query As String
 	Dim ret As Integer
 
+	Dim enableLogMsg_old As Boolean
+
 	'abilito LogMsg
-	enableLogMsg = True
+	 enableLogMsg_old = enableLogMsg
+	 enableLogMsg = True
 
 	varEstrattore 		= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT"
 	varEstrattoreOld 	= "MAG" &amp; CStr(mag) &amp; "_ES" &amp; CStr(estr) &amp; "_ACT_OLD"
@@ -1554,15 +1559,15 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 			ret = AggiornaDatiPezziInEstrattore2(connectionString, mag, cass)
 			If ret &lt;&gt; 0 Then
 				'alzo allarme Errore aggiornamento dati Estrattore2
+				'questi alm non saranno resettati da plsResetAlm, ma da procedura apposita
 				If mag = 1 Then
-					alm_M1_ES2_ErrDatiDaDB = True
+					alm_M1_ES2_ErrDatiPezzi = True
 				End If
 				If mag = 2 Then
-					alm_M2_ES2_ErrDatiDaDB = True
+					alm_M2_ES2_ErrDatiPezzi = True
 				End If
 			End If
 		End If
-
 
 		'alla fine aggiorno la variabile Old
 		AggiornaMembri(varEstrattore, varEstrattoreOld)
@@ -1573,8 +1578,8 @@ Sub AggiornaPosizioneEstrattore(mag As Integer, estr As Integer, connectionStrin
 	'	AggiornaMembri(varEstrattore, varEstrattoreOld)
 	'End If
 
-	'disabilito LogMsg
-	enableLogMsg = False
+	'ricarico valore precedente di enableLogMsg
+	enableLogMsg = enableLogMsg_old
 End Sub
 
 Function AggiornaDatiPezziInEstrattore2(connectionString, mag, cass) As Integer
@@ -1584,7 +1589,10 @@ Function AggiornaDatiPezziInEstrattore2(connectionString, mag, cass) As Integer
 	Dim varEstrattore As String
 	Dim struct As String
 
+	Dim memoRetError As Boolean 'mi serve per memorizzare eventuali errori sui dati pezzo
+
 	AggiornaDatiPezziInEstrattore2 = 0	'inizializzo
+	memoRetError = False
 
 	If mag = 1 Then
 		prefixStruct = "SCAR_M1_PZ"
@@ -1606,13 +1614,17 @@ Function AggiornaDatiPezziInEstrattore2(connectionString, mag, cass) As Integer
 		struct = prefixStruct &amp; CStr(count)
 		ret = AggiornaDatiPezziInScarico(connectionString, struct, mag, cass , count)
 		If ret &lt;&gt; 0 Then
-			'torno errore
-			AggiornaDatiPezziInEstrattore2 = -1
+			memoRetError  = True
 		End If
 	Next
-	'alla fine aggiorno i riferimenti nell'estrattore
-	SetVariableValue(varEstrattore &amp; ":ID_QUARTINA"		, GetVariableValue(prefixStruct &amp; "1" &amp; ":ID_QUARTINA"))
-	SetVariableValue(varEstrattore &amp; ":NOME_PEZZO_UNICO", GetVariableValue(prefixStruct &amp; "1" &amp; ":NOME_PEZZO_UNICO"))
+	If memoRetError Then
+			'torno errore
+			AggiornaDatiPezziInEstrattore2 = -1
+	Else
+		'tutto ok allora aggiorno i riferimenti nell'estrattore
+		SetVariableValue(varEstrattore &amp; ":ID_QUARTINA"		, GetVariableValue(prefixStruct &amp; "1" &amp; ":ID_QUARTINA"))
+		SetVariableValue(varEstrattore &amp; ":NOME_PEZZO_UNICO", GetVariableValue(prefixStruct &amp; "1" &amp; ":NOME_PEZZO_UNICO"))
+	End If
 
 End Function
 
@@ -1636,6 +1648,11 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
     Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
 
 
+    'se ho chiesto il cassetto 0 faccio semplicemente il reset della structname
+    If cass = 0 Then
+    	ResetDatiMembriStruttura(structname)
+    	Exit Function
+    End If
 	'cerco nel db a quale cassetto è assegnata la quartina
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
@@ -1742,7 +1759,18 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 '    `tutti_pezzi_count_profili`.`PRELEVATO`,
 						'####
 					Else
-						AggiornaDatiPezziInScarico = ERR_PEZZI_NON_TROVATI
+						'non ho pezzi nello slot per cui faccio reset valori
+						ResetDatiMembriStruttura(structname)
+						If cass &gt; 0 Then
+							'ho richiesto in E2 un cassetto che non ha tutti i pezzi (possibile solo facendo richieste manuali)
+							'alzo allarme, che però dovra essere resettao con procedura particolare e non da plsResetAllarmi
+							If Not SetVariableValue("alm_M" &amp; CStr(mag) &amp; "_ES_ErrPz" &amp; CStr(pz), True) Then
+								'ho errore nella funzione SetVariableValue
+								Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInScarico() ECCEZZIONE in SetVariableValue(alm_M &amp; CStr(mag) &amp; _ES_ErrPz &amp; CStr(pz), True).")
+							End If
+							'torno errore
+							AggiornaDatiPezziInScarico = ERR_PEZZI_NON_TROVATI
+						End If
 					End If
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
@@ -1750,10 +1778,9 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 
 	  'Catch program exception
 	Catch MyException As Exception
-		DebugMsg(MyException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInScarico() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" AggiornaDatiPezziInScarico() - ERRORE: Exception."  &amp; _
+		ErrMsg(" AggiornaDatiPezziInScarico() - ERRORE: Exception."  &amp; _
 					 MyException.ToString &amp; ".")
 
 		'alzare alarme
@@ -1765,10 +1792,9 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 
 	  'Catch ODBC Exception
 	Catch MyOdbcException As OdbcException
-		DebugMsg(MyOdbcException.ToString)
 		MsgBox("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInScarico() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("AggiornaDatiPezziInScarico() - ERRORE ODBC: OdbcException."  &amp; _
+		ErrMsg("AggiornaDatiPezziInScarico() - ERRORE ODBC: OdbcException."  &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
@@ -2054,6 +2080,12 @@ Sub LogMsg(msg As String)
 		prefix = "GestioneZonaR2.movbas -&gt; "
 		Debug.Print prefix &amp; msg
 	End If
+End Sub
+
+Sub ErrMsg(msg As String)
+	Dim prefix As String
+	prefix = "GestioneZonaR2.movbas -&gt; "
+	Debug.Print prefix &amp; msg
 End Sub
 
 Function SqlExecuteNonQuery(connectionString As String, query As String) As Integer
