@@ -26,7 +26,6 @@ Sub Main()
 	
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAMAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

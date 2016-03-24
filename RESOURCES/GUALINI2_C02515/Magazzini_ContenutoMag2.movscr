@@ -188,6 +188,15 @@
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
+<ScriptCode StartSel="162" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+
+Public Sub Click()
+	If [loc_IncongrEstrattori:almOn] Then
+		OpenSynoptic("IncongruenzaEstrattori",enum_ops_opennormal )
+	End If
+
+End Sub
+</ScriptCode>
 </child>
 <child>
 <type>group</type>
@@ -2386,7 +2395,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1688" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="3670" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2484,6 +2493,8 @@ Public Sub Click()
 					[MAG1_ES2_RIK:ID_QUARTINA] = idQrt
 					[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
 					[MAG1_ES2_RIK:STROBE] = True
+					OpenSynoptic("Magazzini_RikE2",eOpenSynopticMode.enum_ops_opennormal)
+					loc_BtnBarMagazzini_SogliaColore = 6
 				End If
 
 			ElseIf idMag = 2 Then
@@ -2511,6 +2522,8 @@ Public Sub Click()
 					[MAG2_ES2_RIK:ID_QUARTINA] = idQrt
 					[MAG2_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
 					[MAG2_ES2_RIK:STROBE] = True
+					OpenSynoptic("Magazzini_RikE2",eOpenSynopticMode.enum_ops_opennormal)
+					loc_BtnBarMagazzini_SogliaColore = 6
 				End If
 			End If
 
@@ -2529,7 +2542,7 @@ Sub LogMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiA+AGYA
+<BreakPoints xsi:type="xsd:base64Binary">AiA+AGgA
 </BreakPoints>
 </child>
 <child>
@@ -2614,7 +2627,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1529" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="2645" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2694,6 +2707,8 @@ Public Sub Click()
 				[MAG2_ES3_RIK:NOME_PEZZO_UNICO] = nomePz
 				[MAG2_ES3_RIK:STROBE] = True
 			End If
+			OpenSynoptic("Magazzini_RikE3",eOpenSynopticMode.enum_ops_opennormal)
+			loc_BtnBarMagazzini_SogliaColore = 2
 
 		End If
 	Else

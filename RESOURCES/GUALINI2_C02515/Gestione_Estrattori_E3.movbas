@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="6541" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="4671" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 Imports System
 Imports System.IO
@@ -144,7 +144,7 @@ Sub AggiornaPosizioneEstrattoreE3(mag As Integer, estr As Integer, connectionStr
 			Else
 				'copio valori per etichetta
 				If mag = 1 Then
-					[loc_Etichetta_M1_E3:Barcode] 		= [ES3_M1_PZ1:ID_QUARTINA]
+					[loc_Etichetta_M1_E3:Barcode] 		= Left([ES3_M1_PZ1:ID_QUARTINA], 12)
 					[loc_Etichetta_M1_E3:Commessa]		= [ES3_M1_PZ1:NOME_COMMESSA]
 					[loc_Etichetta_M1_E3:Dimensioni]	= CStr([ES3_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([ES3_M1_PZ2:MAX_LUNGHEZZA])
 					[loc_Etichetta_M1_E3:IdQuartina]	= [ES3_M1_PZ1:ID_QUARTINA]
@@ -152,10 +152,10 @@ Sub AggiornaPosizioneEstrattoreE3(mag As Integer, estr As Integer, connectionStr
 					[loc_Etichetta_M1_E3:Azienda]		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
 				End If
 				If mag = 2 Then
-					[loc_Etichetta_M2_E3:Barcode] 		= [ES3_M2_PZ1:ID_QUARTINA]
+					[loc_Etichetta_M2_E3:Barcode] 		= Left([ES3_M2_PZ1:ID_QUARTINA], 12)
 					[loc_Etichetta_M2_E3:Commessa]		= [ES3_M2_PZ1:NOME_COMMESSA]
 					[loc_Etichetta_M2_E3:Dimensioni]	= CStr([ES3_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([ES3_M2_PZ2:MAX_LUNGHEZZA])
-					[loc_Etichetta_M2_E3:IdQuartina]	= [ES3_M1_PZ2:ID_QUARTINA]
+					[loc_Etichetta_M2_E3:IdQuartina]	= [ES3_M2_PZ1:ID_QUARTINA]
 
 					[loc_Etichetta_M2_E3:Azienda]		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
 				End If
@@ -583,7 +583,6 @@ Sub ErrMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBOAQ==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="0" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>

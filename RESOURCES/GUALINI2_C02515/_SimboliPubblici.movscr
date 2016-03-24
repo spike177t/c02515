@@ -1595,6 +1595,15 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
+<ScriptCode StartSel="162" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+
+Public Sub Click()
+	If [loc_IncongrEstrattori:almOn] Then
+		OpenSynoptic("IncongruenzaEstrattori",enum_ops_opennormal )
+	End If
+
+End Sub
+</ScriptCode>
 </child>
 <child>
 <type>group</type>
