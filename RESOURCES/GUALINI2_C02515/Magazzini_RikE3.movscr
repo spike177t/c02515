@@ -2703,7 +2703,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="54" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="103" SelLength="1" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 '#Uses "*HelperRimuoviPezzi"
 
 Public Sub Click()
@@ -2754,7 +2754,7 @@ Public Sub Click()
 			res = MsgBox("Tutti i pezzi  saranno rimossi dal Magazzino." &amp; vbCrLf &amp; "Sei sicuro?", vbYesNo, "Richiesta in Estrattore 3.")
 			If res = vbYes Then
 				If stampa &gt; 0 Then
-			    	RunScript("Etichetta_R3_Stampa,M2_E3", 100, False)
+			    	RunScript("Etichetta_R3_Stampa,M1_E3", 100, False)
 			    End If
 				RimuoviQuartina([MAG1_ES3_ACT:ID_QUARTINA])
 			Else
@@ -2767,7 +2767,7 @@ Public Sub Click()
 				Exit Sub
 			Else
 				If stampa &gt; 0 Then
-			    	RunScript("Etichetta_R3_Stampa,M2_E3", 100, False)
+			    	RunScript("Etichetta_R3_Stampa,M1_E3", 100, False)
 			    End If
 			End If
 
@@ -3488,8 +3488,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>

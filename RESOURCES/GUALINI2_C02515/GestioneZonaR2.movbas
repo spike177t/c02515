@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="102620" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="102634" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -2416,7 +2416,7 @@ Sub VerificaIncongruenzeEstrattori()
 	If [MAG2_ES2_ACT:WAIT] And ([MAG2_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES2_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM2_ES2] = True
 	Else
-		[loc_IncongrEstrattori:errM2_ES3] = False
+		[loc_IncongrEstrattori:errM2_ES2] = False
 	End If
 	If [MAG2_ES3_ACT:WAIT] And ([MAG2_ES3_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES3_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM2_ES3] = True
