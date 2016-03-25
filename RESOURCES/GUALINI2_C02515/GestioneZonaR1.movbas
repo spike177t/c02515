@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="37558" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="126353" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -3016,8 +3016,11 @@ Sub ProcessaCodaEstrattori_ZONA_R1()
 	Dim strEs As String
 	Dim strPeekEs As String
 
+	Dim enableLogMsg_old As Boolean
+
 	'abilito LogMsg
-	enableLogMsg = True
+	 enableLogMsg_old = enableLogMsg
+	 enableLogMsg = True
 
 	If codaMAG1_ES1.Count &gt; 0 Then
 		If Not [MAG1_ES1_RIK:STROBE] _
@@ -3106,8 +3109,8 @@ Sub ProcessaCodaEstrattori_ZONA_R1()
 		End If
 	End If
 
-	'disabilito LogMsg
-	enableLogMsg = False
+	'riassegno valore precedente a enableLogMsg
+	enableLogMsg = enableLogMsg_old
 End Sub
 
 
