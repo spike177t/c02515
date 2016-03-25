@@ -1501,11 +1501,11 @@ End Sub
 </child>
 <child>
 <object>HisLogWnd</object>
-<type x="22" y="100" width="983" height="467" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<type x="20" y="100" width="983" height="467" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>4</Border>
 <style Text="" Time="" User="" Event="" Desc="" Duration="" EventNum="" Comment="" TextPos="0" TimePos="1" UserPos="2" EventPos="-1" DescPos="3" DurationPos="-1" EventNumPos="-1" CommentPos="-1" FormatDuration="" FormatDateTime="" IncludeMilliseconds="0" TextWidth="-1" TimeWidth="-1" UserWidth="-1" EventWidth="-1" DescWidth="-1" DurationWidth="-1" EventNumWidth="-1" CommentWidth="-1" AutoLayout="1" ShowControl="1" Clickable="1" IconBtn="1" Refresh="1" FlatGrid="0" Filter="1" Print="1" ReportFile="" Size="0" Pos="3" RefreshTxt="" FilterTxt="" PrintTxt=""/>
-<Execution Project="" EventType="3" MaxCount="1000" NetworkServer="" BackupServer=""/>
+<Execution Project="" EventType="0" MaxCount="300" NetworkServer="" BackupServer=""/>
 <ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
