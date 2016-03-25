@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="31504" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -193,11 +193,6 @@ Sub Main()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	End If
-
-
-	'''
-LeggiFileDaQuadra(1)
-	'''
 
     'inizializzo alcune variabili
 
@@ -713,6 +708,8 @@ LeggiFileDaQuadra(1)
 					If [R1_STATUS:PZ_DA_QUADRA] = 1 And [Q1_In:PezzoScaricato]  Then
 							'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
 							EliminaFileDaQuadra(1)
+							'faccio reset dati pezzo perchè ho gia copiato i valori in R1_DATI_PEZZO
+							ResetDatiMembriStruttura("Q1_PEZZO_DISP")
 							ValutaProssimaCondizione = False
 							LogMsg "StatoCicloCarico = 4500	'Attendi Sblocco pezzo EliminaFileDaQuadra ([R1_STATUS:PZ_DA_QUADRA]); Quadra = " &amp; CStr([R1_STATUS:PZ_DA_QUADRA])
 							StatoCicloCarico = 1000	'AttesaPezzi
@@ -722,6 +719,8 @@ LeggiFileDaQuadra(1)
 						If [R1_STATUS:PZ_DA_QUADRA] = 2 And [Q2_In:PezzoScaricato]  Then
 							'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
 							EliminaFileDaQuadra(2)
+							'faccio reset dati pezzo perchè ho gia copiato i valori in R1_DATI_PEZZO
+							ResetDatiMembriStruttura("Q2_PEZZO_DISP")
 							LogMsg "StatoCicloCarico = 4500	'Attendi Sblocco pezzo EliminaFileDaQuadra ([R1_STATUS:PZ_DA_QUADRA]); Quadra = " &amp; CStr([R1_STATUS:PZ_DA_QUADRA])
 							StatoCicloCarico = 1000	'AttesaPezzi
 						End If
@@ -894,7 +893,12 @@ LeggiFileDaQuadra(1)
 					'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
 
 					'reset dei valori dei membri che identificano il pezzo
-					ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA])
+					'ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA]) non uso più questa perchè i dati da Qx_PEZZO_DISP li ho già resettati
+					If [R1_STATUS:PZ_DA_QUADRA] = 1 Then
+						ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+					ElseIf [R1_STATUS:PZ_DA_QUADRA] = 2 Then
+						ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+					End If
 					ResetDatiMembriStruttura("R1_STATUS")
 
 					'aggiorno cassetti pieni e disponibili
@@ -1281,8 +1285,10 @@ Function FileDaLeggere() As Integer
 	Dim leggiQ1 As Boolean
 	Dim leggiQ2 As Boolean
 
-	leggiQ1 = [Q1_Out:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] =""
-	leggiQ2 = [Q2_Out:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+	'leggiQ1 = [Q1_Out:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+	'leggiQ2 = [Q2_Out:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+	leggiQ1 = [loc_ImpostazioniImpianto:Q1_ABIL] And [Q1_Out:PezzoPronto] And [Q1_PEZZO_DISP:NOME_PEZZO_UNICO] =""
+	leggiQ2 = [loc_ImpostazioniImpianto:Q2_ABIL] And [Q2_Out:PezzoPronto] And [Q2_PEZZO_DISP:NOME_PEZZO_UNICO] =""
 	If leggiQ1 And leggiQ2 Then
 		'ho due pezzi pronti allora prendo quello che ha il timestamp più vecchio
 		Dim objRet1 As DBVarObjCmdTarget
@@ -3512,6 +3518,8 @@ End Sub
 
 
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
+<BreakPoints xsi:type="xsd:base64Binary">AiDPAn8D
+</BreakPoints>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>
