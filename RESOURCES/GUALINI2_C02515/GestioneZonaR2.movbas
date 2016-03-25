@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="102634" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="22870" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -330,8 +330,8 @@ Sub Main()
 							[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
 							'copio i valori che serviranno ad R3
-							[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:ALTEZZA_FINESTRA]
-							[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:LARGHEZZA_FINESTRA]
+							[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ1:MAX_LUNGHEZZA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ2:MAX_LUNGHEZZA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
 
 							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
@@ -348,8 +348,8 @@ Sub Main()
 							[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
 							'copio i valori che serviranno ad R3
-							[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:ALTEZZA_FINESTRA]
-							[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] = [Assemblatrice_In:LARGHEZZA_FINESTRA]
+							[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ1:MAX_LUNGHEZZA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ2:MAX_LUNGHEZZA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
 
 							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
@@ -475,6 +475,7 @@ Sub Main()
 							[Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA]		= [SCAR_M1_PZ2:MAX_LUNGHEZZA]
 							[Assemblatrice_TelaioLatoR2:NOME_COMMESSA]			= [SCAR_M1_PZ1:NOME_COMMESSA]
 							[Assemblatrice_TelaioLatoR2:SERIE_PROFILO]			= [SCAR_M1_PZ1:SERIE_PROFILO]
+							[Assemblatrice_TelaioLatoR2:CODICE_PROFILO]			= [SCAR_M1_PZ1:CODICE_PROFILO]
 							'dati per R3
 							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
 							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
@@ -497,6 +498,7 @@ Sub Main()
 							[Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA]		= [SCAR_M2_PZ2:MAX_LUNGHEZZA]
 							[Assemblatrice_TelaioLatoR2:NOME_COMMESSA]			= [SCAR_M2_PZ1:NOME_COMMESSA]
 							[Assemblatrice_TelaioLatoR2:SERIE_PROFILO]			= [SCAR_M2_PZ1:SERIE_PROFILO]
+							[Assemblatrice_TelaioLatoR2:CODICE_PROFILO]			= [SCAR_M2_PZ1:CODICE_PROFILO]
 							'dati per R3
 							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
 							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)

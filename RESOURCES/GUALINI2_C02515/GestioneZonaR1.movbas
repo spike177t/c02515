@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="31504" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="37558" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -892,14 +892,16 @@ Sub Main()
 					'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA], [R1_DATI_PEZZO:NOME_PEZZO_UNICO])
 					'EliminaFileDaQuadra([R1_STATUS:PZ_DA_QUADRA])
 
-					'reset dei valori dei membri che identificano il pezzo
+
 					'ResetDatiPezzoMissione([R1_STATUS:PZ_DA_QUADRA]) non uso più questa perchè i dati da Qx_PEZZO_DISP li ho già resettati
-					If [R1_STATUS:PZ_DA_QUADRA] = 1 Then
-						ResetDatiMembriStruttura("Q1_PEZZO_DISP")
-					ElseIf [R1_STATUS:PZ_DA_QUADRA] = 2 Then
-						ResetDatiMembriStruttura("Q2_PEZZO_DISP")
-					End If
+					'If [R1_STATUS:PZ_DA_QUADRA] = 1 Then
+					'	ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+					'ElseIf [R1_STATUS:PZ_DA_QUADRA] = 2 Then
+					'	ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+					'End If
+					'reset dei valori dei membri che identificano missione e pezzo in pinza
 					ResetDatiMembriStruttura("R1_STATUS")
+					ResetDatiMembriStruttura("R1_DATI_PEZZO")
 
 					'aggiorno cassetti pieni e disponibili
 				    AggiornaCassettiPieni(MySqlConnectionString, 1)
@@ -3518,7 +3520,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDPAn8D
+<BreakPoints xsi:type="xsd:base64Binary">AiDPAoAD
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
