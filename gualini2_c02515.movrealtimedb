@@ -249,6 +249,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="9" AreaType="1" Address="0" Bit="0" Description="Global Variable Persistent R3_DATI_ACK" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R3_DATI_ACK|DL=256|Typ=9">Plc_R3_DATI_ACK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[61]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[61].evt">Plc_ar_allarmi_61</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
