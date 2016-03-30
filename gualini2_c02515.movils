@@ -181,6 +181,7 @@ L R2_STATUS:NUOVA_MISSIONE
 L R2_STATUS:POSIZIONE_PEZZO
 L R2_STATUS:PZ_DA_QUADRA
 
+//scarico da MAG 1
 L SCAR_M1_PZ1:ALTEZZA_PROFILO
 L SCAR_M1_PZ1:APPOGGIO_PEZZO
 L SCAR_M1_PZ1:CASSETTO_ASSEGNATO
@@ -296,6 +297,124 @@ L SCAR_M1_PZ4:R2_FILA_SQ1
 L SCAR_M1_PZ4:R2_FILA_SQ2
 L SCAR_M1_PZ4:R2_OFFSET_PEZZO
 L SCAR_M1_PZ4:R2_RUOTA_PEZZO
+
+//SCARICO DA M2
+L SCAR_M2_PZ1:ALTEZZA_PROFILO
+L SCAR_M2_PZ1:APPOGGIO_PEZZO
+L SCAR_M2_PZ1:CASSETTO_ASSEGNATO
+L SCAR_M2_PZ1:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ1:LARGHEZZA_PROFILO
+L SCAR_M2_PZ1:LUNGHEZZA_PEZZO_ESTERNO
+L SCAR_M2_PZ1:MAGAZZINO_ASSEGNATO
+L SCAR_M2_PZ1:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ1:MAX_LUNGHEZZA
+L SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA
+L SCAR_M2_PZ1:NUM_SQUADRETTE1
+L SCAR_M2_PZ1:NUM_SQUADRETTE2
+L SCAR_M2_PZ1:NUOVO
+L SCAR_M2_PZ1:POSIZIONE
+L SCAR_M2_PZ1:POSIZIONE_PEZZO_ESTERNO
+L SCAR_M2_PZ1:ROBOT_ASSEGNATO
+L SCAR_M2_PZ1:TOTALE_PEZZI_QUARTINA
+L SCAR_M2_PZ1:ULTIMO_PEZZO
+L SCAR_M2_PZ1:R2_APERTURA
+L SCAR_M2_PZ1:R2_ATTREZZATURA
+L SCAR_M2_PZ1:R2_BANCO_SQ1
+L SCAR_M2_PZ1:R2_BANCO_SQ2
+L SCAR_M2_PZ1:R2_CODICE_PRG
+L SCAR_M2_PZ1:R2_COLLA
+L SCAR_M2_PZ1:R2_FILA_SQ1
+L SCAR_M2_PZ1:R2_FILA_SQ2
+L SCAR_M2_PZ1:R2_OFFSET_PEZZO
+L SCAR_M2_PZ1:R2_RUOTA_PEZZO
+
+L SCAR_M2_PZ2:ALTEZZA_PROFILO
+L SCAR_M2_PZ2:APPOGGIO_PEZZO
+L SCAR_M2_PZ2:CASSETTO_ASSEGNATO
+L SCAR_M2_PZ2:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ2:LARGHEZZA_PROFILO
+L SCAR_M2_PZ2:LUNGHEZZA_PEZZO_ESTERNO
+L SCAR_M2_PZ2:MAGAZZINO_ASSEGNATO
+L SCAR_M2_PZ2:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ2:MAX_LUNGHEZZA
+L SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA
+L SCAR_M2_PZ2:NUM_SQUADRETTE1
+L SCAR_M2_PZ2:NUM_SQUADRETTE2
+L SCAR_M2_PZ2:NUOVO
+L SCAR_M2_PZ2:POSIZIONE
+L SCAR_M2_PZ2:POSIZIONE_PEZZO_ESTERNO
+L SCAR_M2_PZ2:ROBOT_ASSEGNATO
+L SCAR_M2_PZ2:TOTALE_PEZZI_QUARTINA
+L SCAR_M2_PZ2:ULTIMO_PEZZO
+L SCAR_M2_PZ2:R2_APERTURA
+L SCAR_M2_PZ2:R2_ATTREZZATURA
+L SCAR_M2_PZ2:R2_BANCO_SQ1
+L SCAR_M2_PZ2:R2_BANCO_SQ2
+L SCAR_M2_PZ2:R2_CODICE_PRG
+L SCAR_M2_PZ2:R2_COLLA
+L SCAR_M2_PZ2:R2_FILA_SQ1
+L SCAR_M2_PZ2:R2_FILA_SQ2
+L SCAR_M2_PZ2:R2_OFFSET_PEZZO
+L SCAR_M2_PZ2:R2_RUOTA_PEZZO
+
+L SCAR_M2_PZ3:ALTEZZA_PROFILO
+L SCAR_M2_PZ3:APPOGGIO_PEZZO
+L SCAR_M2_PZ3:CASSETTO_ASSEGNATO
+L SCAR_M2_PZ3:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ3:LARGHEZZA_PROFILO
+L SCAR_M2_PZ3:LUNGHEZZA_PEZZO_ESTERNO
+L SCAR_M2_PZ3:MAGAZZINO_ASSEGNATO
+L SCAR_M2_PZ3:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ3:MAX_LUNGHEZZA
+L SCAR_M2_PZ3:MISURA_CAMERA_ESTERNA
+L SCAR_M2_PZ3:NUM_SQUADRETTE1
+L SCAR_M2_PZ3:NUM_SQUADRETTE2
+L SCAR_M2_PZ3:NUOVO
+L SCAR_M2_PZ3:POSIZIONE
+L SCAR_M2_PZ3:POSIZIONE_PEZZO_ESTERNO
+L SCAR_M2_PZ3:ROBOT_ASSEGNATO
+L SCAR_M2_PZ3:TOTALE_PEZZI_QUARTINA
+L SCAR_M2_PZ3:ULTIMO_PEZZO
+L SCAR_M2_PZ3:R2_APERTURA
+L SCAR_M2_PZ3:R2_ATTREZZATURA
+L SCAR_M2_PZ3:R2_BANCO_SQ1
+L SCAR_M2_PZ3:R2_BANCO_SQ2
+L SCAR_M2_PZ3:R2_CODICE_PRG
+L SCAR_M2_PZ3:R2_COLLA
+L SCAR_M2_PZ3:R2_FILA_SQ1
+L SCAR_M2_PZ3:R2_FILA_SQ2
+L SCAR_M2_PZ3:R2_OFFSET_PEZZO
+L SCAR_M2_PZ3:R2_RUOTA_PEZZO
+
+L SCAR_M2_PZ4:ALTEZZA_PROFILO
+L SCAR_M2_PZ4:APPOGGIO_PEZZO
+L SCAR_M2_PZ4:CASSETTO_ASSEGNATO
+L SCAR_M2_PZ4:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ4:LARGHEZZA_PROFILO
+L SCAR_M2_PZ4:LUNGHEZZA_PEZZO_ESTERNO
+L SCAR_M2_PZ4:MAGAZZINO_ASSEGNATO
+L SCAR_M2_PZ4:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA
+L SCAR_M2_PZ4:MAX_LUNGHEZZA
+L SCAR_M2_PZ4:MISURA_CAMERA_ESTERNA
+L SCAR_M2_PZ4:NUM_SQUADRETTE1
+L SCAR_M2_PZ4:NUM_SQUADRETTE2
+L SCAR_M2_PZ4:NUOVO
+L SCAR_M2_PZ4:POSIZIONE
+L SCAR_M2_PZ4:POSIZIONE_PEZZO_ESTERNO
+L SCAR_M2_PZ4:ROBOT_ASSEGNATO
+L SCAR_M2_PZ4:TOTALE_PEZZI_QUARTINA
+L SCAR_M2_PZ4:ULTIMO_PEZZO
+L SCAR_M2_PZ4:R2_APERTURA
+L SCAR_M2_PZ4:R2_ATTREZZATURA
+L SCAR_M2_PZ4:R2_BANCO_SQ1
+L SCAR_M2_PZ4:R2_BANCO_SQ2
+L SCAR_M2_PZ4:R2_CODICE_PRG
+L SCAR_M2_PZ4:R2_COLLA
+L SCAR_M2_PZ4:R2_FILA_SQ1
+L SCAR_M2_PZ4:R2_FILA_SQ2
+L SCAR_M2_PZ4:R2_OFFSET_PEZZO
+L SCAR_M2_PZ4:R2_RUOTA_PEZZO
+
 
 //TRANSFER DATI ASSEMBLATRICE VERSO PLC
 //Leggo i dati da PLC e trasferisco aD ASSEMBLATRICE con dll isac
@@ -587,351 +706,463 @@ A DaPilzInputWord00.6
 :FINE
 </ILCode>
 <Variables>
-<Item key="326" value="alm_Presenti_ZonaR3"/>
-<Item key="163" value="SCAR_M1_PZ3:MAGAZZINO_ASSEGNATO"/>
-<Item key="327" value="alm_Assemblatrice_ErrComunicazione"/>
-<Item key="164" value="SCAR_M1_PZ3:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
 <Item key="1" value="loc_FlipFlop"/>
-<Item key="328" value="alm_M1_ES3_ErrDatiDaDB"/>
-<Item key="165" value="SCAR_M1_PZ3:MAX_LUNGHEZZA"/>
 <Item key="2" value="Q1_Out:InCiclo"/>
-<Item key="329" value="alm_M2_ES3_ErrDatiDaDB"/>
-<Item key="166" value="SCAR_M1_PZ3:MISURA_CAMERA_ESTERNA"/>
 <Item key="3" value="Q1_Out:NonInEmergenza"/>
-<Item key="330" value="alm_Presenti"/>
-<Item key="167" value="SCAR_M1_PZ3:NUM_SQUADRETTE1"/>
 <Item key="4" value="Q1_Out:NonInHold"/>
-<Item key="331" value="alm_ResetAll"/>
-<Item key="168" value="SCAR_M1_PZ3:NUM_SQUADRETTE2"/>
 <Item key="5" value="Q1_Out:On"/>
-<Item key="332" value="alm_ResetAlmZonaR1"/>
-<Item key="169" value="SCAR_M1_PZ3:NUOVO"/>
 <Item key="6" value="Q1_Out:PezzoPronto"/>
-<Item key="333" value="alm_ResetAlmZonaR2"/>
-<Item key="170" value="SCAR_M1_PZ3:POSIZIONE"/>
 <Item key="7" value="Q1_Out:PezzoSbloccato"/>
-<Item key="334" value="alm_ResetAlmZonaR3"/>
-<Item key="171" value="SCAR_M1_PZ3:POSIZIONE_PEZZO_ESTERNO"/>
 <Item key="8" value="Q1_Out:RipariQuadraOk"/>
-<Item key="335" value="DaPilzInputWord00"/>
-<Item key="172" value="SCAR_M1_PZ3:ROBOT_ASSEGNATO"/>
 <Item key="9" value="Q1_Out:TestComunicazione"/>
-<Item key="336" value="Pilz_Virt_OVo00_SpvRipQdrRbt1Ok"/>
-<Item key="173" value="SCAR_M1_PZ3:TOTALE_PEZZI_QUARTINA"/>
 <Item key="10" value="Q2_Out:InCiclo"/>
-<Item key="337" value="Pilz_Virt_OVo01_SpvRipZona2Ok"/>
-<Item key="174" value="SCAR_M1_PZ3:ULTIMO_PEZZO"/>
 <Item key="11" value="Q2_Out:NonInEmergenza"/>
-<Item key="338" value="Pilz_Virt_OVo02_SpvRipZona3aOk"/>
-<Item key="175" value="SCAR_M1_PZ3:R2_APERTURA"/>
 <Item key="12" value="Q2_Out:NonInHold"/>
-<Item key="339" value="Pilz_Virt_OVo03_SpvRipZona3bOk"/>
-<Item key="176" value="SCAR_M1_PZ3:R2_ATTREZZATURA"/>
 <Item key="13" value="Q2_Out:On"/>
-<Item key="340" value="Pilz_Virt_OVo04_SpvBarFtcBacI_O"/>
-<Item key="177" value="SCAR_M1_PZ3:R2_BANCO_SQ1"/>
 <Item key="14" value="Q2_Out:PezzoPronto"/>
-<Item key="341" value="Pilz_Virt_OVo05_SpvAss0_"/>
-<Item key="178" value="SCAR_M1_PZ3:R2_BANCO_SQ2"/>
 <Item key="15" value="Q2_Out:PezzoSbloccato"/>
-<Item key="342" value="Pilz_Virt_OVo06_SpvAss180_"/>
-<Item key="179" value="SCAR_M1_PZ3:R2_CODICE_PRG"/>
 <Item key="16" value="Q2_Out:RipariQuadraOk"/>
-<Item key="180" value="SCAR_M1_PZ3:R2_COLLA"/>
 <Item key="17" value="Q2_Out:TestComunicazione"/>
-<Item key="181" value="SCAR_M1_PZ3:R2_FILA_SQ1"/>
 <Item key="18" value="MAG1_ES1_ACT:DEPO"/>
-<Item key="182" value="SCAR_M1_PZ3:R2_FILA_SQ2"/>
 <Item key="19" value="MAG1_ES1_ACT:ID_CASSETTO"/>
-<Item key="183" value="SCAR_M1_PZ3:R2_OFFSET_PEZZO"/>
 <Item key="20" value="MAG1_ES1_ACT:POSIZIONE"/>
-<Item key="184" value="SCAR_M1_PZ3:R2_RUOTA_PEZZO"/>
 <Item key="21" value="MAG1_ES1_ACT:PRONTO"/>
-<Item key="185" value="SCAR_M1_PZ4:ALTEZZA_PROFILO"/>
 <Item key="22" value="MAG1_ES1_ACT:WAIT"/>
-<Item key="186" value="SCAR_M1_PZ4:APPOGGIO_PEZZO"/>
 <Item key="23" value="MAG1_ES1_RIK:ID_CASSETTO"/>
-<Item key="187" value="SCAR_M1_PZ4:CASSETTO_ASSEGNATO"/>
 <Item key="24" value="MAG1_ES1_RIK:POSIZIONE"/>
-<Item key="188" value="SCAR_M1_PZ4:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
 <Item key="25" value="MAG1_ES1_RIK:STROBE"/>
-<Item key="189" value="SCAR_M1_PZ4:LARGHEZZA_PROFILO"/>
 <Item key="26" value="MAG1_ES2_ACT:DEPO"/>
-<Item key="190" value="SCAR_M1_PZ4:LUNGHEZZA_PEZZO_ESTERNO"/>
 <Item key="27" value="MAG1_ES2_ACT:ID_CASSETTO"/>
-<Item key="191" value="SCAR_M1_PZ4:MAGAZZINO_ASSEGNATO"/>
 <Item key="28" value="MAG1_ES2_ACT:POSIZIONE"/>
-<Item key="192" value="SCAR_M1_PZ4:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
 <Item key="29" value="MAG1_ES2_ACT:PRONTO"/>
-<Item key="193" value="SCAR_M1_PZ4:MAX_LUNGHEZZA"/>
 <Item key="30" value="MAG1_ES2_ACT:WAIT"/>
-<Item key="194" value="SCAR_M1_PZ4:MISURA_CAMERA_ESTERNA"/>
 <Item key="31" value="MAG1_ES2_RIK:ID_CASSETTO"/>
-<Item key="195" value="SCAR_M1_PZ4:NUM_SQUADRETTE1"/>
 <Item key="32" value="MAG1_ES2_RIK:POSIZIONE"/>
-<Item key="196" value="SCAR_M1_PZ4:NUM_SQUADRETTE2"/>
 <Item key="33" value="MAG1_ES2_RIK:STROBE"/>
-<Item key="197" value="SCAR_M1_PZ4:NUOVO"/>
 <Item key="34" value="MAG1_ES3_ACT:DEPO"/>
-<Item key="198" value="SCAR_M1_PZ4:POSIZIONE"/>
 <Item key="35" value="MAG1_ES3_ACT:ID_CASSETTO"/>
-<Item key="199" value="SCAR_M1_PZ4:POSIZIONE_PEZZO_ESTERNO"/>
 <Item key="36" value="MAG1_ES3_ACT:POSIZIONE"/>
-<Item key="200" value="SCAR_M1_PZ4:ROBOT_ASSEGNATO"/>
 <Item key="37" value="MAG1_ES3_ACT:PRONTO"/>
-<Item key="201" value="SCAR_M1_PZ4:TOTALE_PEZZI_QUARTINA"/>
 <Item key="38" value="MAG1_ES3_ACT:WAIT"/>
-<Item key="202" value="SCAR_M1_PZ4:ULTIMO_PEZZO"/>
 <Item key="39" value="MAG1_ES3_RIK:ID_CASSETTO"/>
-<Item key="203" value="SCAR_M1_PZ4:R2_APERTURA"/>
 <Item key="40" value="MAG1_ES3_RIK:POSIZIONE"/>
-<Item key="204" value="SCAR_M1_PZ4:R2_ATTREZZATURA"/>
 <Item key="41" value="MAG1_ES3_RIK:STROBE"/>
-<Item key="205" value="SCAR_M1_PZ4:R2_BANCO_SQ1"/>
 <Item key="42" value="MAG2_ES1_ACT:DEPO"/>
-<Item key="206" value="SCAR_M1_PZ4:R2_BANCO_SQ2"/>
 <Item key="43" value="MAG2_ES1_ACT:ID_CASSETTO"/>
-<Item key="207" value="SCAR_M1_PZ4:R2_CODICE_PRG"/>
 <Item key="44" value="MAG2_ES1_ACT:POSIZIONE"/>
-<Item key="208" value="SCAR_M1_PZ4:R2_COLLA"/>
 <Item key="45" value="MAG2_ES1_ACT:PRONTO"/>
-<Item key="209" value="SCAR_M1_PZ4:R2_FILA_SQ1"/>
 <Item key="46" value="MAG2_ES1_ACT:WAIT"/>
-<Item key="210" value="SCAR_M1_PZ4:R2_FILA_SQ2"/>
 <Item key="47" value="MAG2_ES1_RIK:ID_CASSETTO"/>
-<Item key="211" value="SCAR_M1_PZ4:R2_OFFSET_PEZZO"/>
 <Item key="48" value="MAG2_ES1_RIK:POSIZIONE"/>
-<Item key="212" value="SCAR_M1_PZ4:R2_RUOTA_PEZZO"/>
 <Item key="49" value="MAG2_ES1_RIK:STROBE"/>
-<Item key="213" value="Assemblatrice_In:ALTEZZA_FINESTRA"/>
 <Item key="50" value="MAG2_ES2_ACT:DEPO"/>
-<Item key="214" value="PLC_TRANSF_ASSEMBLATRICE_IN:ALTEZZA_FINESTRA"/>
 <Item key="51" value="MAG2_ES2_ACT:ID_CASSETTO"/>
-<Item key="215" value="Assemblatrice_In:APERTURA"/>
 <Item key="52" value="MAG2_ES2_ACT:POSIZIONE"/>
-<Item key="216" value="PLC_TRANSF_ASSEMBLATRICE_IN:APERTURA"/>
 <Item key="53" value="MAG2_ES2_ACT:PRONTO"/>
-<Item key="217" value="Assemblatrice_In:CHK_WRITE"/>
 <Item key="54" value="MAG2_ES2_ACT:WAIT"/>
-<Item key="218" value="PLC_TRANSF_ASSEMBLATRICE_IN:CHK_WRITE"/>
 <Item key="55" value="MAG2_ES2_RIK:ID_CASSETTO"/>
-<Item key="219" value="Assemblatrice_In:LARGHEZZA_FINESTRA"/>
 <Item key="56" value="MAG2_ES2_RIK:POSIZIONE"/>
-<Item key="220" value="PLC_TRANSF_ASSEMBLATRICE_IN:LARGHEZZA_FINESTRA"/>
 <Item key="57" value="MAG2_ES2_RIK:STROBE"/>
-<Item key="221" value="Assemblatrice_In:START_ROTAZIONE"/>
 <Item key="58" value="MAG2_ES3_ACT:DEPO"/>
-<Item key="222" value="PLC_TRANSF_ASSEMBLATRICE_IN:START_ROTAZIONE"/>
 <Item key="59" value="MAG2_ES3_ACT:ID_CASSETTO"/>
-<Item key="223" value="Assemblatrice_In:STROBE_DATI_R2"/>
 <Item key="60" value="MAG2_ES3_ACT:POSIZIONE"/>
-<Item key="224" value="PLC_TRANSF_ASSEMBLATRICE_IN:STROBE_DATI_R2"/>
 <Item key="61" value="MAG2_ES3_ACT:PRONTO"/>
-<Item key="225" value="Assemblatrice_Out:ALLARME"/>
 <Item key="62" value="MAG2_ES3_ACT:WAIT"/>
-<Item key="226" value="PLC_TRANSF_ASSEMBLATRICE_OUT:ALLARME"/>
 <Item key="63" value="MAG2_ES3_RIK:ID_CASSETTO"/>
-<Item key="227" value="Assemblatrice_Out:ALTEZZA_FINESTRA"/>
 <Item key="64" value="MAG2_ES3_RIK:POSIZIONE"/>
-<Item key="228" value="PLC_TRANSF_ASSEMBLATRICE_OUT:ALTEZZA_FINESTRA"/>
 <Item key="65" value="MAG2_ES3_RIK:STROBE"/>
-<Item key="229" value="Assemblatrice_Out:APERTURA"/>
 <Item key="66" value="R1_DATI_PEZZO:ALTEZZA_PROFILO"/>
-<Item key="230" value="PLC_TRANSF_ASSEMBLATRICE_OUT:APERTURA"/>
 <Item key="67" value="R1_DATI_PEZZO:APPOGGIO_PEZZO"/>
-<Item key="231" value="Assemblatrice_Out:ASSI_IN_MOVIMENTO"/>
 <Item key="68" value="R1_DATI_PEZZO:CASSETTO_ASSEGNATO"/>
-<Item key="232" value="PLC_TRANSF_ASSEMBLATRICE_OUT:ASSI_IN_MOVIMENTO"/>
 <Item key="69" value="R1_DATI_PEZZO:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="233" value="Assemblatrice_Out:AUTO"/>
 <Item key="70" value="R1_DATI_PEZZO:LARGHEZZA_PROFILO"/>
-<Item key="234" value="PLC_TRANSF_ASSEMBLATRICE_OUT:AUTO"/>
 <Item key="71" value="R1_DATI_PEZZO:LUNGHEZZA_PEZZO_ESTERNO"/>
-<Item key="235" value="Assemblatrice_Out:AZZERATA"/>
 <Item key="72" value="R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO"/>
-<Item key="236" value="PLC_TRANSF_ASSEMBLATRICE_OUT:AZZERATA"/>
 <Item key="73" value="R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="237" value="Assemblatrice_Out:BACK_STROBE_DATI_R2"/>
 <Item key="74" value="R1_DATI_PEZZO:MAX_LUNGHEZZA"/>
-<Item key="238" value="PLC_TRANSF_ASSEMBLATRICE_OUT:BACK_STROBE_DATI_R2"/>
 <Item key="75" value="R1_DATI_PEZZO:MISURA_CAMERA_ESTERNA"/>
-<Item key="239" value="Assemblatrice_Out:CHK_READ"/>
 <Item key="76" value="R1_DATI_PEZZO:NUM_SQUADRETTE1"/>
-<Item key="240" value="PLC_TRANSF_ASSEMBLATRICE_OUT:CHK_READ"/>
 <Item key="77" value="R1_DATI_PEZZO:NUM_SQUADRETTE2"/>
-<Item key="241" value="Assemblatrice_Out:FINE_ROTAZIONE"/>
 <Item key="78" value="R1_DATI_PEZZO:NUOVO"/>
-<Item key="242" value="PLC_TRANSF_ASSEMBLATRICE_OUT:FINE_ROTAZIONE"/>
 <Item key="79" value="R1_DATI_PEZZO:POSIZIONE"/>
-<Item key="243" value="Assemblatrice_Out:LARGHEZZA_FINESTRA"/>
 <Item key="80" value="R1_DATI_PEZZO:POSIZIONE_PEZZO_ESTERNO"/>
-<Item key="244" value="PLC_TRANSF_ASSEMBLATRICE_OUT:LARGHEZZA_FINESTRA"/>
 <Item key="81" value="R1_DATI_PEZZO:R1_RUOTA_PEZZO"/>
-<Item key="245" value="Assemblatrice_Out:STA_AZZERANDO"/>
 <Item key="82" value="R1_DATI_PEZZO:ROBOT_ASSEGNATO"/>
-<Item key="246" value="PLC_TRANSF_ASSEMBLATRICE_OUT:STA_AZZERANDO"/>
 <Item key="83" value="R1_DATI_PEZZO:TOTALE_PEZZI_QUARTINA"/>
-<Item key="247" value="PLC_TRANSF_Q1_IN:NON_IN_EMERGENZA"/>
 <Item key="84" value="R1_DATI_PEZZO:ULTIMO_PEZZO"/>
-<Item key="248" value="Q1_In:LineaNonInEmergenza"/>
 <Item key="85" value="R1_STATUS:CASSETTO"/>
-<Item key="249" value="PLC_TRANSF_Q1_IN:NON_IN_HOLD"/>
 <Item key="86" value="R1_STATUS:DISPONIBILE"/>
-<Item key="250" value="Q1_In:LineaNonInHold"/>
 <Item key="87" value="R1_STATUS:FINE_MISSIONE"/>
-<Item key="251" value="PLC_TRANSF_Q1_IN:PEZZO_SCARICATO"/>
 <Item key="88" value="R1_STATUS:IN_MISSIONE"/>
-<Item key="252" value="Q1_In:PezzoScaricato"/>
 <Item key="89" value="R1_STATUS:MAGAZZINO"/>
-<Item key="253" value="PLC_TRANSF_Q1_IN:R1_FUORI_INGOMBRO"/>
 <Item key="90" value="R1_STATUS:NUOVA_MISSIONE"/>
-<Item key="254" value="Q1_In:R1_FuoriIngombro"/>
 <Item key="91" value="R1_STATUS:POSIZIONE_PEZZO"/>
-<Item key="255" value="PLC_TRANSF_Q1_IN:R1_OK"/>
 <Item key="92" value="R1_STATUS:PZ_DA_QUADRA"/>
-<Item key="256" value="Q1_In:R1_Ok"/>
 <Item key="93" value="R2_STATUS:CASSETTO"/>
-<Item key="257" value="PLC_TRANSF_Q1_IN:RIPARI_R1_OK"/>
 <Item key="94" value="R2_STATUS:DISPONIBILE"/>
-<Item key="258" value="Q1_In:RipariR1_Ok"/>
 <Item key="95" value="R2_STATUS:FINE_MISSIONE"/>
-<Item key="259" value="PLC_TRANSF_Q1_IN:SBLOCCA_PEZZO"/>
 <Item key="96" value="R2_STATUS:IN_MISSIONE"/>
-<Item key="260" value="Q1_In:SbloccaPezzo"/>
 <Item key="97" value="R2_STATUS:MAGAZZINO"/>
-<Item key="261" value="PLC_TRANSF_Q1_OUT:IN_CICLO"/>
 <Item key="98" value="R2_STATUS:NUOVA_MISSIONE"/>
-<Item key="262" value="PLC_TRANSF_Q1_OUT:NON_IN_EMERGENZA"/>
 <Item key="99" value="R2_STATUS:POSIZIONE_PEZZO"/>
-<Item key="263" value="PLC_TRANSF_Q1_OUT:NON_IN_HOLD"/>
 <Item key="100" value="R2_STATUS:PZ_DA_QUADRA"/>
-<Item key="264" value="PLC_TRANSF_Q1_OUT:OK"/>
 <Item key="101" value="SCAR_M1_PZ1:ALTEZZA_PROFILO"/>
-<Item key="265" value="PLC_TRANSF_Q1_OUT:PEZZO_PRONTO"/>
 <Item key="102" value="SCAR_M1_PZ1:APPOGGIO_PEZZO"/>
-<Item key="266" value="PLC_TRANSF_Q1_OUT:PEZZO_SBLOCCATO"/>
 <Item key="103" value="SCAR_M1_PZ1:CASSETTO_ASSEGNATO"/>
-<Item key="267" value="PLC_TRANSF_Q1_OUT:RIPARI_QUADRA_OK"/>
 <Item key="104" value="SCAR_M1_PZ1:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="268" value="Q1_Out:FotocellScaricatore5"/>
 <Item key="105" value="SCAR_M1_PZ1:LARGHEZZA_PROFILO"/>
-<Item key="269" value="PLC_TRANSF_Q1_OUT:FTC_SCAR_PZ"/>
 <Item key="106" value="SCAR_M1_PZ1:LUNGHEZZA_PEZZO_ESTERNO"/>
-<Item key="270" value="PLC_TRANSF_Q2_IN:NON_IN_EMERGENZA"/>
 <Item key="107" value="SCAR_M1_PZ1:MAGAZZINO_ASSEGNATO"/>
-<Item key="271" value="Q2_In:LineaNonInEmergenza"/>
 <Item key="108" value="SCAR_M1_PZ1:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="272" value="PLC_TRANSF_Q2_IN:NON_IN_HOLD"/>
 <Item key="109" value="SCAR_M1_PZ1:MAX_LUNGHEZZA"/>
-<Item key="273" value="Q2_In:LineaNonInHold"/>
 <Item key="110" value="SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA"/>
-<Item key="274" value="PLC_TRANSF_Q2_IN:PEZZO_SCARICATO"/>
 <Item key="111" value="SCAR_M1_PZ1:NUM_SQUADRETTE1"/>
-<Item key="275" value="Q2_In:PezzoScaricato"/>
 <Item key="112" value="SCAR_M1_PZ1:NUM_SQUADRETTE2"/>
-<Item key="276" value="PLC_TRANSF_Q2_IN:R1_FUORI_INGOMBRO"/>
 <Item key="113" value="SCAR_M1_PZ1:NUOVO"/>
-<Item key="277" value="Q2_In:R1_FuoriIngombro"/>
 <Item key="114" value="SCAR_M1_PZ1:POSIZIONE"/>
-<Item key="278" value="PLC_TRANSF_Q2_IN:R1_OK"/>
 <Item key="115" value="SCAR_M1_PZ1:POSIZIONE_PEZZO_ESTERNO"/>
-<Item key="279" value="Q2_In:R1_Ok"/>
 <Item key="116" value="SCAR_M1_PZ1:ROBOT_ASSEGNATO"/>
-<Item key="280" value="PLC_TRANSF_Q2_IN:RIPARI_R1_OK"/>
 <Item key="117" value="SCAR_M1_PZ1:TOTALE_PEZZI_QUARTINA"/>
-<Item key="281" value="Q2_In:RipariR1_Ok"/>
 <Item key="118" value="SCAR_M1_PZ1:ULTIMO_PEZZO"/>
-<Item key="282" value="PLC_TRANSF_Q2_IN:SBLOCCA_PEZZO"/>
 <Item key="119" value="SCAR_M1_PZ1:R2_APERTURA"/>
-<Item key="283" value="Q2_In:SbloccaPezzo"/>
 <Item key="120" value="SCAR_M1_PZ1:R2_ATTREZZATURA"/>
-<Item key="284" value="PLC_TRANSF_Q2_OUT:IN_CICLO"/>
 <Item key="121" value="SCAR_M1_PZ1:R2_BANCO_SQ1"/>
-<Item key="285" value="PLC_TRANSF_Q2_OUT:NON_IN_EMERGENZA"/>
 <Item key="122" value="SCAR_M1_PZ1:R2_BANCO_SQ2"/>
-<Item key="286" value="PLC_TRANSF_Q2_OUT:NON_IN_HOLD"/>
 <Item key="123" value="SCAR_M1_PZ1:R2_CODICE_PRG"/>
-<Item key="287" value="PLC_TRANSF_Q2_OUT:OK"/>
 <Item key="124" value="SCAR_M1_PZ1:R2_COLLA"/>
-<Item key="288" value="PLC_TRANSF_Q2_OUT:PEZZO_PRONTO"/>
 <Item key="125" value="SCAR_M1_PZ1:R2_FILA_SQ1"/>
-<Item key="289" value="PLC_TRANSF_Q2_OUT:PEZZO_SBLOCCATO"/>
 <Item key="126" value="SCAR_M1_PZ1:R2_FILA_SQ2"/>
-<Item key="290" value="PLC_TRANSF_Q2_OUT:RIPARI_QUADRA_OK"/>
 <Item key="127" value="SCAR_M1_PZ1:R2_OFFSET_PEZZO"/>
-<Item key="291" value="Q2_Out:FotocellScaricatore5"/>
 <Item key="128" value="SCAR_M1_PZ1:R2_RUOTA_PEZZO"/>
-<Item key="292" value="PLC_TRANSF_Q2_OUT:FTC_SCAR_PZ"/>
 <Item key="129" value="SCAR_M1_PZ2:ALTEZZA_PROFILO"/>
-<Item key="293" value="alm_FineRobotR1"/>
 <Item key="130" value="SCAR_M1_PZ2:APPOGGIO_PEZZO"/>
-<Item key="294" value="alm_Q1_MancaFile"/>
 <Item key="131" value="SCAR_M1_PZ2:CASSETTO_ASSEGNATO"/>
-<Item key="295" value="alm_Q1_numFilesIncoerente"/>
 <Item key="132" value="SCAR_M1_PZ2:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="296" value="alm_Q2_MancaFile"/>
 <Item key="133" value="SCAR_M1_PZ2:LARGHEZZA_PROFILO"/>
-<Item key="297" value="alm_Q2_numFilesIncoerente"/>
 <Item key="134" value="SCAR_M1_PZ2:LUNGHEZZA_PEZZO_ESTERNO"/>
-<Item key="298" value="alm_Step_ToutR1_6150"/>
 <Item key="135" value="SCAR_M1_PZ2:MAGAZZINO_ASSEGNATO"/>
-<Item key="299" value="alm_Step_ToutR1_9150"/>
 <Item key="136" value="SCAR_M1_PZ2:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="300" value="alm_ZonaR1_ODBC"/>
 <Item key="137" value="SCAR_M1_PZ2:MAX_LUNGHEZZA"/>
-<Item key="301" value="alm_R1_PezzoDuplicato_Q1"/>
 <Item key="138" value="SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA"/>
-<Item key="302" value="alm_R1_PezzoDuplicato_Q2"/>
 <Item key="139" value="SCAR_M1_PZ2:NUM_SQUADRETTE1"/>
-<Item key="303" value="alm_StatoCiclo_R1"/>
 <Item key="140" value="SCAR_M1_PZ2:NUM_SQUADRETTE2"/>
-<Item key="304" value="alm_R1_ConfigError_Q1"/>
 <Item key="141" value="SCAR_M1_PZ2:NUOVO"/>
-<Item key="305" value="alm_R1_ConfigError_Q2"/>
 <Item key="142" value="SCAR_M1_PZ2:POSIZIONE"/>
-<Item key="306" value="alm_AnomaliaDeposito_R1"/>
 <Item key="143" value="SCAR_M1_PZ2:POSIZIONE_PEZZO_ESTERNO"/>
-<Item key="307" value="alm_Presenti_ZonaR1"/>
 <Item key="144" value="SCAR_M1_PZ2:ROBOT_ASSEGNATO"/>
-<Item key="308" value="alm_FineRobotR2"/>
 <Item key="145" value="SCAR_M1_PZ2:TOTALE_PEZZI_QUARTINA"/>
-<Item key="309" value="alm_ZonaR2_ODBC"/>
 <Item key="146" value="SCAR_M1_PZ2:ULTIMO_PEZZO"/>
-<Item key="310" value="alm_StatoCiclo_R2"/>
 <Item key="147" value="SCAR_M1_PZ2:R2_APERTURA"/>
-<Item key="311" value="alm_Step_ToutR2_4200"/>
 <Item key="148" value="SCAR_M1_PZ2:R2_ATTREZZATURA"/>
-<Item key="312" value="alm_Step_ToutR2_6700"/>
 <Item key="149" value="SCAR_M1_PZ2:R2_BANCO_SQ1"/>
-<Item key="313" value="alm_Step_ToutR2_9150"/>
 <Item key="150" value="SCAR_M1_PZ2:R2_BANCO_SQ2"/>
-<Item key="314" value="alm_AnomaliaDeposito_R2"/>
 <Item key="151" value="SCAR_M1_PZ2:R2_CODICE_PRG"/>
-<Item key="315" value="alm_M1_ES2_ErrDatiPezzi"/>
 <Item key="152" value="SCAR_M1_PZ2:R2_COLLA"/>
-<Item key="316" value="alm_M2_ES2_ErrDatiPezzi"/>
 <Item key="153" value="SCAR_M1_PZ2:R2_FILA_SQ1"/>
-<Item key="317" value="alm_M1_ES2_ErrPz1"/>
 <Item key="154" value="SCAR_M1_PZ2:R2_FILA_SQ2"/>
-<Item key="318" value="alm_M1_ES2_ErrPz2"/>
 <Item key="155" value="SCAR_M1_PZ2:R2_OFFSET_PEZZO"/>
-<Item key="319" value="alm_M1_ES2_ErrPz3"/>
 <Item key="156" value="SCAR_M1_PZ2:R2_RUOTA_PEZZO"/>
-<Item key="320" value="alm_M1_ES2_ErrPz4"/>
 <Item key="157" value="SCAR_M1_PZ3:ALTEZZA_PROFILO"/>
-<Item key="321" value="alm_M2_ES2_ErrPz1"/>
 <Item key="158" value="SCAR_M1_PZ3:APPOGGIO_PEZZO"/>
-<Item key="322" value="alm_M2_ES2_ErrPz2"/>
 <Item key="159" value="SCAR_M1_PZ3:CASSETTO_ASSEGNATO"/>
-<Item key="323" value="alm_M2_ES2_ErrPz3"/>
 <Item key="160" value="SCAR_M1_PZ3:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
-<Item key="324" value="alm_M2_ES2_ErrPz4"/>
 <Item key="161" value="SCAR_M1_PZ3:LARGHEZZA_PROFILO"/>
-<Item key="325" value="alm_Presenti_ZonaR2"/>
 <Item key="162" value="SCAR_M1_PZ3:LUNGHEZZA_PEZZO_ESTERNO"/>
+<Item key="163" value="SCAR_M1_PZ3:MAGAZZINO_ASSEGNATO"/>
+<Item key="164" value="SCAR_M1_PZ3:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="165" value="SCAR_M1_PZ3:MAX_LUNGHEZZA"/>
+<Item key="166" value="SCAR_M1_PZ3:MISURA_CAMERA_ESTERNA"/>
+<Item key="167" value="SCAR_M1_PZ3:NUM_SQUADRETTE1"/>
+<Item key="168" value="SCAR_M1_PZ3:NUM_SQUADRETTE2"/>
+<Item key="169" value="SCAR_M1_PZ3:NUOVO"/>
+<Item key="170" value="SCAR_M1_PZ3:POSIZIONE"/>
+<Item key="171" value="SCAR_M1_PZ3:POSIZIONE_PEZZO_ESTERNO"/>
+<Item key="172" value="SCAR_M1_PZ3:ROBOT_ASSEGNATO"/>
+<Item key="173" value="SCAR_M1_PZ3:TOTALE_PEZZI_QUARTINA"/>
+<Item key="174" value="SCAR_M1_PZ3:ULTIMO_PEZZO"/>
+<Item key="175" value="SCAR_M1_PZ3:R2_APERTURA"/>
+<Item key="176" value="SCAR_M1_PZ3:R2_ATTREZZATURA"/>
+<Item key="177" value="SCAR_M1_PZ3:R2_BANCO_SQ1"/>
+<Item key="178" value="SCAR_M1_PZ3:R2_BANCO_SQ2"/>
+<Item key="179" value="SCAR_M1_PZ3:R2_CODICE_PRG"/>
+<Item key="180" value="SCAR_M1_PZ3:R2_COLLA"/>
+<Item key="181" value="SCAR_M1_PZ3:R2_FILA_SQ1"/>
+<Item key="182" value="SCAR_M1_PZ3:R2_FILA_SQ2"/>
+<Item key="183" value="SCAR_M1_PZ3:R2_OFFSET_PEZZO"/>
+<Item key="184" value="SCAR_M1_PZ3:R2_RUOTA_PEZZO"/>
+<Item key="185" value="SCAR_M1_PZ4:ALTEZZA_PROFILO"/>
+<Item key="186" value="SCAR_M1_PZ4:APPOGGIO_PEZZO"/>
+<Item key="187" value="SCAR_M1_PZ4:CASSETTO_ASSEGNATO"/>
+<Item key="188" value="SCAR_M1_PZ4:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="189" value="SCAR_M1_PZ4:LARGHEZZA_PROFILO"/>
+<Item key="190" value="SCAR_M1_PZ4:LUNGHEZZA_PEZZO_ESTERNO"/>
+<Item key="191" value="SCAR_M1_PZ4:MAGAZZINO_ASSEGNATO"/>
+<Item key="192" value="SCAR_M1_PZ4:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="193" value="SCAR_M1_PZ4:MAX_LUNGHEZZA"/>
+<Item key="194" value="SCAR_M1_PZ4:MISURA_CAMERA_ESTERNA"/>
+<Item key="195" value="SCAR_M1_PZ4:NUM_SQUADRETTE1"/>
+<Item key="196" value="SCAR_M1_PZ4:NUM_SQUADRETTE2"/>
+<Item key="197" value="SCAR_M1_PZ4:NUOVO"/>
+<Item key="198" value="SCAR_M1_PZ4:POSIZIONE"/>
+<Item key="199" value="SCAR_M1_PZ4:POSIZIONE_PEZZO_ESTERNO"/>
+<Item key="200" value="SCAR_M1_PZ4:ROBOT_ASSEGNATO"/>
+<Item key="201" value="SCAR_M1_PZ4:TOTALE_PEZZI_QUARTINA"/>
+<Item key="202" value="SCAR_M1_PZ4:ULTIMO_PEZZO"/>
+<Item key="203" value="SCAR_M1_PZ4:R2_APERTURA"/>
+<Item key="204" value="SCAR_M1_PZ4:R2_ATTREZZATURA"/>
+<Item key="205" value="SCAR_M1_PZ4:R2_BANCO_SQ1"/>
+<Item key="206" value="SCAR_M1_PZ4:R2_BANCO_SQ2"/>
+<Item key="207" value="SCAR_M1_PZ4:R2_CODICE_PRG"/>
+<Item key="208" value="SCAR_M1_PZ4:R2_COLLA"/>
+<Item key="209" value="SCAR_M1_PZ4:R2_FILA_SQ1"/>
+<Item key="210" value="SCAR_M1_PZ4:R2_FILA_SQ2"/>
+<Item key="211" value="SCAR_M1_PZ4:R2_OFFSET_PEZZO"/>
+<Item key="212" value="SCAR_M1_PZ4:R2_RUOTA_PEZZO"/>
+<Item key="213" value="SCAR_M2_PZ1:ALTEZZA_PROFILO"/>
+<Item key="214" value="SCAR_M2_PZ1:APPOGGIO_PEZZO"/>
+<Item key="215" value="SCAR_M2_PZ1:CASSETTO_ASSEGNATO"/>
+<Item key="216" value="SCAR_M2_PZ1:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="217" value="SCAR_M2_PZ1:LARGHEZZA_PROFILO"/>
+<Item key="218" value="SCAR_M2_PZ1:LUNGHEZZA_PEZZO_ESTERNO"/>
+<Item key="219" value="SCAR_M2_PZ1:MAGAZZINO_ASSEGNATO"/>
+<Item key="220" value="SCAR_M2_PZ1:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="221" value="SCAR_M2_PZ1:MAX_LUNGHEZZA"/>
+<Item key="222" value="SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA"/>
+<Item key="223" value="SCAR_M2_PZ1:NUM_SQUADRETTE1"/>
+<Item key="224" value="SCAR_M2_PZ1:NUM_SQUADRETTE2"/>
+<Item key="225" value="SCAR_M2_PZ1:NUOVO"/>
+<Item key="226" value="SCAR_M2_PZ1:POSIZIONE"/>
+<Item key="227" value="SCAR_M2_PZ1:POSIZIONE_PEZZO_ESTERNO"/>
+<Item key="228" value="SCAR_M2_PZ1:ROBOT_ASSEGNATO"/>
+<Item key="229" value="SCAR_M2_PZ1:TOTALE_PEZZI_QUARTINA"/>
+<Item key="230" value="SCAR_M2_PZ1:ULTIMO_PEZZO"/>
+<Item key="231" value="SCAR_M2_PZ1:R2_APERTURA"/>
+<Item key="232" value="SCAR_M2_PZ1:R2_ATTREZZATURA"/>
+<Item key="233" value="SCAR_M2_PZ1:R2_BANCO_SQ1"/>
+<Item key="234" value="SCAR_M2_PZ1:R2_BANCO_SQ2"/>
+<Item key="235" value="SCAR_M2_PZ1:R2_CODICE_PRG"/>
+<Item key="236" value="SCAR_M2_PZ1:R2_COLLA"/>
+<Item key="237" value="SCAR_M2_PZ1:R2_FILA_SQ1"/>
+<Item key="238" value="SCAR_M2_PZ1:R2_FILA_SQ2"/>
+<Item key="239" value="SCAR_M2_PZ1:R2_OFFSET_PEZZO"/>
+<Item key="240" value="SCAR_M2_PZ1:R2_RUOTA_PEZZO"/>
+<Item key="241" value="SCAR_M2_PZ2:ALTEZZA_PROFILO"/>
+<Item key="242" value="SCAR_M2_PZ2:APPOGGIO_PEZZO"/>
+<Item key="243" value="SCAR_M2_PZ2:CASSETTO_ASSEGNATO"/>
+<Item key="244" value="SCAR_M2_PZ2:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="245" value="SCAR_M2_PZ2:LARGHEZZA_PROFILO"/>
+<Item key="246" value="SCAR_M2_PZ2:LUNGHEZZA_PEZZO_ESTERNO"/>
+<Item key="247" value="SCAR_M2_PZ2:MAGAZZINO_ASSEGNATO"/>
+<Item key="248" value="SCAR_M2_PZ2:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="249" value="SCAR_M2_PZ2:MAX_LUNGHEZZA"/>
+<Item key="250" value="SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA"/>
+<Item key="251" value="SCAR_M2_PZ2:NUM_SQUADRETTE1"/>
+<Item key="252" value="SCAR_M2_PZ2:NUM_SQUADRETTE2"/>
+<Item key="253" value="SCAR_M2_PZ2:NUOVO"/>
+<Item key="254" value="SCAR_M2_PZ2:POSIZIONE"/>
+<Item key="255" value="SCAR_M2_PZ2:POSIZIONE_PEZZO_ESTERNO"/>
+<Item key="256" value="SCAR_M2_PZ2:ROBOT_ASSEGNATO"/>
+<Item key="257" value="SCAR_M2_PZ2:TOTALE_PEZZI_QUARTINA"/>
+<Item key="258" value="SCAR_M2_PZ2:ULTIMO_PEZZO"/>
+<Item key="259" value="SCAR_M2_PZ2:R2_APERTURA"/>
+<Item key="260" value="SCAR_M2_PZ2:R2_ATTREZZATURA"/>
+<Item key="261" value="SCAR_M2_PZ2:R2_BANCO_SQ1"/>
+<Item key="262" value="SCAR_M2_PZ2:R2_BANCO_SQ2"/>
+<Item key="263" value="SCAR_M2_PZ2:R2_CODICE_PRG"/>
+<Item key="264" value="SCAR_M2_PZ2:R2_COLLA"/>
+<Item key="265" value="SCAR_M2_PZ2:R2_FILA_SQ1"/>
+<Item key="266" value="SCAR_M2_PZ2:R2_FILA_SQ2"/>
+<Item key="267" value="SCAR_M2_PZ2:R2_OFFSET_PEZZO"/>
+<Item key="268" value="SCAR_M2_PZ2:R2_RUOTA_PEZZO"/>
+<Item key="269" value="SCAR_M2_PZ3:ALTEZZA_PROFILO"/>
+<Item key="270" value="SCAR_M2_PZ3:APPOGGIO_PEZZO"/>
+<Item key="271" value="SCAR_M2_PZ3:CASSETTO_ASSEGNATO"/>
+<Item key="272" value="SCAR_M2_PZ3:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="273" value="SCAR_M2_PZ3:LARGHEZZA_PROFILO"/>
+<Item key="274" value="SCAR_M2_PZ3:LUNGHEZZA_PEZZO_ESTERNO"/>
+<Item key="275" value="SCAR_M2_PZ3:MAGAZZINO_ASSEGNATO"/>
+<Item key="276" value="SCAR_M2_PZ3:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="277" value="SCAR_M2_PZ3:MAX_LUNGHEZZA"/>
+<Item key="278" value="SCAR_M2_PZ3:MISURA_CAMERA_ESTERNA"/>
+<Item key="279" value="SCAR_M2_PZ3:NUM_SQUADRETTE1"/>
+<Item key="280" value="SCAR_M2_PZ3:NUM_SQUADRETTE2"/>
+<Item key="281" value="SCAR_M2_PZ3:NUOVO"/>
+<Item key="282" value="SCAR_M2_PZ3:POSIZIONE"/>
+<Item key="283" value="SCAR_M2_PZ3:POSIZIONE_PEZZO_ESTERNO"/>
+<Item key="284" value="SCAR_M2_PZ3:ROBOT_ASSEGNATO"/>
+<Item key="285" value="SCAR_M2_PZ3:TOTALE_PEZZI_QUARTINA"/>
+<Item key="286" value="SCAR_M2_PZ3:ULTIMO_PEZZO"/>
+<Item key="287" value="SCAR_M2_PZ3:R2_APERTURA"/>
+<Item key="288" value="SCAR_M2_PZ3:R2_ATTREZZATURA"/>
+<Item key="289" value="SCAR_M2_PZ3:R2_BANCO_SQ1"/>
+<Item key="290" value="SCAR_M2_PZ3:R2_BANCO_SQ2"/>
+<Item key="291" value="SCAR_M2_PZ3:R2_CODICE_PRG"/>
+<Item key="292" value="SCAR_M2_PZ3:R2_COLLA"/>
+<Item key="293" value="SCAR_M2_PZ3:R2_FILA_SQ1"/>
+<Item key="294" value="SCAR_M2_PZ3:R2_FILA_SQ2"/>
+<Item key="295" value="SCAR_M2_PZ3:R2_OFFSET_PEZZO"/>
+<Item key="296" value="SCAR_M2_PZ3:R2_RUOTA_PEZZO"/>
+<Item key="297" value="SCAR_M2_PZ4:ALTEZZA_PROFILO"/>
+<Item key="298" value="SCAR_M2_PZ4:APPOGGIO_PEZZO"/>
+<Item key="299" value="SCAR_M2_PZ4:CASSETTO_ASSEGNATO"/>
+<Item key="300" value="SCAR_M2_PZ4:CASSETTO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="301" value="SCAR_M2_PZ4:LARGHEZZA_PROFILO"/>
+<Item key="302" value="SCAR_M2_PZ4:LUNGHEZZA_PEZZO_ESTERNO"/>
+<Item key="303" value="SCAR_M2_PZ4:MAGAZZINO_ASSEGNATO"/>
+<Item key="304" value="SCAR_M2_PZ4:MAGAZZINO_ASSEGNATO_QRT_SUCCESSIVA"/>
+<Item key="305" value="SCAR_M2_PZ4:MAX_LUNGHEZZA"/>
+<Item key="306" value="SCAR_M2_PZ4:MISURA_CAMERA_ESTERNA"/>
+<Item key="307" value="SCAR_M2_PZ4:NUM_SQUADRETTE1"/>
+<Item key="308" value="SCAR_M2_PZ4:NUM_SQUADRETTE2"/>
+<Item key="309" value="SCAR_M2_PZ4:NUOVO"/>
+<Item key="310" value="SCAR_M2_PZ4:POSIZIONE"/>
+<Item key="311" value="SCAR_M2_PZ4:POSIZIONE_PEZZO_ESTERNO"/>
+<Item key="312" value="SCAR_M2_PZ4:ROBOT_ASSEGNATO"/>
+<Item key="313" value="SCAR_M2_PZ4:TOTALE_PEZZI_QUARTINA"/>
+<Item key="314" value="SCAR_M2_PZ4:ULTIMO_PEZZO"/>
+<Item key="315" value="SCAR_M2_PZ4:R2_APERTURA"/>
+<Item key="316" value="SCAR_M2_PZ4:R2_ATTREZZATURA"/>
+<Item key="317" value="SCAR_M2_PZ4:R2_BANCO_SQ1"/>
+<Item key="318" value="SCAR_M2_PZ4:R2_BANCO_SQ2"/>
+<Item key="319" value="SCAR_M2_PZ4:R2_CODICE_PRG"/>
+<Item key="320" value="SCAR_M2_PZ4:R2_COLLA"/>
+<Item key="321" value="SCAR_M2_PZ4:R2_FILA_SQ1"/>
+<Item key="322" value="SCAR_M2_PZ4:R2_FILA_SQ2"/>
+<Item key="323" value="SCAR_M2_PZ4:R2_OFFSET_PEZZO"/>
+<Item key="324" value="SCAR_M2_PZ4:R2_RUOTA_PEZZO"/>
+<Item key="325" value="Assemblatrice_In:ALTEZZA_FINESTRA"/>
+<Item key="326" value="PLC_TRANSF_ASSEMBLATRICE_IN:ALTEZZA_FINESTRA"/>
+<Item key="327" value="Assemblatrice_In:APERTURA"/>
+<Item key="328" value="PLC_TRANSF_ASSEMBLATRICE_IN:APERTURA"/>
+<Item key="329" value="Assemblatrice_In:CHK_WRITE"/>
+<Item key="330" value="PLC_TRANSF_ASSEMBLATRICE_IN:CHK_WRITE"/>
+<Item key="331" value="Assemblatrice_In:LARGHEZZA_FINESTRA"/>
+<Item key="332" value="PLC_TRANSF_ASSEMBLATRICE_IN:LARGHEZZA_FINESTRA"/>
+<Item key="333" value="Assemblatrice_In:START_ROTAZIONE"/>
+<Item key="334" value="PLC_TRANSF_ASSEMBLATRICE_IN:START_ROTAZIONE"/>
+<Item key="335" value="Assemblatrice_In:STROBE_DATI_R2"/>
+<Item key="336" value="PLC_TRANSF_ASSEMBLATRICE_IN:STROBE_DATI_R2"/>
+<Item key="337" value="Assemblatrice_Out:ALLARME"/>
+<Item key="338" value="PLC_TRANSF_ASSEMBLATRICE_OUT:ALLARME"/>
+<Item key="339" value="Assemblatrice_Out:ALTEZZA_FINESTRA"/>
+<Item key="340" value="PLC_TRANSF_ASSEMBLATRICE_OUT:ALTEZZA_FINESTRA"/>
+<Item key="341" value="Assemblatrice_Out:APERTURA"/>
+<Item key="342" value="PLC_TRANSF_ASSEMBLATRICE_OUT:APERTURA"/>
+<Item key="343" value="Assemblatrice_Out:ASSI_IN_MOVIMENTO"/>
+<Item key="344" value="PLC_TRANSF_ASSEMBLATRICE_OUT:ASSI_IN_MOVIMENTO"/>
+<Item key="345" value="Assemblatrice_Out:AUTO"/>
+<Item key="346" value="PLC_TRANSF_ASSEMBLATRICE_OUT:AUTO"/>
+<Item key="347" value="Assemblatrice_Out:AZZERATA"/>
+<Item key="348" value="PLC_TRANSF_ASSEMBLATRICE_OUT:AZZERATA"/>
+<Item key="349" value="Assemblatrice_Out:BACK_STROBE_DATI_R2"/>
+<Item key="350" value="PLC_TRANSF_ASSEMBLATRICE_OUT:BACK_STROBE_DATI_R2"/>
+<Item key="351" value="Assemblatrice_Out:CHK_READ"/>
+<Item key="352" value="PLC_TRANSF_ASSEMBLATRICE_OUT:CHK_READ"/>
+<Item key="353" value="Assemblatrice_Out:FINE_ROTAZIONE"/>
+<Item key="354" value="PLC_TRANSF_ASSEMBLATRICE_OUT:FINE_ROTAZIONE"/>
+<Item key="355" value="Assemblatrice_Out:LARGHEZZA_FINESTRA"/>
+<Item key="356" value="PLC_TRANSF_ASSEMBLATRICE_OUT:LARGHEZZA_FINESTRA"/>
+<Item key="357" value="Assemblatrice_Out:STA_AZZERANDO"/>
+<Item key="358" value="PLC_TRANSF_ASSEMBLATRICE_OUT:STA_AZZERANDO"/>
+<Item key="359" value="PLC_TRANSF_Q1_IN:NON_IN_EMERGENZA"/>
+<Item key="360" value="Q1_In:LineaNonInEmergenza"/>
+<Item key="361" value="PLC_TRANSF_Q1_IN:NON_IN_HOLD"/>
+<Item key="362" value="Q1_In:LineaNonInHold"/>
+<Item key="363" value="PLC_TRANSF_Q1_IN:PEZZO_SCARICATO"/>
+<Item key="364" value="Q1_In:PezzoScaricato"/>
+<Item key="365" value="PLC_TRANSF_Q1_IN:R1_FUORI_INGOMBRO"/>
+<Item key="366" value="Q1_In:R1_FuoriIngombro"/>
+<Item key="367" value="PLC_TRANSF_Q1_IN:R1_OK"/>
+<Item key="368" value="Q1_In:R1_Ok"/>
+<Item key="369" value="PLC_TRANSF_Q1_IN:RIPARI_R1_OK"/>
+<Item key="370" value="Q1_In:RipariR1_Ok"/>
+<Item key="371" value="PLC_TRANSF_Q1_IN:SBLOCCA_PEZZO"/>
+<Item key="372" value="Q1_In:SbloccaPezzo"/>
+<Item key="373" value="PLC_TRANSF_Q1_OUT:IN_CICLO"/>
+<Item key="374" value="PLC_TRANSF_Q1_OUT:NON_IN_EMERGENZA"/>
+<Item key="375" value="PLC_TRANSF_Q1_OUT:NON_IN_HOLD"/>
+<Item key="376" value="PLC_TRANSF_Q1_OUT:OK"/>
+<Item key="377" value="PLC_TRANSF_Q1_OUT:PEZZO_PRONTO"/>
+<Item key="378" value="PLC_TRANSF_Q1_OUT:PEZZO_SBLOCCATO"/>
+<Item key="379" value="PLC_TRANSF_Q1_OUT:RIPARI_QUADRA_OK"/>
+<Item key="380" value="Q1_Out:FotocellScaricatore5"/>
+<Item key="381" value="PLC_TRANSF_Q1_OUT:FTC_SCAR_PZ"/>
+<Item key="382" value="PLC_TRANSF_Q2_IN:NON_IN_EMERGENZA"/>
+<Item key="383" value="Q2_In:LineaNonInEmergenza"/>
+<Item key="384" value="PLC_TRANSF_Q2_IN:NON_IN_HOLD"/>
+<Item key="385" value="Q2_In:LineaNonInHold"/>
+<Item key="386" value="PLC_TRANSF_Q2_IN:PEZZO_SCARICATO"/>
+<Item key="387" value="Q2_In:PezzoScaricato"/>
+<Item key="388" value="PLC_TRANSF_Q2_IN:R1_FUORI_INGOMBRO"/>
+<Item key="389" value="Q2_In:R1_FuoriIngombro"/>
+<Item key="390" value="PLC_TRANSF_Q2_IN:R1_OK"/>
+<Item key="391" value="Q2_In:R1_Ok"/>
+<Item key="392" value="PLC_TRANSF_Q2_IN:RIPARI_R1_OK"/>
+<Item key="393" value="Q2_In:RipariR1_Ok"/>
+<Item key="394" value="PLC_TRANSF_Q2_IN:SBLOCCA_PEZZO"/>
+<Item key="395" value="Q2_In:SbloccaPezzo"/>
+<Item key="396" value="PLC_TRANSF_Q2_OUT:IN_CICLO"/>
+<Item key="397" value="PLC_TRANSF_Q2_OUT:NON_IN_EMERGENZA"/>
+<Item key="398" value="PLC_TRANSF_Q2_OUT:NON_IN_HOLD"/>
+<Item key="399" value="PLC_TRANSF_Q2_OUT:OK"/>
+<Item key="400" value="PLC_TRANSF_Q2_OUT:PEZZO_PRONTO"/>
+<Item key="401" value="PLC_TRANSF_Q2_OUT:PEZZO_SBLOCCATO"/>
+<Item key="402" value="PLC_TRANSF_Q2_OUT:RIPARI_QUADRA_OK"/>
+<Item key="403" value="Q2_Out:FotocellScaricatore5"/>
+<Item key="404" value="PLC_TRANSF_Q2_OUT:FTC_SCAR_PZ"/>
+<Item key="405" value="alm_FineRobotR1"/>
+<Item key="406" value="alm_Q1_MancaFile"/>
+<Item key="407" value="alm_Q1_numFilesIncoerente"/>
+<Item key="408" value="alm_Q2_MancaFile"/>
+<Item key="409" value="alm_Q2_numFilesIncoerente"/>
+<Item key="410" value="alm_Step_ToutR1_6150"/>
+<Item key="411" value="alm_Step_ToutR1_9150"/>
+<Item key="412" value="alm_ZonaR1_ODBC"/>
+<Item key="413" value="alm_R1_PezzoDuplicato_Q1"/>
+<Item key="414" value="alm_R1_PezzoDuplicato_Q2"/>
+<Item key="415" value="alm_StatoCiclo_R1"/>
+<Item key="416" value="alm_R1_ConfigError_Q1"/>
+<Item key="417" value="alm_R1_ConfigError_Q2"/>
+<Item key="418" value="alm_AnomaliaDeposito_R1"/>
+<Item key="419" value="alm_Presenti_ZonaR1"/>
+<Item key="420" value="alm_FineRobotR2"/>
+<Item key="421" value="alm_ZonaR2_ODBC"/>
+<Item key="422" value="alm_StatoCiclo_R2"/>
+<Item key="423" value="alm_Step_ToutR2_4200"/>
+<Item key="424" value="alm_Step_ToutR2_6700"/>
+<Item key="425" value="alm_Step_ToutR2_9150"/>
+<Item key="426" value="alm_AnomaliaDeposito_R2"/>
+<Item key="427" value="alm_M1_ES2_ErrDatiPezzi"/>
+<Item key="428" value="alm_M2_ES2_ErrDatiPezzi"/>
+<Item key="429" value="alm_M1_ES2_ErrPz1"/>
+<Item key="430" value="alm_M1_ES2_ErrPz2"/>
+<Item key="431" value="alm_M1_ES2_ErrPz3"/>
+<Item key="432" value="alm_M1_ES2_ErrPz4"/>
+<Item key="433" value="alm_M2_ES2_ErrPz1"/>
+<Item key="434" value="alm_M2_ES2_ErrPz2"/>
+<Item key="435" value="alm_M2_ES2_ErrPz3"/>
+<Item key="436" value="alm_M2_ES2_ErrPz4"/>
+<Item key="437" value="alm_Presenti_ZonaR2"/>
+<Item key="438" value="alm_Presenti_ZonaR3"/>
+<Item key="439" value="alm_Assemblatrice_ErrComunicazione"/>
+<Item key="440" value="alm_M1_ES3_ErrDatiDaDB"/>
+<Item key="441" value="alm_M2_ES3_ErrDatiDaDB"/>
+<Item key="442" value="alm_Presenti"/>
+<Item key="443" value="alm_ResetAll"/>
+<Item key="444" value="alm_ResetAlmZonaR1"/>
+<Item key="445" value="alm_ResetAlmZonaR2"/>
+<Item key="446" value="alm_ResetAlmZonaR3"/>
+<Item key="447" value="DaPilzInputWord00"/>
+<Item key="448" value="Pilz_Virt_OVo00_SpvRipQdrRbt1Ok"/>
+<Item key="449" value="Pilz_Virt_OVo01_SpvRipZona2Ok"/>
+<Item key="450" value="Pilz_Virt_OVo02_SpvRipZona3aOk"/>
+<Item key="451" value="Pilz_Virt_OVo03_SpvRipZona3bOk"/>
+<Item key="452" value="Pilz_Virt_OVo04_SpvBarFtcBacI_O"/>
+<Item key="453" value="Pilz_Virt_OVo05_SpvAss0_"/>
+<Item key="454" value="Pilz_Virt_OVo06_SpvAss180_"/>
 </Variables>
 <Labels/>
-<compiled numins="585">CAANAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAA0AAAAAAAEAAAAAAAAA6AMAAAAAAAAA
+<compiled numins="704">CAANAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAA0AAAAAAAEAAAAAAAAA6AMAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgANAAAAAAABAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAMAA0AAAAAAAIAAAAAAAAA6AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAACgANAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAwA
@@ -1032,233 +1263,299 @@ AAAAAAAAAA8ADAAAAAAAXgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABfAAAAAAAAAP//
 //8AAAAAAAAAAAAAAAAPAAwAAAAAAGAAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAYQAA
 AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABiAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
 AAAAAGMAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAZAAAAAAAAAD/////AAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAGUAAAAAAAAA/////wAA
-AAAAAAAAAAAAAA8ADAAAAAAAZgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABnAAAAAAAA
-AP////8AAAAAAAAAAAAAAAAPAAwAAAAAAGgAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA
-aQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABqAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
-AAwAAAAAAGsAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAbAAAAAAAAAD/////AAAAAAAA
-AAAAAAAADwAMAAAAAABtAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAG4AAAAAAAAA////
-/wAAAAAAAAAAAAAAAA8ADAAAAAAAbwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABwAAAA
-AAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAHEAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAA
-AAAAcgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABzAAAAAAAAAP////8AAAAAAAAAAAAA
-AAAPAAwAAAAAAHQAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAdQAAAAAAAAD/////AAAA
-AAAAAAAAAAAADwAMAAAAAAB2AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAHcAAAAAAAAA
-/////wAAAAAAAAAAAAAAAA8ADAAAAAAAeAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAB5
-AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAHoAAAAAAAAA/////wAAAAAAAAAAAAAAAA8A
-DAAAAAAAewAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAB8AAAAAAAAAP////8AAAAAAAAA
-AAAAAAAPAAwAAAAAAH0AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAfgAAAAAAAAD/////
-AAAAAAAAAAAAAAAADwAMAAAAAAB/AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAIAAAAAA
-AAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAA
-AACBAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAIIAAAAAAAAA/////wAAAAAAAAAAAAAA
-AA8ADAAAAAAAgwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACEAAAAAAAAAP////8AAAAA
-AAAAAAAAAAAPAAwAAAAAAIUAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAhgAAAAAAAAD/
-////AAAAAAAAAAAAAAAADwAMAAAAAACHAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAIgA
-AAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAiQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAM
-AAAAAACKAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAIsAAAAAAAAA/////wAAAAAAAAAA
-AAAAAA8ADAAAAAAAjAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACNAAAAAAAAAP////8A
-AAAAAAAAAAAAAAAPAAwAAAAAAI4AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAjwAAAAAA
-AAD/////AAAAAAAAAAAAAAAADwAMAAAAAACQAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAA
-AJEAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAkgAAAAAAAAD/////AAAAAAAAAAAAAAAA
-DwAMAAAAAACTAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAJQAAAAAAAAA/////wAAAAAA
-AAAAAAAAAA8ADAAAAAAAlQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACWAAAAAAAAAP//
-//8AAAAAAAAAAAAAAAAPAAwAAAAAAJcAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAmAAA
-AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACZAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
-AAAAAJoAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAmwAAAAAAAAD/////AAAAAAAAAAAA
-AAAADwAMAAAAAACcAAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAA8ADAAAAAAAnQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACeAAAAAAAA
-AP////8AAAAAAAAAAAAAAAAPAAwAAAAAAJ8AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA
-oAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAChAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
-AAwAAAAAAKIAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAowAAAAAAAAD/////AAAAAAAA
-AAAAAAAADwAMAAAAAACkAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAKUAAAAAAAAA////
-/wAAAAAAAAAAAAAAAA8ADAAAAAAApgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACnAAAA
-AAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAKgAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAA
-AAAAqQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACqAAAAAAAAAP////8AAAAAAAAAAAAA
-AAAPAAwAAAAAAKsAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAArAAAAAAAAAD/////AAAA
-AAAAAAAAAAAADwAMAAAAAACtAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAK4AAAAAAAAA
-/////wAAAAAAAAAAAAAAAA8ADAAAAAAArwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACw
-AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAALEAAAAAAAAA/////wAAAAAAAAAAAAAAAA8A
-DAAAAAAAsgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACzAAAAAAAAAP////8AAAAAAAAA
-AAAAAAAPAAwAAAAAALQAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAtQAAAAAAAAD/////
-AAAAAAAAAAAAAAAADwAMAAAAAAC2AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAALcAAAAA
-AAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAuAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAALkAAAAAAAAA/////wAAAAAAAAAAAAAA
-AA8ADAAAAAAAugAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAC7AAAAAAAAAP////8AAAAA
-AAAAAAAAAAAPAAwAAAAAALwAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAvQAAAAAAAAD/
-////AAAAAAAAAAAAAAAADwAMAAAAAAC+AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAL8A
-AAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAwAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAM
-AAAAAADBAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAMIAAAAAAAAA/////wAAAAAAAAAA
-AAAAAA8ADAAAAAAAwwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADEAAAAAAAAAP////8A
-AAAAAAAAAAAAAAAPAAwAAAAAAMUAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAxgAAAAAA
-AAD/////AAAAAAAAAAAAAAAADwAMAAAAAADHAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAA
-AMgAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAyQAAAAAAAAD/////AAAAAAAAAAAAAAAA
-DwAMAAAAAADKAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAMsAAAAAAAAA/////wAAAAAA
-AAAAAAAAAA8ADAAAAAAAzAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADNAAAAAAAAAP//
-//8AAAAAAAAAAAAAAAAPAAwAAAAAAM4AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAzwAA
-AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADQAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
-AAAAANEAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA0gAAAAAAAAD/////AAAAAAAAAAAA
-AAAADwAMAAAAAADTAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAANQAAAAAAAAA/////wAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAA8ADAAAAAAAZQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABmAAAAAAAA
+AP////8AAAAAAAAAAAAAAAAPAAwAAAAAAGcAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA
+aAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABpAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
+AAwAAAAAAGoAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAawAAAAAAAAD/////AAAAAAAA
+AAAAAAAADwAMAAAAAABsAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAG0AAAAAAAAA////
+/wAAAAAAAAAAAAAAAA8ADAAAAAAAbgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABvAAAA
+AAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAHAAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAA
+AAAAcQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAByAAAAAAAAAP////8AAAAAAAAAAAAA
+AAAPAAwAAAAAAHMAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAdAAAAAAAAAD/////AAAA
+AAAAAAAAAAAADwAMAAAAAAB1AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAHYAAAAAAAAA
+/////wAAAAAAAAAAAAAAAA8ADAAAAAAAdwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAB4
+AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAHkAAAAAAAAA/////wAAAAAAAAAAAAAAAA8A
+DAAAAAAAegAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAB7AAAAAAAAAP////8AAAAAAAAA
+AAAAAAAPAAwAAAAAAHwAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAfQAAAAAAAAD/////
+AAAAAAAAAAAAAAAADwAMAAAAAAB+AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAH8AAAAA
+AAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAgAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAIEAAAAAAAAA/////wAAAAAAAAAAAAAA
+AA8ADAAAAAAAggAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACDAAAAAAAAAP////8AAAAA
+AAAAAAAAAAAPAAwAAAAAAIQAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAhQAAAAAAAAD/
+////AAAAAAAAAAAAAAAADwAMAAAAAACGAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAIcA
+AAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAiAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAM
+AAAAAACJAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAIoAAAAAAAAA/////wAAAAAAAAAA
+AAAAAA8ADAAAAAAAiwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACMAAAAAAAAAP////8A
+AAAAAAAAAAAAAAAPAAwAAAAAAI0AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAjgAAAAAA
+AAD/////AAAAAAAAAAAAAAAADwAMAAAAAACPAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAA
+AJAAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAkQAAAAAAAAD/////AAAAAAAAAAAAAAAA
+DwAMAAAAAACSAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAJMAAAAAAAAA/////wAAAAAA
+AAAAAAAAAA8ADAAAAAAAlAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACVAAAAAAAAAP//
+//8AAAAAAAAAAAAAAAAPAAwAAAAAAJYAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAlwAA
+AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACYAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
+AAAAAJkAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAmgAAAAAAAAD/////AAAAAAAAAAAA
+AAAADwAMAAAAAACbAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAJwAAAAAAAAA/////wAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAACdAAAAAAAA
+AP////8AAAAAAAAAAAAAAAAPAAwAAAAAAJ4AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA
+nwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACgAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
+AAwAAAAAAKEAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAogAAAAAAAAD/////AAAAAAAA
+AAAAAAAADwAMAAAAAACjAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAKQAAAAAAAAA////
+/wAAAAAAAAAAAAAAAA8ADAAAAAAApQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACmAAAA
+AAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAKcAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAA
+AAAAqAAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACpAAAAAAAAAP////8AAAAAAAAAAAAA
+AAAPAAwAAAAAAKoAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAqwAAAAAAAAD/////AAAA
+AAAAAAAAAAAADwAMAAAAAACsAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAK0AAAAAAAAA
+/////wAAAAAAAAAAAAAAAA8ADAAAAAAArgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACv
+AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAALAAAAAAAAAA/////wAAAAAAAAAAAAAAAA8A
+DAAAAAAAsQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAACyAAAAAAAAAP////8AAAAAAAAA
+AAAAAAAPAAwAAAAAALMAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAtAAAAAAAAAD/////
+AAAAAAAAAAAAAAAADwAMAAAAAAC1AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAALYAAAAA
+AAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAtwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAA
+AAC4AAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AA8ADAAAAAAAuQAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAC6AAAAAAAAAP////8AAAAA
+AAAAAAAAAAAPAAwAAAAAALsAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAvAAAAAAAAAD/
+////AAAAAAAAAAAAAAAADwAMAAAAAAC9AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAL4A
+AAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAvwAAAAAAAAD/////AAAAAAAAAAAAAAAADwAM
+AAAAAADAAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAMEAAAAAAAAA/////wAAAAAAAAAA
+AAAAAA8ADAAAAAAAwgAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADDAAAAAAAAAP////8A
+AAAAAAAAAAAAAAAPAAwAAAAAAMQAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAxQAAAAAA
+AAD/////AAAAAAAAAAAAAAAADwAMAAAAAADGAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAA
+AMcAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAyAAAAAAAAAD/////AAAAAAAAAAAAAAAA
+DwAMAAAAAADJAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAMoAAAAAAAAA/////wAAAAAA
+AAAAAAAAAA8ADAAAAAAAywAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADMAAAAAAAAAP//
+//8AAAAAAAAAAAAAAAAPAAwAAAAAAM0AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAzgAA
+AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADPAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
+AAAAANAAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA0QAAAAAAAAD/////AAAAAAAAAAAA
+AAAADwAMAAAAAADSAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAANMAAAAAAAAA/////wAA
+AAAAAAAAAAAAAA8ADAAAAAAA1AAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAA
+1QAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADWAAAAAAAAAP////8AAAAAAAAAAAAAAAAP
+AAwAAAAAANcAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA2AAAAAAAAAD/////AAAAAAAA
+AAAAAAAADwAMAAAAAADZAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAANoAAAAAAAAA////
+/wAAAAAAAAAAAAAAAA8ADAAAAAAA2wAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADcAAAA
+AAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAN0AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAA
+AAAA3gAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADfAAAAAAAAAP////8AAAAAAAAAAAAA
+AAAPAAwAAAAAAOAAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA4QAAAAAAAAD/////AAAA
+AAAAAAAAAAAADwAMAAAAAADiAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAOMAAAAAAAAA
+/////wAAAAAAAAAAAAAAAA8ADAAAAAAA5AAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADl
+AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAOYAAAAAAAAA/////wAAAAAAAAAAAAAAAA8A
+DAAAAAAA5wAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAADoAAAAAAAAAP////8AAAAAAAAA
+AAAAAAAPAAwAAAAAAOkAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA6gAAAAAAAAD/////
+AAAAAAAAAAAAAAAADwAMAAAAAADrAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAOwAAAAA
+AAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA7QAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAA
+AADuAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAO8AAAAAAAAA/////wAAAAAAAAAAAAAA
+AA8ADAAAAAAA8AAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAPAAwAAAAAAPEAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA8gAAAAAAAAD/
+////AAAAAAAAAAAAAAAADwAMAAAAAADzAAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAPQA
+AAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA9QAAAAAAAAD/////AAAAAAAAAAAAAAAADwAM
+AAAAAAD2AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAPcAAAAAAAAA/////wAAAAAAAAAA
+AAAAAA8ADAAAAAAA+AAAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAD5AAAAAAAAAP////8A
+AAAAAAAAAAAAAAAPAAwAAAAAAPoAAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA+wAAAAAA
+AAD/////AAAAAAAAAAAAAAAADwAMAAAAAAD8AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAA
+AP0AAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA/gAAAAAAAAD/////AAAAAAAAAAAAAAAA
+DwAMAAAAAAD/AAAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAAABAAAAAAAA/////wAAAAAA
+AAAAAAAAAA8ADAAAAAAAAQEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAACAQAAAAAAAP//
+//8AAAAAAAAAAAAAAAAPAAwAAAAAAAMBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAABAEA
+AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAFAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
+AAAAAAYBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAABwEAAAAAAAD/////AAAAAAAAAAAA
+AAAADwAMAAAAAAAIAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAAkBAAAAAAAA/////wAA
+AAAAAAAAAAAAAA8ADAAAAAAACgEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAALAQAAAAAA
+AP////8AAAAAAAAAAAAAAAAPAAwAAAAAAAwBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAANAQAAAAAAAP////8AAAAAAAAAAAAAAAAP
+AAwAAAAAAA4BAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAADwEAAAAAAAD/////AAAAAAAA
+AAAAAAAADwAMAAAAAAAQAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAABEBAAAAAAAA////
+/wAAAAAAAAAAAAAAAA8ADAAAAAAAEgEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAATAQAA
+AAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAABQBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAA
+AAAAFQEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAWAQAAAAAAAP////8AAAAAAAAAAAAA
+AAAPAAwAAAAAABcBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAGAEAAAAAAAD/////AAAA
+AAAAAAAAAAAADwAMAAAAAAAZAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAABoBAAAAAAAA
+/////wAAAAAAAAAAAAAAAA8ADAAAAAAAGwEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAc
+AQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAB0BAAAAAAAA/////wAAAAAAAAAAAAAAAA8A
+DAAAAAAAHgEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAfAQAAAAAAAP////8AAAAAAAAA
+AAAAAAAPAAwAAAAAACABAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAIQEAAAAAAAD/////
+AAAAAAAAAAAAAAAADwAMAAAAAAAiAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAACMBAAAA
+AAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAJAEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAA
+AAAlAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAACYBAAAAAAAA/////wAAAAAAAAAAAAAA
+AA8ADAAAAAAAJwEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAoAQAAAAAAAP////8AAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAKQEAAAAAAAD/
+////AAAAAAAAAAAAAAAADwAMAAAAAAAqAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAACsB
+AAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAALAEAAAAAAAD/////AAAAAAAAAAAAAAAADwAM
+AAAAAAAtAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAC4BAAAAAAAA/////wAAAAAAAAAA
+AAAAAA8ADAAAAAAALwEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAwAQAAAAAAAP////8A
+AAAAAAAAAAAAAAAPAAwAAAAAADEBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAMgEAAAAA
+AAD/////AAAAAAAAAAAAAAAADwAMAAAAAAAzAQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAA
+ADQBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAANQEAAAAAAAD/////AAAAAAAAAAAAAAAA
+DwAMAAAAAAA2AQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAADcBAAAAAAAA/////wAAAAAA
+AAAAAAAAAA8ADAAAAAAAOAEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAA5AQAAAAAAAP//
+//8AAAAAAAAAAAAAAAAPAAwAAAAAADoBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAOwEA
+AAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAAA8AQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwA
+AAAAAD0BAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAAPgEAAAAAAAD/////AAAAAAAAAAAA
+AAAADwAMAAAAAAA/AQAAAAAAAP////8AAAAAAAAAAAAAAAAPAAwAAAAAAEABAAAAAAAA/////wAA
+AAAAAAAAAAAAAA8ADAAAAAAAQQEAAAAAAAD/////AAAAAAAAAAAAAAAADwAMAAAAAABCAQAAAAAA
+AP////8AAAAAAAAAAAAAAAAPAAwAAAAAAEMBAAAAAAAA/////wAAAAAAAAAAAAAAAA8ADAAAAAAA
+RAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP
-AAwAAAAAANUAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA1gAAAAAAAAD/////AAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAANcAAAAAAAAA////
-/wAAAAAAAAAAAAAAABAADAAAAAAA2AAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAANkAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAA
-AAAA2gAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAPAAwAAAAAANsAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA3AAAAAAAAAD/////AAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAN0AAAAAAAAA
-/////wAAAAAAAAAAAAAAABAADAAAAAAA3gAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAN8AAAAAAAAA/////wAAAAAAAAAAAAAAABAA
-DAAAAAAA4AAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABFAQAA
+AAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAEYBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABHAQAAAAAAAP////8AAAAAAAAAAAAA
+AAAQAAwAAAAAAEgBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAADwAMAAAAAABJAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAEoBAAAAAAAA
+/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABL
+AQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAEwBAAAAAAAA/////wAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABNAQAAAAAAAP////8AAAAAAAAA
+AAAAAAAQAAwAAAAAAE4BAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAADwAMAAAAAABPAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAFABAAAA
+AAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAOEAAAAAAAAA/////wAAAAAAAAAAAAAA
-ABAADAAAAAAA4gAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAPAAwAAAAAAOMAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA5AAAAAAAAAD/
-////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAOUA
-AAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA5gAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAOcAAAAAAAAA/////wAAAAAAAAAA
-AAAAABAADAAAAAAA6AAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAPAAwAAAAAAOkAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA6gAAAAAA
-AAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAA
-AOsAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA7AAAAAAAAAD/////AAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAO0AAAAAAAAA/////wAAAAAA
-AAAAAAAAABAADAAAAAAA7gAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAPAAwAAAAAAO8AAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA8AAA
-AAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwA
-AAAAAPEAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA8gAAAAAAAAD/////AAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAPMAAAAAAAAA/////wAA
-AAAAAAAAAAAAABAADAAAAAAA9AAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAPUAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAA
-9gAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAA8ADAAAAAAA9wAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAD4AAAA
-AAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAA
-AAAA+QAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAD6AAAAAAAAAP////8AAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAA+wAAAAAAAAD/////AAAA
-AAAAAAAAAAAAEAAMAAAAAAD8AAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAA/QAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAD+
-AAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8A
-DAAAAAAA/wAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAAAQAAAAAAAP////8AAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAAQEAAAAAAAD/////
-AAAAAAAAAAAAAAAAEAAMAAAAAAACAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAAwEAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAA
-AAAEAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAADwAMAAAAAAACAAAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAAUB
+AAAAAAAAAAAAAAAAAAAADwAMAAAAAABRAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAFIB
 AAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAM
-AAAAAAADAAAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAAYBAAAAAAAA/////wAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAAEAAAAAAAAAP////8A
-AAAAAAAAAAAAAAAQAAwAAAAAAAcBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAAFAAAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAA
-AAgBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-DwAMAAAAAAAGAAAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAAkBAAAAAAAA/////wAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAAHAAAAAAAAAP//
-//8AAAAAAAAAAAAAAAAQAAwAAAAAAAoBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAAAIAAAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwA
-AAAAAAsBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAADwAMAAAAAAAMAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAA0BAAAAAAAA/////wAA
+AAAAAABTAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAFQBAAAAAAAA/////wAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABVAQAAAAAAAP////8A
+AAAAAAAAAAAAAAAQAAwAAAAAAFYBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABXAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAA
+AFgBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+DwAMAAAAAABZAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAFoBAAAAAAAA/////wAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABbAQAAAAAAAP//
+//8AAAAAAAAAAAAAAAAQAAwAAAAAAFwBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABdAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwA
+AAAAAF4BAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAADwAMAAAAAABfAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAGABAAAAAAAA/////wAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABhAQAAAAAA
+AP////8AAAAAAAAAAAAAAAAQAAwAAAAAAGIBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAMAAAAAABjAQAAAAAAAP////8AAAAAAAAAAAAAAAAQ
+AAwAAAAAAGQBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAADwAMAAAAAABlAQAAAAAAAP////8AAAAAAAAAAAAAAAAQAAwAAAAAAGYBAAAAAAAA////
+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAPAAwAAAAAAGcBAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAaAEAAAAAAAD/////AAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAGkBAAAAAAAA
+/////wAAAAAAAAAAAAAAABAADAAAAAAAagEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAGsBAAAAAAAA/////wAAAAAAAAAAAAAAABAA
+DAAAAAAAbAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAPAAwAAAAAAG0BAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAbgEAAAAAAAD/////
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAG8BAAAA
+AAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAcAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAHEBAAAAAAAA/////wAAAAAAAAAAAAAA
+ABAADAAAAAAAcgEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAPAAwAAAAAAHMBAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAdAEAAAAAAAD/
+////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAA8ADAAAAAAAAgAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAB1AQAAAAAAAP////8A
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAAwAAAAAA
+AAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAB2AQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAABAAAAAAAAAD/////AAAAAAAAAAAAAAAA
+EAAMAAAAAAB3AQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAA8ADAAAAAAABQAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAB4AQAAAAAAAP//
+//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAABgAA
+AAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAB5AQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAABwAAAAAAAAD/////AAAAAAAAAAAA
+AAAAEAAMAAAAAAB6AQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAA8ADAAAAAAACAAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAB7AQAAAAAA
+AP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAA
+fAEAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAB9AQAAAAAAAP////8AAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAADgEAAAAAAAD/////AAAAAAAA
-AAAAAAAAEAAMAAAAAAAPAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAA8ADAAAAAAAEAEAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAARAQAA
-AAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAA
-AAAAEgEAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAATAQAAAAAAAP////8AAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAFAEAAAAAAAD/////AAAA
-AAAAAAAAAAAAEAAMAAAAAAAVAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAFgEAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAX
-AQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8A
-DAAAAAAAGAEAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAZAQAAAAAAAP////8AAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAGgEAAAAAAAD/////
-AAAAAAAAAAAAAAAAEAAMAAAAAAAbAQAAAAAAAP////8AAAAAAAAAAAAAAABxAAAAAAAAABMAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAH4BAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAA
+AAAAfwEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAPAAwAAAAAAIABAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAgQEAAAAAAAD/////AAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAIIBAAAAAAAA
+/////wAAAAAAAAAAAAAAABAADAAAAAAAgwEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAIQBAAAAAAAA/////wAAAAAAAAAAAAAAABAA
+DAAAAAAAhQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAPAAwAAAAAAIYBAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAhwEAAAAAAAD/////
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAIgBAAAA
+AAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAiQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAIoBAAAAAAAA/////wAAAAAAAAAAAAAA
+ABAADAAAAAAAiwEAAAAAAAD/////AAAAAAAAAAAAAAAAcQAAAAAAAAATAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAAoA
+AAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAjAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAAsAAAAAAAAA/////wAAAAAAAAAA
+AAAAABAADAAAAAAAjQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAPAAwAAAAAAAwAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAjgEAAAAA
+AAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAA
+AA0AAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAjwEAAAAAAAD/////AAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAA4AAAAAAAAA/////wAAAAAA
+AAAAAAAAABAADAAAAAAAkAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAPAAwAAAAAAA8AAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAkQEA
+AAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwA
+AAAAABAAAAAAAAAA/////wAAAAAAAAAAAAAAABAADAAAAAAAkgEAAAAAAAD/////AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAwAAAAAAJMBAAAAAAAA/////wAA
+AAAAAAAAAAAAABAADAAAAAAAlAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAMAAAAAACVAQAAAAAAAP////8AAAAAAAAAAAAAAAAL
+AAwAAAAAAJYBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAlwEAAAAAAAD/////AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAAwAAAAAAJgBAAAAAAAA////
+/wAAAAAAAAAAAAAAAAsADAAAAAAAmQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAALAAwAAAAAAJoBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAA
+AAAAmwEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAACcAQAAAAAAAP////8AAAAAAAAAAAAA
+AAALAAwAAAAAAJ0BAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAngEAAAAAAAD/////AAAA
+AAAAAAAAAAAACwAMAAAAAACfAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAKABAAAAAAAA
+/////wAAAAAAAAAAAAAAAAsADAAAAAAAoQEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAACi
+AQAAAAAAAP////8AAAAAAAAAAAAAAAAMAAwAAAAAAKMBAAAAAAAA/////wAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAKAAwAAAAAAKQBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAApQEAAAAAAAD/////
+AAAAAAAAAAAAAAAACwAMAAAAAACmAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAKcBAAAA
+AAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAqAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAA
+AACpAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAKoBAAAAAAAA/////wAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAMAAAAAACrAQAAAAAAAP////8AAAAA
+AAAAAAAAAAALAAwAAAAAAKwBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAArQEAAAAAAAD/
+////AAAAAAAAAAAAAAAACwAMAAAAAACuAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAK8B
+AAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAsAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAM
+AAAAAACxAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAALIBAAAAAAAA/////wAAAAAAAAAA
+AAAAAAsADAAAAAAAswEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAC0AQAAAAAAAP////8A
+AAAAAAAAAAAAAAAMAAwAAAAAALUBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwAAAAA
+AKMBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAtQEAAAAAAAD/////AAAAAAAAAAAAAAAA
+CwAMAAAAAAC2AQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAALcBAAAAAAAA/////wAAAAAA
+AAAAAAAAAAsADAAAAAAAuAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAC5AQAAAAAAAP//
+//8AAAAAAAAAAAAAAAAMAAwAAAAAALoBAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwA
+AAAAALsBAAAAAAAA/////wAAAAAAAAAAAAAAAAwADAAAAAAAvAEAAAAAAAD/////AAAAAAAAAAAA
+AAAADAAMAAAAAAC9AQAAAAAAAP////8AAAAAAAAAAAAAAAAMAAwAAAAAAL4BAAAAAAAA/////wAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAMAAAAAAC8AQAAAAAA
+AP////8AAAAAAAAAAAAAAAAOAAwAAAAAAJUBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAA
+lgEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAACXAQAAAAAAAP////8AAAAAAAAAAAAAAAAO
+AAwAAAAAAJgBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAAmQEAAAAAAAD/////AAAAAAAA
+AAAAAAAADgAMAAAAAACaAQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAAJwBAAAAAAAA////
+/wAAAAAAAAAAAAAAAA4ADAAAAAAAnQEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAACeAQAA
+AAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAAJ8BAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAA
+AAAAmwEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAACgAQAAAAAAAP////8AAAAAAAAAAAAA
+AAAOAAwAAAAAAKEBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAAogEAAAAAAAD/////AAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAoADAAAAAAAvQEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAACk
+AQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAAKUBAAAAAAAA/////wAAAAAAAAAAAAAAAA4A
+DAAAAAAApgEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAACrAQAAAAAAAP////8AAAAAAAAA
+AAAAAAAOAAwAAAAAAKwBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAApwEAAAAAAAD/////
+AAAAAAAAAAAAAAAADgAMAAAAAACoAQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAAKkBAAAA
+AAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAAqgEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAA
+AAC4AQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAALkBAAAAAAAA/////wAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAKAAwAAAAAAL4BAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAAtwEAAAAAAAD/
+////AAAAAAAAAAAAAAAADgAMAAAAAAC4AQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAALkB
+AAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AA8ADAAAAAAACgAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAcAQAAAAAAAP////8AAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAACwAAAAAAAAD/
-////AAAAAAAAAAAAAAAAEAAMAAAAAAAdAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAADAAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAM
-AAAAAAAeAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAA8ADAAAAAAADQAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAfAQAAAAAAAP////8A
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAADgAAAAAA
-AAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAgAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAADwAAAAAAAAD/////AAAAAAAAAAAAAAAA
-EAAMAAAAAAAhAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAA8ADAAAAAAAEAAAAAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAiAQAAAAAAAP//
-//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8ADAAAAAAAIwEA
-AAAAAAD/////AAAAAAAAAAAAAAAAEAAMAAAAAAAkAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwAAAAAACUBAAAAAAAA/////wAA
-AAAAAAAAAAAAAAsADAAAAAAAJgEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAAnAQAAAAAA
-AP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsADAAAAAAA
-KAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAApAQAAAAAAAP////8AAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsADAAAAAAAKgEAAAAAAAD/////AAAAAAAA
-AAAAAAAACwAMAAAAAAArAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAACwBAAAAAAAA////
-/wAAAAAAAAAAAAAAAAsADAAAAAAALQEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAAuAQAA
-AAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAC8BAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAA
-AAAAMAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAAxAQAAAAAAAP////8AAAAAAAAAAAAA
-AAALAAwAAAAAADIBAAAAAAAA/////wAAAAAAAAAAAAAAAAwADAAAAAAAMwEAAAAAAAD/////AAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAoADAAAAAAANAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAA1
-AQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAADYBAAAAAAAA/////wAAAAAAAAAAAAAAAAsA
-DAAAAAAANwEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAAA4AQAAAAAAAP////8AAAAAAAAA
-AAAAAAALAAwAAAAAADkBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAOgEAAAAAAAD/////
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAAwAAAAAADsBAAAA
-AAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAPAEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAA
-AAA9AQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAD4BAAAAAAAA/////wAAAAAAAAAAAAAA
-AAsADAAAAAAAPwEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAABAAQAAAAAAAP////8AAAAA
-AAAAAAAAAAALAAwAAAAAAEEBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAAQgEAAAAAAAD/
-////AAAAAAAAAAAAAAAACwAMAAAAAABDAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAAAEQB
-AAAAAAAA/////wAAAAAAAAAAAAAAAAwADAAAAAAARQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAoADAAAAAAAMwEAAAAAAAD/////AAAAAAAAAAAAAAAACwAMAAAAAABFAQAAAAAAAP////8A
-AAAAAAAAAAAAAAALAAwAAAAAAEYBAAAAAAAA/////wAAAAAAAAAAAAAAAAsADAAAAAAARwEAAAAA
-AAD/////AAAAAAAAAAAAAAAACwAMAAAAAABIAQAAAAAAAP////8AAAAAAAAAAAAAAAALAAwAAAAA
-AEkBAAAAAAAA/////wAAAAAAAAAAAAAAAAwADAAAAAAASgEAAAAAAAD/////AAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAoADAAAAAAASwEAAAAAAAD/////AAAAAAAAAAAAAAAADAAMAAAAAABMAQAAAAAAAP//
-//8AAAAAAAAAAAAAAAAMAAwAAAAAAE0BAAAAAAAA/////wAAAAAAAAAAAAAAAAwADAAAAAAATgEA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwAAAAA
+AL8BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwADAAAAAAAwAEAAAAAAAD/////AAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwAAAAAAL8BAAAAAAAAAQAAAAAAAAAA
+AAAAAAAAAAwADAAAAAAAwQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAKAAwAAAAAAL8BAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAwADAAAAAAAwgEA
 AAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwA
-AAAAAEwBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAAJQEAAAAAAAD/////AAAAAAAAAAAA
-AAAADgAMAAAAAAAmAQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAACcBAAAAAAAA/////wAA
-AAAAAAAAAAAAAA4ADAAAAAAAKAEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAAApAQAAAAAA
-AP////8AAAAAAAAAAAAAAAAOAAwAAAAAACoBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAA
-LAEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAAAtAQAAAAAAAP////8AAAAAAAAAAAAAAAAO
-AAwAAAAAAC4BAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAALwEAAAAAAAD/////AAAAAAAA
-AAAAAAAADgAMAAAAAAArAQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAADABAAAAAAAA////
-/wAAAAAAAAAAAAAAAA4ADAAAAAAAMQEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAAAyAQAA
-AAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgAMAAAAAABNAQAAAAAAAP////8AAAAAAAAAAAAA
-AAAOAAwAAAAAADQBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAANQEAAAAAAAD/////AAAA
-AAAAAAAAAAAADgAMAAAAAAA2AQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAADsBAAAAAAAA
-/////wAAAAAAAAAAAAAAAA4ADAAAAAAAPAEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAAA3
-AQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAADgBAAAAAAAA/////wAAAAAAAAAAAAAAAA4A
-DAAAAAAAOQEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAAAAA6AQAAAAAAAP////8AAAAAAAAA
-AAAAAAAOAAwAAAAAAEgBAAAAAAAA/////wAAAAAAAAAAAAAAAA4ADAAAAAAASQEAAAAAAAD/////
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAoADAAAAAAATgEAAAAAAAD/////AAAAAAAAAAAAAAAADgAMAAAA
-AABHAQAAAAAAAP////8AAAAAAAAAAAAAAAAOAAwAAAAAAEgBAAAAAAAA/////wAAAAAAAAAAAAAA
-AA4ADAAAAAAASQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAoADAAAAAAATwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAMAAAAAABQAQAAAAAAAP////8A
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoADAAAAAAATwEAAAAA
-AAABAAAAAAAAAAAAAAAAAAAADAAMAAAAAABRAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoADAAAAAAATwEAAAAAAAACAAAAAAAAAAAAAAAAAAAA
-DAAMAAAAAABSAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAoADAAAAAAATwEAAAAAAAADAAAAAAAAAAAAAAAAAAAADAAMAAAAAABTAQAAAAAAAP//
-//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoADAAAAAAATwEA
-AAAAAAAEAAAAAAAAAAAAAAAAAAAADAAMAAAAAABUAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoADAAAAAAATwEAAAAAAAAFAAAAAAAAAAAAAAAA
-AAAADAAMAAAAAABVAQAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAoADAAAAAAATwEAAAAAAAAGAAAAAAAAAAAAAAAAAAAADAAMAAAAAABWAQAAAAAA
-AP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEAAAAAAAAA
-EwAAAAAAAAABAAAAAAAAAAAAAAAAAAAA
-</compiled>
+AAAAAL8BAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAwADAAAAAAAwwEAAAAAAAD/////AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAwAAAAAAL8BAAAAAAAABAAAAAAA
+AAAAAAAAAAAAAAwADAAAAAAAxAEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAKAAwAAAAAAL8BAAAAAAAABQAAAAAAAAAAAAAAAAAAAAwADAAAAAAA
+xQEAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK
+AAwAAAAAAL8BAAAAAAAABgAAAAAAAAAAAAAAAAAAAAwADAAAAAAAxgEAAAAAAAD/////AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABxAAAAAAAAABMAAAAAAAAAAQAA
+AAAAAAAAAAAAAAAAAA==</compiled>
 </LogicAndScripts>
