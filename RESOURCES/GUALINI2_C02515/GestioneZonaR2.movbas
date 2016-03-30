@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="62840" SelLength="77" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="5322" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -35,9 +35,10 @@ Public Structure stEstrattore
     Public STROBE As Boolean
 End Structure
 
-Const TOUT_RICHIEDIBILE 	As Integer 	= 2 'in secondi
-Const TOUT_STEP				As Integer	= 5 'in secondi
-Const UPDATE_ESTRATTORI		As Integer = 16500
+Const TOUT_RICHIEDIBILE 	As Integer 	= 2 	'in secondi
+Const TOUT_STEP				As Integer	= 5 	'in secondi
+Const TOUT_ATTESA_MISSIONE	As Integer	= 600 	'in secondi
+Const UPDATE_ESTRATTORI		As Integer  = 16500
 
 Dim MySqlConnectionString As String
 Dim richiedibileLastCheck As Double
@@ -109,6 +110,27 @@ Sub Main()
 
 
 	'#######TODO DEBUG
+	'strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf &amp; vbCrLf  _
+	'			&amp; "Tutti i PEZZI devono essere rimossi dall'ASSEMBLATRICE." &amp; vbCrLf  &amp; vbCrLf _
+	'			&amp; "Indicare se si vuole procedere con assemblaggio manuale o se si vuole riprovare posizionando"  _
+	'			&amp; "tutti i PEZZI su:" &amp; vbCrLf &amp; vbCrLf &amp; "ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
+
+	'Begin Dialog UserDialog 400,245 ' %GRID:10,7,1,1
+	'	OptionGroup .Group1
+	'		OptionButton 30,130,350,30,"Pezzi riposizionati su Estrattore",.OptionButton1
+	'		OptionButton 30,150,350,30,"Pezzi rimossi da Assemblatrice e da Estrattore",.OptionButton2
+	'	Text 10,7,370,112,strMsgBox,.Text1
+	'	OKButton 160,200,90,30
+	'End Dialog
+
+	'Dim dlg1 As UserDialog
+	'Dim opt1 As Integer
+
+	'Dialog dlg1
+	'opt1 = dlg1.Group1
+
+
+	'''
 	Debug.Clear
 	richiedibileLastCheck = Timer()
 	Debug.Print CStr(richiedibileLastCheck)
@@ -127,6 +149,7 @@ Sub Main()
 	Do
 		'azioni da fare tutti i cicli
 		If [loc_ImpostazioniImpianto:ResetCicloR2] Then
+			[loc_ImpostazioniImpianto:ResetCicloR2] = False
 			StatoCicloScarico = 100
 		End If
 
@@ -411,28 +434,27 @@ Sub Main()
 
 				Case 4195	'AttesaSegnaleRobotOccupato_settout
 					StatoCicloScarico_txt = "4195	'AttesaSegnaleRobotOccupato_settout"
+					msg_AttesaRobotOccupato_R2 = True
 					If	[R2_STATUS:DISPONIBILE] Then
 						stepTout = Timer()
 						StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato
 					End If
 
 				Case 4200	'AttesaSegnaleRobotOccupato
-					StatoCicloScarico_txt = "4200	'AttesaSegnaleRobotOccupato"
-					LogMsg "StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato"
+					StatoCicloScarico_txt 		= "4200		'AttesaSegnaleRobotOccupato"
+					LogMsg "StatoCicloScarico	= 4200	'AttesaSegnaleRobotOccupato"
+					msg_AttesaRobotOccupato_R2 = True
 
 					ValutaProssimaCondizione = True
 
-					If SuperatoTimeout(stepTout, TOUT_STEP) Then
-						ValutaProssimaCondizione = False
-						alm_Step_ToutR2_4200 = True
-						'per poter fare ripartenza devo fare reset delle struct già assegnate
-						'ResetDatiMembriStruttura("")
-						'ResetDatiMembriStruttura("")
-						'ResetDatiMembriStruttura("")
-						StatoCicloScarico = 4195	'AttesaSegnaleRobotOccupato_settout
-					End If
+					'If SuperatoTimeout(stepTout, TOUT_ATTESA_MISSIONE) Then
+					'	ValutaProssimaCondizione = False
+					'	alm_Step_ToutR2_4200 = True
+					'	StatoCicloScarico = 4195	'AttesaSegnaleRobotOccupato_settout
+					'End If
 					If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] And ValutaProssimaCondizione Then
 						alm_Step_ToutR2_4200 = False
+						msg_AttesaRobotOccupato_R2 = False
 						StatoCicloScarico = 1000	'AttesaPezzi
 					End If
 
@@ -593,27 +615,64 @@ Sub Main()
 					If [R2_STATUS:FINE_MISSIONE] = False Then
 						[R2_STATUS:FINE_MISSIONE_ACK] =False
 						alm_Step_ToutR2_6700 = False
+
 						StatoCicloScarico = 1000	'Attesa
 					End If
 
 				Case 9100	'ErroreMissioneRobot
-					StatoCicloScarico_txt = "9100	'ErroreMissioneRobot"
-					LogMsg "StatoCicloScarico = 9100	'ErroreMissioneRobot"
+					StatoCicloScarico_txt 		= "9100	'ErroreMissioneRobot"
+					LogMsg "StatoCicloScarico 	= 9100	'ErroreMissioneRobot"
 					'alzo allarme
 					alm_AnomaliaDeposito_R2 = True
+					''''''
+					strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf &amp; vbCrLf  _
+								&amp; "Tutti i PEZZI devono essere rimossi dall'ASSEMBLATRICE." &amp; vbCrLf &amp; vbCrLf _
+								&amp; "Indicare se si vuole procedere con assemblaggio manuale o se si vuole riprovare posizionando " _
+								&amp; "tutti i PEZZI su:" &amp; vbCrLf &amp; vbCrLf &amp; "ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
 
+					Begin Dialog UserDialog 400,245 ' %GRID:10,7,1,1
+						OptionGroup .Group1
+							OptionButton 30,130,350,30,"Pezzi riposizionati su Estrattore",.OptionButton1
+							OptionButton 30,150,350,30,"Pezzi rimossi da Assemblatrice e da Estrattore",.OptionButton2
+						Text 10,7,370,112,strMsgBox,.Text1
+						OKButton 160,200,90,30
+					End Dialog
+
+					Dim dlg As UserDialog
+					Dim opt As Integer
+
+					Dialog dlg
+					opt = dlg.Group1
+
+					'''''''
 					'dico all'operatore di togliere i pezzi
-
 					strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf _
 								&amp; "Rimuovere tutti i Pezzi Da ESTRATTORE MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
 								&amp; "Rimuovere tutti i Pezzi Da ASSEMBLATRICE." &amp; vbCrLf  &amp; vbCrLf _
 								&amp; "Si per proseguire."
 					retMsgBox = MsgBox(strMsgBox, vbYesNo, "Attenzione ERRORE Deposito Pezzi su ASSEMBLATRICE")
-			    	If retMsgBox = vbYes Then
-			    		'chiedo ulteriore conferma e ricordo di resettare allarmi
-			    		strMsgBox = "Se tutti i pezzi sono stati rimossi premere Ok per proseguire." &amp; vbCrLf &amp; vbCrLf _
+
+
+					If opt = 0 Then
+						'"Pezzi riposizionati su Estrattore",.OptionButton1
+						'chiedo ulteriore conferma e ricordo di resettare allarmi
+			    		strMsgBox = "Conferma riposizionamento pezzi su ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." &amp; vbCrLf &amp; vbCrLf _
+								&amp; "Assicurarsi di aver posizionato correttamente tutti i pezzi sull'ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." &amp; vbCrLf _
 								&amp; "Fare reset allarmi per riprendere il ciclo."
-						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Conferma rimozione pezzi da ASSEMBLATRICE e ESTRATTORE "&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
+
+			    		retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Conferma riposizionamento pezzi su ES2 MAG" &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
+
+						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
+					End If 'If opt = 0 Then
+
+					If opt = 1 Then
+						'"Pezzi rimossi da Assemblatrice e da Estrattore",.OptionButton2
+						'chiedo ulteriore conferma e ricordo di resettare allarmi
+						strMsgBox = "Conferma la rimozione di tutti i pezzi da ASSEMBLATRICE e da ESTRATTORE " _
+									&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." &amp; vbCrLf &amp; vbCrLf _
+								&amp; "La quartina sarà eliminata." &amp; vbCrLf _
+								&amp; "Fare reset allarmi per riprendere il ciclo."
+						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Rimozione pezzi da ASSEMBLATRICE e ESTRATTORE." &amp; ".")
 
 						'elimino quartina dal DB
 						ret = FineRobot(MySqlConnectionString, [R2_STATUS:ID_QUARTINA])
@@ -682,15 +741,11 @@ Sub Main()
 							StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
 							'StatoCicloScarico = 1000	'Attesa
 						End If
+					End If 'If opt = 1 Then
+
+
+			    	If retMsgBox = vbYes Then
 					ElseIf retMsgBox = vbNo Then
-						'chiedo ulteriore conferma e ricordo di resettare allarmi
-			    		strMsgBox = "Riposisionare tutti i pezzi sull'estrattore." &amp; vbCrLf &amp; vbCrLf _
-								&amp; "Fare reset allarmi per riprendere il ciclo."
-						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Riposizionamento pezzi su Estrattore2 MAG: "&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
-						If [R2_STATUS:DISPONIBILE] Then
-							stepTout = Timer()
-							StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
-						End If
 					End If
 
 				Case 9150	'SetTimetAttesaFineMissione_false

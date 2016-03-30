@@ -1641,7 +1641,28 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
+<Name Type="4">R3_OFFSET_SQ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R3_OFFSET_SQ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
 <Name Type="4">R2_CODICE_PRG</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R3_ALTEZZA_FINESTRA_OFFSET</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1670,6 +1691,13 @@
 </Member>
 <Member>
 <Name Type="9">COD_SQUADRETTA2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R3_LARGHEZZA_FINESTRA_OFFSET</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1712,6 +1740,13 @@
 </Member>
 <Member>
 <Name Type="9">NOME_COMMESSA</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="2">R3_COD_RBT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2191,7 +2226,28 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Member>
 <Member>
+<Name Type="4">R3_OFFSET_SQ1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R3_OFFSET_SQ2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
 <Name Type="4">R2_CODICE_PRG</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R3_ALTEZZA_FINESTRA_OFFSET</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2220,6 +2276,13 @@
 </Member>
 <Member>
 <Name Type="9">COD_SQUADRETTA2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="4">R3_LARGHEZZA_FINESTRA_OFFSET</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2262,6 +2325,13 @@
 </Member>
 <Member>
 <Name Type="9">NOME_COMMESSA</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="2">R3_COD_RBT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>

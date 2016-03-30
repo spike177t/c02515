@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="4901" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1608" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -70,6 +70,7 @@ Sub Main()
 	Do
 		'azioni da fare tutti i cicli
 		If [loc_ImpostazioniImpianto:ResetCicloR3] Then
+			[loc_ImpostazioniImpianto:ResetCicloR3] = False
 			StatoCicloR3 = 100
 		End If
 
