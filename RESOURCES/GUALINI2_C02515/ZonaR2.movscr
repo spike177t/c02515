@@ -3810,13 +3810,13 @@ End Sub
 <DynColor Color="65535" Value="100"/>
 </dci>
 </BGList>
-<EG>0</EG>
+<EG Var="Assemblatrice_Stato:R2_FuoriIngombro_Ass">1</EG>
 <EGList>
 <dci>
-<DynColor Color="16777215"/>
+<DynColor Color="16777215" Text="R2 ingombro"/>
 </dci>
 <dci>
-<DynColor Color="65280" Value="1"/>
+<DynColor Color="16777215" Value="1" Text="R2 fuori ing."/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -3889,13 +3889,13 @@ End Sub
 <DynColor Color="65535" Value="100"/>
 </dci>
 </BGList>
-<EG>0</EG>
+<EG Var="Assemblatrice_Stato:R3_FuoriIngombro_Ass">1</EG>
 <EGList>
 <dci>
-<DynColor Color="16777215"/>
+<DynColor Color="16777215" Text="R3 ingombro"/>
 </dci>
 <dci>
-<DynColor Color="65280" Value="1"/>
+<DynColor Color="16777215" Value="1" Text="R3 fuori ing."/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -3974,7 +3974,7 @@ End Sub
 <DynColor Color="16777215" Text="Nessuna Fin. Lato R2"/>
 </dci>
 <dci>
-<DynColor Color="16777215" Value="1" Text="Fin. Pronta Lato R2"/>
+<DynColor Color="16777215" Value="1" Text="Fin. Pronta R2"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
