@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="5322" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="15695" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -132,6 +132,8 @@ Sub Main()
 
 	'''
 	Debug.Clear
+	Debug.Print "Start GestioneZonaR2: " &amp; [_SysVar_:ActDateString] &amp; "; " &amp; [_SysVar_:ActTimeString]
+
 	richiedibileLastCheck = Timer()
 	Debug.Print CStr(richiedibileLastCheck)
 	richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE
@@ -353,8 +355,8 @@ Sub Main()
 							[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
 							'copio i valori che serviranno ad R3
-							[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ1:MAX_LUNGHEZZA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-							[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ2:MAX_LUNGHEZZA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
 
 							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
@@ -371,8 +373,8 @@ Sub Main()
 							[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
 							'copio i valori che serviranno ad R3
-							[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ1:MAX_LUNGHEZZA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-							[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ2:MAX_LUNGHEZZA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
 
 							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
@@ -624,7 +626,6 @@ Sub Main()
 					LogMsg "StatoCicloScarico 	= 9100	'ErroreMissioneRobot"
 					'alzo allarme
 					alm_AnomaliaDeposito_R2 = True
-					''''''
 					strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf &amp; vbCrLf  _
 								&amp; "Tutti i PEZZI devono essere rimossi dall'ASSEMBLATRICE." &amp; vbCrLf &amp; vbCrLf _
 								&amp; "Indicare se si vuole procedere con assemblaggio manuale o se si vuole riprovare posizionando " _
@@ -644,13 +645,12 @@ Sub Main()
 					Dialog dlg
 					opt = dlg.Group1
 
-					'''''''
-					'dico all'operatore di togliere i pezzi
-					strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf _
-								&amp; "Rimuovere tutti i Pezzi Da ESTRATTORE MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
-								&amp; "Rimuovere tutti i Pezzi Da ASSEMBLATRICE." &amp; vbCrLf  &amp; vbCrLf _
-								&amp; "Si per proseguire."
-					retMsgBox = MsgBox(strMsgBox, vbYesNo, "Attenzione ERRORE Deposito Pezzi su ASSEMBLATRICE")
+					''dico all'operatore di togliere i pezzi
+					'strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf _
+					'			&amp; "Rimuovere tutti i Pezzi Da ESTRATTORE MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
+					'			&amp; "Rimuovere tutti i Pezzi Da ASSEMBLATRICE." &amp; vbCrLf  &amp; vbCrLf _
+					'			&amp; "Si per proseguire."
+					'retMsgBox = MsgBox(strMsgBox, vbYesNo, "Attenzione ERRORE Deposito Pezzi su ASSEMBLATRICE")
 
 
 					If opt = 0 Then

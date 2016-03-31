@@ -2001,7 +2001,7 @@ End Sub
 <editbox x="695" y="550" width="135" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style promptpad="1" fmtscale="mm"/>
 <border>4</border>
-<execution var="loc_R3_SpessoreSupporti" max="1000"/>
+<execution max="1000"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display151</Name>
 <text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -2256,9 +2256,9 @@ End Sub
 <child>
 <object>Edit</object>
 <editbox x="845" y="150" width="155" height="35" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style promptpad="1" fmtscale="mm"/>
+<style promptpad="1" fmtscale="decimi mm"/>
 <border>4</border>
-<execution var="Q2_PEZZO_DISP:NOME_PEZZO_UNICO" max="1000"/>
+<execution var="loc_R3_SpessoreSupporti" max="1000"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display151</Name>
 <text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -2823,7 +2823,7 @@ End Sub
 <editbox x="335" y="121" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style promptpad="1" fmtscale="decimi mm"/>
 <border>4</border>
-<execution var="Q2_PEZZO_DISP:NOME_PEZZO_UNICO" max="1000"/>
+<execution var="loc_R3_SpessoreSupporti" max="1000"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display151</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -3502,7 +3502,7 @@ End Sub
 <type x="5" y="407" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COLLA:</text>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">SERIE:</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3511,7 +3511,7 @@ End Sub
 <type x="335" y="407" width="204" height="17" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">COLLA:</text>
+<text font-family="Tahoma" font-size="11" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">SERIE:</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3520,7 +3520,7 @@ End Sub
 <editbox x="335" y="423" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
-<execution var="Assemblatrice_TelaioLatoR3:R3_TEMPO_COLLA"/>
+<execution var="Assemblatrice_TelaioLatoR3:SERIE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
 <text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -3848,7 +3848,7 @@ End Sub
 <editbox x="5" y="423" width="204" height="28" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" edit="0" fmtscale="x"/>
 <border>4</border>
-<execution var="Assemblatrice_TelaioLatoR2:R3_TEMPO_COLLA"/>
+<execution var="Assemblatrice_TelaioLatoR2:SERIE_PROFILO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Display155</Name>
 <text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>

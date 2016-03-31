@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="1608" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="5580" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -51,6 +51,11 @@ Sub Main()
 	      "PASSWORD=co.mar;" &amp; _
 	      "OPTION=3;"
 	End If
+
+	'####DEBUG
+GoTo ONDEBUG
+
+	'####FINE DEBUG
 
 	'inizializzo alcune variabili
 	enableLogMsg = True
@@ -142,7 +147,8 @@ Sub Main()
 
 					If [Assemblatrice_Out:FINE_ROTAZIONE] Then
 
-						'copio i dati del telaio per R2
+						'invio dati a plc per R3
+						'copio i dati del telaio lato R2 su lato R3
 						AggiornaMembri("Assemblatrice_TelaioLatoR2", "Assemblatrice_TelaioLatoR3")
 
 						[Assemblatrice_In:START_ROTAZIONE] = False
@@ -153,14 +159,26 @@ Sub Main()
 						ResetDatiMembriStruttura("Assemblatrice_TelaioLatoR2")
 
 						timerInvioDati = Timer()
-						StatoCicloR3 = 3100	'StartR3
+						StatoCicloR3 = 3100	'AttesaDatiValidiPerR3
 					End If
 
-				Case 3100	'StartR3
-					LogMsg "StatoCicloR3 = 3100	'InvioDatiR3"
+				Case 3100	'AttesaDatiValidiPerR3
+					LogMsg "StatoCicloR3 = 3100	'AttesaDatiValidiPerR3"
+''''
 
-					datiR3_OK = False
-					While Not datiR3_OK
+ONDEBUG:
+Dim s As String
+s = "123;456;12;"
+
+Dim parts() As String
+Const separatore As String = ";"
+Dim part As String
+Dim index As Integer
+
+parts = Split(s,";")
+'parts = Split(Plc_R3_DATI_ACK, separatore)
+
+' Loop through result strings with For Each.
 
 
 						Dim R3_ALTEZZA_FINESTRA_OFFSET_CHK As UShort
@@ -172,7 +190,6 @@ Sub Main()
 						Dim R3_OFFSET_SQUADRETTA2_CHK  As UShort
 						Dim R3_TEMPO_COLLA_CHK  As UShort
 
-
 						R3_ALTEZZA_FINESTRA_OFFSET_CHK = 0
 						R3_ALTEZZA_PROFILO_CHK_CHK  = 0
 						R3_CODICE_TIPO_PROFILO_CHK =0
@@ -182,6 +199,47 @@ Sub Main()
 						R3_OFFSET_SQUADRETTA2_CHK  =0
 						R3_TEMPO_COLLA_CHK  =0
 
+index = 0
+Try
+	For Each part In parts
+		index = index +1
+	    Debug.Print(part)
+	    If part &lt;&gt; "" Then
+			Select Case index
+			    Case 1
+					R3_ALTEZZA_FINESTRA_OFFSET_CHK = CUShort(part)
+				Case 2
+					R3_ALTEZZA_PROFILO_CHK_CHK  = CUShort(part)
+				Case 3
+					R3_CODICE_TIPO_PROFILO_CHK = CByte(part)
+				Case 4
+					R3_LARGHEZZA_FINESTRA_OFFSET_CHK = CUShort(part)
+				Case 5
+					R3_LARGHEZZA_PROFILO_CHK = CUShort(part)
+				Case 6
+					R3_OFFSET_SQUADRETTA1_CHK = CUShort(part)
+				Case 7
+					R3_OFFSET_SQUADRETTA2_CHK = CUShort(part)
+				Case 8
+					R3_TEMPO_COLLA_CHK = CUShort(part)
+				Case Else
+					Throw New System.Exception("GestioneZonaR3.movbas -&gt; Main() ECCEZZIONE: Case 2100: Verifica dati da Assemblatrice, valore non previsto.")
+			End Select
+	    End If
+	Next
+
+Catch Ex As System.Exception
+	Debug.Print ("GestioneZonaR3.movbas -&gt; Main() ECCEZZIONE: Case 2100: Errore di conversione per l'indice: " _
+		&amp; CStr(index) &amp; "; part:" &amp; part &amp; ".")
+	Debug.Print ("GestioneZonaR3.movbas -&gt; Main() ECCEZZIONE: Case 2100: Ex.ToString() = " &amp; Ex.ToString() )
+
+End Try
+
+					''''
+
+					datiR3_OK = False
+
+					While Not datiR3_OK
 						If ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_FINESTRA_OFFSET]	= R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
 							And ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_PROFILO] 	= R3_ALTEZZA_PROFILO_CHK_CHK) _
 							And ([Assemblatrice_TelaioLatoR3:R3_CODICE_TIPO_PROFILO] = R3_CODICE_TIPO_PROFILO_CHK) _
@@ -201,6 +259,8 @@ Sub Main()
 					End While
 
 					StatoCicloR3 = 1000	'Attesa
+				Case 4100 'StartR3
+					LogMsg "StatoCicloR3 = 4100 'StartR3"
 
 				Case Else
 					LogMsg("Main() -&gt; Case StatoCicloR3 Else; StatoCicloR3 = " &amp; CStr(StatoCicloR3))
@@ -369,6 +429,8 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiA1AMgA
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

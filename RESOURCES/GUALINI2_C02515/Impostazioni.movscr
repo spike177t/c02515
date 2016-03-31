@@ -10,7 +10,6 @@
 <type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2487,6 +2486,78 @@ Public Sub Click()
 	End If
 End Sub
 </ScriptCode>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="435" y="290" width="95" height="40" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" promptpad="1" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloCarico" max="10000"/>
+<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="435" y="340" width="95" height="40" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" promptpad="1" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloScarico" max="10000"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="435" y="390" width="95" height="40" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" promptpad="1" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloR3" max="10000"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="540" y="290" width="170" height="40" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" promptpad="1" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloCarico_txt" max="10000"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="540" y="340" width="170" height="40" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" promptpad="1" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloScarico_txt" max="10000"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="540" y="390" width="170" height="40" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" promptpad="1" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloR3_txt" max="10000"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
 </child>
 </ListSynopticDraw>
 <VariableList/>

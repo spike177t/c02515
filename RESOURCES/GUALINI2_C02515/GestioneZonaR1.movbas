@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="7562" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="138550" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -208,6 +208,7 @@ Sub Main()
     End If
 
     Debug.Clear
+    Debug.Print "Start GestioneZonaR1: " &amp; [_SysVar_:ActDateString] &amp; "; " &amp; [_SysVar_:ActTimeString]
 
     'forzo aggiornamento estrattori
     [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
@@ -3485,7 +3486,6 @@ Function PezzoPiuVecchio() As Integer
 
 End Function
 
-
 Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	Dim tempo As Double
 	tempo = Abs(lastcheck - Timer())
@@ -3497,7 +3497,6 @@ Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	DoEvents
 
 End Function
-
 
 Sub DebugMsg(msg As String)
 	Dim prefix As String
@@ -3524,7 +3523,7 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDQAoED
+<BreakPoints xsi:type="xsd:base64Binary">AiDRAoID
 </BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
