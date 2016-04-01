@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="5580" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="8081" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -53,7 +53,7 @@ Sub Main()
 	End If
 
 	'####DEBUG
-GoTo ONDEBUG
+'GoTo ONDEBUG
 
 	'####FINE DEBUG
 
@@ -89,10 +89,12 @@ GoTo ONDEBUG
 
 				Case 100	'StatoIniziale
 					DebugMsg "StatoCicloSarico = 100	'StatoIniziale"
+					StatoCicloR3_txt = "100	'StatoIniziale"
 					StatoCicloR3 = 1000			'Attesa
 
 				Case 1000	'Attesa
 					'DebugMsg "StatoCicloR3 = 1000	'Attesa"
+					StatoCicloR3_txt = "1000	'Attesa"
 					ValutaProssimaCondizione = True
 					'inizio a scorrere le condizioni di uscita dallo stato
 
@@ -107,6 +109,8 @@ GoTo ONDEBUG
 							And [Assemblatrice_Stato:R2_FuoriIngombro_Ass] _
 							And [Assemblatrice_Stato:R3_FuoriIngombro_Ass] _
 							And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
+							And [Assemblatrice_Out:AUTO] _
+							And [Assemblatrice_Stato:Ass_ON] _
 							Then
 							'And Not Pilz_Esp0i00_EmgAssCh1 _
 							'And Not Pilz_Esp2i00_EmgRbt2Ch1 _
@@ -143,6 +147,7 @@ GoTo ONDEBUG
 
 
 				Case 2100	'AttesaFineRotazione
+					StatoCicloR3_txt = "2100		'AttesaFineRotazione"
 					LogMsg "StatoCicloR3 = 2100		'AttesaFineRotazione"
 
 					If [Assemblatrice_Out:FINE_ROTAZIONE] Then
@@ -163,20 +168,21 @@ GoTo ONDEBUG
 					End If
 
 				Case 3100	'AttesaDatiValidiPerR3
+					StatoCicloR3_txt = "3100	'AttesaDatiValidiPerR3"
 					LogMsg "StatoCicloR3 = 3100	'AttesaDatiValidiPerR3"
 ''''
 
 ONDEBUG:
-Dim s As String
-s = "123;456;12;"
+'Dim s As String
+'s = "123;456;12;"
 
 Dim parts() As String
 Const separatore As String = ";"
 Dim part As String
 Dim index As Integer
 
-parts = Split(s,";")
-'parts = Split(Plc_R3_DATI_ACK, separatore)
+'parts = Split(s,";")
+parts = Split(Plc_R3_DATI_ACK, separatore)
 
 ' Loop through result strings with For Each.
 
@@ -200,6 +206,7 @@ parts = Split(s,";")
 						R3_TEMPO_COLLA_CHK  =0
 
 index = 0
+alm_ZonaR3_ErrDatiAss = False
 Try
 	For Each part In parts
 		index = index +1
@@ -232,14 +239,14 @@ Catch Ex As System.Exception
 	Debug.Print ("GestioneZonaR3.movbas -&gt; Main() ECCEZZIONE: Case 2100: Errore di conversione per l'indice: " _
 		&amp; CStr(index) &amp; "; part:" &amp; part &amp; ".")
 	Debug.Print ("GestioneZonaR3.movbas -&gt; Main() ECCEZZIONE: Case 2100: Ex.ToString() = " &amp; Ex.ToString() )
-
+	alm_ZonaR3_ErrDatiAss = True
 End Try
 
 					''''
 
 					datiR3_OK = False
 
-					While Not datiR3_OK
+					While Not datiR3_OK And Not alm_ZonaR3_ErrDatiAss And Not alm_Presenti_ZonaR3
 						If ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_FINESTRA_OFFSET]	= R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
 							And ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_PROFILO] 	= R3_ALTEZZA_PROFILO_CHK_CHK) _
 							And ([Assemblatrice_TelaioLatoR3:R3_CODICE_TIPO_PROFILO] = R3_CODICE_TIPO_PROFILO_CHK) _
@@ -429,8 +436,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiA1AMgA
-</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiDPAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

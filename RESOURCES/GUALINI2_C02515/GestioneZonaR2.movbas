@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="15695" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="22616" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -355,8 +355,10 @@ Sub Main()
 							[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
 							'copio i valori che serviranno ad R3
-							[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-							[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							'[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							'[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							'[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+							'[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
 
 							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
@@ -373,8 +375,11 @@ Sub Main()
 							[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
 							[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
 							'copio i valori che serviranno ad R3
-							[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-							[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							'[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							'[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							'[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+							'[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+
 
 							'ATTENZIONE!!!
 							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
@@ -476,22 +481,6 @@ Sub Main()
 						varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
 						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 
-						'passo i dati all'assemblatrice
-						'!!!SPOSTATO IN STEP 4050
-						'If [R2_STATUS:MAGAZZINO] = 1  Then
-						'	[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
-						'	[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-						'	[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
-						'	[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
-						'	[Assemblatrice_In:APERTURA]				= CSng([SCAR_M1_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura
-						'ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-						'	[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
-						'	[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-						'	[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
-						'	[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
-						'	[Assemblatrice_In:APERTURA]				= CSng([SCAR_M2_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura)
-						'End If
-
 						'memorizzo i dati del talaio pronto su R2 per script GestioneZonaR3
 						If [R2_STATUS:MAGAZZINO] = 1  Then
 							[Assemblatrice_TelaioLatoR2:ALTEZZA_FINESTRA]		= [SCAR_M1_PZ1:MAX_LUNGHEZZA]
@@ -503,10 +492,14 @@ Sub Main()
 							'dati per R3
 							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
 							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
-							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET] = [SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET]
+
+							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+
 							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_PROFILO]			= [SCAR_M1_PZ1:ALTEZZA_PROFILO]
 							[Assemblatrice_TelaioLatoR2:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M1_PZ")
-							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET] = [SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET]
+
+							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+
 							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_PROFILO]		= [SCAR_M1_PZ1:LARGHEZZA_PROFILO]
 							[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA1]		= [SCAR_M1_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
 							If [Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]	Then
@@ -526,10 +519,14 @@ Sub Main()
 							'dati per R3
 							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
 							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
-							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET] = [SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET]
+
+							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+
 							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_PROFILO]			= [SCAR_M2_PZ1:ALTEZZA_PROFILO]
 							[Assemblatrice_TelaioLatoR2:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M2_PZ")
-							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET] = [SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET]
+
+							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+
 							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_PROFILO]		= [SCAR_M2_PZ1:LARGHEZZA_PROFILO]
 							[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA1]		= [SCAR_M2_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
 							If [Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]	Then
@@ -662,10 +659,10 @@ Sub Main()
 
 			    		retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Conferma riposizionamento pezzi su ES2 MAG" &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
 
+			    		[R2_STATUS:ERR_MISSIONE_ACK] = True 'invio ack al robot
+						stepTout = Timer()
 						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
-					End If 'If opt = 0 Then
-
-					If opt = 1 Then
+					ElseIf opt = 1 Then
 						'"Pezzi rimossi da Assemblatrice e da Estrattore",.OptionButton2
 						'chiedo ulteriore conferma e ricordo di resettare allarmi
 						strMsgBox = "Conferma la rimozione di tutti i pezzi da ASSEMBLATRICE e da ESTRATTORE " _
@@ -741,11 +738,6 @@ Sub Main()
 							StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
 							'StatoCicloScarico = 1000	'Attesa
 						End If
-					End If 'If opt = 1 Then
-
-
-			    	If retMsgBox = vbYes Then
-					ElseIf retMsgBox = vbNo Then
 					End If
 
 				Case 9150	'SetTimetAttesaFineMissione_false
@@ -754,7 +746,6 @@ Sub Main()
 						stepTout = Timer()
 						StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
 					End If
-
 
 				Case 9200	'AttesaFineMissioneAck_false
 					StatoCicloScarico_txt = "9200	'AttesaFineMissioneAck_false"
@@ -1823,7 +1814,7 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 						If cass &gt; 0 Then
 							'ho richiesto in E2 un cassetto che non ha tutti i pezzi (possibile solo facendo richieste manuali)
 							'alzo allarme, che però dovra essere resettao con procedura particolare e non da plsResetAllarmi
-							If Not SetVariableValue("alm_M" &amp; CStr(mag) &amp; "_ES_ErrPz" &amp; CStr(pz), True) Then
+							If Not SetVariableValue("alm_M" &amp; CStr(mag) &amp; "_ES2_ErrPz" &amp; CStr(pz), True) Then
 								'ho errore nella funzione SetVariableValue
 								Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInScarico() ECCEZZIONE in SetVariableValue(alm_M &amp; CStr(mag) &amp; _ES_ErrPz &amp; CStr(pz), True).")
 							End If
