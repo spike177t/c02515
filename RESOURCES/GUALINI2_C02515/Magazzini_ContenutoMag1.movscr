@@ -482,7 +482,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1617,23 +1616,23 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="860" y="100" width="150" height="445" ox="15" oy="100" owidth="150" oheight="445"/>
+<g x="865" y="90" width="150" height="490" ox="25" oy="90" owidth="150" oheight="490"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>Button</type>
-<type x="0" y="195" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="0" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;2&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE3&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+<CommandsOnDown n0="&lt;CommandType synoptic=&quot;Magazzini&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+" n1="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante68</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto In Estrattore 3</text>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Riepilogo Magazzini</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1644,10 +1643,10 @@ End Sub
 <DynColor/>
 </dci>
 <dci>
-<DynColor Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
-<DynColor Color="65280" Value="2"/>
+<DynColor Value="2"/>
 </dci>
 <dci>
 <DynColor Value="3"/>
@@ -1689,14 +1688,10 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 2
-End Sub
-</ScriptCode>
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="0" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="50" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1770,7 +1765,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="65" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="100" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1844,7 +1839,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="130" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="150" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1918,7 +1913,81 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="260" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="200" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;2&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE3&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante68</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto In Estrattore 3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 2
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="250" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1992,18 +2061,18 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="325" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="300" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;7&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_EliminaQuartina&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_Quartine&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante90</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Elimina Quartina</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Quartine</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -2066,13 +2135,154 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="390" width="150" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="400" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;9&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiPieni&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Cassetti Pieni</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Color="4210752" Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="450" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;10&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiInRiempimento&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante87</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Cassetti In Riempimento</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="350" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
 <Commands/>
 <CommandsWhileDown/>
 <CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;8&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_EliminaPezzo&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante91</Name>
@@ -2139,75 +2349,9 @@ End Sub
 </child>
 </childs>
 <Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>GridBox</object>
-<grid x="25" y="95" width="810" height="405" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>4</Border>
-<style ShowControl="1" AutoLayout="0" Clickable="1" ReadOnly="0" PromptPad="0" IconBtn="1" RefreshBtn="1" UpdateBtn="1" SaveBtn="1" SelectAllBtn="1" CopyBtn="1" InsertBtn="1" DeleteBtn="1" Size="0" Pos="3" ColumnsWidths="" RefreshTxt="" UpdateTxt="" SaveTxt="" SelectAllTxt="" CopyTxt="" InsertTxt="" DeleteTxt=""/>
-<execution DSN="gualini" User="gualini" Query="&quot;SELECT  `tutti_pezzi`.`magazzino_ID_MAGAZZINO` AS MAG, `tutti_pezzi`.`ID_CASSETTO` AS CASS, pos.DESCRIZIONE AS POSIZIONE_CASSETTO,  `tutti_pezzi`.`ID_QUARTINA`, `tutti_pezzi`.`ID_PEZZO`,  `tutti_pezzi`.`POSIZIONE` AS SLOT_PEZZO, `tutti_pezzi`.`NOME_COMMESSA`, `tutti_pezzi`.`SerieProfilo`, `tutti_pezzi`.`CodiceProfilo`, `tutti_pezzi`.`NUM_SQUADRETTE1` AS NUM_SQ1, `tutti_pezzi`.`COD_SQUADRETTA1` AS COD_SQ1, `tutti_pezzi`.`NUM_SQUADRETTE2` AS NUM_SQ2, `tutti_pezzi`.`COD_SQUADRETTA2` AS COD_SQ2, `tutti_pezzi`.`MAX_LUNGHEZZA`, FROM `gualini`.`tutti_pezzi` join  `gualini`.`posizione_cassetti` AS pos on  `tutti_pezzi`.`POSIZIONE_CASSETTO`=  pos.ID_POSIZIONE_CASSETTI where `tutti_pezzi`.`magazzino_ID_MAGAZZINO` = 1 Order by MAG, CASS, SLOT_PEZZO;&quot;" TextFileName="" Separator="" UpdateVariable="0"/>
-<ColumnList/>
-<GridFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
-<Name AntialiasingFont="1" acr="4294901760">gridWindow</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="202" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
-
-Public Sub SymbolLoading()
-	Dim strQuery As String
-
-	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
-
-	objGrid.AutoLayout = False
-	
-	objGrid.AddColumn("MAG")
-	objGrid.AddColumn("CASS")
-	objGrid.AddColumn("POS_CASS")
-	objGrid.AddColumn("ID_QUARTINA")
-	objGrid.AddColumn("ID_PEZZO")
-	objGrid.AddColumn("SLOT_PEZZO")
-	objGrid.AddColumn("NOME_COMMESSA")
-	objGrid.AddColumn("SerieProfilo")
-	objGrid.AddColumn("CodiceProfilo")
-	objGrid.AddColumn("NUM_SQ1")
-	objGrid.AddColumn("COD_SQ1")
-	objGrid.AddColumn("NUM_SQ2")
-	objGrid.AddColumn("COD_SQ2")
-	objGrid.AddColumn("MAX_LUNGHEZZA")
-	'objGrid.AddColumn("MAG")
-	'objGrid.AddColumn("MAG")
-	'objGrid.AddColumn("MAG")
-	
-	strQuery = "SELECT " _
-					&amp; " `tutti_pezzi`.`magazzino_ID_MAGAZZINO` AS MAG," _
-					&amp; " `tutti_pezzi`.`ID_CASSETTO` AS CASS," _
-					&amp; " pos.DESCRIZIONE AS POSIZIONE_CASSETTO,  " _
-					&amp; " `tutti_pezzi`.`ID_QUARTINA`," _
-					&amp; " `tutti_pezzi`.`ID_PEZZO`, " _
-					&amp; " `tutti_pezzi`.`POSIZIONE` AS SLOT_PEZZO," _
-					&amp; " `tutti_pezzi`.`NOME_COMMESSA`," _
-					&amp; " `tutti_pezzi`.`SerieProfilo`," _
-					&amp; " `tutti_pezzi`.`CodiceProfilo`," _
-					&amp; " `tutti_pezzi`.`NUM_SQUADRETTE1` AS NUM_SQ1," _
-					&amp; " `tutti_pezzi`.`COD_SQUADRETTA1` AS COD_SQ1," _
-					&amp; " `tutti_pezzi`.`NUM_SQUADRETTE2` AS NUM_SQ2," _
-					&amp; " `tutti_pezzi`.`COD_SQUADRETTA2` AS COD_SQ2," _
-					&amp; " `tutti_pezzi`.`MAX_LUNGHEZZA` " _
-					&amp; " FROM `gualini`.`tutti_pezzi`" _
-					&amp; " join  `gualini`.`posizione_cassetti` AS pos on  `tutti_pezzi`.`POSIZIONE_CASSETTO`=  pos.ID_POSIZIONE_CASSETTI" _
-					&amp; " where `tutti_pezzi`.`magazzino_ID_MAGAZZINO` = 1" _
-					&amp; " Order by MAG, CASS, SLOT_PEZZO;"
-
-	objGrid.Query = strQuery
-	objGrid.Refresh
-	objGrid.RecalcLayout
-
-End Sub
-</ScriptCode>
 </child>
 <child>
 <object>Button</object>
@@ -2512,7 +2656,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="5077" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="196" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2659,8 +2803,6 @@ Sub LogMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiBLAGgA
-</BreakPoints>
 </child>
 <child>
 <object>Button</object>
@@ -2840,6 +2982,73 @@ Sub LogMsg(msg As String)
 	Dim prefix As String
 	prefix = "Magazzini_ContenutoMag1.synoptic -&gt; "
 	Debug.Print prefix &amp; msg
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>GridBox</object>
+<grid x="30" y="100" width="810" height="405" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>4</Border>
+<style ShowControl="1" AutoLayout="0" Clickable="1" ReadOnly="0" PromptPad="0" IconBtn="1" RefreshBtn="1" UpdateBtn="1" SaveBtn="1" SelectAllBtn="1" CopyBtn="1" InsertBtn="1" DeleteBtn="1" Size="0" Pos="3" ColumnsWidths="" RefreshTxt="" UpdateTxt="" SaveTxt="" SelectAllTxt="" CopyTxt="" InsertTxt="" DeleteTxt=""/>
+<execution DSN="gualini" User="gualini" Query="&quot;SELECT  `tutti_pezzi`.`magazzino_ID_MAGAZZINO` AS MAG, `tutti_pezzi`.`ID_CASSETTO` AS CASS, pos.DESCRIZIONE AS POSIZIONE_CASSETTO,  `tutti_pezzi`.`ID_QUARTINA`, `tutti_pezzi`.`ID_PEZZO`,  `tutti_pezzi`.`POSIZIONE` AS SLOT_PEZZO, `tutti_pezzi`.`NOME_COMMESSA`, `tutti_pezzi`.`SerieProfilo`, `tutti_pezzi`.`CodiceProfilo`, `tutti_pezzi`.`NUM_SQUADRETTE1` AS NUM_SQ1, `tutti_pezzi`.`COD_SQUADRETTA1` AS COD_SQ1, `tutti_pezzi`.`NUM_SQUADRETTE2` AS NUM_SQ2, `tutti_pezzi`.`COD_SQUADRETTA2` AS COD_SQ2, `tutti_pezzi`.`MAX_LUNGHEZZA`, FROM `gualini`.`tutti_pezzi` join  `gualini`.`posizione_cassetti` AS pos on  `tutti_pezzi`.`POSIZIONE_CASSETTO`=  pos.ID_POSIZIONE_CASSETTI where `tutti_pezzi`.`magazzino_ID_MAGAZZINO` = 1 Order by MAG, CASS, SLOT_PEZZO;&quot;" TextFileName="" Separator="" UpdateVariable="0"/>
+<ColumnList/>
+<GridFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
+<Name AntialiasingFont="1" acr="4294901760">gridWindow</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="1347" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+
+Public Sub SymbolLoading()
+	Dim strQuery As String
+
+	Set objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
+
+	objGrid.AutoLayout = False
+	
+	objGrid.AddColumn("MAG")
+	objGrid.AddColumn("CASS")
+	objGrid.AddColumn("POS_CASS")
+	objGrid.AddColumn("ID_QUARTINA")
+	objGrid.AddColumn("ID_PEZZO")
+	objGrid.AddColumn("SLOT_PEZZO")
+	objGrid.AddColumn("NOME_COMMESSA")
+	objGrid.AddColumn("SerieProfilo")
+	objGrid.AddColumn("CodiceProfilo")
+	objGrid.AddColumn("NUM_SQ1")
+	objGrid.AddColumn("COD_SQ1")
+	objGrid.AddColumn("NUM_SQ2")
+	objGrid.AddColumn("COD_SQ2")
+	objGrid.AddColumn("MAX_LUNGHEZZA")
+	'objGrid.AddColumn("MAG")
+	'objGrid.AddColumn("MAG")
+	'objGrid.AddColumn("MAG")
+	
+	strQuery = "SELECT " _
+					&amp; " `tutti_pezzi`.`magazzino_ID_MAGAZZINO` AS MAG," _
+					&amp; " `tutti_pezzi`.`ID_CASSETTO` AS CASS," _
+					&amp; " pos.DESCRIZIONE AS POSIZIONE_CASSETTO,  " _
+					&amp; " `tutti_pezzi`.`ID_QUARTINA`," _
+					&amp; " `tutti_pezzi`.`ID_PEZZO`, " _
+					&amp; " `tutti_pezzi`.`POSIZIONE` AS SLOT_PEZZO," _
+					&amp; " `tutti_pezzi`.`NOME_COMMESSA`," _
+					&amp; " `tutti_pezzi`.`SerieProfilo`," _
+					&amp; " `tutti_pezzi`.`CodiceProfilo`," _
+					&amp; " `tutti_pezzi`.`NUM_SQUADRETTE1` AS NUM_SQ1," _
+					&amp; " `tutti_pezzi`.`COD_SQUADRETTA1` AS COD_SQ1," _
+					&amp; " `tutti_pezzi`.`NUM_SQUADRETTE2` AS NUM_SQ2," _
+					&amp; " `tutti_pezzi`.`COD_SQUADRETTA2` AS COD_SQ2," _
+					&amp; " `tutti_pezzi`.`MAX_LUNGHEZZA` " _
+					&amp; " FROM `gualini`.`tutti_pezzi`" _
+					&amp; " join  `gualini`.`posizione_cassetti` AS pos on  `tutti_pezzi`.`POSIZIONE_CASSETTO`=  pos.ID_POSIZIONE_CASSETTI" _
+					&amp; " where `tutti_pezzi`.`magazzino_ID_MAGAZZINO` = 1" _
+					&amp; " Order by MAG, CASS, SLOT_PEZZO;"
+
+	objGrid.Query = strQuery
+	objGrid.Refresh
+	objGrid.RecalcLayout
+
 End Sub
 </ScriptCode>
 </child>

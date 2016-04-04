@@ -1611,7 +1611,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2493,7 +2492,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="763" y="99" width="245" height="120" ox="671" oy="100" owidth="245" oheight="120"/>
+<g x="760" y="95" width="245" height="120" ox="671" oy="100" owidth="245" oheight="120"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -2520,7 +2519,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledOn&gt;&gt;">0</BG>
+<BG Var="Assemblatrice_Stato:Ass_ON">0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2576,7 +2575,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledAuto&gt;&gt;">1</BG>
+<BG Var="Assemblatrice_Out:AUTO">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2632,7 +2631,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;cycle&gt;&gt;">1</BG>
+<BG Var="Assemblatrice_Out:AUTO">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2688,13 +2687,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;nobloccoR3&gt;&gt;">1</BG>
+<BG Var="Assemblatrice_Stato:R3_FuoriIngombro_Ass">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor Color="33023"/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2712,7 +2711,30 @@ End Sub
 <DynColor Color="65535" Value="100"/>
 </dci>
 </BGList>
-<EG>0</EG>
+<EG Var="Assemblatrice_Stato:R3_FuoriIngombro_Ass">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="R3 ing. Ass."/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="R3 f.i. Ass."/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
 <MX>0</MX>
 <MY>0</MY>
 <Scale>0</Scale>
@@ -2744,7 +2766,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;Alarm&gt;&gt;">1</BG>
+<BG Var="Assemblatrice_Stato:NonComunica">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2863,13 +2885,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;nobloccoR2&gt;&gt;">1</BG>
+<BG Var="Assemblatrice_Stato:R2_FuoriIngombro_Ass">1</BG>
 <BGList>
 <dci>
-<DynColor Color="65280"/>
+<DynColor Color="33023"/>
 </dci>
 <dci>
-<DynColor Color="33023" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2887,7 +2909,30 @@ End Sub
 <DynColor Color="65535" Value="100"/>
 </dci>
 </BGList>
-<EG>0</EG>
+<EG Var="Assemblatrice_Stato:R2_FuoriIngombro_Ass">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="R2 ing. Ass."/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="R2 f.i. Ass."/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
 <MX>0</MX>
 <MY>0</MY>
 <Scale>0</Scale>
@@ -2937,7 +2982,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledOn&gt;&gt;">0</BG>
+<BG>0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2993,7 +3038,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledAuto&gt;&gt;">1</BG>
+<BG>1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3049,7 +3094,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;cycle&gt;&gt;">1</BG>
+<BG>1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3102,7 +3147,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;Alarm&gt;&gt;">1</BG>
+<BG>1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3229,7 +3274,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledOn&gt;&gt;">0</BG>
+<BG Var="R1_STATUS:OUT_AUTO_ON">0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3394,13 +3439,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;Alarm&gt;&gt;">1</BG>
+<BG Var="R1_STATUS:IN_MISSIONE">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Color="255" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -3457,7 +3502,7 @@ End Sub
 <type x="27" y="53" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo14</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Disp.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3466,7 +3511,7 @@ End Sub
 <type x="97" y="53" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo15</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alarm</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Miss.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3513,7 +3558,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledOn&gt;&gt;">0</BG>
+<BG Var="R2_STATUS:OUT_AUTO_ON">0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3569,13 +3614,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledAuto&gt;&gt;">1</BG>
+<BG Var="R2_STATUS:DISPONIBILE">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Color="65280" Value="1"/>
+<DynColor Color="16711680" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -3625,7 +3670,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;cycle&gt;&gt;">1</BG>
+<BG Var="R2_STATUS:OUT_CYCLE_ON">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3678,13 +3723,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;Alarm&gt;&gt;">1</BG>
+<BG Var="R2_STATUS:IN_MISSIONE">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Color="255" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -3741,7 +3786,7 @@ End Sub
 <type x="27" y="53" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo14</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Disp.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3750,7 +3795,7 @@ End Sub
 <type x="97" y="53" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo15</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alarm</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Miss.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
