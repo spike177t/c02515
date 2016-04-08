@@ -2349,7 +2349,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2366,7 +2365,7 @@ End Sub
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="335" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
+<ScriptCode StartSel="529" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Dim objGrid As GridWndCmdTarget
 
 Public Sub SymbolLoading()
 	Dim strQuery As String
@@ -2378,13 +2377,22 @@ Public Sub SymbolLoading()
 	objGrid.AddColumn("QUARTINA")
 	objGrid.AddColumn("PEZZI PRESENTI")
 	
+	'strQuery = "Select DISTINCT " _
+	'			&amp; " tbQRT.`cassetto_magazzino_ID_MAGAZZINO` As MAG " _
+	'			&amp; " , tbQRT.`cassetto_ID_CASSETTO` As CASS " _
+	'			&amp; " , tbQRT.`ID_QUARTINA` As QRT " _
+	'			&amp; " , (Select count(*) from `gualini`.`pezzo` where  `gualini`.`pezzo`.`quartina_ID_QUARTINA` = tbQRT.`ID_QUARTINA`) As PEZZI_PRESENTI " _
+	'			&amp; " FROM `gualini`.`quartina` As tbQRT " _
+	'			&amp; " Join `gualini`.`pezzo` As tbPZ On tbQRT.`ID_QUARTINA` = tbPZ.`quartina_ID_QUARTINA` " _
+	'			&amp; " order by MAG, CASS " _
+	'			&amp; " ;"
+
 	strQuery = "Select DISTINCT " _
 				&amp; " tbQRT.`cassetto_magazzino_ID_MAGAZZINO` As MAG " _
 				&amp; " , tbQRT.`cassetto_ID_CASSETTO` As CASS " _
 				&amp; " , tbQRT.`ID_QUARTINA` As QRT " _
 				&amp; " , (Select count(*) from `gualini`.`pezzo` where  `gualini`.`pezzo`.`quartina_ID_QUARTINA` = tbQRT.`ID_QUARTINA`) As PEZZI_PRESENTI " _
 				&amp; " FROM `gualini`.`quartina` As tbQRT " _
-				&amp; " Join `gualini`.`pezzo` As tbPZ On tbQRT.`ID_QUARTINA` = tbPZ.`quartina_ID_QUARTINA` " _
 				&amp; " order by MAG, CASS " _
 				&amp; " ;"
 
