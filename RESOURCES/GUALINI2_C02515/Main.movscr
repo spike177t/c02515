@@ -2060,8 +2060,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q1_Out:On"/>
 <item key="ledAuto" value="Q1_Out:InCiclo"/>
+<item key="ledOn" value="Q1_Out:On"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
@@ -2097,7 +2097,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="&lt;&lt;ledOn&gt;&gt;">0</BG>
+<BG Var="&lt;&lt;ledOn&gt;&gt;">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -2482,8 +2482,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q2_Out:InCiclo"/>
 <item key="ledOn" value="Q2_Out:On"/>
+<item key="ledAuto" value="Q2_Out:InCiclo"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
