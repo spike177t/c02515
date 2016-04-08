@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="52" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Sub Main()
+	[loc_ImpostazioniImpianto:AbilitaDbgMsg] = False
+	[loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1] = False
+	[loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR2] = False
+	[loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR3] = False
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="0" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

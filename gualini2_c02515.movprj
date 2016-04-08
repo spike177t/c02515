@@ -15,7 +15,7 @@
 <ProjectPaths Alarms="" Data="" Images="" Resources="" Logs="" DataLoggers="" NetworkUserPath="" HelpFilePath=""/>
 <UserAndGroupsSettings EnableAutoLoggoff="1" EnableRuntimeUsers="0" RuntimeUserFileName="" AllowRuntimeLevel="5" AllowResizingLevel="0" EnableNTUserLogin="0" DefaultPrivAdminLevel="1023" DefaultPrivAdminAccessLevel="4294901760" DefaultPrivUserLevel="5" DefaultPrivUserAccessLevel="1048576" DefaultPrivGuestLevel="1" DefaultPrivGuestAccessLevel="0" IncludeChildProjectUsers="0" MaximumChildProjectLevels="5" EnablePasswordProtectedProject="0" EnablePasswordMng="1" SecsAutoLoggoffTimeout="60" MinimumUserLength="0" MinimumPasswordLength="0" SecsWebClientAutoLoggoff="0" EnableCRF21Settings="0" ExecCmdOnLogin="1"/>
 <ChildProjectsList/>
-<ProjectExecution TrackProjectStatistic="1" StartupSynoptic="Main" StartupScript="StartUp" ShutdownScript="" StartFullScreen="0" ShowStatusBar="1" ShowTraceBar="1" HideDesktop="0" HideStartButton="0" HideTaskBar="0" HideSystemClock="0" DisableTaskSwitching="0" DisableTaskManager="0" DisableCtrlAltDel="0" ROT="0" ROTAnyClient="0" ServiceSysTray="1" ServiceShowLogon="0" DefaultODBCPlugin="MySQL" StatObjBack="0" AlphaNumericScreen="" NumericScreen="" GetPasswordScreen="" PasswordExpiredScreen="" TraceCommentScreen="" AckCommentScreen="" ExtCaption="1" ExtBorder="1" ExtResizeable="1" ExtSysMenu="1" EnMouseBuzzer="0" MouseBuzzerDuration="0" ScanAndLoadNotDestroyableScreens="0" EnableRenamingMng="1"/>
+<ProjectExecution TrackProjectStatistic="1" StartupSynoptic="Main" StartupScript="StartUp" ShutdownScript="StopScript" StartFullScreen="0" ShowStatusBar="1" ShowTraceBar="1" HideDesktop="0" HideStartButton="0" HideTaskBar="0" HideSystemClock="0" DisableTaskSwitching="0" DisableTaskManager="0" DisableCtrlAltDel="0" ROT="0" ROTAnyClient="0" ServiceSysTray="1" ServiceShowLogon="0" DefaultODBCPlugin="MySQL" StatObjBack="0" AlphaNumericScreen="" NumericScreen="" GetPasswordScreen="" PasswordExpiredScreen="" TraceCommentScreen="" AckCommentScreen="" ExtCaption="1" ExtBorder="1" ExtResizeable="1" ExtSysMenu="1" EnMouseBuzzer="0" MouseBuzzerDuration="0" ScanAndLoadNotDestroyableScreens="0" EnableRenamingMng="1"/>
 <StartupCommands/>
 <ShuttingCommands/>
 <EnableAdminAlert ServerNameAdminAlert="">0</EnableAdminAlert>
@@ -42,10 +42,15 @@
 <CLSID>{ABE3B472-8C5A-4DD7-AD61-F4A75B33A4F8}</CLSID>
 <UserGroupsList>
 <UserGroup>
-<Name Description="Sviluppatori del Progetto" DefAccLevel="4294901760" DefLevel="1024" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="60" ExpiringDaysPassword="0" Language="">Sviluppatori</Name>
+<Name Description="Sviluppatori del Progetto" DefAccLevel="4294901760" DefLevel="1024" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="LogOffUtenteSviluppatore" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="180" ExpiringDaysPassword="0" Language="">Sviluppatori</Name>
 <UsersList>
 <User>
-<Name Password="co.mar" NumericPassword="" Description="" ExpDaysPassw="0" AccessLevel="4294901760" Level="4294967295" MobileCountryCode="" MobileAreaCode="" MobilePhoneNumber="" VoiceCountryCode="" VoiceAreaCode="" VoicePhoneNumber="" FaxCountryCode="" FaxAreaCode="" FaxPhoneNumber="" MessengerRecipient="" Email="" AccDisabled="0" CannotBeChanged="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="60" Language="" TimePassword="2016-01-08T17:28:38Z" MustChangePassword="0" CannotChangePassword="1">comar</Name>
+<Name Password="co.mar" NumericPassword="" Description="" ExpDaysPassw="0" AccessLevel="4294901760" Level="4294967295" MobileCountryCode="" MobileAreaCode="" MobilePhoneNumber="" VoiceCountryCode="" VoiceAreaCode="" VoicePhoneNumber="" FaxCountryCode="" FaxAreaCode="" FaxPhoneNumber="" MessengerRecipient="" Email="" AccDisabled="0" CannotBeChanged="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="180" Language="" TimePassword="2016-01-08T17:28:38Z" MustChangePassword="0" CannotChangePassword="1">comar</Name>
+<LogonCommands/>
+<LogoffCommands/>
+</User>
+<User>
+<Name Password="di.namica" NumericPassword="" Description="" ExpDaysPassw="0" AccessLevel="4294901760" Level="4294967295" MobileCountryCode="" MobileAreaCode="" MobilePhoneNumber="" VoiceCountryCode="" VoiceAreaCode="" VoicePhoneNumber="" FaxCountryCode="" FaxAreaCode="" FaxPhoneNumber="" MessengerRecipient="" Email="" AccDisabled="0" CannotBeChanged="0" WebClientAutoLoggoff="0" LogonScript="" LogoffScript="" SynopticStyleSource="" EnableAutoLogoff="1" AutoLogoffSecsTimeout="180" Language="" TimePassword="2016-04-07T12:03:24Z" MustChangePassword="0" CannotChangePassword="1">dinamica</Name>
 <LogonCommands/>
 <LogoffCommands/>
 </User>

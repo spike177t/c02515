@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="138550" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="6118" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -180,6 +180,12 @@ Sub Main()
 	Dim rikEstrattore As stEstrattore
 	Dim strEstrattore As String
 
+	'variabili per gestire operazioni da fare ogni tanto durante il ciclo
+	Dim timerAggiornaOgniTanto As Double
+	Dim timerAggiornaOgniTantoOld As Double
+	Dim timerAggiornaOgniTantoDiff As Double
+	Const timerAggiornaOgniTantoTOUT As Double = 2 'secondi
+
 
 	'MySqlConnectionString = "server=localhost;user=root;database=gualini;port=3306;password=co.mar;"
 	'Connector/MySQL ODBC 5.3 ANSI Driver connection string
@@ -234,25 +240,24 @@ Sub Main()
 	AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
 '############STATE MACHINE############
-
-
-'#####TODO DEBUG
-'rimuovere questa parte
-'AA:
-'[Q1_In:PezzoPronto] = True
-'[Q2_In:PezzoPronto] = True
-'StatoCicloCarico = 1000
-
-'loc_Q1_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q1\"
-'loc_Q2_path = "C:\SupervisioneGualini2_C02515_Varie\NoteScamibioDati\R_ note su scambio dati\test\Q2\"
-
-'############################
+'#####################################
 
 	Do
 		'azioni da fare tutti i cicli
 		If [loc_ImpostazioniImpianto:ResetCicloR1] Then
 			[loc_ImpostazioniImpianto:ResetCicloR1] = False
 			StatoCicloCarico = 100
+		End If
+
+		timerAggiornaOgniTanto = Timer()
+		timerAggiornaOgniTantoDiff = Abs(timerAggiornaOgniTanto - timerAggiornaOgniTantoOld)
+		If timerAggiornaOgniTantoDiff &gt; timerAggiornaOgniTantoTOUT Then
+			timerAggiornaOgniTantoOld = Timer()
+			If StatoCicloCarico_Counter &lt; 1000 Then
+				StatoCicloCarico_Counter = StatoCicloCarico_Counter + 1
+			Else
+				StatoCicloCarico_Counter = 0
+			End If
 		End If
 
 		'gestisco eventuali aggiornamentii da fare al DB per le posizioni degli estrattori
@@ -3523,8 +3528,6 @@ End Sub
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDRAoID
-</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
 </MovResource>

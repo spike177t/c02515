@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="8081" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="9777" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -41,6 +41,13 @@ Sub Main()
 	Dim timerInvioDati As Double
 	Dim datiR3_OK As Boolean
 
+	'variabili per gestire operazioni da fare ogni tanto durante il ciclo
+	Dim timerAggiornaOgniTanto As Double
+	Dim timerAggiornaOgniTantoOld As Double
+	Dim timerAggiornaOgniTantoDiff As Double
+	Const timerAggiornaOgniTantoTOUT As Double = 2 'secondi
+
+
 	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
 	    MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
 	Else
@@ -79,6 +86,16 @@ Sub Main()
 			StatoCicloR3 = 100
 		End If
 
+		timerAggiornaOgniTanto = Timer()
+		timerAggiornaOgniTantoDiff = Abs(timerAggiornaOgniTanto - timerAggiornaOgniTantoOld)
+		If timerAggiornaOgniTantoDiff &gt; timerAggiornaOgniTantoTOUT Then
+			timerAggiornaOgniTantoOld = Timer()
+			If StatoCicloR3_Counter &lt; 1000 Then
+				StatoCicloR3_Counter = StatoCicloR3_Counter + 1
+			Else
+				StatoCicloR3_Counter = 0
+			End If
+		End If
 
 		'gestisco eventuali aggiornamenti da fare al DB per le posizioni degli estrattori
 
@@ -301,7 +318,7 @@ End Function
 
 Sub DebugMsg(msg As String)
 	Dim prefix As String
-	If [loc_ImpostazioniImpianto:AbilitaDbgMsg] Then
+	If [loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR3] Then
 		prefix = "GestioneZonaR3.movbas -&gt; "
 		Debug.Print prefix &amp; msg
 	End If
@@ -436,7 +453,7 @@ Sub ResetDatiMembriStruttura(varname As String)
 	objVar 		= Nothing
 End Sub
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiDPAA==</BreakPoints>
+<BreakPoints xsi:type="xsd:base64Binary">AiDgAA==</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

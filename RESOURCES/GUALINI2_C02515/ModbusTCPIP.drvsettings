@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <DriverSettings>
 <GeneralSettings WaitTime="50" TimeOut="2000" SynchroStart="false" MinimumJobThreshold="10" DefRefreshTimeNotInUse="0" EnableCOMInterface="true" PollingTime="0" PollingTimeNotInUse="10000" PriorityProtocolThread="0" BaseClassBuild="266" DriverVersion="184615939" AggregationLimit="0" DirectWriteIO="false" SetInUseStructureFields="false" SuspendTasksInError="true" szWinCEProtocolPriority="-1" ExpandGroup1="1"/>
-<Debug DebugWindow="true" MaxLogEntries="10000" LogFileName="" EnableLogFile="true" ExpandGroup2="1"/>
+<Debug DebugWindow="false" MaxLogEntries="10000" LogFileName="" EnableLogFile="true" ExpandGroup2="1"/>
 <ModbusTCPSettings SingleSocket="0" ExpandSpecificGroup1="1"/>
 <JobList>
 <Job>

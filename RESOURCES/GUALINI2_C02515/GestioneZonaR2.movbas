@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="22616" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="36093" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -107,6 +107,8 @@ Sub Main()
 	AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
 	AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
 
+	AggiornaElencoCommesse(MySqlConnectionString)
+
 
 
 	'#######TODO DEBUG
@@ -135,9 +137,9 @@ Sub Main()
 	Debug.Print "Start GestioneZonaR2: " &amp; [_SysVar_:ActDateString] &amp; "; " &amp; [_SysVar_:ActTimeString]
 
 	richiedibileLastCheck = Timer()
-	Debug.Print CStr(richiedibileLastCheck)
+	'Debug.Print CStr(richiedibileLastCheck)
 	richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE
-	Debug.Print CStr(richiedibileLastCheck)
+	'Debug.Print CStr(richiedibileLastCheck)
 	If SuperatoTimeout(richiedibileLastCheck, TOUT_RICHIEDIBILE) Then
 		Debug.Print "GestioneZonaR2.movbas -&gt; DEBUG Main() -&gt; SuperatoTimeout -&gt; Timer() = " &amp; CStr(Timer()) &amp; "; Now()= " &amp; CStr(Now())
 	End If
@@ -146,8 +148,8 @@ Sub Main()
 	'inizializzo il timer per la chiamata alle funzioni di aggiornamento cassetti Pieni, Disponibili etc
 	timerAggiornaCassettiOld = Timer()
 
-
-	'################
+'############STATE MACHINE############
+'#####################################
 	Do
 		'azioni da fare tutti i cicli
 		If [loc_ImpostazioniImpianto:ResetCicloR2] Then
@@ -167,6 +169,14 @@ Sub Main()
 			AggiornaCassettiDisponibili(MySqlConnectionString, 2)
 			AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
 			AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
+
+			AggiornaElencoCommesse(MySqlConnectionString)
+
+			If StatoCicloScarico_Counter &lt; 1000 Then
+				StatoCicloScarico_Counter = StatoCicloScarico_Counter + 1
+			Else
+				StatoCicloScarico_Counter = 0
+			End If
 		End If
 
 		'verifica incongruenze estrattori
@@ -274,6 +284,14 @@ Sub Main()
 					'End If
 					'leggo i dati dei pezzi dal DB e aggiungo alla coda dell'estrattore il cassetto
 					If POSIZIONE.cass &gt; 0 And POSIZIONE.mag &gt; 0 Then
+						'reset msg di segnalazione non pezzi in caso di commessa esclusiva
+						If [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] And rikDaMagazzino = 1 Then
+							msg_CommEsclusiva_No_PezziMag1 = False
+						End If
+						If [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] And rikDaMagazzino = 2 Then
+							msg_CommEsclusiva_No_PezziMag2 = False
+						End If
+
 						'leggo i dati dei pezzi
 						If LeggiDatiPezzo_OK(MySqlConnectionString, POSIZIONE.mag, POSIZIONE.cass) = 0 Then
 							'avanzo di step per leggere richiedere il cassetto
@@ -283,6 +301,15 @@ Sub Main()
 							StatoCicloScarico = 1000	'Attesa
 						End If
 					Else
+						'non ho cassetti pronti, allora verifico se il bit di commessa esclusiva è alto
+						'set msg di segnalazione non pezzi in caso di commessa esclusiva
+						If [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] And rikDaMagazzino = 1 Then
+							msg_CommEsclusiva_No_PezziMag1 = True
+						End If
+						If [loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva] And rikDaMagazzino = 2 Then
+							msg_CommEsclusiva_No_PezziMag2 = True
+						End If
+
 						StatoCicloScarico = 1000	'Attesa
 					End If
 
@@ -2103,6 +2130,78 @@ Function AggiornaCassettiInRiempimento( connectionString As String, mag As Integ
     End Try
 End Function
 
+Function AggiornaElencoCommesse( connectionString As String) As Integer
+	AggiornaElencoCommesse = 0 	'inizializzzo
+
+    Dim commandText As String
+    'Dim varname As String
+
+
+    Const ERR_GENERICO As Integer = -1 					'ERRORE GENERICO
+    Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
+    Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
+
+
+	'rilevo dal DB l'elenco delle commesse esistenti
+	Try
+        Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
+            MyConnection.Open()
+            commandText = "SELECT DISTINCT `quartina`.`NOME_COMMESSA` FROM `gualini`.`quartina`;"
+
+            'DebugMsg "GestioneZonaR2.movbas -&gt; AggiornaElencoCommesse(); commandText = " &amp; commandText
+
+            Using MyCommand As New OdbcCommand()
+
+				MyCommand.Connection = MyConnection
+	            MyCommand.CommandText = commandText
+
+				Using MyDataReader As OdbcDataReader
+					MyDataReader = MyCommand.ExecuteReader
+
+					If MyDataReader.HasRows Then
+						[loc_ImpostazioniImpianto:ScaricoElencoCommesse] = " "
+						While MyDataReader.Read()
+							[loc_ImpostazioniImpianto:ScaricoElencoCommesse] = [loc_ImpostazioniImpianto:ScaricoElencoCommesse] &amp; "|" &amp; MyDataReader("NOME_COMMESSA")
+				            'Debug.Print (MyDataReader("NOME_COMMESSA"))
+				        End While
+					Else
+						[loc_ImpostazioniImpianto:ScaricoElencoCommesse] = " |NESSUNA COMMESSA"
+					End If
+				End Using	'MyDataReader.Close
+			End Using	'MyCommand.Dispose
+        End Using	'MyConnection.Close
+
+	  'Catch program exception
+	Catch MyException As Exception
+		DebugMsg(MyException.ToString)
+		MsgBox("GestioneZonaR2.movbas -&gt; AggiornaElencoCommesse() - ERRORE: Exception." &amp; vbCrLf &amp; _
+					 MyException.ToString &amp; ".")
+		LogMsg(" AggiornaElencoCommesse() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; ".")
+
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; AggiornaElencoCommesse() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
+		alm_ZonaR2_ODBC = True
+		AggiornaElencoCommesse = 100 'torno errore
+		Exit Function
+
+	  'Catch ODBC Exception
+	Catch MyOdbcException As OdbcException
+		DebugMsg(MyOdbcException.ToString)
+		MsgBox("GestioneZonaR2.movbas -&gt; AggiornaElencoCommesse() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		LogMsg("AggiornaElencoCommesse() - ERRORE ODBC: OdbcException."  &amp; _
+					MyOdbcException.ToString  &amp; ".")
+		'TODO
+		'alzare alarme
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; AggiornaElencoCommesse() - ERRORE: Exception."  &amp; _
+					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
+		alm_ZonaR2_ODBC = True
+		AggiornaElencoCommesse = 101 'torno errore
+		Exit Function
+    End Try
+End Function
 
 Function SuperatoTimeout(ByRef lastcheck As Double, tout As Integer) As Boolean
 	Dim tempo As Double
@@ -2118,7 +2217,7 @@ End Function
 
 Sub DebugMsg(msg As String)
 	Dim prefix As String
-	If [loc_ImpostazioniImpianto:AbilitaDbgMsg] Then
+	If [loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR2] Then
 		prefix = "GestioneZonaR2.movbas -&gt; "
 		Debug.Print prefix &amp; msg
 	End If
