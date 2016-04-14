@@ -14,9 +14,14 @@
 <item key="Plc_ar_allarmi_27_H" value="Estrattore1 Magazzino2 Non Indietro"/>
 <item key="Plc_ar_allarmi_75_H" value=""/>
 <item key="Plc_ar_allarmi_52_H" value=""/>
+<item key="str_MovMan_Mag1E1" value="Magazzino 1 Estrattore 1"/>
+<item key="str_MovMan_Mag1E2" value="Magazzino 1 Estrattore 2"/>
+<item key="str_MovMan_Mag1E3" value="Magazzino 1 Estrattore 3"/>
 <item key="Plc_ar_messaggi_4_H" value="Robot1 In Ingombro Su M1E1"/>
+<item key="str_MovMan_Mag1" value="Magazzino 1"/>
 <item key="Plc_ar_messaggi_26_H" value=""/>
 <item key="Plc_ar_allarmi_78_H" value=""/>
+<item key="str_MovMan_Mag2" value="Magazzino 2"/>
 <item key="Plc_ar_allarmi_55_H" value=""/>
 <item key="Plc_ar_allarmi_80_H" value=""/>
 <item key="Plc_ar_allarmi_32_H" value="Estrattore3 Magazzino2 Non Avanti"/>
@@ -113,8 +118,11 @@
 <item key="Plc_ar_allarmi_76_H" value=""/>
 <item key="Plc_ar_allarmi_28_H" value="Estrattore1 Magazzino2 Non Avanti"/>
 <item key="Plc_ar_allarmi_53_H" value=""/>
+<item key="str_MovMan_Mag2E1" value="Magazzino 2 Estrattore 1"/>
+<item key="str_MovMan_Mag2E2" value="Magazzino 2 Estrattore 2"/>
 <item key="msg_AlertCommessaEsclusiva_nessuno" value="Commessa Esclusiva, nessun casseto disponibile a magazzino"/>
 <item key="Plc_ar_allarmi_30_H" value="Estrattore2 Magazzino2 Non Avanti"/>
+<item key="str_MovMan_Mag2E3" value="Magazzino 2 Estrattore 3"/>
 <item key="Plc_ar_messaggi_5_H" value="Robot1 In Ingombro Su M2E1"/>
 <item key="Plc_ar_allarmi_1_H" value="Allarme Asse Magazzino 1"/>
 <item key="Plc_ar_messaggi_27_H" value=""/>

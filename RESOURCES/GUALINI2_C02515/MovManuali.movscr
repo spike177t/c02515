@@ -1138,7 +1138,7 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name Locked="1" PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">barraPulsanti</Name>
+<Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">barraPulsanti</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1610,415 +1610,9 @@ End Sub
 <CM>0</CM>
 </child>
 </childs>
-<Name Locked="1" PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="125" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Stato Cicli Magazzini</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="190" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es1</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="255" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="320" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="385" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es1</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="450" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<object>Button</object>
-<type x="855" y="515" width="155" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIBLCOTTURM1E2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_I_PXOTTURBLCM1E2">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
 </child>
 <child>
 <object>base</object>
@@ -2883,6 +2477,565 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
+</child>
+<child>
+<object>group</object>
+<g x="857" y="95" width="155" height="480" ox="1820" oy="90" owidth="155" oheight="480"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>Button</type>
+<type x="0" y="0" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Stato Cicli Magazzini</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 1">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="81" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 1
+	OpenSynoptic("MovManuali",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="110" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 3">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 3
+	OpenSynoptic("MovManuali_Mag1_Es1",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="165" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 4">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 4
+	OpenSynoptic("MovManuali_Mag1_Es2",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="220" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 5">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 5
+	OpenSynoptic("MovManuali_Mag1_Es3",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="330" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2 Es1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 7">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 7
+	OpenSynoptic("MovManuali_Mag2_Es1",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="385" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2 Es2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 8">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 8
+	OpenSynoptic("MovManuali_Mag2_Es2",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="440" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2 Es3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 9">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="87" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 9
+	OpenSynoptic("MovManuali_Mag2_Es3",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="275" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 6">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="82" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 6
+	OpenSynoptic("MovManuali_Mag2",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="55" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore = 2">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="82" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 2
+	OpenSynoptic("MovManuali_Mag1",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
+</childs>
+<Name PubName="btnBarMovManuali" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
 </child>
 </ListSynopticDraw>
 <VariableList/>
