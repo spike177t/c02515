@@ -1131,7 +1131,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 ">1</BG>
 <BGList>
 <dci>
@@ -1186,7 +1186,7 @@ End Sub
 <DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
 </dci>
 <dci>
-<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
+<DynColor Color="255" BlinkColor="65535" Value="99" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -2349,7 +2349,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3819,8 +3818,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>

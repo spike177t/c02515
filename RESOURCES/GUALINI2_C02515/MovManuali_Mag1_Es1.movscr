@@ -679,7 +679,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 ">1</BG>
 <BGList>
 <dci>
@@ -734,7 +734,7 @@ End Sub
 <DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
 </dci>
 <dci>
-<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
+<DynColor Color="255" BlinkColor="65535" Value="99" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -2438,10 +2438,10 @@ End Sub
 <AliasesList>
 <item key="Plc_WNUMCASRIKMxEx" value="Plc_WNUMCASRIKM1E1"/>
 <item key="Plc_I_PXGANCIOBLCMxEx" value="Plc_I_PXGANCIOBLCM1E1"/>
-<item key="Plc_BHMIBLCOTTURMxEx" value="Plc_BHMIBLCOTTURM1E1"/>
 <item key="Plc_I_PXOTTURSBLMxEx" value="Plc_I_PXOTTURSBLM1E1"/>
-<item key="Plc_BHMISBLGANCIOMxEx" value="Plc_BHMISBLGANCIOM1E1"/>
+<item key="Plc_BHMIBLCOTTURMxEx" value="Plc_BHMIBLCOTTURM1E1"/>
 <item key="titolo" value="str_MovMan_Mag1E1"/>
+<item key="Plc_BHMISBLGANCIOMxEx" value="Plc_BHMISBLGANCIOM1E1"/>
 <item key="Plc_BHMIBLCGANCIOMxEx" value="Plc_BHMIBLCGANCIOM1E1"/>
 <item key="Plc_I_PXOTTURBLCMxEx" value="Plc_I_PXOTTURBLCM1E1"/>
 <item key="Plc_WCICLOMxEx" value="Plc_WCICLOM1E1"/>

@@ -1131,7 +1131,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 ">1</BG>
 <BGList>
 <dci>
@@ -1186,7 +1186,7 @@ End Sub
 <DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
 </dci>
 <dci>
-<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
+<DynColor Color="255" BlinkColor="65535" Value="99" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -1617,7 +1617,7 @@ End Sub
 <child>
 <object>group</object>
 <g x="20" y="100" width="480" height="290" ox="35" oy="100" owidth="480" oheight="290"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
@@ -2045,11 +2045,11 @@ End Sub
 <child>
 <object>group</object>
 <g x="20" y="380" width="480" height="195" ox="35" oy="285" owidth="480" oheight="195"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
-<type x="0" y="0" width="480" height="195" fill="rgb(192,192,192)" stroke="none" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="0" y="0" width="480" height="195" fill="rgb(192,192,192)" stroke="none">rect</type>
 <ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
 <Shadow>0</Shadow>
@@ -2348,7 +2348,7 @@ End Sub
 <child>
 <object>group</object>
 <g x="530" y="380" width="480" height="195" ox="535" oy="285" owidth="480" oheight="195"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
@@ -2403,7 +2403,7 @@ End Sub
 <child>
 <object>group</object>
 <g x="530" y="285" width="480" height="85" ox="35" oy="490" owidth="480" oheight="85"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
@@ -2556,7 +2556,7 @@ End Sub
 <child>
 <object>group</object>
 <g x="530" y="100" width="480" height="170" ox="530" oy="100" owidth="480" oheight="170"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
@@ -2948,7 +2948,7 @@ End Sub
 <child>
 <object>group</object>
 <g x="20" y="285" width="480" height="85" ox="20" oy="285" owidth="480" oheight="85"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>

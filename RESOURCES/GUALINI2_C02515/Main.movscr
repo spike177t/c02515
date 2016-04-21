@@ -659,7 +659,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 ">1</BG>
 <BGList>
 <dci>
@@ -714,7 +714,7 @@ End Sub
 <DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
 </dci>
 <dci>
-<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
+<DynColor Color="255" BlinkColor="65535" Value="99" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -2060,8 +2060,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledOn" value="Q1_Out:On"/>
+<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
@@ -2482,8 +2482,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledAuto" value="Q2_Out:InCiclo"/>
+<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
