@@ -1669,7 +1669,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1677,7 +1676,7 @@ End Sub
 <object>base</object>
 <type x="25" y="100" width="270" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo72</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo72</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mag. 1 Estrattore 1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1711,13 +1710,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. Attuale Mag1 Es1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo79</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo79</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1750,13 +1749,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo Mag1 Es1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo121</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo121</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1764,7 +1763,7 @@ End Sub
 <object>base</object>
 <type x="300" y="100" width="270" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo73</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo73</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mag. 1 Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1798,13 +1797,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo Mag1 Es2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo87</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo87</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1837,13 +1836,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. Attuale Mag1 Es2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo99</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo99</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1851,7 +1850,7 @@ End Sub
 <object>base</object>
 <type x="575" y="100" width="270" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo74</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo74</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mag. 1 Estrattore 3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1885,13 +1884,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo Mag1 Es3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo91</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo91</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1924,13 +1923,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. Attuale Mag1 Es3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo107</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo107</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2109,7 +2108,7 @@ End Sub
 <object>base</object>
 <type x="25" y="340" width="270" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo72</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo72</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mag. 2 Estrattore 1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2118,7 +2117,7 @@ End Sub
 <object>base</object>
 <type x="300" y="340" width="270" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo73</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo73</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mag. 2 Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2127,7 +2126,7 @@ End Sub
 <object>base</object>
 <type x="575" y="340" width="270" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo74</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo74</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mag. 2 Estrattore 3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2161,13 +2160,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo Mag2 Es3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo91</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo91</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2200,13 +2199,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo Mag2 Es2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo87</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo87</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2239,13 +2238,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ciclo Mag2 Es1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo121</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo121</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2278,13 +2277,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. Attuale Mag2 Es1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo79</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo79</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2317,13 +2316,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. Attuale Mag2 Es2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo99</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo99</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2356,13 +2355,13 @@ End Sub
 <type>base</type>
 <type x="5" y="10" width="295" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo85</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. Attuale Mag2 Es3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760">Simbolo107</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Simbolo107</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
