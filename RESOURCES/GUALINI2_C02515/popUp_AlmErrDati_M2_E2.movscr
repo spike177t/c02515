@@ -121,14 +121,18 @@
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Inserire cassetto nel magazzino senza modifiche</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="528" SelLength="35" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="271" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
 
 Dim msgRet As VbMsgBoxResult
 Dim msg As String
 Public Sub Click()
 	msg = "Errore dati in quartina presente nell'estrattore M2 E2" &amp; vbCrLf _
 			&amp; "Vuoi inserire il cassetto nel Magazzino senza rimuovere nessun pezzo?"
-	If alm_M2_ES2_ErrDatiPezzi Then
+	If alm_M2_ES2_ErrDatiPezzi _
+		Or alm_M2_ES2_ErrPz1 _
+		Or alm_M2_ES2_ErrPz2 _
+		Or alm_M2_ES2_ErrPz3 _
+		Or alm_M2_ES2_ErrPz4 Then
 		msgRet = MsgBox(msg, vbYesNo, "Inserire il cassetto nel magazzino?")
 		If msgRet = vbYes Then
 			alm_M2_ES2_ErrDatiPezzi = False
@@ -159,7 +163,7 @@ End Sub
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rimuovere manualmente tutti i pezzi e inserire il cassetto nel magazzino.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="4663" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="966" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 Option Explicit
 
@@ -197,7 +201,11 @@ Public Sub Click()
 	mag = 2
 	cass = [MAG2_ES2_ACT:ID_CASSETTO]
 
-	If alm_M2_ES2_ErrDatiPezzi Then
+	If alm_M2_ES2_ErrDatiPezzi _
+		Or alm_M2_ES2_ErrPz1 _
+		Or alm_M2_ES2_ErrPz2 _
+		Or alm_M2_ES2_ErrPz3 _
+		Or alm_M2_ES2_ErrPz4 Then
 		msgRet = MsgBox(msg, vbYesNo, "Inserire il cassetto nel magazzino?")
 		If msgRet = vbYes Then
 			'rimuovo i pezzi dal magazzino

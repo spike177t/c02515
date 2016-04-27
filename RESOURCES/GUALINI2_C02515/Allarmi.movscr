@@ -540,21 +540,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>AlarmWnd</object>
-<type x="25" y="315" width="980" height="220" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>4</Border>
-<style Text="" On="" Ack="" Off="" Reset="" Duration="" TotalTimeOn="" TotalNumOn="" TotalNumAck="" TotalNumReset="" Severity="" Status="" Condition="" Image="" TextPos="0" OnPos="1" AckPos="-1" OffPos="-1" ResetPos="-1" DurationPos="2" TotalTimeOnPos="-1" TotalNumOnPos="-1" TotalNumAckPos="-1" TotalNumResetPos="-1" SeverityPos="3" StatusPos="-1" ConditionPos="4" ImagePos="-1" FormatDateTime="" FormatDuration="" IncludeMilliseconds="0" BackHisCol="2147483653" TextHisCol="2147483656" TextWidth="-1" OnWidth="-1" AckWidth="-1" OffWidth="-1" ResetWidth="-1" DurationWidth="-1" TotalTimeOnWidth="-1" TotalNumOnWidth="-1" TotalNumAckWidth="-1" TotalNumResetWidth="-1" SeverityWidth="-1" StatusWidth="-1" ConditionWidth="-1" ImageWidth="-1" AutoLayout="1" ShowControl="1" OpenPreview="0" Clickable="1" IconBtn="1" AckSel="0" AckAll="1" ResetSel="1" ResetAll="1" SoundOn="1" Help="1" GetHistory="1" Comment="0" Size="0" Pos="3" AckSelTxt="" AckAllTxt="" ResetSelTxt="" ResetAllTxt="" SoundOnTxt="" HelpTxt="" GetHistoryTxt="" CommentTxt=""/>
-<execution BlinkTime="1000" NetworkServer="" BackupServer="" MaxCount="1000" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="ALM*" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1204,7 +1189,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti))
+<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 ">1</BG>
 <BGList>
 <dci>
@@ -1259,7 +1244,7 @@ End Sub
 <DynColor Color="255" BlinkColor="65535" Value="19" Type="4"/>
 </dci>
 <dci>
-<DynColor Color="255" BlinkColor="65535" Value="30" Type="4"/>
+<DynColor Color="255" BlinkColor="65535" Value="99" Type="4"/>
 </dci>
 </BGList>
 <EG>0</EG>
@@ -1944,12 +1929,12 @@ End Sub
 </child>
 <child>
 <object>AlarmWnd</object>
-<type x="25" y="95" width="980" height="215" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="25" y="95" width="980" height="435" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>4</Border>
-<style Text="Descrizione Messaggio" On="" Ack="" Off="" Reset="" Duration="" TotalTimeOn="" TotalNumOn="" TotalNumAck="" TotalNumReset="" Severity="" Status="" Condition="" Image="" TextPos="0" OnPos="1" AckPos="-1" OffPos="-1" ResetPos="-1" DurationPos="2" TotalTimeOnPos="-1" TotalNumOnPos="-1" TotalNumAckPos="-1" TotalNumResetPos="-1" SeverityPos="3" StatusPos="-1" ConditionPos="4" ImagePos="-1" FormatDateTime="" FormatDuration="" IncludeMilliseconds="0" BackHisCol="2147483653" TextHisCol="2147483656" TextWidth="-1" OnWidth="-1" AckWidth="-1" OffWidth="-1" ResetWidth="-1" DurationWidth="-1" TotalTimeOnWidth="-1" TotalNumOnWidth="-1" TotalNumAckWidth="-1" TotalNumResetWidth="-1" SeverityWidth="-1" StatusWidth="-1" ConditionWidth="-1" ImageWidth="-1" AutoLayout="1" ShowControl="1" OpenPreview="0" Clickable="1" IconBtn="0" AckSel="0" AckAll="0" ResetSel="0" ResetAll="0" SoundOn="0" Help="0" GetHistory="0" Comment="0" Size="0" Pos="3" AckSelTxt="" AckAllTxt="" ResetSelTxt="" ResetAllTxt="" SoundOnTxt="" HelpTxt="" GetHistoryTxt="" CommentTxt=""/>
+<style Text="Descrizione Messaggio" On="" Ack="" Off="" Reset="" Duration="" TotalTimeOn="" TotalNumOn="" TotalNumAck="" TotalNumReset="" Severity="" Status="" Condition="" Image="" TextPos="0" OnPos="1" AckPos="-1" OffPos="-1" ResetPos="-1" DurationPos="2" TotalTimeOnPos="-1" TotalNumOnPos="-1" TotalNumAckPos="-1" TotalNumResetPos="-1" SeverityPos="3" StatusPos="-1" ConditionPos="4" ImagePos="-1" FormatDateTime="" FormatDuration="" IncludeMilliseconds="0" BackHisCol="2147483653" TextHisCol="2147483656" TextWidth="-1" OnWidth="-1" AckWidth="-1" OffWidth="-1" ResetWidth="-1" DurationWidth="-1" TotalTimeOnWidth="-1" TotalNumOnWidth="-1" TotalNumAckWidth="-1" TotalNumResetWidth="-1" SeverityWidth="-1" StatusWidth="-1" ConditionWidth="-1" ImageWidth="-1" AutoLayout="1" ShowControl="1" OpenPreview="0" Clickable="1" IconBtn="0" AckSel="0" AckAll="1" ResetSel="0" ResetAll="1" SoundOn="0" Help="0" GetHistory="0" Comment="0" Size="0" Pos="3" AckSelTxt="" AckAllTxt="" ResetSelTxt="" ResetAllTxt="" SoundOnTxt="" HelpTxt="" GetHistoryTxt="" CommentTxt=""/>
 <execution BlinkTime="1000" NetworkServer="" BackupServer="" MaxCount="1000" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="MSG*" Alarm="" type="15" severity="0" condition="0"/>
+<Filter Area="" Alarm="" type="15" severity="0" condition="0"/>
 <ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>

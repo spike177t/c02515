@@ -121,14 +121,19 @@
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Inserire cassetto nel magazzino senza modifiche</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="17" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+<ScriptCode StartSel="378" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
 
 Dim msgRet As VbMsgBoxResult
 Dim msg As String
 Public Sub Click()
 	msg = "Errore dati in quartina presente nell'estrattore M1 E2" &amp; vbCrLf _
 			&amp; "Vuoi inserire il cassetto nel Magazzino senza rimuovere nessun pezzo?"
-	If alm_M1_ES2_ErrDatiPezzi Then
+	If alm_M1_ES2_ErrDatiPezzi _
+		Or alm_M1_ES2_ErrPz1 _
+		Or alm_M1_ES2_ErrPz2 _
+		Or alm_M1_ES2_ErrPz3 _
+		Or alm_M1_ES2_ErrPz4 _
+	Then
 		msgRet = MsgBox(msg, vbYesNo, "Inserire il cassetto nel magazzino?")
 		If msgRet = vbYes Then
 			alm_M1_ES2_ErrDatiPezzi = False
@@ -137,7 +142,7 @@ Public Sub Click()
 			alm_M1_ES2_ErrPz3 = False
 			alm_M1_ES2_ErrPz4 = False
 			[MAG1_ES2_RIK:ID_CASSETTO] = 0
-			[MAG1_ES2_RIK:ID_QUARTINA] =""
+			[MAG1_ES2_RIK:ID_QUARTINA] = ""
 			[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = ""
 			[MAG1_ES2_RIK:STROBE] = True
 		End If
@@ -159,7 +164,7 @@ End Sub
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rimuovere manualmente tutti i pezzi e inserire il cassetto nel magazzino.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<ScriptCode StartSel="4666" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1147" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 Option Explicit
 
@@ -197,7 +202,11 @@ Public Sub Click()
 	mag = 1
 	cass = [MAG1_ES2_ACT:ID_CASSETTO]
 
-	If alm_M1_ES2_ErrDatiPezzi Then
+	If alm_M1_ES2_ErrDatiPezzi _
+		Or alm_M1_ES2_ErrPz1 _
+		Or alm_M1_ES2_ErrPz2 _
+		Or alm_M1_ES2_ErrPz3 _
+		Or alm_M1_ES2_ErrPz4 Then
 		msgRet = MsgBox(msg, vbYesNo, "Inserire il cassetto nel magazzino?")
 		If msgRet = vbYes Then
 			'rimuovo i pezzi dal magazzino
