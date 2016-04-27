@@ -1422,1216 +1422,6 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="10" y="5" width="1010" height="75" ox="10" oy="5" owidth="1010" oheight="75"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="0" y="0" width="1010" height="75" rx="16" ry="16" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo Smussato11</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>AlarmBanner</type>
-<type x="15" y="5" width="495" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>4</Border>
-<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
-<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="MSG*" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>AlarmBanner</type>
-<type x="15" y="40" width="495" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>4</Border>
-<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
-<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="ALM*" Alarm="" type="15" severity="0" condition="0"/>
-<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi13</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="570" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType synoptic=&quot;popUp_AutoMan&quot; action=&quot;1&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;10&quot; y=&quot;10&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_bAutoOn">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="645" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name Tooltip="Incongruenza Estrattori" PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnIncongruenzaES</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Err. Estr.</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_IncongrEstrattori:almOn">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="255" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG Var="loc_IncongrEstrattori:almOn">0</EG>
-<EGList>
-<dci>
-<DynColor Color="16777215" Text="Estr. Ok"/>
-</dci>
-<dci>
-<DynColor Color="16777215" Value="1" Text="Err. Estr."/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</EGList>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="162" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
-
-Public Sub Click()
-	If [loc_IncongrEstrattori:almOn] Then
-		OpenSynoptic("IncongruenzaEstrattori",enum_ops_opennormal )
-	End If
-
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>group</type>
-<g x="520" y="5" width="35" height="65" ox="530" oy="0" owidth="30" oheight="45"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="555" y="48" width="-35" height="-21" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(0,64,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo8</Name>
-<Shadow OY="4">0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="555" y="70" width="-35" height="-22" fill="rgb(0,0,0)" stroke="rgb(127,127,127)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(64,64,64)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo7</Name>
-<Shadow OY="4">0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="555" y="27" width="-35" height="-22" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(64,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo6</Name>
-<Shadow OY="4">0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="555" y="27" width="-35" height="-22" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(128,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo2</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="Plc_ALMON">1</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>base</type>
-<type x="555" y="70" width="-35" height="-22" fill="rgb(255,255,255)" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(128,128,128)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo3</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="Plc_Q_LMPAUXON">1</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>base</type>
-<type x="555" y="48" width="-35" height="-21" fill="rgb(0,255,0)" stroke="rgb(0,128,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill grad="2" gcolor="rgb(0,128,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
-<Name acr="4294901760">Rettangolo4</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="Plc_bAutoOn">1</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-</childs>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" acr="4294901760">Simbolo16</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>group</type>
-<g x="935" y="5" width="65" height="65" ox="760" oy="170" owidth="65" oheight="65"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>Button</type>
-<type x="935" y="5" width="65" height="65" fill="rgb(255,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType synoptic=&quot;ConfermaExit&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name acr="4294901760">Pulsante264</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>group</type>
-<g x="945" y="12" width="45" height="48" ox="190" oy="449" owidth="44" oheight="45" LibName="Icons" LibDate="2011-02-07T14:15:42Z" LibVers="1056"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="945" y="15" width="45" height="45" rx="27" ry="35" rxa="30" rya="2" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="6" stroke-linecap="butt" stroke-linejoin="round">arc</type>
-<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name acr="4294901760">Arco73</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="964" y="12" width="7" height="28" rx="4" ry="6" fill="rgb(0,0,0)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
-<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name acr="4294901760">Rettangolo Smussato81</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name acr="4294901760">Simbolo251</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" acr="4294901760">Simbolo23</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="720" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType variable=&quot;Plc_BHMITSTRSTALM&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMITSTRSTALM&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alm. Mag</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_ALMON">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="255" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="795" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
-<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">xxx</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="Plc_bAutoOn">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-</childs>
-<Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
-<g x="25" y="90" width="150" height="490" ox="25" oy="90" owidth="150" oheight="490"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>Button</type>
-<type x="0" y="0" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType synoptic=&quot;Magazzini&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-" n1="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Riepilogo Magazzini</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="50" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType synoptic=&quot;Magazzini_ContenutoMag1&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-" n1="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;3&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Contenuto MAG 1</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 3
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="100" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;4&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_ContenutoMag2&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante87</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Contenuto MAG 2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 4
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="150" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;5&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiDisponibili&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante88</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Gestisci Cassetti Disponibili</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 5
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="200" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;2&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE3&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante68</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto In Estrattore 3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 2
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="450" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;6&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE2&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">Pulsante89</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto In Estrattore 2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 6
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="250" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;7&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_Quartine&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante90</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Quartine</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 7
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="350" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;9&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiPieni&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Cassetti Pieni</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Color="4210752" Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="400" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;10&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiInRiempimento&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante87</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Cassetti In Riempimento</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="300" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;8&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_EliminaPezzo&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante91</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Elimina Pezzo</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 8
-End Sub
-</ScriptCode>
-</child>
-</childs>
-<Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
 <g x="965" y="90" width="745" height="480" ox="1025" oy="90" owidth="745" oheight="480"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
@@ -3988,6 +2778,1358 @@ End Sub
 </child>
 </childs>
 <Name PubName="btnBarMovManuali" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="25" y="90" width="150" height="490" ox="25" oy="90" owidth="150" oheight="490"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>Button</type>
+<type x="0" y="450" width="75" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;5&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE1&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">Pulsante89</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Rik Cass. In Estrattore 1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="12"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="58" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 12
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="0" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType synoptic=&quot;Magazzini&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+" n1="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Riepilogo Magazzini</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="50" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType synoptic=&quot;Magazzini_ContenutoMag1&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+" n1="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;3&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Contenuto MAG 1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 3
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="100" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;4&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_ContenutoMag2&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante87</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Contenuto MAG 2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 4
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="150" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;5&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiDisponibili&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante88</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Gestisci Cassetti Disponibili</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 5
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="200" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;2&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE3&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante68</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto In Estrattore 3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 2
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="75" y="450" width="75" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;6&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE2&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">Pulsante89</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Rik Cass. In Estrattore 2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 6
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="250" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;7&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_Quartine&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante90</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Quartine</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 7
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="350" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;9&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiPieni&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Cassetti Pieni</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Color="4210752" Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="400" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;10&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_CassettiInRiempimento&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante87</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Visualizza Cassetti In Riempimento</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="10"/>
+</dci>
+<dci>
+<DynColor Value="11"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="0" y="300" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;8&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+" n1="&lt;CommandType synoptic=&quot;Magazzini_EliminaPezzo&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante91</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Elimina Pezzo</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="1"/>
+</dci>
+<dci>
+<DynColor Value="2"/>
+</dci>
+<dci>
+<DynColor Value="3"/>
+</dci>
+<dci>
+<DynColor Value="4"/>
+</dci>
+<dci>
+<DynColor Value="5"/>
+</dci>
+<dci>
+<DynColor Value="6"/>
+</dci>
+<dci>
+<DynColor Value="7"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="8"/>
+</dci>
+<dci>
+<DynColor Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMagazzini_SogliaColore = 8
+End Sub
+</ScriptCode>
+</child>
+</childs>
+<Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="10" y="5" width="1010" height="75" ox="10" oy="5" owidth="1010" oheight="75"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="0" y="0" width="1010" height="75" rx="16" ry="16" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo Smussato11</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="860" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnManuOn</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu On</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Plc_BMANUON">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="33023" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>AlarmBanner</type>
+<type x="15" y="5" width="495" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>4</Border>
+<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
+<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
+<Filter Area="MSG*" Alarm="" type="15" severity="0" condition="0"/>
+<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>AlarmBanner</type>
+<type x="15" y="40" width="495" height="30" fill="rgb(0,0,0)" stroke="rgb(255,0,0)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>4</Border>
+<style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
+<execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
+<Filter Area="ALM*" Alarm="" type="15" severity="0" condition="0"/>
+<ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi13</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="560" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType synoptic=&quot;popUp_AutoMan&quot; action=&quot;1&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;10&quot; y=&quot;10&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Auto On</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Plc_bAutoOn">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="635" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name Tooltip="Incongruenza Estrattori" PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnIncongruenzaES</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Err. Estr.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_IncongrEstrattori:almOn">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="255" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="loc_IncongrEstrattori:almOn">0</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Estr. Ok"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="Err. Estr."/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="162" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+
+Public Sub Click()
+	If [loc_IncongrEstrattori:almOn] Then
+		OpenSynoptic("IncongruenzaEstrattori",enum_ops_opennormal )
+	End If
+
+End Sub
+</ScriptCode>
+</child>
+<child>
+<type>group</type>
+<g x="520" y="5" width="30" height="65" ox="530" oy="0" owidth="30" oheight="45"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="550" y="48" width="-30" height="-21" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(0,64,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo8</Name>
+<Shadow OY="4">0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="550" y="70" width="-30" height="-22" fill="rgb(0,0,0)" stroke="rgb(127,127,127)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(64,64,64)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo7</Name>
+<Shadow OY="4">0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="550" y="27" width="-30" height="-22" fill="rgb(0,0,0)" stroke="rgb(128,128,128)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(64,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo6</Name>
+<Shadow OY="4">0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="550" y="27" width="-30" height="-22" fill="rgb(255,0,0)" stroke="rgb(255,0,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(128,0,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo2</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="Plc_ALMON">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>base</type>
+<type x="550" y="70" width="-30" height="-22" fill="rgb(255,255,255)" stroke="rgb(255,255,255)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(128,128,128)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo3</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="Plc_Q_LMPAUXON">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>base</type>
+<type x="550" y="48" width="-30" height="-21" fill="rgb(0,255,0)" stroke="rgb(0,128,0)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="2" gcolor="rgb(0,128,0)" Style="3" fill="rgb(0,0,0)">0</ExtFill>
+<Name acr="4294901760">Rettangolo4</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="Plc_bAutoOn">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+</childs>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" acr="4294901760">Simbolo16</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>group</type>
+<g x="935" y="5" width="65" height="65" ox="760" oy="170" owidth="65" oheight="65"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>Button</type>
+<type x="935" y="5" width="65" height="65" fill="rgb(255,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType synoptic=&quot;ConfermaExit&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name acr="4294901760">Pulsante264</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>group</type>
+<g x="945" y="12" width="45" height="48" ox="190" oy="449" owidth="44" oheight="45" LibName="Icons" LibDate="2011-02-07T14:15:42Z" LibVers="1056"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="945" y="15" width="45" height="45" rx="27" ry="35" rxa="30" rya="2" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="6" stroke-linecap="butt" stroke-linejoin="round">arc</type>
+<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name acr="4294901760">Arco73</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="964" y="12" width="7" height="28" rx="4" ry="6" fill="rgb(0,0,0)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name acr="4294901760">Rettangolo Smussato81</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name acr="4294901760">Simbolo251</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" acr="4294901760">Simbolo23</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Button</type>
+<type x="710" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType variable=&quot;Plc_BHMITSTRSTALM&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;0&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMITSTRSTALM&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alm. Mag</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Plc_ALMON">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="255" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="785" y="5" width="65" height="65" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType variable=&quot;alm_ResetAll&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;False&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown n0="&lt;CommandType variable=&quot;alm_ResetAll&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;true&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
+"/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAutoOn</Name>
+<text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Alm. Spv</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="alm_Presenti">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="255" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+</childs>
+<Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
