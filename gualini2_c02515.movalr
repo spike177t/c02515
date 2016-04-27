@@ -2212,7 +2212,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2234,7 +2234,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2256,7 +2256,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2278,7 +2278,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2300,7 +2300,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2322,7 +2322,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2344,7 +2344,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2366,7 +2366,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2388,7 +2388,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2410,7 +2410,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2432,7 +2432,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2454,7 +2454,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2476,7 +2476,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2498,7 +2498,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2520,7 +2520,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2542,7 +2542,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2564,7 +2564,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2586,7 +2586,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2608,7 +2608,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2630,7 +2630,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2652,7 +2652,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2674,7 +2674,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2696,7 +2696,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2718,7 +2718,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2740,7 +2740,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2762,7 +2762,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2784,7 +2784,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2806,7 +2806,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2828,7 +2828,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2850,7 +2850,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2872,7 +2872,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2894,7 +2894,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2916,7 +2916,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2938,7 +2938,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2960,7 +2960,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -2982,7 +2982,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -3004,7 +3004,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -3026,7 +3026,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -3048,7 +3048,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -3070,7 +3070,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -3856,7 +3856,7 @@
 <ThresholdList>
 <Threshold>
 <Name Area="" Title="Zona R3 Errore dati da assemblatrice" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
 <Commands/>
 <CommandsOn/>
 <CommandsAck/>
@@ -3950,7 +3950,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -3994,7 +3994,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="1" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4038,7 +4038,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4060,7 +4060,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4082,7 +4082,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16777088" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4104,7 +4104,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4126,7 +4126,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4148,7 +4148,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4214,7 +4214,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4258,7 +4258,7 @@
 <CommandsAck/>
 <CommandsReset/>
 <CommandsOff/>
-<Style BackColor="4294967295" TextColor="16711680" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
 <Recipient Attachment="" DispatchingText=""/>
 <SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
 <SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
@@ -4385,6 +4385,52 @@
 <Threshold>
 <Name Area="" Title="Scarico Commessa Esclusiva: assenza pezzi da Mag 2" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
 <Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="Not [Assemblatrice_Stato:R2_FuoriIngombro_Ass] 
+" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R2_IngombroAssemblatrice</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="R2 Ingombro Assemblatrice" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
+<Commands/>
+<CommandsOn/>
+<CommandsAck/>
+<CommandsReset/>
+<CommandsOff/>
+<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
+<Recipient Attachment="" DispatchingText=""/>
+<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
+</Threshold>
+</ThresholdList>
+</Alarm>
+<Alarm>
+<Name Device="" Variable="Not [Assemblatrice_Stato:R3_FuoriIngombro_Ass] 
+" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R3_IngombroAssemblatrice</Name>
+<ThresholdList>
+<Threshold>
+<Name Area="" Title="R3 Ingombro Assemblatrice" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
+<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
 <Commands/>
 <CommandsOn/>
 <CommandsAck/>

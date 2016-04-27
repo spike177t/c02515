@@ -90,7 +90,7 @@
 <Border>4</Border>
 <style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
 <execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="MSG*" Alarm="" type="15" severity="0" condition="0"/>
+<Filter Area="ALM*" Alarm="" type="1" severity="0" condition="0"/>
 <ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -104,7 +104,7 @@
 <Border>4</Border>
 <style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
 <execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="ALM*" Alarm="" type="15" severity="0" condition="0"/>
+<Filter Area="MSG*" Alarm="" type="1" severity="0" condition="0"/>
 <ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi13</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -541,7 +541,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -640,8 +639,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="39" SelLength="41" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 1
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("Main", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -728,8 +728,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="75" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 2
+	Plc_SPV_NUM_ASSE = 0
 	loc_BtnBarMagazzini_SogliaColore = 0
 	OpenSynoptic("Magazzini", enum_ops_opennormal)
 End Sub
@@ -817,8 +818,10 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="63" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="95" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 3
+	Plc_SPV_NUM_ASSE = 0
+	loc_BtnBarMovMan_SogliaColore = 1
 	OpenSynoptic("MovManuali", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -907,6 +910,7 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 5
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("ZonaR2", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -995,6 +999,7 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 6
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("ZonaR3", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -1083,6 +1088,7 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 4
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("ZonaR1", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -1169,8 +1175,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="21" SelLength="67" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 7
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("Impostazioni", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -1191,8 +1198,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
-">1</BG>
+<BG Var="loc_btn_Allarmi_soglia">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -1264,9 +1270,14 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="60" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="139" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 9
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("Allarmi", enum_ops_opennormal)
+End Sub
+
+Public Sub OnTimer()
+	loc_btn_Allarmi_soglia = loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 End Sub
 </ScriptCode>
 </child>
@@ -1352,8 +1363,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="63" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 8
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("LogStorico", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -1671,6 +1683,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">barraPulsanti</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2462,159 +2475,6 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="530" y="285" width="480" height="85" ox="35" oy="490" owidth="480" oheight="85"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="0" y="0" width="480" height="85" fill="rgb(192,192,192)" stroke="none">rect</type>
-<ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="30" y="50" width="45" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Q1_VarR:WriteR_639"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display169</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="105" y="50" width="45" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Q2_VarR:WriteR_639"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display170</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="180" y="50" width="45" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="Assemblatrice_VarR:ReadR_99"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display171</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="5" y="5" width="470" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Contatori attività cicli</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="20" y="25" width="70" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Q 1</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="95" y="25" width="70" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Q 2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="170" y="25" width="70" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ass.</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="245" y="25" width="70" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ZonaR1</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="255" y="50" width="45" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="StatoCicloCarico_Counter"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display180</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="320" y="25" width="70" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ZonaR2</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="330" y="50" width="45" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="StatoCicloScarico_Counter"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display182</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="395" y="25" width="70" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ZonaR3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="405" y="50" width="45" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="StatoCicloR3_Counter"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display184</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
 <g x="530" y="100" width="480" height="170" ox="530" oy="100" owidth="480" oheight="170"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
@@ -3176,6 +3036,180 @@ End Sub
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Impostazione Carico Avanzate</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="530" y="285" width="480" height="85" ox="530" oy="285" owidth="480" oheight="85"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="0" y="0" width="480" height="85" fill="rgb(192,192,192)" stroke="none">rect</type>
+<ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="35" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Q1_VarR:WriteR_639"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display169</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="95" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Q2_VarR:WriteR_639"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display170</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="155" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="Assemblatrice_VarR:ReadR_99"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display171</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="5" y="5" width="470" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Contatori attività cicli</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="35" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Q 1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="95" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Q 2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="155" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ass.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="215" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ZonaR1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="215" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloCarico_Counter"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display180</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="275" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ZonaR2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="275" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloScarico_Counter"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display182</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="335" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">ZonaR3</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="335" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="StatoCicloR3_Counter"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display184</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>Edit</type>
+<editbox x="395" y="50" width="55" height="24" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="PLC_CACCA"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display184</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<type>base</type>
+<type x="395" y="25" width="55" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">PLC</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

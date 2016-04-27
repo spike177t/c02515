@@ -10,6 +10,7 @@
 <type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -108,8 +109,9 @@
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="39" SelLength="41" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 1
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("Main", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -196,8 +198,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="75" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 2
+	Plc_SPV_NUM_ASSE = 0
 	loc_BtnBarMagazzini_SogliaColore = 0
 	OpenSynoptic("Magazzini", enum_ops_opennormal)
 End Sub
@@ -285,8 +288,10 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="63" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="95" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 3
+	Plc_SPV_NUM_ASSE = 0
+	loc_BtnBarMovMan_SogliaColore = 1
 	OpenSynoptic("MovManuali", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -375,6 +380,7 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 5
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("ZonaR2", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -463,6 +469,7 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 6
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("ZonaR3", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -551,6 +558,7 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 4
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("ZonaR1", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -637,8 +645,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="21" SelLength="67" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 7
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("Impostazioni", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -659,8 +668,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
-">1</BG>
+<BG Var="loc_btn_Allarmi_soglia">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -732,9 +740,14 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="60" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="139" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 9
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("Allarmi", enum_ops_opennormal)
+End Sub
+
+Public Sub OnTimer()
+	loc_btn_Allarmi_soglia = loc_SelPage + 20 * Abs(CInt(alm_Presenti Or Plc_ALMON ))
 End Sub
 </ScriptCode>
 </child>
@@ -820,8 +833,9 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="63" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_SelPage = 8
+	Plc_SPV_NUM_ASSE = 0
 	OpenSynoptic("LogStorico", enum_ops_opennormal)
 End Sub
 </ScriptCode>
@@ -1219,7 +1233,7 @@ End Sub
 <Border>4</Border>
 <style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
 <execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="MSG*" Alarm="" type="15" severity="0" condition="0"/>
+<Filter Area="ALM*" Alarm="" type="1" severity="0" condition="0"/>
 <ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" XOffset="0" YOffset="0"/>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi12</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1233,7 +1247,7 @@ End Sub
 <Border>4</Border>
 <style Size="0" UseScroll="1" ShowHigherSeverity="0" ShowDateTime="1" HasSpinButton="1" SpinButtonHor="1" FormatDateTime="" Clickable="1" Pos="3" IncludeMilliseconds="0"/>
 <execution BlinkTime="1000" ScrollTime="2000" NetworkServer="" BackupServer="" Refresh="1000" OPCAEServer="" MaxOPCAEEvents="1000"/>
-<Filter Area="ALM*" Alarm="" type="15" severity="0" condition="0"/>
+<Filter Area="MSG*" Alarm="" type="1" severity="0" condition="0"/>
 <ListFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Banner Allarmi13</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1670,7 +1684,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraSuperiore" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2539,6 +2552,7 @@ End Sub
 </child>
 </childs>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
@@ -2883,6 +2897,47 @@ End Sub
 <text font-family="Tahoma" font-size="10" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">No Blocco R3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG Var="Assemblatrice_Stato:R3_FuoriIngombro_Ass">1</EG>
+<EGList>
+<dci>
+<DynColor Color="255" Text="Blocco R3"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="No Blocco R3"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
 </child>
 <child>
 <type>base</type>
@@ -2892,6 +2947,47 @@ End Sub
 <text font-family="Tahoma" font-size="10" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">No Blocco R2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG Var="Assemblatrice_Stato:R2_FuoriIngombro_Ass">1</EG>
+<EGList>
+<dci>
+<DynColor Color="255" Text="Blocco R2"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="No Blocco R2"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
 </child>
 <child>
 <type>base</type>
@@ -3334,7 +3430,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="R1_STATUS:OUT_AUTO_ON">0</BG>
+<BG Var="Plc_ar_allarmi_6">0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3446,13 +3542,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="R1_STATUS:OUT_CYCLE_ON">1</BG>
+<BG Var="Plc_ar_allarmi_7">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Color="16711680" Value="1"/>
+<DynColor Color="255" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="8421376" Value="20"/>
@@ -3544,7 +3640,7 @@ End Sub
 <type x="27" y="32" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo10</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">On</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Blk M1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3553,7 +3649,7 @@ End Sub
 <type x="97" y="32" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cycle</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Blk M2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3586,6 +3682,7 @@ End Sub
 </child>
 </childs>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3618,7 +3715,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="R2_STATUS:OUT_AUTO_ON">0</BG>
+<BG Var="Plc_ar_allarmi_10">0</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3730,13 +3827,13 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="R2_STATUS:OUT_CYCLE_ON">1</BG>
+<BG Var="Plc_ar_allarmi_11">1</BG>
 <BGList>
 <dci>
 <DynColor/>
 </dci>
 <dci>
-<DynColor Color="16711680" Value="1"/>
+<DynColor Color="255" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="8421376" Value="20"/>
@@ -3828,7 +3925,7 @@ End Sub
 <type x="27" y="32" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo10</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">On</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Blk M1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3837,7 +3934,7 @@ End Sub
 <type x="97" y="32" width="47" height="14" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cycle</text>
+<text font-family="Tahoma" font-size="8" text-anchor="start" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Blk M2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
