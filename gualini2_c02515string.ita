@@ -2,7 +2,7 @@
 <strings>
 <list>
 <item key="Plc_ar_allarmi_21_H" value="Estrattore1 Magazzino1 Non Indietro"/>
-<item key="Plc_ar_messaggi_18_H" value=""/>
+<item key="Plc_ar_messaggi_18_H" value="Richiesta Aperura Riparo Robot1 Attiva"/>
 <item key="Plc_ar_allarmi_95_H" value=""/>
 <item key="Plc_ar_allarmi_47_H" value=""/>
 <item key="Plc_ar_messaggi_20_H" value=""/>
@@ -43,18 +43,18 @@
 <item key="Plc_ar_allarmi_15_H" value="Cassetto Rikiesto Su M1E1 Non Disponibile"/>
 <item key="Plc_ar_messaggi_11_H" value="Robot2 In Ingombro Su Magazzino2"/>
 <item key="Plc_ar_allarmi_63_H" value=""/>
-<item key="Plc_ar_allarmi_40_H" value=""/>
+<item key="Plc_ar_allarmi_40_H" value="Tout Salita/Discesa Gancio M2E1"/>
 <item key="Plc_ar_messaggi_37_H" value=""/>
 <item key="alm_Q1_numFilesIncoerente_H" value="Numero file pezzi da Q1 incoerente, verificare ed eliminare file vecchi"/>
 <item key="Plc_ar_allarmi_89_H" value=""/>
 <item key="Plc_ar_allarmi_100_H" value=""/>
-<item key="Plc_ar_messaggi_14_H" value=""/>
+<item key="Plc_ar_messaggi_14_H" value="Riparo Robot1 Aperto"/>
 <item key="Plc_ar_allarmi_66_H" value=""/>
 <item key="Plc_ar_allarmi_18_H" value="Cassetto Rikiesto Su M2E1 Non Disponibile"/>
-<item key="Plc_ar_allarmi_43_H" value=""/>
+<item key="Plc_ar_allarmi_43_H" value="Tout Salita/Discesa Otturatore M2E3"/>
 <item key="Plc_ar_allarmi_91_H" value=""/>
 <item key="Plc_ar_allarmi_20_H" value="Cassetto Rikiesto Su M2E3 Non Disponibile"/>
-<item key="Plc_ar_messaggi_17_H" value=""/>
+<item key="Plc_ar_messaggi_17_H" value="Richiesta Aperura Riparo Magazzino2 Attiva"/>
 <item key="Plc_ar_allarmi_69_H" value=""/>
 <item key="Plc_ar_allarmi_94_H" value=""/>
 <item key="Plc_ar_allarmi_46_H" value=""/>
@@ -93,19 +93,19 @@
 <item key="Plc_ar_messaggi_36_H" value=""/>
 <item key="Plc_ar_allarmi_88_H" value=""/>
 <item key="Plc_ar_allarmi_17_H" value="Cassetto Rikiesto Su M1E3 Non Disponibile"/>
-<item key="Plc_ar_messaggi_13_H" value=""/>
+<item key="Plc_ar_messaggi_13_H" value="Riparo Magazzino2 Aperto"/>
 <item key="Plc_ar_allarmi_65_H" value=""/>
 <item key="Plc_ar_allarmi_90_H" value=""/>
-<item key="Plc_ar_allarmi_42_H" value=""/>
+<item key="Plc_ar_allarmi_42_H" value="Tout Salita/Discesa Gancio M2E2"/>
 <item key="Plc_ar_messaggi_39_H" value=""/>
 <item key="Plc_ar_allarmi_68_H" value=""/>
-<item key="Plc_ar_messaggi_16_H" value=""/>
+<item key="Plc_ar_messaggi_16_H" value="Richiesta Aperura Riparo Magazzino1 Attiva"/>
 <item key="alm_Q1_MancaFile" value="Q1, file identificativo pezzo non trovato"/>
 <item key="Plc_ar_allarmi_93_H" value=""/>
-<item key="Plc_ar_allarmi_45_H" value=""/>
+<item key="Plc_ar_allarmi_45_H" value="Profibus Colla Ko"/>
 <item key="Plc_ar_allarmi_70_H" value=""/>
 <item key="Plc_ar_allarmi_22_H" value="Estrattore1 Magazzino1 Non Avanti"/>
-<item key="Plc_ar_messaggi_19_H" value=""/>
+<item key="Plc_ar_messaggi_19_H" value="Richiesta Aperura Riparo Robot2 Attiva"/>
 <item key="Plc_ar_allarmi_96_H" value=""/>
 <item key="Plc_ar_allarmi_48_H" value=""/>
 <item key="Plc_ar_allarmi_25_H" value="Estrattore3 Magazzino1 Non Indietro"/>
@@ -142,17 +142,17 @@
 <item key="Plc_ar_allarmi_13_H" value="Tout Salita/Discesa Otturatore M1E3"/>
 <item key="Plc_ar_messaggi_35_H" value=""/>
 <item key="Plc_ar_allarmi_87_H" value=""/>
-<item key="Plc_ar_allarmi_39_H" value="Profibus Colla Ko"/>
-<item key="Plc_ar_messaggi_12_H" value=""/>
+<item key="Plc_ar_allarmi_39_H" value="Tout Salita/Discesa Otturatore M2E1"/>
+<item key="Plc_ar_messaggi_12_H" value="Riparo Magazzino1 Aperto"/>
 <item key="Plc_ar_allarmi_64_H" value=""/>
 <item key="Plc_ar_allarmi_16_H" value="Cassetto Rikiesto Su M1E2 Non Disponibile"/>
-<item key="Plc_ar_allarmi_41_H" value=""/>
+<item key="Plc_ar_allarmi_41_H" value="Tout Salita/Discesa Otturatore M2E2"/>
 <item key="Plc_ar_messaggi_38_H" value=""/>
-<item key="Plc_ar_messaggi_15_H" value=""/>
+<item key="Plc_ar_messaggi_15_H" value="Riparo Robot2 Aperto"/>
 <item key="Plc_ar_allarmi_67_H" value=""/>
 <item key="Plc_ar_allarmi_19_H" value="Cassetto Rikiesto Su M2E2 Non Disponibile"/>
 <item key="Plc_ar_messaggi_40_H" value=""/>
 <item key="Plc_ar_allarmi_92_H" value=""/>
-<item key="Plc_ar_allarmi_44_H" value=""/>
+<item key="Plc_ar_allarmi_44_H" value="Tout Salita/Discesa Gancio M2E3"/>
 </list>
 </strings>
