@@ -4402,7 +4402,7 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="Not [Assemblatrice_Stato:R2_FuoriIngombro_Ass] 
+<Name Device="" Variable="[Assemblatrice_Stato:R2_FuoriIngombro_Ass] 
 " Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R2_IngombroAssemblatrice</Name>
 <ThresholdList>
 <Threshold>
@@ -4425,7 +4425,7 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="Not [Assemblatrice_Stato:R3_FuoriIngombro_Ass] 
+<Name Device="" Variable="[Assemblatrice_Stato:R3_FuoriIngombro_Ass] 
 " Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R3_IngombroAssemblatrice</Name>
 <ThresholdList>
 <Threshold>
