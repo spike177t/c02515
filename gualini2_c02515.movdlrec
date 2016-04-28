@@ -6,5 +6,30 @@
 <DSN TableName="" RecycleDBConnection="1" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" MaxCacheBeforeFlush="32767" User="" VarCharsMax="255" TimeCol="" LocalTimeCol="" MSecCol="" ReasonColName="" UserColName="" DurationDays="60" DurationHours="0" DurationMinutes="0" UseInMemoryDB="0" IMDBSharedTable="1" IMDBSaveColumnName="1" IMDBExportXMLTable="0" IMDBExportCSVTable="0" IMDBCryptFile="0" SecWriteBehindDelay="10" MaxRecordsNumber="0" cIMDBDelimiter="" cIMDBEndOfLine=""/>
 <Variables Record="" Print="" Reset="" Status="" EnableTime=""/>
 </DLRecipe>
+<DLRecipe>
+<Name CRWFile="" printer="" Enabled="1" IsRecipe="0" EnableTimeFromTo="0" RecordOnTime="0" RecordOnVariable="1" RecordOnChange="0" RecordOnQualityGood="0" EnableDeadBand="0" DeadBandPercent="1" DeadBand="30" TimeRecHour="0" TimeRecMin="0" TimeRecSec="5" TimeRecMsec="0" EnableTimeFrom="2016-04-28T13:28:25Z" EnableTimeTo="2016-04-28T13:28:25Z">LogProduzione</Name>
+<DSN TableName="" RecycleDBConnection="0" SendAdministrativeAlert="1" MaxError="3" MaxNumberTrans="10" MaxCacheBeforeFlush="32767" User="gualini" VarCharsMax="255" TimeCol="" LocalTimeCol="" MSecCol="" ReasonColName="" UserColName="" DurationDays="730" DurationHours="0" DurationMinutes="0" UseInMemoryDB="0" IMDBSharedTable="1" IMDBSaveColumnName="1" IMDBExportXMLTable="0" IMDBExportCSVTable="0" IMDBCryptFile="0" SecWriteBehindDelay="10" MaxRecordsNumber="0" cIMDBDelimiter="" cIMDBEndOfLine="">Gualini_LogStorico</DSN>
+<Variables Record="loc_LogProduzione_Registra" Print="" Reset="" Status="" EnableTime=""/>
+<ColumnList>
+<Column>
+<Name Variable="Assemblatrice_TelaioLatoR3:ID_QUARTINA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">ID_QUARTINA</Name>
+</Column>
+<Column>
+<Name Variable="Assemblatrice_TelaioLatoR3:NOME_COMMESSA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">NOME_COMMESSA</Name>
+</Column>
+<Column>
+<Name Variable="Assemblatrice_TelaioLatoR3:SERIE_PROFILO" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">SERIE_PROFILO</Name>
+</Column>
+<Column>
+<Name Variable="Assemblatrice_TelaioLatoR3:CODICE_PROFILO" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">CODICE_PROFILO</Name>
+</Column>
+<Column>
+<Name Variable="Assemblatrice_TelaioLatoR3:ALTEZZA_FINESTRA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">ALTEZZA_FINESTRA</Name>
+</Column>
+<Column>
+<Name Variable="Assemblatrice_TelaioLatoR3:LARGHEZZA_FINESTRA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">LARGHEZZA_FINESTRA</Name>
+</Column>
+</ColumnList>
+</DLRecipe>
 </DLRecipeList>
 </DLAndRecipe>
