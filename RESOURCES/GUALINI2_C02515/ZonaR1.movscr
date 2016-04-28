@@ -2591,8 +2591,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
 </AliasesList>
 </child>
@@ -3183,8 +3183,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -3677,8 +3677,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -4013,8 +4013,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -5241,13 +5241,13 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRuota</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRip M1ES3</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip M1ES3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_ar_messaggi_12">1</BG>
+<BG Var="Not Plc_ar_messaggi_12">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255"/>
@@ -5297,13 +5297,13 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRuota</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRip M2ES3</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip M2ES3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_ar_messaggi_13">1</BG>
+<BG Var="Not Plc_ar_messaggi_13">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255"/>
