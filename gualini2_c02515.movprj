@@ -25,9 +25,7 @@
 <SoftLogicListTagRemoved/>
 <SoftLogicListTagChanged/>
 <RenamedScreens/>
-<RenamedScripts>
-<item key="driverquadra3" value="DriverQuadra2_NewVersion"/>
-</RenamedScripts>
+<RenamedScripts/>
 <RenamedAccelerators/>
 <RenamedMenus/>
 <RenamedEmbReports/>

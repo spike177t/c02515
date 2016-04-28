@@ -10,7 +10,6 @@
 <type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2133,8 +2132,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledOn" value="Q1_Out:On"/>
+<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
@@ -2552,12 +2551,11 @@ End Sub
 </child>
 </childs>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledAuto" value="Q2_Out:InCiclo"/>
+<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
@@ -3430,7 +3428,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_ar_allarmi_6">0</BG>
+<BG Var="Plc_ar_allarmi_6">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3682,7 +3680,6 @@ End Sub
 </child>
 </childs>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3715,7 +3712,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Plc_ar_allarmi_10">0</BG>
+<BG Var="Plc_ar_allarmi_10">1</BG>
 <BGList>
 <dci>
 <DynColor/>
@@ -3994,7 +3991,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Q1_Out:NonInEmergenza">1</BG>
+<BG Var="Not Pilz_Virt_OVo15_EmgMag1">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -4039,7 +4036,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Q1_Out:NonInEmergenza" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Not Pilz_Virt_OVo15_EmgMag1" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -4075,7 +4072,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Q2_Out:NonInEmergenza">1</BG>
+<BG Var="Not Pilz_Virt_OVo16_EmgMag2">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -4120,7 +4117,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Q2_Out:NonInEmergenza" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Not Pilz_Virt_OVo16_EmgMag2" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -4156,7 +4153,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="R2_STATUS:OUT_EMRGENCY_STOP">1</BG>
+<BG Var="Not Pilz_Virt_OVo10_EmgRbt2">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -4201,7 +4198,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="R2_STATUS:OUT_EMRGENCY_STOP" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Not Pilz_Virt_OVo10_EmgRbt2" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -4237,7 +4234,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Q1_Out:NonInEmergenza">1</BG>
+<BG Var="Not Pilz_Virt_OVo07_EmgAssembla">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -4282,7 +4279,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Q1_Out:NonInEmergenza" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Not Pilz_Virt_OVo07_EmgAssembla" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -4318,7 +4315,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="R1_STATUS:OUT_EMRGENCY_STOP">1</BG>
+<BG Var="Not Pilz_Virt_OVo08_EmgRbt1">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -4363,7 +4360,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="R1_STATUS:OUT_EMRGENCY_STOP" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Not Pilz_Virt_OVo08_EmgRbt1" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -4399,7 +4396,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Q1_Out:NonInEmergenza">1</BG>
+<BG Var="Not Pilz_Virt_OVo12_EmgRbt3">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -4444,7 +4441,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Q1_Out:NonInEmergenza" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Not Pilz_Virt_OVo12_EmgRbt3" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
