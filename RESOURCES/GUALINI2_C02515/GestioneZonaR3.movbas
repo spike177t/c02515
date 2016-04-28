@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10175" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="10562" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -289,15 +289,26 @@ End Try
 						datiR3_OK = True
 						DoEvents
 					End While
-					StatoCicloR3 = 1000	'Attesa
+					'invio segnale dati pronti a R3
+					[Assemblatrice_TelaioLatoR3:R3_STROBE_DATI] = True
+					'StatoCicloR3 = 1000	'Attesa
+					StatoCicloR3 = 4100 'AttesaR3_STROBE_DATI_ACK
 
-				Case 4100 'StartR3
-					LogMsg "StatoCicloR3 = 4100 'StartR3"
+				Case 4100 'AttesaR3_STROBE_DATI_ACK
+					LogMsg "StatoCicloR3 = 4100 'AttesaR3_STROBE_DATI_ACK"
+					If [Assemblatrice_TelaioLatoR3:R3_STROBE_DATI_ACK] Then
+						[Assemblatrice_TelaioLatoR3:R3_STROBE_DATI] = False
+						StatoCicloR3 = 1000	'Attesa
+					End If
+
 
 				Case 7100 'FineFineR3
 					LogMsg "StatoCicloR3 = 7100 'FineFineR3"
 					If Plc_I_RBT3END Then
-						'TODO
+
+						'log dati produzione
+						loc_LogProduzione_Registra = True
+
 						'Stampa Etichetta
 						[loc_EtichettaR3:Azienda] = [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
 						[loc_EtichettaR3:Barcode] = [Assemblatrice_TelaioLatoR3:ID_QUARTINA]
@@ -305,7 +316,7 @@ End Try
 						[loc_EtichettaR3:Dimensioni] = CStr([Assemblatrice_TelaioLatoR3:ALTEZZA_FINESTRA]) &amp; " x " &amp; CStr([Assemblatrice_TelaioLatoR3:LARGHEZZA_FINESTRA])
 						[loc_EtichettaR3:IdQuartina] = [Assemblatrice_TelaioLatoR3:ID_QUARTINA]
 						RunScript("Etichetta_R3_Stampa,R3",100,False)
-						'log dati produzione
+
 
 						StatoCicloR3 = 7200	'AckR3End
 					End If

@@ -3576,6 +3576,20 @@
 <Name>Assemblatrice_TelaioLatoR3</Name>
 <MemberList>
 <Member>
+<Name Type="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R3_DATI.R3_STROBE_DATI_ACK|Typ=0">R3_STROBE_DATI_ACK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
+<Name Type="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R3_DATI.R3_STROBE_DATI|Typ=0">R3_STROBE_DATI</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Member>
+<Member>
 <Name Type="4" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.R3_DATI.R3_OFFSET_SQUADRETTA1|Typ=4|TaskType=3|StartOut=1">R3_OFFSET_SQUADRETTA1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
