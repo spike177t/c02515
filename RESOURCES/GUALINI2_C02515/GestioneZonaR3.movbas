@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="9143" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="9188" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -146,6 +146,14 @@ Sub Main()
 						End If
 					End If
 
+					'guardo se ho FineFineR3
+					If ValutaProssimaCondizione Then
+						If Plc_I_RBT3END Then
+							StatoCicloR3 = 7100 'FineFineR3
+							ValutaProssimaCondizione = False
+						End If
+					End If
+
 					'condizione xxxxxx
 					'If ValutaProssimaCondizione Then
 					'	'controllo solo ogni tanto se c'è un cassetto pronto
@@ -281,15 +289,13 @@ End Try
 						datiR3_OK = True
 						DoEvents
 					End While
-
-					'StatoCicloR3 = 1000	'Attesa
-					StatoCicloR3 = 7100 'AttesaFineR3
+					StatoCicloR3 = 1000	'Attesa
 
 				Case 4100 'StartR3
 					LogMsg "StatoCicloR3 = 4100 'StartR3"
 
-				Case 7100 'AttesaFineR3
-					LogMsg "StatoCicloR3 = 7100 'AttesaFineR3"
+				Case 7100 'FineFineR3
+					LogMsg "StatoCicloR3 = 7100 'FineFineR3"
 					If Plc_I_RBT3END Then
 						'TODO
 						'Stampa Etichetta
