@@ -26,3 +26,4 @@ DATA/*.var
 RESOURCES/GUALINI2_C02515/Esempi/*
 RESOURCES/GUALINI2_C02515/*.drvlog
 *.dyn*
+*.*_
