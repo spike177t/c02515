@@ -10,7 +10,7 @@
 <item key="Plc_ar_allarmi_24_H" value="Estrattore2 Magazzino1 Non Avanti"/>
 <item key="Plc_ar_allarmi_98_H" value=""/>
 <item key="Plc_ar_messaggi_1_H" value="Magazzini Spenti"/>
-<item key="Plc_ar_messaggi_23_H" value=""/>
+<item key="Plc_ar_messaggi_23_H" value="Mancano squadrette fila 3"/>
 <item key="Plc_ar_allarmi_27_H" value="Estrattore1 Magazzino2 Non Indietro"/>
 <item key="Plc_ar_allarmi_75_H" value=""/>
 <item key="Plc_ar_allarmi_52_H" value=""/>
@@ -19,7 +19,7 @@
 <item key="str_MovMan_Mag1E3" value="Magazzino 1 Estrattore 3"/>
 <item key="Plc_ar_messaggi_4_H" value="Robot1 In Ingombro Su M1E1"/>
 <item key="str_MovMan_Mag1" value="Magazzino 1"/>
-<item key="Plc_ar_messaggi_26_H" value=""/>
+<item key="Plc_ar_messaggi_26_H" value="Mancano squadrette fila 6"/>
 <item key="Plc_ar_allarmi_78_H" value=""/>
 <item key="str_MovMan_Mag2" value="Magazzino 2"/>
 <item key="Plc_ar_allarmi_55_H" value=""/>
@@ -27,7 +27,7 @@
 <item key="Plc_ar_allarmi_32_H" value="Estrattore3 Magazzino2 Non Avanti"/>
 <item key="Plc_ar_messaggi_7_H" value="Robot1 In Ingombro Su Magazzino2"/>
 <item key="Plc_ar_allarmi_3_H" value="Allarme Asse Estrattore2 Magazzino1"/>
-<item key="Plc_ar_messaggi_29_H" value=""/>
+<item key="Plc_ar_messaggi_29_H" value="Mancano squadrette fila 9"/>
 <item key="Plc_ar_allarmi_58_H" value=""/>
 <item key="alm_Q2_MancaFile_H" value="Q2, file identificativo pezzo non trovato"/>
 <item key="Plc_ar_messaggi_31_H" value=""/>
@@ -62,12 +62,12 @@
 <item key="Plc_ar_allarmi_23_H" value="Estrattore2 Magazzino1 Non Indietro"/>
 <item key="Plc_ar_allarmi_97_H" value=""/>
 <item key="Plc_ar_allarmi_49_H" value=""/>
-<item key="Plc_ar_messaggi_22_H" value=""/>
+<item key="Plc_ar_messaggi_22_H" value="Mancano squadrette fila 2"/>
 <item key="Plc_ar_allarmi_74_H" value=""/>
 <item key="Plc_ar_allarmi_26_H" value="Estrattore3 Magazzino1 Non Avanti"/>
 <item key="Plc_ar_allarmi_51_H" value=""/>
 <item key="Plc_ar_messaggi_3_H" value="Attesa Pulsante Start Ciclo"/>
-<item key="Plc_ar_messaggi_25_H" value=""/>
+<item key="Plc_ar_messaggi_25_H" value="Mancano squadrette fila 5"/>
 <item key="Plc_ar_allarmi_77_H" value=""/>
 <item key="Plc_ar_allarmi_29_H" value="Estrattore2 Magazzino2 Non Indietro"/>
 <item key="Plc_ar_allarmi_54_H" value=""/>
@@ -75,9 +75,9 @@
 <item key="Plc_ar_allarmi_31_H" value="Estrattore3 Magazzino2 Non Indietro"/>
 <item key="Plc_ar_messaggi_6_H" value="Robot1 In Ingombro Su Magazzino1"/>
 <item key="Plc_ar_allarmi_2_H" value="Allarme Asse Estrattore1 Magazzino1"/>
-<item key="Plc_ar_messaggi_28_H" value=""/>
+<item key="Plc_ar_messaggi_28_H" value="Mancano squadrette fila 8"/>
 <item key="Plc_ar_allarmi_57_H" value=""/>
-<item key="Plc_ar_messaggi_30_H" value=""/>
+<item key="Plc_ar_messaggi_30_H" value="Mancano squadrette fila 10"/>
 <item key="Plc_ar_allarmi_82_H" value=""/>
 <item key="Plc_ar_allarmi_34_H" value="Profibus Banco Squadrette Dx Ko"/>
 <item key="Plc_ar_messaggi_9_H" value="Robot2 In Ingombro Su M2E2"/>
@@ -109,12 +109,12 @@
 <item key="Plc_ar_allarmi_96_H" value=""/>
 <item key="Plc_ar_allarmi_48_H" value=""/>
 <item key="Plc_ar_allarmi_25_H" value="Estrattore3 Magazzino1 Non Indietro"/>
-<item key="Plc_ar_messaggi_21_H" value=""/>
+<item key="Plc_ar_messaggi_21_H" value="Mancano squadrette fila 1"/>
 <item key="Plc_ar_allarmi_73_H" value=""/>
 <item key="Plc_ar_allarmi_50_H" value=""/>
 <item key="Plc_ar_allarmi_99_H" value=""/>
 <item key="Plc_ar_messaggi_2_H" value="Ripari Aperti"/>
-<item key="Plc_ar_messaggi_24_H" value=""/>
+<item key="Plc_ar_messaggi_24_H" value="Mancano squadrette fila 4"/>
 <item key="Plc_ar_allarmi_76_H" value=""/>
 <item key="Plc_ar_allarmi_28_H" value="Estrattore1 Magazzino2 Non Avanti"/>
 <item key="Plc_ar_allarmi_53_H" value=""/>
@@ -125,7 +125,7 @@
 <item key="str_MovMan_Mag2E3" value="Magazzino 2 Estrattore 3"/>
 <item key="Plc_ar_messaggi_5_H" value="Robot1 In Ingombro Su M2E1"/>
 <item key="Plc_ar_allarmi_1_H" value="Allarme Asse Magazzino 1"/>
-<item key="Plc_ar_messaggi_27_H" value=""/>
+<item key="Plc_ar_messaggi_27_H" value="Mancano squadrette fila 7"/>
 <item key="Plc_ar_allarmi_79_H" value=""/>
 <item key="Plc_ar_allarmi_56_H" value=""/>
 <item key="Plc_ar_allarmi_33_H" value="Profibus Banco Squadrette Sx Ko"/>
