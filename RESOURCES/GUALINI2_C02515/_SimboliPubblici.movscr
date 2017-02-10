@@ -1556,11 +1556,11 @@ End Sub
 " n1="&lt;CommandType synoptic=&quot;Magazzini_RikE2&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">Pulsante89</Name>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante89</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Rik Cass. In Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
+<Visible>0</Visible>
 <Transparency>0</Transparency>
 <BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
 <BGList>

@@ -2142,11 +2142,11 @@ End Sub
 " n1="&lt;CommandType synoptic=&quot;Magazzini_RikE2&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">Pulsante89</Name>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante89</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Rik Cass. In Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
+<Visible>0</Visible>
 <Transparency>0</Transparency>
 <BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
 <BGList>
@@ -2505,6 +2505,7 @@ End Sub
 <type x="410" y="135" width="330" height="400" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill ImageID="VistaAlto_Magazzini_R1_R2_low.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2539,7 +2540,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante8</Name>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="CBool([loc_ImpostazioniImpianto:M1_ABIL] = 0)">Pulsante8</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -3102,8 +3103,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="CBool([MAG1_ES2_ACT:ID_CASSETTO] &gt; 0)
-">Pulsante8</Name>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Cbool([loc_ImpostazioniImpianto:M1_ABIL] = 0) And CBool([MAG1_ES2_ACT:ID_CASSETTO] &gt; 0)">Pulsante8</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Inserisci Cassetto Nel Magazzino</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -3175,7 +3175,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="3132" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="1107" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 '#Uses "*HelperRimuoviPezzi"
 
 Public Sub Click()
@@ -3283,6 +3283,7 @@ End Function
 
 
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAiAA==</BreakPoints>
 </child>
 <child>
 <object>Button</object>
@@ -3963,8 +3964,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -4033,7 +4034,7 @@ End Function
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante8</Name>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="CBool([loc_ImpostazioniImpianto:M2_ABIL] = 0)">Pulsante8</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -4134,7 +4135,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="CBool([MAG2_ES2_ACT:ID_CASSETTO] &gt; 0)
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="CBool([loc_ImpostazioniImpianto:M2_ABIL] = 0) And CBool([MAG2_ES2_ACT:ID_CASSETTO] &gt; 0)
 ">Pulsante8</Name>
 <text font-family="Tahoma" font-size="10" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Inserisci Cassetto Nel Magazzino</text>
 <Shadow>0</Shadow>
@@ -4315,6 +4316,60 @@ End Function
 
 
 </ScriptCode>
+</child>
+<child>
+<object>base</object>
+<type x="25" y="270" width="390" height="50" fill="rgb(224,224,224)" stroke="rgb(255,128,0)" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="4" gcolor="rgb(255,255,255)" Style="3" fill="syscolor(MENUTEXT SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Disabilitare scarico M1 per richiedere  cassetti manualmente.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="CBool([loc_ImpostazioniImpianto:M1_ABIL] = 0)" Value="0">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>base</object>
+<type x="25" y="350" width="390" height="50" fill="rgb(224,224,224)" stroke="rgb(255,128,0)" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill grad="4" gcolor="rgb(255,255,255)" Style="3" fill="syscolor(MENUTEXT SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Disabilitare scarico M2 per richiedere  cassetti manualmente.</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="CBool([loc_ImpostazioniImpianto:M2_ABIL] = 0)" Value="0">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
 </child>
 </ListSynopticDraw>
 <VariableList/>

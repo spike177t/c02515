@@ -7,7 +7,7 @@
 <ListSynopticDraw>
 <child>
 <object>base</object>
-<type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="0" y="25" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
 <Shadow>0</Shadow>
@@ -2117,8 +2117,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledOn" value="Q1_Out:On"/>
+<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
@@ -2539,8 +2539,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledAuto" value="Q2_Out:InCiclo"/>
+<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
@@ -2549,7 +2549,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="355" y="505" width="148" height="71" ox="357" oy="481" owidth="148" oheight="71"/>
+<g x="275" y="515" width="148" height="71" ox="357" oy="481" owidth="148" oheight="71"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -2855,7 +2855,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo15_15">1</BG>
+<BG Var="Pilz_Virt_OVo12_EmgMag1">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -2900,7 +2900,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Pilz_Virt_OVo15_15" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Pilz_Virt_OVo12_EmgMag1" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -2936,7 +2936,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo16_16">1</BG>
+<BG Var="Pilz_Virt_OVo13_EmgMag2">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -2981,7 +2981,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Pilz_Virt_OVo16_16" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Pilz_Virt_OVo13_EmgMag2" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -3358,10 +3358,13 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="595" y="380" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="745" y="385" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="loc_ImpostazioniImpianto:M2_ABIL" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante75</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M2 ABILITA SCARICO</text>
@@ -3431,13 +3434,40 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
+<ScriptCode StartSel="556" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	Dim msg, tit As String
+	msg = "Cassetto presente in M2 ES2." + vbCrLf + "Per disabilitare lo scarico di M2 è" + vbCrLf + "è necessario inserire il cassetto" + vbCrLf + "nell'Estattore 2 del Magazzino 2"
+	tit ="M2 Disabilita Scarico"
+
+	Dim msg2, tit2 As String
+	msg2 = "Cassetto presente in M2 ES2." + vbCrLf + "Per abilitare il carico di M2 è" + vbCrLf + "è necessario inserire il cassetto" + vbCrLf + "nell'Estattore 2 del Magazzino 2"
+	tit2 ="M2 Abilita Ccarico"
+
+	If ([loc_ImpostazioniImpianto:M2_ABIL] = 0) Then
+		If [MAG2_ES2_ACT:ID_CASSETTO] &gt; 0 Then
+			MsgBox(msg2, vbExclamation, tit2)
+		Else
+			[loc_ImpostazioniImpianto:M2_ABIL] = 1
+		End If
+	Else
+		If [MAG2_ES2_ACT:ID_CASSETTO] &gt; 0 Then
+			MsgBox(msg, vbExclamation, tit)
+		Else
+			[loc_ImpostazioniImpianto:M2_ABIL] = 0
+		End If
+	End If
+End Sub
+</ScriptCode>
 </child>
 <child>
 <object>Button</object>
-<type x="605" y="185" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="765" y="180" width="100" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="loc_ImpostazioniImpianto:M1_ABIL" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante74</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">M1 ABILITA SCARICO</text>
@@ -3507,6 +3537,30 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
+<ScriptCode StartSel="354" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	Dim msg, tit As String
+	msg = "Cassetto presente in M1 ES2." + vbCrLf + "Per disabilitare lo scarico di M1 è" + vbCrLf + "è necessario inserire il cassetto" + vbCrLf + "nell'Estattore 2 del Magazzino 1"
+	tit ="M1 Disabilita Scarico"
+
+	Dim msg2, tit2 As String
+	msg2 = "Cassetto presente in M1 ES2." + vbCrLf + "Per abilitare il carico di M1 è" + vbCrLf + "è necessario inserire il cassetto" + vbCrLf + "nell'Estattore 2 del Magazzino 1"
+	tit2 ="M1 Abilita Ccarico"
+
+	If ([loc_ImpostazioniImpianto:M1_ABIL] = 0) Then
+		If [MAG1_ES2_ACT:ID_CASSETTO] &gt; 0 Then
+			MsgBox(msg2, vbExclamation, tit2)
+		Else
+			[loc_ImpostazioniImpianto:M1_ABIL] = 1
+		End If
+	Else
+		If [MAG1_ES2_ACT:ID_CASSETTO] &gt; 0 Then
+			MsgBox(msg, vbExclamation, tit)
+		Else
+			[loc_ImpostazioniImpianto:M1_ABIL] = 0
+		End If
+	End If
+End Sub
+</ScriptCode>
 </child>
 <child>
 <object>Button</object>
@@ -3768,12 +3822,12 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRuota</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip R1</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cancello 3</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo00_Rip1Ok">1</BG>
+<BG Var="Pilz_Virt_OVo02_Rip3Ok">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255"/>
@@ -3815,7 +3869,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="915" y="105" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="600" y="430" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -3824,12 +3878,12 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRipaM1E3</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip M1ES3</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip M2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Not Plc_ar_messaggi_12">1</BG>
+<BG Var="Pilz_Virt_OVo05_RipMag2Ok">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255"/>
@@ -3871,7 +3925,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="825" y="105" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="625" y="285" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -3880,12 +3934,12 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRipM2ES3</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip M2ES3</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip M1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Not Plc_ar_messaggi_13">1</BG>
+<BG Var="Pilz_Virt_OVo03_RipMag1Ok">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255"/>
@@ -3927,7 +3981,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="670" y="445" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="450" y="485" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -3936,7 +3990,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRuota</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip R2</text>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cancello 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -4132,6 +4186,278 @@ End Sub
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="Pilz_Virt_OVo11_EmgRip3" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name AntialiasingFont="1" acr="4294901760">Simbolo215</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="415" y="440" width="80" height="20" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRuota</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cancello 1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo00_Rip1Ok">1</BG>
+<BGList>
+<dci>
+<DynColor Color="255"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>group</object>
+<g x="495" y="435" width="30" height="25" ox="215" oy="245" owidth="55" oheight="50"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="0" y="0" width="55" height="50" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo261</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo10_EmgRip2">1</BG>
+<BGList>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Type="4"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="Pilz_Virt_OVo10_EmgRip2" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name AntialiasingFont="1" acr="4294901760">Simbolo215</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="415" y="480" width="30" height="25" ox="215" oy="245" owidth="55" oheight="50"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="0" y="0" width="55" height="50" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo261</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo11_EmgRip3">1</BG>
+<BGList>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Type="4"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="Pilz_Virt_OVo11_EmgRip3" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+</childs>
+<Name AntialiasingFont="1" acr="4294901760">Simbolo215</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>group</object>
+<g x="700" y="335" width="45" height="40" ox="215" oy="245" owidth="55" oheight="50"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<childs>
+<child>
+<type>base</type>
+<type x="0" y="0" width="55" height="50" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo261</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo07_EmgTot">1</BG>
+<BGList>
+<dci>
+<DynColor Color="255" BlinkColor="65535" Type="4"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<type>Button</type>
+<type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="Pilz_Virt_OVo07_EmgTot" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
