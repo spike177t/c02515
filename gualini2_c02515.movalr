@@ -3126,28 +3126,6 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="Assemblatrice_Stato:NonComunica" Area="ALM_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">alm_AssemblatriceNonComunica</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="Assemblatrice Non Comunica" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="4294967295" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="1" Log="1" BlinkOnNewAlarm="1" VarTimeStamp="0" SupportAck="1" SupportReset="1" SupportResetConditionOn="1" BmpFile="" SndFile="" BeepEnabled="1" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
 <Name Device="" Variable="alm_FineRobotR1" Area="ALM_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">alm_FineRobotR1</Name>
 <ThresholdList>
 <Threshold>
@@ -3962,28 +3940,6 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="Assemblatrice_VarR:tempoCiclo" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_Assemblatrice_TempoCicloAlto</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="Assemblatrice Tempo Ciclo Elevato" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="65280" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
 <Name Device="" Variable="msg_AttesaRobotOccupato_R2" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_AttesaRobotOccupato_R2</Name>
 <ThresholdList>
 <Threshold>
@@ -4204,94 +4160,6 @@
 </ThresholdList>
 </Alarm>
 <Alarm>
-<Name Device="" Variable="R1_STATUS:IN_MISSIONE" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_R1_InMissione</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R1 In Missione" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
-<Name Device="" Variable="R1_STATUS:RIK_MISSIONE" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_R1_RikDati</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R1 Richiesta Dati" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="65280" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
-<Name Device="" Variable="R2_STATUS:IN_MISSIONE" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_R2_InMissione</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R2 In Missione" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="16776960" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
-<Name Device="" Variable="R2_STATUS:RIK_MISSIONE" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_R2_RikDati</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R2 Richiesta Dati" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
-<Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="65280" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
 <Name Device="" Variable="msg_Step_R1_4200_AttesaMissione" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">msg_Step_R1_4200_AttesaMissione</Name>
 <ThresholdList>
 <Threshold>
@@ -4318,28 +4186,6 @@
 <ThresholdList>
 <Threshold>
 <Name Area="" Title="R1 NON DIDPONIBILE" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
-<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
-<Name Device="" Variable="R2_STATUS:DISPONIBILE" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R2_NON_Disponibile</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R2 NON DIDPONIBILE" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
 <Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
 <Commands/>
 <CommandsOn/>
@@ -4385,52 +4231,6 @@
 <Threshold>
 <Name Area="" Title="Scarico Commessa Esclusiva: assenza pezzi da Mag 2" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">H</Name>
 <Execution Condition="0" Threshold="1" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
-<Name Device="" Variable="[Assemblatrice_Stato:R2_FuoriIngombro_Ass] 
-" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R2_IngombroAssemblatrice</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R2 Ingombro Assemblatrice" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
-<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
-<Commands/>
-<CommandsOn/>
-<CommandsAck/>
-<CommandsReset/>
-<CommandsOff/>
-<Style BackColor="4294967295" TextColor="33023" BlinkBackColor="4294967295" BlinkTextColor="4294967295" Print="0" Log="0" BlinkOnNewAlarm="0" VarTimeStamp="0" SupportAck="0" SupportReset="0" SupportResetConditionOn="0" BmpFile="" SndFile="" BeepEnabled="0" SpeechEnabled="0" RepeatSpeechEverySec="0" EnableSpeechVariable="" PlaysoundContinuosly="0" CommentOnAck="0"/>
-<Recipient Attachment="" DispatchingText=""/>
-<SendEmail SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendVoice SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendSMS SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendFax SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendAdminAlert SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-<SendMessenger SendON="0" SendACK="0" SendRESET="0" SendOFF="0"/>
-</Threshold>
-</ThresholdList>
-</Alarm>
-<Alarm>
-<Name Device="" Variable="[Assemblatrice_Stato:R3_FuoriIngombro_Ass] 
-" Area="MSG_SPV" ThresholdExclusive="0" Enabled="1" OnQualityGood="1" VariableDuration="0" EnableVariable="" EnableDispMsg="" Hysteresis="0" EventsCache="1204">R3_IngombroAssemblatrice</Name>
-<ThresholdList>
-<Threshold>
-<Name Area="" Title="R3 Ingombro Assemblatrice" Help="" DurationFormat="" ReadAccessLevel="4294901760" WriteAccessLevel="4294901760">L</Name>
-<Execution Condition="2" Threshold="0" ThresholdVar="" ThresholdLow="0" ThresholdVarLow="" VariableStatus="" Severity="1" SeverityVar="" SecDelay="0"/>
 <Commands/>
 <CommandsOn/>
 <CommandsAck/>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="10562" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="12683" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
+'Sostituita la Variabile 'Pilz_Virt_OVo05_SpvAss0_' con il nuovo nome 'Pilz_Virt_OVo05_RipMag2Ok'
+'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -17,8 +19,8 @@ Public Structure DSnMembers
 End Structure
 
 
-Const TOUT_RICHIEDIBILE 	As Integer 	= 2 'in secondi
-Const TOUT_STEP				As Integer	= 120 'in secondi
+Const TOUT_RICHIEDIBILE 	As Integer = 2 'in secondi
+Const TOUT_STEP				As Integer = 120 'in secondi
 Const UPDATE_ESTRATTORI		As Integer = 16500
 
 Dim MySqlConnectionString As String
@@ -125,7 +127,7 @@ Sub Main()
 							And [Assemblatrice_In:APERTURA] = [Assemblatrice_Out:APERTURA] _
 							And [Assemblatrice_Stato:R2_FuoriIngombro_Ass] _
 							And [Assemblatrice_Stato:R3_FuoriIngombro_Ass] _
-							And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
+							And (Pilz_Virt_OVo05_RipMag2Ok Or Pilz_Virt_OVo06_BarFtcMag2Ok) _
 							And [Assemblatrice_Out:AUTO] _
 							And [Assemblatrice_Stato:Ass_ON] _
 							Then
@@ -408,14 +410,14 @@ Sub AggiornaMembri(source As String, dest As String)
 		Exit Sub
 	End If
 
-	memberCount = 0	'inizializzo a 0
+	memberCount 	= 0	'inizializzo a 0
 	MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
 	MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
 
 	If (etSource = etDest) Then
 		While (Not MemberSource Is Nothing) And (Not MemberDest Is Nothing )
 			'DebugMsg "AggiorrnaMembri() -&gt; MemberSource name = " 	&amp; MemberSource.GetName 	&amp; "; value = " &amp; CStr(MemberSource.Value) 	&amp; "; Tipo = " &amp; CStr(MemberSource.GetType())
-			'DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 		&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
+			'DebugMsg "AggiorrnaMembri() -&gt; MemberDest name = " 	&amp; MemberDest.GetName 	&amp; "; value = " &amp; CStr(MemberDest.Value) 	&amp; "; Tipo = " &amp; CStr(MemberDest.GetType())
 
 			etSource 	= MemberSource.GetType()
 			etDest 		= MemberDest.GetType()
@@ -424,7 +426,7 @@ Sub AggiornaMembri(source As String, dest As String)
 				MemberDest.Value = MemberSource.Value
 			End If
 
-			memberCount = memberCount + 1
+			memberCount 	= memberCount + 1
 			MemberSource 	= objSource.GetMemberObjectFromIndex(memberCount)
 			MemberDest 		= objDest.GetMemberObjectFromIndex(memberCount)
 		End While

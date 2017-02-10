@@ -60,6 +60,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgTot" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo07_EmgTot</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="88" Shared="0" Retentive="0" InitQuality="8">SCAR_M2_PZ4</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -186,6 +193,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="BarFtcMag2Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo06_BarFtcMag2Ok</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIBLCGANCIOM2E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIBLCGANCIOM2E2|Typ=0">Plc_BHMIBLCGANCIOM2E2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -235,13 +249,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceScambioVarR" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">Assemblatrice_VarR</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[69]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[69].evt">Plc_ar_allarmi_69</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -271,6 +278,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[36]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[36].evt">Plc_ar_allarmi_36</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rip3Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo02_Rip3Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -362,13 +376,6 @@
 </Variable>
 <Variable>
 <Name Type="4" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">statoScript1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3aOk" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo02_RipRbt3aOk</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -501,6 +508,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgMag2" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo13_EmgMag2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="4" AreaType="1" Address="0" Bit="0" Description="Global Variable WCICLOM2E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.WCICLOM2E2|Typ=4">Plc_WCICLOM2E2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -509,13 +523,6 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[8]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[8].evt">Plc_ar_messaggi_8</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipRbt3a" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo13_EmgRipRbt3a</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -544,6 +551,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[38]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[38].evt">Plc_ar_allarmi_38</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRip1" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo09_EmgRip1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -599,13 +613,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipQdrRbt1Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo00_RipRbt1Ok</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="4" AreaType="1" Address="0" Bit="0" Description="Global Variable Persistent WMEMNUMCASM2E1" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.WMEMNUMCASM2E1|Typ=4">Plc_WMEMNUMCASM2E1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -621,6 +628,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[9]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[9].evt">Plc_ar_messaggi_9</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRip3" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo11_EmgRip3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -655,14 +669,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipRbt1" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo09_EmgRipRbt1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[17]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[17].evt">Plc_ar_allarmi_17</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[17]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[17].evt">Plc_ar_allarmi_17</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgMag1" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo12_EmgMag1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -676,7 +690,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="AssemblatriceInput" AreaType="1" Address="0" Bit="15" Shared="0" Retentive="0">Assemblatrice_In</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipMag1Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo03_RipMag1Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -690,7 +704,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_RIP_RBT2_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP_RBT2_OK|Typ=0">Plc_SPV_RIP_RBT2_OK</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rip1Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo00_Rip1Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -753,13 +767,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss180°" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo06_SpvAss180_</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_ASSE_ENABLEN" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_ASSE_ENABLEN|Typ=0">Plc_SPV_ASSE_ENABLEN</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -809,6 +816,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_RIP_MAG2_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP_MAG2_OK|Typ=0">Plc_SPV_RIP_MAG2_OK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="9" AreaType="1" Address="0" Bit="0" Shared="0" Retentive="0">StatoCicloScarico_txt</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -817,13 +831,6 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_R1_PezzoDuplicato_Q2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt3" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo12_EmgRbt3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -844,13 +851,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_RIP_RBT1_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP_RBT1_OK|Typ=0">Plc_SPV_RIP_RBT1_OK</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_M1_ES3_ErrDatiDaDB</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -858,14 +858,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipRbt2" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo11_EmgRipRbt2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceStato" AreaType="1" Address="0" Bit="7" Shared="0" Retentive="1">Assemblatrice_Stato</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_RIP3_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP3_OK|Typ=0">Plc_SPV_RIP3_OK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -893,6 +886,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRip2" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo10_EmgRip2</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable ar_messaggi[31]" Group="MESSAGGI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_messaggi[31].evt">Plc_ar_messaggi_31</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -900,7 +900,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona3bOk" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo03_RipRbt3bOk</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="16" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo16_16</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -935,7 +935,35 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_RIP2_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP2_OK|Typ=0">Plc_SPV_RIP2_OK</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="14" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo14_14</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="15" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo15_15</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_ZonaR3_ErrDatiAss</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable SPV_RIP_MAG1_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP_MAG1_OK|Typ=0">Plc_SPV_RIP_MAG1_OK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1061,14 +1089,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="88" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable  SPV_RIP1_OK" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.SPV_RIP1_OK|Typ=0">Plc_SPV_RIP1_OK</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="OUTPUT_ASSEMBLATRICE" AreaType="1" Address="0" Bit="14" Description="Global Variable PLC_TRANSF_ASSEMBLATRICE_OUT" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_ASSEMBLATRICE_OUT">PLC_TRANSF_ASSEMBLATRICE_OUT</Name>
+<Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="88" Description="pezzo presente su Quadra 1" Shared="0" Retentive="0">Q1_PEZZO_DISP</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1111,13 +1139,6 @@
 </Variable>
 <Variable>
 <Name Type="11" StructType="QuadraStruct" AreaType="1" Address="0" Bit="88" Group="ESTRATTORE_3" Shared="0" Retentive="0">ES3_M1_PZ1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgMag2" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo16_EmgMag2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1362,13 +1383,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="INPUT_ASSEMBLATRICE" AreaType="1" Address="0" Bit="9" Description="Global Variable PLC_TRANSF_ASSEMBLATRICE_IN" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_ASSEMBLATRICE_IN">PLC_TRANSF_ASSEMBLATRICE_IN</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="11" StructType="QuadraInput" AreaType="1" Address="0" Bit="8" Shared="0" Retentive="0">Q2_In</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -1377,13 +1391,6 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIAUTOMANUOFF" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIAUTOMANUOFF|Typ=0">Plc_BHMIAUTOMANUOFF</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRipRbt3b" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo14_EmgRipRbt3b</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1433,13 +1440,6 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[95]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[95].evt">Plc_ar_allarmi_95</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceMemoTelaio" AreaType="1" Address="0" Bit="40" Shared="0" Retentive="1">Assemblatrice_TelaioLatoR2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1579,6 +1579,13 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Rip2Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo01_Rip2Ok</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
 <Name Type="11" StructType="DatiEstrattore" AreaType="1" Address="0" Bit="13" Shared="0" Retentive="0" InitQuality="8">MAG1_ES3_ACT</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -1607,13 +1614,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgMag1" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo15_EmgMag1</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_numFilesIncoerente</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -1636,6 +1636,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_M1_ES2_ErrDatiPezzi</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="RipMag2Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo05_RipMag2Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -1754,13 +1761,6 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgAssembla" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo07_EmgAssembla</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_FineRobotR1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
@@ -1796,28 +1796,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvAss0°" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo05_SpvAss0_</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
 <Name Type="4" AreaType="1" Address="0" Bit="0" Description="Global Variable WNUMCASRIKM1E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.WNUMCASRIKM1E2|Typ=4">Plc_WNUMCASRIKM1E2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="11" StructType="AssemblatriceOutput" AreaType="1" Address="0" Bit="20" Shared="0" Retentive="0">Assemblatrice_Out</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="EmgRbt2" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo10_EmgRbt2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2258,14 +2237,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[4]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[4].evt">Plc_ar_allarmi_4</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMISBLGANCIOM1E1" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMISBLGANCIOM1E1|Typ=0">Plc_BHMISBLGANCIOM1E1</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMISBLGANCIOM1E1" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMISBLGANCIOM1E1|Typ=0">Plc_BHMISBLGANCIOM1E1</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[4]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[4].evt">Plc_ar_allarmi_4</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2314,14 +2293,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIBLCOTTURM1E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIBLCOTTURM1E2|Typ=0">Plc_BHMIBLCOTTURM1E2</Name>
+<Name Type="11" StructType="INPUT_QUADRA" AreaType="1" Address="0" Bit="7" Description="Global Variable PLC_TRANSF_Q1_IN" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_Q1_IN">PLC_TRANSF_Q1_IN</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="INPUT_QUADRA" AreaType="1" Address="0" Bit="7" Description="Global Variable PLC_TRANSF_Q1_IN" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=11|SA=.PLC_TRANSF_Q1_IN">PLC_TRANSF_Q1_IN</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIBLCOTTURM1E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIBLCOTTURM1E2|Typ=0">Plc_BHMIBLCOTTURM1E2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2517,14 +2496,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[5]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[5].evt">Plc_ar_allarmi_5</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMISBLGANCIOM1E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMISBLGANCIOM1E2|Typ=0">Plc_BHMISBLGANCIOM1E2</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMISBLGANCIOM1E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMISBLGANCIOM1E2|Typ=0">Plc_BHMISBLGANCIOM1E2</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[5]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[5].evt">Plc_ar_allarmi_5</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2546,6 +2525,13 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIBLCGANCIOM1E1" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIBLCGANCIOM1E1|Typ=0">Plc_BHMIBLCGANCIOM1E1</Name>
+<EnableTrace DurationDays="730">0</EnableTrace>
+<EnableOPCServer>0</EnableOPCServer>
+<EnableNetworkClient>0</EnableNetworkClient>
+<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
+</Variable>
+<Variable>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="BarFtcMag1Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo04_BarFtcMag1Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2609,13 +2595,6 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIBLCOTTURM2E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIBLCOTTURM2E2|Typ=0">Plc_BHMIBLCOTTURM2E2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvBarFtcBacI/O" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo04_EmgTot</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2692,14 +2671,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_ErrComunicazione</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[56]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[56].evt">Plc_ar_allarmi_56</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[56]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[56].evt">Plc_ar_allarmi_56</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Group="ALLARMI" Shared="0" Retentive="0">alm_Q2_ErrComunicazione</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2748,14 +2727,14 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[6]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[6].evt">Plc_ar_allarmi_6</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMISBLGANCIOM1E3" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMISBLGANCIOM1E3|Typ=0">Plc_BHMISBLGANCIOM1E3</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMISBLGANCIOM1E3" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMISBLGANCIOM1E3|Typ=0">Plc_BHMISBLGANCIOM1E3</Name>
+<Name Type="0" AreaType="1" Address="0" Bit="1" Description="Global Variable ar_allarmi[6]" Group="ALLARMI_PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|Typ=0|SA=.ar_allarmi[6].evt">Plc_ar_allarmi_6</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2777,13 +2756,6 @@
 </Variable>
 <Variable>
 <Name Type="0" AreaType="1" Address="0" Bit="0" Description="Global Variable BHMIBLCGANCIOM1E2" Group="PLC" Shared="0" Retentive="0" DynamicSettings="[DRV]TwinCAT.Sta=Plc|SA=.BHMIBLCGANCIOM1E2|Typ=0">Plc_BHMIBLCGANCIOM1E2</Name>
-<EnableTrace DurationDays="730">0</EnableTrace>
-<EnableOPCServer>0</EnableOPCServer>
-<EnableNetworkClient>0</EnableNetworkClient>
-<EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
-</Variable>
-<Variable>
-<Name Type="0" AreaType="1" Address="0" Bit="0" Description="SpvRipZona2Ok" Group="PILZ" Shared="0" Retentive="0">Pilz_Virt_OVo01_RipRbt2Ok</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -2943,28 +2915,22 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">AssemblatriceStato</Name>
+<Name Description="">EtichettaR3_Struct</Name>
 <MemberList>
 <Member>
-<Name Type="0">ChkPingOk</Name>
+<Name Type="9">IdQuartina</Name>
 </Member>
 <Member>
-<Name Type="0">NonComunica</Name>
+<Name Type="9">Commessa</Name>
 </Member>
 <Member>
-<Name Type="0">Ass_ON</Name>
+<Name Type="9">Dimensioni</Name>
 </Member>
 <Member>
-<Name Type="0">FinestraProntaR2</Name>
+<Name Type="9">Azienda</Name>
 </Member>
 <Member>
-<Name Type="0">FinestraToltaR3</Name>
-</Member>
-<Member>
-<Name Type="0">R2_FuoriIngombro_Ass</Name>
-</Member>
-<Member>
-<Name Type="0">R3_FuoriIngombro_Ass</Name>
+<Name Type="9">Barcode</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3007,22 +2973,28 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">EtichettaR3_Struct</Name>
+<Name Description="">AssemblatriceStato</Name>
 <MemberList>
 <Member>
-<Name Type="9">IdQuartina</Name>
+<Name Type="0">ChkPingOk</Name>
 </Member>
 <Member>
-<Name Type="9">Commessa</Name>
+<Name Type="0">NonComunica</Name>
 </Member>
 <Member>
-<Name Type="9">Dimensioni</Name>
+<Name Type="0">Ass_ON</Name>
 </Member>
 <Member>
-<Name Type="9">Azienda</Name>
+<Name Type="0">FinestraProntaR2</Name>
 </Member>
 <Member>
-<Name Type="9">Barcode</Name>
+<Name Type="0">FinestraToltaR3</Name>
+</Member>
+<Member>
+<Name Type="0">R2_FuoriIngombro_Ass</Name>
+</Member>
+<Member>
+<Name Type="0">R3_FuoriIngombro_Ass</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3084,44 +3056,6 @@
 </Member>
 <Member>
 <Name Type="0" Description="robot 1 ok">R1_Ok</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">AssemblatriceOutput</Name>
-<MemberList>
-<Member>
-<Name Type="7">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="7">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="0">BACK_STROBE_DATI_R2</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_ROTAZIONE</Name>
-</Member>
-<Member>
-<Name Type="7">APERTURA</Name>
-</Member>
-<Member>
-<Name Type="0">AUTO</Name>
-</Member>
-<Member>
-<Name Type="0">AZZERATA</Name>
-</Member>
-<Member>
-<Name Type="0">STA_AZZERANDO</Name>
-</Member>
-<Member>
-<Name Type="0">ASSI_IN_MOVIMENTO</Name>
-</Member>
-<Member>
-<Name Type="0">ALLARME</Name>
-</Member>
-<Member>
-<Name Type="0">CHK_READ</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3196,6 +3130,67 @@
 </Member>
 <Member>
 <Name Type="9">CODICE_PROFILO</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">AssemblatriceOutput</Name>
+<MemberList>
+<Member>
+<Name Type="7">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="7">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="7">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">AUTO</Name>
+</Member>
+<Member>
+<Name Type="0">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="0">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="0">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_READ</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">INPUT_ASSEMBLATRICE</Name>
+<MemberList>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_WRITE</Name>
+</Member>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">START_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="0">STROBE_DATI_R2</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3595,8 +3590,60 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">INPUT_ASSEMBLATRICE</Name>
+<Name Description="">AssemblatriceScambioVarR</Name>
 <MemberList>
+<Member>
+<Name Type="5">WriteR_98</Name>
+</Member>
+<Member>
+<Name Type="5">ReadR_99</Name>
+</Member>
+<Member>
+<Name Type="7">tempoCiclo</Name>
+</Member>
+<Member>
+<Name Type="7">tempoLettura</Name>
+</Member>
+<Member>
+<Name Type="7">tempoAttesa</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">OUTPUT_QUADRA</Name>
+<MemberList>
+<Member>
+<Name Type="0">IN_CICLO</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_EMERGENZA</Name>
+</Member>
+<Member>
+<Name Type="0">NON_IN_HOLD</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_PRONTO</Name>
+</Member>
+<Member>
+<Name Type="0">PEZZO_SBLOCCATO</Name>
+</Member>
+<Member>
+<Name Type="0">RIPARI_QUADRA_OK</Name>
+</Member>
+<Member>
+<Name Type="0">OK</Name>
+</Member>
+<Member>
+<Name Type="0">FTC_SCAR_PZ</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">PLC_AssemblatriceInput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
 <Member>
 <Name Type="4">ALTEZZA_FINESTRA</Name>
 </Member>
@@ -3604,42 +3651,13 @@
 <Name Type="4">APERTURA</Name>
 </Member>
 <Member>
-<Name Type="0">CHK_WRITE</Name>
-</Member>
-<Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
+<Name Type="0">STROBE_DATI_R2</Name>
 </Member>
 <Member>
 <Name Type="0">START_ROTAZIONE</Name>
 </Member>
 <Member>
-<Name Type="0">STROBE_DATI_R2</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="struct per verifica incongruenze valori  cass_Rik con cass_Act degli estrattori">IncongrEstrattori_Struct</Name>
-<MemberList>
-<Member>
-<Name Type="0" Description="segnala incongruenza presente">almOn</Name>
-</Member>
-<Member>
-<Name Type="0">errM1_ES1</Name>
-</Member>
-<Member>
-<Name Type="0">errM1_ES2</Name>
-</Member>
-<Member>
-<Name Type="0">errM1_ES3</Name>
-</Member>
-<Member>
-<Name Type="0">errM2_ES1</Name>
-</Member>
-<Member>
-<Name Type="0">errM2_ES2</Name>
-</Member>
-<Member>
-<Name Type="0">errM2_ES3</Name>
+<Name Type="0">CHK_WRITE</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3679,74 +3697,28 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">PLC_AssemblatriceInput</Name>
+<Name Description="struct per verifica incongruenze valori  cass_Rik con cass_Act degli estrattori">IncongrEstrattori_Struct</Name>
 <MemberList>
 <Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
+<Name Type="0" Description="segnala incongruenza presente">almOn</Name>
 </Member>
 <Member>
-<Name Type="4">ALTEZZA_FINESTRA</Name>
+<Name Type="0">errM1_ES1</Name>
 </Member>
 <Member>
-<Name Type="4">APERTURA</Name>
+<Name Type="0">errM1_ES2</Name>
 </Member>
 <Member>
-<Name Type="0">STROBE_DATI_R2</Name>
+<Name Type="0">errM1_ES3</Name>
 </Member>
 <Member>
-<Name Type="0">START_ROTAZIONE</Name>
+<Name Type="0">errM2_ES1</Name>
 </Member>
 <Member>
-<Name Type="0">CHK_WRITE</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">OUTPUT_QUADRA</Name>
-<MemberList>
-<Member>
-<Name Type="0">IN_CICLO</Name>
+<Name Type="0">errM2_ES2</Name>
 </Member>
 <Member>
-<Name Type="0">NON_IN_EMERGENZA</Name>
-</Member>
-<Member>
-<Name Type="0">NON_IN_HOLD</Name>
-</Member>
-<Member>
-<Name Type="0">PEZZO_PRONTO</Name>
-</Member>
-<Member>
-<Name Type="0">PEZZO_SBLOCCATO</Name>
-</Member>
-<Member>
-<Name Type="0">RIPARI_QUADRA_OK</Name>
-</Member>
-<Member>
-<Name Type="0">OK</Name>
-</Member>
-<Member>
-<Name Type="0">FTC_SCAR_PZ</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">AssemblatriceScambioVarR</Name>
-<MemberList>
-<Member>
-<Name Type="5">WriteR_98</Name>
-</Member>
-<Member>
-<Name Type="5">ReadR_99</Name>
-</Member>
-<Member>
-<Name Type="7">tempoCiclo</Name>
-</Member>
-<Member>
-<Name Type="7">tempoLettura</Name>
-</Member>
-<Member>
-<Name Type="7">tempoAttesa</Name>
+<Name Type="0">errM2_ES3</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3773,6 +3745,103 @@
 </Member>
 <Member>
 <Name Type="0">SBLOCCA_PEZZO</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">PLC_AssemblatriceOutput</Name>
+<MemberList>
+<Member>
+<Name Type="4">LARGHEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="4">ALTEZZA_FINESTRA</Name>
+</Member>
+<Member>
+<Name Type="0">BACK_STROBE_DATI_R2</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_ROTAZIONE</Name>
+</Member>
+<Member>
+<Name Type="4">APERTURA</Name>
+</Member>
+<Member>
+<Name Type="0">AUTO</Name>
+</Member>
+<Member>
+<Name Type="0">AZZERATA</Name>
+</Member>
+<Member>
+<Name Type="0">STA_AZZERANDO</Name>
+</Member>
+<Member>
+<Name Type="0">ASSI_IN_MOVIMENTO</Name>
+</Member>
+<Member>
+<Name Type="0">ALLARME</Name>
+</Member>
+<Member>
+<Name Type="0">CHK_READ</Name>
+</Member>
+</MemberList>
+</Structure>
+<Structure>
+<Name Description="">DatiRobotStruct</Name>
+<MemberList>
+<Member>
+<Name Type="0">DISPONIBILE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="4">PZ_DA_QUADRA</Name>
+</Member>
+<Member>
+<Name Type="4">MAGAZZINO</Name>
+</Member>
+<Member>
+<Name Type="4">CASSETTO</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA</Name>
+</Member>
+<Member>
+<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
+</Member>
+<Member>
+<Name Type="4">POSIZIONE_PEZZO</Name>
+</Member>
+<Member>
+<Name Type="0">NUOVA_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">IN_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">FINE_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE</Name>
+</Member>
+<Member>
+<Name Type="0">ERR_MISSIONE_ACK</Name>
+</Member>
+<Member>
+<Name Type="0">RESET</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_CYCLE_ON</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_AUTO_ON</Name>
+</Member>
+<Member>
+<Name Type="4">OUT_EMRGENCY_STOP</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -3938,99 +4007,22 @@
 </MemberList>
 </Structure>
 <Structure>
-<Name Description="">DatiRobotStruct</Name>
+<Name Description="">QuadraScambioVarR</Name>
 <MemberList>
 <Member>
-<Name Type="0">DISPONIBILE</Name>
+<Name Type="5">WriteR_639</Name>
 </Member>
 <Member>
-<Name Type="0">FINE_MISSIONE</Name>
+<Name Type="5">WriteR_640</Name>
 </Member>
 <Member>
-<Name Type="4">PZ_DA_QUADRA</Name>
+<Name Type="7">tempoCiclo</Name>
 </Member>
 <Member>
-<Name Type="4">MAGAZZINO</Name>
+<Name Type="7">tempoLettura</Name>
 </Member>
 <Member>
-<Name Type="4">CASSETTO</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA</Name>
-</Member>
-<Member>
-<Name Type="9">ID_QUARTINA_SUCCESSIVA</Name>
-</Member>
-<Member>
-<Name Type="4">POSIZIONE_PEZZO</Name>
-</Member>
-<Member>
-<Name Type="0">NUOVA_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">IN_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0" Description="Robot pronto per nuova missione">RIK_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE</Name>
-</Member>
-<Member>
-<Name Type="0">ERR_MISSIONE_ACK</Name>
-</Member>
-<Member>
-<Name Type="0">RESET</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_CYCLE_ON</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_AUTO_ON</Name>
-</Member>
-<Member>
-<Name Type="4">OUT_EMRGENCY_STOP</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">PLC_AssemblatriceOutput</Name>
-<MemberList>
-<Member>
-<Name Type="4">LARGHEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="4">ALTEZZA_FINESTRA</Name>
-</Member>
-<Member>
-<Name Type="0">BACK_STROBE_DATI_R2</Name>
-</Member>
-<Member>
-<Name Type="0">FINE_ROTAZIONE</Name>
-</Member>
-<Member>
-<Name Type="4">APERTURA</Name>
-</Member>
-<Member>
-<Name Type="0">AUTO</Name>
-</Member>
-<Member>
-<Name Type="0">AZZERATA</Name>
-</Member>
-<Member>
-<Name Type="0">STA_AZZERANDO</Name>
-</Member>
-<Member>
-<Name Type="0">ASSI_IN_MOVIMENTO</Name>
-</Member>
-<Member>
-<Name Type="0">ALLARME</Name>
-</Member>
-<Member>
-<Name Type="0">CHK_READ</Name>
+<Name Type="7">tempoAttesa</Name>
 </Member>
 </MemberList>
 </Structure>
@@ -4123,26 +4115,6 @@
 </Member>
 <Member>
 <Name Type="0">AbilitaDbgMsg_ZonaR3</Name>
-</Member>
-</MemberList>
-</Structure>
-<Structure>
-<Name Description="">QuadraScambioVarR</Name>
-<MemberList>
-<Member>
-<Name Type="5">WriteR_639</Name>
-</Member>
-<Member>
-<Name Type="5">WriteR_640</Name>
-</Member>
-<Member>
-<Name Type="7">tempoCiclo</Name>
-</Member>
-<Member>
-<Name Type="7">tempoLettura</Name>
-</Member>
-<Member>
-<Name Type="7">tempoAttesa</Name>
 </Member>
 </MemberList>
 </Structure>

@@ -550,12 +550,12 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="10" y="590" width="1010" height="73" ox="12" oy="684" owidth="1162" oheight="84"/>
+<g x="10" y="590" width="1010" height="73" ox="10" oy="595" owidth="1010" oheight="73"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
-<type x="0" y="0" width="1162" height="84" rx="18" ry="18" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="0" y="0" width="1010" height="73" rx="16" ry="16" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" PresSize="0" PresText="0" PresVar="0" StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760">Rettangolo Smussato1</Name>
 <Shadow>0</Shadow>
@@ -563,7 +563,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="11" y="6" width="138" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="10" y="5" width="120" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -572,7 +572,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnGenerale</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -652,7 +652,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="155" y="6" width="138" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="135" y="5" width="120" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -661,7 +661,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="0" EnableShortcut="0">0</KeyCode>
 <Name PresSize="0" PresText="0" PresVar="0" AntialiasingFont="1" acr="4294901760">btnGenerale</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Magazzini</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Magazzini</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -742,7 +742,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="299" y="6" width="138" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="260" y="5" width="120" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -751,7 +751,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnMovManuali</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -832,7 +832,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="586" y="6" width="138" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="509" y="5" width="120" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -841,7 +841,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnZonaR2</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -921,7 +921,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="730" y="6" width="138" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="635" y="5" width="119" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -930,7 +930,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnZonaR3</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1001,16 +1001,17 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
+Public Sub Click()
 	loc_SelPage = 6
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaR3", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarico", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
 <child>
 <type>Button</type>
-<type x="442" y="6" width="138" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="384" y="5" width="120" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="6" XImage="10" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1019,7 +1020,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnZonaR1</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1099,7 +1100,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="874" y="6" width="92" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="760" y="5" width="80" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1108,7 +1109,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnSettings</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1188,7 +1189,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="1063" y="6" width="86" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="924" y="5" width="75" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1197,7 +1198,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="0" EnableShortcut="0">0</KeyCode>
 <Name AutoLoadExtFile="0" PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnAllarmi2</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1287,7 +1288,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="971" y="6" width="86" height="69" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="844" y="5" width="75" height="60" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -1296,7 +1297,7 @@ End Sub
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">btnLogStorico</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -1376,12 +1377,12 @@ End Sub
 </child>
 <child>
 <type>group</type>
-<g x="391" y="12" width="35" height="58" ox="380" oy="520" owidth="30" oheight="50" LibName="Icons" LibDate="2010-05-20T09:29:26Z" LibVers="1056"/>
+<g x="340" y="10" width="30" height="51" ox="380" oy="520" owidth="30" oheight="50" LibName="Icons" LibDate="2010-05-20T09:29:26Z" LibVers="1056"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>base</type>
-<type x="421" y="21" width="5" height="22" rx="5" ry="6" fill="rgb(255,255,255)" stroke="none">rrect</type>
+<type x="366" y="18" width="4" height="20" rx="4" ry="5" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato266</Name>
 <Shadow>0</Shadow>
@@ -1389,7 +1390,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="412" y="15" width="6" height="26" rx="5" ry="6" fill="rgb(255,255,255)" stroke="none">rrect</type>
+<type x="358" y="13" width="5" height="23" rx="4" ry="5" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato267</Name>
 <Shadow>0</Shadow>
@@ -1397,7 +1398,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="403" y="12" width="7" height="27" rx="7" ry="8" fill="rgb(255,255,255)" stroke="none">rrect</type>
+<type x="350" y="10" width="6" height="23" rx="6" ry="7" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato268</Name>
 <Shadow>0</Shadow>
@@ -1405,7 +1406,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="395" y="20" width="5" height="22" rx="6" ry="6" fill="rgb(255,255,255)" stroke="none">rrect</type>
+<type x="343" y="17" width="5" height="20" rx="5" ry="5" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato269</Name>
 <Shadow>0</Shadow>
@@ -1413,7 +1414,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="391" y="36" width="6" height="27" rx="6" ry="9" fill="rgb(255,255,255)" stroke="none">rrect</type>
+<type x="340" y="31" width="5" height="24" rx="5" ry="8" fill="rgb(255,255,255)" stroke="none">rrect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo Smussato270</Name>
 <Shadow>0</Shadow>
@@ -1421,7 +1422,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="395" y="36" width="31" height="34" fill="rgb(255,255,255)" stroke="none" KAR="1">ellipse</type>
+<type x="343" y="31" width="27" height="30" fill="rgb(255,255,255)" stroke="none" KAR="1">ellipse</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Ellisse271</Name>
 <Shadow>0</Shadow>
@@ -1429,7 +1430,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="395" y="38" width="31" height="17" fill="rgb(255,255,255)" stroke="none">rect</type>
+<type x="343" y="32" width="27" height="16" fill="rgb(255,255,255)" stroke="none">rect</type>
 <ExtFill gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name acr="4294901760">Rettangolo265</Name>
 <Shadow>0</Shadow>
@@ -1442,16 +1443,16 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="304" y="12" width="81" height="58" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="264" y="10" width="71" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo89</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mov. Man.</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Mov. Man.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <type>base</type>
-<type x="511" y="12" width="58" height="63" fill="none" stroke="none">rect</type>
+<type x="444" y="10" width="51" height="55" fill="none" stroke="none">rect</type>
 <ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo91</Name>
 <Shadow>0</Shadow>
@@ -1459,42 +1460,34 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="448" y="12" width="81" height="58" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="389" y="10" width="71" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo92</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R1</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <type>base</type>
-<type x="592" y="12" width="81" height="58" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="515" y="10" width="70" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo93</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R2</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <type>base</type>
-<type x="736" y="12" width="81" height="58" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="640" y="10" width="110" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo94</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R3</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Scarico</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <type>base</type>
-<type x="805" y="12" width="58" height="63" fill="none" stroke="none">rect</type>
-<ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo96</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="661" y="12" width="58" height="63" fill="none" stroke="none">rect</type>
+<type x="575" y="10" width="50" height="55" fill="none" stroke="none">rect</type>
 <ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo97</Name>
 <Shadow>0</Shadow>
@@ -1502,13 +1495,13 @@ End Sub
 </child>
 <child>
 <type>group</type>
-<g x="897" y="18" width="46" height="46" ox="890" oy="190" owidth="40" oheight="40" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
+<g x="780" y="16" width="40" height="40" ox="890" oy="190" owidth="40" oheight="40" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>poly</type>
 <type fill="rgb(255,255,255)" stroke="none">polygon</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="936,30 938,28 941,25 937,21 934,24 933,27 926,35 928,38 936,30">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="814,26 816,25 818,22 815,19 812,21 811,24 805,31 807,33 814,26">0</ExtFill>
 <Name acr="4294901760">Poligono899</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1516,7 +1509,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="941,51 926,39 926,39 926,39 926,39 926,39 926,39 921,34 921,34 921,34 922,32 922,25 919,21 917,19 913,18 911,18 910,18 909,18 907,18 907,18 907,18 907,19 907,19 907,19 907,19 913,25 913,25 913,25 914,31 914,31 914,31 910,35 910,35 910,35 904,34 904,34 904,34 899,28 899,28 899,28 899,28 898,28 898,28 898,28 898,28 898,28 897,33 898,36 902,40 903,42 906,43 910,43 910,43 910,43 910,43 911,43 912,42 914,42 930,62 930,62 930,62 932,63 934,64 935,64 937,64 938,63 941,62 943,59 943,55 941,51">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="818,45 805,34 805,34 805,34 805,34 805,34 805,34 801,30 801,30 801,30 802,28 802,22 799,19 797,17 794,16 792,16 791,16 790,16 789,16 789,16 789,16 789,17 789,17 789,17 789,17 794,22 794,22 794,22 795,27 795,27 795,27 791,31 791,31 791,31 786,30 786,30 786,30 782,25 782,25 782,25 782,25 781,25 781,25 781,25 781,25 781,25 780,29 781,32 784,35 785,37 788,38 791,38 791,38 791,38 791,38 792,38 793,37 795,37 809,54 809,54 809,54 810,55 812,56 813,56 815,56 816,55 818,54 820,52 820,48 818,45">0</ExtFill>
 <Name acr="4294901760">Poligono900</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1524,7 +1517,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="913,46 912,46 911,46 911,46 900,57 900,57 900,57 899,57 899,58 900,59 904,63 904,63 904,63 905,64 906,64 906,63 917,53 917,53 917,53 918,53 918,51 917,50">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="794,40 793,40 792,40 792,40 783,50 783,50 783,50 782,50 782,51 783,52 786,55 786,55 786,55 787,56 788,56 788,55 797,46 797,46 797,46 798,46 798,45 797,44">0</ExtFill>
 <Name acr="4294901760">Poligono901</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1536,13 +1529,13 @@ End Sub
 </child>
 <child>
 <type>group</type>
-<g x="80" y="12" width="63" height="58" ox="605" oy="220" owidth="50" oheight="40" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
+<g x="70" y="10" width="54" height="51" ox="605" oy="220" owidth="50" oheight="40" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="142,37 114,13 114,13 114,13 113,12 110,12 109,13 81,37 81,37 81,37 80,38 80,40 81,41 83,42 85,42 86,41 86,41 86,41 86,41 86,67 86,67 86,67 86,69 88,70 89,70 134,70 134,70 134,70 135,70 137,69 137,67 137,41 137,41 137,41 137,41 137,41 137,41 138,42 138,42 139,42 140,42 142,42 142,41 143,40 143,38 142,37">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="123,32 99,11 99,11 99,11 98,10 96,10 95,11 71,32 71,32 71,32 70,33 70,34 71,36 72,37 74,37 75,36 75,36 75,36 75,36 75,58 75,58 75,58 75,60 76,61 78,61 116,61 116,61 116,61 118,61 119,60 119,58 119,36 119,36 119,36 119,36 119,36 119,36 120,37 120,37 121,37 122,37 123,37 123,36 124,34 124,33 123,32">0</ExtFill>
 <Name acr="4294901760">Poligono1069</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1550,7 +1543,7 @@ End Sub
 <child>
 <type>poly</type>
 <type fill="rgb(128,128,128)" stroke="none">polygon</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="91,67 91,38 112,21 133,38 133,67 118,67 118,47 105,47 105,67 91,67">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="80,58 80,33 97,18 115,33 115,58 102,58 102,41 92,41 92,58 80,58">0</ExtFill>
 <Name acr="4294901760">Poligono1070</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1562,22 +1555,22 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="11" y="12" width="81" height="58" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="10" y="10" width="70" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name PresSize="0" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo123</Name>
-<text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Main</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Main</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
 <child>
 <type>group</type>
-<g x="984" y="12" width="64" height="54" ox="996" oy="696" owidth="64" oheight="54" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
+<g x="855" y="10" width="56" height="47" ox="996" oy="696" owidth="64" oheight="54" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1024,27 1012,13 1012,13 1012,13 1012,13 1010,13 1010,13 990,13 990,13 990,13 986,13 984,16 984,18 984,61 984,61 984,61 984,64 986,66 990,66 1020,66 1020,66 1020,66 1022,66 1024,64 1024,61 1024,28 1024,28 1024,28 1024,28 1024,28 1024,27">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="890,23 880,11 880,11 880,11 880,11 878,11 878,11 860,11 860,11 860,11 857,11 855,13 855,15 855,53 855,53 855,53 855,55 857,57 860,57 887,57 887,57 887,57 888,57 890,55 890,53 890,24 890,24 890,24 890,24 890,24 890,23">0</ExtFill>
 <Name acr="4294901760">Poligono477</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1585,7 +1578,7 @@ End Sub
 <child>
 <type>poly</type>
 <type fill="rgb(255,255,255)" stroke="none">polygon</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1020,27 1010,27 1010,18 1020,27">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="887,23 878,23 878,15 887,23">0</ExtFill>
 <Name acr="4294901760">Poligono478</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1593,7 +1586,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(128,128,128)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1021,61 1021,62 1021,63 1020,63 990,63 990,63 990,63 989,63 987,62 987,61 987,18 987,18 987,18 987,17 989,17 990,17 1009,17 1009,17 1009,17 1009,28 1009,28 1009,28 1009,30 1009,30 1010,30 1021,30 1021,30 1021,30 1021,30 1021,30 1021,30">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="887,53 887,54 887,54 887,54 860,54 860,54 860,54 859,54 858,54 858,53 858,15 858,15 858,15 858,14 859,14 860,14 877,14 877,14 877,14 877,24 877,24 877,24 877,26 877,26 878,26 887,26 887,26 887,26 887,26 887,26 887,26">0</ExtFill>
 <Name acr="4294901760">Poligono479</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1601,7 +1594,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1048,19 1041,12 1041,12 1041,12 1041,12 1040,12 1040,12 1015,38 1015,38 1015,38 1008,51 1008,51 1008,51 1007,53 1008,53 1008,53 1008,53 1008,54 1008,54 1009,54 1009,54 1009,53 1023,46 1023,46 1023,46 1023,46 1023,46 1023,46 1048,20 1048,20 1048,20 1048,20 1048,19 1048,19">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="911,16 905,10 905,10 905,10 905,10 904,10 904,10 882,33 882,33 882,33 876,44 876,44 876,44 875,46 876,46 876,46 876,46 876,47 876,47 877,47 877,47 877,46 889,40 889,40 889,40 889,40 889,40 889,40 911,17 911,17 911,17 911,17 911,16 911,16">0</ExtFill>
 <Name acr="4294901760">Poligono480</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1609,7 +1602,7 @@ End Sub
 <child>
 <type>poly</type>
 <type fill="rgb(128,128,128)" stroke="none">polygon</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1039,16 1043,19 1020,41 1017,39 1039,16">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="903,13 907,16 887,35 884,34 903,13">0</ExtFill>
 <Name acr="4294901760">Poligono481</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1617,7 +1610,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(128,128,128)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1021,46 1014,49 1014,49 1014,49 1013,48 1013,47 1012,46 1015,40 1015,40 1015,40 1017,39 1017,39 1017,39 1022,43 1022,43 1022,43">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="887,40 881,42 881,42 881,42 880,41 880,40 880,40 882,34 882,34 882,34 884,34 884,34 884,34 888,37 888,37 888,37">0</ExtFill>
 <Name acr="4294901760">Poligono482</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1625,7 +1618,7 @@ End Sub
 <child>
 <type>poly</type>
 <type fill="rgb(128,128,128)" stroke="none">polygon</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1023,43 1021,41 1043,19 1045,21 1023,43">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="889,37 887,35 907,16 908,18 889,37">0</ExtFill>
 <Name acr="4294901760">Poligono483</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1637,13 +1630,13 @@ End Sub
 </child>
 <child>
 <type>group</type>
-<g x="1081" y="12" width="54" height="54" ox="1086" oy="696" owidth="66" oheight="54" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
+<g x="940" y="10" width="47" height="47" ox="1086" oy="696" owidth="66" oheight="54" LibName="Icons symbols" LibDate="2014-07-17T11:03:00Z" LibVers="1084"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1110,53 1111,54 1112,54 1112,56 1112,57 1111,58 1110,58 1110,59 1110,59 1108,59 1107,59 1106,59 1106,58 1106,58 1105,57 1105,56 1105,54 1106,54 1106,53 1106,52 1107,52 1108,52 1110,52 1110,52 1110,53">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="965,46 966,47 967,47 967,48 967,49 966,50 965,50 965,51 965,51 964,51 963,51 962,51 962,50 962,50 961,49 961,48 961,47 962,47 962,46 962,45 963,45 964,45 965,45 965,45 965,46">0</ExtFill>
 <Name acr="4294901760">Poligono835</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1651,7 +1644,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1112,29 1112,30 1112,31 1112,32 1110,44 1110,44 1110,44 1110,45 1110,46 1110,47 1110,48 1109,48 1108,48 1107,48 1106,48 1106,47 1106,46 1106,45 1106,43 1105,32 1105,32 1105,32 1105,30 1105,28 1105,28 1105,26 1106,25 1106,24 1106,23 1107,23 1109,23 1110,23 1110,23 1111,24 1111,26 1112,27 1112,29">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="967,25 967,26 967,27 967,27 965,38 965,38 965,38 965,39 965,40 965,40 965,41 964,41 964,41 963,41 962,41 962,40 962,40 962,39 962,37 961,27 961,27 961,27 961,26 961,24 961,24 961,22 962,21 962,20 962,20 963,20 964,20 965,20 965,20 966,20 966,22 967,23 967,25">0</ExtFill>
 <Name acr="4294901760">Poligono836</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1659,7 +1652,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(128,128,128)" stroke="rgb(255,255,255)" stroke-width="5" stroke-linecap="butt" stroke-linejoin="round">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1134,56 1135,58 1135,61 1134,63 1133,65 1131,66 1129,66 1087,66 1087,66 1087,66 1085,66 1083,65 1082,63 1081,61 1081,58 1082,56 1103,15 1103,15 1103,15 1104,13 1106,12 1108,12 1110,12 1112,13 1113,15">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="986,48 987,50 987,53 986,54 986,56 983,57 982,57 945,57 945,57 945,57 944,57 941,56 941,54 940,53 940,50 941,48 959,13 959,13 959,13 960,11 962,10 964,10 965,10 967,11 968,13">0</ExtFill>
 <Name acr="4294901760">Poligono837</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1667,7 +1660,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1112,32 1112,31 1112,30 1112,29 1112,27 1111,26 1111,24 1110,23 1110,23 1109,23 1107,23 1106,23 1106,24 1106,25 1105,26 1105,28 1105,28 1105,30 1105,32 1106,43 1106,43 1106,43 1106,45 1106,46 1106,47 1106,48 1107,48 1108,48 1109,48 1110,48 1110,47 1110,46 1110,45 1110,44">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="967,27 967,27 967,26 967,25 967,23 966,22 966,20 965,20 965,20 964,20 963,20 962,20 962,20 962,21 961,22 961,24 961,24 961,26 961,27 962,37 962,37 962,37 962,39 962,40 962,40 962,41 963,41 964,41 964,41 965,41 965,40 965,40 965,39 965,38">0</ExtFill>
 <Name acr="4294901760">Poligono838</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1675,7 +1668,7 @@ End Sub
 <child>
 <type>poly</type>
 <type chFigure="1" fill="rgb(255,255,255)" stroke="none">polybezier</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="1112,56 1112,54 1111,54 1110,53 1110,52 1110,52 1108,52 1107,52 1106,52 1106,53 1106,54 1105,54 1105,56 1105,57 1106,58 1106,58 1106,59 1107,59 1108,59 1110,59 1110,59 1110,58 1111,58 1112,57 1112,56">0</ExtFill>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)" points="967,48 967,47 966,47 965,46 965,45 965,45 964,45 963,45 962,45 962,46 962,47 961,47 961,48 961,49 962,50 962,50 962,51 963,51 964,51 965,51 965,51 965,50 966,50 967,49 967,48">0</ExtFill>
 <Name acr="4294901760">Poligono839</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1687,7 +1680,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

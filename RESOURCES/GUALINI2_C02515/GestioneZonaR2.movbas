@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="36093" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="49743" SelLength="32" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
+'Sostituita la Variabile 'Pilz_Virt_OVo05_SpvAss0_' con il nuovo nome 'Pilz_Virt_OVo05_RipMag2Ok'
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
 'Sostituita la Variabile 'alm_Step_Tout' con il nuovo nome 'alm_Step_ToutR1_4200'
 '#Language "WWB.NET"
@@ -208,22 +210,27 @@ Sub Main()
 							rikDaMagazzino = CondizioneRikCassettoMagazzino()
 							If rikDaMagazzino &gt; 0 Then
 								ValutaProssimaCondizione = False
-								LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
+								LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneRikCassettoMagazzino &gt; 0 -&gt; next StatoCicloScarico = 2100	'RichiediCassettoDaMagazzino"
 								'richiedibileLastCheck = Timer() - TOUT_RICHIEDIBILE 'voglio che alla chiamata il test sia fatto subito e quindi SuperatoTimeout() deve tornare true
 								StatoCicloScarico = 2100			'RichiediCassettoDaMagazzino
 							End If
 						End If
 					End If
 
+					'TODO diventa condizione per abilitare pulsante di conferma scarico cassetto
+					Dim cassettoFuori As Boolean
+					If ValutaProssimaCondizione Then
+						cassettoFuori = True 'CondizioneCassettoFuori()
+					End If
 					'condizione per assegnare missione a Robot R2
 					If ValutaProssimaCondizione Then
 						assegnaMissioneRobot = CondizioneAssegnaMissioneRobot()
 						If assegnaMissioneRobot.mag &gt; 0 _
 								And Not [Assemblatrice_Stato:FinestraProntaR2] _
-								And (Pilz_Virt_OVo05_SpvAss0_ Or Pilz_Virt_OVo06_SpvAss180_) _
+								And (Pilz_Virt_OVo05_RipMag2Ok Or Pilz_Virt_OVo06_BarFtcMag2Ok) _
 								Then
 							ValutaProssimaCondizione = False
-							LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2"
+							LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2"
 							[R2_STATUS:FINE_MISSIONE_ACK] = False	'forzo per sicurezza nel caso di ripartenze da prove
 							'StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
 							StatoCicloScarico = 4050			'Invio Dati ad Assemblatrice
@@ -241,7 +248,7 @@ Sub Main()
 						Then
 
 						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneFineRobot = True -&gt; next StatoCicloScarico = 6100	'FineRobot"
+						LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneFineRobot = True -&gt; next StatoCicloScarico = 6100	'FineRobot"
 						StatoCicloScarico = 6100	'FineRobot
 					End If
 
@@ -256,7 +263,7 @@ Sub Main()
 						Then
 
 						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloScarico = 1000	'Attesa	;CondizioneErroreRobotR2 = True -&gt; next StatoCicloScarico = 9100	'ErroreRobotR2"
+						LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneErroreRobotR2 = True -&gt; next StatoCicloScarico = 9100	'ErroreRobotR2"
 						StatoCicloScarico = 9100	'ErroreRobotR2
 					End If
 
