@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="8663" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="6075" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
 'Sostituita la Variabile 'Pilz_Virt_OVo05_SpvAss0_' con il nuovo nome 'Pilz_Virt_OVo05_RipMag2Ok'
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
@@ -217,25 +217,11 @@ Sub Main()
 						End If
 					End If
 
-					'TODO diventa condizione per abilitare pulsante di conferma scarico cassetto
-					Dim cassettoFuori As Boolean
-					If ValutaProssimaCondizione Then
-						cassettoFuori = True 'CondizioneCassettoFuori()
-					End If
-					'condizione per assegnare missione a Robot R2
-					If ValutaProssimaCondizione Then
-						assegnaMissioneRobot = CondizioneAssegnaMissioneRobot()
-						If assegnaMissioneRobot.mag &gt; 0 _
-								And Not [Assemblatrice_Stato:FinestraProntaR2] _
-								And (Pilz_Virt_OVo05_RipMag2Ok Or Pilz_Virt_OVo06_BarFtcMag2Ok) _
-								Then
-							ValutaProssimaCondizione = False
-							LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneAssegnaMissioneRobot = True -&gt; next StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2"
-							[R2_STATUS:FINE_MISSIONE_ACK] = False	'forzo per sicurezza nel caso di ripartenze da prove
-							'StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2
-							StatoCicloScarico = 4050			'Invio Dati ad Assemblatrice
-						End If
-					End If
+		'			'TODO diventa condizione per abilitare pulsante di conferma scarico cassetto
+		'			Dim cassettoFuori As Boolean
+		'			If ValutaProssimaCondizione Then
+		'				cassettoFuori = True 'CondizioneCassettoFuori()
+		'			End If
 
 					'condizione per FineRobotR2
 					'uso i campi di R2_STATUS (MAGAZZINO, CASSETTO, ID_QUARTINA) per tener traccia di aver già gestito il fineRobot
@@ -372,132 +358,6 @@ Sub Main()
 						alm_StatoCiclo_R2_txt = "ECCEZZIONE: Case 2200 'RikCassettoInEstrattorePlc; POSIZIONE.mag = " &amp; CStr(POSIZIONE.mag) &amp; "; FARE RESET CICLO R2"
 					End If
 
-				Case 4050	'Invio Dati ad Assemblatrice
-					StatoCicloScarico_txt = "4050	'Invio Dati ad Assemblatrice"
-					LogMsg "StatoCicloScarico = 4050			'Invio Dati ad Assemblatrice"
-
-					'se robot disponibile preparo e invio dati ad assemblatrice
-					If [R2_STATUS:DISPONIBILE] And Not [R2_STATUS:IN_MISSIONE] Then
-						[R2_STATUS:MAGAZZINO] = assegnaMissioneRobot.mag
-						[R2_STATUS:CASSETTO] = assegnaMissioneRobot.cass
-
-						'passo i dati all'Assemblatrice
-						If [R2_STATUS:MAGAZZINO] = 1  Then
-							[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
-							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-							'passo i valori di larghezza e altezza a robot R2 così come calcolati per l'assemblatrice
-							[SCAR_M1_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
-							[SCAR_M1_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
-							'copio i valori che serviranno ad R3
-							'[SCAR_M1_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-							'[SCAR_M1_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-							'[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-							'[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-
-							'ATTENZIONE!!!
-							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
-							If [Assemblatrice_In:ALTEZZA_FINESTRA]	+ CSng([SCAR_M1_PZ1:R2_APERTURA]) &lt; 2599 Then
-								[Assemblatrice_In:APERTURA]				= CSng([SCAR_M1_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura
-							Else
-								[Assemblatrice_In:APERTURA]	= 2599 - [Assemblatrice_In:ALTEZZA_FINESTRA]
-							End If
-
-						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							[Assemblatrice_In:ALTEZZA_FINESTRA]		= CSng(([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
-							[Assemblatrice_In:LARGHEZZA_FINESTRA]	= CSng(([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&gt; pz2 riga 16 (riga in base 0)
-							'passo i valori di larghezza e altezza a robot R2 così come calcolati per l'assemblatrice
-							[SCAR_M2_PZ1:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:ALTEZZA_FINESTRA]
-							[SCAR_M2_PZ2:R2_LUNGH_X_SQUADRETTE] 	= [Assemblatrice_In:LARGHEZZA_FINESTRA]
-							'copio i valori che serviranno ad R3
-							'[SCAR_M2_PZ1:R3_ALTEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-							'[SCAR_M2_PZ1:R3_LARGHEZZA_FINESTRA_OFFSET] 	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-							'[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-							'[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-
-
-							'ATTENZIONE!!!
-							'verifico che il valore di Apertura + Altezza sia &lt; 2599 mm
-							If [Assemblatrice_In:ALTEZZA_FINESTRA]	+ CSng([SCAR_M2_PZ1:R2_APERTURA]) &lt; 2599 Then
-								[Assemblatrice_In:APERTURA]				= CSng([SCAR_M2_PZ1:R2_APERTURA])	'Ass_AperturaOut = Ass_Apertura
-							Else
-								[Assemblatrice_In:APERTURA]	= 2599 - [Assemblatrice_In:ALTEZZA_FINESTRA]
-							End If
-						End If
-
-						'invio dati ad asemblatrice
-						[Assemblatrice_In:STROBE_DATI_R2] = True
-
-						StatoCicloScarico = 4060			'Attesa back strobe dati
-					End If
-
-
-				Case 4060	'Attesa back strobe dati
-					StatoCicloScarico_txt = "4060	'Attesa back strobe dati"
-					LogMsg "StatoCicloScarico = 4060			'Attesa back strobe dati"
-
-					If [Assemblatrice_Out:BACK_STROBE_DATI_R2] _
-						And [Assemblatrice_In:ALTEZZA_FINESTRA] = [Assemblatrice_Out:ALTEZZA_FINESTRA] _
-						And [Assemblatrice_In:LARGHEZZA_FINESTRA] = [Assemblatrice_Out:LARGHEZZA_FINESTRA] _
-						And [Assemblatrice_In:APERTURA] = [Assemblatrice_Out:APERTURA] _
-						Then
-
-						[Assemblatrice_In:STROBE_DATI_R2] = False
-						'preseguo
-						StatoCicloScarico = 4100	'AssegnaMissioneAlRobotR2
-					End If
-
-
-				Case 4100	'AssegnaMissioneAlRobotR2
-					StatoCicloScarico_txt = "4100	'AssegnaMissioneAlRobotR2"
-					LogMsg "StatoCicloScarico = 4100			'AssegnaMissioneAlRobotR2"
-
-					If [R2_STATUS:DISPONIBILE] And Not [R2_STATUS:IN_MISSIONE] Then
-						[R2_STATUS:MAGAZZINO] = assegnaMissioneRobot.mag
-						[R2_STATUS:CASSETTO] = assegnaMissioneRobot.cass
-						If assegnaMissioneRobot.mag = 1 Then
-							'DecodificaMissioniPezziR2_Mag1() ora il dato viene preso direttamente dal DB
-							[R2_STATUS:ID_QUARTINA] = [SCAR_M1_PZ1:ID_QUARTINA]
-						End If
-						If assegnaMissioneRobot.mag = 2 Then
-							'DecodificaMissioniPezziR2_Mag2() ora il dato viene preso direttamente dal DB
-							[R2_STATUS:ID_QUARTINA] = [SCAR_M2_PZ1:ID_QUARTINA]
-						End If
-						'forzo a zero per sicurezza
-						[R2_STATUS:FINE_MISSIONE] = False
-						[R2_STATUS:ID_QUARTINA_SUCCESSIVA] = ""
-						[R2_STATUS:POSIZIONE_PEZZO] = 0
-						[R2_STATUS:PZ_DA_QUADRA] = 0
-
-						'segnalo a R2 nuova missione
-						[R2_STATUS:NUOVA_MISSIONE] = True
-						StatoCicloScarico = 4195	'AttesaSegnaleRobotOccupato_settout
-					End If
-
-				Case 4195	'AttesaSegnaleRobotOccupato_settout
-					StatoCicloScarico_txt = "4195	'AttesaSegnaleRobotOccupato_settout"
-					msg_AttesaRobotOccupato_R2 = True
-					If	[R2_STATUS:DISPONIBILE] Then
-						stepTout = Timer()
-						StatoCicloScarico = 4200	'AttesaSegnaleRobotOccupato
-					End If
-
-				Case 4200	'AttesaSegnaleRobotOccupato
-					StatoCicloScarico_txt 		= "4200		'AttesaSegnaleRobotOccupato"
-					LogMsg "StatoCicloScarico	= 4200	'AttesaSegnaleRobotOccupato"
-					msg_AttesaRobotOccupato_R2 = True
-
-					ValutaProssimaCondizione = True
-
-					'If SuperatoTimeout(stepTout, TOUT_ATTESA_MISSIONE) Then
-					'	ValutaProssimaCondizione = False
-					'	alm_Step_ToutR2_4200 = True
-					'	StatoCicloScarico = 4195	'AttesaSegnaleRobotOccupato_settout
-					'End If
-					If	[R2_STATUS:DISPONIBILE] And [R2_STATUS:IN_MISSIONE] And ValutaProssimaCondizione Then
-						alm_Step_ToutR2_4200 = False
-						msg_AttesaRobotOccupato_R2 = False
-						StatoCicloScarico = 1000	'AttesaPezzi
-					End If
 
 				Case 6100	'FineRobot
 					StatoCicloScarico_txt = "6100	'FineRobot"
