@@ -12,22 +12,25 @@
 <Variables Record="loc_LogProduzione_Registra" Print="" Reset="" Status="" EnableTime=""/>
 <ColumnList>
 <Column>
-<Name Variable="Assemblatrice_TelaioLatoR3:ID_QUARTINA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">ID_QUARTINA</Name>
+<Name Variable="TelaioProdotto:ID_QUARTINA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">ID_QUARTINA</Name>
 </Column>
 <Column>
-<Name Variable="Assemblatrice_TelaioLatoR3:NOME_COMMESSA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">NOME_COMMESSA</Name>
+<Name Variable="TelaioProdotto:NOME_COMMESSA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">NOME_COMMESSA</Name>
 </Column>
 <Column>
-<Name Variable="Assemblatrice_TelaioLatoR3:SERIE_PROFILO" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">SERIE_PROFILO</Name>
+<Name Variable="TelaioProdotto:SERIE_PROFILO" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">SERIE_PROFILO</Name>
 </Column>
 <Column>
-<Name Variable="Assemblatrice_TelaioLatoR3:CODICE_PROFILO" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">CODICE_PROFILO</Name>
+<Name Variable="TelaioProdotto:CODICE_PROFILO" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">CODICE_PROFILO</Name>
 </Column>
 <Column>
-<Name Variable="Assemblatrice_TelaioLatoR3:ALTEZZA_FINESTRA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">ALTEZZA_FINESTRA</Name>
+<Name Variable="TelaioProdotto:ALTEZZA_FINESTRA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">ALTEZZA_FINESTRA</Name>
 </Column>
 <Column>
-<Name Variable="Assemblatrice_TelaioLatoR3:LARGHEZZA_FINESTRA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">LARGHEZZA_FINESTRA</Name>
+<Name Variable="TelaioProdotto:LARGHEZZA_FINESTRA" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">LARGHEZZA_FINESTRA</Name>
+</Column>
+<Column>
+<Name Variable="" TempVar="" Type="0" RecipeIndex="0" AddQualityCol="0" QualityColName="" AddTimeStampCol="0" TimeStampColName="" AddNumUpdatesCol="0" NumUpdatesColName="">OPERATORE</Name>
 </Column>
 </ColumnList>
 </DLRecipe>

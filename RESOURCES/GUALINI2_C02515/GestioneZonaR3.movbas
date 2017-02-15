@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="12683" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
+'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
 'Sostituita la Variabile 'Pilz_Virt_OVo05_SpvAss0_' con il nuovo nome 'Pilz_Virt_OVo05_RipMag2Ok'
-'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 
 '#Language "WWB.NET"
 
@@ -181,7 +182,7 @@ Sub Main()
 
 						'invio dati a plc per R3
 						'copio i dati del telaio lato R2 su lato R3
-						AggiornaMembri("Assemblatrice_TelaioLatoR2", "Assemblatrice_TelaioLatoR3")
+						AggiornaMembri("Assemblatrice_TelaioLatoR2", "TelaioProdotto")
 
 						[Assemblatrice_In:START_ROTAZIONE] = False
 						[Assemblatrice_Stato:FinestraProntaR2] = False
@@ -274,14 +275,14 @@ End Try
 					datiR3_OK = False
 
 					While Not datiR3_OK And Not alm_ZonaR3_ErrDatiAss And Not alm_Presenti_ZonaR3
-						If ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_FINESTRA_OFFSET]	= R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_ALTEZZA_PROFILO] 	= R3_ALTEZZA_PROFILO_CHK_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_CODICE_TIPO_PROFILO] = R3_CODICE_TIPO_PROFILO_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_FINESTRA_OFFSET] = R3_LARGHEZZA_FINESTRA_OFFSET_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_LARGHEZZA_PROFILO] 	= R3_LARGHEZZA_PROFILO_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA1] = R3_OFFSET_SQUADRETTA1_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_OFFSET_SQUADRETTA2] = R3_OFFSET_SQUADRETTA2_CHK) _
-							And ([Assemblatrice_TelaioLatoR3:R3_TEMPO_COLLA] 		= R3_TEMPO_COLLA_CHK) _
+						If ([TelaioProdotto:R3_ALTEZZA_FINESTRA_OFFSET]	= R3_ALTEZZA_FINESTRA_OFFSET_CHK) _
+							And ([TelaioProdotto:R3_ALTEZZA_PROFILO] 	= R3_ALTEZZA_PROFILO_CHK_CHK) _
+							And ([TelaioProdotto:R3_CODICE_TIPO_PROFILO] = R3_CODICE_TIPO_PROFILO_CHK) _
+							And ([TelaioProdotto:R3_LARGHEZZA_FINESTRA_OFFSET] = R3_LARGHEZZA_FINESTRA_OFFSET_CHK) _
+							And ([TelaioProdotto:R3_LARGHEZZA_PROFILO] 	= R3_LARGHEZZA_PROFILO_CHK) _
+							And ([TelaioProdotto:R3_OFFSET_SQUADRETTA1] = R3_OFFSET_SQUADRETTA1_CHK) _
+							And ([TelaioProdotto:R3_OFFSET_SQUADRETTA2] = R3_OFFSET_SQUADRETTA2_CHK) _
+							And ([TelaioProdotto:R3_TEMPO_COLLA] 		= R3_TEMPO_COLLA_CHK) _
 							Then
 
 							datiR3_OK = True
@@ -292,14 +293,14 @@ End Try
 						DoEvents
 					End While
 					'invio segnale dati pronti a R3
-					[Assemblatrice_TelaioLatoR3:R3_STROBE_DATI] = True
+					[TelaioProdotto:R3_STROBE_DATI] = True
 					'StatoCicloR3 = 1000	'Attesa
 					StatoCicloR3 = 4100 'AttesaR3_STROBE_DATI_ACK
 
 				Case 4100 'AttesaR3_STROBE_DATI_ACK
 					LogMsg "StatoCicloR3 = 4100 'AttesaR3_STROBE_DATI_ACK"
-					If [Assemblatrice_TelaioLatoR3:R3_STROBE_DATI_ACK] Then
-						[Assemblatrice_TelaioLatoR3:R3_STROBE_DATI] = False
+					If [TelaioProdotto:R3_STROBE_DATI_ACK] Then
+						[TelaioProdotto:R3_STROBE_DATI] = False
 						StatoCicloR3 = 1000	'Attesa
 					End If
 
@@ -313,11 +314,11 @@ End Try
 
 						'Stampa Etichetta
 						[loc_EtichettaR3:Azienda] = [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
-						[loc_EtichettaR3:Barcode] = [Assemblatrice_TelaioLatoR3:ID_QUARTINA]
-						[loc_EtichettaR3:Commessa] = [Assemblatrice_TelaioLatoR3:NOME_COMMESSA]
-						[loc_EtichettaR3:Dimensioni] = CStr([Assemblatrice_TelaioLatoR3:ALTEZZA_FINESTRA]) &amp; " x " &amp; CStr([Assemblatrice_TelaioLatoR3:LARGHEZZA_FINESTRA])
-						[loc_EtichettaR3:IdQuartina] = [Assemblatrice_TelaioLatoR3:ID_QUARTINA]
-						RunScript("Etichetta_R3_Stampa,R3",100,False)
+						[loc_EtichettaR3:Barcode] = [TelaioProdotto:ID_QUARTINA]
+						[loc_EtichettaR3:Commessa] = [TelaioProdotto:NOME_COMMESSA]
+						[loc_EtichettaR3:Dimensioni] = CStr([TelaioProdotto:ALTEZZA_FINESTRA]) &amp; " x " &amp; CStr([TelaioProdotto:LARGHEZZA_FINESTRA])
+						[loc_EtichettaR3:IdQuartina] = [TelaioProdotto:ID_QUARTINA]
+						RunScript("Etichetta_Stampa,R3",100,False)
 
 
 						StatoCicloR3 = 7200	'AckR3End

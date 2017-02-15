@@ -2505,7 +2505,6 @@ End Sub
 <type x="410" y="135" width="330" height="400" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill ImageID="VistaAlto_Magazzini_R1_R2_low.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3175,7 +3174,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1107" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="1963" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 '#Uses "*HelperRimuoviPezzi"
 
 Public Sub Click()
@@ -3215,13 +3214,21 @@ Public Sub Click()
     retDlg = Dialog(dlg)
     stampa = dlg.CheckBoxStampa
     If stampa &gt; 0 Then
-    	'richiesta etichetta da R2
-		[loc_EtichettaR2:Azienda] 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
-		[loc_EtichettaR2:Barcode] 		= Left([SCAR_M1_PZ1:ID_QUARTINA], 13)
-		[loc_EtichettaR2:Commessa] 		= [SCAR_M1_PZ1:NOME_COMMESSA]
-		[loc_EtichettaR2:Dimensioni] 	= CStr([SCAR_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M1_PZ2:MAX_LUNGHEZZA])
-		 [loc_EtichettaR2:IdQuartina] 	= [SCAR_M1_PZ1:ID_QUARTINA]
-    	RunScript("Etichetta_R3_Stampa,R2", 100, False)
+    	''richiesta etichetta da R2
+		'[loc_EtichettaR2:Azienda] 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+		'[loc_EtichettaR2:Barcode] 		= Left([SCAR_M1_PZ1:ID_QUARTINA], 13)
+		'[loc_EtichettaR2:Commessa] 		= [SCAR_M1_PZ1:NOME_COMMESSA]
+		'[loc_EtichettaR2:Dimensioni] 	= CStr([SCAR_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M1_PZ2:MAX_LUNGHEZZA])
+		'[loc_EtichettaR2:IdQuartina] 	= [SCAR_M1_PZ1:ID_QUARTINA]
+    	'RunScript("Etichetta_Stampa,R2", 100, False)
+
+    	'richiesta etichetta da MAG1
+		[loc_Etichetta_MAG1:Azienda] 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+		[loc_Etichetta_MAG1:Barcode] 		= Left([SCAR_M1_PZ1:ID_QUARTINA], 13)
+		[loc_Etichetta_MAG1:Commessa] 		= [SCAR_M1_PZ1:NOME_COMMESSA]
+		[loc_Etichetta_MAG1:Dimensioni] 	= CStr([SCAR_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M1_PZ2:MAX_LUNGHEZZA])
+		[loc_Etichetta_MAG1:IdQuartina] 	= [SCAR_M1_PZ1:ID_QUARTINA]
+    	RunScript("Etichetta_Stampa,MAG1", 100, False)
     End If
 
     Select Case retDlg
@@ -3283,7 +3290,6 @@ End Function
 
 
 </ScriptCode>
-<BreakPoints xsi:type="xsd:base64Binary">AiAiAA==</BreakPoints>
 </child>
 <child>
 <object>Button</object>
@@ -3964,8 +3970,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -4208,7 +4214,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="3133" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
+<ScriptCode StartSel="2030" SelLength="77" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Language "WWB.NET"
 '#Uses "*HelperRimuoviPezzi"
 
 Public Sub Click()
@@ -4248,13 +4254,22 @@ Public Sub Click()
     retDlg = Dialog(dlg)
     stampa = dlg.CheckBoxStampa
     If stampa &gt; 0 Then
-    	'richiesta etichetta da R2
-		[loc_EtichettaR2:Azienda] 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
-		[loc_EtichettaR2:Barcode] 		= Left([SCAR_M2_PZ1:ID_QUARTINA], 13)
-		[loc_EtichettaR2:Commessa] 		= [SCAR_M2_PZ1:NOME_COMMESSA]
-		[loc_EtichettaR2:Dimensioni] 	= CStr([SCAR_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M2_PZ2:MAX_LUNGHEZZA])
-		 [loc_EtichettaR2:IdQuartina] 	= [SCAR_M2_PZ1:ID_QUARTINA]
-    	RunScript("Etichetta_R3_Stampa,R2", 100, False)
+    	''richiesta etichetta da R2
+		'[loc_EtichettaR2:Azienda] 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+		'[loc_EtichettaR2:Barcode] 		= Left([SCAR_M2_PZ1:ID_QUARTINA], 13)
+		'[loc_EtichettaR2:Commessa] 		= [SCAR_M2_PZ1:NOME_COMMESSA]
+		'[loc_EtichettaR2:Dimensioni] 	= CStr([SCAR_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M2_PZ2:MAX_LUNGHEZZA])
+		'[loc_EtichettaR2:IdQuartina] 	= [SCAR_M2_PZ1:ID_QUARTINA]
+    	'RunScript("Etichetta_Stampa,R2", 100, False)
+
+		'richiesta etichetta da MAG2
+		[loc_Etichetta_MAG2:Azienda] 		= [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+		[loc_Etichetta_MAG2:Barcode] 		= Left([SCAR_M2_PZ1:ID_QUARTINA], 13)
+		[loc_Etichetta_MAG2:Commessa] 		= [SCAR_M2_PZ1:NOME_COMMESSA]
+		[loc_Etichetta_MAG2:Dimensioni] 	= CStr([SCAR_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M2_PZ2:MAX_LUNGHEZZA])
+		[loc_Etichetta_MAG2:IdQuartina] 	= [SCAR_M2_PZ1:ID_QUARTINA]
+    	RunScript("Etichetta_Stampa,MAG2", 100, False)
+
     End If
 
     Select Case retDlg

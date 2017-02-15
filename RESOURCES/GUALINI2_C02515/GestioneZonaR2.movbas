@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="6075" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="15604" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+'Sostituita la Variabile 'alm_Fine_Scarico' con il nuovo nome 'alm_ScaricoEliminaQrt'
+'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
 'Sostituita la Variabile 'Pilz_Virt_OVo05_SpvAss0_' con il nuovo nome 'Pilz_Virt_OVo05_RipMag2Ok'
 'Sostituita la Variabile 'Assemblatrice_Out' con il nuovo nome 'Assemblatrice_In'
@@ -67,10 +69,15 @@ Sub Main()
 	Dim varname_estrattore As String
 	Dim strEstrattore As String
 
+	Dim strQuartinaDaRimuovere As String
+
 	Dim timerAggiornaCassetti As Double
 	Dim timerAggiornaCassettiOld As Double
 	Dim timerAggiornaCassettiDiff As Double
 	Const timerAggiornaCassettiTOUT As Double = 2 'secondi
+
+	'Dim Alt_Finestra As Single
+	'Dim Largh_Finestra As Single
 
 
 	If [loc_ImpostazioniImpianto:MySqlConnectionString] &lt;&gt; "" Then
@@ -223,34 +230,43 @@ Sub Main()
 		'				cassettoFuori = True 'CondizioneCassettoFuori()
 		'			End If
 
-					'condizione per FineRobotR2
-					'uso i campi di R2_STATUS (MAGAZZINO, CASSETTO, ID_QUARTINA) per tener traccia di aver già gestito il fineRobot
-					'devo ricordare di mettere a zero questi campi dopo FineRobot
+					'condizione per Fine_Scarico
+					'uso i campi di R2_STATUS (MAGAZZINO, CASSETTO, ID_QUARTINA) per tener traccia di aver già gestito il Fine_Scarico
+					'devo ricordare di mettere a zero questi campi dopo Fine_Scarico
+					'If ValutaProssimaCondizione _
+					'	And [R2_STATUS:FINE_MISSIONE]  _
+					'	And [R2_STATUS:MAGAZZINO] &gt; 0 _
+					'	And [R2_STATUS:CASSETTO] &gt; 0 _
+					'	And [R2_STATUS:ID_QUARTINA] &lt;&gt; "" _
+					'	Then
+					'condizione per fine da MAG 1
 					If ValutaProssimaCondizione _
-						And [R2_STATUS:FINE_MISSIONE]  _
-						And [R2_STATUS:MAGAZZINO] &gt; 0 _
-						And [R2_STATUS:CASSETTO] &gt; 0 _
-						And [R2_STATUS:ID_QUARTINA] &lt;&gt; "" _
+						And [loc_ImpostazioniImpianto:Scarico_FineM1]  _
+						And [MAG1_ES1_ACT:ID_CASSETTO] &gt; 0 _
+						And [MAG1_ES1_ACT:PRONTO] _
+						And [SCAR_M1_PZ1:ID_QUARTINA] &lt;&gt; "" _
 						Then
 
 						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneFineRobot = True -&gt; next StatoCicloScarico = 6100	'FineRobot"
-						StatoCicloScarico = 6100	'FineRobot
+						strQuartinaDaRimuovere = [SCAR_M1_PZ1:ID_QUARTINA]
+						rikDaMagazzino = 1
+						LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneFine_Scarico = True; MAG=" &amp; CStr(rikDaMagazzino) &amp; " -&gt; next StatoCicloScarico = 6100	'Fine_Scarico"
+						StatoCicloScarico = 6100	'Fine_Scarico
 					End If
 
-					'condizione per ErroreRobotR2
-					'uso i campi di R2_STATUS (MAGAZZINO, CASSETTO, ID_QUARTINA) per tener traccia di aver già gestito il fineRobot
-					'devo ricordare di mettere a zero questi campi dopo FineRobot
+					'condizione per fine da MAG 2
 					If ValutaProssimaCondizione _
-						And [R2_STATUS:ERR_MISSIONE] _
-						And [R2_STATUS:MAGAZZINO] &gt; 0 _
-						And [R2_STATUS:CASSETTO] &gt; 0 _
-						And [R2_STATUS:ID_QUARTINA] &lt;&gt; "" _
+						And [loc_ImpostazioniImpianto:Scarico_FineM2]  _
+						And [MAG2_ES1_ACT:ID_CASSETTO] &gt; 0 _
+						And [MAG2_ES1_ACT:PRONTO] _
+						And [SCAR_M2_PZ1:ID_QUARTINA] &lt;&gt; "" _
 						Then
 
 						ValutaProssimaCondizione = False
-						LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneErroreRobotR2 = True -&gt; next StatoCicloScarico = 9100	'ErroreRobotR2"
-						StatoCicloScarico = 9100	'ErroreRobotR2
+						strQuartinaDaRimuovere = [SCAR_M2_PZ1:ID_QUARTINA]
+						rikDaMagazzino = 2
+						LogMsg "StatoCicloScarico = 1000	'Attesa; CondizioneFine_Scarico = True; MAG=" &amp; CStr(rikDaMagazzino) &amp; " -&gt; next StatoCicloScarico = 6100	'Fine_Scarico"
+						StatoCicloScarico = 6100	'Fine_Scarico
 					End If
 
 
@@ -359,300 +375,188 @@ Sub Main()
 					End If
 
 
-				Case 6100	'FineRobot
-					StatoCicloScarico_txt = "6100	'FineRobot"
-					LogMsg "StatoCicloScarico = 6100	'FineRobot"
+				Case 6100	'Fine_Scarico
+					StatoCicloScarico_txt = "6100	'Fine_Scarico"
+					LogMsg "StatoCicloScarico = 6100	'Fine_Scarico"
 					'elimino quartina dal DB
-					ret = FineRobot(MySqlConnectionString, [R2_STATUS:ID_QUARTINA])
+					ret = Fine_Scarico(MySqlConnectionString, strQuartinaDaRimuovere)
 					If ret &lt;&gt; 0 Then
 						'Alzo allarme
-						alm_FineRobotR2 = True
-						'StatoCicloScarico = 1000	'Attesa
+						alm_ScaricoEliminaQrt = True
+						StatoCicloScarico = 1000	'Attesa
 					Else
-						'[R2_STATUS:FINE_MISSIONE] = False 'azzero la condizione xchè ho già inserito il pezzo
-
 						'segnalo all'estrattore che ho depositato il pezzo
-						varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
+						'varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
+						varname_estrattore = IIf(rikDaMagazzino = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
 						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
 
-						'memorizzo i dati del talaio pronto su R2 per script GestioneZonaR3
-						If [R2_STATUS:MAGAZZINO] = 1  Then
-							[Assemblatrice_TelaioLatoR2:ALTEZZA_FINESTRA]		= [SCAR_M1_PZ1:MAX_LUNGHEZZA]
-							[Assemblatrice_TelaioLatoR2:ID_QUARTINA]			= [SCAR_M1_PZ1:ID_QUARTINA]
-							[Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA]		= [SCAR_M1_PZ2:MAX_LUNGHEZZA]
-							[Assemblatrice_TelaioLatoR2:NOME_COMMESSA]			= [SCAR_M1_PZ1:NOME_COMMESSA]
-							[Assemblatrice_TelaioLatoR2:SERIE_PROFILO]			= [SCAR_M1_PZ1:SERIE_PROFILO]
-							[Assemblatrice_TelaioLatoR2:CODICE_PROFILO]			= [SCAR_M1_PZ1:CODICE_PROFILO]
-							'dati per R3
-							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
-							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
-
-							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-
-							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_PROFILO]			= [SCAR_M1_PZ1:ALTEZZA_PROFILO]
-							[Assemblatrice_TelaioLatoR2:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M1_PZ")
-
-							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
-
-							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_PROFILO]		= [SCAR_M1_PZ1:LARGHEZZA_PROFILO]
-							[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA1]		= [SCAR_M1_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
-							If [Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]	Then
-								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= [SCAR_M1_PZ1:R3_OFFSET_SQ2] + loc_R3_SpessoreSupporti
-							Else
-								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= 0
+						'Stampa Etichetta
+						If rikDaMagazzino = 1 Then
+							'calcolo altezza e larghezza finestra
+							'Alt_Finestra = CSng(([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
+							'Largh_Finestra	= CSng(([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&amp;gt; pz2 riga 16 (riga in base 0)
+							[loc_Etichetta_MAG1:Azienda] = [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+							[loc_Etichetta_MAG1:Barcode] = [SCAR_M1_PZ1:ID_QUARTINA]
+							[loc_Etichetta_MAG1:Commessa] = [SCAR_M1_PZ1:NOME_COMMESSA]
+							'[loc_Etichetta_MAG1:Dimensioni] = CStr(Alt_Finestra) &amp; " x " &amp; CStr(Largh_Finestra)
+							[loc_Etichetta_MAG1:Dimensioni] = CStr([SCAR_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M1_PZ2:MAX_LUNGHEZZA])
+							[loc_Etichetta_MAG1:IdQuartina] = [SCAR_M1_PZ1:ID_QUARTINA]
+							If [loc_ImpostazioniImpianto:StampaMAG1] Then
+								RunScript("Etichetta_Stampa,MAG1",100,False)
 							End If
-							[Assemblatrice_TelaioLatoR2:R3_TEMPO_COLLA]				= [SCAR_M1_PZ1:R2_COLLA]
 
-						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							[Assemblatrice_TelaioLatoR2:ALTEZZA_FINESTRA]		= [SCAR_M2_PZ1:MAX_LUNGHEZZA]
-							[Assemblatrice_TelaioLatoR2:ID_QUARTINA]			= [SCAR_M2_PZ1:ID_QUARTINA]
-							[Assemblatrice_TelaioLatoR2:LARGHEZZA_FINESTRA]		= [SCAR_M2_PZ2:MAX_LUNGHEZZA]
-							[Assemblatrice_TelaioLatoR2:NOME_COMMESSA]			= [SCAR_M2_PZ1:NOME_COMMESSA]
-							[Assemblatrice_TelaioLatoR2:SERIE_PROFILO]			= [SCAR_M2_PZ1:SERIE_PROFILO]
-							[Assemblatrice_TelaioLatoR2:CODICE_PROFILO]			= [SCAR_M2_PZ1:CODICE_PROFILO]
-							'dati per R3
-							[Assemblatrice_TelaioLatoR2:R3_4SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
-							[Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
+						End If
 
-							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-
-							[Assemblatrice_TelaioLatoR2:R3_ALTEZZA_PROFILO]			= [SCAR_M2_PZ1:ALTEZZA_PROFILO]
-							[Assemblatrice_TelaioLatoR2:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M2_PZ")
-
-							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
-
-							[Assemblatrice_TelaioLatoR2:R3_LARGHEZZA_PROFILO]		= [SCAR_M2_PZ1:LARGHEZZA_PROFILO]
-							[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA1]		= [SCAR_M2_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
-							If [Assemblatrice_TelaioLatoR2:R3_8SQUADRETTE]	Then
-								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= [SCAR_M2_PZ1:R3_OFFSET_SQ2] + loc_R3_SpessoreSupporti
-							Else
-								[Assemblatrice_TelaioLatoR2:R3_OFFSET_SQUADRETTA2]	= 0
+						If rikDaMagazzino = 2 Then
+							'calcolo altezza e larghezza finestra
+							'Alt_Finestra = CSng(([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
+							'Largh_Finestra	= CSng(([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 'pz2 riga 16 (riga in base 0)
+							[loc_Etichetta_MAG2:Azienda] = [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
+							[loc_Etichetta_MAG2:Barcode] = [SCAR_M2_PZ1:ID_QUARTINA]
+							[loc_Etichetta_MAG2:Commessa] = [SCAR_M2_PZ1:NOME_COMMESSA]
+							'[loc_Etichetta_MAG2:Dimensioni] = CStr(Alt_Finestra) &amp; " x " &amp; CStr(Largh_Finestra)
+							[loc_Etichetta_MAG2:Dimensioni] = CStr([SCAR_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M2_PZ2:MAX_LUNGHEZZA])
+							[loc_Etichetta_MAG2:IdQuartina] = [SCAR_M2_PZ1:ID_QUARTINA]
+							If [loc_ImpostazioniImpianto:StampaMAG2] Then
+								RunScript("Etichetta_Stampa,MAG2",100,False)
 							End If
-							[Assemblatrice_TelaioLatoR2:R3_TEMPO_COLLA]				= [SCAR_M2_PZ1:R2_COLLA]
-
 						End If
 
-
-
-						'faccio richiesta di rientro estrattore
-						rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
-						rikEstrattore.ID_QUARTINA 				= ""
-						rikEstrattore.NOME_PEZZO_UNICO 			= ""
-						rikEstrattore.POSIZIONE 				= 0
-						rikEstrattore.DEPO						= False
-						rikEstrattore.PRONTO					= False
-						rikEstrattore.STROBE 					= True
-
-						'aggiungo richiesta cassetto 0 a coda estrattore
-						If [R2_STATUS:MAGAZZINO] = 1  Then
-
-							strEstrattore =Serializza_stEstrattore(rikEstrattore)
-							DebugMsg("Case 6100	'FineRobot - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
-							'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
-							codaMAG1_ES2.Enqueue(strEstrattore)
-						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							strEstrattore =Serializza_stEstrattore(rikEstrattore)
-							DebugMsg("Case 6100	'FineRobot - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
-							'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
-							codaMAG2_ES2.Enqueue(strEstrattore)
-
-						End If
-
-						'faccio reset dei membri pezzo
-						If     [R2_STATUS:MAGAZZINO] = 1  Then
-							ResetDatiMembriStruttura("SCAR_M1_PZ1")
-							ResetDatiMembriStruttura("SCAR_M1_PZ2")
-							ResetDatiMembriStruttura("SCAR_M1_PZ3")
-							ResetDatiMembriStruttura("SCAR_M1_PZ4")
-						ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-							ResetDatiMembriStruttura("SCAR_M2_PZ1")
-							ResetDatiMembriStruttura("SCAR_M2_PZ2")
-							ResetDatiMembriStruttura("SCAR_M2_PZ3")
-							ResetDatiMembriStruttura("SCAR_M2_PZ4")
-						End If
-
-						[Assemblatrice_Stato:FinestraProntaR2] = True
-
-						'azzero le altre variabili
-						[R2_STATUS:MAGAZZINO] = 0
-						[R2_STATUS:CASSETTO] = 0
-						[R2_STATUS:ID_QUARTINA] = ""
-
-
-						'aggiorno cassetti pieni e disponibili
-					    AggiornaCassettiPieni(MySqlConnectionString, 1)
-						AggiornaCassettiPieni(MySqlConnectionString, 2)
-					    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
-						AggiornaCassettiDisponibili(MySqlConnectionString, 2)
-						AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
-						AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
-
-						[R2_STATUS:FINE_MISSIONE_ACK] = True 'invio ack al robot
-						StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false
-					End If
-
-				Case 6500	'SetTimetAttesaFineMissione_false
-					StatoCicloScarico_txt = "6500	'SetTimetAttesaFineMissione_false"
-					LogMsg "StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false"
-					stepTout = Timer()
-					StatoCicloScarico = 6700	'AttesaFineMissione_false
-
-				Case 6700	'AttesaFineMissione_false
-					StatoCicloScarico_txt = "6700	'AttesaFineMissione_false"
-					LogMsg "StatoCicloScarico = 6700	'AttesaFineMissione_false"
-
-					If SuperatoTimeout(stepTout, TOUT_STEP) Then
-						alm_Step_ToutR2_6700 = True
-						StatoCicloScarico = 6500	'SetTimetAttesaFineMissione_false
-					End If
-					If [R2_STATUS:FINE_MISSIONE] = False Then
-						[R2_STATUS:FINE_MISSIONE_ACK] =False
-						alm_Step_ToutR2_6700 = False
-
-						StatoCicloScarico = 1000	'Attesa
-					End If
-
-				Case 9100	'ErroreMissioneRobot
-					StatoCicloScarico_txt 		= "9100	'ErroreMissioneRobot"
-					LogMsg "StatoCicloScarico 	= 9100	'ErroreMissioneRobot"
-					'alzo allarme
-					alm_AnomaliaDeposito_R2 = True
-					strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf &amp; vbCrLf  _
-								&amp; "Tutti i PEZZI devono essere rimossi dall'ASSEMBLATRICE." &amp; vbCrLf &amp; vbCrLf _
-								&amp; "Indicare se si vuole procedere con assemblaggio manuale o se si vuole riprovare posizionando " _
-								&amp; "tutti i PEZZI su:" &amp; vbCrLf &amp; vbCrLf &amp; "ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
-
-					Begin Dialog UserDialog 400,245 ' %GRID:10,7,1,1
-						OptionGroup .Group1
-							OptionButton 30,130,350,30,"Pezzi riposizionati su Estrattore",.OptionButton1
-							OptionButton 30,150,350,30,"Pezzi rimossi da Assemblatrice e da Estrattore",.OptionButton2
-						Text 10,7,370,112,strMsgBox,.Text1
-						OKButton 160,200,90,30
-					End Dialog
-
-					Dim dlg As UserDialog
-					Dim opt As Integer
-
-					Dialog dlg
-					opt = dlg.Group1
-
-					''dico all'operatore di togliere i pezzi
-					'strMsgBox = "Attenzione: ERRORE Deposito Pezzi su ASSEMBLATRICE" &amp; vbCrLf _
-					'			&amp; "Rimuovere tutti i Pezzi Da ESTRATTORE MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." _
-					'			&amp; "Rimuovere tutti i Pezzi Da ASSEMBLATRICE." &amp; vbCrLf  &amp; vbCrLf _
-					'			&amp; "Si per proseguire."
-					'retMsgBox = MsgBox(strMsgBox, vbYesNo, "Attenzione ERRORE Deposito Pezzi su ASSEMBLATRICE")
-
-
-					If opt = 0 Then
-						'"Pezzi riposizionati su Estrattore",.OptionButton1
-						'chiedo ulteriore conferma e ricordo di resettare allarmi
-			    		strMsgBox = "Conferma riposizionamento pezzi su ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." &amp; vbCrLf &amp; vbCrLf _
-								&amp; "Assicurarsi di aver posizionato correttamente tutti i pezzi sull'ESTRATTORE 2 MAGAZZINO " &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." &amp; vbCrLf _
-								&amp; "Fare reset allarmi per riprendere il ciclo."
-
-			    		retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Conferma riposizionamento pezzi su ES2 MAG" &amp; CStr([R2_STATUS:MAGAZZINO]) &amp; ".")
-
-			    		[R2_STATUS:ERR_MISSIONE_ACK] = True 'invio ack al robot
-						stepTout = Timer()
-						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
-					ElseIf opt = 1 Then
-						'"Pezzi rimossi da Assemblatrice e da Estrattore",.OptionButton2
-						'chiedo ulteriore conferma e ricordo di resettare allarmi
-						strMsgBox = "Conferma la rimozione di tutti i pezzi da ASSEMBLATRICE e da ESTRATTORE " _
-									&amp; CStr([R2_STATUS:MAGAZZINO]) &amp; "." &amp; vbCrLf &amp; vbCrLf _
-								&amp; "La quartina sarà eliminata." &amp; vbCrLf _
-								&amp; "Fare reset allarmi per riprendere il ciclo."
-						retMsgBox = MsgBox(strMsgBox, vbOkOnly, "Rimozione pezzi da ASSEMBLATRICE e ESTRATTORE." &amp; ".")
-
-						'elimino quartina dal DB
-						ret = FineRobot(MySqlConnectionString, [R2_STATUS:ID_QUARTINA])
-						If ret &lt;&gt; 0 Then
-							'Alzo allarme
-							alm_FineRobotR2 = True
-							'StatoCicloScarico = 1000	'Attesa
+						'verifico presenza eventuali errori di stampa
+						If alm_EtichettaErrore Then
+							retMsgBox = MsgBox("Attenzione: Errore di stampa!" &amp; vbCrLf &amp; "Si per procedere senza etichetta.", vbYesNo + vbCritical, "Attenzione Errore Stampa")
+					    	If retMsgBox = vbYes Then
+								StatoCicloScarico = 8100	'RientroCassetto
+							Else
+								StatoCicloScarico = 1000	'Attesa
+					    	End If
 						Else
-							'segnalo all'estrattore che ho depositato il pezzo
-							varname_estrattore = IIf([R2_STATUS:MAGAZZINO] = 1, "MAG1_ES2_ACT", "MAG2_ES2_ACT")
-							SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
-
-							'faccio richiesta di rientro estrattore
-							rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
-							rikEstrattore.ID_QUARTINA 				= ""
-							rikEstrattore.NOME_PEZZO_UNICO 			= ""
-							rikEstrattore.POSIZIONE 				= 0
-							rikEstrattore.DEPO						= False
-							rikEstrattore.PRONTO					= False
-							rikEstrattore.STROBE 					= True
-
-							'aggiungo richiesta a coda estrattore
-							If [R2_STATUS:MAGAZZINO] = 1  Then
-								strEstrattore =Serializza_stEstrattore(rikEstrattore)
-								DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
-								'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
-								codaMAG1_ES2.Enqueue(strEstrattore)
-							ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-								strEstrattore =Serializza_stEstrattore(rikEstrattore)
-								DebugMsg("Case 9100	'ErroreMissioneRobot - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
-								'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
-								codaMAG2_ES2.Enqueue(strEstrattore)
-
-							End If
-
-							'faccio reset dei membri pezzo
-							If     [R2_STATUS:MAGAZZINO] = 1  Then
-								ResetDatiMembriStruttura("SCAR_M1_PZ1")
-								ResetDatiMembriStruttura("SCAR_M1_PZ2")
-								ResetDatiMembriStruttura("SCAR_M1_PZ3")
-								ResetDatiMembriStruttura("SCAR_M1_PZ4")
-							ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
-								ResetDatiMembriStruttura("SCAR_M2_PZ1")
-								ResetDatiMembriStruttura("SCAR_M2_PZ2")
-								ResetDatiMembriStruttura("SCAR_M2_PZ3")
-								ResetDatiMembriStruttura("SCAR_M2_PZ4")
-							End If
-
-							'NON passo nessun dato all'Assemblatrice
-
-							'azzero le altre variabili
-							[R2_STATUS:MAGAZZINO] = 0
-							[R2_STATUS:CASSETTO] = 0
-							[R2_STATUS:ID_QUARTINA] = ""
-
-							'aggiorno cassetti pieni e disponibili
-						    AggiornaCassettiPieni(MySqlConnectionString, 1)
-							AggiornaCassettiPieni(MySqlConnectionString, 2)
-						    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
-							AggiornaCassettiDisponibili(MySqlConnectionString, 2)
-							AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
-							AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
-
-							[R2_STATUS:ERR_MISSIONE_ACK] = True 'invio ack al robot
-							stepTout = Timer()
-							StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
-							'StatoCicloScarico = 1000	'Attesa
+							'nessun errore procedo con rientro cassetto e log
+							StatoCicloScarico = 8100	'RientroCassetto
 						End If
+
 					End If
 
-				Case 9150	'SetTimetAttesaFineMissione_false
-					StatoCicloScarico_txt = "9150	'SetTimetAttesaFineMissione_false"
-					If [R2_STATUS:DISPONIBILE] Then
-						stepTout = Timer()
-						StatoCicloScarico = 9200	'AttesaFineMissioneAck_false
+
+				Case 8100	'RientroCassetto
+					StatoCicloScarico_txt = "8100	'RientroCassetto"
+					LogMsg "StatoCicloScarico = 8100	'RientroCassetto"
+
+					'faccio richiesta di rientro estrattore
+					rikEstrattore.ID_CASSETTO				= 0 'faccio rientrare il cassetto
+					rikEstrattore.ID_QUARTINA 				= ""
+					rikEstrattore.NOME_PEZZO_UNICO 			= ""
+					rikEstrattore.POSIZIONE 				= 0
+					rikEstrattore.DEPO						= False
+					rikEstrattore.PRONTO					= False
+					rikEstrattore.STROBE 					= True
+
+					'aggiungo richiesta cassetto 0 a coda estrattore
+					'If [R2_STATUS:MAGAZZINO] = 1  Then
+					If rikDaMagazzino= 1  Then
+
+						strEstrattore =Serializza_stEstrattore(rikEstrattore)
+						DebugMsg("Case 6100	'Fine_Scarico - codaMAG1_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+						'codaMAG1_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						codaMAG1_ES2.Enqueue(strEstrattore)
+					'ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+					ElseIf rikDaMagazzino = 2 Then
+						strEstrattore =Serializza_stEstrattore(rikEstrattore)
+						DebugMsg("Case 6100	'Fine_Scarico - codaMAG2_ES2.Enqueue(" &amp; strEstrattore &amp; ")")
+						'codaMAG2_ES2.Enqueue(Serializza_stEstrattore(rikEstrattore))
+						codaMAG2_ES2.Enqueue(strEstrattore)
+
 					End If
 
-				Case 9200	'AttesaFineMissioneAck_false
-					StatoCicloScarico_txt = "9200	'AttesaFineMissioneAck_false"
-					LogMsg "StatoCicloScarico = 9200	'AttesaFineMissioneAck_false"
-					If SuperatoTimeout(stepTout, TOUT_STEP) Then
-						alm_Step_ToutR2_9150 = True
-						StatoCicloScarico = 9150	'SetTimetAttesaFineMissione_false
+					'LOG PRODUZIONE
+					'memorizzo i dati del talaio pronto su R2 per script GestioneZonaR3
+					'If [R2_STATUS:MAGAZZINO] = 1  Then
+					If rikDaMagazzino = 1  Then
+						[TelaioProdotto:ALTEZZA_FINESTRA]		= [SCAR_M1_PZ1:MAX_LUNGHEZZA]
+						[TelaioProdotto:ID_QUARTINA]			= [SCAR_M1_PZ1:ID_QUARTINA]
+						[TelaioProdotto:LARGHEZZA_FINESTRA]		= [SCAR_M1_PZ2:MAX_LUNGHEZZA]
+						[TelaioProdotto:NOME_COMMESSA]			= [SCAR_M1_PZ1:NOME_COMMESSA]
+						[TelaioProdotto:SERIE_PROFILO]			= [SCAR_M1_PZ1:SERIE_PROFILO]
+						[TelaioProdotto:CODICE_PROFILO]			= [SCAR_M1_PZ1:CODICE_PROFILO]
+						[TelaioProdotto:OPERATORE]				= "MAG1"
+						''dati per R3
+						'[TelaioProdotto:R3_4SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
+						'[TelaioProdotto:R3_8SQUADRETTE]				= ([SCAR_M1_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M1_PZ1:NUM_SQUADRETTE2] = 1)
+						'[TelaioProdotto:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+						'[TelaioProdotto:R3_ALTEZZA_PROFILO]			= [SCAR_M1_PZ1:ALTEZZA_PROFILO]
+						'[TelaioProdotto:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M1_PZ")
+						'[TelaioProdotto:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO]))
+						'[TelaioProdotto:R3_LARGHEZZA_PROFILO]		= [SCAR_M1_PZ1:LARGHEZZA_PROFILO]
+						'[TelaioProdotto:R3_OFFSET_SQUADRETTA1]		= [SCAR_M1_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
+						'If [TelaioProdotto:R3_8SQUADRETTE]	Then
+						'	[TelaioProdotto:R3_OFFSET_SQUADRETTA2]	= [SCAR_M1_PZ1:R3_OFFSET_SQ2] + loc_R3_SpessoreSupporti
+						'Else
+						'	[TelaioProdotto:R3_OFFSET_SQUADRETTA2]	= 0
+						'End If
+						'[TelaioProdotto:R3_TEMPO_COLLA]				= [SCAR_M1_PZ1:R2_COLLA]
+
+					'ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+					ElseIf rikDaMagazzino = 2 Then
+						[TelaioProdotto:ALTEZZA_FINESTRA]		= [SCAR_M2_PZ1:MAX_LUNGHEZZA]
+						[TelaioProdotto:ID_QUARTINA]			= [SCAR_M2_PZ1:ID_QUARTINA]
+						[TelaioProdotto:LARGHEZZA_FINESTRA]		= [SCAR_M2_PZ2:MAX_LUNGHEZZA]
+						[TelaioProdotto:NOME_COMMESSA]			= [SCAR_M2_PZ1:NOME_COMMESSA]
+						[TelaioProdotto:SERIE_PROFILO]			= [SCAR_M2_PZ1:SERIE_PROFILO]
+						[TelaioProdotto:CODICE_PROFILO]			= [SCAR_M2_PZ1:CODICE_PROFILO]
+						[TelaioProdotto:OPERATORE]				= "MAG2"
+						''dati per R3
+						'[TelaioProdotto:R3_4SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) Xor ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
+						'[TelaioProdotto:R3_8SQUADRETTE]				= ([SCAR_M2_PZ1:NUM_SQUADRETTE1] = 1) And ([SCAR_M2_PZ1:NUM_SQUADRETTE2] = 1)
+						'[TelaioProdotto:R3_ALTEZZA_FINESTRA_OFFSET]		= CSng([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+						'[TelaioProdotto:R3_ALTEZZA_PROFILO]			= [SCAR_M2_PZ1:ALTEZZA_PROFILO]
+						'[TelaioProdotto:R3_CODICE_TIPO_PROFILO]		= Get_R3_CODICE_TIPO_PROFILO("SCAR_M2_PZ")
+						'[TelaioProdotto:R3_LARGHEZZA_FINESTRA_OFFSET]	= CSng([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - ( 2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO]))
+						'[TelaioProdotto:R3_LARGHEZZA_PROFILO]		= [SCAR_M2_PZ1:LARGHEZZA_PROFILO]
+						'[TelaioProdotto:R3_OFFSET_SQUADRETTA1]		= [SCAR_M2_PZ1:R3_OFFSET_SQ1] + loc_R3_SpessoreSupporti
+						'If [TelaioProdotto:R3_8SQUADRETTE]	Then
+						'	[TelaioProdotto:R3_OFFSET_SQUADRETTA2]	= [SCAR_M2_PZ1:R3_OFFSET_SQ2] + loc_R3_SpessoreSupporti
+						'Else
+						'	[TelaioProdotto:R3_OFFSET_SQUADRETTA2]	= 0
+						'End If
+						'[TelaioProdotto:R3_TEMPO_COLLA]				= [SCAR_M2_PZ1:R2_COLLA]
 					End If
-					If [R2_STATUS:DISPONIBILE] And [R2_STATUS:ERR_MISSIONE] = False Then
-						[R2_STATUS:ERR_MISSIONE_ACK] =False
-						alm_Step_ToutR2_9150 = False
-						StatoCicloScarico = 1000	'Attesa
+					'log dati produzione
+					loc_LogProduzione_Registra = True
+
+
+
+					'faccio reset dei membri pezzo
+					'If     [R2_STATUS:MAGAZZINO] = 1  Then
+					If     rikDaMagazzino = 1  Then
+						ResetDatiMembriStruttura("SCAR_M1_PZ1")
+						ResetDatiMembriStruttura("SCAR_M1_PZ2")
+						ResetDatiMembriStruttura("SCAR_M1_PZ3")
+						ResetDatiMembriStruttura("SCAR_M1_PZ4")
+					'ElseIf [R2_STATUS:MAGAZZINO] = 2 Then
+					ElseIf rikDaMagazzino = 2 Then
+						ResetDatiMembriStruttura("SCAR_M2_PZ1")
+						ResetDatiMembriStruttura("SCAR_M2_PZ2")
+						ResetDatiMembriStruttura("SCAR_M2_PZ3")
+						ResetDatiMembriStruttura("SCAR_M2_PZ4")
 					End If
+
+					'azzero le altre variabili
+					'[R2_STATUS:MAGAZZINO] = 0
+					'[R2_STATUS:CASSETTO] = 0
+					'[R2_STATUS:ID_QUARTINA] = ""
+
+					rikDaMagazzino = 0
+
+					'aggiorno cassetti pieni e disponibili
+				    AggiornaCassettiPieni(MySqlConnectionString, 1)
+					AggiornaCassettiPieni(MySqlConnectionString, 2)
+				    AggiornaCassettiDisponibili(MySqlConnectionString, 1)
+					AggiornaCassettiDisponibili(MySqlConnectionString, 2)
+					AggiornaCassettiInRiempimento(MySqlConnectionString, 1)
+					AggiornaCassettiInRiempimento(MySqlConnectionString, 2)
+
+					StatoCicloScarico = 1000	'Attesa
+
 
 				Case Else
 					LogMsg("Main() -&gt; Case StatoCicloScarico Else; StatoCicloScarico = " &amp; CStr(StatoCicloScarico))
@@ -967,77 +871,7 @@ Function CondizioneRikCassettoMagazzino() As Integer
 	End If
 End Function
 
-Function CondizioneAssegnaMissioneRobot() As PosQuartina
-	CondizioneAssegnaMissioneRobot.mag = 0
-	CondizioneAssegnaMissioneRobot.cass = 0
-
-	Dim cassettoDaM1 As Integer
-	Dim cassettoDaM2 As Integer
-	Dim magPiuVecchio As Integer
-	Dim assegnabileM1 As Boolean = False
-	Dim assegnabileM2 As Boolean = False
-
-	'posso assegnare una missione
-	'se il robot è disponibilr
-	'e se il robot non è in missione
-	'e se l'estrattore è pronto
-	'e se il cassetto assegnato al pezzo è uguale al cassetto nell'estrattore 2 del magazzino corrispondente
-	'e se il pezzo ha il campo SCAR_Mxx_PZ1:NUOVO a true (questo serve per poter intercettare correttamente la condizione di fine Robot nel Main
-
-	'controllo se una missione è assegnabile per M1
-	If      [R2_STATUS:DISPONIBILE] _
-		And [R2_STATUS:RIK_MISSIONE] _
-		And Not [R2_STATUS:IN_MISSIONE] _
-		And Not [R2_STATUS:NUOVA_MISSIONE] _
-		And [MAG1_ES2_ACT:PRONTO] _
-		And ([MAG1_ES2_ACT:ID_CASSETTO] = [SCAR_M1_PZ1:CASSETTO_ASSEGNATO]) _
-		And [SCAR_M1_PZ1:CASSETTO_ASSEGNATO] &lt;&gt; 0 _
-		Then
-
-		cassettoDaM1= [SCAR_M1_PZ1:CASSETTO_ASSEGNATO]
-		assegnabileM1 = True
-	End If
-
-	'controllo se una missione è assegnabile per M2
-	If      [R2_STATUS:DISPONIBILE] _
-		And [R2_STATUS:RIK_MISSIONE] _
-		And Not [R2_STATUS:IN_MISSIONE] _
-		And Not [R2_STATUS:NUOVA_MISSIONE] _
-		And [MAG2_ES2_ACT:PRONTO] _
-		And ([MAG2_ES2_ACT:ID_CASSETTO] = [SCAR_M2_PZ1:CASSETTO_ASSEGNATO]) _
-		And [SCAR_M2_PZ1:CASSETTO_ASSEGNATO] &lt;&gt; 0 _
-		Then
-
-		cassettoDaM2 = [SCAR_M2_PZ1:CASSETTO_ASSEGNATO]
-		assegnabileM2 = True
-	End If
-
-	If assegnabileM1 And assegnabileM2 Then
-		magPiuVecchio = MovimentatoPiuVecchio()
-		If magPiuVecchio = 1 Then
-			CondizioneAssegnaMissioneRobot.mag = 1
-			CondizioneAssegnaMissioneRobot.cass = cassettoDaM1
-		End If
-		If magPiuVecchio = 2 Then
-			CondizioneAssegnaMissioneRobot.mag = 2
-			CondizioneAssegnaMissioneRobot.cass = cassettoDaM2
-		End If
-	Else
-		'ho solo una missione assegnabile
-		If assegnabileM1 Then
-			CondizioneAssegnaMissioneRobot.mag = 1
-			CondizioneAssegnaMissioneRobot.cass = cassettoDaM1
-		End If
-		If assegnabileM2 Then
-			CondizioneAssegnaMissioneRobot.mag = 2
-			CondizioneAssegnaMissioneRobot.cass = cassettoDaM2
-		End If
-		'se nessun missione assegnabile CondizioneAssegnaMissioneRobot.mag = 0,  CondizioneAssegnaMissioneRobot.cass = 0
-	End If
-
-End Function
-
-Function FineRobot(connectionString As String, quartina As String) As Integer
+Function Fine_Scarico(connectionString As String, quartina As String) As Integer
 	'operazioni da fare nella function
 	'eliminare i dati del pezzo dal DB
 
@@ -1049,7 +883,7 @@ Function FineRobot(connectionString As String, quartina As String) As Integer
     Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
     Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
 
-    FineRobot = ERR_GENERICO	'inizializzzo a ERR_GENERICO
+    Fine_Scarico = ERR_GENERICO	'inizializzzo a ERR_GENERICO
 
 	'devo eliminare i dati del pezzo dal DB
 	excp = False
@@ -1061,7 +895,7 @@ Function FineRobot(connectionString As String, quartina As String) As Integer
             "WHERE `ID_QUARTINA` = " &amp; """" &amp; quartina &amp; """" _
 			&amp; ";"
 
-            DebugMsg "GestioneZonaR2.movbas -&gt; FineRobot(); commandText = " &amp; commandText
+            DebugMsg "GestioneZonaR2.movbas -&gt; Fine_Scarico(); commandText = " &amp; commandText
 
             Using MyCommand As New OdbcCommand()
 				MyCommand.Connection = MyConnection
@@ -1072,8 +906,8 @@ Function FineRobot(connectionString As String, quartina As String) As Integer
 	            MyCommand.CommandText = commandText
 	            rCount = MyCommand.ExecuteNonQuery()
 	            If rCount = 0 Then
-	            	LogMsg(" FineRobot() - WARNING : Delete ID_QUARTINA = " &amp; quartina &amp; " non riuscito")
-	            	FineRobot = 1 'torno errore
+	            	LogMsg(" Fine_Scarico() - WARNING : Delete ID_QUARTINA = " &amp; quartina &amp; " non riuscito")
+	            	Fine_Scarico = 1 'torno errore
 	            End If
 			End Using	'MyCommand.Dispose
         End Using	'MyConnection.Close
@@ -1082,31 +916,31 @@ Function FineRobot(connectionString As String, quartina As String) As Integer
 	Catch MyException As Exception
 		excp = True
 		DebugMsg(MyException.ToString)
-		MsgBox("GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; vbCrLf &amp; _
+		MsgBox("GestioneZonaR2.movbas -&gt; Fine_Scarico() - ERRORE: Exception." &amp; vbCrLf &amp; _
 					 MyException.ToString &amp; ".")
-		LogMsg(" FineRobot() - ERRORE: Exception." &amp; MyException.ToString &amp; ".")
+		LogMsg(" Fine_Scarico() - ERRORE: Exception." &amp; MyException.ToString &amp; ".")
 
 		'alzare alarme
-		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." _
+		alm_ZonaR2_ODBC_txt = "ERR_GENERIC_EXCEPION" &amp; " -- GestioneZonaR2.movbas -&gt; Fine_Scarico() - ERRORE: Exception." _
 								&amp; MyException.ToString &amp; "." 'ERR_GENERIC_EXCEPION 'ERRORE eccezzione generic
 		alm_ZonaR2_ODBC = True
-		FineRobot = ERR_GENERIC_EXCEPION
+		Fine_Scarico = ERR_GENERIC_EXCEPION
 		'Exit Function
 
 	  'Catch ODBC Exception
 	Catch MyOdbcException As OdbcException
 		excp = True
 		DebugMsg(MyOdbcException.ToString)
-		MsgBox("GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
+		MsgBox("GestioneZonaR2.movbas -&gt; Fine_Scarico() - ERRORE ODBC: OdbcException." &amp; vbCrLf &amp; _
 					MyOdbcException.ToString  &amp; ".")
-		LogMsg("FineRobot() - ERRORE ODBC: OdbcException." &amp; _
+		LogMsg("Fine_Scarico() - ERRORE ODBC: OdbcException." &amp; _
 					MyOdbcException.ToString  &amp; ".")
 		'TODO
 		'alzare alarme
-		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; FineRobot() - ERRORE: Exception." &amp; _
+		alm_ZonaR2_ODBC_txt = "ERR_ODBC_EXCEPTION" &amp; " -- GestioneZonaR2.movbas -&gt; Fine_Scarico() - ERRORE: Exception." &amp; _
 					 MyException.ToString &amp; "." 'ERR_ODBC_EXCEPTION 'ERRORE ecezzione ODBC
 		alm_ZonaR2_ODBC = True
-		FineRobot = ERR_ODBC_EXCEPTION
+		Fine_Scarico = ERR_ODBC_EXCEPTION
 	Finally
 		If excp Then
 			Exit Function
@@ -1114,7 +948,7 @@ Function FineRobot(connectionString As String, quartina As String) As Integer
     End Try
 
     'tutto Ok
-    FineRobot = 0
+    Fine_Scarico = 0
 End Function
 
 Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, commessa As String, esclusivo As Boolean) As PosQuartina
@@ -1198,92 +1032,6 @@ Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, com
     End Try
 
 End Function
-
-Sub DecodificaMissioniPezziR2_Mag1()
-	DecodificaMissioneRobot("SCAR_M1_PZ1")
-	DecodificaMissioneRobot("SCAR_M1_PZ2")
-	DecodificaMissioneRobot("SCAR_M1_PZ3")
-	DecodificaMissioneRobot("SCAR_M1_PZ4")
-End Sub
-
-Sub DecodificaMissioniPezziR2_Mag2()
-	DecodificaMissioneRobot("SCAR_M2_PZ1")
-	DecodificaMissioneRobot("SCAR_M2_PZ2")
-	DecodificaMissioneRobot("SCAR_M2_PZ3")
-	DecodificaMissioneRobot("SCAR_M2_PZ4")
-End Sub
-
-Sub DecodificaMissioneRobot(StrucDatiPezzo As String)', StructRobot As String)
-	Dim stPzz As String
-	Dim stRbt As String
-
-	Dim objVarPzz As DBVarObjCmdTarget
-	Dim typeVarPzz As movicon.eVariableType
-
-	stPzz = StrucDatiPezzo
-
-	objVarPzz = GetVariableObject(stPzz)
-	typeVarPzz = objVarPzz.GetType()
-
-	If typeVarPzz &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		LogMsg 		"DecodificaMissioniPezziR2() -&gt; Variabile = " 	&amp; stPzz 	&amp; " NON è una Struct."
-		Exit Sub
-	End If
-
-	'decodifica del codice robot
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "K-FINEST" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "K1900" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  1)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "K-FINEST" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "K1901" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  2)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "K-FINEST" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "K1911" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  3)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "363890" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  4)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358140" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  5)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "364110" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  6)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358340" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  7)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "363980" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  8)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358240" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  9)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS65" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "364650" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  10)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS70" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "358610" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  11)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C44" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  12)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C41" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  13)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C45" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  14)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "R72TT" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "R72C113" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  15)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS90" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "441050" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  16)
-	End If
-	If GetVariableValue(stPzz &amp; ":SERIE_PROFILO") = "AWS90" And GetVariableValue(stPzz &amp; ":CODICE_PROFILO") = "441780" Then
-		SetVariableValue(stPzz &amp; ":R2_CODICE_PRG",  17)
-	End If
-
-End Sub
 
 
 
@@ -2374,34 +2122,6 @@ Function AvoidNull(FieldVal As Object, retType As movicon.eVariableType) As Obje
 	End If
 End Function
 
-Function Get_R3_CODICE_TIPO_PROFILO(structPrefix As String) As Byte
-	Get_R3_CODICE_TIPO_PROFILO = 0
-	Dim structname As String
-	Dim count As Integer
-	Dim numZ As Integer
-	Dim codrbt As Byte
-	Dim tipoprofilo As String
-
-	For count = 1 To 4 Step 1
-		structname = structPrefix + CStr(count)
-		numZ = GetVariableValue(structname &amp; ":R2_COUNT_Z")
-		If numZ = 0 Then
-			'nella quartina non ho profili di tipo Z allora torno il codice assegnato al profilo del pezzo
-			codrbt = CByte(GetVariableValue(structname &amp; ":R3_COD_RBT"))
-			Get_R3_CODICE_TIPO_PROFILO = codrbt
-			Exit Function
-		Else
-			'se no cerco il profilo Z e quando lo trovo torno il suo valore di codice robot
-			tipoprofilo = GetVariableValue(structname &amp; ":R2_TIPO_PROFILO")
-			If tipoprofilo = "Z" Or tipoprofilo = "z" Then
-				'torno il valore del codice robot
-				codrbt = CByte(GetVariableValue(structname &amp; ":R3_COD_RBT"))
-				Get_R3_CODICE_TIPO_PROFILO = codrbt
-				Exit Function
-			End If
-		End If
-	Next
-End Function
 
 Sub VerificaIncongruenzeEstrattori()
 	'Dim errM1_ES1, errM1_ES2, errM1_ES3, errM2_ES1, errM2_ES2, errM2_ES3 As Boolean
