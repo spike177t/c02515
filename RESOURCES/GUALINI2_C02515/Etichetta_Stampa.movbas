@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="6174" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*PublicBasicScript"
+<ScriptCode StartSel="4770" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*PublicBasicScript"
 Option Explicit
 
 
@@ -122,7 +122,7 @@ Sub Main()
 	'esempio con stampante TXT condivisa
 	'print /d:"\\127.0.0.1\TXT" "C:\tmp\Etichetta_R3.txt"
 
-	comando ="print /d:""\\127.0.0.1\""" &amp; printername &amp; " " &amp; fullNameDataFile
+	comando ="print /d:""\\127.0.0.1\" &amp; printername &amp; """ """  &amp; fullNameDataFile &amp; """
 
 
 	ret = ExecuteCommand("&lt;CommandType action='3' parameters='" &amp; comando &amp; "' timeout='5000'&gt;System&lt;/CommandType&gt;")
@@ -146,7 +146,7 @@ Function GeneraEtichetta(Azienda As String, _
 
 	Dim varname As String
 	Dim printtext As String
-	Dim printername As String
+	'Dim printername As String
 
 	Dim projectDir As String
 
@@ -163,18 +163,24 @@ Function GeneraEtichetta(Azienda As String, _
 	msg = "Script Etichetta_Stampa.movbas" + vbCrLf + "Errore.  -&gt; "
 
 
-	etName = "Etichetta_R3.txt"
+	etName = "Etichetta.txt"
 
 	If projectDir = "" Then
 		workingDir = "C:\tmp
 	Else
 		workingDir = projectDir
 	End If
-	If [loc_ImpostazioniImpianto:nomeStampanteEtichetta] = "" Then
-		printername = "TXT"
-	Else
-		printername = [loc_ImpostazioniImpianto:nomeStampanteEtichetta]
+
+	'guardo se l'etichetta ha un valore
+	If printer = "" Then
+		'è vuota allora cerco un default
+		If [loc_ImpostazioniImpianto:nomeStampanteEtichetta] = "" Then
+			printer = "TXT"
+		Else
+			printer = [loc_ImpostazioniImpianto:nomeStampanteEtichetta]
+		End If
 	End If
+
 
 	fullNameDataFile = workingDir &amp; "\" &amp; etName
 
@@ -199,7 +205,6 @@ Function GeneraEtichetta(Azienda As String, _
 
 	'torno percorso file generato e nome stampante
 	fileEtichetta = fullNameDataFile
-	printer = printername
 
 	GeneraEtichetta = 1
 
@@ -207,7 +212,7 @@ Exit Function
 ErroreFileParametri:
 	Close #1
 	MsgBox msg, vbCritical, "Errore scrittura su file: " &amp; fullNameDataFile
-	alm_EtichettaErrore = true
+	alm_EtichettaErrore = True
 	GeneraEtichetta = 0
 End Function
 
@@ -222,6 +227,6 @@ Sub LogMsg(msg As String)
 	End If
 End Sub
 </ScriptCode>
-<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
-<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="2" SleepExecution="0" SyncroScriptTimeout="5000"/>
 </MovResource>

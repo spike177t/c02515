@@ -2797,11 +2797,11 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">mag1mag2</Name>
+<Name AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. selez. in Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
+<Visible Var="loc_ImpostazioniImpianto:M2_ABIL &lt; 1">1</Visible>
 <Transparency>0</Transparency>
 <BG>0</BG>
 <BGList>
@@ -2869,7 +2869,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="3807" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="1777" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -3003,7 +3003,7 @@ Public Sub Click()
 
 		End If
 	Else
-		MsgBox("Impossibile chiamare cassetto perchè il Robot R2 è In Missione o Estrattore non Pronto o StatoCicloScarico &lt;&gt; 1000." ,vbExclamation, "Richiesta cassetto in Estrattore 2.")
+		MsgBox("Impossibile chiamare cassetto perchè Estrattore non Pronto o StatoCicloScarico &lt;&gt; 1000." ,vbExclamation, "Richiesta cassetto in Estrattore 2.")
 	End If
 
 	objGrid = Nothing
@@ -3016,6 +3016,7 @@ Sub LogMsg(msg As String)
 	Debug.Print prefix &amp; msg
 End Sub
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiAkAA==</BreakPoints>
 </child>
 <child>
 <object>Button</object>

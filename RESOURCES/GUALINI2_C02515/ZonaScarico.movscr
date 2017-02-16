@@ -4165,15 +4165,15 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="294" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="171" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	Dim res As VbMsgBoxResult
 	res = MsgBox("Vuoi ristampare l'ultima etichetta generata?" &amp; vbCrLf &amp; "Sei sicuro?", vbYesNo, "Ristampa etichetta.")
-		If res = vbYes Then
-			RunScript("Etichetta_Stampa,MAG2", 100, False)
-		Else
-			Exit Sub
-		End If
-    End If
+
+	If res = vbYes Then
+		RunScript("Etichetta_Stampa,MAG2", 100, False)
+	Else
+		Exit Sub
+	End If
 End Sub
 </ScriptCode>
 </child>
@@ -4259,15 +4259,15 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="271" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="268" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	Dim res As VbMsgBoxResult
 	res = MsgBox("Vuoi ristampare l'ultima etichetta generata?" &amp; vbCrLf &amp; "Sei sicuro?", vbYesNo, "Ristampa etichetta.")
-		If res = vbYes Then
-			RunScript("Etichetta_Stampa,MAG1", 100, False)
-		Else
-			Exit Sub
-		End If
-    End If
+
+	If res = vbYes Then
+		RunScript("Etichetta_Stampa,MAG1", 100, False)
+	Else
+		Exit Sub
+	End If
 End Sub
 </ScriptCode>
 </child>
