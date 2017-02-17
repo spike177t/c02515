@@ -7,9 +7,10 @@
 <ListSynopticDraw>
 <child>
 <object>base</object>
-<type x="0" y="25" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
+<type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -377,10 +378,12 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
+'Sostituito il Sinottico 'ZonaR2' con il nuovo nome 'ZonaScaricoDettaglioDati'
+Public Sub Click()
 	loc_SelPage = 5
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaR2", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarDettaglioDati", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -466,11 +469,12 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScarico' con il nuovo nome 'ZonaScarOperatore'
+'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
 Public Sub Click()
 	loc_SelPage = 6
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaScarico", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarOperatore", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -934,10 +938,10 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="515" y="10" width="70" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="515" y="10" width="105" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo93</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R2</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Magazzini</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -947,14 +951,6 @@ End Sub
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo94</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Scarico</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="575" y="10" width="50" height="55" fill="none" stroke="none">rect</type>
-<ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo97</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1145,6 +1141,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">barraPulsanti</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1684,6 +1681,7 @@ End Sub
 <type x="410" y="135" width="330" height="400" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill ImageID="VistaAlto_Magazzini_R1_R2_low.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2117,8 +2115,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q1_Out:On"/>
 <item key="ledAuto" value="Q1_Out:InCiclo"/>
+<item key="ledOn" value="Q1_Out:On"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
@@ -2539,8 +2537,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q2_Out:InCiclo"/>
 <item key="ledOn" value="Q2_Out:On"/>
+<item key="ledAuto" value="Q2_Out:InCiclo"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
@@ -2549,7 +2547,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="275" y="515" width="148" height="71" ox="357" oy="481" owidth="148" oheight="71"/>
+<g x="270" y="505" width="148" height="71" ox="357" oy="481" owidth="148" oheight="71"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -2828,6 +2826,7 @@ End Sub
 </child>
 </childs>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

@@ -387,10 +387,12 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
+'Sostituito il Sinottico 'ZonaR2' con il nuovo nome 'ZonaScaricoDettaglioDati'
+Public Sub Click()
 	loc_SelPage = 5
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaR2", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarDettaglioDati", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -476,11 +478,12 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScarico' con il nuovo nome 'ZonaScarOperatore'
+'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
 Public Sub Click()
 	loc_SelPage = 6
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaScarico", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarOperatore", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -944,10 +947,10 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="515" y="10" width="70" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="515" y="10" width="105" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo93</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R2</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Magazzini</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -957,14 +960,6 @@ End Sub
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo94</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Scarico</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="575" y="10" width="50" height="55" fill="none" stroke="none">rect</type>
-<ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo97</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1155,6 +1150,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">barraPulsanti</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2493,10 +2489,10 @@ End Sub
 <AliasesList>
 <item key="Plc_WNUMCASRIKMxEx" value="Plc_WNUMCASRIKM2E2"/>
 <item key="Plc_I_PXGANCIOBLCMxEx" value="Plc_I_PXGANCIOBLCM2E2"/>
-<item key="Plc_I_PXOTTURSBLMxEx" value="Plc_I_PXOTTURSBLM2E2"/>
 <item key="Plc_BHMIBLCOTTURMxEx" value="Plc_BHMIBLCOTTURM2E2"/>
-<item key="titolo" value="str_MovMan_Mag2E2"/>
+<item key="Plc_I_PXOTTURSBLMxEx" value="Plc_I_PXOTTURSBLM2E2"/>
 <item key="Plc_BHMISBLGANCIOMxEx" value="Plc_BHMISBLGANCIOM2E2"/>
+<item key="titolo" value="str_MovMan_Mag2E2"/>
 <item key="Plc_BHMIBLCGANCIOMxEx" value="Plc_BHMIBLCGANCIOM2E2"/>
 <item key="Plc_I_PXOTTURBLCMxEx" value="Plc_I_PXOTTURBLCM2E2"/>
 <item key="Plc_WCICLOMxEx" value="Plc_WCICLOM2E2"/>
@@ -2510,7 +2506,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="857" y="95" width="155" height="480" ox="1740" oy="90" owidth="155" oheight="480"/>
+<g x="857" y="95" width="155" height="480" ox="1740" oy="90" owidth="155" oheight="370"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -2680,62 +2676,6 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="385" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMovMan_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="77" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMovMan_SogliaColore = 5
-	Plc_SPV_NUM_ASSE = 4
-	OpenSynoptic("MovManuali_Mag1_Es3",enum_ops_opennormal)
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
 <type x="0" y="275" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
@@ -2843,62 +2783,6 @@ End Sub
 	loc_BtnBarMovMan_SogliaColore = 8
 	Plc_SPV_NUM_ASSE = 7
 	OpenSynoptic("MovManuali_Mag2_Es2",enum_ops_opennormal)
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="0" y="440" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2 Es3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMovMan_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-<dci>
-<DynColor Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="77" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMovMan_SogliaColore = 9
-	Plc_SPV_NUM_ASSE = 8
-	OpenSynoptic("MovManuali_Mag2_Es3",enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>

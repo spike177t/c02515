@@ -908,10 +908,12 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
+'Sostituito il Sinottico 'ZonaR2' con il nuovo nome 'ZonaScaricoDettaglioDati'
+Public Sub Click()
 	loc_SelPage = 5
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaR2", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarDettaglioDati", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -997,11 +999,12 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScarico' con il nuovo nome 'ZonaScarOperatore'
+'Sostituito il Sinottico 'ZonaR3' con il nuovo nome 'ZonaScarico'
 Public Sub Click()
 	loc_SelPage = 6
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaScarico", enum_ops_opennormal)
+	OpenSynoptic("ZonaScarOperatore", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -1465,10 +1468,10 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="515" y="10" width="70" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="515" y="10" width="105" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo93</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Zona R2</text>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Magazzini</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1478,14 +1481,6 @@ End Sub
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo94</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Scarico</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="575" y="10" width="50" height="55" fill="none" stroke="none">rect</type>
-<ExtFill ImageID="roboticsmechatronics-icon-vector_bianco.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo97</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1676,6 +1671,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1686,7 +1682,7 @@ End Sub
 <childs>
 <child>
 <type>Button</type>
-<type x="0" y="450" width="75" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="450" width="150" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2053,80 +2049,6 @@ End Sub
 <CM>0</CM>
 <ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
 	loc_BtnBarMagazzini_SogliaColore = 5
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="75" y="450" width="75" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown n0="&lt;CommandType variable=&quot;loc_BtnBarMagazzini_SogliaColore&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;2&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
-" n1="&lt;CommandType synoptic=&quot;Magazzini_RikE3&quot; action=&quot;0&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;100&quot; y=&quot;100&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante68</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Richiedi Cassetto In Estrattore 3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="loc_BtnBarMagazzini_SogliaColore">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Color="65280" Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="57" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
-	loc_BtnBarMagazzini_SogliaColore = 2
 End Sub
 </ScriptCode>
 </child>
@@ -2558,7 +2480,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="25" y="540" width="190" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="330" y="540" width="190" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2777,7 +2699,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="220" y="540" width="190" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="25" y="540" width="190" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2785,11 +2707,11 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="[_SysVar_:ActivePassLevel] &gt;= 10">mag1mag2</Name>
+<Name PubName="Cass_In_Estrattore2" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. selez. in Estrattore 2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">1</Visible>
+<Visible>0</Visible>
 <Transparency>0</Transparency>
 <BG>0</BG>
 <BGList>
@@ -2857,7 +2779,7 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="1277" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="3340" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 '#Language "WWB.NET"
 
 Option Explicit
@@ -2922,8 +2844,21 @@ Public Sub Click()
 	'nomePz	= objGrid.CellText(nMinRow,5)
 	nomePz = "RikManDaMag1"
 
-	If (	(idMag = 1 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
-		Or 	(idMag = 2 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [R2_STATUS:IN_MISSIONE] And Not [MAG2_ES2_RIK:STROBE] And [MAG2_ES2_ACT:WAIT]) _
+	msg = "Per chiamare il cassetto è necessario disabilitare lo scarico automatico di MAG "
+	If idMag = 1 Then
+		If [loc_ImpostazioniImpianto:M1_ABIL] = 1 Then
+			 MsgBox(msg &amp; CStr(idMag), vbOkOnly + vbExclamation, "Richiesta cassetto in Estrattore 2.")
+			 Exit Sub
+		End If
+	ElseIf idMag = 2 Then
+		If [loc_ImpostazioniImpianto:M2_ABIL] = 1 Then
+			 MsgBox(msg &amp; CStr(idMag), vbOkOnly + vbExclamation, "Richiesta cassetto in Estrattore 2.")
+			 Exit Sub
+		End If
+	End If
+
+	If (	(idMag = 1 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [MAG1_ES2_RIK:STROBE] And [MAG1_ES2_ACT:WAIT]) _
+		Or 	(idMag = 2 And idCass &gt; 0 And StatoCicloScarico = 1000 And Not [MAG2_ES2_RIK:STROBE] And [MAG2_ES2_ACT:WAIT]) _
 		) And StatoCicloScarico = 1000 _
 		Then
 		msg = "Hai richiesto il cassetto: " &amp; CStr(idCass) &amp; " del magazzino: " &amp; CStr(idMag) &amp; " in Estrattore 2." _
@@ -2932,12 +2867,12 @@ Public Sub Click()
 		If retMsgbox = vbYes Then
 			If idMag = 1 Then
 				'faccio controllo ulteriore per verificare di non aver già assegnato la missione al robot
-				If [R2_STATUS:CASSETTO] &gt; 0 And [R2_STATUS:MAGAZZINO] = 1 Then
-					msg = "Attenzione il cassetto risulta asegnato a Missione Robot." &amp; vbCrLf _
+				If [MAG1_ES2_ACT:ID_CASSETTO] &gt; 0 Then
+					msg = "Attenzione è presente un cassetto nell'estrattore MAG1_ES2." &amp; vbCrLf _
 						&amp; "Rispondi ANNULLA per annullare la richiesta." &amp; vbCrLf _
-						&amp; "Rispondi OK per rimuovere il blocco e forzare la richiesta del cassetto." &amp; vbCrLf _
+						&amp; "Rispondi OK per forzare la richiesta del cassetto." &amp; vbCrLf _
 						&amp; vbCrLf &amp; "Attenzione rispondendo OK i dati dei pezzi non saranno eliminati, ma rimessi all'interno del magazzino." _
-						&amp; vbCrLf &amp; "Se i pezzi sono stati rimossi rispondere ANNULLA per annullare e far rientrare il cassetto con progedura apposita da pagina MAGAZZINI/Richiedi Cassetto in Estrattore 2"
+						&amp; vbCrLf &amp; "Se i pezzi sono stati rimossi rispondere ANNULLA per annullare e far rientrare il cassetto con procedura apposita da pagina MAGAZZINI/Richiedi Cassetto in Estrattore 2"
 
 					retMsgbox = MsgBox(msg, vbOkCancel, "Annullare richiesta cassetto in Magazzino 1 Estrattore 2." )
 					rikValida = IIf(retMsgbox = vbOK, True, False)
@@ -2946,11 +2881,6 @@ Public Sub Click()
 				End If
 
 				If rikValida Then
-					'reset dati missione
-					[R2_STATUS:MAGAZZINO] = 0
-					[R2_STATUS:CASSETTO] = 0
-					[R2_STATUS:ID_QUARTINA] = ""
-					
 					[MAG1_ES2_RIK:ID_CASSETTO] = idCass
 					[MAG1_ES2_RIK:ID_QUARTINA] = idQrt
 					[MAG1_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
@@ -2961,25 +2891,20 @@ Public Sub Click()
 
 			ElseIf idMag = 2 Then
 				'faccio controllo ulteriore per verificare di non aver già assegnato la missione al robot
-				If [R2_STATUS:CASSETTO] &gt; 0 And [R2_STATUS:MAGAZZINO] = 2 Then
-					msg = "Attenzione il cassetto risulta asegnato a Missione Robot." &amp; vbCrLf _
+				If [MAG2_ES2_ACT:ID_CASSETTO] &gt; 0 Then
+					msg = "Attenzione è presente un cassetto nell'estrattore MAG2_ES2." &amp; vbCrLf _
 						&amp; "Rispondi ANNULLA per annullare la richiesta." &amp; vbCrLf _
-						&amp; "Rispondi OK per rimuovere il blocco e forzare la richiesta del cassetto." &amp; vbCrLf _
+						&amp; "Rispondi OK per forzare la richiesta del cassetto." &amp; vbCrLf _
 						&amp; vbCrLf &amp; "Attenzione rispondendo OK i dati dei pezzi non saranno eliminati, ma rimessi all'interno del magazzino." _
 						&amp; vbCrLf &amp; "Se i pezzi sono stati rimossi rispondere ANNULLA per annullare e far rientrare il cassetto con progedura apposita da pagina MAGAZZINI/Richiedi Cassetto in Estrattore 2"
 
-					retMsgbox = MsgBox(msg, vbOkCancel, "Annullare richiesta cassetto in Magazzino 2 Estrattore 2." )
+					retMsgbox = MsgBox(msg, vbOkCancel, "Annullare richiesta cassetto in Magazzino 1 Estrattore 2." )
 					rikValida = IIf(retMsgbox = vbOK, True, False)
 				Else
 					rikValida = True
 				End If
 
 				If rikValida Then
-					'reset dati missione
-					[R2_STATUS:MAGAZZINO] = 0
-					[R2_STATUS:CASSETTO] = 0
-					[R2_STATUS:ID_QUARTINA] = ""
-
 					[MAG2_ES2_RIK:ID_CASSETTO] = idCass
 					[MAG2_ES2_RIK:ID_QUARTINA] = idQrt
 					[MAG2_ES2_RIK:NOME_PEZZO_UNICO] = nomePz
@@ -2991,188 +2916,7 @@ Public Sub Click()
 
 		End If
 	Else
-		MsgBox("Impossibile chiamare cassetto perchè il Robot R2 è In Missione o Estrattore non Pronto o StatoCicloScarico &lt;&gt; 1000." ,vbExclamation, "Richiesta cassetto in Estrattore 2.")
-	End If
-
-	objGrid = Nothing
-
-End Sub
-
-Sub LogMsg(msg As String)
-	Dim prefix As String
-	prefix = "Magazzini_ContenutoMag1.synoptic -&gt; "
-	Debug.Print prefix &amp; msg
-End Sub
-</ScriptCode>
-</child>
-<child>
-<object>Button</object>
-<type x="415" y="540" width="190" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">mag1mag2</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Cass. selez. in Estrattore 3</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible Var="[_SysVar_:ActivePassLevel] &gt;= 10">0</Visible>
-<Transparency>0</Transparency>
-<BG>0</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Value="1"/>
-</dci>
-<dci>
-<DynColor Value="2"/>
-</dci>
-<dci>
-<DynColor Value="3"/>
-</dci>
-<dci>
-<DynColor Value="4"/>
-</dci>
-<dci>
-<DynColor Value="5"/>
-</dci>
-<dci>
-<DynColor Value="6"/>
-</dci>
-<dci>
-<DynColor Value="7"/>
-</dci>
-<dci>
-<DynColor Value="8"/>
-</dci>
-<dci>
-<DynColor Value="9"/>
-</dci>
-<dci>
-<DynColor Value="10"/>
-</dci>
-<dci>
-<DynColor Value="11"/>
-</dci>
-<dci>
-<DynColor Value="12"/>
-</dci>
-<dci>
-<DynColor Value="13"/>
-</dci>
-<dci>
-<DynColor Value="14"/>
-</dci>
-<dci>
-<DynColor Value="15"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-<ScriptCode StartSel="1120" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
-'#Language "WWB.NET"
-
-Option Explicit
-
-Imports System
-Imports System.IO
-Imports System.Data.Odbc
-
-Dim objGrid As GridWndCmdTarget
-Dim MySqlConnectionString As String
-
-Public Sub Click()
-	Dim strQuery As String
-	'Dim nRows As Integer
-	Dim i As Integer
-	Dim mag As Integer
-	Dim cass As Integer
-	Dim selected As Boolean
-	Dim exQuery As String
-
-	Dim retMsgbox  As VbMsgBoxResult
-	Dim msg As String
-
-	'var per verifica celle selezionate
-	Dim nMinRow As Integer
-	Dim nMinCol As Integer
-	Dim nMaxRow As Integer
-	Dim nMaxCol As Integer
-
-	Dim idCass As Integer
-	Dim idMag As Integer
-	Dim idQrt As String
-	Dim nomePz As String
-
-	If [loc_ImpostazioniImpianto:MySqlConnectionString] = "" Then
-		MySqlConnectionString = "DRIVER={MySQL ODBC 5.3 ANSI Driver};" &amp; _
-	      "SERVER=localhost;" &amp; _
-	      "DATABASE=gualini;" &amp; _
-	      "UID=root;" &amp; _
-	      "PASSWORD=co.mar;" &amp; _
-	      "OPTION=3;"
-	Else
-		MySqlConnectionString = [loc_ImpostazioniImpianto:MySqlConnectionString]
-	End If
-
-	objGrid = GetSynopticObject.GetSubObject("gridWindow").GetObjectInterface
-
-	'verifico la selezione
-	objGrid.GetSelectedRange(nMinRow, nMinCol, nMaxRow, nMaxCol)
-	If nMinRow &lt; 0 Then
-		MsgBox("Selezionare prima un elemento dalla tabella." ,vbExclamation, "Richiesta cassetto in Estrattore.")
-		objGrid = Nothing
-		Exit Sub
-	End If
-
-	idMag 	= IIf(objGrid.CellText(nMinRow,1) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,1)), 0)
-	idCass 	= IIf(objGrid.CellText(nMinRow,2) &lt;&gt; "", CInt(objGrid.CellText(nMinRow,2)), 0)
-	idQrt 	= objGrid.CellText(nMinRow,4)
-	'nomePz	= objGrid.CellText(nMinRow,5)
-	nomePz = "RikManDaMag1"
-
-	If 		(idMag = 1 And idCass &gt; 0 And [MAG1_ES3_ACT:ID_CASSETTO] = 0 And Not [MAG1_ES3_RIK:STROBE] And [MAG1_ES3_ACT:WAIT]) _
-		Or 	(idMag = 2 And idCass &gt; 0 And [MAG2_ES3_ACT:ID_CASSETTO] = 0 And Not [MAG2_ES3_RIK:STROBE] And [MAG2_ES3_ACT:WAIT]) _
-		Then
-		msg = "Hai richiesto il cassetto: " &amp; CStr(idCass) &amp; " del magazzino: " &amp; CStr(idMag) &amp; " in Estrattore 3." _
-				&amp; vbCrLf &amp; " Sei sicuro?"
-		retMsgbox = MsgBox(msg, vbYesNo, "Richiesta cassetto in Estrattore 3." )
-		If retMsgbox = vbYes Then
-			If idMag = 1 Then
-				[MAG1_ES3_RIK:ID_CASSETTO] = idCass
-				[MAG1_ES3_RIK:ID_QUARTINA] = idQrt
-				[MAG1_ES3_RIK:NOME_PEZZO_UNICO] = nomePz
-				[MAG1_ES3_RIK:STROBE] = True
-			ElseIf idMag = 2 Then
-				[MAG2_ES3_RIK:ID_CASSETTO] = idCass
-				[MAG2_ES3_RIK:ID_QUARTINA] = idQrt
-				[MAG2_ES3_RIK:NOME_PEZZO_UNICO] = nomePz
-				[MAG2_ES3_RIK:STROBE] = True
-			End If
-			OpenSynoptic("Magazzini_RikE3",eOpenSynopticMode.enum_ops_opennormal)
-			loc_BtnBarMagazzini_SogliaColore = 2
-
-		End If
-	Else
-		MsgBox("Impossibile chiamare cassetto perchè un cassetto è già presente o Estrattore non Pronto." ,vbExclamation, "Richiesta cassetto in Estrattore 3.")
+		MsgBox("Impossibile chiamare cassetto perchè Estrattore non Pronto o StatoCicloScarico &lt;&gt; 1000." ,vbExclamation, "Richiesta cassetto in Estrattore 2.")
 	End If
 
 	objGrid = Nothing

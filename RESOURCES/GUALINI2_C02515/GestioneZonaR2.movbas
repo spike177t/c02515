@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="15604" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="6647" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Fine_Scarico' con il nuovo nome 'alm_ScaricoEliminaQrt'
 'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
@@ -2136,11 +2136,7 @@ Sub VerificaIncongruenzeEstrattori()
 	Else
 		[loc_IncongrEstrattori:errM1_ES2] = False
 	End If
-	If [MAG1_ES3_ACT:WAIT] And ([MAG1_ES3_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES3_RIK:ID_CASSETTO]) Then
-		[loc_IncongrEstrattori:errM1_ES3] = True
-	Else
-		[loc_IncongrEstrattori:errM1_ES3] = False
-	End If
+
 
 	If [MAG2_ES1_ACT:WAIT] And ([MAG2_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES1_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM2_ES1] = True
@@ -2152,14 +2148,10 @@ Sub VerificaIncongruenzeEstrattori()
 	Else
 		[loc_IncongrEstrattori:errM2_ES2] = False
 	End If
-	If [MAG2_ES3_ACT:WAIT] And ([MAG2_ES3_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES3_RIK:ID_CASSETTO]) Then
-		[loc_IncongrEstrattori:errM2_ES3] = True
-	Else
-		[loc_IncongrEstrattori:errM2_ES3] = False
-	End If
 
-	If  	[loc_IncongrEstrattori:errM1_ES1] Or  [loc_IncongrEstrattori:errM1_ES2] Or  [loc_IncongrEstrattori:errM1_ES3] _
-		Or  [loc_IncongrEstrattori:errM2_ES1] Or  [loc_IncongrEstrattori:errM2_ES2] Or  [loc_IncongrEstrattori:errM2_ES3] _
+
+	If  	[loc_IncongrEstrattori:errM1_ES1] Or  [loc_IncongrEstrattori:errM1_ES2] _
+		Or  [loc_IncongrEstrattori:errM2_ES1] Or  [loc_IncongrEstrattori:errM2_ES2] _
 		Then
 		[loc_IncongrEstrattori:almOn] = True
 	Else
@@ -2169,6 +2161,8 @@ End Sub
 
 
 </ScriptCode>
+<BreakPoints xsi:type="xsd:base64Binary">AiDDAPsA
+</BreakPoints>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="1"/>
-<Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
+<Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaScarico" MaxInstances="1" SleepExecution="50" SyncroScriptTimeout="5000"/>
 </MovResource>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="2209" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
+<ScriptCode StartSel="2258" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
 Option Explicit
@@ -79,11 +79,6 @@ Sub Main
 	Variabile="IP_Q2"
 	[loc_ImpostazioniImpianto:IP_Q2] = ReadIniValue(Path, Chiave, Variabile)
 
-	'Chiave="IP"
-	'Variabile="IP_ASSEMBLATRICE"
-	'[loc_ImpostazioniImpianto:IP_Assemblatrice] = ReadIniValue(Path, Chiave, Variabile)
-
-	'Exit Sub
 
 	'controllo se sono in esecuzione altre istanze di Premium
 	RunScript ("FindProcess",100,False)
@@ -92,12 +87,9 @@ Sub Main
 	'RunScript ("#SimulaPezziDaQuadre",100,False)
 	RunScript ("GestioneZonaR1",100,False)
 	RunScript ("GestioneZonaR2",100,False)
-	'RunScript ("GestioneZonaR3",100,False)
-	'RunScript ("Gestione_Estrattori_E3",100,False)
 	
 	RunScript ("DriverQuadra1",100,False)
 	RunScript ("DriverQuadra2",100,False)
-	'RunScript ("DriverAssemblatrice",100,False)
 
 
 	'LOGIN OPERATORE
