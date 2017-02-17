@@ -2493,10 +2493,10 @@ End Sub
 <AliasesList>
 <item key="Plc_WNUMCASRIKMxEx" value="Plc_WNUMCASRIKM1E2"/>
 <item key="Plc_I_PXGANCIOBLCMxEx" value="Plc_I_PXGANCIOBLCM1E2"/>
-<item key="Plc_I_PXOTTURSBLMxEx" value="Plc_I_PXOTTURSBLM1E2"/>
 <item key="Plc_BHMIBLCOTTURMxEx" value="Plc_BHMIBLCOTTURM1E2"/>
-<item key="titolo" value="str_MovMan_Mag1E2"/>
+<item key="Plc_I_PXOTTURSBLMxEx" value="Plc_I_PXOTTURSBLM1E2"/>
 <item key="Plc_BHMISBLGANCIOMxEx" value="Plc_BHMISBLGANCIOM1E2"/>
+<item key="titolo" value="str_MovMan_Mag1E2"/>
 <item key="Plc_BHMIBLCGANCIOMxEx" value="Plc_BHMIBLCGANCIOM1E2"/>
 <item key="Plc_I_PXOTTURBLCMxEx" value="Plc_I_PXOTTURBLCM1E2"/>
 <item key="Plc_WCICLOMxEx" value="Plc_WCICLOM1E2"/>
@@ -2680,7 +2680,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="220" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="385" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2736,7 +2736,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="330" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="275" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2792,7 +2792,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="385" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="330" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -2904,7 +2904,7 @@ End Sub
 </child>
 <child>
 <type>Button</type>
-<type x="0" y="275" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="0" y="220" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
@@ -3016,6 +3016,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="btnBarMovManuali" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
