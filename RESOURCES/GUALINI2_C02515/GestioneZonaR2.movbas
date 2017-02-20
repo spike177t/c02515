@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="9543" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="63872" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Fine_Scarico' con il nuovo nome 'alm_ScaricoEliminaQrt'
 'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
@@ -1453,16 +1453,18 @@ Function AggiornaDatiPezziInScarico(connectionString As String, structname As St
 					Else
 						'non ho pezzi nello slot per cui faccio reset valori
 						ResetDatiMembriStruttura(structname)
-						If cass &gt; 0 Then
-							'ho richiesto in E2 un cassetto che non ha tutti i pezzi (possibile solo facendo richieste manuali)
-							'alzo allarme, che però dovra essere resettao con procedura particolare e non da plsResetAllarmi
-							If Not SetVariableValue("alm_M" &amp; CStr(mag) &amp; "_ES2_ErrPz" &amp; CStr(pz), True) Then
-								'ho errore nella funzione SetVariableValue
-								Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInScarico() ECCEZZIONE in SetVariableValue(alm_M &amp; CStr(mag) &amp; _ES_ErrPz &amp; CStr(pz), True).")
-							End If
-							'torno errore
-							AggiornaDatiPezziInScarico = ERR_PEZZI_NON_TROVATI
-						End If
+						'tolgo allarme perchè scarico manuale e posso avere quartine con 3 pezzi (porte)
+						'If cass &gt; 0 Then
+						'	'ho richiesto in E2 un cassetto che non ha tutti i pezzi (possibile solo facendo richieste manuali)
+						'	'alzo allarme, che però dovra essere resettao con procedura particolare e non da plsResetAllarmi
+						'	'genero nome variabile alm_M1_ES2_ErrPz1,alm_M1_ES2_ErrPz2,alm_M1_ES2_ErrPz3,alm_M1_ES2_ErrPz4,alm_M2_ES2_ErrPz1,alm_M2_ES2_ErrPz2,alm_M2_ES2_ErrPz3,alm_M2_ES2_ErrPz4,
+						'	If Not SetVariableValue("alm_M" &amp; CStr(mag) &amp; "_ES2_ErrPz" &amp; CStr(pz), True) Then
+						'		'ho errore nella funzione SetVariableValue
+						'		Throw New System.Exception("GestioneZonaR2.movbas -&gt; AggiornaDatiPezziInScarico() ECCEZZIONE in SetVariableValue(alm_M &amp; CStr(mag) &amp; _ES_ErrPz &amp; CStr(pz), True).")
+						'	End If
+						'	'torno errore
+						'	AggiornaDatiPezziInScarico = ERR_PEZZI_NON_TROVATI
+						'End If
 					End If
 				End Using	'MyDataReader.Close
 			End Using	'MyCommand.Dispose
