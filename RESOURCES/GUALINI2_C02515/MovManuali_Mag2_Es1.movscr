@@ -949,8 +949,8 @@ End Sub
 <type>base</type>
 <type x="515" y="10" width="105" height="51" fill="none" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo93</Name>
-<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Magazzini</text>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnEstrattori</Name>
+<text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Estrattori</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2489,10 +2489,10 @@ End Sub
 <AliasesList>
 <item key="Plc_WNUMCASRIKMxEx" value="Plc_WNUMCASRIKM2E1"/>
 <item key="Plc_I_PXGANCIOBLCMxEx" value="Plc_I_PXGANCIOBLCM2E1"/>
-<item key="Plc_BHMIBLCOTTURMxEx" value="Plc_BHMIBLCOTTURM2E1"/>
 <item key="Plc_I_PXOTTURSBLMxEx" value="Plc_I_PXOTTURSBLM2E1"/>
-<item key="Plc_BHMISBLGANCIOMxEx" value="Plc_BHMISBLGANCIOM2E1"/>
+<item key="Plc_BHMIBLCOTTURMxEx" value="Plc_BHMIBLCOTTURM2E1"/>
 <item key="titolo" value="str_MovMan_Mag2E1"/>
+<item key="Plc_BHMISBLGANCIOMxEx" value="Plc_BHMISBLGANCIOM2E1"/>
 <item key="Plc_BHMIBLCGANCIOMxEx" value="Plc_BHMIBLCGANCIOM2E1"/>
 <item key="Plc_I_PXOTTURBLCMxEx" value="Plc_I_PXOTTURBLCM2E1"/>
 <item key="Plc_WCICLOMxEx" value="Plc_WCICLOM2E1"/>
@@ -2900,7 +2900,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="btnBarMovManuali" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
