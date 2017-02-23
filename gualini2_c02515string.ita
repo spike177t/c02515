@@ -131,7 +131,7 @@
 <item key="Plc_ar_allarmi_33_H" value="Manca Alimentazione 230Vac Pc supervisione"/>
 <item key="Plc_ar_allarmi_81_H" value=""/>
 <item key="Plc_ar_messaggi_8_H" value=""/>
-<item key="Plc_ar_allarmi_4_H" value="alm non specificato"/>
+<item key="Plc_ar_allarmi_4_H" value="Allarme da Supervisione"/>
 <item key="Plc_ar_allarmi_10_H" value="Tout Salita/Discesa Gancio M1E1"/>
 <item key="Plc_ar_allarmi_59_H" value=""/>
 <item key="Plc_ar_messaggi_32_H" value=""/>
