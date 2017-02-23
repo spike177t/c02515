@@ -912,12 +912,13 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScarDettaglioDati' con il nuovo nome 'ZonaEstrattori'
+'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
 'Sostituito il Sinottico 'ZonaR2' con il nuovo nome 'ZonaScaricoDettaglioDati'
 Public Sub Click()
 	loc_SelPage = 5
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaScarDettaglioDati", enum_ops_opennormal)
+	OpenSynoptic("ZonaEstrattori", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -2797,7 +2798,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="20" y="335" width="245" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="20" y="300" width="245" height="15" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Commessa Preferenziale</text>
@@ -2806,7 +2807,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="25" y="275" width="245" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<type x="20" y="240" width="245" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="loc_ImpostazioniImpianto:ScaricoCommessaEsclusiva" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
@@ -3034,13 +3035,174 @@ End Sub
 </child>
 <child>
 <object>Edit</object>
-<editbox x="25" y="355" width="240" height="205" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<editbox x="20" y="320" width="240" height="180" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style fmtscale="x" HasList="1" ShowControlList="1" ListData="" SortItems="0" InvertSelection="0"/>
 <border>4</border>
 <execution var="loc_ImpostazioniImpianto:ScaricoCommessaPref" listvar="loc_ImpostazioniImpianto:ScaricoElencoCommesse"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="20" y="525" width="120" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="loc_ImpostazioniImpianto:AbillRicercaQrtSuccessiva" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name Tooltip="Abilita/Disabilita Ricerca Quartina Successiva " AntialiasingFont="1" acr="4294901760">Pulsante27</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Abilita Ricerca Quartina Successiva</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_ImpostazioniImpianto:AbillRicercaQrtSuccessiva">1</BG>
+<BGList>
+<dci>
+<DynColor Color="33023"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="loc_ImpostazioniImpianto:AbillRicercaQrtSuccessiva">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Ricerca Quartina Succ.  DISABILITATA"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="Ricerca Quartina Succ. ABILITATA"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>Button</object>
+<type x="150" y="525" width="120" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="loc_ImpostazioniImpianto:TipoCarico" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name Tooltip="Imposta Tipo Carico" AntialiasingFont="1" acr="4294901760">Pulsante26</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Tipo Carico</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_ImpostazioniImpianto:TipoCarico">1</BG>
+<BGList>
+<dci>
+<DynColor Color="16711680"/>
+</dci>
+<dci>
+<DynColor Color="33023" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG Var="loc_ImpostazioniImpianto:TipoCarico">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Quadra su  Magazzino Corrispondente"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="Quadra su Entrambi i Magazzini"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>base</object>
+<type x="20" y="500" width="250" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Impostazione Carico Avanzate</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>

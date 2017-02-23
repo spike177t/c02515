@@ -918,12 +918,13 @@ End Sub
 <RCX>0</RCX>
 <RCY>0</RCY>
 <CM>0</CM>
-<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
+<ScriptCode StartSel="59" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Sinottico 'ZonaScarDettaglioDati' con il nuovo nome 'ZonaEstrattori'
+'Sostituito il Sinottico 'ZonaScaricoDettaglioDati' con il nuovo nome 'ZonaScarDettaglioDati'
 'Sostituito il Sinottico 'ZonaR2' con il nuovo nome 'ZonaScaricoDettaglioDati'
 Public Sub Click()
 	loc_SelPage = 5
 	Plc_SPV_NUM_ASSE = 0
-	OpenSynoptic("ZonaScarDettaglioDati", enum_ops_opennormal)
+	OpenSynoptic("ZonaEstrattori", enum_ops_opennormal)
 End Sub
 </ScriptCode>
 </child>
@@ -1689,7 +1690,6 @@ End Sub
 <type x="20" y="240" width="495" height="190" fill="rgb(64,64,64)" stroke="none">rect</type>
 <ExtFill grad="4" gcolor="rgb(0,0,0)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" AntialiasingFont="1" acr="4294901760">Rettangolo1</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3911,8 +3911,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
 </AliasesList>
 </child>
@@ -4248,8 +4248,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -4424,8 +4424,8 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnStrobe</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rst</text>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">btnStrobe</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Inserisci</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -4669,8 +4669,8 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnStrobe</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rst</text>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">btnStrobe</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Inserisci</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
@@ -4742,8 +4742,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -5078,8 +5078,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -5349,7 +5349,6 @@ End Sub
 </child>
 </childs>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -5431,7 +5430,6 @@ End Sub
 </child>
 </childs>
 <Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
