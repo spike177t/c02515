@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="2846" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Basic Script 'GestioneZonaR2' con il nuovo nome 'GestioneZonaScarico'
+<ScriptCode StartSel="2844" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">'Sostituito il Basic Script 'GestioneZonaR2' con il nuovo nome 'GestioneZonaScarico'
 '#Uses "*ReadIniFiles"
 '#Uses "*PublicBasicScript"
 
@@ -89,8 +89,8 @@ Sub Main
 	RunScript ("GestioneZonaR1",100,False)
 	RunScript ("GestioneZonaScarico",100,False)
 	
-	'RunScript ("DriverQuadra1",100,False)
-	'RunScript ("DriverQuadra2",100,False)
+	RunScript ("DriverQuadra1",100,False)
+	RunScript ("DriverQuadra2",100,False)
 
 
 	'LOGIN OPERATORE

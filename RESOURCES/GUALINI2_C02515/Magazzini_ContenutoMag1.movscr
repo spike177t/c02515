@@ -1671,7 +1671,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2879,7 +2878,7 @@ End Sub
 <grid x="25" y="95" width="810" height="435" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>4</Border>
-<style ShowControl="1" AutoLayout="0" Clickable="1" ReadOnly="0" PromptPad="0" IconBtn="1" RefreshBtn="1" UpdateBtn="1" SaveBtn="1" SelectAllBtn="1" CopyBtn="1" InsertBtn="1" DeleteBtn="1" Size="0" Pos="3" ColumnsWidths="" RefreshTxt="" UpdateTxt="" SaveTxt="" SelectAllTxt="" CopyTxt="" InsertTxt="" DeleteTxt=""/>
+<style ShowControl="1" AutoLayout="0" Clickable="1" ReadOnly="0" PromptPad="0" IconBtn="1" RefreshBtn="1" UpdateBtn="0" SaveBtn="0" SelectAllBtn="1" CopyBtn="1" InsertBtn="0" DeleteBtn="0" Size="0" Pos="3" ColumnsWidths="" RefreshTxt="" UpdateTxt="" SaveTxt="" SelectAllTxt="" CopyTxt="" InsertTxt="" DeleteTxt=""/>
 <execution DSN="gualini" User="gualini" Query="&quot;SELECT  `tutti_pezzi`.`magazzino_ID_MAGAZZINO` AS MAG, `tutti_pezzi`.`ID_CASSETTO` AS CASS, pos.DESCRIZIONE AS POSIZIONE_CASSETTO,  `tutti_pezzi`.`ID_QUARTINA`, `tutti_pezzi`.`ID_PEZZO`,  `tutti_pezzi`.`POSIZIONE` AS SLOT_PEZZO, `tutti_pezzi`.`NOME_COMMESSA`, `tutti_pezzi`.`SerieProfilo`, `tutti_pezzi`.`CodiceProfilo`, `tutti_pezzi`.`NUM_SQUADRETTE1` AS NUM_SQ1, `tutti_pezzi`.`COD_SQUADRETTA1` AS COD_SQ1, `tutti_pezzi`.`NUM_SQUADRETTE2` AS NUM_SQ2, `tutti_pezzi`.`COD_SQUADRETTA2` AS COD_SQ2, `tutti_pezzi`.`MAX_LUNGHEZZA`, FROM `gualini`.`tutti_pezzi` join  `gualini`.`posizione_cassetti` AS pos on  `tutti_pezzi`.`POSIZIONE_CASSETTO`=  pos.ID_POSIZIONE_CASSETTI where `tutti_pezzi`.`magazzino_ID_MAGAZZINO` = 1 Order by MAG, CASS, SLOT_PEZZO;&quot;" TextFileName="" Separator="" UpdateVariable="0"/>
 <ColumnList/>
 <GridFont font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" XOffset="0" YOffset="0"/>
