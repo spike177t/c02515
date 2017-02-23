@@ -1675,7 +1675,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2997,10 +2996,10 @@ End Sub
 <EG Var="loc_ImpostazioniImpianto:Q2_ABIL">1</EG>
 <EGList>
 <dci>
-<DynColor Color="16777215" Text="Q1 CARICO DISABILITATO"/>
+<DynColor Color="16777215" Text="Q2 CARICO DISABILITATO"/>
 </dci>
 <dci>
-<DynColor Color="16777215" Value="1" Text="Q1 CARICO ABILITATO"/>
+<DynColor Color="16777215" Value="1" Text="Q2 CARICO ABILITATO"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
