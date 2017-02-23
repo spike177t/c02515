@@ -1671,7 +1671,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2576,7 +2575,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo15_15">1</BG>
+<BG Var="Pilz_Virt_OVo12_EmgMag1">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -2621,7 +2620,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Pilz_Virt_OVo15_15" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Pilz_Virt_OVo12_EmgMag1" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -2648,7 +2647,7 @@ End Sub
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo16_16">1</BG>
+<BG Var="Pilz_Virt_OVo13_EmgMag2">1</BG>
 <BGList>
 <dci>
 <DynColor Color="255" BlinkColor="65535" Type="4"/>
@@ -2693,7 +2692,7 @@ End Sub
 <type x="6" y="6" width="44" height="40" fill="none" stroke="syscolor(BTNTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
-<Mechanic CheckVariable="Pilz_Virt_OVo16_16" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<Mechanic CheckVariable="Pilz_Virt_OVo13_EmgMag2" MechanicStyle="1" CentralZero="0" PushStyleEx2="2" PushStyleEx="2" PushStyle="10" clickable="0" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
 <Name AntialiasingFont="1" acr="4294901760">Pulsante253</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -3892,8 +3891,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -4258,7 +4257,7 @@ End Function
 <object>base</object>
 <type x="25" y="270" width="390" height="50" fill="rgb(224,224,224)" stroke="rgb(255,128,0)" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="4" gcolor="rgb(255,255,255)" Style="3" fill="syscolor(MENUTEXT SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760"/>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Disabilitare scarico M1 per richiedere  cassetti manualmente.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -4285,7 +4284,7 @@ End Function
 <object>base</object>
 <type x="25" y="350" width="390" height="50" fill="rgb(224,224,224)" stroke="rgb(255,128,0)" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="4" gcolor="rgb(255,255,255)" Style="3" fill="syscolor(MENUTEXT SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760"/>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="14" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Disabilitare scarico M2 per richiedere  cassetti manualmente.</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>

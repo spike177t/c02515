@@ -2544,7 +2544,8 @@ End Sub
 <CommandsOnDown n0="&lt;CommandType variable=&quot;oc_ImpostazioniImpianto:Scarico_FineM1&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_Q_LMPACKPZIPREM1E2"/>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_Q_LMPACKPZIPREM1E2 And ([loc_ImpostazioniImpianto:M1_ABIL] = 1)
+"/>
 <text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rimuovere Pezzi MAG1 ES2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2602,7 +2603,8 @@ End Sub
 <CommandsOnDown n0="&lt;CommandType variable=&quot;loc_ImpostazioniImpianto:Scarico_FineM2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_Q_LMPACKPZIPREM2E2"/>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_Q_LMPACKPZIPREM2E2 And ([loc_ImpostazioniImpianto:M2_ABIL] = 1)
+"/>
 <text font-family="Tahoma" font-size="16" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rimuovere Pezzi MAG2 ES2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
