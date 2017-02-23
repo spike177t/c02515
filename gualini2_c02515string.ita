@@ -2,7 +2,7 @@
 <strings>
 <list>
 <item key="Plc_ar_allarmi_21_H" value="Estrattore1 Magazzino1 Non Indietro"/>
-<item key="Plc_ar_messaggi_18_H" value="Richiesta Aperura Riparo Robot1 Attiva"/>
+<item key="Plc_ar_messaggi_18_H" value="Rikiesta Aperura Riparo2 Attiva"/>
 <item key="Plc_ar_allarmi_95_H" value=""/>
 <item key="Plc_ar_allarmi_47_H" value=""/>
 <item key="Plc_ar_messaggi_20_H" value=""/>
@@ -10,7 +10,7 @@
 <item key="Plc_ar_allarmi_24_H" value="Estrattore2 Magazzino1 Non Avanti"/>
 <item key="Plc_ar_allarmi_98_H" value=""/>
 <item key="Plc_ar_messaggi_1_H" value="Magazzini Spenti"/>
-<item key="Plc_ar_messaggi_23_H" value="Mancano squadrette fila 3"/>
+<item key="Plc_ar_messaggi_23_H" value=""/>
 <item key="Plc_ar_allarmi_27_H" value="Estrattore1 Magazzino2 Non Indietro"/>
 <item key="Plc_ar_allarmi_75_H" value=""/>
 <item key="Plc_ar_allarmi_52_H" value=""/>
@@ -19,42 +19,42 @@
 <item key="str_MovMan_Mag1E3" value="Magazzino 1 Estrattore 3"/>
 <item key="Plc_ar_messaggi_4_H" value="Robot1 In Ingombro Su M1E1"/>
 <item key="str_MovMan_Mag1" value="Magazzino 1"/>
-<item key="Plc_ar_messaggi_26_H" value="Mancano squadrette fila 6"/>
+<item key="Plc_ar_messaggi_26_H" value=""/>
 <item key="Plc_ar_allarmi_78_H" value=""/>
 <item key="str_MovMan_Mag2" value="Magazzino 2"/>
 <item key="Plc_ar_allarmi_55_H" value=""/>
 <item key="Plc_ar_allarmi_80_H" value=""/>
-<item key="Plc_ar_allarmi_32_H" value="Estrattore3 Magazzino2 Non Avanti"/>
+<item key="Plc_ar_allarmi_32_H" value="Manca Alimentazione 230Vac"/>
 <item key="Plc_ar_messaggi_7_H" value="Robot1 In Ingombro Su Magazzino2"/>
 <item key="Plc_ar_allarmi_3_H" value="Allarme Asse Estrattore2 Magazzino1"/>
-<item key="Plc_ar_messaggi_29_H" value="Mancano squadrette fila 9"/>
+<item key="Plc_ar_messaggi_29_H" value=""/>
 <item key="Plc_ar_allarmi_58_H" value=""/>
 <item key="alm_Q2_MancaFile_H" value="Q2, file identificativo pezzo non trovato"/>
 <item key="Plc_ar_messaggi_31_H" value=""/>
-<item key="Plc_ar_allarmi_35_H" value="Profibus Assemblatrice Ko"/>
+<item key="Plc_ar_allarmi_35_H" value="Manca Alimentazione 24Vdc Comune Inputs"/>
 <item key="Plc_ar_allarmi_83_H" value=""/>
 <item key="Plc_ar_allarmi_6_H" value="Allarme Asse Estrattore1 Magazzino2"/>
 <item key="Plc_ar_allarmi_60_H" value=""/>
 <item key="Plc_ar_allarmi_12_H" value="Tout Salita/Discesa Gancio M1E2"/>
 <item key="Plc_ar_messaggi_34_H" value=""/>
 <item key="Plc_ar_allarmi_86_H" value=""/>
-<item key="Plc_ar_allarmi_38_H" value="Profibus Robot3 Ko"/>
+<item key="Plc_ar_allarmi_38_H" value=""/>
 <item key="Plc_ar_allarmi_9_H" value="Tout Salita/Discesa Otturatore M1E1"/>
-<item key="Plc_ar_allarmi_15_H" value="Cassetto Rikiesto Su M1E1 Non Disponibile"/>
-<item key="Plc_ar_messaggi_11_H" value="Robot2 In Ingombro Su Magazzino2"/>
+<item key="Plc_ar_allarmi_15_H" value="Cassetto Richiesto Su M1E1 Non Disponibile"/>
+<item key="Plc_ar_messaggi_11_H" value="Barriera Ottica Estrattore2 Magazzino2 Interrotta"/>
 <item key="Plc_ar_allarmi_63_H" value=""/>
 <item key="Plc_ar_allarmi_40_H" value="Tout Salita/Discesa Gancio M2E1"/>
 <item key="Plc_ar_messaggi_37_H" value=""/>
 <item key="alm_Q1_numFilesIncoerente_H" value="Numero file pezzi da Q1 incoerente, verificare ed eliminare file vecchi"/>
 <item key="Plc_ar_allarmi_89_H" value=""/>
 <item key="Plc_ar_allarmi_100_H" value=""/>
-<item key="Plc_ar_messaggi_14_H" value="Riparo Robot1 Aperto"/>
+<item key="Plc_ar_messaggi_14_H" value="Riparo 1 Aperto"/>
 <item key="Plc_ar_allarmi_66_H" value=""/>
-<item key="Plc_ar_allarmi_18_H" value="Cassetto Rikiesto Su M2E1 Non Disponibile"/>
-<item key="Plc_ar_allarmi_43_H" value="Tout Salita/Discesa Otturatore M2E3"/>
+<item key="Plc_ar_allarmi_18_H" value="Cassetto Richiesto Su M2E1 Non Disponibile"/>
+<item key="Plc_ar_allarmi_43_H" value="Tout Apertura/Chiusura Riparo Magazzino2"/>
 <item key="Plc_ar_allarmi_91_H" value=""/>
-<item key="Plc_ar_allarmi_20_H" value="Cassetto Rikiesto Su M2E3 Non Disponibile"/>
-<item key="Plc_ar_messaggi_17_H" value="Richiesta Aperura Riparo Magazzino2 Attiva"/>
+<item key="Plc_ar_allarmi_20_H" value=""/>
+<item key="Plc_ar_messaggi_17_H" value="Rikiesta Aperura Riparo1 Attiva"/>
 <item key="Plc_ar_allarmi_69_H" value=""/>
 <item key="Plc_ar_allarmi_94_H" value=""/>
 <item key="Plc_ar_allarmi_46_H" value=""/>
@@ -62,59 +62,59 @@
 <item key="Plc_ar_allarmi_23_H" value="Estrattore2 Magazzino1 Non Indietro"/>
 <item key="Plc_ar_allarmi_97_H" value=""/>
 <item key="Plc_ar_allarmi_49_H" value=""/>
-<item key="Plc_ar_messaggi_22_H" value="Mancano squadrette fila 2"/>
+<item key="Plc_ar_messaggi_22_H" value=""/>
 <item key="Plc_ar_allarmi_74_H" value=""/>
-<item key="Plc_ar_allarmi_26_H" value="Estrattore3 Magazzino1 Non Avanti"/>
+<item key="Plc_ar_allarmi_26_H" value=""/>
 <item key="Plc_ar_allarmi_51_H" value=""/>
 <item key="Plc_ar_messaggi_3_H" value="Attesa Pulsante Start Ciclo"/>
-<item key="Plc_ar_messaggi_25_H" value="Mancano squadrette fila 5"/>
+<item key="Plc_ar_messaggi_25_H" value=""/>
 <item key="Plc_ar_allarmi_77_H" value=""/>
 <item key="Plc_ar_allarmi_29_H" value="Estrattore2 Magazzino2 Non Indietro"/>
 <item key="Plc_ar_allarmi_54_H" value=""/>
 <item key="alm_Q2_numFilesIncoerente_H" value="Numero file pezzi da Q2 incoerente, verificare ed eliminare file vecchi"/>
-<item key="Plc_ar_allarmi_31_H" value="Estrattore3 Magazzino2 Non Indietro"/>
+<item key="Plc_ar_allarmi_31_H" value="Temperatura Elevata Armadio Elettrico"/>
 <item key="Plc_ar_messaggi_6_H" value="Robot1 In Ingombro Su Magazzino1"/>
 <item key="Plc_ar_allarmi_2_H" value="Allarme Asse Estrattore1 Magazzino1"/>
-<item key="Plc_ar_messaggi_28_H" value="Mancano squadrette fila 8"/>
+<item key="Plc_ar_messaggi_28_H" value=""/>
 <item key="Plc_ar_allarmi_57_H" value=""/>
-<item key="Plc_ar_messaggi_30_H" value="Mancano squadrette fila 10"/>
+<item key="Plc_ar_messaggi_30_H" value=""/>
 <item key="Plc_ar_allarmi_82_H" value=""/>
-<item key="Plc_ar_allarmi_34_H" value="Profibus Banco Squadrette Dx Ko"/>
-<item key="Plc_ar_messaggi_9_H" value="Robot2 In Ingombro Su M2E2"/>
+<item key="Plc_ar_allarmi_34_H" value="Manca Alimentazione 24Vdc Comune Inputs"/>
+<item key="Plc_ar_messaggi_9_H" value=""/>
 <item key="Plc_ar_allarmi_5_H" value="Allarme Asse Magazzino2"/>
 <item key="Plc_ar_allarmi_11_H" value="Tout Salita/Discesa Otturatore M1E2"/>
 <item key="Plc_ar_messaggi_33_H" value=""/>
 <item key="Plc_ar_allarmi_85_H" value=""/>
-<item key="Plc_ar_allarmi_37_H" value="Profibus Robot2 Ko"/>
-<item key="Plc_ar_allarmi_8_H" value="Allarme Asse Estrattore3 Magazzino2"/>
-<item key="Plc_ar_messaggi_10_H" value="Robot2 In Ingombro Su Magazzino1"/>
+<item key="Plc_ar_allarmi_37_H" value=""/>
+<item key="Plc_ar_allarmi_8_H" value=""/>
+<item key="Plc_ar_messaggi_10_H" value="Barriera Ottica Estrattore2 Magazzino1 Interrotta"/>
 <item key="Plc_ar_allarmi_62_H" value=""/>
-<item key="Plc_ar_allarmi_14_H" value="Tout Salita/Discesa Gancio M1E3"/>
+<item key="Plc_ar_allarmi_14_H" value=""/>
 <item key="Plc_ar_messaggi_36_H" value=""/>
 <item key="Plc_ar_allarmi_88_H" value=""/>
-<item key="Plc_ar_allarmi_17_H" value="Cassetto Rikiesto Su M1E3 Non Disponibile"/>
+<item key="Plc_ar_allarmi_17_H" value=""/>
 <item key="Plc_ar_messaggi_13_H" value="Riparo Magazzino2 Aperto"/>
 <item key="Plc_ar_allarmi_65_H" value=""/>
 <item key="Plc_ar_allarmi_90_H" value=""/>
 <item key="Plc_ar_allarmi_42_H" value="Tout Salita/Discesa Gancio M2E2"/>
 <item key="Plc_ar_messaggi_39_H" value=""/>
 <item key="Plc_ar_allarmi_68_H" value=""/>
-<item key="Plc_ar_messaggi_16_H" value="Richiesta Aperura Riparo Magazzino1 Attiva"/>
+<item key="Plc_ar_messaggi_16_H" value="Riparo 3 Aperto"/>
 <item key="alm_Q1_MancaFile" value="Q1, file identificativo pezzo non trovato"/>
 <item key="Plc_ar_allarmi_93_H" value=""/>
-<item key="Plc_ar_allarmi_45_H" value="Profibus Colla Ko"/>
+<item key="Plc_ar_allarmi_45_H" value=""/>
 <item key="Plc_ar_allarmi_70_H" value=""/>
 <item key="Plc_ar_allarmi_22_H" value="Estrattore1 Magazzino1 Non Avanti"/>
-<item key="Plc_ar_messaggi_19_H" value="Richiesta Aperura Riparo Robot2 Attiva"/>
+<item key="Plc_ar_messaggi_19_H" value="Rikiesta Aperura Riparo3 Attiva"/>
 <item key="Plc_ar_allarmi_96_H" value=""/>
 <item key="Plc_ar_allarmi_48_H" value=""/>
-<item key="Plc_ar_allarmi_25_H" value="Estrattore3 Magazzino1 Non Indietro"/>
-<item key="Plc_ar_messaggi_21_H" value="Mancano squadrette fila 1"/>
+<item key="Plc_ar_allarmi_25_H" value="Manca Aria Impianto"/>
+<item key="Plc_ar_messaggi_21_H" value=""/>
 <item key="Plc_ar_allarmi_73_H" value=""/>
 <item key="Plc_ar_allarmi_50_H" value=""/>
 <item key="Plc_ar_allarmi_99_H" value=""/>
 <item key="Plc_ar_messaggi_2_H" value="Ripari Aperti"/>
-<item key="Plc_ar_messaggi_24_H" value="Mancano squadrette fila 4"/>
+<item key="Plc_ar_messaggi_24_H" value=""/>
 <item key="Plc_ar_allarmi_76_H" value=""/>
 <item key="Plc_ar_allarmi_28_H" value="Estrattore1 Magazzino2 Non Avanti"/>
 <item key="Plc_ar_allarmi_53_H" value=""/>
@@ -125,13 +125,13 @@
 <item key="str_MovMan_Mag2E3" value="Magazzino 2 Estrattore 3"/>
 <item key="Plc_ar_messaggi_5_H" value="Robot1 In Ingombro Su M2E1"/>
 <item key="Plc_ar_allarmi_1_H" value="Allarme Asse Magazzino 1"/>
-<item key="Plc_ar_messaggi_27_H" value="Mancano squadrette fila 7"/>
+<item key="Plc_ar_messaggi_27_H" value=""/>
 <item key="Plc_ar_allarmi_79_H" value=""/>
 <item key="Plc_ar_allarmi_56_H" value=""/>
-<item key="Plc_ar_allarmi_33_H" value="Profibus Banco Squadrette Sx Ko"/>
+<item key="Plc_ar_allarmi_33_H" value="Manca Alimentazione 230Vac Pc supervisione"/>
 <item key="Plc_ar_allarmi_81_H" value=""/>
-<item key="Plc_ar_messaggi_8_H" value="Robot2 In Ingombro Su M1E2"/>
-<item key="Plc_ar_allarmi_4_H" value="Allarme Asse Estrattore3 Magazzino1"/>
+<item key="Plc_ar_messaggi_8_H" value=""/>
+<item key="Plc_ar_allarmi_4_H" value="alm non specificato"/>
 <item key="Plc_ar_allarmi_10_H" value="Tout Salita/Discesa Gancio M1E1"/>
 <item key="Plc_ar_allarmi_59_H" value=""/>
 <item key="Plc_ar_messaggi_32_H" value=""/>
@@ -139,20 +139,20 @@
 <item key="Plc_ar_allarmi_36_H" value="Profibus Robot1 Ko"/>
 <item key="Plc_ar_allarmi_7_H" value="Allarme Asse Estrattore2 Magazzino2"/>
 <item key="Plc_ar_allarmi_61_H" value=""/>
-<item key="Plc_ar_allarmi_13_H" value="Tout Salita/Discesa Otturatore M1E3"/>
+<item key="Plc_ar_allarmi_13_H" value="Tout Apertura/Chiusura Riparo Magazzino 1"/>
 <item key="Plc_ar_messaggi_35_H" value=""/>
 <item key="Plc_ar_allarmi_87_H" value=""/>
 <item key="Plc_ar_allarmi_39_H" value="Tout Salita/Discesa Otturatore M2E1"/>
 <item key="Plc_ar_messaggi_12_H" value="Riparo Magazzino1 Aperto"/>
 <item key="Plc_ar_allarmi_64_H" value=""/>
-<item key="Plc_ar_allarmi_16_H" value="Cassetto Rikiesto Su M1E2 Non Disponibile"/>
+<item key="Plc_ar_allarmi_16_H" value="Cassetto Richiesto Su M1E2 Non Disponibile"/>
 <item key="Plc_ar_allarmi_41_H" value="Tout Salita/Discesa Otturatore M2E2"/>
 <item key="Plc_ar_messaggi_38_H" value=""/>
-<item key="Plc_ar_messaggi_15_H" value="Riparo Robot2 Aperto"/>
+<item key="Plc_ar_messaggi_15_H" value="Riparo 2 Aperto"/>
 <item key="Plc_ar_allarmi_67_H" value=""/>
-<item key="Plc_ar_allarmi_19_H" value="Cassetto Rikiesto Su M2E2 Non Disponibile"/>
+<item key="Plc_ar_allarmi_19_H" value="Cassetto Richiesto Su M2E2 Non Disponibile"/>
 <item key="Plc_ar_messaggi_40_H" value=""/>
 <item key="Plc_ar_allarmi_92_H" value=""/>
-<item key="Plc_ar_allarmi_44_H" value="Tout Salita/Discesa Gancio M2E3"/>
+<item key="Plc_ar_allarmi_44_H" value=""/>
 </list>
 </strings>
