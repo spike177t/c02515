@@ -1671,7 +1671,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="barraPulsanti" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">barraPulsanti</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2159,61 +2158,6 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="530" y="380" width="480" height="195" ox="535" oy="285" owidth="480" oheight="195"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="0" y="0" width="480" height="195" fill="rgb(192,192,192)" stroke="none">rect</type>
-<ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="120" y="25" width="235" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType synoptic=&quot;Impostazioni_popupDinamica&quot; action=&quot;1&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;10&quot; y=&quot;10&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760" AccessLevel="1024">Pulsante106</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Pagina Riservata</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>base</type>
-<type x="120" y="100" width="235" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Utente Attivo</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Edit</type>
-<editbox x="120" y="120" width="235" height="50" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" edit="0" fmtscale="x"/>
-<border>4</border>
-<execution var="_SysVar_:ActiveUserName"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Display24</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
 <g x="20" y="285" width="480" height="85" ox="20" oy="285" owidth="480" oheight="85"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
@@ -2385,345 +2329,6 @@ End Sub
 <text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Impostazione Carico Avanzate</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<object>group</object>
-<g x="530" y="100" width="480" height="170" ox="530" oy="100" owidth="480" oheight="170"/>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="0" y="0" width="480" height="170" fill="rgb(192,192,192)" stroke="none">rect</type>
-<ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="30" y="100" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante23</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri Q2_PEZZO_DISP</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<ScriptCode StartSel="319" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
-Public Sub Click()
-	If [R1_STATUS:IN_MISSIONE] Then
-		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
-		Exit Sub
-	End If
-	If [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
-		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
-		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
-	End If
-	If [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
-		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
-		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
-	End If
-
-End Sub
-
-Sub ResetDatiMembriStruttura(varname As String)
-	'metto a 0 i membri di tipo numerico
-	'a "" i membri stringa
-	'a false i bit
-
-	Dim objVar As DBVarObjCmdTarget
-	Dim MemberVar As DBVarObjCmdTarget
-
-	Dim mCount As Integer	'contatore dei membri
-	Dim et As movicon.eVariableType
-
-	Set objVar = GetVariableObject(varname)
-
-	et = objVar.GetType()
-
-	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
-		Exit Sub
-	End If
-
-	mCount = 0	'inizializzo a 0
-
-	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
-
-	While Not MemberVar Is Nothing
-		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
-		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
-
-		et = MemberVar.GetType()
-		Select Case et
-			Case movicon.eVariableType.enum_VAR_TYPE_BIT
-				MemberVar.Value 	= False
-
-			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
-				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
-				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_WORD
-
-				MemberVar.Value 	= 0
-
-			Case movicon.eVariableType.enum_VAR_TYPE_STRING
-				MemberVar.Value 	= ""
-			Case Else
-				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
-		End Select
-
-		mCount = mCount + 1
-		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
-	Wend
-
-	Set MemberVar 	= Nothing
-	Set objVar 		= Nothing
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>Button</type>
-<type x="320" y="35" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="R1_STATUS:RESET" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">btnResetR1</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">RESET R1</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<Visible>0</Visible>
-<Transparency>0</Transparency>
-<BG Var="R1_STATUS:RESET">1</BG>
-<BGList>
-<dci>
-<DynColor/>
-</dci>
-<dci>
-<DynColor Color="8421631" Value="1"/>
-</dci>
-<dci>
-<DynColor Color="16711680" Value="10"/>
-</dci>
-<dci>
-<DynColor Color="8421376" Value="20"/>
-</dci>
-<dci>
-<DynColor Color="32768" Value="80"/>
-</dci>
-<dci>
-<DynColor Color="16776960" Value="90"/>
-</dci>
-<dci>
-<DynColor Color="65535" Value="100"/>
-</dci>
-</BGList>
-<EG>0</EG>
-<MX>0</MX>
-<MY>0</MY>
-<Scale>0</Scale>
-<Rot>0</Rot>
-<SX>0</SX>
-<SY>0</SY>
-<EX>0</EX>
-<EY>0</EY>
-<FC>0</FC>
-<BList>0</BList>
-<LT Format="">0</LT>
-<RCX>0</RCX>
-<RCY>0</RCY>
-<CM>0</CM>
-</child>
-<child>
-<type>Button</type>
-<type x="320" y="100" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands n0="&lt;CommandType script=&quot;ResetStructVar&quot; action=&quot;0&quot; parameters=&quot;R1_DATI_PEZZO&quot; newInstAllowed=&quot;0&quot; timeout=&quot;0&quot;&gt;Script&lt;/CommandType&gt;
-"/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante26</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri R1_STATUS</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<ScriptCode StartSel="75" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
-Public Sub Click()
-	ResetDatiMembriStruttura("R1_STATUS")
-End Sub
-
-Sub ResetDatiMembriStruttura(varname As String)
-	'metto a 0 i membri di tipo numerico
-	'a "" i membri stringa
-	'a false i bit
-
-	Dim objVar As DBVarObjCmdTarget
-	Dim MemberVar As DBVarObjCmdTarget
-
-	Dim mCount As Integer	'contatore dei membri
-	Dim et As movicon.eVariableType
-
-	Set objVar = GetVariableObject(varname)
-
-	et = objVar.GetType()
-
-	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
-		Exit Sub
-	End If
-
-	mCount = 0	'inizializzo a 0
-
-	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
-
-	While Not MemberVar Is Nothing
-		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
-		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
-
-		et = MemberVar.GetType()
-		Select Case et
-			Case movicon.eVariableType.enum_VAR_TYPE_BIT
-				MemberVar.Value 	= False
-
-			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
-				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
-				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_WORD
-
-				MemberVar.Value 	= 0
-
-			Case movicon.eVariableType.enum_VAR_TYPE_STRING
-				MemberVar.Value 	= ""
-			Case Else
-				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
-		End Select
-
-		mCount = mCount + 1
-		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
-	Wend
-
-	Set MemberVar 	= Nothing
-	Set objVar 		= Nothing
-End Sub
-</ScriptCode>
-</child>
-<child>
-<type>base</type>
-<type x="35" y="5" width="415" height="30" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
-<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Dati</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-<child>
-<type>Button</type>
-<type x="30" y="35" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
-<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<Border>0</Border>
-<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
-<Commands/>
-<CommandsWhileDown/>
-<CommandsOnDown/>
-<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante22</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri Q1_PEZZO_DISP</text>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-<ScriptCode StartSel="38" SelLength="425" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
-Public Sub Click()
-	If [R1_STATUS:IN_MISSIONE] Then
-		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
-		Exit Sub
-	End If
-	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
-		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
-		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
-	End If
-	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
-		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
-		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
-	End If
-
-End Sub
-
-Sub ResetDatiMembriStruttura(varname As String)
-	'metto a 0 i membri di tipo numerico
-	'a "" i membri stringa
-	'a false i bit
-
-	Dim objVar As DBVarObjCmdTarget
-	Dim MemberVar As DBVarObjCmdTarget
-
-	Dim mCount As Integer	'contatore dei membri
-	Dim et As movicon.eVariableType
-
-	Set objVar = GetVariableObject(varname)
-
-	et = objVar.GetType()
-
-	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
-		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
-		Exit Sub
-	End If
-
-	mCount = 0	'inizializzo a 0
-
-	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
-
-	While Not MemberVar Is Nothing
-		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
-		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
-
-		et = MemberVar.GetType()
-		Select Case et
-			Case movicon.eVariableType.enum_VAR_TYPE_BIT
-				MemberVar.Value 	= False
-
-			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
-				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
-				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
-				, movicon.eVariableType.enum_VAR_TYPE_WORD
-
-				MemberVar.Value 	= 0
-
-			Case movicon.eVariableType.enum_VAR_TYPE_STRING
-				MemberVar.Value 	= ""
-			Case Else
-				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
-		End Select
-
-		mCount = mCount + 1
-		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
-	Wend
-
-	Set MemberVar 	= Nothing
-	Set objVar 		= Nothing
-End Sub
-</ScriptCode>
 </child>
 </childs>
 <Name AntialiasingFont="1" acr="4294901760"/>
@@ -3070,6 +2675,396 @@ End Sub
 </child>
 </childs>
 <Name AntialiasingFont="1" acr="4294901760"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>base</object>
+<type x="530" y="100" width="480" height="170" fill="rgb(192,192,192)" stroke="none">rect</type>
+<ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="560" y="200" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante23</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri Q2_PEZZO_DISP</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="319" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+Public Sub Click()
+	If [R1_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
+		Exit Sub
+	End If
+	If [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
+		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+	End If
+	If [Q2_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
+		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+	End If
+
+End Sub
+
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
+
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	Set objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	Wend
+
+	Set MemberVar 	= Nothing
+	Set objVar 		= Nothing
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>Button</object>
+<type x="850" y="135" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="R1_STATUS:RESET" MechanicStyle="1" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">1</Mechanic>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">btnResetR1</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">RESET R1</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="R1_STATUS:RESET">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Color="8421631" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>Button</object>
+<type x="850" y="200" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType script=&quot;ResetStructVar&quot; action=&quot;0&quot; parameters=&quot;R1_DATI_PEZZO&quot; newInstAllowed=&quot;0&quot; timeout=&quot;0&quot;&gt;Script&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante26</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri R1_STATUS</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="75" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+Public Sub Click()
+	ResetDatiMembriStruttura("R1_STATUS")
+End Sub
+
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
+
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	Set objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	Wend
+
+	Set MemberVar 	= Nothing
+	Set objVar 		= Nothing
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>base</object>
+<type x="565" y="105" width="415" height="30" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Dati</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="560" y="135" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760">Pulsante22</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Reset Membri Q1_PEZZO_DISP</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<ScriptCode StartSel="38" SelLength="425" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+Public Sub Click()
+	If [R1_STATUS:IN_MISSIONE] Then
+		MsgBox("non posso eseguire perche' robot in missione",vbOkOnly, "R1 in missione")
+		Exit Sub
+	End If
+	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 1 Then
+		[MAG1_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+	End If
+	If [Q1_PEZZO_DISP:MAGAZZINO_ASSEGNATO] = 2 Then
+		[MAG2_ES1_ACT:NOME_PEZZO_UNICO] = ""
+		ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+	End If
+
+End Sub
+
+Sub ResetDatiMembriStruttura(varname As String)
+	'metto a 0 i membri di tipo numerico
+	'a "" i membri stringa
+	'a false i bit
+
+	Dim objVar As DBVarObjCmdTarget
+	Dim MemberVar As DBVarObjCmdTarget
+
+	Dim mCount As Integer	'contatore dei membri
+	Dim et As movicon.eVariableType
+
+	Set objVar = GetVariableObject(varname)
+
+	et = objVar.GetType()
+
+	If et &lt;&gt; movicon.eVariableType.enum_VAR_TYPE_STRUCT Then
+		Debug.Print 		"ResetDatiMembriStruttura() -&gt; Variabile = " 	&amp; varname 	&amp; " NON è una Struct."
+		Exit Sub
+	End If
+
+	mCount = 0	'inizializzo a 0
+
+	Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+
+	While Not MemberVar Is Nothing
+		'DebugMsg 		"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+		Debug.Print 	"ResetDatiMembriStruttura() -&gt; MemberVar name = " 	&amp; MemberVar.GetName 	&amp; "; value = " &amp; CStr(MemberVar.Value) 	&amp; "; Tipo = " &amp; CStr(MemberVar.GetType())
+
+		et = MemberVar.GetType()
+		Select Case et
+			Case movicon.eVariableType.enum_VAR_TYPE_BIT
+				MemberVar.Value 	= False
+
+			Case movicon.eVariableType.enum_VAR_TYPE_BYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_DOUBLE _
+				, movicon.eVariableType.enum_VAR_TYPE_DWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_FLOAT _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNBYTE _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNDWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_SIGNWORD _
+				, movicon.eVariableType.enum_VAR_TYPE_WORD
+
+				MemberVar.Value 	= 0
+
+			Case movicon.eVariableType.enum_VAR_TYPE_STRING
+				MemberVar.Value 	= ""
+			Case Else
+				'tipo non resettabile :movicon.eVariableType.enum_VAR_TYPE_ARRAY movicon.eVariableType.enum_VAR_TYPE_E_UNKNOWN movicon.eVariableType.enum_VAR_TYPE_STRUCT
+		End Select
+
+		mCount = mCount + 1
+		Set MemberVar 	= objVar.GetMemberObjectFromIndex(mCount)
+	Wend
+
+	Set MemberVar 	= Nothing
+	Set objVar 		= Nothing
+End Sub
+</ScriptCode>
+</child>
+<child>
+<object>base</object>
+<type x="530" y="380" width="480" height="195" fill="rgb(192,192,192)" stroke="none">rect</type>
+<ExtFill grad="7" gcolor="rgb(64,64,64)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Rettangolo77</Name>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="650" y="405" width="235" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType synoptic=&quot;Impostazioni_popupDinamica&quot; action=&quot;1&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;10&quot; y=&quot;10&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760" AccessLevel="1024">Pulsante106</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Pagina Riservata</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>base</object>
+<type x="650" y="480" width="235" height="20" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
+<text font-family="Tahoma" font-size="9" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Utente Attivo</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="650" y="500" width="235" height="50" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" edit="0" fmtscale="x"/>
+<border>4</border>
+<execution var="_SysVar_:ActiveUserName"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760">Display24</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="705" y="135" width="135" height="50" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands n0="&lt;CommandType synoptic=&quot;popUp_ForzaEstrattoriVuoti&quot; action=&quot;1&quot; monitor=&quot;0&quot; parameter=&quot;&quot; x=&quot;10&quot; y=&quot;10&quot; width=&quot;0&quot; height=&quot;0&quot; Caption=&quot;1&quot; Border=&quot;1&quot; Resizeable=&quot;0&quot; SysMenu=&quot;0&quot; MinimizeBox=&quot;0&quot; MaximizeBox=&quot;0&quot; KeepPrintProportions=&quot;0&quot; PageW=&quot;-1&quot; PageH=&quot;-1&quot; LMargin=&quot;-1&quot; RMargin=&quot;-1&quot; TMargin=&quot;-1&quot; BMargin=&quot;-1&quot;&gt;Synoptic&lt;/CommandType&gt;
+"/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante106</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Forza Estrattori Vuoti</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
