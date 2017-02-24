@@ -2511,7 +2511,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="155" y="110" width="150" height="35" fill="none" stroke="syscolor(INFOBK SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">hotregion</type>
+<type x="155" y="110" width="150" height="35" fill="none" stroke="rgb(192,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">hotregion</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="loc_ImpostazioniImpianto:StampaMAG1" MechanicStyle="1" CentralZero="0" PushStyleEx2="0" PushStyleEx="0" PushStyle="0" clickable="1" NumOptBtn="5" RadioCheckSize="2">1</Mechanic>
@@ -2523,7 +2523,7 @@ End Sub
 </child>
 <child>
 <object>Button</object>
-<type x="660" y="110" width="150" height="35" fill="none" stroke="syscolor(INFOBK SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">hotregion</type>
+<type x="660" y="110" width="150" height="35" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">hotregion</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Border>0</Border>
 <Mechanic CheckVariable="loc_ImpostazioniImpianto:StampaMAG2" MechanicStyle="1" CentralZero="0" PushStyleEx2="0" PushStyleEx="0" PushStyle="0" clickable="1" NumOptBtn="5" RadioCheckSize="2">1</Mechanic>
@@ -2676,7 +2676,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="785" y="115" width="225" height="30" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="785" y="115" width="225" height="30" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="18" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAGAZZINO 2</text>
@@ -2685,7 +2685,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="280" y="115" width="225" height="30" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="280" y="115" width="225" height="30" fill="none" stroke="rgb(192,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="18" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">MAGAZZINO 1</text>
