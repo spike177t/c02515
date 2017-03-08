@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="9723" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="25139" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Fine_Scarico' con il nuovo nome 'alm_ScaricoEliminaQrt'
 'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
@@ -245,8 +245,7 @@ Sub Main()
 						And [loc_ImpostazioniImpianto:Scarico_FineM1]  _
 						And [MAG1_ES2_ACT:ID_CASSETTO] &gt; 0 _
 						And [MAG1_ES2_ACT:PRONTO] _
-						'And [SCAR_M1_PZ1:ID_QUARTINA] &lt;&gt; "" _
-						Then
+						Then 	'And [SCAR_M1_PZ1:ID_QUARTINA] &lt;&gt; "" _
 
 						ValutaProssimaCondizione = False
 
@@ -268,8 +267,7 @@ Sub Main()
 						And [loc_ImpostazioniImpianto:Scarico_FineM2]  _
 						And [MAG2_ES2_ACT:ID_CASSETTO] &gt; 0 _
 						And [MAG2_ES2_ACT:PRONTO] _
-						'And [SCAR_M2_PZ1:ID_QUARTINA] &lt;&gt; "" _
-						Then
+						Then	'And [SCAR_M2_PZ1:ID_QUARTINA] &lt;&gt; "" _
 
 						ValutaProssimaCondizione = False
 

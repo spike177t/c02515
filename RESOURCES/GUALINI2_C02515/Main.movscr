@@ -1680,6 +1680,7 @@ End Sub
 <type x="410" y="90" width="430" height="445" fill="none" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill ImageID="VistaAlto_Magazzini_R1_R2_low.png" Style="2" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -2101,7 +2102,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="4" y="5" width="241" height="27" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="4" y="5" width="241" height="27" fill="none" stroke="rgb(192,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo16</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Quadra Q1</text>
@@ -2113,8 +2114,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledOn" value="Q1_Out:On"/>
+<item key="ledAuto" value="Q1_Out:InCiclo"/>
 <item key="ledHold" value="Q1_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q1_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q1_In:R1_FuoriIngombro"/>
@@ -2523,7 +2524,7 @@ End Sub
 </child>
 <child>
 <type>base</type>
-<type x="4" y="5" width="241" height="27" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="4" y="5" width="241" height="27" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo16</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Quadra Q2</text>
@@ -2535,8 +2536,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledAuto" value="Q2_Out:InCiclo"/>
+<item key="ledOn" value="Q2_Out:On"/>
 <item key="ledHold" value="Q2_Out:NonInHold"/>
 <item key="PezzoPresente" value="Q2_Out:PezzoPronto"/>
 <item key="FuoriIngombro" value="Q2_In:R1_FuoriIngombro"/>
@@ -2829,7 +2830,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="600" y="225" width="50" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="600" y="225" width="50" height="25" fill="none" stroke="rgb(192,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">M1</text>
@@ -2910,7 +2911,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="565" y="370" width="50" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="565" y="370" width="50" height="25" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">M2</text>
@@ -3000,7 +3001,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="475" y="280" width="95" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="475" y="280" width="95" height="25" fill="none" stroke="rgb(192,255,192)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">M1 E1</text>
@@ -3009,7 +3010,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="685" y="180" width="95" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="685" y="180" width="95" height="25" fill="none" stroke="rgb(192,255,192)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">M1 E2</text>
@@ -3018,7 +3019,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="655" y="310" width="70" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="655" y="310" width="70" height="25" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">M2 E2</text>
@@ -3027,7 +3028,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="415" y="395" width="95" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="415" y="395" width="95" height="25" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">M2 E1</text>
@@ -3036,7 +3037,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="20" y="270" width="45" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="20" y="270" width="45" height="25" fill="none" stroke="rgb(192,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Q1</text>
@@ -3045,7 +3046,7 @@ End Sub
 </child>
 <child>
 <object>base</object>
-<type x="20" y="370" width="45" height="25" fill="none" stroke="syscolor(WINDOW SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<type x="20" y="370" width="45" height="25" fill="none" stroke="rgb(255,224,128)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Rettangolo12</Name>
 <text font-family="Tahoma" font-size="14" text-anchor="end" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Q2</text>
