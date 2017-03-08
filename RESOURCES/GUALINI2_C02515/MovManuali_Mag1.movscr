@@ -1687,7 +1687,7 @@ End Sub
 </child>
 <child>
 <object>group</object>
-<g x="857" y="95" width="155" height="480" ox="1740" oy="90" owidth="155" oheight="370"/>
+<g x="857" y="95" width="155" height="480" ox="1740" oy="90" owidth="155" oheight="425"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <childs>
 <child>
@@ -1753,7 +1753,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante111</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1809,7 +1809,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante111</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1 Es2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1865,7 +1865,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante111</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2 Es1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1921,7 +1921,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante111</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2 Es2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -1977,7 +1977,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante111</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2033,7 +2033,7 @@ End Sub
 <CommandsWhileDown/>
 <CommandsOnDown/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760" AccessLevel="5">Pulsante111</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Manu Mag1</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
@@ -2079,8 +2079,65 @@ End Sub
 End Sub
 </ScriptCode>
 </child>
+<child>
+<type>Button</type>
+<type x="0" y="385" width="155" height="40" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" clickable="1" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">Pulsante111</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Ripari</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="loc_BtnBarMovMan_SogliaColore">1</BG>
+<BGList>
+<dci>
+<DynColor/>
+</dci>
+<dci>
+<DynColor Value="8"/>
+</dci>
+<dci>
+<DynColor Color="65280" Value="9"/>
+</dci>
+<dci>
+<DynColor Value="10"/>
+</dci>
+<dci>
+<DynColor Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+<ScriptCode StartSel="111" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Public Sub Click()
+	loc_BtnBarMovMan_SogliaColore = 9
+	Plc_SPV_NUM_ASSE = 0
+	OpenSynoptic("MovManuali_Ripari",enum_ops_opennormal)
+End Sub
+</ScriptCode>
+</child>
 </childs>
 <Name PubName="btnBarMovManuali" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
