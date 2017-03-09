@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="45207" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="45408" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -1044,7 +1044,7 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 			FineRobot(connectionString)
 		End If
 
-		'reset dati estrattore
+		'faccio sempre reset dati estrattore
 		If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1 Then
 			[MAG1_ES1_ACT:DEPO] = True
 			[MAG1_ES1_ACT:BUSY] = False
@@ -1052,6 +1052,20 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 		If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 2 Then
 			[MAG2_ES1_ACT:DEPO] = True
 			[MAG2_ES1_ACT:BUSY] = False
+		End If
+
+		'se l'operatore risponde di non aver depositato il pezzo sul magazzino
+		'tento il ripristino automatico delle condizioni di ripartenza
+		If retMsg = vbNo Then
+			If [R1_STATUS:PZ_DA_QUADRA] = 1  Then
+				'faccio reset dati membri quadra struct
+				ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+			End If
+			If [R1_STATUS:PZ_DA_QUADRA] = 2 Then
+				'faccio reset dati membri quadra struct
+				ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+			End If
+			StatoCicloCarico = 1000
 		End If
 
 	End If
