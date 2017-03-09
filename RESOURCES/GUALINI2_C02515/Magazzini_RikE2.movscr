@@ -2419,7 +2419,6 @@ End Sub
 </child>
 </childs>
 <Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -4310,8 +4309,8 @@ End Function
 </child>
 <child>
 <object>Edit</object>
-<editbox x="520" y="160" width="315" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x" Units="pos Mag1"/>
+<editbox x="520" y="150" width="315" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x.xxx" Units="pos Mag1"/>
 <border>4</border>
 <execution var="Plc_AXISREFAX1_NCTOPLC_ACTPOS"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
@@ -4342,9 +4341,73 @@ End Function
 <child>
 <object>Edit</object>
 <editbox x="520" y="480" width="315" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
-<style spin="0" fmtscale="x" Units="pos Mag2"/>
+<style spin="0" fmtscale="x.xxx" Units="pos Mag2"/>
 <border>4</border>
 <execution var="Plc_AXISREFAX5_NCTOPLC_ACTPOS"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="[loc_ImpostazioniImpianto:AbilitaDbgMsg]  Or [loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1]
+">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="520" y="180" width="315" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x.xxx" Units="cass. act."/>
+<border>4</border>
+<execution var="(30 +((((360 + Plc_AXISREFAX1_NCTOPLC_ACTPOS) Mod(360)) - Plc_LRPOSREFM1E2) /12 ))Mod(30) + 1
+"/>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Name AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible Var="[loc_ImpostazioniImpianto:AbilitaDbgMsg]  Or [loc_ImpostazioniImpianto:AbilitaDbgMsg_ZonaR1]
+">1</Visible>
+<Transparency>0</Transparency>
+<BG>0</BG>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>Edit</object>
+<editbox x="520" y="450" width="315" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<style spin="0" fmtscale="x.xxx" Units="cass. act."/>
+<border>4</border>
+<execution var="(30 +((((360 + Plc_AXISREFAX5_NCTOPLC_ACTPOS) Mod(360)) - Plc_LRPOSREFM2E2) /12 ))Mod(30) + 1
+"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
