@@ -2419,6 +2419,7 @@ End Sub
 </child>
 </childs>
 <Name PubName="_BtnBarMagazzini" PresText="0" PresVar="0" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3576,8 +3577,7 @@ End Function
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Dettaglio Dati M1 E2</text>
+<Name AntialiasingFont="1" acr="4294901760">Dettaglio Dati M1 E2</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3892,8 +3892,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>

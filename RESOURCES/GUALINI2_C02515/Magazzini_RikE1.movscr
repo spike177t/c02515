@@ -10,7 +10,6 @@
 <type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3394,8 +3393,7 @@ End Function
 <Rotation>0</Rotation>
 </child>
 </childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">Dettaglio Dati M1 E1</text>
+<Name AntialiasingFont="1" acr="4294901760">Dettaglio Dati M1 E1</Name>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -3710,8 +3708,8 @@ End Function
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>

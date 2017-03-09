@@ -14,8 +14,9 @@ Thumbs.db
 *HisLog.mdb
 *.HisLogEx
 
-Copia*.*
+*Copia*.*
 *orig
+Etichetta.txt
 
 LOGS/LastInteraction.xml
 LOGS/*
