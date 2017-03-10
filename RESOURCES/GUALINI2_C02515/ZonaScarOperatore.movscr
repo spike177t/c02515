@@ -3144,7 +3144,30 @@ End Sub
 <DynColor Color="65535" Value="100"/>
 </dci>
 </BGList>
-<EG>0</EG>
+<EG Var="Plc_ar_messaggi_2">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Ripari Chiusi"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="Ripari Aperti"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
 <MX>0</MX>
 <MY>0</MY>
 <Scale>0</Scale>
@@ -3200,7 +3223,30 @@ End Sub
 <DynColor Color="65535" Value="100"/>
 </dci>
 </BGList>
-<EG>0</EG>
+<EG Var="Plc_ar_messaggi_2">1</EG>
+<EGList>
+<dci>
+<DynColor Color="16777215" Text="Ripari Chiusi"/>
+</dci>
+<dci>
+<DynColor Color="16777215" Value="1" Text="Ripari Aperti"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</EGList>
 <MX>0</MX>
 <MY>0</MY>
 <Scale>0</Scale>

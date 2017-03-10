@@ -10,6 +10,7 @@
 <type x="10" y="85" width="1010" height="500" rx="16" ry="16" fill="rgb(128,128,128)" stroke="syscolor(BACKGROUND SysColor)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round">rrect</type>
 <ExtFill grad="10" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name Locked="1" StyleSourceBack="1" StyleSourceFore="1" AntialiasingFont="1" acr="4294901760"/>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 </child>
@@ -1687,19 +1688,19 @@ End Sub
 <CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIAPRRIPMAG1&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Apertura Riparo MAG1_ES2</text>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_BMANUON">Pulsante86</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Richiesta Apertura Riparo MAG1_ES2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo03_RipMag1Ok">1</BG>
+<BG Var="Plc_BHMIAPRRIPMAG1">1</BG>
 <BGList>
 <dci>
-<DynColor Color="255"/>
+<DynColor Color="8421504"/>
 </dci>
 <dci>
-<DynColor Color="16711680" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -1745,19 +1746,19 @@ End Sub
 <CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIKIURIPMAG1&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante113</Name>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_BMANUON">Pulsante113</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Chiusura Riparo MAG1_ES2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo03_RipMag1Ok">1</BG>
+<BG Var="Plc_BHMIKIURIPMAG1">1</BG>
 <BGList>
 <dci>
-<DynColor Color="255"/>
+<DynColor Color="8421504"/>
 </dci>
 <dci>
-<DynColor Color="16711680" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -1803,19 +1804,19 @@ End Sub
 <CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIAPRRIPMAG2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante86</Name>
-<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Apertura Riparo MAG2_ES2</text>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_BMANUON">Pulsante86</Name>
+<text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Richiesta Apertura Riparo MAG2_ES2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo05_RipMag2Ok">1</BG>
+<BG Var="Plc_BHMIAPRRIPMAG2">1</BG>
 <BGList>
 <dci>
-<DynColor Color="255"/>
+<DynColor Color="8421504"/>
 </dci>
 <dci>
-<DynColor Color="16711680" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -1861,19 +1862,19 @@ End Sub
 <CommandsOnDown n0="&lt;CommandType variable=&quot;Plc_BHMIKIURIPMAG2&quot; SecondVariable=&quot;&quot; action=&quot;0&quot; strobe=&quot;0&quot; value=&quot;1&quot; max=&quot;100.0&quot; min=&quot;0.0&quot; chars=&quot;0&quot; alias=&quot;&quot; pwd=&quot;0&quot;&gt;Variable&lt;/CommandType&gt;
 "/>
 <KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
-<Name AntialiasingFont="1" acr="4294901760">Pulsante113</Name>
+<Name AntialiasingFont="1" acr="4294901760" EnableVariable="Plc_BMANUON">Pulsante113</Name>
 <text font-family="Tahoma" font-size="12" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Chiusura Riparo MAG2_ES2</text>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <Visible>0</Visible>
 <Transparency>0</Transparency>
-<BG Var="Pilz_Virt_OVo05_RipMag2Ok">1</BG>
+<BG Var="Plc_BHMIKIURIPMAG2">1</BG>
 <BGList>
 <dci>
-<DynColor Color="255"/>
+<DynColor Color="8421504"/>
 </dci>
 <dci>
-<DynColor Color="16711680" Value="1"/>
+<DynColor Color="65280" Value="1"/>
 </dci>
 <dci>
 <DynColor Color="16711680" Value="10"/>
@@ -2359,9 +2360,120 @@ End Sub
 </child>
 </childs>
 <Name PubName="btnBarMovManuali" StyleSourceFont="0" AntialiasingFont="1" acr="4294901760"/>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
+</child>
+<child>
+<object>Button</object>
+<type x="375" y="155" width="120" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRipM2ES3</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip MAG1  ES2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo03_RipMag1Ok">1</BG>
+<BGList>
+<dci>
+<DynColor Color="255"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
+</child>
+<child>
+<object>Button</object>
+<type x="375" y="400" width="120" height="55" fill="rgb(0,0,0)" stroke="rgb(255,255,255)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">normal</type>
+<ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
+<Border>0</Border>
+<Mechanic CheckVariable="" MechanicStyle="0" CentralZero="0" PushStyleEx2="1" PushStyleEx="1" PushStyle="1" 3DRoundLevel="0" clickable="0" NumOptBtn="5" RadioCheckSize="0">0</Mechanic>
+<Commands/>
+<CommandsWhileDown/>
+<CommandsOnDown/>
+<KeyCode VirtualKey="0" ShowKeyShortcut="1" EnableShortcut="0">0</KeyCode>
+<Name StyleSourceFont="0" AntialiasingFont="1" acr="4294901760">btnRipaM1E3</Name>
+<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="700" op="3" cp="2" qu="1" pf="34" f3D="0" XOffset="0" YOffset="0">Rip MAG2 ES2</text>
+<Shadow>0</Shadow>
+<Rotation>0</Rotation>
+<Visible>0</Visible>
+<Transparency>0</Transparency>
+<BG Var="Pilz_Virt_OVo05_RipMag2Ok">1</BG>
+<BGList>
+<dci>
+<DynColor Color="255"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="1"/>
+</dci>
+<dci>
+<DynColor Color="16711680" Value="10"/>
+</dci>
+<dci>
+<DynColor Color="8421376" Value="20"/>
+</dci>
+<dci>
+<DynColor Color="32768" Value="80"/>
+</dci>
+<dci>
+<DynColor Color="16776960" Value="90"/>
+</dci>
+<dci>
+<DynColor Color="65535" Value="100"/>
+</dci>
+</BGList>
+<EG>0</EG>
+<MX>0</MX>
+<MY>0</MY>
+<Scale>0</Scale>
+<Rot>0</Rot>
+<SX>0</SX>
+<SY>0</SY>
+<EX>0</EX>
+<EY>0</EY>
+<FC>0</FC>
+<BList>0</BList>
+<LT Format="">0</LT>
+<RCX>0</RCX>
+<RCY>0</RCY>
+<CM>0</CM>
 </child>
 </ListSynopticDraw>
 <VariableList/>
