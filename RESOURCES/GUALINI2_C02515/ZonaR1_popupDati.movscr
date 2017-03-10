@@ -259,7 +259,7 @@
 <editbox x="310" y="160" width="85" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution/>
+<execution var="Q1_PEZZO_DISP:ROBOT_ASSEGNATO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -625,7 +625,7 @@ End Sub
 <editbox x="510" y="160" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="Q1_PEZZO_DISP:CASSETTO_ASSEGNATO"/>
+<execution var="Q1_PEZZO_DISP:R1_COD_RBT"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -646,7 +646,7 @@ End Sub
 <editbox x="585" y="160" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution/>
+<execution var="Q1_PEZZO_DISP:R1_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -930,7 +930,7 @@ End Sub
 <editbox x="310" y="320" width="85" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution/>
+<execution var="Q2_PEZZO_DISP:ROBOT_ASSEGNATO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1190,7 +1190,7 @@ End Sub
 <editbox x="510" y="320" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="Q2_PEZZO_DISP:CASSETTO_ASSEGNATO"/>
+<execution var="Q2_PEZZO_DISP:R1_COD_RBT"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1211,7 +1211,7 @@ End Sub
 <editbox x="585" y="320" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution/>
+<execution var="Q2_PEZZO_DISP:R1_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1495,7 +1495,7 @@ End Sub
 <editbox x="310" y="600" width="85" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution/>
+<execution var="R1_DATI_PEZZO:ROBOT_ASSEGNATO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1755,7 +1755,7 @@ End Sub
 <editbox x="510" y="600" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution var="R1_DATI_PEZZO:CASSETTO_ASSEGNATO"/>
+<execution var="R1_DATI_PEZZO:R1_COD_RBT"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1776,7 +1776,7 @@ End Sub
 <editbox x="585" y="600" width="50" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
-<execution/>
+<execution var="R1_DATI_PEZZO:R1_RUOTA_PEZZO"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
@@ -1846,13 +1846,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<object>group</object>
-<g x="5" y="400" width="990" height="80" ox="5" oy="400" owidth="990" oheight="80"/>
-<ExtFill fill="syscolor(WINDOW SysColor)">0</ExtFill>
-<childs>
-<child>
-<type>base</type>
-<type x="0" y="0" width="990" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="5" y="400" width="990" height="25" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo13</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">R1_STATUS</text>
@@ -1860,8 +1855,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="540" y="50" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="545" y="450" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:MAGAZZINO"/>
@@ -1872,8 +1867,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="610" y="50" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="615" y="450" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:CASSETTO"/>
@@ -1884,8 +1879,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="0" y="50" width="45" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="5" y="450" width="45" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:DISPONIBILE"/>
@@ -1896,8 +1891,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="680" y="50" width="155" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="685" y="450" width="155" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:ID_QUARTINA"/>
@@ -1908,8 +1903,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="540" y="30" width="70" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="545" y="430" width="70" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo33</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">MAG</text>
@@ -1917,8 +1912,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="610" y="30" width="70" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="615" y="430" width="70" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo34</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">CASS</text>
@@ -1926,8 +1921,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="0" y="30" width="45" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="5" y="430" width="45" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo35</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">DISP.</text>
@@ -1935,8 +1930,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="680" y="30" width="155" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="685" y="430" width="155" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo36</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">QUARTINA</text>
@@ -1944,8 +1939,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="45" y="50" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="50" y="450" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:IN_MISSIONE"/>
@@ -1956,8 +1951,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="45" y="30" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="50" y="430" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo156</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">IN MISS.</text>
@@ -1965,8 +1960,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="835" y="50" width="155" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="840" y="450" width="155" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:ID_QUARTINA_SUCCESSIVA"/>
@@ -1977,8 +1972,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="835" y="30" width="155" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="840" y="430" width="155" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo158</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">QRT SUCC.</text>
@@ -1986,8 +1981,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="460" y="30" width="80" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="465" y="430" width="80" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo159</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">DA QUADRA</text>
@@ -1995,8 +1990,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="460" y="50" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="465" y="450" width="80" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:PZ_DA_QUADRA"/>
@@ -2007,8 +2002,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="110" y="50" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="115" y="450" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:RIK_MISSIONE"/>
@@ -2019,8 +2014,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="110" y="30" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="115" y="430" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo162</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">RIK MISS.</text>
@@ -2028,8 +2023,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="350" y="50" width="45" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="355" y="450" width="45" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:ERR_MISSIONE"/>
@@ -2040,8 +2035,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="350" y="30" width="45" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="355" y="430" width="45" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo164</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">ERR.</text>
@@ -2049,8 +2044,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="395" y="50" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="400" y="450" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:ERR_MISSIONE_ACK"/>
@@ -2061,8 +2056,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="395" y="30" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="400" y="430" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo166</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">ERR. ACK</text>
@@ -2070,8 +2065,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="245" y="30" width="40" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="250" y="430" width="40" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo167</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">FINE</text>
@@ -2079,8 +2074,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="245" y="50" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="250" y="450" width="40" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:FINE_MISSIONE"/>
@@ -2091,8 +2086,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="285" y="50" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="290" y="450" width="65" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:FINE_MISSIONE_ACK"/>
@@ -2103,8 +2098,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="285" y="30" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="290" y="430" width="65" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo170</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">FINE ACK</text>
@@ -2112,8 +2107,8 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>base</type>
-<type x="175" y="30" width="70" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
+<object>base</object>
+<type x="180" y="430" width="70" height="20" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="0" stroke-linecap="butt" stroke-linejoin="round">rect</type>
 <ExtFill grad="5" gcolor="rgb(192,192,192)" Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Rettangolo171</Name>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0">NUOVA M.</text>
@@ -2121,19 +2116,13 @@ End Sub
 <Rotation>0</Rotation>
 </child>
 <child>
-<type>Edit</type>
-<editbox x="175" y="50" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
+<object>Edit</object>
+<editbox x="180" y="450" width="70" height="30" fill="syscolor(WINDOW SysColor)" stroke="syscolor(WINDOWTEXT SysColor)" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round"/>
 <style spin="0" fmtscale="x"/>
 <border>4</border>
 <execution var="R1_STATUS:NUOVA_MISSIONE"/>
 <ExtFill Style="3" fill="syscolor(WINDOW SysColor)">0</ExtFill>
 <Name AntialiasingFont="1" acr="4294901760">Display172</Name>
-<text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
-<Shadow>0</Shadow>
-<Rotation>0</Rotation>
-</child>
-</childs>
-<Name AntialiasingFont="1" acr="4294901760"/>
 <text font-family="Tahoma" font-size="8" text-anchor="middle" font-weight="400" pf="34" f3D="0" XOffset="0" YOffset="0"/>
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
