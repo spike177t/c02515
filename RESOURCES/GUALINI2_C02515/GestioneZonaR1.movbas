@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="8292" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -1229,7 +1229,7 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 		Try
 	        ' Open the file using a stream reader.
 	        Using sr As New StreamReader(filepath)
-	            Dim line As String
+	            Dim Line As String
 	            Dim i As Integer
 
 	            'Debug.Print "### lettura a righe"
@@ -1237,63 +1237,63 @@ Function LeggiFileDaQuadra(quadra As Integer) As String
 
 				i=0
 	            Do While sr.Peek() &gt;= 0
-	            	line = sr.ReadLine()
+	            	Line = sr.ReadLine()
 	                'Debug.Print(line)
 	                Select Case i
 		                Case 0:
-							SetVariableValue(varname &amp; ":NUOVO", CInt(line))
+							SetVariableValue(varname &amp; ":NUOVO", CInt(Line))
 						Case 1:
-							SetVariableValue(varname &amp; ":ID_QUARTINA", line)
+							SetVariableValue(varname &amp; ":ID_QUARTINA", Line)
 							'quartinaCorrente = line
 						Case 2:
-							SetVariableValue(varname &amp; ":POSIZIONE", line)
+							SetVariableValue(varname &amp; ":POSIZIONE", Line)
 						Case 3:
-							SetVariableValue(varname &amp; ":NOME_PEZZO_UNICO", line)
+							SetVariableValue(varname &amp; ":NOME_PEZZO_UNICO", Line)
 						Case 4:
-							SetVariableValue(varname &amp; ":NOME_PEZZO_ESTERNO", line)
+							SetVariableValue(varname &amp; ":NOME_PEZZO_ESTERNO", Line)
 						Case 5:
-							SetVariableValue(varname &amp; ":ULTIMO_PEZZO", CBool(line))
+							SetVariableValue(varname &amp; ":ULTIMO_PEZZO", CBool(Line))
 						Case 6:
-							SetVariableValue(varname &amp; ":CODICE_PROFILO", line)
+							SetVariableValue(varname &amp; ":CODICE_PROFILO", Line)
 						Case 7:
-							SetVariableValue(varname &amp; ":SERIE_PROFILO", line)
+							SetVariableValue(varname &amp; ":SERIE_PROFILO", Line)
 						Case 8:
-							SetVariableValue(varname &amp; ":MAX_LUNGHEZZA", CInt(line))
+							SetVariableValue(varname &amp; ":MAX_LUNGHEZZA", CInt(Line))
 						Case 9:
-							SetVariableValue(varname &amp; ":TOTALE_PEZZI_QUARTINA", CInt(line))
+							SetVariableValue(varname &amp; ":TOTALE_PEZZI_QUARTINA", CInt(Line))
 						Case 10:
-							SetVariableValue(varname &amp; ":NUM_SQUADRETTE1", CInt(line))
+							SetVariableValue(varname &amp; ":NUM_SQUADRETTE1", CInt(Line))
 						Case 11:
-							SetVariableValue(varname &amp; ":COD_SQUADRETTA1", line)
+							SetVariableValue(varname &amp; ":COD_SQUADRETTA1", Line)
 						Case 12:
-							SetVariableValue(varname &amp; ":NUM_SQUADRETTE2", CInt(line))
+							SetVariableValue(varname &amp; ":NUM_SQUADRETTE2", CInt(Line))
 						Case 13:
-							SetVariableValue(varname &amp; ":COD_SQUADRETTA2", line)
+							SetVariableValue(varname &amp; ":COD_SQUADRETTA2", Line)
 						Case 14:
-							SetVariableValue(varname &amp; ":ALTEZZA_PROFILO", CInt(line))
+							SetVariableValue(varname &amp; ":ALTEZZA_PROFILO", CInt(Line))
 						Case 15:
-							SetVariableValue(varname &amp; ":LARGHEZZA_PROFILO", CInt(line))
+							SetVariableValue(varname &amp; ":LARGHEZZA_PROFILO", CInt(Line))
 						Case 16:
-							SetVariableValue(varname &amp; ":MISURA_CAMERA_ESTERNA", CInt(line))
+							SetVariableValue(varname &amp; ":MISURA_CAMERA_ESTERNA", CInt(Line))
 						Case 17:
-							SetVariableValue(varname &amp; ":ID_QUARTINA_SUCCESSIVA", line)
+							SetVariableValue(varname &amp; ":ID_QUARTINA_SUCCESSIVA", Line)
 							'quartinaSuccessiva = line
 						Case 18:
-							SetVariableValue(varname &amp; ":NOME_COMMESSA", line)
+							SetVariableValue(varname &amp; ":NOME_COMMESSA", Line)
 						Case 19:
-							SetVariableValue(varname &amp; ":APPOGGIO_PEZZO", CInt(line))
+							SetVariableValue(varname &amp; ":APPOGGIO_PEZZO", CInt(Line))
 						Case 20:
-							SetVariableValue(varname &amp; ":POSIZIONE_PEZZO_ESTERNO", CInt(line))
+							SetVariableValue(varname &amp; ":POSIZIONE_PEZZO_ESTERNO", CInt(Line))
 						Case 21:
-							SetVariableValue(varname &amp; ":ID_PEZZO_ESTERNO", line)
+							SetVariableValue(varname &amp; ":ID_PEZZO_ESTERNO", Line)
 						Case 22:
-							SetVariableValue(varname &amp; ":LUNGHEZZA_PEZZO_ESTERNO", CInt(line))
+							SetVariableValue(varname &amp; ":LUNGHEZZA_PEZZO_ESTERNO", CInt(Line))
 						Case 23:
-							SetVariableValue(varname &amp; ":FILE_XML", line)
+							SetVariableValue(varname &amp; ":FILE_XML", Line)
 						Case 24:
-							SetVariableValue(varname &amp; ":DATA", line)
+							SetVariableValue(varname &amp; ":DATA", Line)
 						Case 25:
-							SetVariableValue(varname &amp; ":ORA", line)
+							SetVariableValue(varname &amp; ":ORA", Line)
 
 		            End Select
 		            i = i + 1
@@ -2465,7 +2465,7 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert`" &amp; _
+            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert_cass_rif`" &amp; _
             							"(" &amp; _
             							CStr(TipoCarico) &amp; _
             							", " &amp; CStr(leggiDaQuadra) &amp; _
@@ -2477,6 +2477,8 @@ Function AssegnaCassettoAllaQuartina(TipoCarico As Integer _
             							", " &amp;  """" &amp;CStr(COD_SQUADRETTA1) &amp; """" &amp;  _
             							", " &amp; CStr(NUM_SQUADRETTE2) &amp;  _
             							", " &amp;  """" &amp;CStr(COD_SQUADRETTA2) &amp; """" &amp; _
+            							", " &amp; CStr([loc_CassettiCorrenti:MAG1_ES1]) &amp;  _
+            							", " &amp; CStr([loc_CassettiCorrenti:MAG2_ES1]) &amp; _
             							");"
 
             'Select COUNT(*) FROM gualini.cassetti_disponibili WHERE ID_MAGAZZINO = 1 Or ID_MAGAZZINO = 2;
@@ -2772,7 +2774,7 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert`" &amp; _
+            commandText = "CALL `gualini`.`CassettoPiuVicinoAndInsert_cass_rif`" &amp; _
             							"(" &amp; _
             							CStr([loc_ImpostazioniImpianto:TipoCarico]) &amp; _
             							", " &amp; CStr([R1_STATUS:PZ_DA_QUADRA]) &amp; _
@@ -2784,6 +2786,8 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
             							", " &amp; CStr("NULL") &amp; _
             							", " &amp; CStr("NULL") &amp; _
             							", " &amp; CStr("NULL") &amp; _
+            							", " &amp; CStr([loc_CassettiCorrenti:MAG1_ES1]) &amp; _
+            							", " &amp; CStr([loc_CassettiCorrenti:MAG2_ES1]) &amp; _
             							");"
 
             DebugMsg "GestioneZonaR1.movbas -&gt; RilevaCassettoQuartinaSuccessiva(); commandText = " &amp; commandText

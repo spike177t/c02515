@@ -976,14 +976,22 @@ Function RilevaCassettoPiuVicino(connectionString As String, mag As Integer, com
     Const ERR_GENERIC_EXCEPION As Integer = -101	 	'ERRORE eccezzione generica
     Const ERR_ODBC_EXCEPTION As Integer = -102	 		'ERRORE ecezzione ODBC
 
+    Dim cass_fronte_estrattore As Integer
+    If mag = 1 Then
+		cass_fronte_estrattore = [loc_CassettiCorrenti:MAG1_ES2]
+	Else
+		cass_fronte_estrattore = [loc_CassettiCorrenti:MAG2_ES2]
+    End If
+
 	'cerco nel db a quale cassetto è assegnata la quartina
 	Try
         Using MyConnection As New System.Data.Odbc.OdbcConnection(connectionString)
             MyConnection.Open()
-            commandText = "CALL `gualini`.`ScaricoCassettoPiuVicino`( " _
+            commandText = "CALL `gualini`.`ScaricoCassettoPiuVicino_cass_rif`( " _
             				&amp; CStr(mag) _
             				&amp; ", " &amp; """" &amp; commessa &amp; """" _
             				&amp; ", " &amp; CStr(esclusivo) _
+            				&amp; ", " &amp; CStr(cass_fronte_estrattore) _
             				&amp; "); "
             DebugMsg "GestioneZonaR2.movbas -&gt; RilevaCassettoPiuVicino; commandText = " &amp; commandText
 
