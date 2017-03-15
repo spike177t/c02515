@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="0" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="43742" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -363,6 +363,17 @@ Sub Main()
 								StatoCicloCarico = 9100	'ErroreRobot
 						End If
 					End If
+
+					'ResetCondizioniCarico
+					If ValutaProssimaCondizione Then
+						'DebugMsg "StatoCicloCarico = 1060	'ErroreMissioneRobot"
+						If [loc_ImpostazioniImpianto:rikResetCondizioniCarico] And Not [R1_STATUS:IN_MISSIONE] Then
+								ValutaProssimaCondizione = False
+								LogMsg "StatoCicloCarico = 1060	'ResetCondizioniCarico"
+								StatoCicloCarico = 22100 'ResetCondizioniCarico
+						End If
+					End If
+
 
 				Case 2100	'LeggiFileDaQuadra
 					StatoCicloCarico_txt = "2100	'LeggiFileDaQuadra"
@@ -969,7 +980,44 @@ Sub Main()
 						StatoCicloCarico = 8100	'ResetDatiPezzoMissione
 					End If
 
-					'
+				Case 22100	'ResetCondizioniCarico
+					StatoCicloCarico_txt = "22100	'ResetCondizioniCarico"
+					LogMsg "StatoCicloCarico = 22100	'ResetCondizioniCarico"
+					If [R1_STATUS:IN_MISSIONE] Then
+						LogMsg("Impossibile effettuare il reset: Robot In Missione")
+						StatoCicloCarico = 1000	'Attesa
+					Else
+						'faccio rientrare i cassetti
+						[MAG1_ES1_RIK:ID_CASSETTO] = 0
+						[MAG1_ES1_RIK:ID_QUARTINA] = ""
+						[MAG1_ES1_RIK:NOME_PEZZO_UNICO] = ""
+						[MAG1_ES1_RIK:POSIZIONE] = 0
+						[MAG1_ES1_RIK:STROBE] = True
+
+						[MAG2_ES1_RIK:ID_CASSETTO] = 0
+						[MAG2_ES1_RIK:ID_QUARTINA] = ""
+						[MAG2_ES1_RIK:NOME_PEZZO_UNICO] = ""
+						[MAG2_ES1_RIK:POSIZIONE] = 0
+						[MAG2_ES1_RIK:STROBE] = True
+
+						StatoCicloCarico = 22200	'ResetCondizioniCarico_Attesa_rientro_cassetti
+					End If
+
+				Case 22200	'ResetCondizioniCarico_Attesa_rientro_cassetti
+					StatoCicloCarico_txt = "22200	'ResetCondizioniCarico_Attesa_rientro_cassetti"
+					LogMsg "StatoCicloCarico = 22200	'ResetCondizioniCarico_Attesa_rientro_cassetti"
+
+					If [MAG1_ES1_ACT:ID_CASSETTO] = 0 And [MAG1_ES1_ACT:PRONTO] And [MAG2_ES1_ACT:ID_CASSETTO] = 0 And [MAG2_ES1_ACT:PRONTO] Then
+						'reset delle strutture dati che identificano pezzo e missione
+						ResetDatiMembriStruttura("R1_STATUS")
+						ResetDatiMembriStruttura("R1_DATI_PEZZO")
+						ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+						ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+						LogMsg("Fine reset condizioni carico")
+						[loc_ImpostazioniImpianto:rikResetCondizioniCarico] = False
+						StatoCicloCarico = 1000	'Attesa
+					End If
+
 
 				Case Else
 					LogMsg("Main() -&gt; Case StatoCicloCarico Else; StatoCicloCarico = " &amp; CStr(StatoCicloCarico))

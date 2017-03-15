@@ -1068,7 +1068,7 @@
 <EnableMapRealTimeToDB>0</EnableMapRealTimeToDB>
 </Variable>
 <Variable>
-<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="56" Group="Locali" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
+<Name Type="11" StructType="ImpostazioniImpiantoStruct" AreaType="1" Address="0" Bit="57" Group="Locali" Shared="0" Retentive="1">loc_ImpostazioniImpianto</Name>
 <EnableTrace DurationDays="730">0</EnableTrace>
 <EnableOPCServer>0</EnableOPCServer>
 <EnableNetworkClient>0</EnableNetworkClient>
@@ -3695,6 +3695,9 @@
 </Member>
 <Member>
 <Name Type="9">nomeStampanteEtichettaMAG2</Name>
+</Member>
+<Member>
+<Name Type="0">rikResetCondizioniCarico</Name>
 </Member>
 </MemberList>
 </Structure>
