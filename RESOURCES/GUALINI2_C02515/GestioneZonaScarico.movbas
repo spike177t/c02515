@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="25139" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="90909" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Fine_Scarico' con il nuovo nome 'alm_ScaricoEliminaQrt'
 'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
@@ -2148,24 +2148,29 @@ End Function
 Sub VerificaIncongruenzeEstrattori()
 	'Dim errM1_ES1, errM1_ES2, errM1_ES3, errM2_ES1, errM2_ES2, errM2_ES3 As Boolean
 
-	If [MAG1_ES1_ACT:WAIT] And ([MAG1_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES1_RIK:ID_CASSETTO]) Then
+	'If [MAG1_ES1_ACT:WAIT] And ([MAG1_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES1_RIK:ID_CASSETTO]) Then
+	If [loc_IncongrEstrattori:M1_ES1_WAIT_TON] And ([MAG1_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES1_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM1_ES1] = True
 	Else
 		[loc_IncongrEstrattori:errM1_ES1] = False
 	End If
-	If [MAG1_ES2_ACT:WAIT] And ([MAG1_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES2_RIK:ID_CASSETTO]) Then
+
+	'If [MAG1_ES2_ACT:WAIT] And ([MAG1_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES2_RIK:ID_CASSETTO]) Then
+	If [loc_IncongrEstrattori:M1_ES2_WAIT_TON] And ([MAG1_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG1_ES2_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM1_ES2] = True
 	Else
 		[loc_IncongrEstrattori:errM1_ES2] = False
 	End If
 
 
-	If [MAG2_ES1_ACT:WAIT] And ([MAG2_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES1_RIK:ID_CASSETTO]) Then
+	'If [MAG2_ES1_ACT:WAIT] And ([MAG2_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES1_RIK:ID_CASSETTO]) Then
+	If [loc_IncongrEstrattori:M2_ES1_WAIT_TON] And ([MAG2_ES1_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES1_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM2_ES1] = True
 	Else
 		[loc_IncongrEstrattori:errM2_ES1] = False
 	End If
-	If [MAG2_ES2_ACT:WAIT] And ([MAG2_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES2_RIK:ID_CASSETTO]) Then
+	'If [MAG2_ES2_ACT:WAIT] And ([MAG2_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES2_RIK:ID_CASSETTO]) Then
+	If [loc_IncongrEstrattori:M2_ES2_WAIT_TON] And ([MAG2_ES2_ACT:ID_CASSETTO] &lt;&gt; [MAG2_ES2_RIK:ID_CASSETTO]) Then
 		[loc_IncongrEstrattori:errM2_ES2] = True
 	Else
 		[loc_IncongrEstrattori:errM2_ES2] = False
