@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ScriptCode StartSel="403" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="1">Option Explicit
+
+Private Declare Function GetCurrentProcessId Lib "kernel32" () As Long
+'Private Declare Function TerminateProcess Lib "kernel32" (ByVal ApphProcess As Long, ByVal uExitCode As Long) As Long
+'Private Declare Function CloseHandle Lib "kernel32.dll" (ByVal hObject As Long) As Long
+
+Sub Main
+	'elencoProcessiMovicon()
+
+	'kill dei processi runtime di Movicon aperti in precedenza
+	KillRuntime()
+
+End Sub
+
+Sub elencoProcessiMovicon()
+	Dim strComputer,strProcess As String
+	Dim objWMIService,colProcesses,objProcess As Object
+	strComputer = "."
+	Set objWMIService = GetObject("winmgmts:" _
+	    &amp; "{impersonationLevel=impersonate}!\\" _
+	    &amp; strComputer &amp; "\root\cimv2")
+	'Set colProcesses = objWMIService.ExecQuery ("Select * from Win32_Process")
+Set colProcesses = objWMIService.ExecQuery ("Select * from Win32_Process WHERE Description like " &amp; _
+									Chr(34) &amp; "Movicon%"&amp; Chr(34) )
+
+	For Each objProcess In colProcesses
+	    strProcess = "Process: " &amp; objProcess.Name
+	    strProcess += " Process ID: " &amp; objProcess.ProcessID _
+	    &amp; " Working Set Size: " _
+	    &amp; objProcess.WorkingSetSize _
+	    &amp;  " Page File Size: " _
+	    &amp; objProcess.PageFileUsage _
+	    &amp;  " Page Faults: " &amp; objProcess.PageFaults
+	    Debug.Print strProcess
+	    MsgBox(strProcess,vbInformation,"Processi Movicon")
+	Next
+End Sub
+
+Sub KillRuntime()
+	Dim objWMIService As Object
+	Dim colProcesses As Object
+	Dim objProcess As Object
+	Dim currentProcessID As Long
+	Dim exitCode,returnCode As Long
+
+	currentProcessID = GetCurrentProcessId()
+
+	'MsgBox(CStr(currentProcessID),vbInformation,"Currenr Process ID")
+
+	Set objWMIService = GetObject("winmgmts:\\.\root\CIMV2")
+	Set colProcesses = objWMIService.ExecQuery ("Select * from Win32_Process WHERE Description like " &amp; _
+									Chr(34) &amp; "Movicon%" &amp; Chr(34) ) 'Chr(34) &amp; "MoviconRuntime%" &amp; Chr(34) )
+
+	Dim numeroProcessi As Integer
+	numeroProcessi = colProcesses.Count
+
+	If numeroProcessi &gt; 1 Then
+		MsgBox("Applicazione già in esecuzione." &amp; vbCrLf &amp; "Controllare nella barra applicazioni " &amp; vbCrLf &amp; "o tra i processi attivi. " _
+				&amp; vbCrLf &amp; vbCrLf &amp; "Procedo alla chiusura dell'pplicazione duplicata.", vbCritical + vbSystemModal, "Applicazione gia in esecuzione")
+
+		ExecuteCommand("&lt;CommandType action='1' parameters='' timeout='5000'&gt;System&lt;/CommandType&gt;")
+
+	End If
+
+'	For Each objProcess In colProcesses
+'		'On Error Resume Next
+'		If Not objProcess.ProcessID = currentProcessID Then
+'			'MsgBox("Current:" &amp; currentProcessID &amp; "   Kill id=" &amp; objProcess.ProcessID ,vbInformation,"Killing" )
+'			objProcess.Terminate()
+'
+'			'returnCode = TerminateProcess(objProcess.ProcessID,exitCode)
+'			'MsgBox("ReturnCode: " &amp; CStr(returnCode) &amp; " - exitCode: " &amp; CStr(exitCode),vbInformation,"ReturnCode")
+'			'Call CloseHandle(objProcess.ProcessID)
+'
+'		End If
+'	Next
+
+	Set objWMIService = Nothing
+	Set colProcesses = Nothing
+	Set objProcess = Nothing
+End Sub
+</ScriptCode>
+<Mode RunAtServer="1" UseUIInterface="1" SeparateThread="0" UseItsTrace="0" ModalDialogs="0"/>
+<Execution ThreadPriority="0" StatusVariable="" MaxInstances="1" SleepExecution="0" SyncroScriptTimeout="5000"/>
+</MovResource>

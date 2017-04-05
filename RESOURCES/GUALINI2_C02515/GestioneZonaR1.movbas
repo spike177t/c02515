@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="43742" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="29983" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -677,18 +677,66 @@ Sub Main()
 						'Decodifica Missione R1 in base a serie e codice profilo
 						DecodificaMissioneR1()
 
-					End If
-					'alzo il bit al Robot di Strobe missione
-					[R1_STATUS:NUOVA_MISSIONE] = True
-					'rendo BUSY l'estrattore
-					'If [R1_STATUS:MAGAZZINO] = 1 Then
-					'	[MAG1_ES1_ACT:BUSY] = True
-					'End If
-					'If [R1_STATUS:MAGAZZINO] = 2 Then
-					'	[MAG2_ES1_ACT:BUSY] = True
-					'End If
+						'Determino il tipo di missione del Robot
+						'identifico R1_TIPO_MISSIONE RBT1
+						'-Numero di Missione prelievo Quadra Deposito Giostra-
+						'nTipoMissione = Valore da 1 a 4
+						'dove la missione 1 è Prelievo Quadra 1 deposito Giostra 1
+						'dove la missione 2 è Prelievo Quadra 2 deposito Giostra 2
+						'dove la missione 3 è Prelievo Quadra 1 deposito Giostra 2
+						'dove la missione 4 è Prelievo Quadra 2 deposito Giostra 1
 
-					StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
+						If [R1_STATUS:MAGAZZINO] = 1 And [R1_STATUS:PZ_DA_QUADRA] = 1 Then
+							Plc_R1_TIPO_MISSIONE = 1
+						End If
+						If [R1_STATUS:MAGAZZINO] = 2 And [R1_STATUS:PZ_DA_QUADRA] = 2 Then
+							Plc_R1_TIPO_MISSIONE = 2
+						End If
+						If [R1_STATUS:MAGAZZINO] = 2 And [R1_STATUS:PZ_DA_QUADRA] = 1 Then
+							Plc_R1_TIPO_MISSIONE = 3
+						End If
+						If [R1_STATUS:MAGAZZINO] = 1 And [R1_STATUS:PZ_DA_QUADRA] = 2 Then
+							Plc_R1_TIPO_MISSIONE = 4
+						End If
+
+						'alzo il bit al Robot di Strobe missione
+						[R1_STATUS:NUOVA_MISSIONE_ACK] = False 'usata solo se in implementa controllo con somma nel robot
+						[R1_STATUS:NUOVA_MISSIONE] = True
+						StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
+						stepTout = Timer()
+					End If
+
+				'PREDISPOSIZIONE PER CHECKSUM DA IMPLEMENTARE ANCHE SU PLC
+				'Case 4150 'AttesaNuovaMissioneAck
+					StatoCicloCarico_txt = "4150	'AttesaNuovaMissioneAck"
+					If	[R1_STATUS:NUOVA_MISSIONE_ACK] Then
+						'stepTout = Timer()
+						'Guardo chsum
+						If Plc_R1_CKSUM &gt; 0 Then
+							Dim Somma As Integer
+							Somma = [R1_DATI_PEZZO:MAX_LUNGHEZZA] _
+									+ Plc_R1_TIPO_MISSIONE _
+									+ [R1_DATI_PEZZO:R1_COD_RBT] _
+									+ [R1_DATI_PEZZO:POSIZIONE]
+							If Plc_R1_CKSUM &lt;&gt; Somma Then
+								'errore di comunicazione
+								'cosa facciamo?
+								'TODO
+
+							Else
+								'tutto ok
+								StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
+							End If
+						End If
+					End If
+					'If SuperatoTimeout(stepTout, TOUT_STEP) Then
+					'	msg_Step_R1_4200_AttesaMissione = True
+					'	'per poter fare ripartenza devo fare reset delle struct già assegnate
+					'	'ResetDatiMembriStruttura("R1_DATI_PEZZO")
+					'	'ResetDatiMembriStruttura("Q1_PEZZO_DISP")
+					'	'ResetDatiMembriStruttura("Q2_PEZZO_DISP")
+					'	StatoCicloCarico = 4195	'AttesaSegnaleRobotOccupato_settout
+					'End If
 
 				Case 4195	'AttesaSegnaleRobotOccupato_settout
 					StatoCicloCarico_txt = "4195	'AttesaSegnaleRobotOccupato_settout"

@@ -2131,8 +2131,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
+<item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
 <item key="ledAlm" value="R1_STATUS:OUT_EMRGENCY_STOP"/>
 </AliasesList>
 </child>
@@ -2468,8 +2468,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -2962,8 +2962,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>
@@ -3298,8 +3298,8 @@ End Sub
 <Shadow>0</Shadow>
 <Rotation>0</Rotation>
 <AliasesList>
-<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 <item key="ledOn" value="R1_STATUS:OUT_CYCLE_ON"/>
+<item key="ledAuto" value="R1_STATUS:OUT_AUTO_ON"/>
 </AliasesList>
 </child>
 <child>

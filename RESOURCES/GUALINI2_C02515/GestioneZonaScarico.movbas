@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="90909" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
+<ScriptCode StartSel="25157" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86
 'Sostituita la Variabile 'alm_Fine_Scarico' con il nuovo nome 'alm_ScaricoEliminaQrt'
 'Sostituita la Variabile 'Assemblatrice_TelaioLatoR3' con il nuovo nome 'TelaioProdotto'
 'Sostituita la Variabile 'Pilz_Virt_OVo06_SpvAss180_' con il nuovo nome 'Pilz_Virt_OVo06_BarFtcMag2Ok'
@@ -408,7 +408,7 @@ Sub Main()
 							'Alt_Finestra = CSng(([SCAR_M1_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
 							'Largh_Finestra	= CSng(([SCAR_M1_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M1_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 '-&amp;gt; pz2 riga 16 (riga in base 0)
 							[loc_Etichetta_MAG1:Azienda] = [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
-							[loc_Etichetta_MAG1:Barcode] = [SCAR_M1_PZ1:ID_QUARTINA]
+							[loc_Etichetta_MAG1:Barcode] = Left([SCAR_M1_PZ1:ID_QUARTINA],13)
 							[loc_Etichetta_MAG1:Commessa] = [SCAR_M1_PZ1:NOME_COMMESSA]
 							'[loc_Etichetta_MAG1:Dimensioni] = CStr(Alt_Finestra) &amp; " x " &amp; CStr(Largh_Finestra)
 							[loc_Etichetta_MAG1:Dimensioni] = CStr([SCAR_M1_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M1_PZ2:MAX_LUNGHEZZA])
@@ -424,7 +424,7 @@ Sub Main()
 							'Alt_Finestra = CSng(([SCAR_M2_PZ1:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ1:R2_OFFSET_PEZZO])) / 10) '(R2_AltezzaFinestra - AppOffset) \ 10
 							'Largh_Finestra	= CSng(([SCAR_M2_PZ2:MISURA_CAMERA_ESTERNA] - (2 * [SCAR_M2_PZ2:R2_OFFSET_PEZZO])) / 10) '(R2_LarghezzaFinestra - AppOffset) \ 10 'pz2 riga 16 (riga in base 0)
 							[loc_Etichetta_MAG2:Azienda] = [loc_ImpostazioniImpianto:nomeAziendaPerEtichetta]
-							[loc_Etichetta_MAG2:Barcode] = [SCAR_M2_PZ1:ID_QUARTINA]
+							[loc_Etichetta_MAG2:Barcode] = Left([SCAR_M2_PZ1:ID_QUARTINA],13)
 							[loc_Etichetta_MAG2:Commessa] = [SCAR_M2_PZ1:NOME_COMMESSA]
 							'[loc_Etichetta_MAG2:Dimensioni] = CStr(Alt_Finestra) &amp; " x " &amp; CStr(Largh_Finestra)
 							[loc_Etichetta_MAG2:Dimensioni] = CStr([SCAR_M2_PZ1:MAX_LUNGHEZZA]) &amp; " x " &amp; CStr([SCAR_M2_PZ2:MAX_LUNGHEZZA])
