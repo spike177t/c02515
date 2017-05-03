@@ -21491,4 +21491,5 @@
 <type ImageId="1" Category="Progetto" Var="Pilz_RipariOk" ResourceName="Progetto" Index="0" Missing="0" ShortResourceName="gualini2_c02515" Reason="4294967295">RefactorGenericResourceVar</type>
 </ChildRefactor>
 </ListRefactor>
+<CLSID>{ABE3B472-8C5A-4DD7-AD61-F4A75B33A4F8}</CLSID>
 </Refactoring>

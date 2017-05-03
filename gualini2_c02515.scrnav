@@ -7,4 +7,5 @@
 <Execution LayerVariable="" ExecuteSynapse="0" CyclicSynapseExecution="0" SynopticPublicSource="" SynopticStyleSource="" StyleSourceBackColor="0" SynMaxInst="1" EnableMultiTouch="0" FastTimerFreq="50" SlowTimerFreq="500" MaxCounterFast="50" MaxCounterSlow="10" SeparateThread="0" VisibleObjectsManager="0" WaitExpressionsTime="0" ExclusiveWriteAccess="0" TimeDeferClosingWnd="5000"/>
 <ListSynopticDraw/>
 <VariableList/>
+<CLSID>{ABE3B472-8C5A-4DD7-AD61-F4A75B33A4F8}</CLSID>
 </ScreenNavigation>

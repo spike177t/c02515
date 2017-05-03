@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <RedudancySettings>
 <Redudancy Type="0" Server="" BackupServer="" TimeOut="2000" Retries="3" StatusVariable="" SwitchServerOnDriverError="0" DriverErrorTimeout="60000" MaxHisCacheHits="100" MaxHisCacheFiles="1000" SyncTimeFreq="24"/>
+<CLSID>{ABE3B472-8C5A-4DD7-AD61-F4A75B33A4F8}</CLSID>
 </RedudancySettings>

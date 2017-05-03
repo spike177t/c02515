@@ -8,4 +8,5 @@
 <ClientRulesList/>
 <AliasServerNames/>
 <OPXClient Pool="-1" PollInUse="2000" PollNotInUse="10000" WriteBehindDelay="2000"/>
+<CLSID>{ABE3B472-8C5A-4DD7-AD61-F4A75B33A4F8}</CLSID>
 </ClientSettings>

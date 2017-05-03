@@ -1,0 +1,23 @@
+##########  MOVICON  ###########
+
+utente sviluppo
+
+user 	dinamica
+pwd 	dina.mica
+
+utente caporeparto
+user	gualini
+pwd	gualini
+
+
+##########  MYSQL  ###########
+SQL SA
+user	root
+pwd	co.mar
+
+SQL utente ODBC
+user	gualini
+pwd	gualini
+
+##########  SUPREMO  ###########
+ID 125 020 854
