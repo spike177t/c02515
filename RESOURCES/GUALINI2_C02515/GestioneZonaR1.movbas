@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="29983" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="46394" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -250,10 +250,10 @@ Sub Main()
 		End If
 
 		'rilevo il cassetto + vicino all'estrattore
-		[loc_CassettiCorrenti:MAG1_ES1] = (30 +((((360 + Plc_AXISREFAX1_NCTOPLC_ACTPOS) Mod(360)) - Plc_LRPOSREFM1E1) /12 ))Mod(30) + 1
-		[loc_CassettiCorrenti:MAG1_ES2] = (30 +((((360 + Plc_AXISREFAX1_NCTOPLC_ACTPOS) Mod(360)) - Plc_LRPOSREFM1E2) /12 ))Mod(30) + 1
-		[loc_CassettiCorrenti:MAG2_ES1] = (30 +((((360 + Plc_AXISREFAX5_NCTOPLC_ACTPOS) Mod(360)) - Plc_LRPOSREFM2E1) /12 ))Mod(30) + 1
-		[loc_CassettiCorrenti:MAG2_ES2] = (30 +((((360 + Plc_AXISREFAX5_NCTOPLC_ACTPOS) Mod(360)) - Plc_LRPOSREFM2E2) /12 ))Mod(30) + 1
+		[loc_CassettiCorrenti:MAG1_ES1] = Abs( (30 +((( 360 + (Plc_AXISREFAX1_NCTOPLC_ACTPOS Mod(360))  ) - Plc_LRPOSREFM1E1) /12 ))Mod(30) + 1)
+		[loc_CassettiCorrenti:MAG1_ES2] = Abs( (30 +((( 360 + (Plc_AXISREFAX1_NCTOPLC_ACTPOS Mod(360))  ) - Plc_LRPOSREFM1E2) /12 ))Mod(30) + 1)
+		[loc_CassettiCorrenti:MAG2_ES1] = Abs( (30 +((( 360 + (Plc_AXISREFAX5_NCTOPLC_ACTPOS Mod(360))  ) - Plc_LRPOSREFM2E1) /12 ))Mod(30) + 1)
+		[loc_CassettiCorrenti:MAG2_ES2] = Abs( (30 +((( 360 + (Plc_AXISREFAX5_NCTOPLC_ACTPOS Mod(360))  ) - Plc_LRPOSREFM2E2) /12 ))Mod(30) + 1)
 
 		timerAggiornaOgniTanto = Timer()
 		timerAggiornaOgniTantoDiff = Abs(timerAggiornaOgniTanto - timerAggiornaOgniTantoOld)
@@ -3654,4 +3654,5 @@ End Sub
 </ScriptCode>
 <Mode RunAtServer="1" UseUIInterface="1" SeparateThread="1" UseItsTrace="1" ModalDialogs="0"/>
 <Execution ThreadPriority="0" StatusVariable="statoScriptGestioneZonaR1" MaxInstances="1" SleepExecution="100" SyncroScriptTimeout="5000"/>
+<CLSID>{ABE3B472-8C5A-4DD7-AD61-F4A75B33A4F8}</CLSID>
 </MovResource>
