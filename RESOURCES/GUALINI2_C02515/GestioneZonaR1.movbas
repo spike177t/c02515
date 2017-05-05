@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="46394" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="36835" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -832,10 +832,7 @@ Sub Main()
 					If [R1_STATUS:FINE_MISSIONE] = False Then
 						[R1_STATUS:FINE_MISSIONE_ACK] =False
 						alm_Step_ToutR1_6150 = False
-						'segnalo all'estrattore che ho depositato il pezzo
-						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
-						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
-						SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
+
 						StatoCicloCarico = 6200	'VerificaUltimoPezzo
 					End If
 
@@ -856,6 +853,7 @@ Sub Main()
 							'forzo il valore di ultimo pezzo
 							[R1_DATI_PEZZO:ULTIMO_PEZZO] = True
 						End If
+
 						If Not [R1_DATI_PEZZO:ULTIMO_PEZZO]  Then
 							StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
 						Else
@@ -867,21 +865,30 @@ Sub Main()
 							rikEstrattore.DEPO						= False
 							rikEstrattore.PRONTO					= False
 							rikEstrattore.STROBE 					= True
-							If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1  Then
 
-								strEstrattore =Serializza_stEstrattore(rikEstrattore)
-								DebugMsg("Case 6200	'VerificaUltimoPezzo - codaMAG1_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
-								codaMAG1_ES1.Enqueue(strEstrattore)
-								'codaMAG1_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+							'faccio rientrare il cassetto solo se non ho già altre richieste in coda
+							If [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1  Then
+								'verifico che coda sia vuota, se si faccio rientrare cassetto
+								If codaMAG1_ES1.Count = 0 Then
+									strEstrattore =Serializza_stEstrattore(rikEstrattore)
+									DebugMsg("Case 6200	'VerificaUltimoPezzo - codaMAG1_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+									codaMAG1_ES1.Enqueue(strEstrattore)
+								End If
 							ElseIf [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 2 Then
-								strEstrattore =Serializza_stEstrattore(rikEstrattore)
-								DebugMsg("Case 6200	'VerificaUltimoPezzo - codaMAG2_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
-								codaMAG2_ES1.Enqueue(strEstrattore)
-								'codaMAG2_ES1.Enqueue(Serializza_stEstrattore(rikEstrattore))
+								'verifico che coda sia vuota, se si faccio rientrare cassetto
+								If codaMAG2_ES1.Count = 0 Then
+									strEstrattore =Serializza_stEstrattore(rikEstrattore)
+									DebugMsg("Case 6200	'VerificaUltimoPezzo - codaMAG2_ES1.Enqueue(" &amp; strEstrattore &amp; ")")
+									codaMAG2_ES1.Enqueue(strEstrattore)
+								End If
 							End If
 							StatoCicloCarico = 6300	'GestisciQuartinaSuccessiva
-
 						End If
+
+						'segnalo all'estrattore che ho depositato il pezzo
+						varname_estrattore = IIf([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = 1, "MAG1_ES1_ACT", "MAG2_ES1_ACT")
+						SetVariableValue(varname_estrattore &amp; ":DEPO",  True)	'pezzo depositato
+						SetVariableValue(varname_estrattore &amp; ":BUSY",  False)	'reset bit BUSY dell'estrattore
 
 				Case 6300	'GestisciQuartinaSuccessiva
 					StatoCicloCarico_txt = "6300	'GestisciQuartinaSuccessiva"
