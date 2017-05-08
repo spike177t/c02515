@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="48362" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="46655" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -801,7 +801,6 @@ Sub Main()
 
 				Case 6100	'FineRobot
 					StatoCicloCarico_txt = "6100	'FineRobot"
-					'ATTENZIONE valore 6100 usato in AnomaliaDeposito()
 					LogMsg "StatoCicloCarico = 6100	'FineRobot"
 					'inserisco dati quartina e pezzo nel DB
 					ret = FineRobot(MySqlConnectionString)
@@ -839,6 +838,7 @@ Sub Main()
 
 				Case 6200	'VerificaUltimoPezzo
 					StatoCicloCarico_txt = "6200	'VerificaUltimoPezzo"
+					'ATTENZIONE valore 6200 usato in AnomaliaDeposito()
 					LogMsg "StatoCicloCarico = 6200	'VerificaUltimoPezzo"
 						'se ultimo pezzo della quartina faccio rientrare l'estrattore
 						'TODO potrei contare quanti pezzo ho nella quartina
@@ -1114,8 +1114,8 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 			And [R1_STATUS:DISPONIBILE] _
 			And (Not [R1_STATUS:IN_MISSIONE] And Not ([R1_STATUS:FINE_MISSIONE] Or [R1_STATUS:ERR_MISSIONE])) _
 			And ([MAG1_ES1_ACT:BUSY] And Not [MAG1_ES1_ACT:DEPO]) _
-			And StatoCicloCarico &lt;&gt; 6100 _
 			And StatoCicloCarico &lt;&gt; 6150 _
+			And StatoCicloCarico &lt;&gt; 6200 _
 		Then
 		'			And (Not [R1_STATUS:FINE_MISSIONE] Or Not [R1_STATUS:ERR_MISSIONE]) _
 
@@ -1131,8 +1131,8 @@ Function AnomaliaDeposito(connectionString As String) 'As Boolean
 			And [R1_STATUS:DISPONIBILE] _
 			And (Not [R1_STATUS:IN_MISSIONE] And Not ([R1_STATUS:FINE_MISSIONE] Or [R1_STATUS:ERR_MISSIONE])) _
 			And ([MAG2_ES1_ACT:BUSY] And Not [MAG2_ES1_ACT:DEPO])  _
-			And StatoCicloCarico &lt;&gt; 6100 _
 			And StatoCicloCarico &lt;&gt; 6150 _
+			And StatoCicloCarico &lt;&gt; 6200 _
 		Then
 		'			And (Not [R1_STATUS:FINE_MISSIONE] Or Not [R1_STATUS:ERR_MISSIONE]) _
 		DebugMsg("AnomaliaDeposito() -&gt; [R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO] = " &amp; CStr([R1_DATI_PEZZO:MAGAZZINO_ASSEGNATO]) &amp; "; [R1_STATUS:IN_MISSIONE] = " &amp; CStr([R1_STATUS:IN_MISSIONE]) _
