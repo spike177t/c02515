@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="46655" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="29620" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -2965,6 +2965,10 @@ Function RilevaCassettoQuartinaSuccessiva( connectionString As String ) As PosQu
 End Function
 
 Sub DecodificaMissioneR1()
+	'codice di controllo per non gestito dal robot
+	[R1_DATI_PEZZO:R1_COD_RBT] = 0
+
+	'decodifica profili
 	If [R1_DATI_PEZZO:SERIE_PROFILO]= "UNA" And [R1_DATI_PEZZO:CODICE_PROFILO] = "K1900" Then
 		[R1_DATI_PEZZO:R1_COD_RBT] = 1
 	End If
@@ -3016,8 +3020,17 @@ Sub DecodificaMissioneR1()
 	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS90" And [R1_DATI_PEZZO:CODICE_PROFILO] = "441780" Then
 		[R1_DATI_PEZZO:R1_COD_RBT] = 17
 	End If
+	'nuovi profili
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS90" And [R1_DATI_PEZZO:CODICE_PROFILO] = "441840" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 18
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS120" And [R1_DATI_PEZZO:CODICE_PROFILO] = "442890" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 19
+	End If
+	If [R1_DATI_PEZZO:SERIE_PROFILO]= "AWS60" And [R1_DATI_PEZZO:CODICE_PROFILO] = "340190" Then
+		[R1_DATI_PEZZO:R1_COD_RBT] = 20
+	End If
 End Sub
-
 
 Sub ResetDatiPezzoMissione(daQuadra As Integer)
 	'aggiungere tutte le altre variabili dimensionali
