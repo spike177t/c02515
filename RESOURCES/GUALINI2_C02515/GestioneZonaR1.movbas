@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <MovResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<ScriptCode StartSel="29620" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
+<ScriptCode StartSel="48864" SelLength="0" OutStatusBar="1" OutLog="1" OutPrinter="0">'#Reference #System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core.resources, Version=3.5.0.0, Culture=it, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
 '#Reference #System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL
@@ -219,6 +219,10 @@ Sub Main()
     'forzo aggiornamento estrattori
     [MAG1_ES1_ACT_OLD:ID_CASSETTO] = 16500
     [MAG2_ES1_ACT_OLD:ID_CASSETTO] = 16500
+    'forzo reset ack robot
+    [R1_STATUS:FINE_MISSIONE_ACK] = False
+	[R1_STATUS:ERR_MISSIONE_ACK] = False
+	[R1_STATUS:NUOVA_MISSIONE_ACK] = False
 
     'forzo aggiornamento dati pezzi da quadra
 	'dopo di che rendo possibile processare le code degli estrattori
